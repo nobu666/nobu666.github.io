@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2007s on Real Beat</title>
-    <link>http://nobu666.com/2007.html</link>
+    <link>http://localhost:1313/2007.html</link>
     <description>Recent content in 2007s on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Wed, 26 Dec 2007 00:43:17 +0900</lastBuildDate>
-    <atom:link href="http://nobu666.com/2007.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/2007.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>ゴールインなんて言葉は好きではないのだけども</title>
-      <link>http://nobu666.com/2007/12/26/551.html</link>
+      <link>http://localhost:1313/2007/12/26/551.html</link>
       <pubDate>Wed, 26 Dec 2007 00:43:17 +0900</pubDate>
       
-      <guid>http://nobu666.com/2007/12/26/551.html</guid>
+      <guid>http://localhost:1313/2007/12/26/551.html</guid>
       <description>&lt;p&gt;うちの会社は入社してから、少しずつ家賃補助が少なくなっていってそのうちなくなるのだが…今年度で俺は最後。というわけでどうせなくなるなら引っ越すか→どうせ引っ越すなら一緒に住むか→どうせ一緒に住むなら籍入れるか、のコンボが発動しまして。そういうことになりそうです。&lt;/p&gt;
 
 &lt;p&gt;つかなんでゴールインとか言うのかね。結婚＝ゴールとは到底思えないのだが。「終わりの始まり」なんていうことも聞くけど（笑）。そう思うならしなきゃいいのに。しかし真剣に考えれば考えるほど、結婚て重いよね。赤の他人の一生を背負う訳だから。好きだとか愛してるとか、そういう気持ちって中学生でも30歳でも大して違わないと思うんだけど、タイミングによって重さがこんなに違うってのは面白いよな。&lt;/p&gt;
@@ -29,10 +29,10 @@
     
     <item>
       <title>クリスマスイブ</title>
-      <link>http://nobu666.com/2007/12/25/550.html</link>
+      <link>http://localhost:1313/2007/12/25/550.html</link>
       <pubDate>Tue, 25 Dec 2007 23:50:15 +0900</pubDate>
       
-      <guid>http://nobu666.com/2007/12/25/550.html</guid>
+      <guid>http://localhost:1313/2007/12/25/550.html</guid>
       <description>&lt;p&gt;独身最後のクリスマスだったのかも…とさらりと言ってみるテスト。センター北の中華料理屋で満腹くって、部屋でシャンパンとケーキ。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/28152869@N00/2135026796/&#34; title=&#34;071224_230753 by nobu_666_jp, on Flickr&#34;&gt;&lt;img src=&#34;http://farm3.static.flickr.com/2007/2135026796_e9484a2ec3_m.jpg&#34; width=&#34;180&#34; height=&#34;240&#34; alt=&#34;071224_230753&#34; /&gt;&lt;/a&gt;
@@ -46,10 +46,10 @@
     
     <item>
       <title>煙草の依存性すげー</title>
-      <link>http://nobu666.com/2007/12/17/549.html</link>
+      <link>http://localhost:1313/2007/12/17/549.html</link>
       <pubDate>Mon, 17 Dec 2007 23:55:27 +0900</pubDate>
       
-      <guid>http://nobu666.com/2007/12/17/549.html</guid>
+      <guid>http://localhost:1313/2007/12/17/549.html</guid>
       <description>&lt;p&gt;やばい、超煙草吸いたい!!なんか突発的に「1本くらい吸っても大丈夫じゃね?」っていう誘惑があって怖い。
 ひたすらガム噛んでごまかす。意地でも我慢するぞ畜生…&lt;/p&gt;
 
@@ -64,10 +64,10 @@
     
     <item>
       <title>買い物しすぎ</title>
-      <link>http://nobu666.com/2007/12/16/548.html</link>
+      <link>http://localhost:1313/2007/12/16/548.html</link>
       <pubDate>Sun, 16 Dec 2007 23:53:31 +0900</pubDate>
       
-      <guid>http://nobu666.com/2007/12/16/548.html</guid>
+      <guid>http://localhost:1313/2007/12/16/548.html</guid>
       <description>&lt;p&gt;ボーナス月だからまだいいけど、11月と12月は買いすぎだ…自戒のために列挙する&lt;/p&gt;
 
 &lt;ul&gt;
@@ -95,10 +95,10 @@
     
     <item>
       <title>[禁煙]3日目?4日目 忘年会</title>
-      <link>http://nobu666.com/2007/12/15/547.html</link>
+      <link>http://localhost:1313/2007/12/15/547.html</link>
       <pubDate>Sat, 15 Dec 2007 23:56:53 +0900</pubDate>
       
-      <guid>http://nobu666.com/2007/12/15/547.html</guid>
+      <guid>http://localhost:1313/2007/12/15/547.html</guid>
       <description>&lt;p&gt;会社の「いつものメンバー」でちゃんこ忘年会。渋谷は宮益坂にある、宮益亭というちゃんこ屋なんだが、超旨いのでお勧め。この時期は劇混みなんで、予約もまともに取れないけども。かなり誘惑があったけどもなんとか我慢し、飲み会を乗り切りましたわい。1本でも吸ったらゲームオーバーだと思ってるので、そこは自分に厳しく。&lt;/p&gt;
 
 &lt;p&gt;で4日目、今度はゲーム仲間と忘年会。鍋ウマー、生牡蠣ウマー、日本酒ウマー。ゲームで知り合ってもう何年だ?つか会社の人間より付き合い長いんだからな…かれこれ10年近く経つわけだ。たかがゲーム、されどゲームだよなー。またみんなで美味しいもの食おうぜぃ!!&lt;/p&gt;
@@ -107,10 +107,10 @@
     
     <item>
       <title>[禁煙]2日目 禁断症状きてます</title>
-      <link>http://nobu666.com/2007/12/13/546.html</link>
+      <link>http://localhost:1313/2007/12/13/546.html</link>
       <pubDate>Thu, 13 Dec 2007 23:41:24 +0900</pubDate>
       
-      <guid>http://nobu666.com/2007/12/13/546.html</guid>
+      <guid>http://localhost:1313/2007/12/13/546.html</guid>
       <description>&lt;p&gt;まぁ当たり前よね。知ってるかね、ニコチンの依存性ってヘロインと同じくらい強いんだぜ…何の対策もなく禁煙を行った場合、1年後の禁煙成功率はおよそ5?10%だ。低いぜ…低すぎるぜ…&lt;/p&gt;
 
 &lt;p&gt;ニコレット併用してますが、やっぱり吸収が遅いので思ったほど効果なし。普通のガムよりは多少いいのかもしれんね、って程度。とりあえずガム、飴、フリスク、ブラックチョコレート、コーヒーの摂取。あと手を洗ったり歯を磨いたりして気を紛らわせている。なんとなく喉が渇くようなヒリヒリするような感じがするのと、ご飯を食べた後の眠気が半端ない。どうもタバコによってある程度覚醒が効果が得られていたのに、それが無くなってしまったことで眠くなりやすいみたいだ。とりあえず10日間くらいはしんどいので、なるべく早く寝よう…&lt;/p&gt;
@@ -119,10 +119,10 @@
     
     <item>
       <title>[禁煙]1日目 彼女の誕生日</title>
-      <link>http://nobu666.com/2007/12/12/545.html</link>
+      <link>http://localhost:1313/2007/12/12/545.html</link>
       <pubDate>Wed, 12 Dec 2007 21:44:17 +0900</pubDate>
       
-      <guid>http://nobu666.com/2007/12/12/545.html</guid>
+      <guid>http://localhost:1313/2007/12/12/545.html</guid>
       <description>&lt;p&gt;唐突なんだが禁煙です。やっぱ禁煙はじめるなら記念日とかのほうがイイ、ということもあるらしく、思い立ったが吉日。ホントに思い立ってタバコがちょうどなくなったのが15時くらいだったんだが…彼女の誕生日祝いに家に行く過程で既に禁断症状がｗ&lt;/p&gt;
 
 &lt;p&gt;作ってくれたローストチキンをメインに、ビール飲んでワイン飲んで。ケーキはデフェールが残念ながら水曜定休だったため、アンジェリーナとなりました。ま、ここのもウマいからいいけどな。プレゼント何がいいか聞いてなかったので、とりあえず仮で烏骨鶏の卵を使った石けんを4つあげた。効くのかしらんが。&lt;/p&gt;
@@ -133,10 +133,10 @@
     
     <item>
       <title>RD-XS57のHDD換装</title>
-      <link>http://nobu666.com/2007/12/09/544.html</link>
+      <link>http://localhost:1313/2007/12/09/544.html</link>
       <pubDate>Sun, 09 Dec 2007 23:58:11 +0900</pubDate>
       
-      <guid>http://nobu666.com/2007/12/09/544.html</guid>
+      <guid>http://localhost:1313/2007/12/09/544.html</guid>
       <description>&lt;p&gt;無事秋葉原でU-ATAのHDDを捕獲し、普通に換装終了。よく調べないで買っちゃったんだが、こいつもともと300GBのHDD付いてたんだな。160GBの買って来ちゃったよ。まぁどうせ使い切ることはないから、半分になったところで特に問題ないのだが。作業自体は特に難しいことはないのだけど、一応手順を公開。&lt;/p&gt;
 
 &lt;ol&gt;
@@ -157,10 +157,10 @@
     
     <item>
       <title>PODxt Live</title>
-      <link>http://nobu666.com/2007/12/09/543.html</link>
+      <link>http://localhost:1313/2007/12/09/543.html</link>
       <pubDate>Sun, 09 Dec 2007 23:56:12 +0900</pubDate>
       
-      <guid>http://nobu666.com/2007/12/09/543.html</guid>
+      <guid>http://localhost:1313/2007/12/09/543.html</guid>
       <description>&lt;div class=&#34;aa&#34;&gt;
 　　　　　　　　 ,. -‐&#39;&#39;&#39;&#39;&#39;&#34;&#34;¨¨¨ヽ
 　　　　 　 　 (.＿＿_,,,... -ｧァﾌ|　　　　　　　　　　あ…ありのまま 今　起こった事を話すぜ！
@@ -237,10 +237,10 @@ _／｀丶　/::::::::::::::::::::::::::￣`ー-{:::...　　　 　　　ｲ　
     
     <item>
       <title>12/9のTODO（俺用）</title>
-      <link>http://nobu666.com/2007/12/09/542.html</link>
+      <link>http://localhost:1313/2007/12/09/542.html</link>
       <pubDate>Sun, 09 Dec 2007 03:01:11 +0900</pubDate>
       
-      <guid>http://nobu666.com/2007/12/09/542.html</guid>
+      <guid>http://localhost:1313/2007/12/09/542.html</guid>
       <description>&lt;p&gt;自分用メモ。&lt;/p&gt;
 
 &lt;ul&gt;
@@ -254,10 +254,10 @@ _／｀丶　/::::::::::::::::::::::::::￣`ー-{:::...　　　 　　　ｲ　
     
     <item>
       <title>近況</title>
-      <link>http://nobu666.com/2007/12/07/541.html</link>
+      <link>http://localhost:1313/2007/12/07/541.html</link>
       <pubDate>Fri, 07 Dec 2007 02:27:13 +0900</pubDate>
       
-      <guid>http://nobu666.com/2007/12/07/541.html</guid>
+      <guid>http://localhost:1313/2007/12/07/541.html</guid>
       <description>&lt;p&gt;なんか眠れないので近況まとめ。&lt;/p&gt;
 
 &lt;ul&gt;
@@ -287,10 +287,10 @@ _／｀丶　/::::::::::::::::::::::::::￣`ー-{:::...　　　 　　　ｲ　
     
     <item>
       <title>テンション落ちすぎ</title>
-      <link>http://nobu666.com/2007/11/25/540.html</link>
+      <link>http://localhost:1313/2007/11/25/540.html</link>
       <pubDate>Sun, 25 Nov 2007 17:55:10 +0900</pubDate>
       
-      <guid>http://nobu666.com/2007/11/25/540.html</guid>
+      <guid>http://localhost:1313/2007/11/25/540.html</guid>
       <description>&lt;p&gt;なんか超ダウナー。2日連続で朝まで騒いだ反動なのかね。よくわからんけど、ふと思い立ってビデオ屋行って、ハリポタ・ロッキーザファイナル、あとRe:Genesisっていう海外ドラマを3巻借りてきた。これでスッキリするといいけど。部屋の大掃除とか模様替えでもしたら、気分転換になりそうだけど…そこまでの元気がでない。&lt;/p&gt;
 
 &lt;p&gt;ウォレットチェーンは壊れるし、HDDレコーダーのHDDもおかしくなるし（初期化したら直ったけど）、なんだかなー。とりあえずDVD観るか…&lt;/p&gt;
@@ -299,10 +299,10 @@ _／｀丶　/::::::::::::::::::::::::::￣`ー-{:::...　　　 　　　ｲ　
     
     <item>
       <title>詳解MySQL買った</title>
-      <link>http://nobu666.com/2007/11/24/539.html</link>
+      <link>http://localhost:1313/2007/11/24/539.html</link>
       <pubDate>Sat, 24 Nov 2007 23:58:05 +0900</pubDate>
       
-      <guid>http://nobu666.com/2007/11/24/539.html</guid>
+      <guid>http://localhost:1313/2007/11/24/539.html</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/4873113431/realbeat-22/ref=nosim/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://ecx.images-amazon.com/images/I/211XTdVHKnL.jpg&#34; alt=&#34;詳解 MySQL&#34; style=&#34;border: none;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;まだ全部細かいところまでは読んでないのだけども、ざっと見た感じの印象では以下のような人にはよい本と思った。&lt;/p&gt;
@@ -325,10 +325,10 @@ _／｀丶　/::::::::::::::::::::::::::￣`ー-{:::...　　　 　　　ｲ　
     
     <item>
       <title>今更っちゃ今更かも知れないけどtwitter</title>
-      <link>http://nobu666.com/2007/11/20/538.html</link>
+      <link>http://localhost:1313/2007/11/20/538.html</link>
       <pubDate>Tue, 20 Nov 2007 01:22:35 +0900</pubDate>
       
-      <guid>http://nobu666.com/2007/11/20/538.html</guid>
+      <guid>http://localhost:1313/2007/11/20/538.html</guid>
       <description>&lt;p&gt;やっぱりもうちょっと顔見知りがいると違ってくるかなーと。twitterやろうぜtwitter。このゆるい繋がり感、俺は好きだなー。mixiって疲れるんだよねなんか。足跡つけただけでコメントしろとか粘着してくるやついたり、コメントしたんだから俺にもコメントしろ的な空気だったり。まぁそんなの関係なくシカトなんだけど、少なからずそういうの気にしてるやつがいる時点で、精神的によろしくないわけですよ。端的に言えばウザイわけですよ。&lt;/p&gt;
 
 &lt;p&gt;そこんとこtwitterは非常にゆるくて、使ってみるまでは「んーつまりなんなの?」みたいな感じではあるんだけども、「やってみりゃわかる」としかいいようがねーな。基本的にはまったく面識のないひとを勝手にFollowしてOKな文化なので（Protectしてない人に限るけども）、ガンガンFollowしてつぶやきまくる。「はらへった」「出社」「帰る」「銀座に飲みに行く」とかなんでもいい。なんかつぶやいていくうちに、勝手に広がる友達の輪。&lt;/p&gt;
@@ -339,10 +339,10 @@ _／｀丶　/::::::::::::::::::::::::::￣`ー-{:::...　　　 　　　ｲ　
     
     <item>
       <title>ついかっとなって携帯とEM ONE買った</title>
-      <link>http://nobu666.com/2007/11/19/537.html</link>
+      <link>http://localhost:1313/2007/11/19/537.html</link>
       <pubDate>Mon, 19 Nov 2007 23:50:11 +0900</pubDate>
       
-      <guid>http://nobu666.com/2007/11/19/537.html</guid>
+      <guid>http://localhost:1313/2007/11/19/537.html</guid>
       <description>&lt;p&gt;携帯はもう1.5年ほどSH902isをつかってて、そろそろバッテリーがやばいことになっていたので、時期的にも換え時。もうすぐ905も出るって事で、うまい具合に値段も下がってきてていい感じ。とりあえず画面が大きいのがよかったので、PとD除外。ワンセグはどうでもよくて、HSDPAもEM ONE買うつもりだったのでどうでもよくて、モーションセンサーとTOUCH CRUISERに惹かれてSHに決定。905待とうかとも思ったけど、彼女と電話するときはPHSだし、それ以外に電話殆どかけないから、あの値段はちょっとな。SH→SHで操作の違和感もないし、まぁいいかと。やや重いのと、動作のもっさり感が多少気になると言えば気になる。とりあえずモーションセンサーでなんか面白いこと出来ないか、ちまちま試してみる予定。&lt;/p&gt;
 
 &lt;p&gt;でEM ONEのほうは、モバイル環境がPHSじゃいくらなんでも遅すぎてイラつきすぎなんで、安くて高速な回線ということでE-Mobile一択。主な使い道はLet&amp;rsquo;s NoteとMacBookのモデムとして使うのと、通勤電車内の暇つぶし。MacBookのほうはPCカードが使えないのでUSBかBluetoothじゃないとだめで、Bluetoothはバッテリーがすぐ切れるので現実的じゃない。となると、D01HWかEM ONEしかなくて、電車内で暇つぶしができるのはEM ONEしかないじゃんということで、買ってしまいました。WM6搭載のEM ONE αってのもあったんだが、WM5のEM ONEが台数限定で激安だったため即決。機能は基本的には変わらないし、どうしてアップグレードしたければ1万円弱でできるし（2週間も預けなきゃいけないが…）、1万足しても全然お釣りが来る安さだった。&lt;/p&gt;

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Diary on Real Beat</title>
-    <link>http://nobu666.com/categories/diary.html</link>
+    <link>http://localhost:1313/categories/diary.html</link>
     <description>Recent content in Diary on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 21 Jun 2015 00:00:00 +0900</lastBuildDate>
-    <atom:link href="http://nobu666.com/categories/diary.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/diary.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>WordPressからGitHub Pages &#43; hugoに移行した</title>
-      <link>http://nobu666.com/2015/06/21/1015.html</link>
+      <link>http://localhost:1313/2015/06/21/1015.html</link>
       <pubDate>Sun, 21 Jun 2015 00:00:00 +0900</pubDate>
       
-      <guid>http://nobu666.com/2015/06/21/1015.html</guid>
+      <guid>http://localhost:1313/2015/06/21/1015.html</guid>
       <description>
 
 &lt;h1 id=&#34;wordpressからgithub-pages-hugoに移行した:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;WordPressからGitHub Pages + hugoに移行した&lt;/h1&gt;
@@ -100,10 +100,10 @@
     
     <item>
       <title>SmartNewsにjoinしました</title>
-      <link>http://nobu666.com/2015/05/16/1014.html</link>
+      <link>http://localhost:1313/2015/05/16/1014.html</link>
       <pubDate>Sat, 16 May 2015 02:43:38 +0900</pubDate>
       
-      <guid>http://nobu666.com/2015/05/16/1014.html</guid>
+      <guid>http://localhost:1313/2015/05/16/1014.html</guid>
       <description>&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;サラリーマンに戻りました &lt;a href=&#34;http://t.co/5HLV3RtgyK&#34;&gt;pic.twitter.com/5HLV3RtgyK&lt;/a&gt;&lt;/p&gt;&amp;mdash; Nobutoshi Ogata (@nobu666) &lt;a href=&#34;https://twitter.com/nobu666/status/597587895541735425&#34;&gt;2015, 5月 11&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 
@@ -121,10 +121,10 @@
     
     <item>
       <title>グリー株式会社を退職します</title>
-      <link>http://nobu666.com/2014/03/25/1006.html</link>
+      <link>http://localhost:1313/2014/03/25/1006.html</link>
       <pubDate>Tue, 25 Mar 2014 09:25:50 +0900</pubDate>
       
-      <guid>http://nobu666.com/2014/03/25/1006.html</guid>
+      <guid>http://localhost:1313/2014/03/25/1006.html</guid>
       <description>&lt;p&gt;3/20を最終出社としてグリー株式会社を退職することにしました。2年8ヶ月ほどお世話になりました。&lt;/p&gt;
 
 &lt;p&gt;グダグダ思い出を語ってみようと下書きまでしたんだけど、知ってる人だけ面白い飲み会ネタになってしまったので消しましたｗ&lt;/p&gt;
@@ -137,10 +137,10 @@
     
     <item>
       <title>ハサミを買ったら猛烈に感動したのでお前らもこれは体験するべき</title>
-      <link>http://nobu666.com/2013/01/14/954.html</link>
+      <link>http://localhost:1313/2013/01/14/954.html</link>
       <pubDate>Mon, 14 Jan 2013 02:17:49 +0900</pubDate>
       
-      <guid>http://nobu666.com/2013/01/14/954.html</guid>
+      <guid>http://localhost:1313/2013/01/14/954.html</guid>
       <description>&lt;p&gt;あけましておめでとうございます。&lt;/p&gt;
 
 &lt;p&gt;突然ですけどハサミ買ったんですハサミ。そしたらこれがあまりにいままでのハサミの概念を打ち破る、画期的というか革命的というか、とにかくたかがハサミでおじさん猛烈に感動したのでブログを書く次第です。&lt;/p&gt;
@@ -169,10 +169,10 @@
     
     <item>
       <title>グリーに入社しました</title>
-      <link>http://nobu666.com/2011/08/04/923.html</link>
+      <link>http://localhost:1313/2011/08/04/923.html</link>
       <pubDate>Thu, 04 Aug 2011 12:46:45 +0900</pubDate>
       
-      <guid>http://nobu666.com/2011/08/04/923.html</guid>
+      <guid>http://localhost:1313/2011/08/04/923.html</guid>
       <description>&lt;p&gt;2011年8月1日付でグリー株式会社へ入社しました。&lt;/p&gt;
 
 &lt;p&gt;前職でお世話になった方々に、この場を借りて御礼申し上げます。
@@ -182,10 +182,10 @@
     
     <item>
       <title>自分の音楽にまつわる歴史をまとめてみた</title>
-      <link>http://nobu666.com/2011/02/21/812.html</link>
+      <link>http://localhost:1313/2011/02/21/812.html</link>
       <pubDate>Mon, 21 Feb 2011 23:52:42 +0900</pubDate>
       
-      <guid>http://nobu666.com/2011/02/21/812.html</guid>
+      <guid>http://localhost:1313/2011/02/21/812.html</guid>
       <description>&lt;p&gt;気が向いたので、なんとなくまとめてみた。誰も得をしないまとめ。&lt;/p&gt;
 
 &lt;p&gt;10歳: なんか知らんけどBOØWYに影響を受けてベースを弾き始める。なんでベースだったのかは未だによくわからない。なんかベースの音がよく聞こえて。単にギターは調子こいてる風で嫌だったっていう天邪鬼説が有力。HOLLYとかいう謎のやっすいプレベタイプのベースと、15Wくらいのアンプと、シールドと音叉と変な教則本とテープがセットになってて、3万だか4万だかのものだったと記憶している。買った初日に、音叉の使い方がわからなくて、チーンて叩いた音にあわせたらいきなり弦が切れて泣きそうになった記憶がある。また楽器屋に戻って、音叉は叩いた後どこかにくっつけるものだと初めて知るｗ しばらくついてきた教則本に沿って練習するも、ハンマリングとプリングの複合練習みたいなやつで行き詰って2ヶ月ぐらい放置。気が向いてその後やってみたらなぜか弾けるようになっていた。&lt;/p&gt;
@@ -228,10 +228,10 @@
     
     <item>
       <title>mahoutで類似ユーザをリコメンドする</title>
-      <link>http://nobu666.com/2011/02/17/839.html</link>
+      <link>http://localhost:1313/2011/02/17/839.html</link>
       <pubDate>Thu, 17 Feb 2011 17:47:15 +0900</pubDate>
       
-      <guid>http://nobu666.com/2011/02/17/839.html</guid>
+      <guid>http://localhost:1313/2011/02/17/839.html</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://mahout.apache.org/&#34;&gt;mahout&lt;/a&gt;使って類似ユーザの抽出をやってみたのでまとめ。&lt;/p&gt;
 
 &lt;p&gt;そこら辺に転がってるサンプルは、ほとんどがユーザがあるアイテムについて点数をつける前提になってて、その点数をベースに似ているユーザをリコメンドしたり、あるいはあるユーザが興味をもちそうなアイテムをリコメンドしたりといったものが殆どだった。点数がないようなときにどうするか多少悩んだので記録に残しておくことにした。とりあえず今回はMySQLにデータが入ってる前提でやってみた。あるテーブルにUSER_IDとITEM_IDが入ってて、同じITEM_IDを多く選んだ人を探したいとすると、以下のようにする。&lt;/p&gt;
@@ -317,10 +317,10 @@ $ python generate_date.py|mysql
     
     <item>
       <title>JavaScriptでいい感じにURLとかScreenNameとかをリンクにする正規表現</title>
-      <link>http://nobu666.com/2011/01/20/831.html</link>
+      <link>http://localhost:1313/2011/01/20/831.html</link>
       <pubDate>Thu, 20 Jan 2011 16:11:20 +0900</pubDate>
       
-      <guid>http://nobu666.com/2011/01/20/831.html</guid>
+      <guid>http://localhost:1313/2011/01/20/831.html</guid>
       <description>&lt;p&gt;URLに@が入ってたりすると、ScreenNameのリンクとごっちゃになって割と対応に手間取ったのでメモとして。日本語のハッシュタグなんか最近見かけないからどうでもいいような気もするけど、まぁ一応対応。&lt;/p&gt;
 
 &lt;p&gt;[sourcecode language=&amp;ldquo;javascript&amp;rdquo; padlinenumbers=&amp;ldquo;2&amp;rdquo;]
@@ -363,10 +363,10 @@ text.replace(/(https?:\/\/(?:[^!&amp;quot;#$%&amp;amp;amp;&amp;rsquo;()&lt;em&gt
     
     <item>
       <title>Metallica World Magnetic Tour in さいたまスーパーアリーナ</title>
-      <link>http://nobu666.com/2010/09/29/817.html</link>
+      <link>http://localhost:1313/2010/09/29/817.html</link>
       <pubDate>Wed, 29 Sep 2010 21:35:38 +0900</pubDate>
       
-      <guid>http://nobu666.com/2010/09/29/817.html</guid>
+      <guid>http://localhost:1313/2010/09/29/817.html</guid>
       <description>&lt;p&gt;去る9/25(SAT)に行ってきました。いやー、やっぱりMetallicaはすげーなと改めて思い知らされるライブだった。音の一つ一つが塊になって飛んでくる感じというか、圧力というかオーラというか、とにかくこれぞMETALであるという。王者の貫禄かね。とにかく凄かったわ。&lt;/p&gt;
 
 &lt;p&gt;一応前座のFear Factoryは聴いておきたかったので、16時に現地ついてみたら物販が鬼のように並んでおり…1時間くらいかけてなんとかツアーTシャツやツアーパンフは確保したものの、欲しかったロングリストバンドは売り切れていた。無念。&lt;/p&gt;
@@ -383,10 +383,10 @@ text.replace(/(https?:\/\/(?:[^!&amp;quot;#$%&amp;amp;amp;&amp;rsquo;()&lt;em&gt
     
     <item>
       <title>Warwick ThumbBass買いました</title>
-      <link>http://nobu666.com/2010/08/08/814.html</link>
+      <link>http://localhost:1313/2010/08/08/814.html</link>
       <pubDate>Sun, 08 Aug 2010 16:49:33 +0900</pubDate>
       
-      <guid>http://nobu666.com/2010/08/08/814.html</guid>
+      <guid>http://localhost:1313/2010/08/08/814.html</guid>
       <description>&lt;p&gt;書こうと思って下書き書いて忘れてた。ボーナスも出て、うちの嫁様が「好きに使っていいよ」と言ってくれたので、お言葉に甘えて6月中旬にベースを買いました。Warwick Thumb Bass 4st。手持ちでは4本目、通算では7本目のベース。&lt;/p&gt;
 
 &lt;p&gt;何を買おうかいろいろ悩んで、Atelier Z M#245、Streamer Jazzman 4st、Spector NS-2と弾き比べさせてもらって決定。それぞれいい楽器だったけども、決め手は音作りの幅の広さと、ミッドレンジの豊かさ。メインで使ってたのはKillerのCriminalだったんだけど、どうしてもスラップしたときのバキバキ感とか、無難にまとまった角のない音にすこし物足りない感じだったので。だけどあんまりHi-Fi過ぎる音が好みではないのと、出したい音がブリブリ指弾き・モコモコ指弾き・ガリガリピック弾き・バキバキスラップと色々あるわけで、手元のEQでちょいちょいいじってやればかなり音を変えられるのが気に入った。&lt;/p&gt;
@@ -401,10 +401,10 @@ text.replace(/(https?:\/\/(?:[^!&amp;quot;#$%&amp;amp;amp;&amp;rsquo;()&lt;em&gt
     
     <item>
       <title>太陽光発電導入を決めたので値段の試算をまとめるよ</title>
-      <link>http://nobu666.com/2010/05/10/808.html</link>
+      <link>http://localhost:1313/2010/05/10/808.html</link>
       <pubDate>Mon, 10 May 2010 01:14:41 +0900</pubDate>
       
-      <guid>http://nobu666.com/2010/05/10/808.html</guid>
+      <guid>http://localhost:1313/2010/05/10/808.html</guid>
       <description>&lt;p&gt;太陽光発電のシステム一式+エコキュート導入で、我が家をオール電化にすることにしました。試算の結果をまとめておくので、どこかの誰かの参考になれば。&lt;/p&gt;
 
 &lt;p&gt;&lt;h2&gt;我が家の屋根の状況&lt;/h2&gt;
@@ -478,10 +478,10 @@ text.replace(/(https?:\/\/(?:[^!&amp;quot;#$%&amp;amp;amp;&amp;rsquo;()&lt;em&gt
     
     <item>
       <title>山手トンネルウォーク行ってきた</title>
-      <link>http://nobu666.com/2010/03/09/804.html</link>
+      <link>http://localhost:1313/2010/03/09/804.html</link>
       <pubDate>Tue, 09 Mar 2010 23:51:23 +0900</pubDate>
       
-      <guid>http://nobu666.com/2010/03/09/804.html</guid>
+      <guid>http://localhost:1313/2010/03/09/804.html</guid>
       <description>&lt;p&gt;雨模様の中、山手トンネルウォーク行ってきました。もうすぐ高速道路として運用開始なので、歩ける最後のチャンス!ということで参加してきた。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://farm5.static.flickr.com/4018/4420061712_a44c1b4a73.jpg&#34; alt=&#34;&#34; /&gt;&lt;br/&gt;
@@ -498,10 +498,10 @@ text.replace(/(https?:\/\/(?:[^!&amp;quot;#$%&amp;amp;amp;&amp;rsquo;()&lt;em&gt
     
     <item>
       <title>2009年まとめ</title>
-      <link>http://nobu666.com/2009/12/31/800.html</link>
+      <link>http://localhost:1313/2009/12/31/800.html</link>
       <pubDate>Thu, 31 Dec 2009 01:49:09 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/12/31/800.html</guid>
+      <guid>http://localhost:1313/2009/12/31/800.html</guid>
       <description>&lt;p&gt;今年もあと22時間くらいでお終いと言うことで、例によって実家から今年のまとめをば。世間一般的な今年の出来事と言えば、政権交代・WBC連覇・イチローの9年連続200本安打・芸能界薬物汚染・新型インフルエンザ・オバマ政権発足・GMとクライスラーの経営破綻・ドバイショック・相次ぐアーティストの訃報、といったニュースがぱっと思いつく。&lt;/p&gt;
 
 &lt;p&gt;んで我が家のニュースと言えば、家を買って引っ越したことくらいで、それ以外はあんまないなぁ…というかそれだけで十分なインパクトのある出来事ではあったのだけど。&lt;/p&gt;
@@ -514,10 +514,10 @@ text.replace(/(https?:\/\/(?:[^!&amp;quot;#$%&amp;amp;amp;&amp;rsquo;()&lt;em&gt
     
     <item>
       <title>新築一戸建てを買って思ったこと</title>
-      <link>http://nobu666.com/2009/11/23/798.html</link>
+      <link>http://localhost:1313/2009/11/23/798.html</link>
       <pubDate>Mon, 23 Nov 2009 02:27:35 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/11/23/798.html</guid>
+      <guid>http://localhost:1313/2009/11/23/798.html</guid>
       <description>&lt;p&gt;眠れないのでまとめておく。&lt;/p&gt;
 
 &lt;p&gt;買って良かったこと
@@ -549,10 +549,10 @@ text.replace(/(https?:\/\/(?:[^!&amp;quot;#$%&amp;amp;amp;&amp;rsquo;()&lt;em&gt
     
     <item>
       <title>家を買いました</title>
-      <link>http://nobu666.com/2009/07/03/786.html</link>
+      <link>http://localhost:1313/2009/07/03/786.html</link>
       <pubDate>Fri, 03 Jul 2009 01:13:25 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/07/03/786.html</guid>
+      <guid>http://localhost:1313/2009/07/03/786.html</guid>
       <description>&lt;p&gt;念願のマイホームを手に入れたぞ!&lt;/p&gt;
 
 &lt;p&gt;ということで買いました、一軒家。とにかく東京の家は隣と近すぎて、それだけは嫁が嫌だというのでそこは拘って選んだ。通勤時間もDoor2Doorで1時間以内なら、多少駅から遠くてもいいことにした。&lt;/p&gt;

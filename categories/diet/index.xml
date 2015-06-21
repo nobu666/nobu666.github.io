@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Diet on Real Beat</title>
-    <link>http://nobu666.com/categories/diet.html</link>
+    <link>http://localhost:1313/categories/diet.html</link>
     <description>Recent content in Diet on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Wed, 03 Jun 2009 23:34:21 +0900</lastBuildDate>
-    <atom:link href="http://nobu666.com/categories/diet.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/diet.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>便乗ダイエット</title>
-      <link>http://nobu666.com/2009/06/03/774.html</link>
+      <link>http://localhost:1313/2009/06/03/774.html</link>
       <pubDate>Wed, 03 Jun 2009 23:34:21 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/06/03/774.html</guid>
+      <guid>http://localhost:1313/2009/06/03/774.html</guid>
       <description>&lt;p&gt;腰が痛くなって縄跳びやめて以来、順調にお腹に肉が。体重もベスト体重から+7kgというひどい状況になってしまったところ、macchaが&lt;a href=&#34;http://midnightblue.jp/blog/2009/06/02/001319/&#34;&gt;ダイエットエントリ&lt;/a&gt;を挙げていたので便乗する。&lt;/p&gt;
 
 &lt;p&gt;とりあえず

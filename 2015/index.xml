@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2015s on Real Beat</title>
-    <link>http://nobu666.com/2015.html</link>
+    <link>http://localhost:1313/2015.html</link>
     <description>Recent content in 2015s on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 21 Jun 2015 00:00:00 +0900</lastBuildDate>
-    <atom:link href="http://nobu666.com/2015.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/2015.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>WordPressからGitHub Pages &#43; hugoに移行した</title>
-      <link>http://nobu666.com/2015/06/21/1015.html</link>
+      <link>http://localhost:1313/2015/06/21/1015.html</link>
       <pubDate>Sun, 21 Jun 2015 00:00:00 +0900</pubDate>
       
-      <guid>http://nobu666.com/2015/06/21/1015.html</guid>
+      <guid>http://localhost:1313/2015/06/21/1015.html</guid>
       <description>
 
 &lt;h1 id=&#34;wordpressからgithub-pages-hugoに移行した:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;WordPressからGitHub Pages + hugoに移行した&lt;/h1&gt;
@@ -100,10 +100,10 @@
     
     <item>
       <title>SmartNewsにjoinしました</title>
-      <link>http://nobu666.com/2015/05/16/1014.html</link>
+      <link>http://localhost:1313/2015/05/16/1014.html</link>
       <pubDate>Sat, 16 May 2015 02:43:38 +0900</pubDate>
       
-      <guid>http://nobu666.com/2015/05/16/1014.html</guid>
+      <guid>http://localhost:1313/2015/05/16/1014.html</guid>
       <description>&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;サラリーマンに戻りました &lt;a href=&#34;http://t.co/5HLV3RtgyK&#34;&gt;pic.twitter.com/5HLV3RtgyK&lt;/a&gt;&lt;/p&gt;&amp;mdash; Nobutoshi Ogata (@nobu666) &lt;a href=&#34;https://twitter.com/nobu666/status/597587895541735425&#34;&gt;2015, 5月 11&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 
@@ -121,10 +121,10 @@
     
     <item>
       <title>猫を飼うときに買っておくといいもの</title>
-      <link>http://nobu666.com/2015/05/16/1012.html</link>
+      <link>http://localhost:1313/2015/05/16/1012.html</link>
       <pubDate>Sat, 16 May 2015 01:42:54 +0900</pubDate>
       
-      <guid>http://nobu666.com/2015/05/16/1012.html</guid>
+      <guid>http://localhost:1313/2015/05/16/1012.html</guid>
       <description>&lt;p&gt;某後輩が猫を飼い始めるようなので、俺が買ったものや、買ったら便利なものを紹介しておく。アフィカス。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B00EXINMZK/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;アイリスオーヤマ 砂落としマット付脱臭ネコトイレ ミルキーピンク SN-620&lt;/a&gt;

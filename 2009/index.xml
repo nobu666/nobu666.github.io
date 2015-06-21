@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2009s on Real Beat</title>
-    <link>http://nobu666.com/2009.html</link>
+    <link>http://localhost:1313/2009.html</link>
     <description>Recent content in 2009s on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Thu, 31 Dec 2009 01:49:09 +0900</lastBuildDate>
-    <atom:link href="http://nobu666.com/2009.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/2009.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>2009年まとめ</title>
-      <link>http://nobu666.com/2009/12/31/800.html</link>
+      <link>http://localhost:1313/2009/12/31/800.html</link>
       <pubDate>Thu, 31 Dec 2009 01:49:09 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/12/31/800.html</guid>
+      <guid>http://localhost:1313/2009/12/31/800.html</guid>
       <description>&lt;p&gt;今年もあと22時間くらいでお終いと言うことで、例によって実家から今年のまとめをば。世間一般的な今年の出来事と言えば、政権交代・WBC連覇・イチローの9年連続200本安打・芸能界薬物汚染・新型インフルエンザ・オバマ政権発足・GMとクライスラーの経営破綻・ドバイショック・相次ぐアーティストの訃報、といったニュースがぱっと思いつく。&lt;/p&gt;
 
 &lt;p&gt;んで我が家のニュースと言えば、家を買って引っ越したことくらいで、それ以外はあんまないなぁ…というかそれだけで十分なインパクトのある出来事ではあったのだけど。&lt;/p&gt;
@@ -27,10 +27,10 @@
     
     <item>
       <title>新築一戸建てを買って思ったこと</title>
-      <link>http://nobu666.com/2009/11/23/798.html</link>
+      <link>http://localhost:1313/2009/11/23/798.html</link>
       <pubDate>Mon, 23 Nov 2009 02:27:35 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/11/23/798.html</guid>
+      <guid>http://localhost:1313/2009/11/23/798.html</guid>
       <description>&lt;p&gt;眠れないのでまとめておく。&lt;/p&gt;
 
 &lt;p&gt;買って良かったこと
@@ -62,10 +62,10 @@
     
     <item>
       <title>jQuery &#43; jTemplatesを使って、setIntervalで定期的に新しいデータを取得し、要素の上に追加していく方法</title>
-      <link>http://nobu666.com/2009/11/22/793.html</link>
+      <link>http://localhost:1313/2009/11/22/793.html</link>
       <pubDate>Sun, 22 Nov 2009 17:43:39 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/11/22/793.html</guid>
+      <guid>http://localhost:1313/2009/11/22/793.html</guid>
       <description>&lt;p&gt;はまったので忘れないうちにメモ。&lt;/p&gt;
 
 &lt;p&gt;$(&amp;ldquo;#piyopiyo&amp;rdquo;).processTemplate(data) とかやると、id=&amp;ldquo;piyopiyo&amp;rdquo;な要素の内容が全部置き換わってしまうので、古いデータが消えてしまう。たとえばTwitterクライアントみたいなものを作ろうと思ったら、定期的に新しいtimelineをとってきたら、古いデータを残しつつ、新しいものだけ上に出てきてほしい。&lt;/p&gt;
@@ -106,10 +106,10 @@
     
     <item>
       <title>cmecab-javaとLuceneでMoreLikeThis</title>
-      <link>http://nobu666.com/2009/10/07/788.html</link>
+      <link>http://localhost:1313/2009/10/07/788.html</link>
       <pubDate>Wed, 07 Oct 2009 00:32:04 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/10/07/788.html</guid>
+      <guid>http://localhost:1313/2009/10/07/788.html</guid>
       <description>&lt;p&gt;類似検索やりたくて試したんだけどなんかうまくいかねーです。
 Lucene詳しいかた、教えてくだしあ＞＜&lt;/p&gt;
 
@@ -186,10 +186,10 @@ public static void main(String[] args) {
     
     <item>
       <title>家を買いました</title>
-      <link>http://nobu666.com/2009/07/03/786.html</link>
+      <link>http://localhost:1313/2009/07/03/786.html</link>
       <pubDate>Fri, 03 Jul 2009 01:13:25 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/07/03/786.html</guid>
+      <guid>http://localhost:1313/2009/07/03/786.html</guid>
       <description>&lt;p&gt;念願のマイホームを手に入れたぞ!&lt;/p&gt;
 
 &lt;p&gt;ということで買いました、一軒家。とにかく東京の家は隣と近すぎて、それだけは嫁が嫌だというのでそこは拘って選んだ。通勤時間もDoor2Doorで1時間以内なら、多少駅から遠くてもいいことにした。&lt;/p&gt;
@@ -204,10 +204,10 @@ public static void main(String[] args) {
     
     <item>
       <title>カメラ持って散歩</title>
-      <link>http://nobu666.com/2009/06/21/781.html</link>
+      <link>http://localhost:1313/2009/06/21/781.html</link>
       <pubDate>Sun, 21 Jun 2009 02:15:53 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/06/21/781.html</guid>
+      <guid>http://localhost:1313/2009/06/21/781.html</guid>
       <description>&lt;p&gt;涼しくなってきた夕方から、カメラを持ってブラブラと近所を散歩した。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/nobu666/3643001515/&#34; title=&#34;IMG_0003 by nobu_666_jp, on Flickr&#34;&gt;&lt;img src=&#34;http://farm3.static.flickr.com/2282/3643001515_349c1a8a0b.jpg&#34; width=&#34;500&#34; height=&#34;333&#34; alt=&#34;IMG_0003&#34; /&gt;&lt;/a&gt;
@@ -222,10 +222,10 @@ public static void main(String[] args) {
     
     <item>
       <title>EOS Kiss X2を手に入れた!</title>
-      <link>http://nobu666.com/2009/06/19/779.html</link>
+      <link>http://localhost:1313/2009/06/19/779.html</link>
       <pubDate>Fri, 19 Jun 2009 00:22:02 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/06/19/779.html</guid>
+      <guid>http://localhost:1313/2009/06/19/779.html</guid>
       <description>&lt;p&gt;出ないと思っていたボーナスが出たので、念願のデジタル一眼デビューしました。軽さを重視して、Kiss Xシリーズに。X3にしようかと思ったけど、デジ一の先人に「ボディはシャッターの寿命がくるのでいずれ買い換えるけど、レンズは使い回せる」と言われたので、X2に落としてWズームレンズキットにしました。ついでにせっかくのデジ一だしということで、シグマ 30mm F1.4 EX DCも併せて購入。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/nobu666/3638079161/&#34; title=&#34;RIMG0012 by nobu_666_jp, on Flickr&#34;&gt;&lt;img src=&#34;http://farm3.static.flickr.com/2482/3638079161_38c84c081a.jpg&#34; width=&#34;500&#34; height=&#34;375&#34; alt=&#34;RIMG0012&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -246,10 +246,10 @@ public static void main(String[] args) {
     
     <item>
       <title>PS3用にDLNAサーバMediatombを入れる</title>
-      <link>http://nobu666.com/2009/06/15/776.html</link>
+      <link>http://localhost:1313/2009/06/15/776.html</link>
       <pubDate>Mon, 15 Jun 2009 13:24:05 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/06/15/776.html</guid>
+      <guid>http://localhost:1313/2009/06/15/776.html</guid>
       <description>&lt;p&gt;先日気がついたらPS3を買っており、バイオハザードで恐ろしい目にあったり、まいにちいっしょで和んだりしております。&lt;/p&gt;
 
 &lt;p&gt;PS3でもう少し便利に遊ぶため、mediatombでDLNAサーバをたてる。emerge mediatombして依存関係諸々入れる。とりあえずこれだけでもいいのだが、これだと最新の0.12.0が入ってくれないので、一端emerge -C mediatombしてソースから入れる。&lt;/p&gt;
@@ -274,10 +274,10 @@ mysql&amp;gt; exit;
     
     <item>
       <title>便乗ダイエット</title>
-      <link>http://nobu666.com/2009/06/03/774.html</link>
+      <link>http://localhost:1313/2009/06/03/774.html</link>
       <pubDate>Wed, 03 Jun 2009 23:34:21 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/06/03/774.html</guid>
+      <guid>http://localhost:1313/2009/06/03/774.html</guid>
       <description>&lt;p&gt;腰が痛くなって縄跳びやめて以来、順調にお腹に肉が。体重もベスト体重から+7kgというひどい状況になってしまったところ、macchaが&lt;a href=&#34;http://midnightblue.jp/blog/2009/06/02/001319/&#34;&gt;ダイエットエントリ&lt;/a&gt;を挙げていたので便乗する。&lt;/p&gt;
 
 &lt;p&gt;とりあえず
@@ -299,10 +299,10 @@ mysql&amp;gt; exit;
     
     <item>
       <title>CFW5.00M33でPlayStation Storeのゲームを起動する</title>
-      <link>http://nobu666.com/2009/05/07/772.html</link>
+      <link>http://localhost:1313/2009/05/07/772.html</link>
       <pubDate>Thu, 07 May 2009 02:40:01 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/05/07/772.html</guid>
+      <guid>http://localhost:1313/2009/05/07/772.html</guid>
       <description>&lt;p&gt;PCでダウンロードするやり方だと、もろ最新のFW5.5を要求されるのと、そもそもWindowsじゃないと駄目。幸いPSPから直接PlayStation Storeいけるので、そこでゲーム買うなり体験版を落とすなりする。で、起動しようとすると、FWを5.02以上にしろと怒られて起動できない。FF7を1500円で買い、1.7GBものデータをダウンロードしたってのに!!&lt;/p&gt;
 
 &lt;p&gt;悔しいのでどうにかするため、以下のものを用意する。
@@ -329,10 +329,10 @@ mysql&amp;gt; exit;
     
     <item>
       <title>GW1日目</title>
-      <link>http://nobu666.com/2009/05/02/770.html</link>
+      <link>http://localhost:1313/2009/05/02/770.html</link>
       <pubDate>Sat, 02 May 2009 23:50:28 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/05/02/770.html</guid>
+      <guid>http://localhost:1313/2009/05/02/770.html</guid>
       <description>&lt;p&gt;やっと俺にもGWがはじまた。&lt;/p&gt;
 
 &lt;p&gt;溜まってた洗濯物をやっつけるため、嫁を見送ってすぐに洗濯開始。録画してあった咲とけいおん観ながら5回ほど回してすべての洗濯物をやっつける。天気がいいのでシーツやタオルケットまで全部やっつけた。ベランダに干しきれなくなったので、朝一で干したやつで乾いているものは取り込んでからじゃないと干せないとかいう状況に…まぁサクサク乾いて大変良い感じですな。&lt;/p&gt;
@@ -345,10 +345,10 @@ mysql&amp;gt; exit;
     
     <item>
       <title>例の後輩の件</title>
-      <link>http://nobu666.com/2009/05/01/768.html</link>
+      <link>http://localhost:1313/2009/05/01/768.html</link>
       <pubDate>Fri, 01 May 2009 00:57:14 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/05/01/768.html</guid>
+      <guid>http://localhost:1313/2009/05/01/768.html</guid>
       <description>&lt;p&gt;微妙に眠れないので書いとくか。&lt;/p&gt;
 
 &lt;p&gt;どうしようか悩みながらも、最近少しいい方向に進んできつつあるかな?と特に根拠もなく、なんとなくそう思っていたんだけど、気のせいでした。ｻｰｾﾝｗ&lt;/p&gt;
@@ -361,10 +361,10 @@ mysql&amp;gt; exit;
     
     <item>
       <title>後輩の指導が難しい</title>
-      <link>http://nobu666.com/2009/04/14/766.html</link>
+      <link>http://localhost:1313/2009/04/14/766.html</link>
       <pubDate>Tue, 14 Apr 2009 23:52:00 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/04/14/766.html</guid>
+      <guid>http://localhost:1313/2009/04/14/766.html</guid>
       <description>&lt;p&gt;もう3年目になるはずの子が部下にいるのですが、なかなか扱いに困っています。まったくの未経験で会社に入ってきたのが2人いた年で、その片割れは最近までやっぱりの俺の部下でした。こちらは単に俺と相性が良かったのか、それとも才能があったのかわかりませんが、まぁ周りが心配するほど特に困ったことはなく、そこそこ一人前に勘定できる仕事はするようになってくれて、今は俺とは違う仕事をしています。&lt;/p&gt;
 
 &lt;p&gt;なんかその流れで「じゃーこっちも面倒見てよ」的な感じで一緒に仕事を始めたのですが、どうしたものか。なんつーか、負け犬根性が染みついてる感じ?口にこそ出さないけど、「どーせ俺なんか」って思ってるのが伝わってくるっつーか。まぁこれについては成功体験させてあげればいいだけな気がするので、どうにかなるような気がするんだけども、あまりにも考えることを放棄してるのが問題なんだな。&lt;/p&gt;
@@ -381,10 +381,10 @@ mysql&amp;gt; exit;
     
     <item>
       <title>氷塊</title>
-      <link>http://nobu666.com/2009/04/14/764.html</link>
+      <link>http://localhost:1313/2009/04/14/764.html</link>
       <pubDate>Tue, 14 Apr 2009 23:20:27 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/04/14/764.html</guid>
+      <guid>http://localhost:1313/2009/04/14/764.html</guid>
       <description>&lt;p&gt;最近冷凍庫に霜がついてるなーと思っていたら、ついにしっかりと閉まらなくなってました。なんか奥の方に、霜どころかすげー巨大な氷塊ができあがっており、ドライヤーである程度溶かして、ナイフでごりごりすると取れました。&lt;/p&gt;
 
 &lt;p&gt;写真撮っておけばよかったな。厚さ3cmくらい、重さ1kgくらいあるような、でかい氷塊が取れました…なんか零したのかなぁ。普通に使っててあんなことにはならないような。長いこと使ってるようなものならまだしも、使い始めて1年くらいだからね。びっくりしたぜ。&lt;/p&gt;
@@ -393,13 +393,13 @@ mysql&amp;gt; exit;
     
     <item>
       <title>モンハンデータ消えてやり直し中</title>
-      <link>http://nobu666.com/2009/03/16/760.html</link>
+      <link>http://localhost:1313/2009/03/16/760.html</link>
       <pubDate>Mon, 16 Mar 2009 13:30:46 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/03/16/760.html</guid>
+      <guid>http://localhost:1313/2009/03/16/760.html</guid>
       <description>&lt;p&gt;CFW色々弄ってるうちにデータ全消えしてしまい、最初からやり直し中…&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://nobu666.com/images/2009/03/snap001.bmp&#34; alt=&#34;使用武器頻度&#34; title=&#34;使用武器頻度&#34; class=&#34;alignnone size-full wp-image-761&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/2009/03/snap001.bmp&#34; alt=&#34;使用武器頻度&#34; title=&#34;使用武器頻度&#34; class=&#34;alignnone size-full wp-image-761&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;村は☆4まで全部終わり、それ以外はキークエ＋α。集会所はキークエのみで下位は終わった。訓練所は増弾のピアスまで取った。とりあえず村下位クエ全部やって、村上位キークエからやってく感じか。釣りクエとか採取クエがめんどい…&lt;/p&gt;
 </description>
