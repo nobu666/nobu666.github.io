@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>WordPressからGitHub Pages &#43; hugoに移行した</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link href="" rel="alternate" type="application/rss+xml" title="Real Beat" />
+  <link href="http://localhost:1313//css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://localhost:1313//css/hc.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  
+    
+    </head>
+    <body>
+<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
+      <div id = "wrapper">
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <p class="navbar-brand">Real Beat</p>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+					
+					
+					<li><a href="http://localhost:1313//">Home </a></li>
+					
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+       
+       <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+					<img src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" />
+          <li class="sidebar-brand"><a href="http://localhost:1313//"><h1 class="brand">Real Beat</h1></a><h3></h3></li>
+          <hr />
+					
+						<li><a href="http://localhost:1313//">Home </a></li>
+					
+          <hr />
+          <div id="social-wrapper">
+           <li> <a href="https://twitter.com/nobu666"><i class="fa fa-twitter-square"></i> @twitter</a></li>
+           
+           <li> <a href="https://www.facebook.com/nobutoshi.ogata"><i class="fa fa-facebook-square"></i> facebook</a></li>
+           <li> <a href="https://github.com/nobu666"><i class="fa fa-github-square"></i> github</a> </li>
+         </div>
+       </ul>
+     </div>
+
+
+
+     <div class="container">
+
+
+  <div id="article">
+   <div class="article-title">WordPressからGitHub Pages &#43; hugoに移行した</div>
+   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2015-06-21</small></p> <hr/>
+   <div class="post">
+     
+
+<h1 id="wordpressからgithub-pages-hugoに移行した:ba6f5a981bdff4ffd1776fc8905f369b">WordPressからGitHub Pages + hugoに移行した</h1>
+
+<p>WordPressでずっと運用してきたのだけど、PHPやWordPressの脆弱性の多さにつかれたのと、そろそろVPS自体管理するの辞めたいと思っていたので、static site generatorであるところのHugoを使ってGithub Pagesで運用することにしました。</p>
+
+<p><a href="http://gohugo.io/">Hugo :: A fase and modern static website engine</a></p>
+
+<ul>
+<li>CLIだけで操作できて素晴らしい</li>
+<li>サーバの管理から開放されて素晴らしい</li>
+<li>Markdownで書けて素晴らしい</li>
+</ul>
+
+<p>static site generatorは上記の点が素晴らしいのですが、Jekyll・Octopress・Middlemanなどいくつも選択肢がある中でHugoを選んだ理由は</p>
+
+<ul>
+<li>純粋にgolang使いたかった</li>
+<li>ファイルの生成がすごい速い</li>
+<li>ローカルでserver立ち上げて、ファイル更新すると勝手にリロードするところまで面倒みてくれる</li>
+</ul>
+
+<p>というところ。ただデメリットもあって、まだイマイチマイナーなため、themeの数が少ないです。あと単純に-t hogehogeでtheme選ぶだけではERROR出て動かないことがままあります。</p>
+
+<h2 id="install:ba6f5a981bdff4ffd1776fc8905f369b">install</h2>
+
+<p>Macなら <code>brew install hugo</code> で一発です</p>
+
+<h2 id="作業ディレクトリの作成:ba6f5a981bdff4ffd1776fc8905f369b">作業ディレクトリの作成</h2>
+
+<p><code>hugo new site nobu666.com</code> を適当な場所で作ります。</p>
+
+<h2 id="themeを選ぶ:ba6f5a981bdff4ffd1776fc8905f369b">themeを選ぶ</h2>
+
+<p><code>git clone --recursive https://github.com/spf13/hugoThemes.git themes</code> で一括で持ってこれます。が、ここにはないthemeを公開してる人もいるので、好きなのが決まってればそれを<code>themes/</code> の下に<code>git clone</code>してくればいいです</p>
+
+<h2 id="wordpressからimport:ba6f5a981bdff4ffd1776fc8905f369b">Wordpressからimport</h2>
+
+<p><a href="https://gist.github.com/rakuishi/3163f6e8c5a496329bc7">wp-xml-hugo-import.rb</a>をまるっと拝借して、WordPressからexportしたxmlを変換します。自分のblogではpermalinkが<code>yyyy/mm/dd/post_id.html</code>だったので、それに合わせてslugの指定を削除したり、ソースコードの部分を<code>[sourcecode][/sourcecode]</code>で囲んで書いていたのでそこをmarkdownに書き換える処理を入れたりしました。あとtitleに <code>&quot;</code> が入ってるとparse errorになってしまうので、 <code>\&quot;</code> に置換しておきます。</p>
+
+<h2 id="画像を持ってくる:ba6f5a981bdff4ffd1776fc8905f369b">画像を持ってくる</h2>
+
+<p>既存のサイトの<code>wp-contents/uploads</code>から、ローカルの<code>static/images</code>にscpなりなんなりで持ってきます。</p>
+
+<h2 id="ローカルで起動:ba6f5a981bdff4ffd1776fc8905f369b">ローカルで起動</h2>
+
+<p><code>hugo server -t テーマの名前 -D -w</code>でローカル環境が起動します。 <code>http://localhost:1313</code>をブラウザで開いて動作確認しましょう。サイト名とかslug使わないで.htmlにしたいとか、そういうのはconfig.tomlで設定します。残念ながらconfig.tomlの変更はライブリロード対応してないので、変更したら立ち上げ直す必要があります。自分の場合はslug使っていなかったので、<code>uglyurls = true</code>はとりあえず必須でした。</p>
+
+<h2 id="公開用のファイルを生成する:ba6f5a981bdff4ffd1776fc8905f369b">公開用のファイルを生成する</h2>
+
+<p><code>hugo -t テーマの名前</code>でファイルが生成されます。</p>
+
+<h2 id="公開する:ba6f5a981bdff4ffd1776fc8905f369b">公開する</h2>
+
+<p>publicディレクトリで<code>git init</code>とかごにょごにょして<code>アカウント名.github.io</code>なリポジトリにpushします。基本的にはこれでおしまい。</p>
+
+<h2 id="独自ドメインでgithub-pagesを使う:ba6f5a981bdff4ffd1776fc8905f369b">独自ドメインでGitHub Pagesを使う</h2>
+
+<p>subdomainありかなしかでやることが違います。
+- subdomainありの場合
+ - DNSでCNAMEレコードを追加
+ - publicディレクトリにCNAMEファイルを作成してpush
+- subdomainなし(Zone Apex)の場合
+ - DNSのAレコードを以下の2つ追加
+  - 192.30.252.153
+  - 192.30.252.154
+ - publicディレクトリにCNAMEファイルを作成してpush</p>
+
+<h2 id="今後の方針:ba6f5a981bdff4ffd1776fc8905f369b">今後の方針</h2>
+
+<p><a href="http://gohugo.io/tutorials/automated-deployments">本家のチュートリアルに従って</a>Wercker使ってpushしたらそのまま公開される仕組みにしたい。</p>
+
+   </div>
+ </div>
+
+
+ <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+ <ul class="pager">
+     
+      &nbsp;<li class="next"><a href="http://localhost:1313/2015/05/16/1014.html"> SmartNewsにjoinしました</a></li>
+</ul>
+
+
+
+    </ul>
+    </div>
+    <footer>
+
+        <p class="text-muted credit">&copy; . All rights reserved. </p>
+    </footer>
+ 
+    <script src="/js/jquery-1.10.2.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/hc.js"></script>
+<script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+
+</html>
+
