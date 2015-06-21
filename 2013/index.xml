@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2013s on Real Beat</title>
-    <link>http://localhost:1313/2013.html</link>
+    <link>http://nobu666.com/2013.html</link>
     <description>Recent content in 2013s on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 07 Apr 2013 16:31:17 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/2013.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://nobu666.com/2013.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>ScalaでProject Euler</title>
-      <link>http://localhost:1313/2013/04/07/996.html</link>
+      <link>http://nobu666.com/2013/04/07/996.html</link>
       <pubDate>Sun, 07 Apr 2013 16:31:17 +0900</pubDate>
       
-      <guid>http://localhost:1313/2013/04/07/996.html</guid>
+      <guid>http://nobu666.com/2013/04/07/996.html</guid>
       <description>&lt;iframe src=&#34;http://rcm-jp.amazon.co.jp/e/cm?t=realbeat-22&amp;o=9&amp;p=8&amp;l=as1&amp;asins=4844330845&amp;ref=qf_sp_asin_til&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;m=amazon&amp;lc1=0000FF&amp;bc1=000000&amp;bg1=FFFFFF&amp;f=ifr&#34; style=&#34;width:120px;height:240px;&#34; scrolling=&#34;no&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;最近&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4844330845/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4844330845&amp;linkCode=as2&amp;tag=realbeat-22&#34; title=&#34;Scalaスケーラブルプログラミング第2版&#34;&gt;コップ本&lt;/a&gt;一回読んだまま放置していたScalaをまた始めたので、とりあえず習うより慣れろの方針で&lt;a href=&#34;http://projecteuler.net/&#34; title=&#34;Project Euler&#34;&gt;Project Euler&lt;/a&gt;始めた。数学をかなり忘れているので、アルゴリズムを調べながらまったり進めようかと。コードは&lt;a href=&#34;https://github.com/nobu666/Euler-Scala&#34; title=&#34;github.com/nobu666/Euler-Scala&#34;&gt;github&lt;/a&gt;にまとめていく所存。&lt;/p&gt;
@@ -23,10 +23,10 @@
     
     <item>
       <title>Solr勉強会第10回で話をしてきました</title>
-      <link>http://localhost:1313/2013/03/27/991.html</link>
+      <link>http://nobu666.com/2013/03/27/991.html</link>
       <pubDate>Wed, 27 Mar 2013 01:53:18 +0900</pubDate>
       
-      <guid>http://localhost:1313/2013/03/27/991.html</guid>
+      <guid>http://nobu666.com/2013/03/27/991.html</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://atnd.org/events/37170&#34; title=&#34;Solr勉強会第10回&#34;&gt;Solr勉強会第10回&lt;/a&gt;に参加して、話をさせて頂きました。&lt;a href=&#34;https://twitter.com/johtani&#34; title=&#34;@johtani&#34;&gt;@johtani&lt;/a&gt;さん、主催お疲れ様でした。また、会場を提供して頂き、ピザとビールをたらふくごちそうして頂いた&lt;a href=&#34;http://voyagegroup.com/&#34; title=&#34;VOYAGE GROUP&#34;&gt;VOYAGE GROUP&lt;/a&gt;様ありがとうございました。&lt;/p&gt;
 
 &lt;p&gt;発表させていただいた資料は以下になります。&lt;/p&gt;
@@ -45,10 +45,10 @@
     
     <item>
       <title>Chef11のchef-serverをHA構成にする</title>
-      <link>http://localhost:1313/2013/03/13/985.html</link>
+      <link>http://nobu666.com/2013/03/13/985.html</link>
       <pubDate>Wed, 13 Mar 2013 15:36:50 +0900</pubDate>
       
-      <guid>http://localhost:1313/2013/03/13/985.html</guid>
+      <guid>http://nobu666.com/2013/03/13/985.html</guid>
       <description>&lt;h1&gt;Chef11のchef-serverをHA構成にする&lt;/h1&gt;
 
 &lt;h2&gt;はじめに&lt;/h2&gt;
@@ -145,10 +145,10 @@ Primaryからdebファイルをscpするなりこっちでもwgetするなりし
     
     <item>
       <title>UbuntuにOpenGrokをinstall</title>
-      <link>http://localhost:1313/2013/03/05/974.html</link>
+      <link>http://nobu666.com/2013/03/05/974.html</link>
       <pubDate>Tue, 05 Mar 2013 14:36:15 +0900</pubDate>
       
-      <guid>http://localhost:1313/2013/03/05/974.html</guid>
+      <guid>http://nobu666.com/2013/03/05/974.html</guid>
       <description>&lt;p&gt;俺メモ&lt;/p&gt;
 
 &lt;p&gt;[sourcecode language=&amp;ldquo;bash&amp;rdquo;]
@@ -182,10 +182,10 @@ sudo -u tomcat7 OPENGROK_TOMCAT_BASE=/var/lib/tomcat7 opengrok-0.11/bin/OpenGrok
     
     <item>
       <title>ChefでRoleやRecipeを実行するとき渡すべき必須のattributesをチェックする</title>
-      <link>http://localhost:1313/2013/02/21/959.html</link>
+      <link>http://nobu666.com/2013/02/21/959.html</link>
       <pubDate>Thu, 21 Feb 2013 16:06:57 +0900</pubDate>
       
-      <guid>http://localhost:1313/2013/02/21/959.html</guid>
+      <guid>http://nobu666.com/2013/02/21/959.html</guid>
       <description>&lt;p&gt;例えばlvsを構築するときに、その下にぶら下がるreal serverたちのIPアドレスとかって、chef-client実行するときに-jオプション使ってjsonでattributes渡して欲しいわけですが、実際に実行する前に必須のものがなければ弾きたい、と思って色々ためした結果&lt;/p&gt;
 
 &lt;p&gt;Roleならjsonに、Recipeならattributes/default.rbに、&lt;strong&gt;required&lt;/strong&gt;とかそういう感じの名前でattributesを作って、そこに配列で指定必須のattributesを並べて書いておく。&lt;/p&gt;
@@ -229,10 +229,10 @@ test2
     
     <item>
       <title>ハサミを買ったら猛烈に感動したのでお前らもこれは体験するべき</title>
-      <link>http://localhost:1313/2013/01/14/954.html</link>
+      <link>http://nobu666.com/2013/01/14/954.html</link>
       <pubDate>Mon, 14 Jan 2013 02:17:49 +0900</pubDate>
       
-      <guid>http://localhost:1313/2013/01/14/954.html</guid>
+      <guid>http://nobu666.com/2013/01/14/954.html</guid>
       <description>&lt;p&gt;あけましておめでとうございます。&lt;/p&gt;
 
 &lt;p&gt;突然ですけどハサミ買ったんですハサミ。そしたらこれがあまりにいままでのハサミの概念を打ち破る、画期的というか革命的というか、とにかくたかがハサミでおじさん猛烈に感動したのでブログを書く次第です。&lt;/p&gt;

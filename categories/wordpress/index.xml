@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wordpress on Real Beat</title>
-    <link>http://localhost:1313/categories/wordpress.html</link>
+    <link>http://nobu666.com/categories/wordpress.html</link>
     <description>Recent content in Wordpress on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 27 Oct 2008 13:08:57 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/wordpress.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://nobu666.com/categories/wordpress.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>WordPressをAutoPagerizeとはてなスターに対応させる</title>
-      <link>http://localhost:1313/2008/10/27/646.html</link>
+      <link>http://nobu666.com/2008/10/27/646.html</link>
       <pubDate>Mon, 27 Oct 2008 13:08:57 +0900</pubDate>
       
-      <guid>http://localhost:1313/2008/10/27/646.html</guid>
+      <guid>http://nobu666.com/2008/10/27/646.html</guid>
       <description>&lt;p&gt;前のテーマは最初からAutoPagerizeに対応してたので気にしてなかったんだが、テーマ変えてから効かなくなってたので対応させた。ついでにはてスタも復活させた。&lt;/p&gt;
 
 &lt;p&gt;まずAutoPagerize対応。wp-includes/link-template.phpのfunction next_posts_link部分とfunction previous_posts_link部分に、rel=&amp;ldquo;next&amp;rdquo;を追加する。&lt;/p&gt;

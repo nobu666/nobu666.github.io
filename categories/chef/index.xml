@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Chef on Real Beat</title>
-    <link>http://localhost:1313/categories/chef.html</link>
+    <link>http://nobu666.com/categories/chef.html</link>
     <description>Recent content in Chef on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Wed, 13 Mar 2013 15:36:50 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/chef.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://nobu666.com/categories/chef.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Chef11のchef-serverをHA構成にする</title>
-      <link>http://localhost:1313/2013/03/13/985.html</link>
+      <link>http://nobu666.com/2013/03/13/985.html</link>
       <pubDate>Wed, 13 Mar 2013 15:36:50 +0900</pubDate>
       
-      <guid>http://localhost:1313/2013/03/13/985.html</guid>
+      <guid>http://nobu666.com/2013/03/13/985.html</guid>
       <description>&lt;h1&gt;Chef11のchef-serverをHA構成にする&lt;/h1&gt;
 
 &lt;h2&gt;はじめに&lt;/h2&gt;
@@ -111,10 +111,10 @@ Primaryからdebファイルをscpするなりこっちでもwgetするなりし
     
     <item>
       <title>UbuntuにOpenGrokをinstall</title>
-      <link>http://localhost:1313/2013/03/05/974.html</link>
+      <link>http://nobu666.com/2013/03/05/974.html</link>
       <pubDate>Tue, 05 Mar 2013 14:36:15 +0900</pubDate>
       
-      <guid>http://localhost:1313/2013/03/05/974.html</guid>
+      <guid>http://nobu666.com/2013/03/05/974.html</guid>
       <description>&lt;p&gt;俺メモ&lt;/p&gt;
 
 &lt;p&gt;[sourcecode language=&amp;ldquo;bash&amp;rdquo;]
@@ -148,10 +148,10 @@ sudo -u tomcat7 OPENGROK_TOMCAT_BASE=/var/lib/tomcat7 opengrok-0.11/bin/OpenGrok
     
     <item>
       <title>ChefでRoleやRecipeを実行するとき渡すべき必須のattributesをチェックする</title>
-      <link>http://localhost:1313/2013/02/21/959.html</link>
+      <link>http://nobu666.com/2013/02/21/959.html</link>
       <pubDate>Thu, 21 Feb 2013 16:06:57 +0900</pubDate>
       
-      <guid>http://localhost:1313/2013/02/21/959.html</guid>
+      <guid>http://nobu666.com/2013/02/21/959.html</guid>
       <description>&lt;p&gt;例えばlvsを構築するときに、その下にぶら下がるreal serverたちのIPアドレスとかって、chef-client実行するときに-jオプション使ってjsonでattributes渡して欲しいわけですが、実際に実行する前に必須のものがなければ弾きたい、と思って色々ためした結果&lt;/p&gt;
 
 &lt;p&gt;Roleならjsonに、Recipeならattributes/default.rbに、&lt;strong&gt;required&lt;/strong&gt;とかそういう感じの名前でattributesを作って、そこに配列で指定必須のattributesを並べて書いておく。&lt;/p&gt;
