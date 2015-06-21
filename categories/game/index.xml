@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Game on Real Beat</title>
-    <link>http://localhost:1313/categories/game.html</link>
+    <link>http://nobu666.com/categories/game.html</link>
     <description>Recent content in Game on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Mon, 15 Jun 2009 13:24:05 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/game.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://nobu666.com/categories/game.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>PS3用にDLNAサーバMediatombを入れる</title>
-      <link>http://localhost:1313/2009/06/15/0776.html</link>
+      <link>http://nobu666.com/2009/06/15/0776.html</link>
       <pubDate>Mon, 15 Jun 2009 13:24:05 +0900</pubDate>
       
-      <guid>http://localhost:1313/2009/06/15/0776.html</guid>
+      <guid>http://nobu666.com/2009/06/15/0776.html</guid>
       <description>&lt;p&gt;先日気がついたらPS3を買っており、バイオハザードで恐ろしい目にあったり、まいにちいっしょで和んだりしております。&lt;/p&gt;
 
 &lt;p&gt;PS3でもう少し便利に遊ぶため、mediatombでDLNAサーバをたてる。emerge mediatombして依存関係諸々入れる。とりあえずこれだけでもいいのだが、これだと最新の0.12.0が入ってくれないので、一端emerge -C mediatombしてソースから入れる。&lt;/p&gt;
@@ -38,13 +38,13 @@ mysql&amp;amp;gt; exit;
     
     <item>
       <title>モンハンデータ消えてやり直し中</title>
-      <link>http://localhost:1313/2009/03/16/0760.html</link>
+      <link>http://nobu666.com/2009/03/16/0760.html</link>
       <pubDate>Mon, 16 Mar 2009 13:30:46 +0900</pubDate>
       
-      <guid>http://localhost:1313/2009/03/16/0760.html</guid>
+      <guid>http://nobu666.com/2009/03/16/0760.html</guid>
       <description>&lt;p&gt;CFW色々弄ってるうちにデータ全消えしてしまい、最初からやり直し中…&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/2009/03/snap001.bmp&#34; alt=&#34;使用武器頻度&#34; title=&#34;使用武器頻度&#34; class=&#34;alignnone size-full wp-image-761&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://nobu666.com/images/2009/03/snap001.bmp&#34; alt=&#34;使用武器頻度&#34; title=&#34;使用武器頻度&#34; class=&#34;alignnone size-full wp-image-761&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;村は☆4まで全部終わり、それ以外はキークエ＋α。集会所はキークエのみで下位は終わった。訓練所は増弾のピアスまで取った。とりあえず村下位クエ全部やって、村上位キークエからやってく感じか。釣りクエとか採取クエがめんどい…&lt;/p&gt;
 </description>
@@ -52,10 +52,10 @@ mysql&amp;amp;gt; exit;
     
     <item>
       <title>相変わらずモンハンやってる</title>
-      <link>http://localhost:1313/2008/07/02/0631.html</link>
+      <link>http://nobu666.com/2008/07/02/0631.html</link>
       <pubDate>Wed, 02 Jul 2008 01:16:23 +0900</pubDate>
       
-      <guid>http://localhost:1313/2008/07/02/0631.html</guid>
+      <guid>http://nobu666.com/2008/07/02/0631.html</guid>
       <description>&lt;p&gt;PSPのスパロボ買ったりしつつも、結局モンハンやってる。270時間ほどやって、ようやくギルドカードがプラチナに。村クエ全部、集会所下位全部、上位ミラ系まで全部、G級キークエ全部＋ウカム＋あと何個かでプラチナになった。訓練所は特別訓練まで終わって、そろそろG級訓練やろうかどうしようか、というところ。&lt;/p&gt;
 
 &lt;p&gt;ギルカ的には村下位:128/村上位:74/集会下位:110/集会上位:121/集会G:79/トレジャー:4/訓練所:99で、武器別に見ると大剣:16/太刀:287/片手:10/双剣:12/ハンマー:12/狩猟笛:5/ランス:21/ガンランス:10/ライトボウガン:21/ヘビィボウガン:31/弓:24。基本太刀だけど、最近は楽な方に流れてモンスターによって武器を変えてる感じ。キリン・ディアブロスは片手、キリン・ディアブロス・ゲリョス・ラヴァ・ラオ・シェンはヘビィ、グラビモス・ラージャンは弓、トトスはライト、アカムとウカムはランス、ミラはガンスと弓、リオ夫妻・ザザミ・ギザミはハンマー、ナナ・テオは双剣、ティガは大剣。あとは大体太刀だけど、ナズチは双剣と悩むところ。トトスがライトなのは、金華朧銀の貫通2速射がいい感じだからってだけ。ラオ極＋自動装填があればヘビィなんだろうけど、まだ持ってないので。&lt;/p&gt;
@@ -72,10 +72,10 @@ mysql&amp;amp;gt; exit;
     
     <item>
       <title>新型PSP(PSP-2000)だけでFW3.80からCFWを入れる</title>
-      <link>http://localhost:1313/2008/06/02/0625.html</link>
+      <link>http://nobu666.com/2008/06/02/0625.html</link>
       <pubDate>Mon, 02 Jun 2008 12:53:16 +0900</pubDate>
       
-      <guid>http://localhost:1313/2008/06/02/0625.html</guid>
+      <guid>http://nobu666.com/2008/06/02/0625.html</guid>
       <description>&lt;p&gt;基本的にCFW導入のためにはパンドラバッテリー(ジグキックバッテリー + マジックメモリースティック(MMS))が必要。で、PSP-2000でジグキックバッテリーは作成できず、CFW導入済みのPSPがないといかん。つーことで終了なんだが、諦めるのはまだ早い。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/redirect.html%3FASIN=B0013XNGJ0%26tag=realbeat-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/B0013XNGJ0%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2&#34; target=&#34;_top&#34;&gt;PSP 2000対応　Tool Service Mode Battery （ＰＳＰ新機種対応）&lt;/a&gt;&lt;br /&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/redirect.html%3FASIN=B0013XNGJ0%26tag=realbeat-22%26lcode=xm2%26cID=2025%26ccmID=165953%26location=/o/ASIN/B0013XNGJ0%253FSubscriptionId=0G91FPYVW6ZGWBH4Y9G2&#34; target=&#34;_top&#34;&gt;&lt;img src=&#34;http://ecx.images-amazon.com/images/I/41qyNd10tWL._SL160_.jpg&#34; border=&#34;0&#34; alt=&#34;B0013XNGJ0&#34; /&gt;&lt;/a&gt;&lt;img src=&#39;http://www.assoc-amazon.jp/e/ir?t=realbeat-22&amp;l=ur2&amp;o=9&#39; width=&#39;1&#39; height=&#39;1&#39; border=&#39;0&#39; alt=&#39;dummy&#39; /&gt;&lt;br /&gt;&lt;/p&gt;
@@ -90,10 +90,10 @@ mysql&amp;amp;gt; exit;
     
     <item>
       <title>モンハン近況</title>
-      <link>http://localhost:1313/2008/05/27/0623.html</link>
+      <link>http://nobu666.com/2008/05/27/0623.html</link>
       <pubDate>Tue, 27 May 2008 18:04:27 +0900</pubDate>
       
-      <guid>http://localhost:1313/2008/05/27/0623.html</guid>
+      <guid>http://nobu666.com/2008/05/27/0623.html</guid>
       <description>&lt;p&gt;まだまだ遊んでます。そろそろ170時間ってところか。状況としては村下位は「最後の招待状」のみ残りだが今日中に終わらせる予定、村上位はナズチ・テオ・シェンやると「モンスターハンター」出現か。集会所のほうはHR8で止まり中。ボウガンやら弓やらハンマーやら作りたいのが色々あってのぅ。「最後の招待状」やったらボチボチとキークエやろうかというところ。ただ、ドドブラ亜種とヴォルガノスは見たことすらねー、ってのが不安なところではあるが。&lt;/p&gt;
 
 &lt;p&gt;「最後の招待状」は弓で行ってるんだが、なんせ今までは訓練所以外はこれが弓デビューに近いというにわかなんで。捕獲の見極めつけて、2匹目が出てくる前に1匹目は捕獲できる。が、2匹目に苦戦中。つーか1匹目も2匹目も体力同じはずなのに、なぜか連続パンチからのコンボで乙るんですな。アイシクルボウIがよくないのかも知れない。拡散矢だから、結構近寄らないとクリティカルでないんだ。でもにわかなので、拡散矢じゃないとちゃんと当たらない気がしないでもないんだが…ハンターボウ担いでクック行くしかないのか。&lt;/p&gt;
@@ -104,10 +104,10 @@ mysql&amp;amp;gt; exit;
     
     <item>
       <title>G.W.後半</title>
-      <link>http://localhost:1313/2008/05/07/0620.html</link>
+      <link>http://nobu666.com/2008/05/07/0620.html</link>
       <pubDate>Wed, 07 May 2008 00:52:57 +0900</pubDate>
       
-      <guid>http://localhost:1313/2008/05/07/0620.html</guid>
+      <guid>http://nobu666.com/2008/05/07/0620.html</guid>
       <description>&lt;p&gt;…まぁ想像通りゲーム三昧。たまたま一日だけ嫁（仮）の仕事が突如休みになったため、急遽家具を買いに。何を今更って感じなんだが、休みがあわないのでなかなかタイミングがなくてね。食事用のテーブル・座椅子・サイドボード・食器棚・和室の照明と買って10万で足りた。良い買い物をした。あとは化粧台とか姿見とかあればいいのかのぅ。&lt;/p&gt;
 
 &lt;p&gt;モンハンのほうはひたすら村上位。★9が残13/19。ディアブロス亜種*2とかグラビモス亜種*2とか残ってていやーんな感じ。集会所下位も全部終わらせたくて頑張ったんだが、カンタロス50匹とか熱石炭20個とか黄金魚8匹とか…考えた奴何なの馬鹿なの死ぬの。&lt;/p&gt;
@@ -118,10 +118,10 @@ mysql&amp;amp;gt; exit;
     
     <item>
       <title>G.W.前半</title>
-      <link>http://localhost:1313/2008/04/30/0619.html</link>
+      <link>http://nobu666.com/2008/04/30/0619.html</link>
       <pubDate>Wed, 30 Apr 2008 00:51:53 +0900</pubDate>
       
-      <guid>http://localhost:1313/2008/04/30/0619.html</guid>
+      <guid>http://nobu666.com/2008/04/30/0619.html</guid>
       <description>&lt;p&gt;まぁ予想通りモンハン三昧。4/25は誕生日だったのだけども、嫁（仮）実家にてご飯食べて、義弟（仮）と共にモンハンしてますた。お陰様でG級に。しかし実力的にはまだ上級なんで、地道に村で素材集め中。火竜の紅玉が出なくて、リオソウルUの頭と脚が出来ない。出なさすぎ。&lt;/p&gt;
 
 &lt;p&gt;とりあえず村クエ下位終わらせようと思ったら、ラージャン2頭とか無理。集会所で嫁（仮）と行ってみたけど、まるで勝てる気がしない。なにあのスーパーサイヤ人。何なの?馬鹿なの?死ぬの?ムービー見た感じ、近接よりボウガンとかのほうが楽そうなんで、ちょっと練習したいと思う。ボウガンで睡眠爆破が定番なのかし。&lt;/p&gt;
@@ -134,10 +134,10 @@ mysql&amp;amp;gt; exit;
     
     <item>
       <title>[MHP2G]流行っぷりにびっくり</title>
-      <link>http://localhost:1313/2008/04/16/0616.html</link>
+      <link>http://nobu666.com/2008/04/16/0616.html</link>
       <pubDate>Wed, 16 Apr 2008 16:09:32 +0900</pubDate>
       
-      <guid>http://localhost:1313/2008/04/16/0616.html</guid>
+      <guid>http://nobu666.com/2008/04/16/0616.html</guid>
       <description>&lt;p&gt;普通に本社でやってる奴らがいるようで、羨ましいぜこのやろう。あ、★7のフルフルは、火属性武器持って行ったら普通にやれた。まだ太刀でいけるぜ…しかし水属性1つも持ってないんだよな。&lt;/p&gt;
 
 &lt;p&gt;とりあえず集会所は1人じゃきつくなってきたので、まずは村を終わらせることにした。さっくり上位クエだして、★7終了。★8のヒプノック2頭も楽勝だったので、このままサクサク？と思ったらガルルガTUEEEEEEｗ 基本クックと同じだと思ってナメてたら、怒りノーモーションタックルであっさり3乙。もう面倒なので、今は睡眠片手剣を作るべく、ひたすらガノトトス狩り中。あと1回くらいでガノフィンスパイク完成かの。その後は上位トトスっぽ。ちょうどトトス出てくるクエは★8に4つあるし、ちょうど良かろう。&lt;/p&gt;
@@ -148,20 +148,20 @@ mysql&amp;amp;gt; exit;
     
     <item>
       <title>[MHP2G]集会所☆7のフルフルが倒せない</title>
-      <link>http://localhost:1313/2008/04/10/0614.html</link>
+      <link>http://nobu666.com/2008/04/10/0614.html</link>
       <pubDate>Thu, 10 Apr 2008 23:39:31 +0900</pubDate>
       
-      <guid>http://localhost:1313/2008/04/10/0614.html</guid>
+      <guid>http://nobu666.com/2008/04/10/0614.html</guid>
       <description>&lt;p&gt;亜種でもねー普通のやつなんだが、つえー…ていうか堅え…。やっぱ武器を早めに上位の奴にしないと無理が出てきたな。50分フルに戦って時間切れとかもうね…。大樽Gが1つあれば勝てたっぽいんだけどな、くそぅ。というより、いい加減太刀以外をちゃんと使えるようになれって話だな。先は長いな、ぉぃ…&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>MHP2G始めました</title>
-      <link>http://localhost:1313/2008/03/31/0605.html</link>
+      <link>http://nobu666.com/2008/03/31/0605.html</link>
       <pubDate>Mon, 31 Mar 2008 12:55:11 +0900</pubDate>
       
-      <guid>http://localhost:1313/2008/03/31/0605.html</guid>
+      <guid>http://nobu666.com/2008/03/31/0605.html</guid>
       <description>&lt;iframe src=&#34;http://rcm-jp.amazon.co.jp/e/cm?t=realbeat-22&amp;o=9&amp;p=8&amp;l=as1&amp;asins=B000WD6YZU&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;m=amazon&amp;lc1=0000FF&amp;bc1=000000&amp;bg1=FFFFFF&amp;f=ifr&#34; style=&#34;width:120px;height:240px;&#34; scrolling=&#34;no&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;土曜に嫁（仮）と義弟（仮）の3人で遊んだ。遊んだと言っても、前作で集会所の方を全然やってなかった俺のクエを、一方的に手伝って貰った、が正解なんだが。おかげさまで★4の残り少しと★5もキークエ全部終わり、無事に上位クエが出来るように。嫁（仮）がコタツで寝てしまった横で、「上位装備作った方がいい」ということでクックを延々と倒す作業までつきあってくれた。時間的に全部は無理だったけど、★6「挟撃のイャンクック！」数回、「牙獣たちの逆襲！」と「猪突猛進！ドスファンゴ」3回であらかた材料は揃った。あと「コンガの剛毛」があれば全パーツ揃うんだが、★6じゃコンガがいねー…卵取ったら配置変わるかな。&lt;/p&gt;
@@ -172,10 +172,10 @@ mysql&amp;amp;gt; exit;
     
     <item>
       <title>続・スーパーロボット大戦</title>
-      <link>http://localhost:1313/2005/11/14/0237.html</link>
+      <link>http://nobu666.com/2005/11/14/0237.html</link>
       <pubDate>Mon, 14 Nov 2005 01:49:12 +0900</pubDate>
       
-      <guid>http://localhost:1313/2005/11/14/0237.html</guid>
+      <guid>http://nobu666.com/2005/11/14/0237.html</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://nobu666.com/2005/11/09/000229&#34;&gt;前回&lt;/a&gt;の続き。ボチボチ進めて、ようやくアスキラの2人がミーティア取得、ラクスとバルトフェルドが仲間になるトコまで進めた。隠し機体を入手するため、仕方なく攻略サイトを拝見…って、なんかカガリとアストレイ3人娘の撃墜数合計が100以上、とか全然使ってなかったから無理！ZZの面々の撃墜数合計のもあったが、これはジュドーがMAP平気で大活躍しているので特に問題なく。&lt;/p&gt;
 
 &lt;p&gt;あとは撃墜数の末尾調整とか、そういうのも諸々あったので仕方なく全滅プレイ決行。エクセルで表を作って、1機撃墜するごとにカウント。めんどくさいがその甲斐あって、ノイエジール・白キュベレイ・ゲーマルク・ZZフルアーマーパーツ・ストライクルージュのIWSPと入手。白キュベレイにはカミーユ乗せてみたが、鬼強。カミーユの小隊長能力は反撃時の攻撃力20%アップなので、単機で突っ込ませておくだけで、次のターンには雑魚がいない。これは病み付きになる爽快感だ…。νガンダムでもできるんだけど、フィンファンネルが弾数制なのがなー（白キュベレイは消費EN10！）。&lt;/p&gt;
@@ -186,10 +186,10 @@ mysql&amp;amp;gt; exit;
     
     <item>
       <title>スーパーロボット大戦</title>
-      <link>http://localhost:1313/2005/11/09/0228.html</link>
+      <link>http://nobu666.com/2005/11/09/0228.html</link>
       <pubDate>Wed, 09 Nov 2005 02:08:28 +0900</pubDate>
       
-      <guid>http://localhost:1313/2005/11/09/0228.html</guid>
+      <guid>http://nobu666.com/2005/11/09/0228.html</guid>
       <description>&lt;p&gt;激しく今更なんだが、&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/redirect?link_code=ur2&amp;amp;camp=247&amp;amp;tag=realbeat-22&amp;amp;creative=1211&amp;amp;path=ASIN/B0009MZ1US&#34;&gt;第3次スーパーロボット大戦α&lt;/a&gt;&lt;img src=&#34;http://www.assoc-amazon.jp/e/ir?t=realbeat-22&amp;amp;l=ur2&amp;amp;o=9&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; /&gt;面白れぇ。超やばい。つか、忙しくて殆ど進められず、発売日に買った気がするのだがまだクリアしてない。&lt;/p&gt;
 
 &lt;p&gt;知らない人置いてけぼりにする気満々で書くけど、とりあえずSEED好き。なので、早い段階でストライクガンダムフル改造したら、キラ様の撃墜数が凄いことに。ジャスティス、バスター、ルージュとかも改造引き継ぎで最初からフル改造だったしな。でも撃墜数は3位だったりするのだが。1位はヒイロ君です。第2次のWゼロが鬼強だったが、今回もソコソコ。MAP兵器好きなので使いまくってたら、もうブッチギリで撃墜数トップな訳ですよ。何気にW系ではデュオが強い。移動後ALLが最強武器なのがでかいな。しかも理由はわからんが、デスサイズは敵に狙われやすい。加えてデュオの小隊長能力が「反撃時のダメージ＋20%」なもんで、デュオの癖に強い。後半になると攻撃力的に辛くなるのかも知れないが、ENフル改造＋デュオにEセーブでかなり使える。&lt;/p&gt;

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Javascript on Real Beat</title>
-    <link>http://localhost:1313/categories/javascript.html</link>
+    <link>http://nobu666.com/categories/javascript.html</link>
     <description>Recent content in Javascript on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 22 Nov 2009 17:43:39 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/javascript.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://nobu666.com/categories/javascript.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>jQuery &#43; jTemplatesを使って、setIntervalで定期的に新しいデータを取得し、要素の上に追加していく方法</title>
-      <link>http://localhost:1313/2009/11/22/0793.html</link>
+      <link>http://nobu666.com/2009/11/22/0793.html</link>
       <pubDate>Sun, 22 Nov 2009 17:43:39 +0900</pubDate>
       
-      <guid>http://localhost:1313/2009/11/22/0793.html</guid>
+      <guid>http://nobu666.com/2009/11/22/0793.html</guid>
       <description>&lt;p&gt;はまったので忘れないうちにメモ。&lt;/p&gt;
 
 &lt;p&gt;$(&amp;ldquo;#piyopiyo&amp;rdquo;).processTemplate(data) とかやると、id=&amp;ldquo;piyopiyo&amp;rdquo;な要素の内容が全部置き換わってしまうので、古いデータが消えてしまう。たとえばTwitterクライアントみたいなものを作ろうと思ったら、定期的に新しいtimelineをとってきたら、古いデータを残しつつ、新しいものだけ上に出てきてほしい。&lt;/p&gt;

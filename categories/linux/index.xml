@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Real Beat</title>
-    <link>http://localhost:1313/categories/linux.html</link>
+    <link>http://nobu666.com/categories/linux.html</link>
     <description>Recent content in Linux on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Wed, 27 Mar 2013 01:53:18 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/linux.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://nobu666.com/categories/linux.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Solr勉強会第10回で話をしてきました</title>
-      <link>http://localhost:1313/2013/03/27/0991.html</link>
+      <link>http://nobu666.com/2013/03/27/0991.html</link>
       <pubDate>Wed, 27 Mar 2013 01:53:18 +0900</pubDate>
       
-      <guid>http://localhost:1313/2013/03/27/0991.html</guid>
+      <guid>http://nobu666.com/2013/03/27/0991.html</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://atnd.org/events/37170&#34; title=&#34;Solr勉強会第10回&#34;&gt;Solr勉強会第10回&lt;/a&gt;に参加して、話をさせて頂きました。&lt;a href=&#34;https://twitter.com/johtani&#34; title=&#34;@johtani&#34;&gt;@johtani&lt;/a&gt;さん、主催お疲れ様でした。また、会場を提供して頂き、ピザとビールをたらふくごちそうして頂いた&lt;a href=&#34;http://voyagegroup.com/&#34; title=&#34;VOYAGE GROUP&#34;&gt;VOYAGE GROUP&lt;/a&gt;様ありがとうございました。&lt;/p&gt;
 
 &lt;p&gt;発表させていただいた資料は以下になります。&lt;/p&gt;
@@ -33,10 +33,10 @@
     
     <item>
       <title>SSH Port FowardでMySQLを使う</title>
-      <link>http://localhost:1313/2012/01/19/0931.html</link>
+      <link>http://nobu666.com/2012/01/19/0931.html</link>
       <pubDate>Thu, 19 Jan 2012 12:49:13 +0900</pubDate>
       
-      <guid>http://localhost:1313/2012/01/19/0931.html</guid>
+      <guid>http://nobu666.com/2012/01/19/0931.html</guid>
       <description>&lt;p&gt;気づいたら年が明けていますが俺は元気です。&lt;/p&gt;
 
 &lt;p&gt;タイトル通りなんだけど、あるMySQLサーバへつなぐためには踏み台を通らないといけなくて、いちいち&lt;/p&gt;
@@ -93,10 +93,10 @@ mysql&amp;amp;gt;
     
     <item>
       <title>ターミナル勉強会で話してきました</title>
-      <link>http://localhost:1313/2011/09/13/0927.html</link>
+      <link>http://nobu666.com/2011/09/13/0927.html</link>
       <pubDate>Tue, 13 Sep 2011 01:40:58 +0900</pubDate>
       
-      <guid>http://localhost:1313/2011/09/13/0927.html</guid>
+      <guid>http://nobu666.com/2011/09/13/0927.html</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://kokucheese.com/event/index/16461/&#34;&gt;http://kokucheese.com/event/index/16461/&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;一時はどうなることかと思いましたが、@Mr_K_O の活躍により無事LT枠も埋まり、盛況のうちに終わりました。関係者の方々、来てくださった方々ありがとうございました。&lt;/p&gt;

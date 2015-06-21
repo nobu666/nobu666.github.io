@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Memo on Real Beat</title>
-    <link>http://localhost:1313/categories/memo.html</link>
+    <link>http://nobu666.com/categories/memo.html</link>
     <description>Recent content in Memo on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Wed, 11 Mar 2009 17:33:44 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/memo.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://nobu666.com/categories/memo.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>manを実行すると &#34;WARNING: old character encoding and/or character set&#34; とエラーを吐く時の対処</title>
-      <link>http://localhost:1313/2009/03/11/0756.html</link>
+      <link>http://nobu666.com/2009/03/11/0756.html</link>
       <pubDate>Wed, 11 Mar 2009 17:33:44 +0900</pubDate>
       
-      <guid>http://localhost:1313/2009/03/11/0756.html</guid>
+      <guid>http://nobu666.com/2009/03/11/0756.html</guid>
       <description>&lt;p&gt;manを実行すると以下のようなエラーになることがある。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;XXX
@@ -28,20 +28,20 @@ XXX
     
     <item>
       <title>Scala 2.7.0-final</title>
-      <link>http://localhost:1313/2008/03/07/0576.html</link>
+      <link>http://nobu666.com/2008/03/07/0576.html</link>
       <pubDate>Fri, 07 Mar 2008 14:12:47 +0900</pubDate>
       
-      <guid>http://localhost:1313/2008/03/07/0576.html</guid>
+      <guid>http://nobu666.com/2008/03/07/0576.html</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.scala-lang.org/downloads/changes.html#v2.7.0-final&#34;&gt;Scala 2.7.0-final&lt;/a&gt;きてた。あとで入れる。&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>wordpressのformatterがキモいタグを生成するので、どうにかする - v2.3.3の場合</title>
-      <link>http://localhost:1313/2008/02/28/0568.html</link>
+      <link>http://nobu666.com/2008/02/28/0568.html</link>
       <pubDate>Thu, 28 Feb 2008 16:45:05 +0900</pubDate>
       
-      <guid>http://localhost:1313/2008/02/28/0568.html</guid>
+      <guid>http://nobu666.com/2008/02/28/0568.html</guid>
       <description>&lt;p&gt;前回の&lt;a href=&#34;http://nobu666.com/2008/02/22/562.html&#34;&gt;wordpressのformatterがキモいタグを生成するので、どうにかする&lt;/a&gt;はME2.2.3以外でpatchすると、管理画面で激しくwarningが出てエライことになる。ので、v2.3.3用のpatch。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;--- www/wp-includes/formatting.php.orig Thu Feb 28 16:37:29 2008
@@ -72,10 +72,10 @@ XXX
     
     <item>
       <title>wordpressのformatterがキモいタグを生成するので、どうにかする - ME2.2.3の場合</title>
-      <link>http://localhost:1313/2008/02/22/0562.html</link>
+      <link>http://nobu666.com/2008/02/22/0562.html</link>
       <pubDate>Fri, 22 Feb 2008 18:36:22 +0900</pubDate>
       
-      <guid>http://localhost:1313/2008/02/22/0562.html</guid>
+      <guid>http://nobu666.com/2008/02/22/0562.html</guid>
       <description>&lt;p&gt;&amp;lt;p&amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;とかいう謎タグが生成されて激しく気持ち悪いので、phpに手を入れる。&lt;a href=&#34;http://spring.sakurasaita.net/wordpress/25.html&#34;&gt;As You Like It ? Blog Archive ? WordPressのエディタとの付き合い方&lt;/a&gt;を参照して、その通りに書き換えるだけ。patchにしとく。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;--- formatting.php.org  Fri Feb 22 18:23:52 2008
@@ -109,10 +109,10 @@ XXX
     
     <item>
       <title>見た目と文字コード変えた</title>
-      <link>http://localhost:1313/2008/02/21/0560.html</link>
+      <link>http://nobu666.com/2008/02/21/0560.html</link>
       <pubDate>Thu, 21 Feb 2008 23:35:35 +0900</pubDate>
       
-      <guid>http://localhost:1313/2008/02/21/0560.html</guid>
+      <guid>http://nobu666.com/2008/02/21/0560.html</guid>
       <description>&lt;p&gt;そろそろ見てくれを変えてやろうと思って、そのついでにwordpressのバージョンアップ＋文字コードの変更。今時eucってのもあれなんで、ついでにutf-8化。&lt;/p&gt;
 &lt;code&gt;mysqldump -uroot -p -hHOST -q DATABASE &amp;gt; ./dumped.sql
 nkf -w --overwrite ./dumped.sql

@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Plagger on Real Beat</title>
-    <link>http://localhost:1313/categories/plagger.html</link>
+    <link>http://nobu666.com/categories/plagger.html</link>
     <description>Recent content in Plagger on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Fri, 08 Sep 2006 23:38:54 +0900</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/plagger.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://nobu666.com/categories/plagger.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>otsuneさんのはてなダイアリーを購読してるとPlaggerがこける問題は修正されたっぽ</title>
-      <link>http://localhost:1313/2006/09/08/0363.html</link>
+      <link>http://nobu666.com/2006/09/08/0363.html</link>
       <pubDate>Fri, 08 Sep 2006 23:38:54 +0900</pubDate>
       
-      <guid>http://localhost:1313/2006/09/08/0363.html</guid>
+      <guid>http://nobu666.com/2006/09/08/0363.html</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://nobu666.com/2006/08/23/000349.html/trackback/&#34;&gt;otsuneさんのはてなダイアリーを購読してるとPlaggerがこける&lt;/a&gt;件、&lt;a href=&#34;http://plagger.org/trac/changeset/1672&#34; target=&#34;_blank&#34;&gt;&lt;a href=&#34;http://plagger.org/trac/changeset/1672&#34;&gt;http://plagger.org/trac/changeset/1672&lt;/a&gt;&lt;/a&gt;修正されていました。単にnullチェック漏れだったっぽい。&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>なんかPlagger動いてないと思ったら、otsuneさんのはてなダイアリーを購読してるとPlaggerがこけるっぽい</title>
-      <link>http://localhost:1313/2006/08/23/0349.html</link>
+      <link>http://nobu666.com/2006/08/23/0349.html</link>
       <pubDate>Wed, 23 Aug 2006 01:15:15 +0900</pubDate>
       
-      <guid>http://localhost:1313/2006/08/23/0349.html</guid>
+      <guid>http://nobu666.com/2006/08/23/0349.html</guid>
       <description>&lt;p&gt;なんかgmailが寂しいと思ったので、LogLevelをdebugにして動かしてみたら以下のようになった。&lt;/p&gt;
 
 &lt;p&gt;&lt;code&gt;
