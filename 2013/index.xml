@@ -11,10 +11,10 @@
     
     <item>
       <title>ScalaでProject Euler</title>
-      <link>http://nobu666.com/2013/04/07/0996.html</link>
+      <link>http://nobu666.com/2013/04/07/996.html</link>
       <pubDate>Sun, 07 Apr 2013 16:31:17 +0900</pubDate>
       
-      <guid>http://nobu666.com/2013/04/07/0996.html</guid>
+      <guid>http://nobu666.com/2013/04/07/996.html</guid>
       <description>&lt;iframe src=&#34;http://rcm-jp.amazon.co.jp/e/cm?t=realbeat-22&amp;o=9&amp;p=8&amp;l=as1&amp;asins=4844330845&amp;ref=qf_sp_asin_til&amp;fc1=000000&amp;IS2=1&amp;lt1=_blank&amp;m=amazon&amp;lc1=0000FF&amp;bc1=000000&amp;bg1=FFFFFF&amp;f=ifr&#34; style=&#34;width:120px;height:240px;&#34; scrolling=&#34;no&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;最近&lt;a href=&#34;http://www.amazon.co.jp/gp/product/4844330845/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;camp=247&amp;creative=1211&amp;creativeASIN=4844330845&amp;linkCode=as2&amp;tag=realbeat-22&#34; title=&#34;Scalaスケーラブルプログラミング第2版&#34;&gt;コップ本&lt;/a&gt;一回読んだまま放置していたScalaをまた始めたので、とりあえず習うより慣れろの方針で&lt;a href=&#34;http://projecteuler.net/&#34; title=&#34;Project Euler&#34;&gt;Project Euler&lt;/a&gt;始めた。数学をかなり忘れているので、アルゴリズムを調べながらまったり進めようかと。コードは&lt;a href=&#34;https://github.com/nobu666/Euler-Scala&#34; title=&#34;github.com/nobu666/Euler-Scala&#34;&gt;github&lt;/a&gt;にまとめていく所存。&lt;/p&gt;
@@ -23,10 +23,10 @@
     
     <item>
       <title>Solr勉強会第10回で話をしてきました</title>
-      <link>http://nobu666.com/2013/03/27/0991.html</link>
+      <link>http://nobu666.com/2013/03/27/991.html</link>
       <pubDate>Wed, 27 Mar 2013 01:53:18 +0900</pubDate>
       
-      <guid>http://nobu666.com/2013/03/27/0991.html</guid>
+      <guid>http://nobu666.com/2013/03/27/991.html</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://atnd.org/events/37170&#34; title=&#34;Solr勉強会第10回&#34;&gt;Solr勉強会第10回&lt;/a&gt;に参加して、話をさせて頂きました。&lt;a href=&#34;https://twitter.com/johtani&#34; title=&#34;@johtani&#34;&gt;@johtani&lt;/a&gt;さん、主催お疲れ様でした。また、会場を提供して頂き、ピザとビールをたらふくごちそうして頂いた&lt;a href=&#34;http://voyagegroup.com/&#34; title=&#34;VOYAGE GROUP&#34;&gt;VOYAGE GROUP&lt;/a&gt;様ありがとうございました。&lt;/p&gt;
 
 &lt;p&gt;発表させていただいた資料は以下になります。&lt;/p&gt;
@@ -45,10 +45,10 @@
     
     <item>
       <title>Chef11のchef-serverをHA構成にする</title>
-      <link>http://nobu666.com/2013/03/13/0985.html</link>
+      <link>http://nobu666.com/2013/03/13/985.html</link>
       <pubDate>Wed, 13 Mar 2013 15:36:50 +0900</pubDate>
       
-      <guid>http://nobu666.com/2013/03/13/0985.html</guid>
+      <guid>http://nobu666.com/2013/03/13/985.html</guid>
       <description>&lt;h1&gt;Chef11のchef-serverをHA構成にする&lt;/h1&gt;
 
 &lt;h2&gt;はじめに&lt;/h2&gt;
@@ -145,35 +145,36 @@ Primaryからdebファイルをscpするなりこっちでもwgetするなりし
     
     <item>
       <title>UbuntuにOpenGrokをinstall</title>
-      <link>http://nobu666.com/2013/03/05/0974.html</link>
+      <link>http://nobu666.com/2013/03/05/974.html</link>
       <pubDate>Tue, 05 Mar 2013 14:36:15 +0900</pubDate>
       
-      <guid>http://nobu666.com/2013/03/05/0974.html</guid>
+      <guid>http://nobu666.com/2013/03/05/974.html</guid>
       <description>&lt;p&gt;俺メモ&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;sudo apt-get update
+&lt;p&gt;[sourcecode language=&amp;ldquo;bash&amp;rdquo;]
+sudo apt-get update
 sudo apt-get install openjdk-6-jdk
 sudo apt-get install tomcat7
-wget http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz
+wget &lt;a href=&#34;http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz&#34;&gt;http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz&lt;/a&gt;
 tar xf ctags-5.8.tar.gz
 cd ctags-5.8/
-./configure &amp;amp;amp;&amp;amp;amp; make &amp;amp;amp;&amp;amp;amp; sudo make install
+./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install
 cd ..
-wget http://hub.opensolaris.org/bin/download/Project+opengrok/files/opengrok-0.11.1.tar.gz
+wget &lt;a href=&#34;http://hub.opensolaris.org/bin/download/Project+opengrok/files/opengrok-0.11.1.tar.gz&#34;&gt;http://hub.opensolaris.org/bin/download/Project+opengrok/files/opengrok-0.11.1.tar.gz&lt;/a&gt;
 tar xf opengrok-0.11.1.tar.gz
-wget http://jflex.de/jflex-1.4.3.tar.gz
+wget &lt;a href=&#34;http://jflex.de/jflex-1.4.3.tar.gz&#34;&gt;http://jflex.de/jflex-1.4.3.tar.gz&lt;/a&gt;
 tar xf jflex-1.4.3.tar.gz
 cp jflex-1.4.3/lib/JFlex.jar opengrok-0.11.1/lib/lib/
-echo &amp;amp;quot;export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64&amp;amp;quot; &amp;amp;gt;&amp;amp;gt; .bashrc
-echo &amp;amp;quot;EXUBERANT_CTAGS=/usr/local/bin/ctags&amp;amp;quot; &amp;amp;gt;&amp;amp;gt; .bashrc
-sudo sed -i &amp;amp;quot;s/port=\&amp;amp;quot;8080\&amp;amp;quot;/port=\&amp;amp;quot;2424\&amp;amp;quot;/&amp;amp;quot; /etc/tomcat7/server.xml
+echo &amp;quot;export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64&amp;quot; &amp;gt;&amp;gt; .bashrc
+echo &amp;quot;EXUBERANT_CTAGS=/usr/local/bin/ctags&amp;quot; &amp;gt;&amp;gt; .bashrc
+sudo sed -i &amp;quot;s/port=&amp;amp;quot;8080&amp;amp;quot;/port=&amp;amp;quot;2424&amp;amp;quot;/&amp;quot; /etc/tomcat7/server.xml
 sudo /etc/init.d/tomcat restart
 sudo mkdir -p /var/opengrok/{etc,data,src}
 sudo chown -R tomcat7:tomcat7 /var/opengrok
-sudo chown -R `whoami`:`whoami` /var/opengrok/src
+sudo chown -R &lt;code&gt;whoami&lt;/code&gt;:&lt;code&gt;whoami&lt;/code&gt; /var/opengrok/src
 sudo -u tomcat7 opengrok-0.11/bin/OpenGrok index
 sudo -u tomcat7 OPENGROK_TOMCAT_BASE=/var/lib/tomcat7 opengrok-0.11/bin/OpenGrok deploy
-&lt;/code&gt;&lt;/pre&gt;
+```&lt;/p&gt;
 
 &lt;p&gt;あとは /var/opengrok-0.11.1/src に検索対象のソースコード突っ込んでOpenGrok indexし直すだけ。&lt;/p&gt;
 </description>
@@ -181,40 +182,42 @@ sudo -u tomcat7 OPENGROK_TOMCAT_BASE=/var/lib/tomcat7 opengrok-0.11/bin/OpenGrok
     
     <item>
       <title>ChefでRoleやRecipeを実行するとき渡すべき必須のattributesをチェックする</title>
-      <link>http://nobu666.com/2013/02/21/0959.html</link>
+      <link>http://nobu666.com/2013/02/21/959.html</link>
       <pubDate>Thu, 21 Feb 2013 16:06:57 +0900</pubDate>
       
-      <guid>http://nobu666.com/2013/02/21/0959.html</guid>
+      <guid>http://nobu666.com/2013/02/21/959.html</guid>
       <description>&lt;p&gt;例えばlvsを構築するときに、その下にぶら下がるreal serverたちのIPアドレスとかって、chef-client実行するときに-jオプション使ってjsonでattributes渡して欲しいわけですが、実際に実行する前に必須のものがなければ弾きたい、と思って色々ためした結果&lt;/p&gt;
 
 &lt;p&gt;Roleならjsonに、Recipeならattributes/default.rbに、&lt;strong&gt;required&lt;/strong&gt;とかそういう感じの名前でattributesを作って、そこに配列で指定必須のattributesを並べて書いておく。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;{
-  &amp;amp;quot;name&amp;amp;quot;: &amp;amp;quot;nannchara-kannchara&amp;amp;quot;,
-  &amp;amp;quot;default_attributes&amp;amp;quot;: {
+&lt;p&gt;[sourcecode language=&amp;ldquo;javascript&amp;rdquo;]
+{
+  &amp;quot;name&amp;quot;: &amp;quot;nannchara-kannchara&amp;quot;,
+  &amp;quot;default_attributes&amp;quot;: {
   },
-  &amp;amp;quot;json_class&amp;amp;quot;: &amp;amp;quot;Chef::Role&amp;amp;quot;,
-  &amp;amp;quot;env_run_lists&amp;amp;quot;: {
+  &amp;quot;json_class&amp;quot;: &amp;quot;Chef::Role&amp;quot;,
+  &amp;quot;env_run_lists&amp;quot;: {
   },
-  &amp;amp;quot;run_list&amp;amp;quot;: [
-    &amp;amp;quot;recipe[foo]&amp;amp;quot;,
-    &amp;amp;quot;recipe[bar::baz]&amp;amp;quot;
+  &amp;quot;run_list&amp;quot;: [
+    &amp;quot;recipe[foo]&amp;quot;,
+    &amp;quot;recipe[bar::baz]&amp;quot;
   ],
-  &amp;amp;quot;description&amp;amp;quot;: &amp;amp;quot;hogeraccho&amp;amp;quot;,
-  &amp;amp;quot;chef_type&amp;amp;quot;: &amp;amp;quot;role&amp;amp;quot;,
-  &amp;amp;quot;override_attributes&amp;amp;quot;: {
-      &amp;amp;quot;__required__&amp;amp;quot;: [
-        &amp;amp;quot;test&amp;amp;quot;,
-        &amp;amp;quot;test1&amp;amp;quot;,
-        &amp;amp;quot;test2&amp;amp;quot;
+  &amp;quot;description&amp;quot;: &amp;quot;hogeraccho&amp;quot;,
+  &amp;quot;chef_type&amp;quot;: &amp;quot;role&amp;quot;,
+  &amp;quot;override_attributes&amp;quot;: {
+      &amp;quot;&lt;strong&gt;required&lt;/strong&gt;&amp;quot;: [
+        &amp;quot;test&amp;quot;,
+        &amp;quot;test1&amp;quot;,
+        &amp;quot;test2&amp;quot;
       ]
   }
-}
-&lt;/code&gt;&lt;/pre&gt;
+}&lt;/p&gt;
 
-&lt;p&gt;んで knife role from file nannchara-kannchara.json すると、knife search コマンドで取り出せるようになるので、あとは適当に整形すれば一覧として取り出せる&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+んで knife role from file nannchara-kannchara.json すると、knife search コマンドで取り出せるようになるので、あとは適当に整形すれば一覧として取り出せる
 
-&lt;pre&gt;&lt;code&gt;$ knife search role -F json -q &amp;amp;quot;name:nannchara-kannchara AND __required__:*&amp;amp;quot; | tr -d &#39;\n&#39; | tr -d &#39; &#39; | grep -oE &amp;amp;quot;required[^]]+&amp;amp;quot; | awk -F[ &#39;{print $2}&#39; | tr &#39;,&#39; &#39;\n&#39; | tr -d &#39;&amp;amp;quot;&#39;
+[sourcecode language=&amp;quot;bash&amp;quot;]
+$ knife search role -F json -q &amp;amp;quot;name:nannchara-kannchara AND __required__:*&amp;amp;quot; | tr -d &#39;\n&#39; | tr -d &#39; &#39; | grep -oE &amp;amp;quot;required[^]]+&amp;amp;quot; | awk -F[ &#39;{print $2}&#39; | tr &#39;,&#39; &#39;\n&#39; | tr -d &#39;&amp;amp;quot;&#39;
 test
 test1
 test2
@@ -226,10 +229,10 @@ test2
     
     <item>
       <title>ハサミを買ったら猛烈に感動したのでお前らもこれは体験するべき</title>
-      <link>http://nobu666.com/2013/01/14/0954.html</link>
+      <link>http://nobu666.com/2013/01/14/954.html</link>
       <pubDate>Mon, 14 Jan 2013 02:17:49 +0900</pubDate>
       
-      <guid>http://nobu666.com/2013/01/14/0954.html</guid>
+      <guid>http://nobu666.com/2013/01/14/954.html</guid>
       <description>&lt;p&gt;あけましておめでとうございます。&lt;/p&gt;
 
 &lt;p&gt;突然ですけどハサミ買ったんですハサミ。そしたらこれがあまりにいままでのハサミの概念を打ち破る、画期的というか革命的というか、とにかくたかがハサミでおじさん猛烈に感動したのでブログを書く次第です。&lt;/p&gt;

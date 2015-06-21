@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <link href="" rel="alternate" type="application/rss+xml" title="Real Beat" />
-  <link href="http://localhost:1313//css/bootstrap.min.css" rel="stylesheet">
-  <link href="http://localhost:1313//css/hc.css" rel="stylesheet">
+  <link href="http://nobu666.com//css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://nobu666.com//css/hc.css" rel="stylesheet">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   
     
@@ -32,7 +32,7 @@
           <ul class="nav navbar-nav">
 					
 					
-					<li><a href="http://localhost:1313//">Home </a></li>
+					<li><a href="http://nobu666.com//">Home </a></li>
 					
           </ul>
         </div>
@@ -45,10 +45,10 @@
        <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
 					<img src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" />
-          <li class="sidebar-brand"><a href="http://localhost:1313//"><h1 class="brand">Real Beat</h1></a><h3></h3></li>
+          <li class="sidebar-brand"><a href="http://nobu666.com//"><h1 class="brand">Real Beat</h1></a><h3></h3></li>
           <hr />
 					
-						<li><a href="http://localhost:1313//">Home </a></li>
+						<li><a href="http://nobu666.com//">Home </a></li>
 					
           <hr />
           <div id="social-wrapper">
@@ -95,19 +95,19 @@
 
 <h2 id="install:ba6f5a981bdff4ffd1776fc8905f369b">install</h2>
 
-<p>Macなら <code>brew install hugo</code> で一発です</p>
+<p>Macなら<code>brew install hugo</code>で一発です</p>
 
 <h2 id="作業ディレクトリの作成:ba6f5a981bdff4ffd1776fc8905f369b">作業ディレクトリの作成</h2>
 
-<p><code>hugo new site nobu666.com</code> を適当な場所で作ります。</p>
+<p><code>hugo new site nobu666.com</code>を適当な場所で作ります。</p>
 
 <h2 id="themeを選ぶ:ba6f5a981bdff4ffd1776fc8905f369b">themeを選ぶ</h2>
 
-<p><code>git clone --recursive https://github.com/spf13/hugoThemes.git themes</code> で一括で持ってこれます。が、ここにはないthemeを公開してる人もいるので、好きなのが決まってればそれを<code>themes/</code> の下に<code>git clone</code>してくればいいです</p>
+<p><code>git clone --recursive https://github.com/spf13/hugoThemes.git themes</code>で一括で持ってこれます。が、ここにはないthemeを公開してる人もいるので、好きなのが決まってればそれを<code>themes/</code>の下に<code>git clone</code>してくればいいです</p>
 
-<h2 id="wordpressからimport:ba6f5a981bdff4ffd1776fc8905f369b">Wordpressからimport</h2>
+<h2 id="wordpressからimport:ba6f5a981bdff4ffd1776fc8905f369b">WordPressからimport</h2>
 
-<p><a href="https://gist.github.com/rakuishi/3163f6e8c5a496329bc7">wp-xml-hugo-import.rb</a>をまるっと拝借して、WordPressからexportしたxmlを変換します。自分のblogではpermalinkが<code>yyyy/mm/dd/post_id.html</code>だったので、それに合わせてslugの指定を削除したり、ソースコードの部分を<code>[sourcecode][/sourcecode]</code>で囲んで書いていたのでそこをmarkdownに書き換える処理を入れたりしました。あとtitleに <code>&quot;</code> が入ってるとparse errorになってしまうので、 <code>\&quot;</code> に置換しておきます。</p>
+<p><a href="https://gist.github.com/rakuishi/3163f6e8c5a496329bc7">wp-xml-hugo-import.rb</a>をまるっと拝借して、WordPressからexportしたxmlを変換します。自分のblogではpermalinkが<code>yyyy/mm/dd/post_id.html</code>だったので、それに合わせてslugの指定を削除したり、ソースコードの部分を<code>[sourcecode][/sourcecode]</code>で囲んで書いていたのでそこをmarkdownに書き換える処理を入れたりしました。あとtitleに <code>&quot;</code> が入ってるとparse errorになってしまうので、<code>\&quot;</code>に置換しておきます。ファイル名も yyyy-mm-dd-post_id では都合がわるいので、既存の形式に合わせてmkdirしたり出力したりします。</p>
 
 <h2 id="画像を持ってくる:ba6f5a981bdff4ffd1776fc8905f369b">画像を持ってくる</h2>
 
@@ -159,7 +159,7 @@
 
  <ul class="pager">
      
-      &nbsp;<li class="next"><a href="http://localhost:1313/2015/05/16/1014.html"> SmartNewsにjoinしました</a></li>
+      &nbsp;<li class="next"><a href="http://nobu666.com/2015/05/16/1014.html"> SmartNewsにjoinしました</a></li>
 </ul>
 
 
@@ -175,10 +175,7 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/bootstrap.js"></script>
     <script type="text/javascript" src="/js/hc.js"></script>
-<script>document.write('<script src="http://'
-        + (location.host || 'localhost').split(':')[0]
-		+ ':1313/livereload.js?mindelay=10"></'
-        + 'script>')</script></body>
+</body>
 
 </html>
 

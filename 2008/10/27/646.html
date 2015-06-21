@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>WordPressをAutoPagerizeとはてなスターに対応させる</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link href="" rel="alternate" type="application/rss+xml" title="Real Beat" />
+  <link href="http://nobu666.com//css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://nobu666.com//css/hc.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  
+    
+    </head>
+    <body>
+<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
+      <div id = "wrapper">
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <p class="navbar-brand">Real Beat</p>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+					
+					
+					<li><a href="http://nobu666.com//">Home </a></li>
+					
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+       
+       <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+					<img src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" />
+          <li class="sidebar-brand"><a href="http://nobu666.com//"><h1 class="brand">Real Beat</h1></a><h3></h3></li>
+          <hr />
+					
+						<li><a href="http://nobu666.com//">Home </a></li>
+					
+          <hr />
+          <div id="social-wrapper">
+           <li> <a href="https://twitter.com/nobu666"><i class="fa fa-twitter-square"></i> @twitter</a></li>
+           
+           <li> <a href="https://www.facebook.com/nobutoshi.ogata"><i class="fa fa-facebook-square"></i> facebook</a></li>
+           <li> <a href="https://github.com/nobu666"><i class="fa fa-github-square"></i> github</a> </li>
+         </div>
+       </ul>
+     </div>
+
+
+
+     <div class="container">
+
+
+  <div id="article">
+   <div class="article-title">WordPressをAutoPagerizeとはてなスターに対応させる</div>
+   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2008-10-27</small></p> <hr/>
+   <div class="post">
+     <p>前のテーマは最初からAutoPagerizeに対応してたので気にしてなかったんだが、テーマ変えてから効かなくなってたので対応させた。ついでにはてスタも復活させた。</p>
+
+<p>まずAutoPagerize対応。wp-includes/link-template.phpのfunction next_posts_link部分とfunction previous_posts_link部分に、rel=&ldquo;next&rdquo;を追加する。</p>
+
+<p>[sourcecode lang=&lsquo;php&rsquo;]
+function next_posts_link($label=&lsquo;Next Page &raquo;&rsquo;, $max_page=0) {
+        global $paged, $wp_query;
+        if ( !$max_page ) {
+                $max_page = $wp_query-&gt;max_num_pages;
+        }
+        if ( !$paged )
+                $paged = 1;
+        $nextpage = intval($paged) + 1;
+        if ( (! is_single()) &amp;&amp; (empty($paged) || $nextpage &lt;= $max_page) ) {
+                echo &lsquo;<a rel="next" href="';
+                next_posts($max_page);
+                echo '">&rsquo;. preg_replace(&lsquo;/&amp;([^#])(?![a-z]{1,8};)/&lsquo;, &lsquo;&#038;$1&rsquo;, $label) .&rsquo;</a>&rsquo;;
+        }
+}</p>
+
+<pre><code>
+↑こんな風に。echo '&amp;lt;a rel=&quot;next&quot; href=&quot;'; の行だけ変更すればおｋ。telnetなりSSHなりで入って直接編集するなり、ローカルで編集してFTPするなりお好きなように。あとはテーマ側の話なので、Blogにログインして、テーマ編集。
+
+テーマによって多少違うので一概には言えないのだが、WordPressのテーマは大体以下のような感じになっていることが多いはず。
+
+[sourcecode lang='php']
+&lt;?php get_header(); ?&gt;
+	&lt;div id=&quot;content&quot;&gt;
+	&lt;?php if (have_posts()) : ?&gt;
+		&lt;?php while (have_posts()) : the_post(); ?&gt;
+			&lt;div class=&quot;post&quot; id=&quot;post-&lt;?php the_ID(); ?&gt;&quot;&gt;
+				記事
+			&lt;/div&gt;
+		&lt;?php endwhile; ?&gt;
+		&lt;div class=&quot;navigation&quot;&gt;
+			&lt;div class=&quot;alignleft&quot;&gt;&lt;?php next_posts_link('&amp;laquo; Previous Entries') ?&gt;&lt;/div&gt;
+			&lt;div class=&quot;alignright&quot;&gt;&lt;?php previous_posts_link('Next Entries &amp;raquo;') ?&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;?php endif; ?&gt;
+	&lt;/div&gt;
+&lt;?php get_sidebar(); ?&gt;
+&lt;?php get_footer(); ?&gt;
+</code></pre>
+
+<p>細かいところは違っても、おそらくindex.phpはこんな風だろう。AutoPagerize対応にするには、rel=&ldquo;next&rdquo;の他に
+<ul>
+<li>ページ毎に繰り返される場所</li>
+<li>ナビゲーションの場所</li>
+</ul>
+この2つを特定のclass名にしてやればいいので、以下のようにする。</p>
+
+<p>[sourcecode lang=&lsquo;php&rsquo;]
+&lt;?php get_header(); ?&gt;
+    <div id="content">
+    &lt;?php if (have_posts()) : ?&gt;
+        <div class="autopagerize_page_element">
+            &lt;?php while (have_posts()) : the_post(); ?&gt;
+                <div class="post" id="post-<?php the_ID(); ?>&rdquo;&gt;
+                    記事
+                </div>
+            &lt;?php endwhile; ?&gt;
+            <div class="navigation autopagerize_insert_before">
+                <div class="alignleft">&lt;?php next_posts_link(&rsquo;&laquo; Previous Entries&rsquo;) ?&gt;</div>
+                <div class="alignright">&lt;?php previous_posts_link(&lsquo;Next Entries &raquo;&rsquo;) ?&gt;</div>
+            </div>
+        </div>
+    </div>
+    &lt;?php endif; ?&gt;
+    </div>
+&lt;?php get_sidebar(); ?&gt;
+&lt;?php get_footer(); ?&gt;</p>
+
+<pre><code>
+whileとnavigationを挟むように&amp;lt;div class=&quot;autopagerize_page_element&quot;&amp;gt;を挿入、navigationのclassにautopagerize_insert_beforeを追加。これでうまくいくはず。
+
+次にはてスタ対応。これはすげー簡単で、ヘッダ部分に以下のコードをコピペるだけ。
+
+[sourcecode lang='html']
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://s.hatena.ne.jp/js/HatenaStar.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+Hatena.Star.Token = 'トークン';
+&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://s.hatena.com/js/Hatena/Star/EntryLoader/WordPress.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>トークンは<a href="http://s.hatena.ne.jp/">はてスタのサイト</a>で外部ブログを登録した時に出てくる英数字。勝手に解析していい感じに動いてくれるはず。</p>
+
+   </div>
+ </div>
+
+
+ <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+ <ul class="pager">
+      &nbsp;<li class="previous"><a href="http://nobu666.com/2008/10/30/649.html"> PukiWiki1.4.7 WikiFarmEngine</a></li>
+      &nbsp;<li class="next"><a href="http://nobu666.com/2008/10/17/645.html"> Jythonの日本語処理がよくわからない</a></li>
+</ul>
+
+
+
+    </ul>
+    </div>
+    <footer>
+
+        <p class="text-muted credit">&copy; . All rights reserved. </p>
+    </footer>
+ 
+    <script src="/js/jquery-1.10.2.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/hc.js"></script>
+</body>
+
+</html>
+

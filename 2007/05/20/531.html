@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>久しぶりにオーバークロックしてみた</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link href="" rel="alternate" type="application/rss+xml" title="Real Beat" />
+  <link href="http://nobu666.com//css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://nobu666.com//css/hc.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  
+    
+    </head>
+    <body>
+<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
+      <div id = "wrapper">
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <p class="navbar-brand">Real Beat</p>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+					
+					
+					<li><a href="http://nobu666.com//">Home </a></li>
+					
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+       
+       <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+					<img src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" />
+          <li class="sidebar-brand"><a href="http://nobu666.com//"><h1 class="brand">Real Beat</h1></a><h3></h3></li>
+          <hr />
+					
+						<li><a href="http://nobu666.com//">Home </a></li>
+					
+          <hr />
+          <div id="social-wrapper">
+           <li> <a href="https://twitter.com/nobu666"><i class="fa fa-twitter-square"></i> @twitter</a></li>
+           
+           <li> <a href="https://www.facebook.com/nobutoshi.ogata"><i class="fa fa-facebook-square"></i> facebook</a></li>
+           <li> <a href="https://github.com/nobu666"><i class="fa fa-github-square"></i> github</a> </li>
+         </div>
+       </ul>
+     </div>
+
+
+
+     <div class="container">
+
+
+  <div id="article">
+   <div class="article-title">久しぶりにオーバークロックしてみた</div>
+   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2007-05-20</small></p> <hr/>
+   <div class="post">
+     <p>遙か昔、まだCPUのクロックが300MHｚとかだったころに必死にOCしてたけど、最近はめっきりやってなかった。ふと思い立って、せっかくマシン買い換えた勢いでOCしてみた。とりあえずOC前のベンチマーク結果は以下の通り。</p>
+
+<p><a href="http://www.futuremark.com/download/3dmark05/" target="_blank">3DMark05</a> : 4211
+<a href="http://www.futuremark.com/download/3dmark06/" target="_blank">3DMark06</a> : 2140
+<a href="http://www.amd.com/jp-ja/0,,3715_12880_13000,00.html" target="_blank">N-bench</a> : 4005
+<a href="http://www.playonline.com/ff11/download/media/benchmark01.html" target="_blank">FF XI Bench3</a> 高解像度 : 6116
+<a href="http://www1.coralnet.or.jp/kusuto/PI/super_pi.html" target="_blank">Super PI</a> 104万桁 : 22秒</p>
+
+<p>んで、E6600をOC。デフォルトはFSB266MHz * 9で2400MHz動作。これをまずはFSB300MHzに変更して2700MHzにしてみたところ、普通にWindowsも起動したし、ベンチマークも完走。次にFSB333MHzにしたら、Windows起動せず。起動ロゴまではいくけど、そこで青画面になってリブートがかかった。そこでデフォルトの電圧5.0Vを5.125Vにあげてみたら無事起動。とりあえずこれで3GHz動作になったので、この辺でやめておいた。ちなみに366MHzはもう1段階昇圧してもうまく動かなかったので、あきらめた。壊れると切ないし。</p>
+
+<p>CPUはそんなところにして、次にGPUもOCしてみる。デフォルトはCoreクロック450MHz/Memoryクロック400MHzだが、これを766MHz/533MHzまであげてみた。意外といけるもんだ。Coreクロック833MHzも動作したんだけど、GPU温度が70度超えたのとファンの音がうるさかったのでやめた。766でも1.7倍だからな…で、その結果。</p>
+
+<p>3DMark05 : 7207
+3DMark06 : 3485
+N-bench : 4947
+FF XI Bench3 : 7796</p>
+
+<p>3DMark05は1.7倍、3DMark06は1.6倍、N-bench1.2倍、FFは1.3倍。ちょっとずつCoreあげてその後Memory上げていったけど、N-benchはMemoryクロック上げてもスコア上がらなかった。3DMark05が一番リニアにスコアが変化したな。デフォルトではカクカクだったベンチマークが、OC後はかなりスムーズに動作するようになって満足。</p>
+
+   </div>
+ </div>
+
+
+ <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+ <ul class="pager">
+      &nbsp;<li class="previous"><a href="http://nobu666.com/2007/05/21/532.html"> 最近のゲーム</a></li>
+      &nbsp;<li class="next"><a href="http://nobu666.com/2007/05/15/529.html"> 自宅のパソコン買い替え (2)</a></li>
+</ul>
+
+
+
+    </ul>
+    </div>
+    <footer>
+
+        <p class="text-muted credit">&copy; . All rights reserved. </p>
+    </footer>
+ 
+    <script src="/js/jquery-1.10.2.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/hc.js"></script>
+</body>
+
+</html>
+

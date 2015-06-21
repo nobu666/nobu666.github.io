@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>さくらのVPSでCentOSからUbuntuに鞍替えまとめ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link href="" rel="alternate" type="application/rss+xml" title="Real Beat" />
+  <link href="http://nobu666.com//css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://nobu666.com//css/hc.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  
+    
+    </head>
+    <body>
+<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
+      <div id = "wrapper">
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <p class="navbar-brand">Real Beat</p>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+					
+					
+					<li><a href="http://nobu666.com//">Home </a></li>
+					
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+       
+       <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+					<img src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" />
+          <li class="sidebar-brand"><a href="http://nobu666.com//"><h1 class="brand">Real Beat</h1></a><h3></h3></li>
+          <hr />
+					
+						<li><a href="http://nobu666.com//">Home </a></li>
+					
+          <hr />
+          <div id="social-wrapper">
+           <li> <a href="https://twitter.com/nobu666"><i class="fa fa-twitter-square"></i> @twitter</a></li>
+           
+           <li> <a href="https://www.facebook.com/nobutoshi.ogata"><i class="fa fa-facebook-square"></i> facebook</a></li>
+           <li> <a href="https://github.com/nobu666"><i class="fa fa-github-square"></i> github</a> </li>
+         </div>
+       </ul>
+     </div>
+
+
+
+     <div class="container">
+
+
+  <div id="article">
+   <div class="article-title">さくらのVPSでCentOSからUbuntuに鞍替えまとめ</div>
+   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2011-05-19</small></p> <hr/>
+   <div class="post">
+     <p><a href="http://twitter.com/maccha">@maccha</a>からリクエストがあったので、適当にまとめました。タイトルの通りです。</p>
+
+<p><h2>OS再インストールの準備</h2>
+リモートコンソールの起動にJDK必須なので、作業するマシンにJDKが入ってなければいれとく。あとはTightVNCとか、必要ならどうぞ。あとバックアップ忘れずに。とりあえずwordpressだけ動いてる状態だったので</p>
+
+<p>[sourcecode language=&ldquo;text&rdquo; padlinenumbers=&ldquo;2&rdquo;]
+$ mysqldump -uroot -p wp -Q -c &ndash;opt &gt; dumpfile
+$ tar zcvf wordpress.tar.gz /var/www/wordpress
+$ tar zcvf ssh.tar.gz ~/.ssh</p>
+
+<pre><code>
+みたいな感じでバックアップ取って作業マシンにscpなりlftpなりで持ってきておく。必要なら/etc/my.cnfとか/etc/php.iniとか、ホームのドットファイル類も。
+
+&lt;h2&gt;OS再インストール&lt;/h2&gt;
+VPSコントロールパネルにログインして、OS再インストール→カスタムOSインストール→ubuntu 10.04 amd64を選択→&lt;a href=&quot;http://support.sakura.ad.jp/support/vps/menu_oscustom_ubuntu.shtml&quot;&gt;カスタムOSインストールガイド ： Ubuntu 10.04&lt;/a&gt;の通り進める。10分くらいありゃ終わる。
+
+&lt;h2&gt;SSHの設定&lt;/h2&gt;
+何はともあれrootのパスワードとSSHの設定をリモートコンソールからやる。scpなりで、バックアップファイルを転送しとくこと。
+
+[sourcecode language=&quot;text&quot; padlinenumbers=&quot;2&quot;]
+$ sudo passwd
+$ tar zxf wordpress.tar.gz
+$ tar zxf ssh.tar.gz
+$ chmod 700 .ssh
+$ chmod 600 .ssh/*
+$ sudo vi /etc/ssh/sshd_config
+- Port 22
++ Port 適当なポート
+
+- PermitRootLogin yes
++ PermitRootLogin no
+
+- #PasswordAuthentication yes
++ PasswordAuthentication no
+</code></pre>
+
+<p>ポートは変えなくてもいいけどお好みで。ポート変えたら/etc/servicesのSSHのとこを合わせて変更するのも忘れずに。</p>
+
+<p>[sourcecode language=&ldquo;text&rdquo; padlinenumbers=&ldquo;2&rdquo;]
+$ sudo sshd -t</p>
+
+<pre><code>
+でチェックして、エラーが出なければOKなので再起動
+
+[sourcecode language=&quot;text&quot; padlinenumbers=&quot;2&quot;]
+$ sudo service ssh restart
+</code></pre>
+
+<p>ここで、もう一個ターミナル開いて問題なく接続できることを必ず確認。以降は普通に端末からSSHでつないで作業</p>
+
+<p><h2>諸々設定</h2>
+もうあとはお好みでどうぞなんだけど、最低やることだけ書いとく</p>
+
+<p>[sourcecode language=&ldquo;text&rdquo; padlinenumbers=&ldquo;2&rdquo;]
+$ sudo apt-get update
+.
+.
+.
+$ sudo apt-get upgrade
+.
+.
+.
+$ sudo ufw status
+Status: inactive
+$ sudo ufw default deny
+Default incoming policy changed to &lsquo;deny&rsquo;
+(be sure to update your rules accordingly)
+$ sudo ufw allow SSHのポート番号
+Rules updated
+$ sudo ufw allow 80
+Rules updated
+$ sudo ufw enable
+Command may disrupt existing ssh connections. Proceed with operation (y|n)? y
+Firewall is active and enabled on system startup
+$ sudo ufw status
+Status: active
+To                         Action      From</p>
+
+<hr />
+
+<p>SSHのポート番号   ALLOW       Anywhere
+80                          ALLOW       Anywhere
+$ sudo apt-get install denyhosts sysv-rc-conf build-essential zsh screen vim tmux curl wget git-core apache2 php5 libapache2-mod-php5 mysql-server php5-mysql #まぁこの辺は余計なのも入ってるのでお好きなように
+$ sudo a2enmod rewrite # rewrite有効に
+$ sudo vi /etc/apache2/sites-available/default #VirtualHostなりなんなり、お好きにどうぞ
+$ sudo service apache2 restart
+$ sudo sysv-rc-conf #自動起動したいやつを適当に選択
+$ cp -a wordpress/* /var/www/wordpress #wordpressのバックアップ復元
+$ mysql -uroot -p -e&quot;create database wp&quot; #とりあえずDBつくる
+$ sudo cp my.cnf.backup /etc/my.cnf
+$ sudo service mysql restart
+$ mysql -uroot -p wp &lt; dumpfile #dumpファイルからデータ復元
+```</p>
+
+<p>ここまでやればwordpressはもう普通に動いてるはず。あとはchshするなり、ドットファイル復元するなり、好きにすればいいかと。</p>
+
+   </div>
+ </div>
+
+
+ <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+ <ul class="pager">
+      &nbsp;<li class="previous"><a href="http://nobu666.com/2011/06/12/910.html"> にゃんこが我が家にやってきた!</a></li>
+      &nbsp;<li class="next"><a href="http://nobu666.com/2011/02/21/812.html"> 自分の音楽にまつわる歴史をまとめてみた</a></li>
+</ul>
+
+
+
+    </ul>
+    </div>
+    <footer>
+
+        <p class="text-muted credit">&copy; . All rights reserved. </p>
+    </footer>
+ 
+    <script src="/js/jquery-1.10.2.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/hc.js"></script>
+</body>
+
+</html>
+

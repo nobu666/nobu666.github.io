@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MySQLのHEAPテーブル</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link href="" rel="alternate" type="application/rss+xml" title="Real Beat" />
+  <link href="http://nobu666.com//css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://nobu666.com//css/hc.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  
+    
+    </head>
+    <body>
+<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
+      <div id = "wrapper">
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <p class="navbar-brand">Real Beat</p>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+					
+					
+					<li><a href="http://nobu666.com//">Home </a></li>
+					
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+       
+       <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+					<img src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" />
+          <li class="sidebar-brand"><a href="http://nobu666.com//"><h1 class="brand">Real Beat</h1></a><h3></h3></li>
+          <hr />
+					
+						<li><a href="http://nobu666.com//">Home </a></li>
+					
+          <hr />
+          <div id="social-wrapper">
+           <li> <a href="https://twitter.com/nobu666"><i class="fa fa-twitter-square"></i> @twitter</a></li>
+           
+           <li> <a href="https://www.facebook.com/nobutoshi.ogata"><i class="fa fa-facebook-square"></i> facebook</a></li>
+           <li> <a href="https://github.com/nobu666"><i class="fa fa-github-square"></i> github</a> </li>
+         </div>
+       </ul>
+     </div>
+
+
+
+     <div class="container">
+
+
+  <div id="article">
+   <div class="article-title">MySQLのHEAPテーブル</div>
+   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2007-03-28</small></p> <hr/>
+   <div class="post">
+     <p>5.0からHEAPテーブルでも可変長レコードがサポートされたのだが（BLOBとTEXTは未サポート）、VARCHARでフィールド作っても固定でメモリを食われている気がする…まだちゃんと調べてないけど。</p>
+
+<p>とりあえず、MySQLのデフォルト文字コードをUTF-8にしている場合、HEAPテーブルを使う際には注意が必要だと言うことはわかった。注意が必要って言うか、要はテーブルとフィールドのデフォルト文字コードに気をつけようって言うだけ。日本語を扱わないのであれば、UTF-8のまま使っているとメモリをかなり喰う。30バイト以内のランダムな文字列 + URL、っていうテーブルをHEAPで使っていたのだが、最初はテーブルの定義をVARCHAR(100) + VARCHAR(2048)とかにしていたら、show table statusするとAvg_row_lengthが5kとかになっていた。それをVARCHAR(30) + VARCHAR(512)に変えると2kくらいに減少。ALTER TABLEでテーブルとフィールドの文字コードをUTF-8からASCIIに変えてあげたら550バイトくらいまで小さくなった。やっぱ日本語が絶対に入らないとわかっているのなら、UTF-8を使うのはメモリ（ディスク）の無駄だ。拡張性はあるんだけど、URLとかidとかはASCIIで済むのだから。</p>
+
+   </div>
+ </div>
+
+
+ <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+ <ul class="pager">
+      &nbsp;<li class="previous"><a href="http://nobu666.com/2007/03/29/512.html"> links for 2007-03-29</a></li>
+      &nbsp;<li class="next"><a href="http://nobu666.com/2007/03/28/510.html"> モンスターハンターポータブル2nd超面白い</a></li>
+</ul>
+
+
+
+    </ul>
+    </div>
+    <footer>
+
+        <p class="text-muted credit">&copy; . All rights reserved. </p>
+    </footer>
+ 
+    <script src="/js/jquery-1.10.2.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/hc.js"></script>
+</body>
+
+</html>
+

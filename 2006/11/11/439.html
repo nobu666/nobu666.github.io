@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>[memo] GentooにPlaggerをインストール</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link href="" rel="alternate" type="application/rss+xml" title="Real Beat" />
+  <link href="http://nobu666.com//css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://nobu666.com//css/hc.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  
+    
+    </head>
+    <body>
+<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
+      <div id = "wrapper">
+
+
+<div class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <p class="navbar-brand">Real Beat</p>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+					
+					
+					<li><a href="http://nobu666.com//">Home </a></li>
+					
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+       
+       <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+					<img src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" />
+          <li class="sidebar-brand"><a href="http://nobu666.com//"><h1 class="brand">Real Beat</h1></a><h3></h3></li>
+          <hr />
+					
+						<li><a href="http://nobu666.com//">Home </a></li>
+					
+          <hr />
+          <div id="social-wrapper">
+           <li> <a href="https://twitter.com/nobu666"><i class="fa fa-twitter-square"></i> @twitter</a></li>
+           
+           <li> <a href="https://www.facebook.com/nobutoshi.ogata"><i class="fa fa-facebook-square"></i> facebook</a></li>
+           <li> <a href="https://github.com/nobu666"><i class="fa fa-github-square"></i> github</a> </li>
+         </div>
+       </ul>
+     </div>
+
+
+
+     <div class="container">
+
+
+  <div id="article">
+   <div class="article-title">[memo] GentooにPlaggerをインストール</div>
+   <p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2006-11-11</small></p> <hr/>
+   <div class="post">
+     <p>Gentooにはg-cpanという素晴らしいものがあるのだが、そこはあえて使わずにいく。というかなんか知らないけど上手くいかなかったので、仕方なく手動で入れたとも言う。とりあえず自宅サーバと言うことで、サックリrootになって入れることにする。そのほうが簡単。以前レンタルサーバで悩んだのがウソのようだ。ちゃんとログを取ってないので曖昧な記憶でメモ。</p>
+
+<h4>準備</h4>
+
+<p>別段何もない。</p>
+
+<p>[sourcecode lang=&ldquo;bash&rdquo;]
+perl -MCPAN -e shell</p>
+
+<pre><code>
+基本全部デフォルトのままENTER押してりゃよし。Gentooの場合、cpanでガンガン入れる前にまず
+[sourcecode lang=&quot;bash&quot;]
+emerge expat
+</code></pre>
+
+<p>これをやっておく。次にCPANのConfigを弄る。</p>
+
+<p>[sourcecode lang=&ldquo;perl&rdquo;]
+vi /usr/lib/perl5/5.8.8/CPAN/Config.pm
+ $CPAN::Config = {
+  &lsquo;build_cache&rsquo; =&gt; q[100],
+  &lsquo;build_dir&rsquo; =&gt; q[/root/.cpan/build],
+  &lsquo;bzip2&rsquo; =&gt; q[/bin/bzip2],
+  &lsquo;cache_metadata&rsquo; =&gt; q[1],
+  &lsquo;check_sigs&rsquo; =&gt; q[0],
+  &lsquo;colorize_output&rsquo; =&gt; q[0],
+  &lsquo;commandnumber_in_prompt&rsquo; =&gt; q[1],
+  &lsquo;cpan_home&rsquo; =&gt; q[/root/.cpan],
+  &lsquo;curl&rsquo; =&gt; q[/usr/bin/curl],
+  &lsquo;ftp&rsquo; =&gt; q[/usr/bin/ftp],
+  &lsquo;ftp_passive&rsquo; =&gt; q[1],
+  &lsquo;ftp_proxy&rsquo; =&gt; q[],
+  &lsquo;getcwd&rsquo; =&gt; q[cwd],
+  &lsquo;gpg&rsquo; =&gt; q[],
+  &lsquo;gzip&rsquo; =&gt; q[/bin/gzip],
+  &lsquo;histfile&rsquo; =&gt; q[/root/.cpan/histfile],
+  &lsquo;histsize&rsquo; =&gt; q[100],
+  &lsquo;http_proxy&rsquo; =&gt; q[],
+  &lsquo;inactivity_timeout&rsquo; =&gt; q[0],
+  &lsquo;index_expire&rsquo; =&gt; q[1],
+  &lsquo;inhibit_startup_message&rsquo; =&gt; q[0],
+  &lsquo;keep_source_where&rsquo; =&gt; q[/root/.cpan/sources],
+  &lsquo;lynx&rsquo; =&gt; q[],
+  &lsquo;make&rsquo; =&gt; q[/usr/bin/make],
+  &lsquo;make_arg&rsquo; =&gt; q[],
+  &lsquo;make_install_arg&rsquo; =&gt; q[],
+  &lsquo;make_install_make_command&rsquo; =&gt; q[/usr/bin/make],
+  &lsquo;makepl_arg&rsquo; =&gt; q[],
+  &lsquo;mbuild_arg&rsquo; =&gt; q[],
+  &lsquo;mbuild_install_arg&rsquo; =&gt; q[],
+  &lsquo;mbuild_install_build_command&rsquo; =&gt; q[./Build],
+  &lsquo;mbuildpl_arg&rsquo; =&gt; q[],
+  &lsquo;ncftp&rsquo; =&gt; q[],
+  &lsquo;ncftpget&rsquo; =&gt; q[],
+  &lsquo;no_proxy&rsquo; =&gt; q[],
+  &lsquo;pager&rsquo; =&gt; q[lv -Ou8 -c],
+  &lsquo;prefer_installer&rsquo; =&gt; q[EUMM],
+  &lsquo;prerequisites_policy&rsquo; =&gt; q[ask],
+  &lsquo;scan_cache&rsquo; =&gt; q[atstart],
+  &lsquo;shell&rsquo; =&gt; q[/bin/zsh],
+  &lsquo;show_upload_date&rsquo; =&gt; q[1],
+  &lsquo;tar&rsquo; =&gt; q[/usr/bin/tar],
+  &lsquo;term_is_latin&rsquo; =&gt; q[1],
+  &lsquo;term_ornaments&rsquo; =&gt; q[1],
+  &lsquo;test_report&rsquo; =&gt; q[0],
+  &lsquo;unzip&rsquo; =&gt; q[/usr/bin/unzip],
+  &lsquo;urllist&rsquo; =&gt; [q[<a href="ftp://ftp.kddilabs.jp/CPAN/]">ftp://ftp.kddilabs.jp/CPAN/]</a>],
+  &lsquo;wget&rsquo; =&gt; q[/usr/bin/wget],
+ };
+ 1;
+ <strong>END</strong></p>
+
+<p>cpan -i Bundle::CPAN</p>
+
+<pre><code>
+&lt;h4&gt;CPANモジュールのインストール&lt;/h4&gt;
+&lt;a href=&quot;http://subtech.g.hatena.ne.jp/otsune/20060816/PlaggerCPAN&quot; target=&quot;_blank&quot;&gt;Bundle::CPANとPlaggerに依存するモジュール（メモ）&lt;/a&gt;に従って進める。書いてあるとおり、TemplateとEncode::Detectはまともには入らないっぽいので諦めてforce installで。別段不都合はないので。
+
+なんかRDF::Coreが上手く入らなくて困った記憶がある。emerge expatしてないせいだった、という記憶もあるが…ちょっと覚えてない。でもコマンドの履歴に以下のものが残っていた。
+
+[sourcecode lang=&quot;bash&quot;]
+wget http://ftp.yz.yamagata-u.ac.jp/pub/lang/cpan/modules/by-module/RDF/DPOKORNY/RDF-Core-0.50.tar.gz
+tar -zxvf RDF-Core-0.50.tar.gz
+cd RDF-Core-0.50
+perl Makefile.PL
+make
+</code></pre>
+
+<p>手動で入れたっぽい。若年アルツで覚えてない。まぁとりあえず頑張って入れて、cpanシェルでtest Plaggerが通るまで頑張る。通ったらinstall Plagger。</p>
+
+<p><h4>リポジトリから最新取得</h4>
+subversionを使ってリポジトリから最新版を持ってきてmakeする。</p>
+
+<p>[sourcecode lang=&ldquo;bash&rdquo;]
+svn co <a href="http://svn.bulknews.net/repos/plagger/trunk/plagger">http://svn.bulknews.net/repos/plagger/trunk/plagger</a>
+cd plagger
+perl Makefile.PL
+make
+```</p>
+
+<p>ここまで行ったら出来たも同然。Plagger3大罠の1つである、assetsのコピーを忘れないうちにやっておく。svnで最新版を入れたディレクトリのassets以下に、　.cpan/build/Plagger-x.x.xx/assets/plugins/Publish-Gmail/gmail_notify.tt をコピっておく。yamlのglobalでassets_pathを指定するのも忘れずに。ちなみにyamlのサンプルは .cpan/build/Plagger-x.x.xx/examples 以下に入っているので、適当な場所にコピって編集すべし。</p>
+
+<p>まぁ何が言いたいかって言うとレン鯖だと非常に苦労したインストールも、自宅鯖なら超簡単だぜってことです。gmailのメール送信量制限も、自宅鯖なら無関係。cacheもレン鯖だと、HDDが1Gくらいしかないので気にしなきゃいけないけど自宅鯖にはほぼ無関係。足りなくなったら増やせばイイだけだし。Plagger自体それなりに負荷があるので、レン鯖の場合は30分単位くらいで回さないと怒られそうなのだが、それを気にしなくていいのが一番でかい。もう5分とかで回してる。</p>
+
+   </div>
+ </div>
+
+
+ <a href="https://twitter.com/share" class="twitter-share-button " data-size="small" data-count="none">Tweet</a>
+ <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+ <ul class="pager">
+      &nbsp;<li class="previous"><a href="http://nobu666.com/2006/11/11/440.html"> links for 2006-11-11</a></li>
+      &nbsp;<li class="next"><a href="http://nobu666.com/2006/11/09/438.html"> links for 2006-11-09</a></li>
+</ul>
+
+
+
+    </ul>
+    </div>
+    <footer>
+
+        <p class="text-muted credit">&copy; . All rights reserved. </p>
+    </footer>
+ 
+    <script src="/js/jquery-1.10.2.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/hc.js"></script>
+</body>
+
+</html>
+

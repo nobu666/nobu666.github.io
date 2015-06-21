@@ -11,43 +11,47 @@
     
     <item>
       <title>mixiとblogをそのまま同期させると、del.icio.usのdaily postがmixiでは役立たずになってウザそうだからどうにかする</title>
-      <link>http://nobu666.com/2008/04/03/0609.html</link>
+      <link>http://nobu666.com/2008/04/03/609.html</link>
       <pubDate>Thu, 03 Apr 2008 18:27:59 +0900</pubDate>
       
-      <guid>http://nobu666.com/2008/04/03/0609.html</guid>
+      <guid>http://nobu666.com/2008/04/03/609.html</guid>
       <description>&lt;p&gt;mixiにそのまま投稿しちゃうと、本来リンクじゃないと困るものが、ただのテキストになってしまうわけで。どっちみち携帯から見てる人には無用なエントリになっちゃうし、いっそのことmixiには投稿しないようにしようと。一番てっとり早いのはP::P::MixiDiary.pm内で、単純にif文でほげほげすることなんだけど。ちょっと気が向いたのでplugin初挑戦してみた。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;package Plagger::Plugin::Filter::StripDeliciousDailyPost;
+&lt;p&gt;[sourcecode lang=&amp;ldquo;perl&amp;rdquo;]
+package Plagger::Plugin::Filter::StripDeliciousDailyPost;
 use strict;
-use base qw( Plagger::Plugin );
+use base qw( Plagger::Plugin );&lt;/p&gt;
 
-sub register {
+&lt;p&gt;sub register {
     my($self, $context) = @_;
-    $context-&amp;amp;gt;register_hook(
+    $context-&amp;gt;register_hook(
         $self,
-        &#39;update.entry.fixup&#39; =&amp;amp;gt; \&amp;amp;amp;filter,
+        &amp;lsquo;update.entry.fixup&amp;rsquo; =&amp;gt; &amp;amp;amp;filter,
     );
-}
+}&lt;/p&gt;
 
-sub filter {
-    my($self, $context, $args) = @_;
+&lt;p&gt;sub filter {
+    my($self, $context, $args) = @_;&lt;/p&gt;
 
-    my $title = $args-&amp;amp;gt;{entry}-&amp;amp;gt;title;
-    for my $entry ($args-&amp;amp;gt;{feed}-&amp;amp;gt;entries) {
-        if ($entry-&amp;amp;gt;title =~ /^links for \d{4}-\d{2}-\d{2}$/i) {
-            $context-&amp;amp;gt;log(info =&amp;amp;gt; &amp;amp;quot;Delete Delicious daily post entry &amp;amp;quot; . $entry-&amp;amp;gt;link);
-            $args-&amp;amp;gt;{feed}-&amp;amp;gt;delete_entry($entry);
-        }
+&lt;pre&gt;&lt;code&gt;my $title = $args-&amp;amp;gt;{entry}-&amp;amp;gt;title;
+for my $entry ($args-&amp;amp;gt;{feed}-&amp;amp;gt;entries) {
+    if ($entry-&amp;amp;gt;title =~ /^links for \d{4}-\d{2}-\d{2}$/i) {
+        $context-&amp;amp;gt;log(info =&amp;amp;gt; &amp;amp;quot;Delete Delicious daily post entry &amp;amp;quot; . $entry-&amp;amp;gt;link);
+        $args-&amp;amp;gt;{feed}-&amp;amp;gt;delete_entry($entry);
     }
 }
-
-1;
-__END__
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;やはりperlは書き慣れんな。yamlを以下のようにして動作確認。&lt;/p&gt;
+&lt;p&gt;}&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;plugins:
+&lt;p&gt;1;
+&lt;strong&gt;END&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+やはりperlは書き慣れんな。yamlを以下のようにして動作確認。
+
+[sourcecode lang=&amp;quot;perl&amp;quot;]
+plugins:
   - module: Subscription::Config
     config:
       feed:
@@ -78,36 +82,36 @@ __END__
     
     <item>
       <title>[memo] 異なるアーキテクチャ間でクロスコンパイル</title>
-      <link>http://nobu666.com/2006/11/19/0449.html</link>
+      <link>http://nobu666.com/2006/11/19/449.html</link>
       <pubDate>Sun, 19 Nov 2006 23:27:30 +0900</pubDate>
       
-      <guid>http://nobu666.com/2006/11/19/0449.html</guid>
-      <description>&lt;h4&gt;前提条件&lt;/h4&gt;
-基本的には&lt;a href=&#34;http://www.gentoo.org/doc/ja/distcc.xml&#34; target=&#34;_blank&#34;&gt;Gentoo distcc ドキュメント&lt;/a&gt;・&lt;a href=&#34;http://www.gentoo.org/doc/ja/cross-compiling-distcc.xml&#34; target=&#34;_blank&#34;&gt;DistCC クロスコンパイルガイド&lt;/a&gt;、この2つのドキュメントの通り行う。気をつけなきゃいけないのは、「資源を借りる側」と「資源を貸す側」で若干設定が異なる点。ここでは借りる側はi686(192.168.0.4)、貸す側はamd64(192.168.0.3)とする。
+      <guid>http://nobu666.com/2006/11/19/449.html</guid>
+      <description>&lt;p&gt;&lt;h4&gt;前提条件&lt;/h4&gt;
+基本的には&lt;a href=&#34;http://www.gentoo.org/doc/ja/distcc.xml&#34; target=&#34;_blank&#34;&gt;Gentoo distcc ドキュメント&lt;/a&gt;・&lt;a href=&#34;http://www.gentoo.org/doc/ja/cross-compiling-distcc.xml&#34; target=&#34;_blank&#34;&gt;DistCC クロスコンパイルガイド&lt;/a&gt;、この2つのドキュメントの通り行う。気をつけなきゃいけないのは、「資源を借りる側」と「資源を貸す側」で若干設定が異なる点。ここでは借りる側はi686(192.168.0.4)、貸す側はamd64(192.168.0.3)とする。&lt;/p&gt;
 
-貸す側と借りる側で、gccのバージョンは同じであること。3.3.x同時はOKだが、3.3.xと3.2.xは混ぜないこと。
+&lt;p&gt;貸す側と借りる側で、gccのバージョンは同じであること。3.3.x同時はOKだが、3.3.xと3.2.xは混ぜないこと。&lt;/p&gt;
 
-また、資源を借りる側は一方的に借りるだけで、相互に助け合わない設定とした。これは、貸す側はサーバなので24時間稼働しているが、借りる側はノートなのでそうした。
+&lt;p&gt;また、資源を借りる側は一方的に借りるだけで、相互に助け合わない設定とした。これは、貸す側はサーバなので24時間稼働しているが、借りる側はノートなのでそうした。&lt;/p&gt;
 
-&lt;h4&gt;資源を貸す側の設定&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;emerge distcc crossdev
+&lt;p&gt;&lt;h4&gt;資源を貸す側の設定&lt;/h4&gt;
+[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+emerge distcc crossdev
 vi /etc/make.conf
- MAKEOPTS=&amp;amp;quot;-j8&amp;amp;quot; #(CPUの数+1)*2 ここは全体じゃなくてサーバ単体で計算すべきなのかも。詳細不明…もしかしたら-j6が当たりなのかも?
- FEATURES=&amp;amp;quot;distcc&amp;amp;quot;
- DISTCC_DIR=&amp;amp;quot;/var/tmp/.distcc&amp;amp;quot;
- PORTDIR_OVERLAY=&amp;amp;quot;/usr/local/portage&amp;amp;quot;
-distcc-config --set-hosts &amp;amp;quot;localhost 192.168.0.4&amp;amp;quot;
+ MAKEOPTS=&amp;quot;-j8&amp;quot; #(CPUの数+1)*2 ここは全体じゃなくてサーバ単体で計算すべきなのかも。詳細不明…もしかしたら-j6が当たりなのかも?
+ FEATURES=&amp;quot;distcc&amp;quot;
+ DISTCC_DIR=&amp;quot;/var/tmp/.distcc&amp;quot;
+ PORTDIR_OVERLAY=&amp;quot;/usr/local/portage&amp;quot;
+distcc-config &amp;ndash;set-hosts &amp;quot;localhost 192.168.0.4&amp;quot;
 vi /etc/conf.d/distccd
- DISTCCD_OPTS=&amp;amp;quot;${DISTCCD_OPTS} --allow localhost --allow 192.168.0.4&amp;amp;quot; #--allow 192.168.0.0/24でも可
+ DISTCCD_OPTS=&amp;quot;${DISTCCD_OPTS} &amp;ndash;allow localhost &amp;ndash;allow 192.168.0.4&amp;quot; #&amp;ndash;allow 192.168.0.0/24でも可
 /etc/init.d/distcc start
 rc-update add distcc default
-crossdev -t i686
-&lt;/code&gt;&lt;/pre&gt;
+crossdev -t i686&lt;/p&gt;
 
-&lt;h4&gt;資源を借りる側の設定&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;emerge distcc
+&lt;pre&gt;&lt;code&gt;
+&amp;lt;h4&amp;gt;資源を借りる側の設定&amp;lt;/h4&amp;gt;
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+emerge distcc
 vi /etc/make.conf
  MAKEOPTS=&amp;amp;quot;-j8&amp;amp;quot; #(CPUの数+1)*2
  FEATURES=&amp;amp;quot;distcc&amp;amp;quot;
@@ -135,10 +139,10 @@ export CC=&amp;amp;quot;i686-pc-linux-gnu-gcc&amp;amp;quot;
     
     <item>
       <title>[memo][Gentoo] SNMP&#43;RRDtool&#43;cactiでサーバ監視</title>
-      <link>http://nobu666.com/2006/11/12/0442.html</link>
+      <link>http://nobu666.com/2006/11/12/442.html</link>
       <pubDate>Sun, 12 Nov 2006 12:03:34 +0900</pubDate>
       
-      <guid>http://nobu666.com/2006/11/12/0442.html</guid>
+      <guid>http://nobu666.com/2006/11/12/442.html</guid>
       <description>&lt;p&gt;インストールまでは上手くいったけど設定に嵌って酷い目にあった。&lt;/p&gt;
 
 &lt;h4&gt;必要なものをインストールする&lt;/h4&gt;
@@ -160,27 +164,31 @@ export CC=&amp;amp;quot;i686-pc-linux-gnu-gcc&amp;amp;quot;
 
 &lt;p&gt;cacti用のデータベースとユーザを作成し、付属のスクリプトでテーブルを作成する。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;mysqladmin -u root create cacti -p
-mysql cacti -u root -p &amp;amp;gt; /var/www/localhost/htdocs/cacti/cacti.sql
-mysql -u root mysql -p -e&amp;amp;quot;GRANT ALL ON cacti.* TO cactiuser@localhost IDENTIFIED BY &#39;p4ssw0rd&#39;&amp;amp;quot;
-mysql -u root mysql -p -e&amp;amp;quot;flush privileges&amp;amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+mysqladmin -u root create cacti -p
+mysql cacti -u root -p &amp;gt; /var/www/localhost/htdocs/cacti/cacti.sql
+mysql -u root mysql -p -e&amp;quot;GRANT ALL ON cacti.* TO cactiuser@localhost IDENTIFIED BY &amp;lsquo;p4ssw0rd&amp;rsquo;&amp;quot;
+mysql -u root mysql -p -e&amp;quot;flush privileges&amp;quot;&lt;/p&gt;
 
-&lt;p&gt;次にphpのconfigファイルを、今設定したものに合わせて書き換える。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+次にphpのconfigファイルを、今設定したものに合わせて書き換える。
 
-&lt;pre&gt;&lt;code&gt;vi /var/www/localhost/htdocs/cacti/include/config.php
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+vi /var/www/localhost/htdocs/cacti/include/config.php
  $database_username = &amp;amp;quot;cactiuser&amp;amp;quot;;
  $database_password = &amp;amp;quot;p4ssw0rd&amp;amp;quot;;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h4&gt;cron実行用のシステムアカウント作成とパーミッション変更&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code&gt;useradd -g apache -d /dev/null -s /bin/false -c cacti cacti
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+useradd -g apache -d /dev/null -s /bin/false -c cacti cacti&lt;/p&gt;
 
-&lt;p&gt;ホームディレクトリを/dev/null、ログインシェルを/bin/falseにすることで、cactiというユーザでログインできないようにする。この辺は適当に手を抜いてrootでやったりすると怖いので忘れずに。次にcactiユーザでデータの読み書きするためにパーミションを変える。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+ホームディレクトリを/dev/null、ログインシェルを/bin/falseにすることで、cactiというユーザでログインできないようにする。この辺は適当に手を抜いてrootでやったりすると怖いので忘れずに。次にcactiユーザでデータの読み書きするためにパーミションを変える。
 
-&lt;pre&gt;&lt;code&gt;chown -R cacti:apache /var/www/localhost/htdocs/cacti
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+chown -R cacti:apache /var/www/localhost/htdocs/cacti
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;全部変えちゃったけどrraとlogディレクトリだけでいいかも。未検証。&lt;/p&gt;
@@ -189,9 +197,10 @@ mysql -u root mysql -p -e&amp;amp;quot;flush privileges&amp;amp;quot;
 
 &lt;p&gt;適当なタイミングでスクリプトをブン回す。とりあえず5分間隔に設定。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;vi /etc/crontab
- */5 * * * * cacti   /usr/bin/php /var/www/localhost/htdocs/cacti/cmd.php &amp;amp;gt; /dev/null 2&amp;amp;gt;&amp;amp;amp;1
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+vi /etc/crontab
+ */5 * * * * cacti   /usr/bin/php /var/www/localhost/htdocs/cacti/cmd.php &amp;gt; /dev/null 2&amp;gt;&amp;amp;1
+```&lt;/p&gt;
 
 &lt;h4&gt;cactiの設定&lt;/h4&gt;
 
@@ -220,89 +229,92 @@ mysql -u root mysql -p -e&amp;amp;quot;flush privileges&amp;amp;quot;
     
     <item>
       <title>[memo] GentooにPlaggerをインストール</title>
-      <link>http://nobu666.com/2006/11/11/0439.html</link>
+      <link>http://nobu666.com/2006/11/11/439.html</link>
       <pubDate>Sat, 11 Nov 2006 01:29:02 +0900</pubDate>
       
-      <guid>http://nobu666.com/2006/11/11/0439.html</guid>
+      <guid>http://nobu666.com/2006/11/11/439.html</guid>
       <description>&lt;p&gt;Gentooにはg-cpanという素晴らしいものがあるのだが、そこはあえて使わずにいく。というかなんか知らないけど上手くいかなかったので、仕方なく手動で入れたとも言う。とりあえず自宅サーバと言うことで、サックリrootになって入れることにする。そのほうが簡単。以前レンタルサーバで悩んだのがウソのようだ。ちゃんとログを取ってないので曖昧な記憶でメモ。&lt;/p&gt;
 
 &lt;h4&gt;準備&lt;/h4&gt;
 
 &lt;p&gt;別段何もない。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;perl -MCPAN -e shell
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+perl -MCPAN -e shell&lt;/p&gt;
 
-&lt;p&gt;基本全部デフォルトのままENTER押してりゃよし。Gentooの場合、cpanでガンガン入れる前にまず&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;emerge expat
+&lt;pre&gt;&lt;code&gt;
+基本全部デフォルトのままENTER押してりゃよし。Gentooの場合、cpanでガンガン入れる前にまず
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+emerge expat
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;これをやっておく。次にCPANのConfigを弄る。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;vi /usr/lib/perl5/5.8.8/CPAN/Config.pm
+&lt;p&gt;[sourcecode lang=&amp;ldquo;perl&amp;rdquo;]
+vi /usr/lib/perl5/5.8.8/CPAN/Config.pm
  $CPAN::Config = {
-  &#39;build_cache&#39; =&amp;amp;gt; q[100],
-  &#39;build_dir&#39; =&amp;amp;gt; q[/root/.cpan/build],
-  &#39;bzip2&#39; =&amp;amp;gt; q[/bin/bzip2],
-  &#39;cache_metadata&#39; =&amp;amp;gt; q[1],
-  &#39;check_sigs&#39; =&amp;amp;gt; q[0],
-  &#39;colorize_output&#39; =&amp;amp;gt; q[0],
-  &#39;commandnumber_in_prompt&#39; =&amp;amp;gt; q[1],
-  &#39;cpan_home&#39; =&amp;amp;gt; q[/root/.cpan],
-  &#39;curl&#39; =&amp;amp;gt; q[/usr/bin/curl],
-  &#39;ftp&#39; =&amp;amp;gt; q[/usr/bin/ftp],
-  &#39;ftp_passive&#39; =&amp;amp;gt; q[1],
-  &#39;ftp_proxy&#39; =&amp;amp;gt; q[],
-  &#39;getcwd&#39; =&amp;amp;gt; q[cwd],
-  &#39;gpg&#39; =&amp;amp;gt; q[],
-  &#39;gzip&#39; =&amp;amp;gt; q[/bin/gzip],
-  &#39;histfile&#39; =&amp;amp;gt; q[/root/.cpan/histfile],
-  &#39;histsize&#39; =&amp;amp;gt; q[100],
-  &#39;http_proxy&#39; =&amp;amp;gt; q[],
-  &#39;inactivity_timeout&#39; =&amp;amp;gt; q[0],
-  &#39;index_expire&#39; =&amp;amp;gt; q[1],
-  &#39;inhibit_startup_message&#39; =&amp;amp;gt; q[0],
-  &#39;keep_source_where&#39; =&amp;amp;gt; q[/root/.cpan/sources],
-  &#39;lynx&#39; =&amp;amp;gt; q[],
-  &#39;make&#39; =&amp;amp;gt; q[/usr/bin/make],
-  &#39;make_arg&#39; =&amp;amp;gt; q[],
-  &#39;make_install_arg&#39; =&amp;amp;gt; q[],
-  &#39;make_install_make_command&#39; =&amp;amp;gt; q[/usr/bin/make],
-  &#39;makepl_arg&#39; =&amp;amp;gt; q[],
-  &#39;mbuild_arg&#39; =&amp;amp;gt; q[],
-  &#39;mbuild_install_arg&#39; =&amp;amp;gt; q[],
-  &#39;mbuild_install_build_command&#39; =&amp;amp;gt; q[./Build],
-  &#39;mbuildpl_arg&#39; =&amp;amp;gt; q[],
-  &#39;ncftp&#39; =&amp;amp;gt; q[],
-  &#39;ncftpget&#39; =&amp;amp;gt; q[],
-  &#39;no_proxy&#39; =&amp;amp;gt; q[],
-  &#39;pager&#39; =&amp;amp;gt; q[lv -Ou8 -c],
-  &#39;prefer_installer&#39; =&amp;amp;gt; q[EUMM],
-  &#39;prerequisites_policy&#39; =&amp;amp;gt; q[ask],
-  &#39;scan_cache&#39; =&amp;amp;gt; q[atstart],
-  &#39;shell&#39; =&amp;amp;gt; q[/bin/zsh],
-  &#39;show_upload_date&#39; =&amp;amp;gt; q[1],
-  &#39;tar&#39; =&amp;amp;gt; q[/usr/bin/tar],
-  &#39;term_is_latin&#39; =&amp;amp;gt; q[1],
-  &#39;term_ornaments&#39; =&amp;amp;gt; q[1],
-  &#39;test_report&#39; =&amp;amp;gt; q[0],
-  &#39;unzip&#39; =&amp;amp;gt; q[/usr/bin/unzip],
-  &#39;urllist&#39; =&amp;amp;gt; [q[ftp://ftp.kddilabs.jp/CPAN/]],
-  &#39;wget&#39; =&amp;amp;gt; q[/usr/bin/wget],
+  &amp;lsquo;build_cache&amp;rsquo; =&amp;gt; q[100],
+  &amp;lsquo;build_dir&amp;rsquo; =&amp;gt; q[/root/.cpan/build],
+  &amp;lsquo;bzip2&amp;rsquo; =&amp;gt; q[/bin/bzip2],
+  &amp;lsquo;cache_metadata&amp;rsquo; =&amp;gt; q[1],
+  &amp;lsquo;check_sigs&amp;rsquo; =&amp;gt; q[0],
+  &amp;lsquo;colorize_output&amp;rsquo; =&amp;gt; q[0],
+  &amp;lsquo;commandnumber_in_prompt&amp;rsquo; =&amp;gt; q[1],
+  &amp;lsquo;cpan_home&amp;rsquo; =&amp;gt; q[/root/.cpan],
+  &amp;lsquo;curl&amp;rsquo; =&amp;gt; q[/usr/bin/curl],
+  &amp;lsquo;ftp&amp;rsquo; =&amp;gt; q[/usr/bin/ftp],
+  &amp;lsquo;ftp_passive&amp;rsquo; =&amp;gt; q[1],
+  &amp;lsquo;ftp_proxy&amp;rsquo; =&amp;gt; q[],
+  &amp;lsquo;getcwd&amp;rsquo; =&amp;gt; q[cwd],
+  &amp;lsquo;gpg&amp;rsquo; =&amp;gt; q[],
+  &amp;lsquo;gzip&amp;rsquo; =&amp;gt; q[/bin/gzip],
+  &amp;lsquo;histfile&amp;rsquo; =&amp;gt; q[/root/.cpan/histfile],
+  &amp;lsquo;histsize&amp;rsquo; =&amp;gt; q[100],
+  &amp;lsquo;http_proxy&amp;rsquo; =&amp;gt; q[],
+  &amp;lsquo;inactivity_timeout&amp;rsquo; =&amp;gt; q[0],
+  &amp;lsquo;index_expire&amp;rsquo; =&amp;gt; q[1],
+  &amp;lsquo;inhibit_startup_message&amp;rsquo; =&amp;gt; q[0],
+  &amp;lsquo;keep_source_where&amp;rsquo; =&amp;gt; q[/root/.cpan/sources],
+  &amp;lsquo;lynx&amp;rsquo; =&amp;gt; q[],
+  &amp;lsquo;make&amp;rsquo; =&amp;gt; q[/usr/bin/make],
+  &amp;lsquo;make_arg&amp;rsquo; =&amp;gt; q[],
+  &amp;lsquo;make_install_arg&amp;rsquo; =&amp;gt; q[],
+  &amp;lsquo;make_install_make_command&amp;rsquo; =&amp;gt; q[/usr/bin/make],
+  &amp;lsquo;makepl_arg&amp;rsquo; =&amp;gt; q[],
+  &amp;lsquo;mbuild_arg&amp;rsquo; =&amp;gt; q[],
+  &amp;lsquo;mbuild_install_arg&amp;rsquo; =&amp;gt; q[],
+  &amp;lsquo;mbuild_install_build_command&amp;rsquo; =&amp;gt; q[./Build],
+  &amp;lsquo;mbuildpl_arg&amp;rsquo; =&amp;gt; q[],
+  &amp;lsquo;ncftp&amp;rsquo; =&amp;gt; q[],
+  &amp;lsquo;ncftpget&amp;rsquo; =&amp;gt; q[],
+  &amp;lsquo;no_proxy&amp;rsquo; =&amp;gt; q[],
+  &amp;lsquo;pager&amp;rsquo; =&amp;gt; q[lv -Ou8 -c],
+  &amp;lsquo;prefer_installer&amp;rsquo; =&amp;gt; q[EUMM],
+  &amp;lsquo;prerequisites_policy&amp;rsquo; =&amp;gt; q[ask],
+  &amp;lsquo;scan_cache&amp;rsquo; =&amp;gt; q[atstart],
+  &amp;lsquo;shell&amp;rsquo; =&amp;gt; q[/bin/zsh],
+  &amp;lsquo;show_upload_date&amp;rsquo; =&amp;gt; q[1],
+  &amp;lsquo;tar&amp;rsquo; =&amp;gt; q[/usr/bin/tar],
+  &amp;lsquo;term_is_latin&amp;rsquo; =&amp;gt; q[1],
+  &amp;lsquo;term_ornaments&amp;rsquo; =&amp;gt; q[1],
+  &amp;lsquo;test_report&amp;rsquo; =&amp;gt; q[0],
+  &amp;lsquo;unzip&amp;rsquo; =&amp;gt; q[/usr/bin/unzip],
+  &amp;lsquo;urllist&amp;rsquo; =&amp;gt; [q[&lt;a href=&#34;ftp://ftp.kddilabs.jp/CPAN/]&#34;&gt;ftp://ftp.kddilabs.jp/CPAN/]&lt;/a&gt;],
+  &amp;lsquo;wget&amp;rsquo; =&amp;gt; q[/usr/bin/wget],
  };
  1;
- __END__
+ &lt;strong&gt;END&lt;/strong&gt;&lt;/p&gt;
 
-cpan -i Bundle::CPAN
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;cpan -i Bundle::CPAN&lt;/p&gt;
 
-&lt;p&gt;&lt;h4&gt;CPANモジュールのインストール&lt;/h4&gt;
-&lt;a href=&#34;http://subtech.g.hatena.ne.jp/otsune/20060816/PlaggerCPAN&#34; target=&#34;_blank&#34;&gt;Bundle::CPANとPlaggerに依存するモジュール（メモ）&lt;/a&gt;に従って進める。書いてあるとおり、TemplateとEncode::Detectはまともには入らないっぽいので諦めてforce installで。別段不都合はないので。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+&amp;lt;h4&amp;gt;CPANモジュールのインストール&amp;lt;/h4&amp;gt;
+&amp;lt;a href=&amp;quot;http://subtech.g.hatena.ne.jp/otsune/20060816/PlaggerCPAN&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;Bundle::CPANとPlaggerに依存するモジュール（メモ）&amp;lt;/a&amp;gt;に従って進める。書いてあるとおり、TemplateとEncode::Detectはまともには入らないっぽいので諦めてforce installで。別段不都合はないので。
 
-&lt;p&gt;なんかRDF::Coreが上手く入らなくて困った記憶がある。emerge expatしてないせいだった、という記憶もあるが…ちょっと覚えてない。でもコマンドの履歴に以下のものが残っていた。&lt;/p&gt;
+なんかRDF::Coreが上手く入らなくて困った記憶がある。emerge expatしてないせいだった、という記憶もあるが…ちょっと覚えてない。でもコマンドの履歴に以下のものが残っていた。
 
-&lt;pre&gt;&lt;code&gt;wget http://ftp.yz.yamagata-u.ac.jp/pub/lang/cpan/modules/by-module/RDF/DPOKORNY/RDF-Core-0.50.tar.gz
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+wget http://ftp.yz.yamagata-u.ac.jp/pub/lang/cpan/modules/by-module/RDF/DPOKORNY/RDF-Core-0.50.tar.gz
 tar -zxvf RDF-Core-0.50.tar.gz
 cd RDF-Core-0.50
 perl Makefile.PL
@@ -314,11 +326,12 @@ make
 &lt;p&gt;&lt;h4&gt;リポジトリから最新取得&lt;/h4&gt;
 subversionを使ってリポジトリから最新版を持ってきてmakeする。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;svn co http://svn.bulknews.net/repos/plagger/trunk/plagger
+&lt;p&gt;[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+svn co &lt;a href=&#34;http://svn.bulknews.net/repos/plagger/trunk/plagger&#34;&gt;http://svn.bulknews.net/repos/plagger/trunk/plagger&lt;/a&gt;
 cd plagger
 perl Makefile.PL
 make
-&lt;/code&gt;&lt;/pre&gt;
+```&lt;/p&gt;
 
 &lt;p&gt;ここまで行ったら出来たも同然。Plagger3大罠の1つである、assetsのコピーを忘れないうちにやっておく。svnで最新版を入れたディレクトリのassets以下に、　.cpan/build/Plagger-x.x.xx/assets/plugins/Publish-Gmail/gmail_notify.tt をコピっておく。yamlのglobalでassets_pathを指定するのも忘れずに。ちなみにyamlのサンプルは .cpan/build/Plagger-x.x.xx/examples 以下に入っているので、適当な場所にコピって編集すべし。&lt;/p&gt;
 
@@ -328,26 +341,28 @@ make
     
     <item>
       <title>[memo] rep2をSSL&#43;Basic認証で使う</title>
-      <link>http://nobu666.com/2006/11/04/0429.html</link>
+      <link>http://nobu666.com/2006/11/04/429.html</link>
       <pubDate>Sat, 04 Nov 2006 02:24:07 +0900</pubDate>
       
-      <guid>http://nobu666.com/2006/11/04/0429.html</guid>
+      <guid>http://nobu666.com/2006/11/04/429.html</guid>
       <description>&lt;p&gt;通勤時の電車の中では本を読んでいるか、暇つぶしに2ch見てるわけだが。どうせ携帯で見るなら自宅サーバのリソースも余ってることだし有効活用したい。そんなわけで&lt;a href=&#34;http://akid.s17.xrea.com/&#34; target=&#34;_blank&#34;&gt;rep2&lt;/a&gt;を使うことにした。&lt;/p&gt;
 
 &lt;p&gt;&lt;h4&gt;インストール&lt;/h4&gt;
 とりあえずダウンロードして、/var/www/localhost/rep2とかに置く。apacheは当然SSL有効でコンパイルしておくこと。phpはやたらに使用可能なフラグが多いのでメモっておく。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;emerge -pv php
+&lt;p&gt;[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+emerge -pv php&lt;/p&gt;
 
-These are the packages that would be merged, in order:
+&lt;p&gt;These are the packages that would be merged, in order:&lt;/p&gt;
 
-Calculating dependencies... done!
-[ebuild   R   ] dev-lang/php-5.1.6-r6  USE=&amp;amp;quot;apache2 bzip2 cjk cli crypt curl curlwrappers gd iconv mysql ncurses nls pcre readline sasl session spell ssl threads unicode xml xmlrpc zlib (-adabas) -apache -bcmath -berkdb (-birdstep) -calendar -cdb -cgi -concurrentmodphp -ctype -db2 -dbase (-dbmaker) -debug -discard-path -doc (-empress) (-empress-bcs) (-esoob) -exif -fastbuild (-fdftk) (-filepro) (-firebird) -flatfile -force-cgi-redirect (-frontbase) -ftp -gd-external -gdbm -gmp -hardenedphp -hash -hyperwave-api -imap (-informix) -inifile -interbase -iodbc -ipv6 -java-external -kerberos -ldap -libedit -mcve -memlimit -mhash -ming -msql -mssql -mysqli -oci8 (-oci8-instant-client) -odbc -pcntl -pdo -pdo-external -pic -posix -postgres -qdbm -recode -reflection -sapdb -sharedext -sharedmem -simplexml -snmp -soap -sockets (-solid) -spl -sqlite (-sybase) (-sybase-ct) -sysvipc -tidy -tokenizer -truetype -vm-goto -vm-switch -wddx -xmlreader -xmlwriter -xpm -xsl -yaz -zip&amp;amp;quot; 0 kB
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Calculating dependencies&amp;hellip; done!
+[ebuild   R   ] dev-lang/php-5.1.6-r6  USE=&amp;quot;apache2 bzip2 cjk cli crypt curl curlwrappers gd iconv mysql ncurses nls pcre readline sasl session spell ssl threads unicode xml xmlrpc zlib (-adabas) -apache -bcmath -berkdb (-birdstep) -calendar -cdb -cgi -concurrentmodphp -ctype -db2 -dbase (-dbmaker) -debug -discard-path -doc (-empress) (-empress-bcs) (-esoob) -exif -fastbuild (-fdftk) (-filepro) (-firebird) -flatfile -force-cgi-redirect (-frontbase) -ftp -gd-external -gdbm -gmp -hardenedphp -hash -hyperwave-api -imap (-informix) -inifile -interbase -iodbc -ipv6 -java-external -kerberos -ldap -libedit -mcve -memlimit -mhash -ming -msql -mssql -mysqli -oci8 (-oci8-instant-client) -odbc -pcntl -pdo -pdo-external -pic -posix -postgres -qdbm -recode -reflection -sapdb -sharedext -sharedmem -simplexml -snmp -soap -sockets (-solid) -spl -sqlite (-sybase) (-sybase-ct) -sysvipc -tidy -tokenizer -truetype -vm-goto -vm-switch -wddx -xmlreader -xmlwriter -xpm -xsl -yaz -zip&amp;quot; 0 kB&lt;/p&gt;
 
-&lt;p&gt;rep2はPEARモジュールのいくつかが必須なので、PEARもと必須モジュールを入れる。eixで見つからなかったものはpearコマンドで入れ、見つかったものはemergeで入れた。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+rep2はPEARモジュールのいくつかが必須なので、PEARもと必須モジュールを入れる。eixで見つからなかったものはpearコマンドで入れ、見つかったものはemergeで入れた。
 
-&lt;pre&gt;&lt;code&gt;emerge PEAR-PEAR
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+emerge PEAR-PEAR
 pear install Net_UserAgent_Mobile-beta
 pear install PHP_Compat
 emerge PEAR-HTTP_Request
@@ -358,33 +373,37 @@ emerge PEAR-File
 &lt;p&gt;&lt;h4&gt;phpの設定&lt;/h4&gt;
 /etc/php/apache2-php5/php.iniの次のコメントアウトを外す。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;[mbstring]
+&lt;p&gt;[sourcecode lang=&amp;ldquo;php&amp;rdquo;]
+[mbstring]
 mbstring.internal_encoding = EUC-JP
 mbstring.http_input = auto
 mbstring.http_output = EUC-JP
 mbstring.detect_order = auto
-mbstring.substitute_character = none;
-&lt;/code&gt;&lt;/pre&gt;
+mbstring.substitute_character = none;&lt;/p&gt;
 
-&lt;p&gt;&lt;h4&gt;apacheの設定&lt;/h4&gt;
-SSLを使うため、認証局と証明書が必要。&lt;a href=&#34;http://nobu666.com/2006/10/29/000423.html&#34;&gt;[修正版][memo] postfix + dovecotでSMTP AUTH &amp;amp; IMAPなメールサーバを立ち上げる&lt;/a&gt;で作成したものがあるのでそれを流用する。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+&amp;lt;h4&amp;gt;apacheの設定&amp;lt;/h4&amp;gt;
+SSLを使うため、認証局と証明書が必要。&amp;lt;a href=&amp;quot;http://nobu666.com/2006/10/29/000423.html&amp;quot;&amp;gt;[修正版][memo] postfix + dovecotでSMTP AUTH &amp;amp; IMAPなメールサーバを立ち上げる&amp;lt;/a&amp;gt;で作成したものがあるのでそれを流用する。
 
-&lt;pre&gt;&lt;code&gt;cp -p /etc/ssl/postfix/server.crt /etc/apache2/ssl/ 
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+cp -p /etc/ssl/postfix/server.crt /etc/apache2/ssl/ 
 cp -p /etc/ssl/postfix/server.key /etc/apache2/ssl/
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;次にBasic認証に使う.htaccessをフォルダで上書きできるようにしておくため、/etc/apache2/modules.d/41_mod_ssl.default-vhost.confと/etc/apache2/vhosts.d/00_default_vhost.confの&amp;lt;directory &amp;ldquo;/var/www/localhost/htdocs&amp;rdquo;&amp;gt;部分を以下のように設定する。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;amp;lt;directory &amp;amp;quot;/var/www/localhost/htdocs&amp;amp;quot;&amp;amp;gt;
+&lt;p&gt;[sourcecode lang=&amp;ldquo;xml&amp;rdquo;]
+&amp;lt;directory &amp;quot;/var/www/localhost/htdocs&amp;quot;&amp;gt;
     Options FollowSymLinks
     AllowOverride AuthConfig
-&amp;amp;lt;/directory&amp;amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&amp;lt;/directory&amp;gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;h4&gt;.htaccessの設定&lt;/h4&gt;
-/var/www/localhost/htdocs/rep2に.htaccessを作成(サイト全体に認証をかけたいならhtdocsの下でも可)。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+&amp;lt;h4&amp;gt;.htaccessの設定&amp;lt;/h4&amp;gt;
+/var/www/localhost/htdocs/rep2に.htaccessを作成(サイト全体に認証をかけたいならhtdocsの下でも可)。
 
-&lt;pre&gt;&lt;code&gt;vi /var/www/localhost/htdocs/rep2/.htaccess
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+vi /var/www/localhost/htdocs/rep2/.htaccess
  AuthName &amp;amp;quot;User Authentication Required&amp;amp;quot;
  AuthType Basic
  Require valid-user
@@ -395,10 +414,11 @@ htpasswd2 -c /etc/apache2/.htpasswd ユーザ名
 &lt;p&gt;&lt;h4&gt;apacheの起動パラメータ&lt;/h4&gt;
 gentooのapacheは、有効にしたいモジュールを明示しないといけないので、/etc/conf.d/apache2を修正。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;vi /etc/conf.d/apache2
- APACHE2_OPTS=&amp;amp;quot;-D SSL -D PHP5 -D DEFAULT_VHOST -D SSL_DEFAULT_VHOST&amp;amp;quot;
+&lt;p&gt;[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+vi /etc/conf.d/apache2
+ APACHE2_OPTS=&amp;quot;-D SSL -D PHP5 -D DEFAULT_VHOST -D SSL_DEFAULT_VHOST&amp;quot;
 /etc/init.d/apache2 restart
-&lt;/code&gt;&lt;/pre&gt;
+```&lt;/p&gt;
 
 &lt;p&gt;これで　https://ホスト名:443/rep2/　に行けばユーザ名とパスワードが聞かれるはず。念のため携帯からもアクセスして問題なく認証できれば万事OK。ただ携帯でパスワードを入力するのは面倒なので、どうにか携帯の固有IDでパスできないか調べ中。auだとHTTP_X_UP_SUBNOで取れるみたいなんだが…&lt;/p&gt;
 </description>
@@ -406,46 +426,52 @@ gentooのapacheは、有効にしたいモジュールを明示しないとい�
     
     <item>
       <title>[memo] GentooでUPS(APC ES 500)を使う</title>
-      <link>http://nobu666.com/2006/10/30/0424.html</link>
+      <link>http://nobu666.com/2006/10/30/424.html</link>
       <pubDate>Mon, 30 Oct 2006 01:29:11 +0900</pubDate>
       
-      <guid>http://nobu666.com/2006/10/30/0424.html</guid>
+      <guid>http://nobu666.com/2006/10/30/424.html</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B0000AG7HB/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://images-jp.amazon.com/images/P/B0000AG7HB.09.MZZZZZZZ.jpg&#34; alt=&#34;APC ES 500&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Amazonで\7,000ちょっとという値段だったので、購入したのが届いた。流石に24時間稼働だとUPSがないと怖い。今年の雷で瞬断も多くあったので。付属のPowerCuteはWindowsとMacOS Xと商用Linuxにしか対応していないので自力でどうにかする方法をメモ。&lt;/p&gt;
 
 &lt;h4&gt;準備と接続、認識確認&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code&gt;emerge apcupsd
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+emerge apcupsd&lt;/p&gt;
 
-&lt;p&gt;なにはなくともコレがないと始まらない。とりあえずインストールしたら一旦シャットダウンしてコンセントをUPSにつなぎ変え、付属のUSB通信ケーブルでUPSとサーバを接続して再起動。再起動したらdmesgを見てサーバがES500を認識しているか確認。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+なにはなくともコレがないと始まらない。とりあえずインストールしたら一旦シャットダウンしてコンセントをUPSにつなぎ変え、付属のUSB通信ケーブルでUPSとサーバを接続して再起動。再起動したらdmesgを見てサーバがES500を認識しているか確認。
 
-&lt;pre&gt;&lt;code&gt;usbcore: registered new driver hiddev
+[sourcecode lang=&amp;quot;text&amp;quot;]
+usbcore: registered new driver hiddev
 hiddev0: USB HID v1.10 Device [APC APC ES 500 FW:803.p6.A USB FW:p6] on usb-0000:00:10.2-2
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;上記のようなメッセージがあれば問題ない。が、&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;es500 hid device not claimed
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;[sourcecode lang=&amp;ldquo;text&amp;rdquo;]
+es500 hid device not claimed&lt;/p&gt;
 
-&lt;p&gt;とか出てたら認識していない。俺の場合は思い切り認識していなかった。要するにまたカーネル再構築。だがもう手慣れたモンなのでサクサクと再構築する。こういうときはマシンパワーがあると非常に楽だ。お約束の以下の呪文を唱える。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+とか出てたら認識していない。俺の場合は思い切り認識していなかった。要するにまたカーネル再構築。だがもう手慣れたモンなのでサクサクと再構築する。こういうときはマシンパワーがあると非常に楽だ。お約束の以下の呪文を唱える。
 
-&lt;pre&gt;&lt;code&gt;cd /usr/src/linux
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+cd /usr/src/linux
 make menuconfig
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;そして今の設定をLOADして、以下のところにチェックを付けて保存。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;Device Drivers ---&amp;amp;gt;
-    USB Support ---&amp;amp;gt;
-        /dev/hiddev raw HID device support
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;[sourcecode lang=&amp;ldquo;xml&amp;rdquo;]
+Device Drivers &amp;mdash;&amp;gt;
+    USB Support &amp;mdash;&amp;gt;
+        /dev/hiddev raw HID device support&lt;/p&gt;
 
-&lt;p&gt;またお約束の呪文。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+またお約束の呪文。
 
-&lt;pre&gt;&lt;code&gt;make &amp;amp;amp;&amp;amp;amp; make modules_install
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+make &amp;amp;amp;&amp;amp;amp; make modules_install
 cp arch/x86_64/boot/bzImage /boot/なんか適当な名前
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -455,7 +481,8 @@ cp arch/x86_64/boot/bzImage /boot/なんか適当な名前
 
 &lt;p&gt;次はapcupsdの設定を行う。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;cat /etc/apcupsd/apcupsd.conf
+&lt;p&gt;[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+cat /etc/apcupsd/apcupsd.conf
 UPSCABLE usb
 UPSTYPE usb
 DEVICE
@@ -478,12 +505,13 @@ UPSMODE disable
 STATTIME 0
 STATFILE /var/log/apcupsd.status
 LOGSTATS off
-DATATIME 0
-&lt;/code&gt;&lt;/pre&gt;
+DATATIME 0&lt;/p&gt;
 
-&lt;p&gt;殆どデフォルト。TIMEOUTに関しては動作確認のため10にした。これは10だと電源断から10秒でシャットダウンするということ。実際にapcupsdを動かして試してみる。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+殆どデフォルト。TIMEOUTに関しては動作確認のため10にした。これは10だと電源断から10秒でシャットダウンするということ。実際にapcupsdを動かして試してみる。
 
-&lt;pre&gt;&lt;code&gt;/etc/init.d/apcupsd start
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+/etc/init.d/apcupsd start
 rc-update add apcupsd default
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -493,64 +521,68 @@ rc-update add apcupsd default
     
     <item>
       <title>[修正版][memo] postfix &#43; dovecotでSMTP AUTH &amp; IMAPなメールサーバを立ち上げる</title>
-      <link>http://nobu666.com/2006/10/29/0423.html</link>
+      <link>http://nobu666.com/2006/10/29/423.html</link>
       <pubDate>Sun, 29 Oct 2006 17:42:48 +0900</pubDate>
       
-      <guid>http://nobu666.com/2006/10/29/0423.html</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://nobu666.com/2006/10/25/000420.html&#34;&gt;[memo] postfix + dovecotでSMTP AUTH &amp;amp; IMAPなメールサーバを立ち上げる&lt;/a&gt;があまり正しくないので修正版。&lt;/p&gt;
+      <guid>http://nobu666.com/2006/10/29/423.html</guid>
+      <description>
 
-&lt;h4&gt;ssmtpの削除&lt;/h4&gt;
-Gentooではいきなりpostfixを入れようとしても、デフォルトでssmtpが入っていてblockされるのでssmtpを消すのが先決。
+&lt;p&gt;&lt;a href=&#34;http://nobu666.com/2006/10/25/000420.html&#34;&gt;[memo] postfix + dovecotでSMTP AUTH &amp;amp; IMAPなメールサーバを立ち上げる&lt;/a&gt;があまり正しくないので修正版。&lt;/p&gt;
 
-```
-emerge -C ssmtp
-```
+&lt;p&gt;&lt;h4&gt;ssmtpの削除&lt;/h4&gt;
+Gentooではいきなりpostfixを入れようとしても、デフォルトでssmtpが入っていてblockされるのでssmtpを消すのが先決。&lt;/p&gt;
 
-&lt;h4&gt;postfixとdovecotのインストール&lt;/h4&gt;
+&lt;p&gt;[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+emerge -C ssmtp&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+&amp;lt;h4&amp;gt;postfixとdovecotのインストール&amp;lt;/h4&amp;gt;
 Gentooの基本だけど、emergeするときはemerge -pvでどんなフラグが有効になるか必ず確認。必要ないならpackage.useで外す。あとsaslが必要なのでこれは付けておく。あとなんでかわからないけどpostfixにsaslを付けるとついてくるcyrus-saslで、gdbmやcryptをUSEするとコンパイルに失敗したので外した。
 
-```
+[sourcecode lang=&amp;quot;bash&amp;quot;]
 emerge -pv postfix dovecot
-echo &amp;quot;mmail-mta/postfix -mysql sasl&amp;quot; &amp;gt;&amp;gt; /etc/portage/package.use
-echo &amp;quot;dev-libs/cyrus-sasl -mysql -java -gdbm -crypt&amp;quot; &amp;gt;&amp;gt; /etc/portage/package.use
+echo &amp;amp;quot;mmail-mta/postfix -mysql sasl&amp;amp;quot; &amp;amp;gt;&amp;amp;gt; /etc/portage/package.use
+echo &amp;amp;quot;dev-libs/cyrus-sasl -mysql -java -gdbm -crypt&amp;amp;quot; &amp;amp;gt;&amp;amp;gt; /etc/portage/package.use
 emerge postfix dovecot
-```
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;オレオレ認証局の作成&lt;/h4&gt;
-Gentooでの方法なので他のディストリではパスが違うようなので注意。
+&lt;p&gt;&lt;h4&gt;オレオレ認証局の作成&lt;/h4&gt;
+Gentooでの方法なので他のディストリではパスが違うようなので注意。&lt;/p&gt;
 
-```
+&lt;p&gt;[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
 mkdir /etc/certs
-chmod 700 /etc/certs 
+chmod 700 /etc/certs
 cd /etc/certs
 cp /etc/ssl/misc/CA.pl .
 perl ./CA.pl -newca
 CA certificate filename (or enter to create)
 (ENTER)
-Making CA certificate ...
+Making CA certificate &amp;hellip;
 Generating a 1024 bit RSA private key
-..................................++++++
-.......................++++++
-writing new private key to &#39;./demoCA/private/cakey.pem&#39;
-Enter PEM pass phrase:(パスフレーズを入力)
-Verifying - Enter PEM pass phrase:(同じパスフレーズをもう一度入力)
------
-You are about to be asked to enter information that will be incorporated
+&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;.++++++
+&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;..++++++
+writing new private key to &amp;lsquo;./demoCA/private/cakey.pem&amp;rsquo;
+Enter PEM pass phrase:(パスフレーズを入力)&lt;/p&gt;
+
+&lt;h2 id=&#34;verifying-enter-pem-pass-phrase-同じパスフレーズをもう一度入力:1fefb4ba08533fc18599398a5c14314f&#34;&gt;Verifying - Enter PEM pass phrase:(同じパスフレーズをもう一度入力)&lt;/h2&gt;
+
+&lt;p&gt;You are about to be asked to enter information that will be incorporated
 into your certificate request.
 What you are about to enter is what is called a Distinguished Name or a DN.
 There are quite a few fields but you can leave some blank
-For some fields there will be a default value,
-If you enter &#39;.&#39;, the field will be left blank.
------
-Country Name (2 letter code) [AU]:JP
+For some fields there will be a default value,&lt;/p&gt;
+
+&lt;h2 id=&#34;if-you-enter-the-field-will-be-left-blank:1fefb4ba08533fc18599398a5c14314f&#34;&gt;If you enter &amp;lsquo;.&amp;rsquo;, the field will be left blank.&lt;/h2&gt;
+
+&lt;p&gt;Country Name (2 letter code) [AU]:JP
 State or Province Name (full name) [Some-State]:Kanagawa
 Locality Name (eg, city) []:Yokohama
 Organization Name (eg, company) [Internet Widgits Pty Ltd]:Private
 Organizational Unit Name (eg, section) []:Private
 Common Name (eg, YOUR name) []:nobu666.fam.cx
-Email Address []:root@nobu666.fam.cx
+Email Address []:root@nobu666.fam.cx&lt;/p&gt;
 
-Please enter the following &#39;extra&#39; attributes
+&lt;p&gt;Please enter the following &amp;lsquo;extra&amp;rsquo; attributes
 to be sent with your certificate request
 A challenge password []:(ENTER)
 An optional company name []:(ENTER)
@@ -560,53 +592,55 @@ Check that the request matches the signature
 Signature ok
 Certificate Details:
  (略)
-Certificate is to be certified until Oct 28 06:15:58 2009 GMT (1095 days)
+Certificate is to be certified until Oct 28 06:15:58 2009 GMT (1095 days)&lt;/p&gt;
 
-Write out database with 1 new entries
-Data Base Updated
-```
+&lt;p&gt;Write out database with 1 new entries
+Data Base Updated&lt;/p&gt;
 
-&lt;h4&gt;クライアント用CA証明書とサーバ用CA証明書を作成&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;cd /etc/certs/demoCA
+&lt;pre&gt;&lt;code&gt;
+&amp;lt;h4&amp;gt;クライアント用CA証明書とサーバ用CA証明書を作成&amp;lt;/h4&amp;gt;
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+cd /etc/certs/demoCA
 openssl x509 -inform pem -in cacert.pem -outform der -out cacert.der 
 openssl x509 -in ./cacert.pem -out ./cacert.crt
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;デジタル証明書のリクエストファイルを作成&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;cd /etc/certs
+&lt;p&gt;&lt;h4&gt;デジタル証明書のリクエストファイルを作成&lt;/h4&gt;
+[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+cd /etc/certs
 perl ./CA.pl -newreq-nodes
 Generating a 1024 bit RSA private key
-...++++++
-...............................................................................................................++++++
-writing new private key to &#39;newkey.pem&#39;
------
-You are about to be asked to enter information that will be incorporated
+&amp;hellip;++++++
+&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;++++++&lt;/p&gt;
+
+&lt;h2 id=&#34;writing-new-private-key-to-newkey-pem:1fefb4ba08533fc18599398a5c14314f&#34;&gt;writing new private key to &amp;lsquo;newkey.pem&amp;rsquo;&lt;/h2&gt;
+
+&lt;p&gt;You are about to be asked to enter information that will be incorporated
 into your certificate request.
 What you are about to enter is what is called a Distinguished Name or a DN.
 There are quite a few fields but you can leave some blank
-For some fields there will be a default value,
-If you enter &#39;.&#39;, the field will be left blank.
------
-Country Name (2 letter code) [AU]:JP
+For some fields there will be a default value,&lt;/p&gt;
+
+&lt;h2 id=&#34;if-you-enter-the-field-will-be-left-blank-1:1fefb4ba08533fc18599398a5c14314f&#34;&gt;If you enter &amp;lsquo;.&amp;rsquo;, the field will be left blank.&lt;/h2&gt;
+
+&lt;p&gt;Country Name (2 letter code) [AU]:JP
 State or Province Name (full name) [Some-State]:Kanagawa
 Locality Name (eg, city) []:Yokohama
 Organization Name (eg, company) [Internet Widgits Pty Ltd]:nobu666.fam.cx
 Organizational Unit Name (eg, section) []:Admin
 Common Name (eg, YOUR name) []:nobu666.fam.cx
-Email Address []:root@nobu666.fam.cx
+Email Address []:root@nobu666.fam.cx&lt;/p&gt;
 
-Please enter the following &#39;extra&#39; attributes
+&lt;p&gt;Please enter the following &amp;lsquo;extra&amp;rsquo; attributes
 to be sent with your certificate request
 A challenge password []:(ENTER)
 An optional company name []:(ENTER)
-Request is in newreq.pem, private key is in newkey.pem
-&lt;/code&gt;&lt;/pre&gt;
+Request is in newreq.pem, private key is in newkey.pem&lt;/p&gt;
 
-&lt;h4&gt;リクエストファイルからX.509サーバ証明書の作成と署名&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;perl ./CA.pl -sign
+&lt;pre&gt;&lt;code&gt;
+&amp;lt;h4&amp;gt;リクエストファイルからX.509サーバ証明書の作成と署名&amp;lt;/h4&amp;gt;
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+perl ./CA.pl -sign
 Using configuration from /etc/ssl/openssl.cnf
 Enter pass phrase for ./demoCA/private/cakey.pem:
 Check that the request matches the signature
@@ -647,15 +681,15 @@ Signed certificate is in newcert.pem
 openssl x509 -in newcert.pem -out server.crt
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;postfix用にシンボリックリンクを張る&lt;/h4&gt;
+&lt;p&gt;&lt;h4&gt;postfix用にシンボリックリンクを張る&lt;/h4&gt;
+[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+ln -sf /etc/certs/server.crt /etc/ssl/postfix/server.crt
+ln -sf /etc/certs/newkey.pem /etc/ssl/postfix/server.key&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;ln -sf /etc/certs/server.crt /etc/ssl/postfix/server.crt
-ln -sf /etc/certs/newkey.pem /etc/ssl/postfix/server.key
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4&gt;postfixの設定&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;vi /etc/postfix/main.cf
+&lt;pre&gt;&lt;code&gt;
+&amp;lt;h4&amp;gt;postfixの設定&amp;lt;/h4&amp;gt;
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+vi /etc/postfix/main.cf
 
 queue_directory = /var/spool/postfix
 command_directory = /usr/sbin
@@ -712,20 +746,20 @@ submission inet n      -       n       -       -       smtpd
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;saslの設定&lt;/h4&gt;
+&lt;p&gt;&lt;h4&gt;saslの設定&lt;/h4&gt;
+[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+vi /etc/sasl2/smtpd.conf&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;vi /etc/sasl2/smtpd.conf
+&lt;p&gt;pwcheck_method: saslauthd&lt;/p&gt;
 
-pwcheck_method: saslauthd
-
-mkdir /var/state/saslauthd
+&lt;p&gt;mkdir /var/state/saslauthd
 chmod 700 /var/state/saslauthd
-chown postfix /var/state/saslauthd
-&lt;/code&gt;&lt;/pre&gt;
+chown postfix /var/state/saslauthd&lt;/p&gt;
 
-&lt;h4&gt;dovecotの設定&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;vi /etc/dovecot.conf
+&lt;pre&gt;&lt;code&gt;
+&amp;lt;h4&amp;gt;dovecotの設定&amp;lt;/h4&amp;gt;
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+vi /etc/dovecot.conf
 
 protocols = pop3 imap
 ssl_disable = no
@@ -746,33 +780,35 @@ chmod 750 /var/run/dovecot/login
     
     <item>
       <title>[memo] iptablesが使えないのでkernel再構築 &amp; sshdへのアタックをどうにかする</title>
-      <link>http://nobu666.com/2006/10/28/0421.html</link>
+      <link>http://nobu666.com/2006/10/28/421.html</link>
       <pubDate>Sat, 28 Oct 2006 04:12:00 +0900</pubDate>
       
-      <guid>http://nobu666.com/2006/10/28/0421.html</guid>
+      <guid>http://nobu666.com/2006/10/28/421.html</guid>
       <description>&lt;p&gt;なんつーかね、某krからのsshdへのBrute force attacksが酷すぎる。auth.logを埋め尽くすほどのアタックを食らったので対策することに。だが普通にインストールするとiptablesが動いてくれないので、カーネル再構築に挑戦する。&lt;/p&gt;
 
 &lt;p&gt;別に今回はkernelのバージョンを上げたいわけではなく、単純にカーネルのオプションを変えたいだけなので、emerge gentoo-sourcesはやらない。以下、rootになって作業を行う。あとmenuconfigはscreenの中でやると表示が乱れて酷いことになるので、screenをデタッチするなり抜けるなりしてからやったほうがいい。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;cd /usr/src/linux
-make menuconfig
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+cd /usr/src/linux
+make menuconfig&lt;/p&gt;
 
-&lt;p&gt;Confgurationが立ち上がったら、まずLoad an Alternate Configuration Fileを選ぶ。&amp;rdquo;.config&amp;rdquo;が入力されているはずなので、そのままOKすると現在の設定が読み込まれる。そしたら&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+Confgurationが立ち上がったら、まずLoad an Alternate Configuration Fileを選ぶ。&amp;quot;.config&amp;quot;が入力されているはずなので、そのままOKすると現在の設定が読み込まれる。そしたら
 
-&lt;pre&gt;
-Networking  ---&amp;gt;
-  Networking options  ---&amp;gt; 
-    Network packet filtering (replaces ipchains)  ---&amp;gt;
-      Core Netfilter Configuration  ---&amp;gt;
+&amp;lt;pre&amp;gt;
+Networking  ---&amp;amp;gt;
+  Networking options  ---&amp;amp;gt; 
+    Network packet filtering (replaces ipchains)  ---&amp;amp;gt;
+      Core Netfilter Configuration  ---&amp;amp;gt;
          Netfilter Xtables support (required for ip_tables)
-&lt;/pre&gt;
+&amp;lt;/pre&amp;gt;
 
-&lt;p&gt;を選択。その下に色々あるが、よくわからないならMにしといてあとでModuleとして読めるようにしておくと吉。必要なのに何もチェックしないでおくと、再度カーネル再構築が必要になって面倒なので。チェックしたら1つ戻ってIP: Netfilter Configurationの中に入る。とりあえず必須なのはIP tables support (required for filtering/masq/NAT)と、IP range match support、Packet filtering、REJECT target support、address type match support、Full NAT、MASQUERADE target supportとかそのへん。終わったらTOPまで戻って、念のため設定ファイルをなんか名前付けて保存しておいたほうがいい。&lt;/p&gt;
+を選択。その下に色々あるが、よくわからないならMにしといてあとでModuleとして読めるようにしておくと吉。必要なのに何もチェックしないでおくと、再度カーネル再構築が必要になって面倒なので。チェックしたら1つ戻ってIP: Netfilter Configurationの中に入る。とりあえず必須なのはIP tables support (required for filtering/masq/NAT)と、IP range match support、Packet filtering、REJECT target support、address type match support、Full NAT、MASQUERADE target supportとかそのへん。終わったらTOPまで戻って、念のため設定ファイルをなんか名前付けて保存しておいたほうがいい。
 
-&lt;p&gt;あとはその辺のサイトに書いてあるとおり、お約束でOK。&lt;/p&gt;
+あとはその辺のサイトに書いてあるとおり、お約束でOK。
 
-&lt;pre&gt;&lt;code&gt;make &amp;amp;amp;&amp;amp;amp; make modules_install
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+make &amp;amp;amp;&amp;amp;amp; make modules_install
 cp arch/x86_64/boot/bzImage /boot/なんか適当な名前
 vi /boot/grub/grub.conf
 &lt;/code&gt;&lt;/pre&gt;
@@ -789,12 +825,11 @@ kernel /さっきbootの下にcpしたファイル名 root=/dev/sda3 vga=ask&lt;
 
 そこまで出来たらDebian GNU/Linux 3.1(sarge)運用ノートの&amp;lt;a href=&amp;quot;http://www.musicae.ath.cx/diary/?200506c&amp;amp;amp;to=200506272#200506272&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;SSH Brute force attacks&amp;lt;/a&amp;gt;の通りに設定してから
 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;/etc/init.d/iptables save
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+/etc/init.d/iptables save
 /etc/init.d/iptables start
 rc-update add iptables default
-```&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;以上で終了。エラーが出てiptablesが動かない場合は必要なモジュールが選択漏れでコンパイルされていないとか、Mを選択したのにmodprobeなりinsmodしてない。てか俺もこの手順にたどり着くまで5回くらい再構築してこんな時間に…もう寝る!&lt;/p&gt;
 </description>
@@ -802,50 +837,51 @@ rc-update add iptables default
     
     <item>
       <title>[memo] postfix &#43; dovecotでSMTP AUTH &amp; IMAPなメールサーバを立ち上げる</title>
-      <link>http://nobu666.com/2006/10/25/0420.html</link>
+      <link>http://nobu666.com/2006/10/25/420.html</link>
       <pubDate>Wed, 25 Oct 2006 23:59:30 +0900</pubDate>
       
-      <guid>http://nobu666.com/2006/10/25/0420.html</guid>
+      <guid>http://nobu666.com/2006/10/25/420.html</guid>
       <description>&lt;p&gt;2006/10/29追記: イマイチ不正確なので&lt;a href=&#34;http://nobu666.com/2006/10/29/000423.html&#34;&gt;[修正版][memo] postfix + dovecotでSMTP AUTH &amp;amp; IMAPなメールサーバを立ち上げる&lt;/a&gt;で書き直しました。そちらをみてください。&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>[memo] サーバのCPU動作周波数を動的に変える</title>
-      <link>http://nobu666.com/2006/10/24/0418.html</link>
+      <link>http://nobu666.com/2006/10/24/418.html</link>
       <pubDate>Tue, 24 Oct 2006 15:50:23 +0900</pubDate>
       
-      <guid>http://nobu666.com/2006/10/24/0418.html</guid>
+      <guid>http://nobu666.com/2006/10/24/418.html</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://nobu666.com/2006/10/23/000415.html&#34;&gt;[memo] サーバのCPU動作周波数を下げる&lt;/a&gt;の続き。&lt;/p&gt;
 
 &lt;p&gt;やってみないとわからんので、cpufreq_ondemandを試してみる。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;modprobe cpufreq_ondemand
-echo ondemand &amp;amp;amp;gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+&lt;p&gt;[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+modprobe cpufreq_ondemand
+echo ondemand &amp;amp;gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor&lt;/p&gt;
 
-cd /sys/devices/system/cpu/cpu0/cpufreq/ondemand/
+&lt;p&gt;cd /sys/devices/system/cpu/cpu0/cpufreq/ondemand/
 ls
-ignore_nice_load  sampling_down_factor  sampling_rate  sampling_rate_max  sampling_rate_min  up_threshold
+ignore_nice_load  sampling_down_factor  sampling_rate  sampling_rate_max  sampling_rate_min  up_threshold&lt;/p&gt;
 
-cat ignore_nice_load
-0
+&lt;p&gt;cat ignore_nice_load
+0&lt;/p&gt;
 
-cat sampling_down_factor
-1
+&lt;p&gt;cat sampling_down_factor
+1&lt;/p&gt;
 
-cat sampling_rate
-1040000
+&lt;p&gt;cat sampling_rate
+1040000&lt;/p&gt;
 
-cat sampling_rate_max
-520000000
+&lt;p&gt;cat sampling_rate_max
+520000000&lt;/p&gt;
 
-cat sampling_rate_min
-520000
+&lt;p&gt;cat sampling_rate_min
+520000&lt;/p&gt;
 
-cat up_threshold
+&lt;p&gt;cat up_threshold
 80
-&lt;/code&gt;&lt;/pre&gt;
+```&lt;/p&gt;
 
 &lt;p&gt;詳細は&lt;a href=&#34;http://mowamowa.p.utmc.or.jp/~amedama/cgi-bin/wiki/wiki.cgi?page=Kernel+%A5%E1%A5%E2+ondemand&#34; target=&#34;_blank&#34;&gt;Kernel メモ ondemand&lt;/a&gt;参照。とりあえずignore_nice_loadは1に設定しておいた。急がないけど負荷になりそうな作業なんかはniceすること。&lt;/p&gt;
 
@@ -855,10 +891,10 @@ cat up_threshold
     
     <item>
       <title>[memo] TortoiseSVNからsvn&#43;sshを使う</title>
-      <link>http://nobu666.com/2006/10/24/0417.html</link>
+      <link>http://nobu666.com/2006/10/24/417.html</link>
       <pubDate>Tue, 24 Oct 2006 15:36:27 +0900</pubDate>
       
-      <guid>http://nobu666.com/2006/10/24/0417.html</guid>
+      <guid>http://nobu666.com/2006/10/24/417.html</guid>
       <description>&lt;p&gt;普通にsshで繋がるようになったらsvn+sshを使いたくなる。サーバー側はemerge subversionするぐらいで設定は特にない。svnadmin create /var/svn/hoge とか svn import ~/moge file:///var/svn/hogeとかしておくだけ。svnserveを立ち上げる必要はない。svn+sshで接続するときは、sshで認証した後svnserve -tを勝手にしてくれ、接続を切るとsvnserveプロセスもなくなってくれる。よってルータで3690番のポートを開けておくとかいう作業は必要ない。22番だけ開いていればいい。&lt;/p&gt;
 
 &lt;p&gt;クライアント側は、Poderosaで作った鍵(例えばファイル名をid_rsaとする)しかない場合はPuTTY用の鍵を作る。puttygenを起動して、秘密鍵を読み込んでパスフレーズを入力すれば変換される。変換された秘密鍵をid_rsa.ppkとして保存。とりあえずPuTTYを起動して接続-データで自動ログインのユーザ名と、接続-SSH-認証で認証のためのプライベートキーファイルでさっきの.ppkファイルを設定。接続してみてパスフレーズ入力してログイン出来ればOK。&lt;/p&gt;
@@ -871,22 +907,23 @@ cat up_threshold
     
     <item>
       <title>[memo] USEフラグをいい感じに管理する</title>
-      <link>http://nobu666.com/2006/10/24/0416.html</link>
+      <link>http://nobu666.com/2006/10/24/416.html</link>
       <pubDate>Tue, 24 Oct 2006 02:40:03 +0900</pubDate>
       
-      <guid>http://nobu666.com/2006/10/24/0416.html</guid>
+      <guid>http://nobu666.com/2006/10/24/416.html</guid>
       <description>&lt;p&gt;俺のようにしょっちゅうemergeしたい人はUSEフラグの管理が大変だ。知らないうちに勝手にgtk2フラグが有効になっててXがインストールされたりして大変ウザイ。そんなわけでGentoo使いの先輩に教えて貰ったeixとeuseを使ってみる。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;sudo emerge eix
-sudo eix-sync
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+sudo emerge eix
+sudo eix-sync&lt;/p&gt;
 
-&lt;p&gt;euseはgentoolkitに入っている。eixはemerge &amp;ndash;searchと似たようなモンだがこっちのほうが速いし使いやすい。んで、本題のeuseだが、使い方自体は&amp;ndash;helpすりゃわかるんだが。フラグの説明見たり、どれが使われてるか見れたり、フラグを有効にしたり無効にしたりできる。つーか詳細はman euseで（ｗ euse使うとmake.confのUSEフラグの部分が整形されて見やすくなるのも嬉しい。まぁ説明見るだけなら /usr/portage/profiles/use.desc
- 見ればいいんだが。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+euseはgentoolkitに入っている。eixはemerge --searchと似たようなモンだがこっちのほうが速いし使いやすい。んで、本題のeuseだが、使い方自体は--helpすりゃわかるんだが。フラグの説明見たり、どれが使われてるか見れたり、フラグを有効にしたり無効にしたりできる。つーか詳細はman euseで（ｗ euse使うとmake.confのUSEフラグの部分が整形されて見やすくなるのも嬉しい。まぁ説明見るだけなら /usr/portage/profiles/use.desc
+ 見ればいいんだが。
 
-&lt;p&gt;同じくgentoolkitに含まれているequeryも激しく便利。こいつで&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;equery depends mysql
+同じくgentoolkitに含まれているequeryも激しく便利。こいつで
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+equery depends mysql
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;とかやってやればmysqlフラグに依存しているパッケージを調べることが出来るし、dependsをdepgraphに変えてやると依存関係をツリーで見れる。超便利。&lt;/p&gt;
@@ -895,10 +932,10 @@ sudo eix-sync
     
     <item>
       <title>[memo] サーバのCPU動作周波数を下げる</title>
-      <link>http://nobu666.com/2006/10/23/0415.html</link>
+      <link>http://nobu666.com/2006/10/23/415.html</link>
       <pubDate>Mon, 23 Oct 2006 23:59:04 +0900</pubDate>
       
-      <guid>http://nobu666.com/2006/10/23/0415.html</guid>
+      <guid>http://nobu666.com/2006/10/23/415.html</guid>
       <description>&lt;p&gt;CPUに関する情報は/sys/devices/system/cpu/cpu0/cpufreq/で次のファイルをcatする。まぁファイル名のまんまだが。&lt;/p&gt;
 
 &lt;ul&gt;
@@ -917,35 +954,35 @@ sudo eix-sync
 
 &lt;p&gt;普段は高周波数で動いてくれなくていいというか、その方が電気代が安くなって地球に優しいためいい感じ。そんなわけで以下の手順を踏んで周波数を下げてみた。&lt;/p&gt;
 
-&lt;p&gt;(今の周波数を確認)&lt;/p&gt;
+&lt;p&gt;(今の周波数を確認)
+[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+&lt;pre&gt;&lt;code&gt;
+(どんなdriverがあるか探す)
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+find /lib/modules/2.6.17-gentoo-r7/ -name &#39;*.ko&#39;|grep cpu
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;(どんなdriverがあるか探す)&lt;/p&gt;
+&lt;p&gt;(明らかにそれっぽい奴を見つけたので読み込む)
+[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+sudo modprobe cpufreq_powersave&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;find /lib/modules/2.6.17-gentoo-r7/ -name &#39;*.ko&#39;|grep cpu
+&lt;pre&gt;&lt;code&gt;
+(動作モードが増えたことを確認)
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;(明らかにそれっぽい奴を見つけたので読み込む)&lt;/p&gt;
+&lt;p&gt;(動作モードを上で確認したやつに変更)
+[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+su - ; echo &amp;quot;powersave&amp;quot; &amp;gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+exit&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;sudo modprobe cpufreq_powersave
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;(動作モードが増えたことを確認)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;(動作モードを上で確認したやつに変更)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;su - ; echo &amp;amp;quot;powersave&amp;amp;quot; &amp;amp;gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor 
-exit
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;(周波数が下がったことを確認)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+&lt;pre&gt;&lt;code&gt;
+(周波数が下がったことを確認)
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;これだと確かに周波数は下がるが下がりっぱなしだ。Gentooだと最新を追っかけたい人はコンパイルをしょっちゅうするので、そういうときにいちいち戻すのが面倒だ。そこでcpufreq_ondeamndというdriverを使うと、なんかいい感じに自動化できそうな予感がする。が、もうちょっと調べて、しっかり設定しないと下がりっぱなしとか上がりっぱなしになりそうな予感がするのでとりあえずスルー。&lt;/p&gt;
@@ -954,30 +991,33 @@ exit
     
     <item>
       <title>[memo] Gentooインストールメモ</title>
-      <link>http://nobu666.com/2006/10/22/0413.html</link>
+      <link>http://nobu666.com/2006/10/22/413.html</link>
       <pubDate>Sun, 22 Oct 2006 20:04:41 +0900</pubDate>
       
-      <guid>http://nobu666.com/2006/10/22/0413.html</guid>
+      <guid>http://nobu666.com/2006/10/22/413.html</guid>
       <description>&lt;p&gt;特に書くことないほどあっさり終了。&lt;a href=&#34;http://mirror.gentoo.gr.jp/releases/amd64/current/livecd/livecd-amd64-installer-2006.1.iso&#34;&gt;LiveCD&lt;/a&gt;を焼いてそいつでブートし、デスクトップ画面が出てきたら&amp;rdquo;Gentoo Linux installer&amp;rdquo;をダブルクリックして指示に従っていくだけ。つか&lt;a href=&#34;http://www9.ocn.ne.jp/~pcvolu/pcnet/gentopage122.htm&#34; target=&#34;_blank&#34;&gt;パソコンふぉあ障害者ず Gentoo Linux 2006.0(インストール-LiveCD-)&lt;/a&gt;を参考に。変えたところはIPアドレスとかその辺のネットワーク設定周りと、ステージを3からにしたのと、CFLAGで-O3にしたぐらい。インストールが終わったら上部のメニューからrebootしてCD抜いて終わり。&lt;/p&gt;
 
 &lt;p&gt;pingして外に繋がることを確認したら&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;emerge --sync
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+emerge &amp;ndash;sync&lt;/p&gt;
 
-&lt;p&gt;してから、必要なものをガンガン入れるんだが、その前に&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+してから、必要なものをガンガン入れるんだが、その前に
 
-&lt;pre&gt;&lt;code&gt;/etc/init.d/hdparm start
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+/etc/init.d/hdparm start
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;してDMAを有効にしておく。んでいい加減sshで繋いで作業したいので&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;nano -w /etc/ssh/sshd_config
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+nano -w /etc/ssh/sshd_config&lt;/p&gt;
 
-&lt;p&gt;で適切にsshを設定。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;で適切にsshを設定。
 
-&lt;pre&gt;&lt;code&gt;PermitRootLogin no
+[sourcecode lang=&amp;quot;text&amp;quot;]
+PermitRootLogin no
 RSAAuthentication yes
 PubkeyAuthentication yes
 AuthorizedKeysFile .ssh/authorized_keys
@@ -988,15 +1028,16 @@ ChallengeResponseAuthentication no
 
 &lt;p&gt;とかそんな感じに。&lt;/p&gt;
 
-&lt;p&gt;クライアントで鍵セットを作って、USBメモリでサーバに公開鍵を置く。マウントするのは&lt;/p&gt;
+&lt;p&gt;クライアントで鍵セットを作って、USBメモリでサーバに公開鍵を置く。マウントするのは
+[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+mkdir /mnt/usbmemory
+mount -t vfat /dev/sdb1 /mnt/usbmemory&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;mkdir /mnt/usbmemory
-mount -t vfat /dev/sdb1 /mnt/usbmemory
-&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;
+で、/mnt/usbmemoryが見えるようになる。後は公開鍵を置いてパーミッション変えればOK。
 
-&lt;p&gt;で、/mnt/usbmemoryが見えるようになる。後は公開鍵を置いてパーミッション変えればOK。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;mkdir ~/.ssh
+[sourcecode lang=&amp;quot;bash&amp;quot;]
+mkdir ~/.ssh
 cat /mnt/usbmemory/id_rsa &amp;amp;gt;&amp;amp;gt; ~/.ssh/authorized_keys
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
@@ -1011,10 +1052,10 @@ chmod 600 ~/.ssh/authorized_keys
 &lt;li&gt;言語:python/ruby/jdk/groovy&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;keywordでmaskされてるとか怒られるやつは&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ACCEPT_KEYWORDS=&amp;amp;quot;~amd64&amp;amp;quot; emerge -av パッケージ名
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;keywordでmaskされてるとか怒られるやつは
+[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+ACCEPT_KEYWORDS=&amp;quot;~amd64&amp;quot; emerge -av パッケージ名
+```&lt;/p&gt;
 
 &lt;p&gt;で入る。色々入れたり消したりしてるうちに依存関係がおかしくなったりしたときは、revdep-rebuildする。特定のライブラリに依存するもの、とかの指定もできる。&lt;/p&gt;
 

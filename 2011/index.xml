@@ -11,10 +11,10 @@
     
     <item>
       <title>ターミナル勉強会で話してきました</title>
-      <link>http://nobu666.com/2011/09/13/0927.html</link>
+      <link>http://nobu666.com/2011/09/13/927.html</link>
       <pubDate>Tue, 13 Sep 2011 01:40:58 +0900</pubDate>
       
-      <guid>http://nobu666.com/2011/09/13/0927.html</guid>
+      <guid>http://nobu666.com/2011/09/13/927.html</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://kokucheese.com/event/index/16461/&#34;&gt;http://kokucheese.com/event/index/16461/&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;一時はどうなることかと思いましたが、@Mr_K_O の活躍により無事LT枠も埋まり、盛況のうちに終わりました。関係者の方々、来てくださった方々ありがとうございました。&lt;/p&gt;
@@ -39,10 +39,10 @@
     
     <item>
       <title>グリーに入社しました</title>
-      <link>http://nobu666.com/2011/08/04/0923.html</link>
+      <link>http://nobu666.com/2011/08/04/923.html</link>
       <pubDate>Thu, 04 Aug 2011 12:46:45 +0900</pubDate>
       
-      <guid>http://nobu666.com/2011/08/04/0923.html</guid>
+      <guid>http://nobu666.com/2011/08/04/923.html</guid>
       <description>&lt;p&gt;2011年8月1日付でグリー株式会社へ入社しました。&lt;/p&gt;
 
 &lt;p&gt;前職でお世話になった方々に、この場を借りて御礼申し上げます。
@@ -52,10 +52,10 @@
     
     <item>
       <title>にゃんこ二匹目</title>
-      <link>http://nobu666.com/2011/07/31/0919.html</link>
+      <link>http://nobu666.com/2011/07/31/919.html</link>
       <pubDate>Sun, 31 Jul 2011 00:19:53 +0900</pubDate>
       
-      <guid>http://nobu666.com/2011/07/31/0919.html</guid>
+      <guid>http://nobu666.com/2011/07/31/919.html</guid>
       <description>&lt;p&gt;そういえば書いてなかったけど二匹目が来ています。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://farm7.static.flickr.com/6016/5985125872_a2f01be8fa_z.jpg&#34; alt=&#34;名前はスプーン&#34; /&gt;&lt;/p&gt;
@@ -72,14 +72,14 @@
     
     <item>
       <title>Twitterの日本語ハッシュタグ抽出する正規表現</title>
-      <link>http://nobu666.com/2011/07/13/0914.html</link>
+      <link>http://nobu666.com/2011/07/13/914.html</link>
       <pubDate>Wed, 13 Jul 2011 14:39:30 +0900</pubDate>
       
-      <guid>http://nobu666.com/2011/07/13/0914.html</guid>
+      <guid>http://nobu666.com/2011/07/13/914.html</guid>
       <description>&lt;p&gt;正式に日本語ハッシュタグが使えるようになったので、色々ためした結果、以下の正規表現でほぼ公式と同じ動作になった。「ほぼ」なのはちゃんとテストしたわけじゃないので。使うなら自己責任でどうぞ。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;(?:#|\uFF03)([a-zA-Z0-9_\u3041-\u3094\u3099-\u309C\u30A1-\u30FA\u3400-\uD7FF\uFF10-\uFF19\uFF20-\uFF3A\uFF41-\uFF5A\uFF66-\uFF9E]+)
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;?:#|uFF03&#34;&gt;sourcecode language=&amp;ldquo;text&amp;rdquo;&lt;/a&gt;([a-zA-Z0-9_\u3041-\u3094\u3099-\u309C\u30A1-\u30FA\u3400-\uD7FF\uFF10-\uFF19\uFF20-\uFF3A\uFF41-\uFF5A\uFF66-\uFF9E]+)
+```&lt;/p&gt;
 
 &lt;p&gt;iPhoneの公式クライアントだとなんか動きが違ったりするし、half-widthのカタカナ半濁点はだめだったりとかなんかバグなのか仕様なのかよくわからず。半濁点も通すようにしたければ、FF9EをFF9Fにすればおｋ。&lt;/p&gt;
 </description>
@@ -87,10 +87,10 @@
     
     <item>
       <title>にゃんこが我が家にやってきた!</title>
-      <link>http://nobu666.com/2011/06/12/0910.html</link>
+      <link>http://nobu666.com/2011/06/12/910.html</link>
       <pubDate>Sun, 12 Jun 2011 14:57:53 +0900</pubDate>
       
-      <guid>http://nobu666.com/2011/06/12/0910.html</guid>
+      <guid>http://nobu666.com/2011/06/12/910.html</guid>
       <description>&lt;p&gt;嫁さんとペットショップ行ったら一目惚れして、気がついたらカードを切っていた。が、後悔も反省もしていないっ!!&lt;/p&gt;
 
 &lt;p&gt;先週購入して慌てて部屋の掃除やら片付けやらをはじめて、昨日6/11の夜に迎えにいってきた。2-3日は環境が変わって慣れてないので、あんまり遊ばせたりしないで寝かせてあげてくださいと言われたので、まだあんまり構わないようにしている。&lt;/p&gt;
@@ -106,29 +106,31 @@
     
     <item>
       <title>さくらのVPSでCentOSからUbuntuに鞍替えまとめ</title>
-      <link>http://nobu666.com/2011/05/19/0904.html</link>
+      <link>http://nobu666.com/2011/05/19/904.html</link>
       <pubDate>Thu, 19 May 2011 22:32:28 +0900</pubDate>
       
-      <guid>http://nobu666.com/2011/05/19/0904.html</guid>
+      <guid>http://nobu666.com/2011/05/19/904.html</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://twitter.com/maccha&#34;&gt;@maccha&lt;/a&gt;からリクエストがあったので、適当にまとめました。タイトルの通りです。&lt;/p&gt;
 
 &lt;p&gt;&lt;h2&gt;OS再インストールの準備&lt;/h2&gt;
 リモートコンソールの起動にJDK必須なので、作業するマシンにJDKが入ってなければいれとく。あとはTightVNCとか、必要ならどうぞ。あとバックアップ忘れずに。とりあえずwordpressだけ動いてる状態だったので&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ mysqldump -uroot -p wp -Q -c --opt &amp;amp;gt; dumpfile
+&lt;p&gt;[sourcecode language=&amp;ldquo;text&amp;rdquo; padlinenumbers=&amp;ldquo;2&amp;rdquo;]
+$ mysqldump -uroot -p wp -Q -c &amp;ndash;opt &amp;gt; dumpfile
 $ tar zcvf wordpress.tar.gz /var/www/wordpress
-$ tar zcvf ssh.tar.gz ~/.ssh
-&lt;/code&gt;&lt;/pre&gt;
+$ tar zcvf ssh.tar.gz ~/.ssh&lt;/p&gt;
 
-&lt;p&gt;みたいな感じでバックアップ取って作業マシンにscpなりlftpなりで持ってきておく。必要なら/etc/my.cnfとか/etc/php.iniとか、ホームのドットファイル類も。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+みたいな感じでバックアップ取って作業マシンにscpなりlftpなりで持ってきておく。必要なら/etc/my.cnfとか/etc/php.iniとか、ホームのドットファイル類も。
 
-&lt;p&gt;&lt;h2&gt;OS再インストール&lt;/h2&gt;
-VPSコントロールパネルにログインして、OS再インストール→カスタムOSインストール→ubuntu 10.04 amd64を選択→&lt;a href=&#34;http://support.sakura.ad.jp/support/vps/menu_oscustom_ubuntu.shtml&#34;&gt;カスタムOSインストールガイド ： Ubuntu 10.04&lt;/a&gt;の通り進める。10分くらいありゃ終わる。&lt;/p&gt;
+&amp;lt;h2&amp;gt;OS再インストール&amp;lt;/h2&amp;gt;
+VPSコントロールパネルにログインして、OS再インストール→カスタムOSインストール→ubuntu 10.04 amd64を選択→&amp;lt;a href=&amp;quot;http://support.sakura.ad.jp/support/vps/menu_oscustom_ubuntu.shtml&amp;quot;&amp;gt;カスタムOSインストールガイド ： Ubuntu 10.04&amp;lt;/a&amp;gt;の通り進める。10分くらいありゃ終わる。
 
-&lt;p&gt;&lt;h2&gt;SSHの設定&lt;/h2&gt;
-何はともあれrootのパスワードとSSHの設定をリモートコンソールからやる。scpなりで、バックアップファイルを転送しとくこと。&lt;/p&gt;
+&amp;lt;h2&amp;gt;SSHの設定&amp;lt;/h2&amp;gt;
+何はともあれrootのパスワードとSSHの設定をリモートコンソールからやる。scpなりで、バックアップファイルを転送しとくこと。
 
-&lt;pre&gt;&lt;code&gt;$ sudo passwd
+[sourcecode language=&amp;quot;text&amp;quot; padlinenumbers=&amp;quot;2&amp;quot;]
+$ sudo passwd
 $ tar zxf wordpress.tar.gz
 $ tar zxf ssh.tar.gz
 $ chmod 700 .ssh
@@ -146,12 +148,14 @@ $ sudo vi /etc/ssh/sshd_config
 
 &lt;p&gt;ポートは変えなくてもいいけどお好みで。ポート変えたら/etc/servicesのSSHのとこを合わせて変更するのも忘れずに。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ sudo sshd -t
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;[sourcecode language=&amp;ldquo;text&amp;rdquo; padlinenumbers=&amp;ldquo;2&amp;rdquo;]
+$ sudo sshd -t&lt;/p&gt;
 
-&lt;p&gt;でチェックして、エラーが出なければOKなので再起動&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+でチェックして、エラーが出なければOKなので再起動
 
-&lt;pre&gt;&lt;code&gt;$ sudo service ssh restart
+[sourcecode language=&amp;quot;text&amp;quot; padlinenumbers=&amp;quot;2&amp;quot;]
+$ sudo service ssh restart
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;ここで、もう一個ターミナル開いて問題なく接続できることを必ず確認。以降は普通に端末からSSHでつないで作業&lt;/p&gt;
@@ -159,7 +163,8 @@ $ sudo vi /etc/ssh/sshd_config
 &lt;p&gt;&lt;h2&gt;諸々設定&lt;/h2&gt;
 もうあとはお好みでどうぞなんだけど、最低やることだけ書いとく&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ sudo apt-get update
+&lt;p&gt;[sourcecode language=&amp;ldquo;text&amp;rdquo; padlinenumbers=&amp;ldquo;2&amp;rdquo;]
+$ sudo apt-get update
 .
 .
 .
@@ -170,7 +175,7 @@ $ sudo apt-get upgrade
 $ sudo ufw status
 Status: inactive
 $ sudo ufw default deny
-Default incoming policy changed to &#39;deny&#39;
+Default incoming policy changed to &amp;lsquo;deny&amp;rsquo;
 (be sure to update your rules accordingly)
 $ sudo ufw allow SSHのポート番号
 Rules updated
@@ -181,9 +186,11 @@ Command may disrupt existing ssh connections. Proceed with operation (y|n)? y
 Firewall is active and enabled on system startup
 $ sudo ufw status
 Status: active
-To                         Action      From
---                           ------      ----
-SSHのポート番号   ALLOW       Anywhere
+To                         Action      From&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;SSHのポート番号   ALLOW       Anywhere
 80                          ALLOW       Anywhere
 $ sudo apt-get install denyhosts sysv-rc-conf build-essential zsh screen vim tmux curl wget git-core apache2 php5 libapache2-mod-php5 mysql-server php5-mysql #まぁこの辺は余計なのも入ってるのでお好きなように
 $ sudo a2enmod rewrite # rewrite有効に
@@ -191,11 +198,11 @@ $ sudo vi /etc/apache2/sites-available/default #VirtualHostなりなんなり、
 $ sudo service apache2 restart
 $ sudo sysv-rc-conf #自動起動したいやつを適当に選択
 $ cp -a wordpress/* /var/www/wordpress #wordpressのバックアップ復元
-$ mysql -uroot -p -e&amp;amp;quot;create database wp&amp;amp;quot; #とりあえずDBつくる
+$ mysql -uroot -p -e&amp;quot;create database wp&amp;quot; #とりあえずDBつくる
 $ sudo cp my.cnf.backup /etc/my.cnf
 $ sudo service mysql restart
-$ mysql -uroot -p wp &amp;amp;lt; dumpfile #dumpファイルからデータ復元
-&lt;/code&gt;&lt;/pre&gt;
+$ mysql -uroot -p wp &amp;lt; dumpfile #dumpファイルからデータ復元
+```&lt;/p&gt;
 
 &lt;p&gt;ここまでやればwordpressはもう普通に動いてるはず。あとはchshするなり、ドットファイル復元するなり、好きにすればいいかと。&lt;/p&gt;
 </description>
@@ -203,10 +210,10 @@ $ mysql -uroot -p wp &amp;amp;lt; dumpfile #dumpファイルからデータ復�
     
     <item>
       <title>自分の音楽にまつわる歴史をまとめてみた</title>
-      <link>http://nobu666.com/2011/02/21/0812.html</link>
+      <link>http://nobu666.com/2011/02/21/812.html</link>
       <pubDate>Mon, 21 Feb 2011 23:52:42 +0900</pubDate>
       
-      <guid>http://nobu666.com/2011/02/21/0812.html</guid>
+      <guid>http://nobu666.com/2011/02/21/812.html</guid>
       <description>&lt;p&gt;気が向いたので、なんとなくまとめてみた。誰も得をしないまとめ。&lt;/p&gt;
 
 &lt;p&gt;10歳: なんか知らんけどBOØWYに影響を受けてベースを弾き始める。なんでベースだったのかは未だによくわからない。なんかベースの音がよく聞こえて。単にギターは調子こいてる風で嫌だったっていう天邪鬼説が有力。HOLLYとかいう謎のやっすいプレベタイプのベースと、15Wくらいのアンプと、シールドと音叉と変な教則本とテープがセットになってて、3万だか4万だかのものだったと記憶している。買った初日に、音叉の使い方がわからなくて、チーンて叩いた音にあわせたらいきなり弦が切れて泣きそうになった記憶がある。また楽器屋に戻って、音叉は叩いた後どこかにくっつけるものだと初めて知るｗ しばらくついてきた教則本に沿って練習するも、ハンマリングとプリングの複合練習みたいなやつで行き詰って2ヶ月ぐらい放置。気が向いてその後やってみたらなぜか弾けるようになっていた。&lt;/p&gt;
@@ -249,17 +256,18 @@ $ mysql -uroot -p wp &amp;amp;lt; dumpfile #dumpファイルからデータ復�
     
     <item>
       <title>mahoutで類似ユーザをリコメンドする</title>
-      <link>http://nobu666.com/2011/02/17/0839.html</link>
+      <link>http://nobu666.com/2011/02/17/839.html</link>
       <pubDate>Thu, 17 Feb 2011 17:47:15 +0900</pubDate>
       
-      <guid>http://nobu666.com/2011/02/17/0839.html</guid>
+      <guid>http://nobu666.com/2011/02/17/839.html</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://mahout.apache.org/&#34;&gt;mahout&lt;/a&gt;使って類似ユーザの抽出をやってみたのでまとめ。&lt;/p&gt;
 
 &lt;p&gt;そこら辺に転がってるサンプルは、ほとんどがユーザがあるアイテムについて点数をつける前提になってて、その点数をベースに似ているユーザをリコメンドしたり、あるいはあるユーザが興味をもちそうなアイテムをリコメンドしたりといったものが殆どだった。点数がないようなときにどうするか多少悩んだので記録に残しておくことにした。とりあえず今回はMySQLにデータが入ってる前提でやってみた。あるテーブルにUSER_IDとITEM_IDが入ってて、同じITEM_IDを多く選んだ人を探したいとすると、以下のようにする。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;package test;
+&lt;p&gt;[sourcecode language=&amp;ldquo;java&amp;rdquo; padlinenumbers=&amp;ldquo;2&amp;rdquo;]
+package test;&lt;/p&gt;
 
-import test.DataSouceManager;
+&lt;p&gt;import test.DataSouceManager;
 import org.apache.mahout.cf.taste.common.TasteException;
 import org.apache.mahout.cf.taste.impl.model.jdbc.MySQLBooleanPrefJDBCDataModel;
 import org.apache.mahout.cf.taste.impl.neighborhood.NearestNUserNeighborhood;
@@ -267,45 +275,46 @@ import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
 import org.apache.mahout.cf.taste.impl.similarity.LogLikelihoodSimilarity;
 import org.apache.mahout.cf.taste.model.DataModel;
 import org.apache.mahout.cf.taste.neighborhood.UserNeighborhood;
-import org.apache.mahout.cf.taste.similarity.UserSimilarity;
+import org.apache.mahout.cf.taste.similarity.UserSimilarity;&lt;/p&gt;
 
-public class RecommendTest {
-	public static void main(String[] args) {
-		DataModel model = new MySQLBooleanPrefJDBCDataModel(
-			DataSourceManager.getInstance().getDataSouce(),
-			&amp;amp;quot;TABLE_NAME&amp;amp;quot;,
-			&amp;amp;quot;USER_ID_COLUMN_NAME&amp;amp;quot;,
-			&amp;amp;quot;ITEM_ID_COLUMN_NAME&amp;amp;quot;,
-			null //TIMESTAMP_COLUMN_NAME
-		);
-		UserSimilarity similarity = null;
-		UserNeighborhood neighborhood = null;
-		try {
-			similarity = new LogLikelihoodSimilarity(model);
-			neighborhood = new NearestNUserNeighborhood(100, similarity, model);
-		} catch (TasteException e) {
-			e.printStackTrace();
-		}
-		GenericUserBasedRecommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
-		try {
-			long[] recommendations = recommender.mostSimilarUserIDs(1, 1);
-			for (int i = 0; i &amp;amp;lt; recommendations.length; i++) {
-				resp.getWriter().println(recommendations[i]);
-			}
-		} catch (TasteException e) {
-			e.printStackTrace();
-		}
-	}
-}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;public class RecommendTest {
+    public static void main(String[] args) {
+        DataModel model = new MySQLBooleanPrefJDBCDataModel(
+            DataSourceManager.getInstance().getDataSouce(),
+            &amp;quot;TABLE_NAME&amp;quot;,
+            &amp;quot;USER_ID_COLUMN_NAME&amp;quot;,
+            &amp;quot;ITEM_ID_COLUMN_NAME&amp;quot;,
+            null //TIMESTAMP_COLUMN_NAME
+        );
+        UserSimilarity similarity = null;
+        UserNeighborhood neighborhood = null;
+        try {
+            similarity = new LogLikelihoodSimilarity(model);
+            neighborhood = new NearestNUserNeighborhood(100, similarity, model);
+        } catch (TasteException e) {
+            e.printStackTrace();
+        }
+        GenericUserBasedRecommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
+        try {
+            long[] recommendations = recommender.mostSimilarUserIDs(1, 1);
+            for (int i = 0; i &amp;lt; recommendations.length; i++) {
+                resp.getWriter().println(recommendations[i]);
+            }
+        } catch (TasteException e) {
+            e.printStackTrace();
+        }
+    }
+}&lt;/p&gt;
 
-&lt;p&gt;統計学の知識がないのでドキュメント読んでもよくわからなかったので、これであってるのかどうかはよくわからん。色々試して、LogLikelihoodSimilarityじゃないと点数のフィールドがねーから使えないよと怒られた。GenericUserBasedRecommenderはRecommenderってIFで受けるのが筋なんだろうけど、そうするとmostSimilarUserIDSメソッドが使えないのでそのままの型で受けてる。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+統計学の知識がないのでドキュメント読んでもよくわからなかったので、これであってるのかどうかはよくわからん。色々試して、LogLikelihoodSimilarityじゃないと点数のフィールドがねーから使えないよと怒られた。GenericUserBasedRecommenderはRecommenderってIFで受けるのが筋なんだろうけど、そうするとmostSimilarUserIDSメソッドが使えないのでそのままの型で受けてる。
 
-&lt;p&gt;mostSimilarUserIDsの第一引数が比較したいユーザID、第二引数が何人リコメンドするか。少ないデータで試して、期待する結果が返ってくるのは確認済み。んで大量のデータだとどうなんだろうと思って、以下のスクリプトで140万件のデータを作ってみた。&lt;/p&gt;
+mostSimilarUserIDsの第一引数が比較したいユーザID、第二引数が何人リコメンドするか。少ないデータで試して、期待する結果が返ってくるのは確認済み。んで大量のデータだとどうなんだろうと思って、以下のスクリプトで140万件のデータを作ってみた。
 
-&lt;p&gt;日付・ユーザID・アイテムIDで、ユーザIDは一日につき一回しかでてこないようにデータを生成。&lt;/p&gt;
+日付・ユーザID・アイテムIDで、ユーザIDは一日につき一回しかでてこないようにデータを生成。
 
-&lt;pre&gt;&lt;code&gt;import string
+[sourcecode language=&amp;quot;python&amp;quot; padlinenumbers=&amp;quot;2&amp;quot;]
+import string
 import random
 import sys
 
@@ -326,8 +335,9 @@ if __name__ == &#39;__main__&#39;:
 
 &lt;p&gt;こいつでSQLをつくってMySQLに食わせる。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;$ python generate_date.py|mysql
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;[sourcecode language=&amp;ldquo;bash&amp;rdquo;]
+$ python generate_date.py|mysql
+```&lt;/p&gt;
 
 &lt;p&gt;MEMORYエンジンでテーブル作って試してみたけど、DataModelをつくるところですでに時間掛かりすぎ。リアルタイムで返事を返すようなときには全然向いてないものみたいで、やっぱHadoopとかを併用して裏で動かしておく感じで使う物みたいだ。ちなみにかかった時間はおよそ10分弱。こんな単純なデータで単純なことやりたいのであれば、mahoutじゃなくて素直にSQLでやったほうが速い。もっともっと大規模なデータを解析するのに使わないと。&lt;/p&gt;
 </description>
@@ -335,36 +345,38 @@ if __name__ == &#39;__main__&#39;:
     
     <item>
       <title>JavaScriptでいい感じにURLとかScreenNameとかをリンクにする正規表現</title>
-      <link>http://nobu666.com/2011/01/20/0831.html</link>
+      <link>http://nobu666.com/2011/01/20/831.html</link>
       <pubDate>Thu, 20 Jan 2011 16:11:20 +0900</pubDate>
       
-      <guid>http://nobu666.com/2011/01/20/0831.html</guid>
+      <guid>http://nobu666.com/2011/01/20/831.html</guid>
       <description>&lt;p&gt;URLに@が入ってたりすると、ScreenNameのリンクとごっちゃになって割と対応に手間取ったのでメモとして。日本語のハッシュタグなんか最近見かけないからどうでもいいような気もするけど、まぁ一応対応。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;var text=&amp;amp;quot;@xyz aaa http://aaa.com:8080/@abc#asdf http://日本語.jp/?abc&amp;amp;amp;amp;asdf http://example.jp/a.b.c@d.e bbb @ccc/@ddd/＠eee #hash #日本語だめ #日本語おｋ_ http://a.com/日本語&amp;amp;quot;;
-text.replace(/(https?:\/\/(?:[^!&amp;amp;quot;#$%&amp;amp;amp;amp;&#39;\(\)*\+,-\./:;&amp;amp;amp;lt;=&amp;amp;amp;gt;\?@\[\\\]^_`\{\|\}~\s][\.-](?=[^!&amp;amp;quot;#$%&amp;amp;amp;amp;&#39;\(\)*\+,-\./:;&amp;amp;amp;lt;=&amp;amp;amp;gt;\?@\[\\\]^_`\{\|\}~\s])|[^!&amp;amp;quot;#$%&amp;amp;amp;amp;&#39;\(\)*\+,-\./:;&amp;amp;amp;lt;=&amp;amp;amp;gt;\?@\[\\\]^_`\{\|\}~\s]){1,}\.[a-z]{2,}(?::[0-9]+)?(?:\/(?:[\x21-\x7e]+)?)?)|(?:[@＠])([a-z0-9_]{1,20})|(?:#|\uFF03)([^\s\/ \x21-\x2f\x3a-\x40\x5b-\x5e\x60\x7b-\x7e]+[a-z0-9_])/mgi, function(){
- if(arguments[1]!==&amp;amp;quot;&amp;amp;quot;){
-  return &amp;amp;quot;&amp;amp;amp;lt;a class=&#39;url&#39; href=&#39;&amp;amp;quot;+arguments[1]+&amp;amp;quot;&#39;&amp;amp;amp;gt;&amp;amp;quot;+arguments[1]+&amp;amp;quot;&amp;amp;amp;lt;/a&amp;amp;amp;gt;&amp;amp;quot;;
- }else if(arguments[2]==&amp;amp;quot;&amp;amp;quot; &amp;amp;amp;amp;&amp;amp;amp;amp; arguments[3]==&amp;amp;quot;&amp;amp;quot;){
+&lt;p&gt;[sourcecode language=&amp;ldquo;javascript&amp;rdquo; padlinenumbers=&amp;ldquo;2&amp;rdquo;]
+var text=&amp;quot;@xyz aaa &lt;a href=&#34;http://aaa.com:8080/@abc#asdf&#34;&gt;http://aaa.com:8080/@abc#asdf&lt;/a&gt; http://日本語.jp/?abc&amp;amp;amp;asdf &lt;a href=&#34;http://example.jp/a.b.c@d.e&#34;&gt;http://example.jp/a.b.c@d.e&lt;/a&gt; bbb @ccc/@ddd/＠eee #hash #日本語だめ #日本語おｋ_ &lt;a href=&#34;http://a.com/日本語&amp;quot;&#34;&gt;http://a.com/日本語&amp;quot;&lt;/a&gt;;
+text.replace(/(https?:\/\/(?:[^!&amp;quot;#$%&amp;amp;amp;&amp;rsquo;()&lt;em&gt;+,-./:;&amp;amp;lt;=&amp;amp;gt;\?@[\]^&lt;em&gt;`{|}~\s][.-](?=[^!&amp;quot;#$%&amp;amp;amp;&amp;rsquo;()*+,-./:;&amp;amp;lt;=&amp;amp;gt;\?@[\]^&lt;/em&gt;`{|}~\s])|[^!&amp;quot;#$%&amp;amp;amp;&amp;rsquo;()&lt;/em&gt;+,-./:;&amp;amp;lt;=&amp;amp;gt;\?@[\]^&lt;em&gt;`{|}~\s]){1,}.[a-z]{2,}(?::[0-9]+)?(?:\/(?:[\x21-\x7e]+)?)?)|(?:[@＠])([a-z0-9&lt;/em&gt;]{1,20})|(?:#|\uFF03)([^\s\/ \x21-\x2f\x3a-\x40\x5b-\x5e\x60\x7b-\x7e]+[a-z0-9_])/mgi, function(){
+ if(arguments[1]!==&amp;quot;&amp;quot;){
+  return &amp;quot;&amp;amp;lt;a class=&amp;lsquo;url&amp;rsquo; href=&amp;rsquo;&amp;quot;+arguments[1]+&amp;quot;&amp;lsquo;&amp;amp;gt;&amp;quot;+arguments[1]+&amp;quot;&amp;amp;lt;/a&amp;amp;gt;&amp;quot;;
+ }else if(arguments[2]==&amp;quot;&amp;quot; &amp;amp;amp;&amp;amp;amp; arguments[3]==&amp;quot;&amp;quot;){
   return arguments[1];
  }
- if(arguments[2]!==&amp;amp;quot;&amp;amp;quot;){
-  return &amp;amp;quot;&amp;amp;amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/&amp;amp;quot;+arguments[2]+&amp;amp;quot;&#39;&amp;amp;amp;gt;@&amp;amp;quot;+arguments[2]+&amp;amp;quot;&amp;amp;amp;lt;/a&amp;amp;amp;gt;&amp;amp;quot;;
- }else if (arguments[3]==&amp;amp;quot;&amp;amp;quot;){
+ if(arguments[2]!==&amp;quot;&amp;quot;){
+  return &amp;quot;&amp;amp;lt;a class=&amp;lsquo;screen_name&amp;rsquo; href=&amp;lsquo;&lt;a href=&#34;http://twitter.com/&amp;quot;+arguments[2]+&amp;quot;&#39;&amp;amp;gt;@&amp;quot;+arguments[2]+&amp;quot;&amp;amp;lt;/a&amp;amp;gt;&amp;quot;&#34;&gt;http://twitter.com/&amp;quot;+arguments[2]+&amp;quot;&#39;&amp;amp;gt;@&amp;quot;+arguments[2]+&amp;quot;&amp;amp;lt;/a&amp;amp;gt;&amp;quot;&lt;/a&gt;;
+ }else if (arguments[3]==&amp;quot;&amp;quot;){
   return arguments[2];
  }
- if (arguments[3]!==&amp;amp;quot;&amp;amp;quot;){
-  return &amp;amp;quot;&amp;amp;amp;lt;a class=&#39;hashtag&#39; href=&#39;http://search.twitter.com/search?q=%23&amp;amp;quot;+arguments[3]+&amp;amp;quot;&#39;&amp;amp;amp;gt;#&amp;amp;quot;+arguments[3]+&amp;amp;quot;&amp;amp;amp;lt;/a&amp;amp;amp;gt;&amp;amp;quot;;
+ if (arguments[3]!==&amp;quot;&amp;quot;){
+  return &amp;quot;&amp;amp;lt;a class=&amp;lsquo;hashtag&amp;rsquo; href=&amp;lsquo;&lt;a href=&#34;http://search.twitter.com/search?q=%23&amp;quot;+arguments[3]+&amp;quot;&#39;&amp;amp;gt;#&amp;quot;+arguments[3]+&amp;quot;&amp;amp;lt;/a&amp;amp;gt;&amp;quot;&#34;&gt;http://search.twitter.com/search?q=%23&amp;quot;+arguments[3]+&amp;quot;&#39;&amp;amp;gt;#&amp;quot;+arguments[3]+&amp;quot;&amp;amp;lt;/a&amp;amp;gt;&amp;quot;&lt;/a&gt;;
  } else {
   return arguments[3];
  }
 }
-)
-&lt;/code&gt;&lt;/pre&gt;
+)&lt;/p&gt;
 
-&lt;p&gt;実行すると&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+実行すると
 
-&lt;pre&gt;&lt;code&gt;&amp;amp;quot;&amp;amp;amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/xyz&#39;&amp;amp;amp;gt;@xyz&amp;amp;amp;lt;/a&amp;amp;amp;gt; aaa &amp;amp;amp;lt;a class=&#39;url&#39; href=&#39;http://aaa.com:8080/@abc#asdf&#39;&amp;amp;amp;gt;http://aaa.com:8080/@abc#asdf&amp;amp;amp;lt;/a&amp;amp;amp;gt; &amp;amp;amp;lt;a class=&#39;url&#39; href=&#39;http://日本語.jp/?abc&amp;amp;amp;amp;asdf&#39;&amp;amp;amp;gt;http://日本語.jp/?abc&amp;amp;amp;amp;asdf&amp;amp;amp;lt;/a&amp;amp;amp;gt; &amp;amp;amp;lt;a class=&#39;url&#39; href=&#39;http://example.jp/a.b.c@d.e&#39;&amp;amp;amp;gt;http://example.jp/a.b.c@d.e&amp;amp;amp;lt;/a&amp;amp;amp;gt; bbb &amp;amp;amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/ccc&#39;&amp;amp;amp;gt;@ccc&amp;amp;amp;lt;/a&amp;amp;amp;gt;/&amp;amp;amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/ddd&#39;&amp;amp;amp;gt;@ddd&amp;amp;amp;lt;/a&amp;amp;amp;gt;/&amp;amp;amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/eee&#39;&amp;amp;amp;gt;@eee&amp;amp;amp;lt;/a&amp;amp;amp;gt; &amp;amp;amp;lt;a class=&#39;hashtag&#39; href=&#39;http://search.twitter.com/search?q=%23hash&#39;&amp;amp;amp;gt;#hash&amp;amp;amp;lt;/a&amp;amp;amp;gt; #日本語だめ &amp;amp;amp;lt;a class=&#39;hashtag&#39; href=&#39;http://search.twitter.com/search?q=%23日本語おｋ_&#39;&amp;amp;amp;gt;#日本語おｋ_&amp;amp;amp;lt;/a&amp;amp;amp;gt; &amp;amp;amp;lt;a class=&#39;url&#39; href=&#39;http://a.com/&#39;&amp;amp;amp;gt;http://a.com/&amp;amp;amp;lt;/a&amp;amp;amp;gt;日本語&amp;amp;quot;
+[sourcecode padlinenumbers=&amp;quot;2&amp;quot; language=&amp;quot;laguage=&amp;quot;]
+&amp;amp;quot;&amp;amp;amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/xyz&#39;&amp;amp;amp;gt;@xyz&amp;amp;amp;lt;/a&amp;amp;amp;gt; aaa &amp;amp;amp;lt;a class=&#39;url&#39; href=&#39;http://aaa.com:8080/@abc#asdf&#39;&amp;amp;amp;gt;http://aaa.com:8080/@abc#asdf&amp;amp;amp;lt;/a&amp;amp;amp;gt; &amp;amp;amp;lt;a class=&#39;url&#39; href=&#39;http://日本語.jp/?abc&amp;amp;amp;amp;asdf&#39;&amp;amp;amp;gt;http://日本語.jp/?abc&amp;amp;amp;amp;asdf&amp;amp;amp;lt;/a&amp;amp;amp;gt; &amp;amp;amp;lt;a class=&#39;url&#39; href=&#39;http://example.jp/a.b.c@d.e&#39;&amp;amp;amp;gt;http://example.jp/a.b.c@d.e&amp;amp;amp;lt;/a&amp;amp;amp;gt; bbb &amp;amp;amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/ccc&#39;&amp;amp;amp;gt;@ccc&amp;amp;amp;lt;/a&amp;amp;amp;gt;/&amp;amp;amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/ddd&#39;&amp;amp;amp;gt;@ddd&amp;amp;amp;lt;/a&amp;amp;amp;gt;/&amp;amp;amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/eee&#39;&amp;amp;amp;gt;@eee&amp;amp;amp;lt;/a&amp;amp;amp;gt; &amp;amp;amp;lt;a class=&#39;hashtag&#39; href=&#39;http://search.twitter.com/search?q=%23hash&#39;&amp;amp;amp;gt;#hash&amp;amp;amp;lt;/a&amp;amp;amp;gt; #日本語だめ &amp;amp;amp;lt;a class=&#39;hashtag&#39; href=&#39;http://search.twitter.com/search?q=%23日本語おｋ_&#39;&amp;amp;amp;gt;#日本語おｋ_&amp;amp;amp;lt;/a&amp;amp;amp;gt; &amp;amp;amp;lt;a class=&#39;url&#39; href=&#39;http://a.com/&#39;&amp;amp;amp;gt;http://a.com/&amp;amp;amp;lt;/a&amp;amp;amp;gt;日本語&amp;amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;という文字列になり、以下のようにほぼ思ったとおりのリンクになる&lt;/p&gt;

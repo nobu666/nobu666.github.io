@@ -11,24 +11,25 @@
     
     <item>
       <title>jQuery &#43; jTemplatesを使って、setIntervalで定期的に新しいデータを取得し、要素の上に追加していく方法</title>
-      <link>http://nobu666.com/2009/11/22/0793.html</link>
+      <link>http://nobu666.com/2009/11/22/793.html</link>
       <pubDate>Sun, 22 Nov 2009 17:43:39 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/11/22/0793.html</guid>
+      <guid>http://nobu666.com/2009/11/22/793.html</guid>
       <description>&lt;p&gt;はまったので忘れないうちにメモ。&lt;/p&gt;
 
 &lt;p&gt;$(&amp;ldquo;#piyopiyo&amp;rdquo;).processTemplate(data) とかやると、id=&amp;ldquo;piyopiyo&amp;rdquo;な要素の内容が全部置き換わってしまうので、古いデータが消えてしまう。たとえばTwitterクライアントみたいなものを作ろうと思ったら、定期的に新しいtimelineをとってきたら、古いデータを残しつつ、新しいものだけ上に出てきてほしい。&lt;/p&gt;
 
 &lt;p&gt;以下のようにすることで、id=&amp;ldquo;piyo&amp;rdquo;配下のclass=&amp;ldquo;moge&amp;rdquo;にデータがたまっていく。空のdivを一個用意して、そこにprocessTemplateで新しいデータを入れていく。&lt;a href=&#34;http://twitter.com/hideaki_t/&#34;&gt;@hideaki_t&lt;/a&gt;、ありがとうございました。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;amp;lt;html&amp;amp;gt;
-  &amp;amp;lt;head&amp;amp;gt;
-    &amp;amp;lt;script type=&amp;amp;quot;text/javascript&amp;amp;quot; src=&amp;amp;quot;js/jquery-1.3.2.js&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/script&amp;amp;gt;
-    &amp;amp;lt;script type=&amp;amp;quot;text/javascript&amp;amp;quot; src=&amp;amp;quot;js/jquery-jtemplates.js&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/script&amp;amp;gt;
-    &amp;amp;lt;script type=&amp;amp;quot;text/javascript&amp;amp;quot;&amp;amp;gt;
+&lt;p&gt;[sourcecode lang=&amp;ldquo;javascript&amp;rdquo;]
+&amp;lt;html&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;js/jquery-1.3.2.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;js/jquery-jtemplates.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
     $(document).ready(function() {
       hoge.count=1;
-      $(&amp;amp;quot;#piyo &amp;amp;gt; .moge &amp;amp;gt; div:first&amp;amp;quot;).setTemplate(&amp;amp;quot;{#foreach $T as r}&amp;amp;lt;div class=&#39;hogera&#39;&amp;amp;gt;{$T.r.id}&amp;amp;lt;/div&amp;amp;gt;{#/for}&amp;amp;quot;);
+      $(&amp;quot;#piyo &amp;gt; .moge &amp;gt; div:first&amp;quot;).setTemplate(&amp;quot;{#foreach $T as r}&amp;lt;div class=&amp;lsquo;hogera&amp;rsquo;&amp;gt;{$T.r.id}&amp;lt;/div&amp;gt;{#/for}&amp;quot;);
       hoge.show();
       window.setInterval(function(){
         hoge.show();
@@ -36,19 +37,19 @@
     });
     var hoge = {
       show:function() {
-        var data = &amp;amp;quot;[{id:&amp;amp;quot; + hoge.count++ + &amp;amp;quot;}]&amp;amp;quot;;
-        var t = $(&amp;amp;quot;#piyo &amp;amp;gt; .moge &amp;amp;gt; div:first&amp;amp;quot;);
+        var data = &amp;quot;[{id:&amp;quot; + hoge.count++ + &amp;quot;}]&amp;quot;;
+        var t = $(&amp;quot;#piyo &amp;gt; .moge &amp;gt; div:first&amp;quot;);
         t.after(t.children());
         t.processTemplate(eval(data));
       }
     }
-    &amp;amp;lt;/script&amp;amp;gt;
-  &amp;amp;lt;/head&amp;amp;gt;
-  &amp;amp;lt;body&amp;amp;gt;
-    &amp;amp;lt;div id=&amp;amp;quot;piyo&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;div class=&amp;amp;quot;moge&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;div /&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;
-  &amp;amp;lt;/body&amp;amp;gt;
-&amp;amp;lt;/html&amp;amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+    &amp;lt;/script&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    &amp;lt;div id=&amp;quot;piyo&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;moge&amp;quot;&amp;gt;&amp;lt;div /&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+```&lt;/p&gt;
 </description>
     </item>
     

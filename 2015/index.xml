@@ -6,8 +6,97 @@
     <description>Recent content in 2015s on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 16 May 2015 02:43:38 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jun 2015 00:00:00 +0900</lastBuildDate>
     <atom:link href="http://nobu666.com/2015.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>WordPressからGitHub Pages &#43; hugoに移行した</title>
+      <link>http://nobu666.com/2015/06/21/1015.html</link>
+      <pubDate>Sun, 21 Jun 2015 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2015/06/21/1015.html</guid>
+      <description>
+
+&lt;h1 id=&#34;wordpressからgithub-pages-hugoに移行した:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;WordPressからGitHub Pages + hugoに移行した&lt;/h1&gt;
+
+&lt;p&gt;WordPressでずっと運用してきたのだけど、PHPやWordPressの脆弱性の多さにつかれたのと、そろそろVPS自体管理するの辞めたいと思っていたので、static site generatorであるところのHugoを使ってGithub Pagesで運用することにしました。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo :: A fase and modern static website engine&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;CLIだけで操作できて素晴らしい&lt;/li&gt;
+&lt;li&gt;サーバの管理から開放されて素晴らしい&lt;/li&gt;
+&lt;li&gt;Markdownで書けて素晴らしい&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;static site generatorは上記の点が素晴らしいのですが、Jekyll・Octopress・Middlemanなどいくつも選択肢がある中でHugoを選んだ理由は&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;純粋にgolang使いたかった&lt;/li&gt;
+&lt;li&gt;ファイルの生成がすごい速い&lt;/li&gt;
+&lt;li&gt;ローカルでserver立ち上げて、ファイル更新すると勝手にリロードするところまで面倒みてくれる&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;というところ。ただデメリットもあって、まだイマイチマイナーなため、themeの数が少ないです。あと単純に-t hogehogeでtheme選ぶだけではERROR出て動かないことがままあります。&lt;/p&gt;
+
+&lt;h2 id=&#34;install:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;install&lt;/h2&gt;
+
+&lt;p&gt;Macなら&lt;code&gt;brew install hugo&lt;/code&gt;で一発です&lt;/p&gt;
+
+&lt;h2 id=&#34;作業ディレクトリの作成:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;作業ディレクトリの作成&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;hugo new site nobu666.com&lt;/code&gt;を適当な場所で作ります。&lt;/p&gt;
+
+&lt;h2 id=&#34;themeを選ぶ:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;themeを選ぶ&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;git clone --recursive https://github.com/spf13/hugoThemes.git themes&lt;/code&gt;で一括で持ってこれます。が、ここにはないthemeを公開してる人もいるので、好きなのが決まってればそれを&lt;code&gt;themes/&lt;/code&gt;の下に&lt;code&gt;git clone&lt;/code&gt;してくればいいです&lt;/p&gt;
+
+&lt;h2 id=&#34;wordpressからimport:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;WordPressからimport&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://gist.github.com/rakuishi/3163f6e8c5a496329bc7&#34;&gt;wp-xml-hugo-import.rb&lt;/a&gt;をまるっと拝借して、WordPressからexportしたxmlを変換します。自分のblogではpermalinkが&lt;code&gt;yyyy/mm/dd/post_id.html&lt;/code&gt;だったので、それに合わせてslugの指定を削除したり、ソースコードの部分を&lt;code&gt;[sourcecode][/sourcecode]&lt;/code&gt;で囲んで書いていたのでそこをmarkdownに書き換える処理を入れたりしました。あとtitleに &lt;code&gt;&amp;quot;&lt;/code&gt; が入ってるとparse errorになってしまうので、&lt;code&gt;\&amp;quot;&lt;/code&gt;に置換しておきます。ファイル名も yyyy-mm-dd-post_id では都合がわるいので、既存の形式に合わせてmkdirしたり出力したりします。&lt;/p&gt;
+
+&lt;h2 id=&#34;画像を持ってくる:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;画像を持ってくる&lt;/h2&gt;
+
+&lt;p&gt;既存のサイトの&lt;code&gt;wp-contents/uploads&lt;/code&gt;から、ローカルの&lt;code&gt;static/images&lt;/code&gt;にscpなりなんなりで持ってきます。&lt;/p&gt;
+
+&lt;h2 id=&#34;ローカルで起動:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;ローカルで起動&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;hugo server -t テーマの名前 -D -w&lt;/code&gt;でローカル環境が起動します。 &lt;code&gt;http://localhost:1313&lt;/code&gt;をブラウザで開いて動作確認しましょう。サイト名とかslug使わないで.htmlにしたいとか、そういうのはconfig.tomlで設定します。残念ながらconfig.tomlの変更はライブリロード対応してないので、変更したら立ち上げ直す必要があります。自分の場合はslug使っていなかったので、&lt;code&gt;uglyurls = true&lt;/code&gt;はとりあえず必須でした。&lt;/p&gt;
+
+&lt;h2 id=&#34;公開用のファイルを生成する:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;公開用のファイルを生成する&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;hugo -t テーマの名前&lt;/code&gt;でファイルが生成されます。&lt;/p&gt;
+
+&lt;h2 id=&#34;公開する:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;公開する&lt;/h2&gt;
+
+&lt;p&gt;publicディレクトリで&lt;code&gt;git init&lt;/code&gt;とかごにょごにょして&lt;code&gt;アカウント名.github.io&lt;/code&gt;なリポジトリにpushします。基本的にはこれでおしまい。&lt;/p&gt;
+
+&lt;h2 id=&#34;独自ドメインでgithub-pagesを使う:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;独自ドメインでGitHub Pagesを使う&lt;/h2&gt;
+
+&lt;p&gt;subdomainありかなしかでやることが違います。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;subdomainありの場合
+
+&lt;ul&gt;
+&lt;li&gt;DNSでCNAMEレコードを追加&lt;/li&gt;
+&lt;li&gt;publicディレクトリにCNAMEファイルを作成してpush&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;subdomainなし(Zone Apex)の場合
+
+&lt;ul&gt;
+&lt;li&gt;DNSのAレコードを以下の2つ追加&lt;/li&gt;
+&lt;li&gt;192.30.252.153&lt;/li&gt;
+&lt;li&gt;192.30.252.154&lt;/li&gt;
+&lt;li&gt;publicディレクトリにCNAMEファイルを作成してpush&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;今後の方針:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;今後の方針&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://gohugo.io/tutorials/automated-deployments&#34;&gt;本家のチュートリアルに従って&lt;/a&gt;Wercker使ってpushしたらそのまま公開される仕組みにしたい。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>SmartNewsにjoinしました</title>

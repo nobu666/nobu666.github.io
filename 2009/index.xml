@@ -11,10 +11,10 @@
     
     <item>
       <title>2009年まとめ</title>
-      <link>http://nobu666.com/2009/12/31/0800.html</link>
+      <link>http://nobu666.com/2009/12/31/800.html</link>
       <pubDate>Thu, 31 Dec 2009 01:49:09 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/12/31/0800.html</guid>
+      <guid>http://nobu666.com/2009/12/31/800.html</guid>
       <description>&lt;p&gt;今年もあと22時間くらいでお終いと言うことで、例によって実家から今年のまとめをば。世間一般的な今年の出来事と言えば、政権交代・WBC連覇・イチローの9年連続200本安打・芸能界薬物汚染・新型インフルエンザ・オバマ政権発足・GMとクライスラーの経営破綻・ドバイショック・相次ぐアーティストの訃報、といったニュースがぱっと思いつく。&lt;/p&gt;
 
 &lt;p&gt;んで我が家のニュースと言えば、家を買って引っ越したことくらいで、それ以外はあんまないなぁ…というかそれだけで十分なインパクトのある出来事ではあったのだけど。&lt;/p&gt;
@@ -27,10 +27,10 @@
     
     <item>
       <title>新築一戸建てを買って思ったこと</title>
-      <link>http://nobu666.com/2009/11/23/0798.html</link>
+      <link>http://nobu666.com/2009/11/23/798.html</link>
       <pubDate>Mon, 23 Nov 2009 02:27:35 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/11/23/0798.html</guid>
+      <guid>http://nobu666.com/2009/11/23/798.html</guid>
       <description>&lt;p&gt;眠れないのでまとめておく。&lt;/p&gt;
 
 &lt;p&gt;買って良かったこと
@@ -62,24 +62,25 @@
     
     <item>
       <title>jQuery &#43; jTemplatesを使って、setIntervalで定期的に新しいデータを取得し、要素の上に追加していく方法</title>
-      <link>http://nobu666.com/2009/11/22/0793.html</link>
+      <link>http://nobu666.com/2009/11/22/793.html</link>
       <pubDate>Sun, 22 Nov 2009 17:43:39 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/11/22/0793.html</guid>
+      <guid>http://nobu666.com/2009/11/22/793.html</guid>
       <description>&lt;p&gt;はまったので忘れないうちにメモ。&lt;/p&gt;
 
 &lt;p&gt;$(&amp;ldquo;#piyopiyo&amp;rdquo;).processTemplate(data) とかやると、id=&amp;ldquo;piyopiyo&amp;rdquo;な要素の内容が全部置き換わってしまうので、古いデータが消えてしまう。たとえばTwitterクライアントみたいなものを作ろうと思ったら、定期的に新しいtimelineをとってきたら、古いデータを残しつつ、新しいものだけ上に出てきてほしい。&lt;/p&gt;
 
 &lt;p&gt;以下のようにすることで、id=&amp;ldquo;piyo&amp;rdquo;配下のclass=&amp;ldquo;moge&amp;rdquo;にデータがたまっていく。空のdivを一個用意して、そこにprocessTemplateで新しいデータを入れていく。&lt;a href=&#34;http://twitter.com/hideaki_t/&#34;&gt;@hideaki_t&lt;/a&gt;、ありがとうございました。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;amp;lt;html&amp;amp;gt;
-  &amp;amp;lt;head&amp;amp;gt;
-    &amp;amp;lt;script type=&amp;amp;quot;text/javascript&amp;amp;quot; src=&amp;amp;quot;js/jquery-1.3.2.js&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/script&amp;amp;gt;
-    &amp;amp;lt;script type=&amp;amp;quot;text/javascript&amp;amp;quot; src=&amp;amp;quot;js/jquery-jtemplates.js&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;/script&amp;amp;gt;
-    &amp;amp;lt;script type=&amp;amp;quot;text/javascript&amp;amp;quot;&amp;amp;gt;
+&lt;p&gt;[sourcecode lang=&amp;ldquo;javascript&amp;rdquo;]
+&amp;lt;html&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;js/jquery-1.3.2.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;js/jquery-jtemplates.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+    &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
     $(document).ready(function() {
       hoge.count=1;
-      $(&amp;amp;quot;#piyo &amp;amp;gt; .moge &amp;amp;gt; div:first&amp;amp;quot;).setTemplate(&amp;amp;quot;{#foreach $T as r}&amp;amp;lt;div class=&#39;hogera&#39;&amp;amp;gt;{$T.r.id}&amp;amp;lt;/div&amp;amp;gt;{#/for}&amp;amp;quot;);
+      $(&amp;quot;#piyo &amp;gt; .moge &amp;gt; div:first&amp;quot;).setTemplate(&amp;quot;{#foreach $T as r}&amp;lt;div class=&amp;lsquo;hogera&amp;rsquo;&amp;gt;{$T.r.id}&amp;lt;/div&amp;gt;{#/for}&amp;quot;);
       hoge.show();
       window.setInterval(function(){
         hoge.show();
@@ -87,87 +88,90 @@
     });
     var hoge = {
       show:function() {
-        var data = &amp;amp;quot;[{id:&amp;amp;quot; + hoge.count++ + &amp;amp;quot;}]&amp;amp;quot;;
-        var t = $(&amp;amp;quot;#piyo &amp;amp;gt; .moge &amp;amp;gt; div:first&amp;amp;quot;);
+        var data = &amp;quot;[{id:&amp;quot; + hoge.count++ + &amp;quot;}]&amp;quot;;
+        var t = $(&amp;quot;#piyo &amp;gt; .moge &amp;gt; div:first&amp;quot;);
         t.after(t.children());
         t.processTemplate(eval(data));
       }
     }
-    &amp;amp;lt;/script&amp;amp;gt;
-  &amp;amp;lt;/head&amp;amp;gt;
-  &amp;amp;lt;body&amp;amp;gt;
-    &amp;amp;lt;div id=&amp;amp;quot;piyo&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;div class=&amp;amp;quot;moge&amp;amp;quot;&amp;amp;gt;&amp;amp;lt;div /&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;&amp;amp;lt;/div&amp;amp;gt;
-  &amp;amp;lt;/body&amp;amp;gt;
-&amp;amp;lt;/html&amp;amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+    &amp;lt;/script&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    &amp;lt;div id=&amp;quot;piyo&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;moge&amp;quot;&amp;gt;&amp;lt;div /&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+```&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>cmecab-javaとLuceneでMoreLikeThis</title>
-      <link>http://nobu666.com/2009/10/07/0788.html</link>
+      <link>http://nobu666.com/2009/10/07/788.html</link>
       <pubDate>Wed, 07 Oct 2009 00:32:04 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/10/07/0788.html</guid>
+      <guid>http://nobu666.com/2009/10/07/788.html</guid>
       <description>&lt;p&gt;類似検索やりたくて試したんだけどなんかうまくいかねーです。
 Lucene詳しいかた、教えてくだしあ＞＜&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;2009/10/07: 解決したので後ろに追記しました。&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;package hoge;
-import java.io.*;
+&lt;p&gt;[sourcecode lang=&amp;ldquo;java&amp;rdquo;]
+package hoge;
+import java.io.&lt;em&gt;;
 import net.moraleboost.lucene.analysis.ja.StandardMeCabAnalyzer;
-import org.apache.lucene.*;
+import org.apache.lucene.&lt;/em&gt;;&lt;/p&gt;
 
-public class MeCabTest {
-    public static final String DIC_ENCODING = System.getProperty(&amp;amp;quot;net.moraleboost.mecab.encoding&amp;amp;quot;);
+&lt;p&gt;public class MeCabTest {
+    public static final String DIC_ENCODING = System.getProperty(&amp;quot;net.moraleboost.mecab.encoding&amp;quot;);
     private static StandardMeCabAnalyzer analyzer = null;
     private static FSDirectory directory = null;
     private IndexWriter writer  = null;
-    private static final String DIR = &amp;amp;quot;/path/to/index&amp;amp;quot;;
+    private static final String DIR = &amp;quot;/path/to/index&amp;quot;;&lt;/p&gt;
 
-    public void setUp() throws Exception {
-        writer  = new IndexWriter(directory, analyzer, new MaxFieldLength(4096));
-        Document doc = new Document();
-        addField(doc, &amp;amp;quot;text&amp;amp;quot;, &amp;amp;quot;ほげほげ&amp;amp;quot;);
-        ....
-        ....
-        writer.commit();
-        writer.optimize();
-        writer.close();
-    }
-    private void addField(Document doc, String name, String value) throws Exception {
-        Field field = new Field(name, value, Store.YES, Field.Index.ANALYZED, Field.TermVector.YES);
-        doc.add(field);
-        writer.addDocument(doc);
-    }
+&lt;pre&gt;&lt;code&gt;public void setUp() throws Exception {
+    writer  = new IndexWriter(directory, analyzer, new MaxFieldLength(4096));
+    Document doc = new Document();
+    addField(doc, &amp;amp;quot;text&amp;amp;quot;, &amp;amp;quot;ほげほげ&amp;amp;quot;);
+    ....
+    ....
+    writer.commit();
+    writer.optimize();
+    writer.close();
+}
+private void addField(Document doc, String name, String value) throws Exception {
+    Field field = new Field(name, value, Store.YES, Field.Index.ANALYZED, Field.TermVector.YES);
+    doc.add(field);
+    writer.addDocument(doc);
+}
 
-    public static void main(String[] args) {
-        MeCabTest t = new MeCabTest();
-        IndexSearcher searcher = null;
-        IndexReader reader = null;
-        analyzer = new StandardMeCabAnalyzer(DIC_ENCODING, &amp;amp;quot;&amp;amp;quot;);
-        directory = FSDirectory.open(new File(DIR));
-        t.setUp();
-        reader = IndexReader.open(DIR, false);
-        searcher = new IndexSearcher(directory, true);
-        QueryParser parser = new QueryParser(&amp;amp;quot;text&amp;amp;quot;, analyzer);
-        parser.setDefaultOperator(QueryParser.Operator.OR);
-        MoreLikeThis mlt = new MoreLikeThis(reader);
-        mlt.setAnalyzer(analyzer);
-        mlt.setMinTermFreq(1);
-        mlt.setFieldNames(new String[]{&amp;amp;quot;text&amp;amp;quot;});
-        Query query = mlt.like(new ByteArrayInputStream(&amp;amp;quot;ほげ&amp;amp;quot;.getBytes()));
-        TopDocs topDocs = searcher.search(query, 100);
-        if (topDocs.totalHits &amp;amp;gt; 0) {
-            for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
-                Document doc = searcher.doc(scoreDoc.doc);
-                System.out.println(doc.get(&amp;amp;quot;text&amp;amp;quot;));
-            }
+public static void main(String[] args) {
+    MeCabTest t = new MeCabTest();
+    IndexSearcher searcher = null;
+    IndexReader reader = null;
+    analyzer = new StandardMeCabAnalyzer(DIC_ENCODING, &amp;amp;quot;&amp;amp;quot;);
+    directory = FSDirectory.open(new File(DIR));
+    t.setUp();
+    reader = IndexReader.open(DIR, false);
+    searcher = new IndexSearcher(directory, true);
+    QueryParser parser = new QueryParser(&amp;amp;quot;text&amp;amp;quot;, analyzer);
+    parser.setDefaultOperator(QueryParser.Operator.OR);
+    MoreLikeThis mlt = new MoreLikeThis(reader);
+    mlt.setAnalyzer(analyzer);
+    mlt.setMinTermFreq(1);
+    mlt.setFieldNames(new String[]{&amp;amp;quot;text&amp;amp;quot;});
+    Query query = mlt.like(new ByteArrayInputStream(&amp;amp;quot;ほげ&amp;amp;quot;.getBytes()));
+    TopDocs topDocs = searcher.search(query, 100);
+    if (topDocs.totalHits &amp;amp;gt; 0) {
+        for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
+            Document doc = searcher.doc(scoreDoc.doc);
+            System.out.println(doc.get(&amp;amp;quot;text&amp;amp;quot;));
         }
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+```&lt;/p&gt;
 
 &lt;p&gt;try〜catchとか省略。addField(&amp;hellip;);のところ、実際にはニュースサイトから本文引っ張ってきて、いくつかいれた。7個くらい適当に選んで、3個くらいは同じニュース（台風18号関連）を違うサイトから引用した。&lt;/p&gt;
 
@@ -182,10 +186,10 @@ public class MeCabTest {
     
     <item>
       <title>家を買いました</title>
-      <link>http://nobu666.com/2009/07/03/0786.html</link>
+      <link>http://nobu666.com/2009/07/03/786.html</link>
       <pubDate>Fri, 03 Jul 2009 01:13:25 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/07/03/0786.html</guid>
+      <guid>http://nobu666.com/2009/07/03/786.html</guid>
       <description>&lt;p&gt;念願のマイホームを手に入れたぞ!&lt;/p&gt;
 
 &lt;p&gt;ということで買いました、一軒家。とにかく東京の家は隣と近すぎて、それだけは嫁が嫌だというのでそこは拘って選んだ。通勤時間もDoor2Doorで1時間以内なら、多少駅から遠くてもいいことにした。&lt;/p&gt;
@@ -200,10 +204,10 @@ public class MeCabTest {
     
     <item>
       <title>カメラ持って散歩</title>
-      <link>http://nobu666.com/2009/06/21/0781.html</link>
+      <link>http://nobu666.com/2009/06/21/781.html</link>
       <pubDate>Sun, 21 Jun 2009 02:15:53 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/06/21/0781.html</guid>
+      <guid>http://nobu666.com/2009/06/21/781.html</guid>
       <description>&lt;p&gt;涼しくなってきた夕方から、カメラを持ってブラブラと近所を散歩した。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/nobu666/3643001515/&#34; title=&#34;IMG_0003 by nobu_666_jp, on Flickr&#34;&gt;&lt;img src=&#34;http://farm3.static.flickr.com/2282/3643001515_349c1a8a0b.jpg&#34; width=&#34;500&#34; height=&#34;333&#34; alt=&#34;IMG_0003&#34; /&gt;&lt;/a&gt;
@@ -218,10 +222,10 @@ public class MeCabTest {
     
     <item>
       <title>EOS Kiss X2を手に入れた!</title>
-      <link>http://nobu666.com/2009/06/19/0779.html</link>
+      <link>http://nobu666.com/2009/06/19/779.html</link>
       <pubDate>Fri, 19 Jun 2009 00:22:02 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/06/19/0779.html</guid>
+      <guid>http://nobu666.com/2009/06/19/779.html</guid>
       <description>&lt;p&gt;出ないと思っていたボーナスが出たので、念願のデジタル一眼デビューしました。軽さを重視して、Kiss Xシリーズに。X3にしようかと思ったけど、デジ一の先人に「ボディはシャッターの寿命がくるのでいずれ買い換えるけど、レンズは使い回せる」と言われたので、X2に落としてWズームレンズキットにしました。ついでにせっかくのデジ一だしということで、シグマ 30mm F1.4 EX DCも併せて購入。&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.flickr.com/photos/nobu666/3638079161/&#34; title=&#34;RIMG0012 by nobu_666_jp, on Flickr&#34;&gt;&lt;img src=&#34;http://farm3.static.flickr.com/2482/3638079161_38c84c081a.jpg&#34; width=&#34;500&#34; height=&#34;375&#34; alt=&#34;RIMG0012&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
@@ -242,24 +246,25 @@ public class MeCabTest {
     
     <item>
       <title>PS3用にDLNAサーバMediatombを入れる</title>
-      <link>http://nobu666.com/2009/06/15/0776.html</link>
+      <link>http://nobu666.com/2009/06/15/776.html</link>
       <pubDate>Mon, 15 Jun 2009 13:24:05 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/06/15/0776.html</guid>
+      <guid>http://nobu666.com/2009/06/15/776.html</guid>
       <description>&lt;p&gt;先日気がついたらPS3を買っており、バイオハザードで恐ろしい目にあったり、まいにちいっしょで和んだりしております。&lt;/p&gt;
 
 &lt;p&gt;PS3でもう少し便利に遊ぶため、mediatombでDLNAサーバをたてる。emerge mediatombして依存関係諸々入れる。とりあえずこれだけでもいいのだが、これだと最新の0.12.0が入ってくれないので、一端emerge -C mediatombしてソースから入れる。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;svn co https://svn.mediatomb.cc/svnroot/mediatomb/trunk/mediatomb mediatomb0.12.0
+&lt;p&gt;[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
+svn co &lt;a href=&#34;https://svn.mediatomb.cc/svnroot/mediatomb/trunk/mediatomb&#34;&gt;https://svn.mediatomb.cc/svnroot/mediatomb/trunk/mediatomb&lt;/a&gt; mediatomb0.12.0
 cd mediatomb0.12.0
 autoreconf -i
-./configure &amp;amp;amp;&amp;amp;amp; make &amp;amp;amp;&amp;amp;amp; sudo make install
+./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install
 mysql -uroot -p
-mysql&amp;amp;gt; create database mediatomb;
-mysql&amp;amp;gt; grant select,insert,update,delete,create,drop on mediatomb.* to mediatomb@localhost identified by &#39;mediatomb&#39;;
-mysql&amp;amp;gt; flush privileges;
-mysql&amp;amp;gt; exit;
-&lt;/code&gt;&lt;/pre&gt;
+mysql&amp;gt; create database mediatomb;
+mysql&amp;gt; grant select,insert,update,delete,create,drop on mediatomb.* to mediatomb@localhost identified by &amp;lsquo;mediatomb&amp;rsquo;;
+mysql&amp;gt; flush privileges;
+mysql&amp;gt; exit;
+```&lt;/p&gt;
 
 &lt;p&gt;下準備はこれでおしまい。あとは設定ファイルを少し弄る。と言ってもアカウント周りと、コメントで for PS3云々と書いてあるのでその通り書き換えればいいだけ。細かいことは&lt;a href=&#34;http://kwmr.blogzine.jp/kanji/2009/01/ps3macyoutubeme_c28b.html&#34;&gt;いい感じ: PS3+Macで超・超快適メディアプレイヤー：Youtube-&amp;gt;Mediatomb on iMac -&amp;gt;PS3 -&amp;gt;BRAVIA&lt;/a&gt;を参照。&lt;/p&gt;
 
@@ -269,10 +274,10 @@ mysql&amp;amp;gt; exit;
     
     <item>
       <title>便乗ダイエット</title>
-      <link>http://nobu666.com/2009/06/03/0774.html</link>
+      <link>http://nobu666.com/2009/06/03/774.html</link>
       <pubDate>Wed, 03 Jun 2009 23:34:21 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/06/03/0774.html</guid>
+      <guid>http://nobu666.com/2009/06/03/774.html</guid>
       <description>&lt;p&gt;腰が痛くなって縄跳びやめて以来、順調にお腹に肉が。体重もベスト体重から+7kgというひどい状況になってしまったところ、macchaが&lt;a href=&#34;http://midnightblue.jp/blog/2009/06/02/001319/&#34;&gt;ダイエットエントリ&lt;/a&gt;を挙げていたので便乗する。&lt;/p&gt;
 
 &lt;p&gt;とりあえず
@@ -294,10 +299,10 @@ mysql&amp;amp;gt; exit;
     
     <item>
       <title>CFW5.00M33でPlayStation Storeのゲームを起動する</title>
-      <link>http://nobu666.com/2009/05/07/0772.html</link>
+      <link>http://nobu666.com/2009/05/07/772.html</link>
       <pubDate>Thu, 07 May 2009 02:40:01 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/05/07/0772.html</guid>
+      <guid>http://nobu666.com/2009/05/07/772.html</guid>
       <description>&lt;p&gt;PCでダウンロードするやり方だと、もろ最新のFW5.5を要求されるのと、そもそもWindowsじゃないと駄目。幸いPSPから直接PlayStation Storeいけるので、そこでゲーム買うなり体験版を落とすなりする。で、起動しようとすると、FWを5.02以上にしろと怒られて起動できない。FF7を1500円で買い、1.7GBものデータをダウンロードしたってのに!!&lt;/p&gt;
 
 &lt;p&gt;悔しいのでどうにかするため、以下のものを用意する。
@@ -324,10 +329,10 @@ mysql&amp;amp;gt; exit;
     
     <item>
       <title>GW1日目</title>
-      <link>http://nobu666.com/2009/05/02/0770.html</link>
+      <link>http://nobu666.com/2009/05/02/770.html</link>
       <pubDate>Sat, 02 May 2009 23:50:28 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/05/02/0770.html</guid>
+      <guid>http://nobu666.com/2009/05/02/770.html</guid>
       <description>&lt;p&gt;やっと俺にもGWがはじまた。&lt;/p&gt;
 
 &lt;p&gt;溜まってた洗濯物をやっつけるため、嫁を見送ってすぐに洗濯開始。録画してあった咲とけいおん観ながら5回ほど回してすべての洗濯物をやっつける。天気がいいのでシーツやタオルケットまで全部やっつけた。ベランダに干しきれなくなったので、朝一で干したやつで乾いているものは取り込んでからじゃないと干せないとかいう状況に…まぁサクサク乾いて大変良い感じですな。&lt;/p&gt;
@@ -340,10 +345,10 @@ mysql&amp;amp;gt; exit;
     
     <item>
       <title>例の後輩の件</title>
-      <link>http://nobu666.com/2009/05/01/0768.html</link>
+      <link>http://nobu666.com/2009/05/01/768.html</link>
       <pubDate>Fri, 01 May 2009 00:57:14 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/05/01/0768.html</guid>
+      <guid>http://nobu666.com/2009/05/01/768.html</guid>
       <description>&lt;p&gt;微妙に眠れないので書いとくか。&lt;/p&gt;
 
 &lt;p&gt;どうしようか悩みながらも、最近少しいい方向に進んできつつあるかな?と特に根拠もなく、なんとなくそう思っていたんだけど、気のせいでした。ｻｰｾﾝｗ&lt;/p&gt;
@@ -356,10 +361,10 @@ mysql&amp;amp;gt; exit;
     
     <item>
       <title>後輩の指導が難しい</title>
-      <link>http://nobu666.com/2009/04/14/0766.html</link>
+      <link>http://nobu666.com/2009/04/14/766.html</link>
       <pubDate>Tue, 14 Apr 2009 23:52:00 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/04/14/0766.html</guid>
+      <guid>http://nobu666.com/2009/04/14/766.html</guid>
       <description>&lt;p&gt;もう3年目になるはずの子が部下にいるのですが、なかなか扱いに困っています。まったくの未経験で会社に入ってきたのが2人いた年で、その片割れは最近までやっぱりの俺の部下でした。こちらは単に俺と相性が良かったのか、それとも才能があったのかわかりませんが、まぁ周りが心配するほど特に困ったことはなく、そこそこ一人前に勘定できる仕事はするようになってくれて、今は俺とは違う仕事をしています。&lt;/p&gt;
 
 &lt;p&gt;なんかその流れで「じゃーこっちも面倒見てよ」的な感じで一緒に仕事を始めたのですが、どうしたものか。なんつーか、負け犬根性が染みついてる感じ?口にこそ出さないけど、「どーせ俺なんか」って思ってるのが伝わってくるっつーか。まぁこれについては成功体験させてあげればいいだけな気がするので、どうにかなるような気がするんだけども、あまりにも考えることを放棄してるのが問題なんだな。&lt;/p&gt;
@@ -376,10 +381,10 @@ mysql&amp;amp;gt; exit;
     
     <item>
       <title>氷塊</title>
-      <link>http://nobu666.com/2009/04/14/0764.html</link>
+      <link>http://nobu666.com/2009/04/14/764.html</link>
       <pubDate>Tue, 14 Apr 2009 23:20:27 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/04/14/0764.html</guid>
+      <guid>http://nobu666.com/2009/04/14/764.html</guid>
       <description>&lt;p&gt;最近冷凍庫に霜がついてるなーと思っていたら、ついにしっかりと閉まらなくなってました。なんか奥の方に、霜どころかすげー巨大な氷塊ができあがっており、ドライヤーである程度溶かして、ナイフでごりごりすると取れました。&lt;/p&gt;
 
 &lt;p&gt;写真撮っておけばよかったな。厚さ3cmくらい、重さ1kgくらいあるような、でかい氷塊が取れました…なんか零したのかなぁ。普通に使っててあんなことにはならないような。長いこと使ってるようなものならまだしも、使い始めて1年くらいだからね。びっくりしたぜ。&lt;/p&gt;
@@ -388,10 +393,10 @@ mysql&amp;amp;gt; exit;
     
     <item>
       <title>モンハンデータ消えてやり直し中</title>
-      <link>http://nobu666.com/2009/03/16/0760.html</link>
+      <link>http://nobu666.com/2009/03/16/760.html</link>
       <pubDate>Mon, 16 Mar 2009 13:30:46 +0900</pubDate>
       
-      <guid>http://nobu666.com/2009/03/16/0760.html</guid>
+      <guid>http://nobu666.com/2009/03/16/760.html</guid>
       <description>&lt;p&gt;CFW色々弄ってるうちにデータ全消えしてしまい、最初からやり直し中…&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://nobu666.com/images/2009/03/snap001.bmp&#34; alt=&#34;使用武器頻度&#34; title=&#34;使用武器頻度&#34; class=&#34;alignnone size-full wp-image-761&#34; /&gt;&lt;/p&gt;
