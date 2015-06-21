@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="Real Beat">
+<title>[memo] iptablesが使えないのでkernel再構築 &amp; sshdへのアタックをどうにかする - Real Beat</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" width="60" height="60"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">[memo] iptablesが使えないのでkernel再構築 &amp; sshdへのアタックをどうにかする</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2006-10-28">October 28, 2006</time></span>
+			<section itemprop="entry-text">
+				<p>なんつーかね、某krからのsshdへのBrute force attacksが酷すぎる。auth.logを埋め尽くすほどのアタックを食らったので対策することに。だが普通にインストールするとiptablesが動いてくれないので、カーネル再構築に挑戦する。</p>
+
+<p>別に今回はkernelのバージョンを上げたいわけではなく、単純にカーネルのオプションを変えたいだけなので、emerge gentoo-sourcesはやらない。以下、rootになって作業を行う。あとmenuconfigはscreenの中でやると表示が乱れて酷いことになるので、screenをデタッチするなり抜けるなりしてからやったほうがいい。</p>
+
+<pre><code>cd /usr/src/linux
+make menuconfig
+</code></pre>
+
+<p>Confgurationが立ち上がったら、まずLoad an Alternate Configuration Fileを選ぶ。&rdquo;.config&rdquo;が入力されているはずなので、そのままOKすると現在の設定が読み込まれる。そしたら</p>
+
+<pre>
+Networking  ---&gt;
+  Networking options  ---&gt; 
+    Network packet filtering (replaces ipchains)  ---&gt;
+      Core Netfilter Configuration  ---&gt;
+         Netfilter Xtables support (required for ip_tables)
+</pre>
+
+<p>を選択。その下に色々あるが、よくわからないならMにしといてあとでModuleとして読めるようにしておくと吉。必要なのに何もチェックしないでおくと、再度カーネル再構築が必要になって面倒なので。チェックしたら1つ戻ってIP: Netfilter Configurationの中に入る。とりあえず必須なのはIP tables support (required for filtering/masq/NAT)と、IP range match support、Packet filtering、REJECT target support、address type match support、Full NAT、MASQUERADE target supportとかそのへん。終わったらTOPまで戻って、念のため設定ファイルをなんか名前付けて保存しておいたほうがいい。</p>
+
+<p>あとはその辺のサイトに書いてあるとおり、お約束でOK。</p>
+
+<pre><code>make &amp;amp;&amp;amp; make modules_install
+cp arch/x86_64/boot/bzImage /boot/なんか適当な名前
+vi /boot/grub/grub.conf
+</code></pre>
+
+<p>grub.confの設定では、元々書いてあるものを絶対に消さないこと。消しちゃうと万が一再構築したカーネルで起動できなかったときに面倒。</p>
+
+<p>[sourecode lang=&ldquo;text&rdquo;]
+title=Gentoo Linux 2.6.17-r8
+root (hd0,0)
+kernel /さっきbootの下にcpしたファイル名 root=/dev/sda3 vga=ask</p>
+
+<pre><code>
+とかで問題なし。vga=askの部分はまぁお好みで。/usr/src/linux/Documentation/fb/vesafb.txtとかを参考に。基本的にはこれでrebootして、上のtitleでつけた名前を選択して起動してやればとりあえずOKなはずだ。失敗したら残しておいた方で起動して修正すべし。消してしまったお馬鹿さんはinstall cdから起動して/dev/sda1とかをmountして編集すれば戻せる。あとvgaとかvideoのオプションは、間違うと画面に何も表示されなくなるので注意。まぁリモート操作がメインならそれでもいいのかも知れないけど、何かあったときにアレなんで…心配ならaskにしておいて選択するのが間違いない。
+
+そこまで出来たらDebian GNU/Linux 3.1(sarge)運用ノートの&lt;a href=&quot;http://www.musicae.ath.cx/diary/?200506c&amp;amp;to=200506272#200506272&quot; target=&quot;_blank&quot;&gt;SSH Brute force attacks&lt;/a&gt;の通りに設定してから
+
+</code></pre>
+
+<p>/etc/init.d/iptables save
+/etc/init.d/iptables start
+rc-update add iptables default
+```</p>
+
+<p>以上で終了。エラーが出てiptablesが動かない場合は必要なモジュールが選択漏れでコンパイルされていないとか、Mを選択したのにmodprobeなりinsmodしてない。てか俺もこの手順にたどり着くまで5回くらい再構築してこんな時間に…もう寝る!</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			<a href="mailto:ogata.nobu@gmail.com" target="_blank">Email</a></span>
+			<a href="https://twitter.com/nobu666" target="_blank">Twitter</a></span>
+			<a href="https://www.facebook.com/nobutoshi.ogata" target="_blank">Facebook</a></span>
+			<a href="https://github.com/nobu666" target="_blank">GitHub</a></span>
+		</div>
+		<div class="copyright">Copyright &copy; nobu666 All rights reserved.</div>
+	</footer>
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-57485-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

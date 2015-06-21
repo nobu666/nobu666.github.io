@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="Real Beat">
+<title>時には猿のように - Real Beat</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" width="60" height="60"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">時には猿のように</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2001-11-09">November 09, 2001</time></span>
+			<section itemprop="entry-text">
+				<p>ひたすら、猿の様にプログラミングばかりしている。もうすぐ猿になるんじゃないかと予想。とりあえず学校とバイトが休みだったのをフルに利用して、早起き。濃いコーヒーを飲みつつ、PCに向かうのが効率いいようだ。まずはバイト先で頼まれていた顧客管理ソフトを&hellip;なんとか形になったが、VBでマトモに作ったことがなかった、というか配布まで考えてソフトを作ったことは一度もない。自分で使うものしか作ったことないので。自分で使う分には、実行ファイルを作らないでも実行可能であるし、実行に必要なファイルが足りなくて動かないなんていうことも100%あり得ない。が、人に渡すとなるとそうもいかないわけで。ヘルプとWebを見ながら、あ?でもないこ?でもないとやる。実行ファイル単体を書き出すことはできたので、VBランタイムだけ導入済みの2ndマシンで試してみたが、動かない。なにやらOCXとかいうファイルがないとか怒られる。仕方ないのでエラーで指摘されたファイルだけシステムフォルダにコピーしてみたが、やはりダメ。なんだよ?、わけわかんねぇよ?。ラチがあかないので、しばらく検索にふける&hellip;すると、ディストリビューションウィザードなるものを使ってやればいいことが判明。あっさりと問題は解決された。いや、あっさりっていっても<strong>2時間くらいかかってるんだけどね</strong>。見事にインストーラーまで作れてしまった。こんな便利なツールが付属されていたとは、まったく知らなかったよ&hellip;</p>
+
+<p>海外から、旅行会社を通じてやってくる顧客の管理は未実装だが、とりあえず一般の団体とフリー客の部分は完成。どうせデータ入力に恐ろしく時間がかかるのだろうから、これで渡して時間を稼ぐ作戦。ファイルが合計7MBちょっとと、非常に微妙なサイズになってしまった。フロッピー7枚っては面倒だし、CD-Rに入れるには小さすぎてモッタイナイ。しばし迷ったが、<strong>空いているフロッピーが2枚しかない</strong>ことに気づき、CD-Rに（笑）。つうか、実行ファイルとデータベースで300KB程度なのに、DLLやらOCXやらのわけのわからないファイルが4MB。VB6ランタイムSP3なるものが3MB。何か釈然としない。</p>
+
+<p>その後、そのままの勢いで学校から持ち帰った卒検に手を出す。こっちはPHPとMySQLを使って、オンラインショッピングシステムを構築中。管理者が使う、取引先やら顧客やら商品やらのデータの登録や削除・編集・検索までは終わっているので、ユーザーが目にして実際に買い物に使う部分、まぁショッピングバスケットみたいなものをチマチマと作る。が、<strong>気がついたら外が明るい</strong>&hellip;寝よ。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			<a href="mailto:ogata.nobu@gmail.com" target="_blank">Email</a></span>
+			<a href="https://twitter.com/nobu666" target="_blank">Twitter</a></span>
+			<a href="https://www.facebook.com/nobutoshi.ogata" target="_blank">Facebook</a></span>
+			<a href="https://github.com/nobu666" target="_blank">GitHub</a></span>
+		</div>
+		<div class="copyright">Copyright &copy; nobu666 All rights reserved.</div>
+	</footer>
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-57485-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

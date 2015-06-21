@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="Real Beat">
+<title>mahoutで類似ユーザをリコメンドする - Real Beat</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" width="60" height="60"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">mahoutで類似ユーザをリコメンドする</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2011-02-17">February 17, 2011</time></span>
+			<section itemprop="entry-text">
+				<p><a href="http://mahout.apache.org/">mahout</a>使って類似ユーザの抽出をやってみたのでまとめ。</p>
+
+<p>そこら辺に転がってるサンプルは、ほとんどがユーザがあるアイテムについて点数をつける前提になってて、その点数をベースに似ているユーザをリコメンドしたり、あるいはあるユーザが興味をもちそうなアイテムをリコメンドしたりといったものが殆どだった。点数がないようなときにどうするか多少悩んだので記録に残しておくことにした。とりあえず今回はMySQLにデータが入ってる前提でやってみた。あるテーブルにUSER_IDとITEM_IDが入ってて、同じITEM_IDを多く選んだ人を探したいとすると、以下のようにする。</p>
+
+<pre><code>package test;
+
+import test.DataSouceManager;
+import org.apache.mahout.cf.taste.common.TasteException;
+import org.apache.mahout.cf.taste.impl.model.jdbc.MySQLBooleanPrefJDBCDataModel;
+import org.apache.mahout.cf.taste.impl.neighborhood.NearestNUserNeighborhood;
+import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
+import org.apache.mahout.cf.taste.impl.similarity.LogLikelihoodSimilarity;
+import org.apache.mahout.cf.taste.model.DataModel;
+import org.apache.mahout.cf.taste.neighborhood.UserNeighborhood;
+import org.apache.mahout.cf.taste.similarity.UserSimilarity;
+
+public class RecommendTest {
+	public static void main(String[] args) {
+		DataModel model = new MySQLBooleanPrefJDBCDataModel(
+			DataSourceManager.getInstance().getDataSouce(),
+			&amp;quot;TABLE_NAME&amp;quot;,
+			&amp;quot;USER_ID_COLUMN_NAME&amp;quot;,
+			&amp;quot;ITEM_ID_COLUMN_NAME&amp;quot;,
+			null //TIMESTAMP_COLUMN_NAME
+		);
+		UserSimilarity similarity = null;
+		UserNeighborhood neighborhood = null;
+		try {
+			similarity = new LogLikelihoodSimilarity(model);
+			neighborhood = new NearestNUserNeighborhood(100, similarity, model);
+		} catch (TasteException e) {
+			e.printStackTrace();
+		}
+		GenericUserBasedRecommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
+		try {
+			long[] recommendations = recommender.mostSimilarUserIDs(1, 1);
+			for (int i = 0; i &amp;lt; recommendations.length; i++) {
+				resp.getWriter().println(recommendations[i]);
+			}
+		} catch (TasteException e) {
+			e.printStackTrace();
+		}
+	}
+}
+</code></pre>
+
+<p>統計学の知識がないのでドキュメント読んでもよくわからなかったので、これであってるのかどうかはよくわからん。色々試して、LogLikelihoodSimilarityじゃないと点数のフィールドがねーから使えないよと怒られた。GenericUserBasedRecommenderはRecommenderってIFで受けるのが筋なんだろうけど、そうするとmostSimilarUserIDSメソッドが使えないのでそのままの型で受けてる。</p>
+
+<p>mostSimilarUserIDsの第一引数が比較したいユーザID、第二引数が何人リコメンドするか。少ないデータで試して、期待する結果が返ってくるのは確認済み。んで大量のデータだとどうなんだろうと思って、以下のスクリプトで140万件のデータを作ってみた。</p>
+
+<p>日付・ユーザID・アイテムIDで、ユーザIDは一日につき一回しかでてこないようにデータを生成。</p>
+
+<pre><code>import string
+import random
+import sys
+
+if __name__ == '__main__':
+  for d in xrange(20110201, 20110229):
+    idmap = []
+    for i in xrange(50000):
+      while(1):
+        id = random.randint(1,300000)
+        try:
+          idmap.index(id)
+        except ValueError:
+          break
+        continue
+      idmap.append(id)
+      print &amp;quot;insert into tbl values ('&amp;quot; + str(d) + &amp;quot;',&amp;quot; + str(id) + &amp;quot;,&amp;quot; + str(random.randint(1,3*28)) + &amp;quot;);&amp;quot;
+</code></pre>
+
+<p>こいつでSQLをつくってMySQLに食わせる。</p>
+
+<pre><code>$ python generate_date.py|mysql
+</code></pre>
+
+<p>MEMORYエンジンでテーブル作って試してみたけど、DataModelをつくるところですでに時間掛かりすぎ。リアルタイムで返事を返すようなときには全然向いてないものみたいで、やっぱHadoopとかを併用して裏で動かしておく感じで使う物みたいだ。ちなみにかかった時間はおよそ10分弱。こんな単純なデータで単純なことやりたいのであれば、mahoutじゃなくて素直にSQLでやったほうが速い。もっともっと大規模なデータを解析するのに使わないと。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			<a href="mailto:ogata.nobu@gmail.com" target="_blank">Email</a></span>
+			<a href="https://twitter.com/nobu666" target="_blank">Twitter</a></span>
+			<a href="https://www.facebook.com/nobutoshi.ogata" target="_blank">Facebook</a></span>
+			<a href="https://github.com/nobu666" target="_blank">GitHub</a></span>
+		</div>
+		<div class="copyright">Copyright &copy; nobu666 All rights reserved.</div>
+	</footer>
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-57485-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

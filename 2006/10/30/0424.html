@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="Real Beat">
+<title>[memo] GentooでUPS(APC ES 500)を使う - Real Beat</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" width="60" height="60"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">[memo] GentooでUPS(APC ES 500)を使う</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2006-10-30">October 30, 2006</time></span>
+			<section itemprop="entry-text">
+				<p><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B0000AG7HB/realbeat-22/ref=nosim/" name="amazletlink" target="_blank"><img src="http://images-jp.amazon.com/images/P/B0000AG7HB.09.MZZZZZZZ.jpg" alt="APC ES 500" /></a></p>
+
+<p>Amazonで\7,000ちょっとという値段だったので、購入したのが届いた。流石に24時間稼働だとUPSがないと怖い。今年の雷で瞬断も多くあったので。付属のPowerCuteはWindowsとMacOS Xと商用Linuxにしか対応していないので自力でどうにかする方法をメモ。</p>
+
+<h4>準備と接続、認識確認</h4>
+
+<pre><code>emerge apcupsd
+</code></pre>
+
+<p>なにはなくともコレがないと始まらない。とりあえずインストールしたら一旦シャットダウンしてコンセントをUPSにつなぎ変え、付属のUSB通信ケーブルでUPSとサーバを接続して再起動。再起動したらdmesgを見てサーバがES500を認識しているか確認。</p>
+
+<pre><code>usbcore: registered new driver hiddev
+hiddev0: USB HID v1.10 Device [APC APC ES 500 FW:803.p6.A USB FW:p6] on usb-0000:00:10.2-2
+</code></pre>
+
+<p>上記のようなメッセージがあれば問題ない。が、</p>
+
+<pre><code>es500 hid device not claimed
+</code></pre>
+
+<p>とか出てたら認識していない。俺の場合は思い切り認識していなかった。要するにまたカーネル再構築。だがもう手慣れたモンなのでサクサクと再構築する。こういうときはマシンパワーがあると非常に楽だ。お約束の以下の呪文を唱える。</p>
+
+<pre><code>cd /usr/src/linux
+make menuconfig
+</code></pre>
+
+<p>そして今の設定をLOADして、以下のところにチェックを付けて保存。</p>
+
+<pre><code>Device Drivers ---&amp;gt;
+    USB Support ---&amp;gt;
+        /dev/hiddev raw HID device support
+</code></pre>
+
+<p>またお約束の呪文。</p>
+
+<pre><code>make &amp;amp;&amp;amp; make modules_install
+cp arch/x86_64/boot/bzImage /boot/なんか適当な名前
+</code></pre>
+
+<p>そしたら/boot/grub/grub.confを編集して再起動すればいい。今度はちゃんと認識されているはず。念のためapcaccess statusとやってエラーが出ないことを確認する。</p>
+
+<h4>設定と動作確認</h4>
+
+<p>次はapcupsdの設定を行う。</p>
+
+<pre><code>cat /etc/apcupsd/apcupsd.conf
+UPSCABLE usb
+UPSTYPE usb
+DEVICE
+LOCKFILE /var/lock
+ONBATTERYDELAY 6
+BATTERYLEVEL 5
+MINUTES 3
+TIMEOUT 10
+ANNOY 300
+ANNOYDELAY 60
+NOLOGON disable
+KILLDELAY 0
+NETSERVER on
+NISIP 0.0.0.0
+NISPORT 3551
+EVENTSFILE /var/log/apcupsd.events
+EVENTSFILEMAX 10
+UPSCLASS standalone
+UPSMODE disable
+STATTIME 0
+STATFILE /var/log/apcupsd.status
+LOGSTATS off
+DATATIME 0
+</code></pre>
+
+<p>殆どデフォルト。TIMEOUTに関しては動作確認のため10にした。これは10だと電源断から10秒でシャットダウンするということ。実際にapcupsdを動かして試してみる。</p>
+
+<pre><code>/etc/init.d/apcupsd start
+rc-update add apcupsd default
+</code></pre>
+
+<p>思い切ってUPSのコンセントをぶっこ抜いてみる。ピーピーピーと警告音が鳴り、10秒後にシャットダウン処理が走れば成功。忘れないようにTIMEOUTは0にしておくこと。ここを0にしておくとUPS側のバッテリーで頑張ってくれるようになる。どのくらい頑張るかはBATTERYLEVELとMINUTESで決まる。BATTERYLEVELはバッテリ残量が残り何%になったらシャットダウンするかで、MINUTESは残り時間何分でシャットダウンするか。どちらかの条件を満たすとシャットダウンされる。お好みで変える。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			<a href="mailto:ogata.nobu@gmail.com" target="_blank">Email</a></span>
+			<a href="https://twitter.com/nobu666" target="_blank">Twitter</a></span>
+			<a href="https://www.facebook.com/nobutoshi.ogata" target="_blank">Facebook</a></span>
+			<a href="https://github.com/nobu666" target="_blank">GitHub</a></span>
+		</div>
+		<div class="copyright">Copyright &copy; nobu666 All rights reserved.</div>
+	</footer>
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-57485-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

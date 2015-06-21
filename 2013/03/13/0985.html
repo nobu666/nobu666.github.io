@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="Real Beat">
+<title>Chef11のchef-serverをHA構成にする - Real Beat</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" width="60" height="60"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">Chef11のchef-serverをHA構成にする</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2013-03-13">March 13, 2013</time></span>
+			<section itemprop="entry-text">
+				<h1>Chef11のchef-serverをHA構成にする</h1>
+
+<h2>はじめに</h2>
+
+<p><a href="http://wiki.opscode.com/display/chef/Chef+11+Server+Preview" title="Chef11">Chef11</a>はいままでのChefとはserverの構成がガラリと変わり、APIがRubyからErlangに、バックエンドのCouchDBがPostgreSQLになりました。その他はフロントエンドには<a href="http://nginx.org/" title="nginx">nginx</a>、WebUIに<a href="http://unicorn.bogomips.org/" title="unicorn">unicorn</a>。<a href="http://www.rabbitmq.com/" title="RabbitMQ">RabbitMQ</a>と<a href="http://lucene.apache.org/solr/" title="Solr">Solr</a>はそのまま。</p>
+
+<p>基本的にそのまま使ってて問題ないのだけども、やはりサーバーは壊れるのでバックアップがないと困るよね、ということで調べてもあんまり情報がなかったので、やってみたメモを残します。めんどいのでrootで作業しています。</p>
+
+<p><h2>とりあえずinstallする</h2>
+先ほどの<a href="http://wiki.opscode.com/display/chef/Chef+11+Server+Preview" title="Chef11">Chef11</a>のWikiにある、Quick Startをみて、Platformにあったパッケージをダウンロード。もしくは<a href="http://www.opscode.com/chef/install/" title="Install Chef">Install Chef</a>というページからダウンロード。Debian6でやりましたが、Ubuntu12用のパッケージではうまく動きませんでしたので、Ubuntu10用のを使いました。11のは知らん。</p>
+
+<pre><code># wget https://opscode-omnitruck-release.s3.amazonaws.com/ubuntu/10.04/x86_64/chef-server_11.0.6-1.ubuntu.10.04_amd64.deb
+# dpkg -i chef-server_11.0.6-1.ubuntu.10.04_amd64.deb
+</code></pre>
+
+<p>PrimaryとSecondary、2台のサーバーに入れましょう。</p>
+
+<p><h2>PostgreSQLのReplication</h2>
+PostgreSQLはほとんど知らないし、Chef11のパッケージは /opt/chef-server 以下にRubyやGemsやPostgreSQLやその他依存もろもろすっぽり収まって完結しているため、普通にPostgreSQLをinstallした場合とは勝手がちょっと違うので注意が必要です。</p>
+
+<p><h3>Primaryの設定</h3>
+設定ファイルは /var/opt/chef-server/postgresql/data 以下にあります。まずアクセス許可。SECONDARY_SERVER_IPADDRESSは任意に読み替えてください。サブネットマスクまで必須です。</p>
+
+<pre><code># echo &amp;quot;host replication repl_user SECONDARY_SERVER_IPADDRESS/0 trust&amp;quot; &amp;gt;&amp;gt; /var/opt/chef-server/postgresql/data/pg_hba.conf
+</code></pre>
+
+<p>次にReplicationの設定。/var/opt/chef-server/postgresql/data/postgresql.conf をエディタで開いて、以下のようにします。hot_standby = onの設定はここでは意味が無いですが、あとでこのファイルがそのままSecondary側にコピーされるのでここで変えておいて問題ないです。
+<ul>
+    <li>listen_addresses = &lsquo;*&rsquo;</li>
+    <li>wal_level = hot_standby</li>
+    <li>max_wal_senders = 1</li>
+    <li>hot_standby = on</li>
+</ul></p>
+
+<p>次にPostgreSQLのシェルに入ってユーザーを作りますが、opscode-pgsqlユーザーにならないとシェルに入れないので面倒です。</p>
+
+<pre><code># su opscode-pgsql -
+$ pgsql postgres -c &amp;quot;CREATE ROLE repl_user LOGIN REPLICATION PASSWORD 'P@ssw0Rd'&amp;quot;
+</code></pre>
+
+<p>ここまでやったらPostgreSQLを再起動。Chef11のコンポーネントたちは、daemontoolsの下で動いているので普通には再起動できません。が、専用の管理コマンドが用意されているのでそいつを使います。</p>
+
+<pre><code># chef-server-ctl restart postgresql
+</code></pre>
+
+<p><h3>Secondaryの設定</h3>
+Primaryからdebファイルをscpするなりこっちでもwgetするなりして、dpkg -iまでは一緒。installが終わったらPostgreSQLまわりの掃除をします。とりあえず止めて、消す。</p>
+
+<pre><code># chef-server-ctl stop postgresql
+# rm -rf /var/opt/chef-server/postgresql/data
+</code></pre>
+
+<p>消したらPrimaryからデータを持ってきます。PRIMARY_SERVER_IPADDRESSは任意に読み替えてください。</p>
+
+<pre><code># /opt/chef-server/embedded/bin/pg_basebackup -x -p 5432 -h PRIMARY_SERVER_IPADDRESS -U repl_user -W -D /var/opt/chef-server/postgresql/data --progress --verbose
+</code></pre>
+
+<p>終わったらrecovery.confを作ります。sampleからコピって書き換えます。</p>
+
+<pre><code># cp /opt/chef-server/embedded/share/postgresql/recovery.conf.sample /var/opt/chef-server/postgresql/data/recovery.conf
+</code></pre>
+
+<p>/var/opt/chef-server/postgresql/data/recovery.conf で最低限以下のようにいじる。application_nameは別になんでもいいっぽいです。
+<ul>
+    <li>standby_mode = on</li>
+    <li>primary_conninfo = &lsquo;host=PRIMARY_SERVER_IPADDRESS port=5432 user=repl_user password=P@ssw0Rd application_name=stby&rsquo;</li>
+</ul></p>
+
+<p>あとはrootで作業してしまったのでownerを変えて起動。</p>
+
+<pre><code># chown -R opscode-pgsql:opscode-pgsql /var/opt/chef-server/postgresql/data
+# chef-server-ctl start postgresql
+</code></pre>
+
+<p>chef-server-ctl tailでログをみたり、chef-server-ctl statusでpostgresqlがrunになっていることを確認できればOKです。また、Primary側で以下のコマンドを叩くことでも確認できます。stateがstreamingになっていればOK。</p>
+
+<pre><code>$ sudo -u opscode-pgsql psql opscode_chef -c &amp;quot;SELECT * FROM pg_stat_replication&amp;quot;
+</code></pre>
+
+<p>念のためSolrのindexは作りなおしておいたほうがいいです。</p>
+
+<pre><code># chef-server-ctl reindex
+</code></pre>
+
+<p><h2>切り替える</h2>
+さてフェイルオーバーさせてみます。いくつか方法がありますが、とりあえず手動でやります。Secondary側で、opscode-pgsqlユーザーで操作します。SecondaryはRead-Onlyなので、 CREATE TABLE test (i integer) とかやって失敗→切り替え→もっかいやったら成功、でPrimaryになったことを確認できます。</p>
+
+<pre><code>$ /opt/chef-server/embedded/bin/pg_ctl promote -D /var/opt/chef-server/postgresql/data
+</code></pre>
+
+<p>こんだけ。また2台構成に戻すには、同じ事をやってやればいいはずです。が、時間経ちすぎてWALファイルがなくなっちゃったとか、転送前にコケてて欠落してるとか、そういう場合はその限りではありません。ていうかそれはChefと関係ないんでそっち方面のマニュアルみるなり調べるなりしてください。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			<a href="mailto:ogata.nobu@gmail.com" target="_blank">Email</a></span>
+			<a href="https://twitter.com/nobu666" target="_blank">Twitter</a></span>
+			<a href="https://www.facebook.com/nobutoshi.ogata" target="_blank">Facebook</a></span>
+			<a href="https://github.com/nobu666" target="_blank">GitHub</a></span>
+		</div>
+		<div class="copyright">Copyright &copy; nobu666 All rights reserved.</div>
+	</footer>
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-57485-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

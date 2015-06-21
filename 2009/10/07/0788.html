@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="Real Beat">
+<title>cmecab-javaとLuceneでMoreLikeThis - Real Beat</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" width="60" height="60"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">cmecab-javaとLuceneでMoreLikeThis</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2009-10-07">October 07, 2009</time></span>
+			<section itemprop="entry-text">
+				<p>類似検索やりたくて試したんだけどなんかうまくいかねーです。
+Lucene詳しいかた、教えてくだしあ＞＜</p>
+
+<p><strong>2009/10/07: 解決したので後ろに追記しました。</strong></p>
+
+<pre><code>package hoge;
+import java.io.*;
+import net.moraleboost.lucene.analysis.ja.StandardMeCabAnalyzer;
+import org.apache.lucene.*;
+
+public class MeCabTest {
+    public static final String DIC_ENCODING = System.getProperty(&amp;quot;net.moraleboost.mecab.encoding&amp;quot;);
+    private static StandardMeCabAnalyzer analyzer = null;
+    private static FSDirectory directory = null;
+    private IndexWriter writer  = null;
+    private static final String DIR = &amp;quot;/path/to/index&amp;quot;;
+
+    public void setUp() throws Exception {
+        writer  = new IndexWriter(directory, analyzer, new MaxFieldLength(4096));
+        Document doc = new Document();
+        addField(doc, &amp;quot;text&amp;quot;, &amp;quot;ほげほげ&amp;quot;);
+        ....
+        ....
+        writer.commit();
+        writer.optimize();
+        writer.close();
+    }
+    private void addField(Document doc, String name, String value) throws Exception {
+        Field field = new Field(name, value, Store.YES, Field.Index.ANALYZED, Field.TermVector.YES);
+        doc.add(field);
+        writer.addDocument(doc);
+    }
+
+    public static void main(String[] args) {
+        MeCabTest t = new MeCabTest();
+        IndexSearcher searcher = null;
+        IndexReader reader = null;
+        analyzer = new StandardMeCabAnalyzer(DIC_ENCODING, &amp;quot;&amp;quot;);
+        directory = FSDirectory.open(new File(DIR));
+        t.setUp();
+        reader = IndexReader.open(DIR, false);
+        searcher = new IndexSearcher(directory, true);
+        QueryParser parser = new QueryParser(&amp;quot;text&amp;quot;, analyzer);
+        parser.setDefaultOperator(QueryParser.Operator.OR);
+        MoreLikeThis mlt = new MoreLikeThis(reader);
+        mlt.setAnalyzer(analyzer);
+        mlt.setMinTermFreq(1);
+        mlt.setFieldNames(new String[]{&amp;quot;text&amp;quot;});
+        Query query = mlt.like(new ByteArrayInputStream(&amp;quot;ほげ&amp;quot;.getBytes()));
+        TopDocs topDocs = searcher.search(query, 100);
+        if (topDocs.totalHits &amp;gt; 0) {
+            for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
+                Document doc = searcher.doc(scoreDoc.doc);
+                System.out.println(doc.get(&amp;quot;text&amp;quot;));
+            }
+        }
+    }
+}
+</code></pre>
+
+<p>try〜catchとか省略。addField(&hellip;);のところ、実際にはニュースサイトから本文引っ張ってきて、いくつかいれた。7個くらい適当に選んで、3個くらいは同じニュース（台風18号関連）を違うサイトから引用した。</p>
+
+<p>MoreLikeThis#like()には、台風18号関連のさらに別のニュースを入れてみたが、topDocs.totalHitsがindexに入れたニュース数と同数、つまり全部ヒットになっちゃった。しかも1件目に入れたやつしか表示されない…なんのこっちゃい??</p>
+
+<p>明日以降もうちょっと調べて、わかったら追記しよう…</p>
+
+<p>[追記]
+すげーポカやってるし…。単純にDocumentクラスを使い回しちゃダメってことみたい。そりゃそうだよね、別のDocumentとして扱いたいんだから、インスタンスも別だわな。というわけでaddFieldメソッドにDocument渡すのやめて、メソッド内でDocumentクラスのインスタンスを作るようにしたら、上手く動くようになりました。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			<a href="mailto:ogata.nobu@gmail.com" target="_blank">Email</a></span>
+			<a href="https://twitter.com/nobu666" target="_blank">Twitter</a></span>
+			<a href="https://www.facebook.com/nobutoshi.ogata" target="_blank">Facebook</a></span>
+			<a href="https://github.com/nobu666" target="_blank">GitHub</a></span>
+		</div>
+		<div class="copyright">Copyright &copy; nobu666 All rights reserved.</div>
+	</footer>
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-57485-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>

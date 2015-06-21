@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+<link rel="stylesheet" href="/css/custom.css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="Real Beat">
+<title>SSH Port FowardでMySQLを使う - Real Beat</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		<div class="header-logo">
+			<a href="/"><img src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" width="60" height="60"></a>
+		</div>
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="http://schema.org/BlogPosting">
+			<h1 class="entry-title" itemprop="headline">SSH Port FowardでMySQLを使う</h1>
+			<span class="entry-meta"><time itemprop="datePublished" datetime="2012-01-19">January 19, 2012</time></span>
+			<section itemprop="entry-text">
+				<p>気づいたら年が明けていますが俺は元気です。</p>
+
+<p>タイトル通りなんだけど、あるMySQLサーバへつなぐためには踏み台を通らないといけなくて、いちいち</p>
+
+<pre><code>localhost$ ssh -t gateway ssh dbserver
+dbserver$ mysql -uhoge -p
+</code></pre>
+
+<p>とかやらないといけなくて、めんどい。というかこれだとローカルの開発環境で、一時的にdbserverで動作してるMySQLのデータを使いたいときとか困る。ダンプしてローカルに持ってくればいいけど、データがものすごいデカかったりしてだるい。どうにかしたい。</p>
+
+<p>というわけで、Port Forwardすればいいじゃないかと思って</p>
+
+<pre><code>$ ssh -Nf -L 13306:dbserver:3306 gateway
+</code></pre>
+
+<p>とかして、</p>
+
+<pre><code>$ mysql -uhoge -p -P13306
+</code></pre>
+
+<p>これで勝つる！！！と思ったら、これでは繋がらない。でもtelnet localhost 13306とか叩いてみると繋がるように見える。</p>
+
+<pre><code>$ telnet localhost 13306
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+L
+5.5.8-log
+         $;2)s.%n!
+                  ?QV;dgXbeUZBymysql_native_password
+</code></pre>
+
+<p>なにこれどういうことなの、と思って色々試したり調べたりしていたら、答えは意外なところに。</p>
+
+<p><a href="http://enginsite.com/tunnel_howto.htm">What is SSH Port Forwarding and How It Works</a>ってページに書いてあった。</p>
+
+<blockquote>When the remote SSH host is on a different machine than the MySQL server, replace 127.0.0.1 with the IP address of the MySQL server (relative to the SSH host). Never use "localhost" for hostname.</blockquote>
+
+<p>Never use “localhost” for hostname、だと……??</p>
+
+<pre><code>$ mysql -uhoge -p -P13306 -h127.0.0.1
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 1058649
+Server version: 5.5.8-log MySQL Community Server (GPL)
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql&amp;gt; 
+</code></pre>
+
+<p>をををを……そして<a href="http://d.hatena.ne.jp/yamamucho/20110319/1300511690">SSH ポートフォワードで MySQL サーバにログインするときのメモ - 酔いどれコード</a> に同じことが書いてあった。damn。localhost指定(-hオプションなしのデフォルト)だと、Unixドメインソケットを使って通信するので、当然ネットワーク越しには繋がらないよというオチでした。2時間くらいハマってしまったのでメモ。</p>
+
+			</section>
+		</article>
+	</main>
+
+
+	<footer role="contentinfo">
+		<div class="hr"></div>
+		<div class="footer-link">
+			<a href="mailto:ogata.nobu@gmail.com" target="_blank">Email</a></span>
+			<a href="https://twitter.com/nobu666" target="_blank">Twitter</a></span>
+			<a href="https://www.facebook.com/nobutoshi.ogata" target="_blank">Facebook</a></span>
+			<a href="https://github.com/nobu666" target="_blank">GitHub</a></span>
+		</div>
+		<div class="copyright">Copyright &copy; nobu666 All rights reserved.</div>
+	</footer>
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-57485-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>
