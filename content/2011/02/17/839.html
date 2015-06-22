@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta property="og:title" content=" mahoutで類似ユーザをリコメンドする &middot;  Real Beat" />
+  <meta property="og:site_name" content="Real Beat" />
+  <meta property="og:url" content="http://localhost:1313/content/2011/02/17/839.html" />
+  
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:article:author" content="https://facebook.com/nobutoshi.ogata" />
+  
+  <meta property="og:article:published_time" content="2011-02-17T17:47:15&#43;09:00" />
+  
+  
+
+  <title>
+     mahoutで類似ユーザをリコメンドする &middot;  Real Beat
+  </title>
+
+  <link rel="stylesheet" href="http://localhost:1313/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://localhost:1313/css/main.css" />
+  <link rel="stylesheet" href="http://localhost:1313/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="http://localhost:1313/css/github.css" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
+  <link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/images/apple-touch-icon.png" />
+  
+</head>
+<body>
+  <header class="global-header">
+    <section class="header-text">
+      <h1><a href="http://localhost:1313/">Real Beat</a></h1>
+      
+      <div class="sns-links hidden-print">
+  
+  <a href="ogata.nobu@gmail.com">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/nobu666" target="_blank">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  <a href="https://facebook.com/nobutoshi.ogata" target="_blank">
+    <i class="fa fa-facebook"></i>
+  </a>
+  
+  
+  <a href="https://github.com/nobu666" target="_blank">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  
+  <a href="https://linkedin.com/in/nobu666" target="_blank">
+    <i class="fa fa-linkedin"></i>
+  </a>
+  
+</div>
+
+      
+      <a href="http://localhost:1313/" class="btn-header btn-back hidden-xs">
+        <i class="fa fa-angle-left"></i>
+        &nbsp;Home
+      </a>
+      
+      
+    </section>
+  </header>
+  <main class="container">
+
+
+<article>
+  <header>
+    <h1 class="text-primary">mahoutで類似ユーザをリコメンドする</h1>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2011-02-17T17:47:15&#43;09:00">
+          Feb 17, 2011
+        </time>
+      </div>
+      <div class="pull-right">
+        
+      </div>
+    </div>
+  </header>
+  <section>
+    <p><a href="http://mahout.apache.org/">mahout</a>使って類似ユーザの抽出をやってみたのでまとめ。</p>
+
+<p>そこら辺に転がってるサンプルは、ほとんどがユーザがあるアイテムについて点数をつける前提になってて、その点数をベースに似ているユーザをリコメンドしたり、あるいはあるユーザが興味をもちそうなアイテムをリコメンドしたりといったものが殆どだった。点数がないようなときにどうするか多少悩んだので記録に残しておくことにした。とりあえず今回はMySQLにデータが入ってる前提でやってみた。あるテーブルにUSER_IDとITEM_IDが入ってて、同じITEM_IDを多く選んだ人を探したいとすると、以下のようにする。</p>
+
+<p>``` language=&ldquo;java&rdquo; padlinenumbers=&ldquo;2&rdquo;]
+package test;</p>
+
+<p>import test.DataSouceManager;
+import org.apache.mahout.cf.taste.common.TasteException;
+import org.apache.mahout.cf.taste.impl.model.jdbc.MySQLBooleanPrefJDBCDataModel;
+import org.apache.mahout.cf.taste.impl.neighborhood.NearestNUserNeighborhood;
+import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
+import org.apache.mahout.cf.taste.impl.similarity.LogLikelihoodSimilarity;
+import org.apache.mahout.cf.taste.model.DataModel;
+import org.apache.mahout.cf.taste.neighborhood.UserNeighborhood;
+import org.apache.mahout.cf.taste.similarity.UserSimilarity;</p>
+
+<p>public class RecommendTest {
+    public static void main(String[] args) {
+        DataModel model = new MySQLBooleanPrefJDBCDataModel(
+            DataSourceManager.getInstance().getDataSouce(),
+            &quot;TABLE_NAME&quot;,
+            &quot;USER_ID_COLUMN_NAME&quot;,
+            &quot;ITEM_ID_COLUMN_NAME&quot;,
+            null //TIMESTAMP_COLUMN_NAME
+        );
+        UserSimilarity similarity = null;
+        UserNeighborhood neighborhood = null;
+        try {
+            similarity = new LogLikelihoodSimilarity(model);
+            neighborhood = new NearestNUserNeighborhood(100, similarity, model);
+        } catch (TasteException e) {
+            e.printStackTrace();
+        }
+        GenericUserBasedRecommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
+        try {
+            long[] recommendations = recommender.mostSimilarUserIDs(1, 1);
+            for (int i = 0; i &lt; recommendations.length; i++) {
+                resp.getWriter().println(recommendations[i]);
+            }
+        } catch (TasteException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```]</p>
+
+<p>統計学の知識がないのでドキュメント読んでもよくわからなかったので、これであってるのかどうかはよくわからん。色々試して、LogLikelihoodSimilarityじゃないと点数のフィールドがねーから使えないよと怒られた。GenericUserBasedRecommenderはRecommenderってIFで受けるのが筋なんだろうけど、そうするとmostSimilarUserIDSメソッドが使えないのでそのままの型で受けてる。</p>
+
+<p>mostSimilarUserIDsの第一引数が比較したいユーザID、第二引数が何人リコメンドするか。少ないデータで試して、期待する結果が返ってくるのは確認済み。んで大量のデータだとどうなんだろうと思って、以下のスクリプトで140万件のデータを作ってみた。</p>
+
+<p>日付・ユーザID・アイテムIDで、ユーザIDは一日につき一回しかでてこないようにデータを生成。</p>
+
+<p>``` language=&ldquo;python&rdquo; padlinenumbers=&ldquo;2&rdquo;]
+import string
+import random
+import sys</p>
+
+<p>if <strong>name</strong> == &lsquo;<strong>main</strong>&lsquo;:
+  for d in xrange(20110201, 20110229):
+    idmap = []
+    for i in xrange(50000):
+      while(1):
+        id = random.randint(1,300000)
+        try:
+          idmap.index(id)
+        except ValueError:
+          break
+        continue
+      idmap.append(id)
+      print &quot;insert into tbl values (&rsquo;&quot; + str(d) + &quot;&rsquo;,&quot; + str(id) + &quot;,&quot; + str(random.randint(1,3*28)) + &quot;);&quot;
+```]</p>
+
+<p>こいつでSQLをつくってMySQLに食わせる。</p>
+
+<p><code>language=&quot;bash&quot;]
+$ python generate_date.py|mysql
+</code>]</p>
+
+<p>MEMORYエンジンでテーブル作って試してみたけど、DataModelをつくるところですでに時間掛かりすぎ。リアルタイムで返事を返すようなときには全然向いてないものみたいで、やっぱHadoopとかを併用して裏で動かしておく感じで使う物みたいだ。ちなみにかかった時間はおよそ10分弱。こんな単純なデータで単純なことやりたいのであれば、mahoutじゃなくて素直にSQLでやったほうが速い。もっともっと大規模なデータを解析するのに使わないと。</p>
+
+  </section>
+  <footer>
+    <section class="author-info row">
+      <div class="author-avatar col-md-2">
+        
+        <img alt="Author Avatar" src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" />
+        
+      </div>
+      <div class="author-meta col-md-6">
+        
+        <h1 class="author-name text-primary">nobu666</h1>
+        
+        
+      </div>
+      
+      <div class="author-contact col-md-4">
+        <a href="ogata.nobu@gmail.com">
+          <i class="fa fa-envelope-o"></i>
+          &nbsp;Contact me
+        </a>
+      </div>
+      
+    </section>
+    <ul class="pager">
+      
+      <li class="previous"><a href="http://localhost:1313/2011/01/20/831.html"><span aria-hidden="true">&larr;</span> Older</a></li>
+      
+      
+      <li class="next"><a href="http://localhost:1313/2011/02/17/839.html">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      
+    </ul>
+    
+  </footer>
+</article>
+
+  </main>
+  <footer class="container global-footer">
+    <div class="copyright-note pull-left">
+      &copy; nobu666.com
+    </div>
+    <div class="sns-links hidden-print">
+  
+  <a href="ogata.nobu@gmail.com">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/nobu666" target="_blank">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  <a href="https://facebook.com/nobutoshi.ogata" target="_blank">
+    <i class="fa fa-facebook"></i>
+  </a>
+  
+  
+  <a href="https://github.com/nobu666" target="_blank">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  
+  <a href="https://linkedin.com/in/nobu666" target="_blank">
+    <i class="fa fa-linkedin"></i>
+  </a>
+  
+</div>
+
+  </footer>
+
+  <script src="http://localhost:1313/js/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-57485-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+  
+<script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>
+

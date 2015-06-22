@@ -5,7 +5,8 @@
     <link>http://nobu666.com/2005.html</link>
     <description>Recent content in 2005s on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; nobu666.com</copyright>
     <lastBuildDate>Tue, 27 Dec 2005 21:22:32 +0900</lastBuildDate>
     <atom:link href="http://nobu666.com/2005.xml" rel="self" type="application/rss+xml" />
     
@@ -72,7 +73,7 @@
         &lt;div&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/rubyonrails&#34;&gt;rubyonrails&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/java&#34;&gt;java&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/programming&#34;&gt;programming&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/framework&#34;&gt;framework&lt;/a&gt;)&lt;/div&gt;
     &lt;/li&gt;
     &lt;li&gt;
-        &lt;div&gt;&lt;a href=&#34;http://slashdot.jp/security/article.pl?sid=05/12/24/033226&amp;amp;from=rss&#34;&gt;スラッシュドット ジャパン | VMWareにセキュリティホールが見つかる&lt;/a&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;a href=&#34;http://slashdot.jp/security/article.pl?sid=05/12/24/033226&amp;from=rss&#34;&gt;スラッシュドット ジャパン | VMWareにセキュリティホールが見つかる&lt;/a&gt;&lt;/div&gt;
         &lt;div&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/vmware&#34;&gt;vmware&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/security&#34;&gt;security&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/vulnerability&#34;&gt;vulnerability&lt;/a&gt;)&lt;/div&gt;
     &lt;/li&gt;
     &lt;li&gt;
@@ -582,7 +583,7 @@
         &lt;div&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/windows&#34;&gt;windows&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/vulnerability&#34;&gt;vulnerability&lt;/a&gt;)&lt;/div&gt;
     &lt;/li&gt;
     &lt;li&gt;
-        &lt;div&gt;&lt;a href=&#34;https://addons.mozilla.org/extensions/moreinfo.php?application=firefox&amp;amp;id=1419&#34;&gt;Mozilla Update :: Extensions -- More Info:IE Tab - All Releases&lt;/a&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;a href=&#34;https://addons.mozilla.org/extensions/moreinfo.php?application=firefox&amp;id=1419&#34;&gt;Mozilla Update :: Extensions -- More Info:IE Tab - All Releases&lt;/a&gt;&lt;/div&gt;
         &lt;div&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/browser&#34;&gt;browser&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/extension&#34;&gt;extension&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/firefox&#34;&gt;firefox&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/ie&#34;&gt;ie&lt;/a&gt;)&lt;/div&gt;
     &lt;/li&gt;
 &lt;/ul&gt;

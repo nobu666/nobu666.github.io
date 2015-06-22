@@ -1,86 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Javascript</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <link href="http://nobu666.com/categories/javascript.xml" rel="alternate" type="application/rss+xml" title="Real Beat" />
-  <link href="http://nobu666.com//css/bootstrap.min.css" rel="stylesheet">
-  <link href="http://nobu666.com//css/hc.css" rel="stylesheet">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta property="og:title" content=" Javascript &middot;  Real Beat" />
+  <meta property="og:site_name" content="Real Beat" />
+  <meta property="og:url" content="http://nobu666.com/categories/javascript.html" />
   
-    
-    </head>
-    <body>
-<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
-      <div id = "wrapper">
+  
+  <meta property="og:type" content="website" />
+  
 
+  <title>
+     Javascript &middot;  Real Beat
+  </title>
 
-<div class="navbar navbar-default" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <p class="navbar-brand">Real Beat</p>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-					
-					
-					<li><a href="http://nobu666.com//">Home </a></li>
-					
-          </ul>
-        </div>
+  <link rel="stylesheet" href="http://nobu666.com/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://nobu666.com/css/main.css" />
+  <link rel="stylesheet" href="http://nobu666.com/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="http://nobu666.com/css/github.css" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
+  <link rel="shortcut icon" href="http://nobu666.com/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://nobu666.com/images/apple-touch-icon.png" />
+  
+</head>
+<body>
+  <header class="global-header">
+    <section class="header-text">
+      <h1><a href="http://nobu666.com/">Real Beat</a></h1>
+      
+      <div class="sns-links hidden-print">
+  
+  <a href="ogata.nobu@gmail.com">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/nobu666" target="_blank">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  <a href="https://facebook.com/nobutoshi.ogata" target="_blank">
+    <i class="fa fa-facebook"></i>
+  </a>
+  
+  
+  <a href="https://github.com/nobu666" target="_blank">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  
+  <a href="https://linkedin.com/in/nobu666" target="_blank">
+    <i class="fa fa-linkedin"></i>
+  </a>
+  
+</div>
+
+      
+      <a href="http://nobu666.com/" class="btn-header btn-back hidden-xs">
+        <i class="fa fa-angle-left"></i>
+        &nbsp;Home
+      </a>
+      
+      
+      <a href="/index.xml" class="btn-header btn-subscribe hidden-xs">
+        <i class="fa fa-rss"></i>
+        &nbsp;Subscribe
+      </a>
+      
+    </section>
+  </header>
+  <main class="container">
+
+<section class="article-list">
+  <h1>Javascript</h1>
+  
+  <hr/>
+  <article>
+  <header>
+    <h2><a href="http://nobu666.com/2009/11/22/793.html">jQuery &#43; jTemplatesを使って、setIntervalで定期的に新しいデータを取得し、要素の上に追加していく方法</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2009-11-22T17:43:39&#43;09:00">
+          Nov 22, 2009
+        </time>
       </div>
     </div>
+  </header>
+  <div>
+    はまったので忘れないうちにメモ。 $(&ldquo;#piyopiyo&rdquo;).processTemplate(data) とかやると、id=&ldquo;piyopiyo&rdquo;な要素の内容が全部置き換わってしまうので、古いデータが消えてしまう。たとえばTwitterクライアントみたいなものを作ろうと思ったら、定期的に新しいtimelineをとってきたら、古いデータを残しつつ、新しいものだけ上に出てきてほしい。 以下のようにすることで、id=&ldquo;piyo&rdquo;配下のclass=&ldquo;moge&rdquo;にデータがたまっていく。空のdivを一個用意して、そこにprocessTemplateで新しいデータを入れていく。@hideaki_t、ありがとうございました。 &lt;html&gt; &lt;head&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-1.3.2.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-jtemplates.js&quot;&gt;&lt;/script&gt; &lt;script type=&quot;text/javascript&quot;&gt; $(document).ready(function() { hoge.count=1; $(&quot;#piyo &gt; .moge &gt; div:first&quot;).setTemplate(&quot;{#foreach $T as r}&lt;div class='hogera'&gt;{$T.r.id}&lt;/div&gt;{#/for}&quot;); hoge.show(); window.setInterval(function(){ hoge.show(); }, 5000); }); var hoge = { show:function() { var data = &quot;[{id:&quot; + hoge.count++ + &quot;}]&quot;; var t = $(&quot;#piyo &gt; .moge &gt; div:first&quot;); t.after(t.children()); t.processTemplate(eval(data)); } } &lt;/script&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&quot;piyo&quot;&gt;&lt;div class=&quot;moge&quot;&gt;&lt;div /&gt;&lt;/div&gt;&lt;/div&gt; &lt;/body&gt; &lt;/html&gt;
+  </div>
+  
+</article>
 
+  
+</section>
+  </main>
+  <footer class="container global-footer">
+    <div class="copyright-note pull-left">
+      &copy; nobu666.com
+    </div>
+    <div class="sns-links hidden-print">
+  
+  <a href="ogata.nobu@gmail.com">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/nobu666" target="_blank">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  <a href="https://facebook.com/nobutoshi.ogata" target="_blank">
+    <i class="fa fa-facebook"></i>
+  </a>
+  
+  
+  <a href="https://github.com/nobu666" target="_blank">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  
+  <a href="https://linkedin.com/in/nobu666" target="_blank">
+    <i class="fa fa-linkedin"></i>
+  </a>
+  
+</div>
 
+  </footer>
 
-       
-       <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-					<img src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" />
-          <li class="sidebar-brand"><a href="http://nobu666.com//"><h1 class="brand">Real Beat</h1></a><h3></h3></li>
-          <hr />
-					
-						<li><a href="http://nobu666.com//">Home </a></li>
-					
-          <hr />
-          <div id="social-wrapper">
-           <li> <a href="https://twitter.com/nobu666"><i class="fa fa-twitter-square"></i> @twitter</a></li>
-           
-           <li> <a href="https://www.facebook.com/nobutoshi.ogata"><i class="fa fa-facebook-square"></i> facebook</a></li>
-           <li> <a href="https://github.com/nobu666"><i class="fa fa-github-square"></i> github</a> </li>
-         </div>
-       </ul>
-     </div>
-
-
-
-     <div class="container">
-
-
-  <div id="article">
-      <h1>Javascript</h1>
-  <ul class="posts">
-      
-      <li><span><a href="http://nobu666.com/2009/11/22/793.html">jQuery &#43; jTemplatesを使って、setIntervalで定期的に新しいデータを取得し、要素の上に追加していく方法</a><time class="pull-right post-list">Sun, Nov 22, 2009</h4></time></span></span></li>
-      
-  </ul>
-    <footer>
-
-        <p class="text-muted credit">&copy; 2015. All rights reserved. </p>
-    </footer>
- 
-    <script src="http://nobu666.com//js/jquery-1.10.2.min.js"></script>
-    <script src="http://nobu666.com//js/bootstrap.min.js"></script>
-    <script src="http://nobu666.com//js/bootstrap.js"></script>
-    <script type="text/javascript" src="http://nobu666.com//js/hc.js"></script>
+  <script src="http://nobu666.com/js/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-57485-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+  
 </body>
-
 </html>
+
+

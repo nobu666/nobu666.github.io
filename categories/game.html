@@ -1,108 +1,377 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Game</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <link href="http://nobu666.com/categories/game.xml" rel="alternate" type="application/rss+xml" title="Real Beat" />
-  <link href="http://nobu666.com//css/bootstrap.min.css" rel="stylesheet">
-  <link href="http://nobu666.com//css/hc.css" rel="stylesheet">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta property="og:title" content=" Game &middot;  Real Beat" />
+  <meta property="og:site_name" content="Real Beat" />
+  <meta property="og:url" content="http://nobu666.com/categories/game.html" />
   
-    
-    </head>
-    <body>
-<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
-      <div id = "wrapper">
+  
+  <meta property="og:type" content="website" />
+  
 
+  <title>
+     Game &middot;  Real Beat
+  </title>
 
-<div class="navbar navbar-default" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <p class="navbar-brand">Real Beat</p>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-					
-					
-					<li><a href="http://nobu666.com//">Home </a></li>
-					
-          </ul>
-        </div>
+  <link rel="stylesheet" href="http://nobu666.com/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://nobu666.com/css/main.css" />
+  <link rel="stylesheet" href="http://nobu666.com/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="http://nobu666.com/css/github.css" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
+  <link rel="shortcut icon" href="http://nobu666.com/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://nobu666.com/images/apple-touch-icon.png" />
+  
+</head>
+<body>
+  <header class="global-header">
+    <section class="header-text">
+      <h1><a href="http://nobu666.com/">Real Beat</a></h1>
+      
+      <div class="sns-links hidden-print">
+  
+  <a href="ogata.nobu@gmail.com">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/nobu666" target="_blank">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  <a href="https://facebook.com/nobutoshi.ogata" target="_blank">
+    <i class="fa fa-facebook"></i>
+  </a>
+  
+  
+  <a href="https://github.com/nobu666" target="_blank">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  
+  <a href="https://linkedin.com/in/nobu666" target="_blank">
+    <i class="fa fa-linkedin"></i>
+  </a>
+  
+</div>
+
+      
+      <a href="http://nobu666.com/" class="btn-header btn-back hidden-xs">
+        <i class="fa fa-angle-left"></i>
+        &nbsp;Home
+      </a>
+      
+      
+      <a href="/index.xml" class="btn-header btn-subscribe hidden-xs">
+        <i class="fa fa-rss"></i>
+        &nbsp;Subscribe
+      </a>
+      
+    </section>
+  </header>
+  <main class="container">
+
+<section class="article-list">
+  <h1>Game</h1>
+  
+  <hr/>
+  <article>
+  <header>
+    <h2><a href="http://nobu666.com/2009/06/15/776.html">PS3用にDLNAサーバMediatombを入れる</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2009-06-15T13:24:05&#43;09:00">
+          Jun 15, 2009
+        </time>
       </div>
     </div>
+  </header>
+  <div>
+    先日気がついたらPS3を買っており、バイオハザードで恐ろしい目にあったり、まいにちいっしょで和んだりしております。 PS3でもう少し便利に遊ぶため、mediatombでDLNAサーバをたてる。emerge mediatombして依存関係諸々入れる。とりあえずこれだけでもいいのだが、これだと最新の0.12.0が入ってくれないので、一端emerge -C mediatombしてソースから入れる。 svn co https://svn.mediatomb.cc/svnroot/mediatomb/trunk/mediatomb mediatomb0.12.0 cd mediatomb0.12.0 autoreconf -i ./configure &amp;&amp; make &amp;&amp; sudo make install mysql -uroot -p mysql&gt; create database mediatomb; mysql&gt; grant select,insert,update,delete,create,drop on mediatomb.* to mediatomb@localhost identified by 'mediatomb'; mysql&gt; flush privileges; mysql&gt; exit; 下準備はこれでおしまい。あとは設定ファイルを少し弄る。と言ってもアカウント周りと、コメントで for PS3云々と書いてあるのでその通り書き換えればいいだけ。細かいことはいい感じ: PS3+Macで超・超快適メディアプレイヤー：Youtube-&gt;Mediatomb on iMac -&gt;PS3 -&gt;BRAVIAを参照。 これで一通りの音楽と動画が、PS3経由でTVで観られるようになった。でもPCに動画撮り溜めたりしてるわけじゃないから、あんまり出番はないな。YouTubeも別にDLNA経由しないでも、PS3でそのままブラウザから観れるしな。PCでテレビを録画したりしてる人には大変ありがたい機能なんだろうな。あ、でも写真をスライドショーにしてテレビで観るとかはするかも。あとテレビにしっかりしたスピーカーがあるなら、音楽もPCで聴くよりテレビで聴きたいとかいう需要はあるか。テレビ用のスピーカー買うかなー…安くていいのないかな。
+  </div>
+  
+</article>
 
+  
+  <hr/>
+  <article>
+  <header>
+    <h2><a href="http://nobu666.com/2009/03/16/760.html">モンハンデータ消えてやり直し中</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2009-03-16T13:30:46&#43;09:00">
+          Mar 16, 2009
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    CFW色々弄ってるうちにデータ全消えしてしまい、最初からやり直し中… 村は☆4まで全部終わり、それ以外はキークエ＋α。集会所はキークエのみで下位は終わった。訓練所は増弾のピアスまで取った。とりあえず村下位クエ全部やって、村上位キークエからやってく感じか。釣りクエとか採取クエがめんどい…
+  </div>
+  
+</article>
 
+  
+  <hr/>
+  <article>
+  <header>
+    <h2><a href="http://nobu666.com/2008/07/02/631.html">相変わらずモンハンやってる</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2008-07-02T01:16:23&#43;09:00">
+          Jul 2, 2008
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    PSPのスパロボ買ったりしつつも、結局モンハンやってる。270時間ほどやって、ようやくギルドカードがプラチナに。村クエ全部、集会所下位全部、上位ミラ系まで全部、G級キークエ全部＋ウカム＋あと何個かでプラチナになった。訓練所は特別訓練まで終わって、そろそろG級訓練やろうかどうしようか、というところ。 ギルカ的には村下位:128/村上位:74/集会下位:110/集会上位:121/集会G:79/トレジャー:4/訓練所:99で、武器別に見ると大剣:16/太刀:287/片手:10/双剣:12/ハンマー:12/狩猟笛:5/ランス:21/ガンランス:10/ライトボウガン:21/ヘビィボウガン:31/弓:24。基本太刀だけど、最近は楽な方に流れてモンスターによって武器を変えてる感じ。キリン・ディアブロスは片手、キリン・ディアブロス・ゲリョス・ラヴァ・ラオ・シェンはヘビィ、グラビモス・ラージャンは弓、トトスはライト、アカムとウカムはランス、ミラはガンスと弓、リオ夫妻・ザザミ・ギザミはハンマー、ナナ・テオは双剣、ティガは大剣。あとは大体太刀だけど、ナズチは双剣と悩むところ。トトスがライトなのは、金華朧銀の貫通2速射がいい感じだからってだけ。ラオ極＋自動装填があればヘビィなんだろうけど、まだ持ってないので。 訓練所で色々武器使ってみての分類だけど、こうして見ると笛を訓練所でしか使ってないな。使いやすいんだけど、決定打に欠けるからかな…移動速度UPと叩き付けの便利さはかなり汎用性高いとは思うけど。 もう装備まで大体決まってるのはアカムにナルカミ＋ガード性能＋砥石高速、ヴォルガノスハメに火事場2＋貫通強化、ディア・キリン・ゲリョスに散弾強化・回避距離、あとはガンナーなら根性・装填数UP、近接なら匠・業物、ガード不可なら回避性能か耳栓な感じ。 とりあえずの目標は、G級古龍・ミラ出すのと、訓練所G級終わらせて渇望のピアス取るくらいか。あ、天鱗・天殻系で欲しい武器防具が結構あるな。なんだか先は長いので、まだまだ遊べそうな感じです。 嫁（仮）はすっかり遥かなる時空の中で４に夢中、っていうかもう全クリしそうな勢いだ。ゲーマー自重www
+  </div>
+  
+</article>
 
-       
-       <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-					<img src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" />
-          <li class="sidebar-brand"><a href="http://nobu666.com//"><h1 class="brand">Real Beat</h1></a><h3></h3></li>
-          <hr />
-					
-						<li><a href="http://nobu666.com//">Home </a></li>
-					
-          <hr />
-          <div id="social-wrapper">
-           <li> <a href="https://twitter.com/nobu666"><i class="fa fa-twitter-square"></i> @twitter</a></li>
-           
-           <li> <a href="https://www.facebook.com/nobutoshi.ogata"><i class="fa fa-facebook-square"></i> facebook</a></li>
-           <li> <a href="https://github.com/nobu666"><i class="fa fa-github-square"></i> github</a> </li>
-         </div>
-       </ul>
-     </div>
+  
+  <hr/>
+  <article>
+  <header>
+    <h2><a href="http://nobu666.com/2008/06/02/625.html">新型PSP(PSP-2000)だけでFW3.80からCFWを入れる</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2008-06-02T12:53:16&#43;09:00">
+          Jun 2, 2008
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    基本的にCFW導入のためにはパンドラバッテリー(ジグキックバッテリー + マジックメモリースティック(MMS))が必要。で、PSP-2000でジグキックバッテリーは作成できず、CFW導入済みのPSPがないといかん。つーことで終了なんだが、諦めるのはまだ早い。 PSP 2000対応 Tool Service Mode Battery （ＰＳＰ新機種対応） これをamazonさんで購入すればよい。あとはメモステとUSBケーブルがあれば、新型PSPのみでCFW(カスタムファームウェア)導入を参照してその通りにやるだけ。注意する点としては、作業前に購入したTOOLバッテリーをちゃんと充電すること。1時間半くらい。ACアダプタ刺さってると当たり前だけどバッテリーは使われないので、自動起動しないのでね。 3.71M33入れたら3.80M33に手動でアップデートし、後はネットワークアップデートで3.90M33-3へ。これで持ってるUMDをISO化して遊べるな。電池持ちも良くなるし、読み込みも早くなるし。 あ、当然なんだけど、これやると保証は受けられなくなるので自己責任で。
+  </div>
+  
+</article>
 
+  
+  <hr/>
+  <article>
+  <header>
+    <h2><a href="http://nobu666.com/2008/05/27/623.html">モンハン近況</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2008-05-27T18:04:27&#43;09:00">
+          May 27, 2008
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    まだまだ遊んでます。そろそろ170時間ってところか。状況としては村下位は「最後の招待状」のみ残りだが今日中に終わらせる予定、村上位はナズチ・テオ・シェンやると「モンスターハンター」出現か。集会所のほうはHR8で止まり中。ボウガンやら弓やらハンマーやら作りたいのが色々あってのぅ。「最後の招待状」やったらボチボチとキークエやろうかというところ。ただ、ドドブラ亜種とヴォルガノスは見たことすらねー、ってのが不安なところではあるが。 「最後の招待状」は弓で行ってるんだが、なんせ今までは訓練所以外はこれが弓デビューに近いというにわかなんで。捕獲の見極めつけて、2匹目が出てくる前に1匹目は捕獲できる。が、2匹目に苦戦中。つーか1匹目も2匹目も体力同じはずなのに、なぜか連続パンチからのコンボで乙るんですな。アイシクルボウIがよくないのかも知れない。拡散矢だから、結構近寄らないとクリティカルでないんだ。でもにわかなので、拡散矢じゃないとちゃんと当たらない気がしないでもないんだが…ハンターボウ担いでクック行くしかないのか。 とココまで書いて、休憩時間中にクエ途中だった「最後の招待状」再開、2匹とも捕獲で終了。単純に慣れの問題だな。1乙＋モドリ玉5個ほど使ったので、もちっと立ち回りに研究の余地があるな。次は拡散じゃない弓で行ってみることにしよう。って、装填数UP付ければ、アイシクルボウは溜め4が連射じゃん。訓練所で増弾のピアスが取りたくなってきたのぅ。
+  </div>
+  
+</article>
 
+  
+  <hr/>
+  <article>
+  <header>
+    <h2><a href="http://nobu666.com/2008/05/07/620.html">G.W.後半</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2008-05-07T00:52:57&#43;09:00">
+          May 7, 2008
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    …まぁ想像通りゲーム三昧。たまたま一日だけ嫁（仮）の仕事が突如休みになったため、急遽家具を買いに。何を今更って感じなんだが、休みがあわないのでなかなかタイミングがなくてね。食事用のテーブル・座椅子・サイドボード・食器棚・和室の照明と買って10万で足りた。良い買い物をした。あとは化粧台とか姿見とかあればいいのかのぅ。 モンハンのほうはひたすら村上位。★9が残13/19。ディアブロス亜種*2とかグラビモス亜種*2とか残ってていやーんな感じ。集会所下位も全部終わらせたくて頑張ったんだが、カンタロス50匹とか熱石炭20個とか黄金魚8匹とか…考えた奴何なの馬鹿なの死ぬの。 あー、しかしこんなに休んでしまうと会社行くの辛いな。つーか仕事覚えてるのかな、忘れてそうｗ
+  </div>
+  
+</article>
 
-     <div class="container">
+  
+  <hr/>
+  <article>
+  <header>
+    <h2><a href="http://nobu666.com/2008/04/30/619.html">G.W.前半</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2008-04-30T00:51:53&#43;09:00">
+          Apr 30, 2008
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    まぁ予想通りモンハン三昧。4/25は誕生日だったのだけども、嫁（仮）実家にてご飯食べて、義弟（仮）と共にモンハンしてますた。お陰様でG級に。しかし実力的にはまだ上級なんで、地道に村で素材集め中。火竜の紅玉が出なくて、リオソウルUの頭と脚が出来ない。出なさすぎ。 とりあえず村クエ下位終わらせようと思ったら、ラージャン2頭とか無理。集会所で嫁（仮）と行ってみたけど、まるで勝てる気がしない。なにあのスーパーサイヤ人。何なの?馬鹿なの?死ぬの?ムービー見た感じ、近接よりボウガンとかのほうが楽そうなんで、ちょっと練習したいと思う。ボウガンで睡眠爆破が定番なのかし。 下位全クリは装備整えるまで諦めて、まずは村でリオソウルU揃えたい!ってことで、村★8のキークエ終わらせた。どうしてもガルルガに太刀で勝てなかったんだが、双剣でマスターセイバー作って、強走G飲んで乱舞祭りしたらあっさり。頑張って紅玉集めます。その前に村緊急のナルガやらんとだな。3人でしかやってないので、大丈夫かなー。ナルガX見る限り、弱点は火と雷なのかな。まずは鬼神斬破刃で突撃するか。 ゲームとは関係ないけど、連休中はずっとカレー食ってた。材料はオニオンペースト・ジャガイモ・人参摺り下ろし・ケチャップ・ソース・ニンニク微塵切り・ショウガ・牛肉・ブーケガルニ・インスタントコーヒー・ホールトマト・赤ワイン・バジル・林檎摺り下ろし・セロリ摺り下ろし。肉・芋を追加するときは、一旦炒めてからさらに茹でないと芯が残るな。チーズ入れたり、カレーうどんで食べたり、もう暫く食べられそう。
+  </div>
+  
+</article>
 
+  
+  <hr/>
+  <article>
+  <header>
+    <h2><a href="http://nobu666.com/2008/04/16/616.html">[MHP2G]流行っぷりにびっくり</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2008-04-16T16:09:32&#43;09:00">
+          Apr 16, 2008
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    普通に本社でやってる奴らがいるようで、羨ましいぜこのやろう。あ、★7のフルフルは、火属性武器持って行ったら普通にやれた。まだ太刀でいけるぜ…しかし水属性1つも持ってないんだよな。 とりあえず集会所は1人じゃきつくなってきたので、まずは村を終わらせることにした。さっくり上位クエだして、★7終了。★8のヒプノック2頭も楽勝だったので、このままサクサク？と思ったらガルルガTUEEEEEEｗ 基本クックと同じだと思ってナメてたら、怒りノーモーションタックルであっさり3乙。もう面倒なので、今は睡眠片手剣を作るべく、ひたすらガノトトス狩り中。あと1回くらいでガノフィンスパイク完成かの。その後は上位トトスっぽ。ちょうどトトス出てくるクエは★8に4つあるし、ちょうど良かろう。 後輩とオトモアイルー交換してみたが、いなくなる訳じゃねーのな。勘違いしてたぜ。いなくならないんだったら、ちゃんと育てたメインで使ってるオトモをあげればよかったな…爆弾一筋Lv1とかカワイソスｗ
+  </div>
+  
+</article>
 
-  <div id="article">
-      <h1>Game</h1>
-  <ul class="posts">
-      
-      <li><span><a href="http://nobu666.com/2009/06/15/776.html">PS3用にDLNAサーバMediatombを入れる</a><time class="pull-right post-list">Mon, Jun 15, 2009</h4></time></span></span></li>
-      
-      <li><span><a href="http://nobu666.com/2009/03/16/760.html">モンハンデータ消えてやり直し中</a><time class="pull-right post-list">Mon, Mar 16, 2009</h4></time></span></span></li>
-      
-      <li><span><a href="http://nobu666.com/2008/07/02/631.html">相変わらずモンハンやってる</a><time class="pull-right post-list">Wed, Jul 2, 2008</h4></time></span></span></li>
-      
-      <li><span><a href="http://nobu666.com/2008/06/02/625.html">新型PSP(PSP-2000)だけでFW3.80からCFWを入れる</a><time class="pull-right post-list">Mon, Jun 2, 2008</h4></time></span></span></li>
-      
-      <li><span><a href="http://nobu666.com/2008/05/27/623.html">モンハン近況</a><time class="pull-right post-list">Tue, May 27, 2008</h4></time></span></span></li>
-      
-      <li><span><a href="http://nobu666.com/2008/05/07/620.html">G.W.後半</a><time class="pull-right post-list">Wed, May 7, 2008</h4></time></span></span></li>
-      
-      <li><span><a href="http://nobu666.com/2008/04/30/619.html">G.W.前半</a><time class="pull-right post-list">Wed, Apr 30, 2008</h4></time></span></span></li>
-      
-      <li><span><a href="http://nobu666.com/2008/04/16/616.html">[MHP2G]流行っぷりにびっくり</a><time class="pull-right post-list">Wed, Apr 16, 2008</h4></time></span></span></li>
-      
-      <li><span><a href="http://nobu666.com/2008/04/10/614.html">[MHP2G]集会所☆7のフルフルが倒せない</a><time class="pull-right post-list">Thu, Apr 10, 2008</h4></time></span></span></li>
-      
-      <li><span><a href="http://nobu666.com/2008/03/31/605.html">MHP2G始めました</a><time class="pull-right post-list">Mon, Mar 31, 2008</h4></time></span></span></li>
-      
-      <li><span><a href="http://nobu666.com/2005/11/14/237.html">続・スーパーロボット大戦</a><time class="pull-right post-list">Mon, Nov 14, 2005</h4></time></span></span></li>
-      
-      <li><span><a href="http://nobu666.com/2005/11/09/228.html">スーパーロボット大戦</a><time class="pull-right post-list">Wed, Nov 9, 2005</h4></time></span></span></li>
-      
-  </ul>
-    <footer>
+  
+  <hr/>
+  <article>
+  <header>
+    <h2><a href="http://nobu666.com/2008/04/10/614.html">[MHP2G]集会所☆7のフルフルが倒せない</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2008-04-10T23:39:31&#43;09:00">
+          Apr 10, 2008
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    亜種でもねー普通のやつなんだが、つえー…ていうか堅え…。やっぱ武器を早めに上位の奴にしないと無理が出てきたな。50分フルに戦って時間切れとかもうね…。大樽Gが1つあれば勝てたっぽいんだけどな、くそぅ。というより、いい加減太刀以外をちゃんと使えるようになれって話だな。先は長いな、ぉぃ…
+  </div>
+  
+</article>
 
-        <p class="text-muted credit">&copy; 2015. All rights reserved. </p>
-    </footer>
- 
-    <script src="http://nobu666.com//js/jquery-1.10.2.min.js"></script>
-    <script src="http://nobu666.com//js/bootstrap.min.js"></script>
-    <script src="http://nobu666.com//js/bootstrap.js"></script>
-    <script type="text/javascript" src="http://nobu666.com//js/hc.js"></script>
+  
+  <hr/>
+  <article>
+  <header>
+    <h2><a href="http://nobu666.com/2008/03/31/605.html">MHP2G始めました</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2008-03-31T12:55:11&#43;09:00">
+          Mar 31, 2008
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    土曜に嫁（仮）と義弟（仮）の3人で遊んだ。遊んだと言っても、前作で集会所の方を全然やってなかった俺のクエを、一方的に手伝って貰った、が正解なんだが。おかげさまで★4の残り少しと★5もキークエ全部終わり、無事に上位クエが出来るように。嫁（仮）がコタツで寝てしまった横で、「上位装備作った方がいい」ということでクックを延々と倒す作業までつきあってくれた。時間的に全部は無理だったけど、★6「挟撃のイャンクック！」数回、「牙獣たちの逆襲！」と「猪突猛進！ドスファンゴ」3回であらかた材料は揃った。あと「コンガの剛毛」があれば全パーツ揃うんだが、★6じゃコンガがいねー…卵取ったら配置変わるかな。 昨日は★6キークエの残り、「2対の麻痺牙」と「究極の蟹料理･･･」。ドスゲネポス*2とダイミョウザザミ*2。なにげに蟹料理で数回料理されたものの、なんとか。で、キークエ「接近！ラオシャンロン」。ラオシャンロン亜種(灰)、かなり体力あって面倒だ。尻尾に轢かれて乙ったが、なんかコツは掴んだ。ちょうどボマースキルついてるし、小樽・小樽G・大樽・大樽Gに材料までフル持ち込みして挑むか。
+  </div>
+  
+</article>
+
+  
+  <hr/>
+  <article>
+  <header>
+    <h2><a href="http://nobu666.com/2005/11/14/237.html">続・スーパーロボット大戦</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2005-11-14T01:49:12&#43;09:00">
+          Nov 14, 2005
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    前回の続き。ボチボチ進めて、ようやくアスキラの2人がミーティア取得、ラクスとバルトフェルドが仲間になるトコまで進めた。隠し機体を入手するため、仕方なく攻略サイトを拝見…って、なんかカガリとアストレイ3人娘の撃墜数合計が100以上、とか全然使ってなかったから無理！ZZの面々の撃墜数合計のもあったが、これはジュドーがMAP平気で大活躍しているので特に問題なく。 あとは撃墜数の末尾調整とか、そういうのも諸々あったので仕方なく全滅プレイ決行。エクセルで表を作って、1機撃墜するごとにカウント。めんどくさいがその甲斐あって、ノイエジール・白キュベレイ・ゲーマルク・ZZフルアーマーパーツ・ストライクルージュのIWSPと入手。白キュベレイにはカミーユ乗せてみたが、鬼強。カミーユの小隊長能力は反撃時の攻撃力20%アップなので、単機で突っ込ませておくだけで、次のターンには雑魚がいない。これは病み付きになる爽快感だ…。νガンダムでもできるんだけど、フィンファンネルが弾数制なのがなー（白キュベレイは消費EN10！）。 来週末にはなんとか1週目終われそう。意地でも全主人公終わらせてやる?
+  </div>
+  
+</article>
+
+  
+  <hr/>
+  <article>
+  <header>
+    <h2><a href="http://nobu666.com/2005/11/09/228.html">スーパーロボット大戦</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2005-11-09T02:08:28&#43;09:00">
+          Nov 9, 2005
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    激しく今更なんだが、第3次スーパーロボット大戦α面白れぇ。超やばい。つか、忙しくて殆ど進められず、発売日に買った気がするのだがまだクリアしてない。 知らない人置いてけぼりにする気満々で書くけど、とりあえずSEED好き。なので、早い段階でストライクガンダムフル改造したら、キラ様の撃墜数が凄いことに。ジャスティス、バスター、ルージュとかも改造引き継ぎで最初からフル改造だったしな。でも撃墜数は3位だったりするのだが。1位はヒイロ君です。第2次のWゼロが鬼強だったが、今回もソコソコ。MAP兵器好きなので使いまくってたら、もうブッチギリで撃墜数トップな訳ですよ。何気にW系ではデュオが強い。移動後ALLが最強武器なのがでかいな。しかも理由はわからんが、デスサイズは敵に狙われやすい。加えてデュオの小隊長能力が「反撃時のダメージ＋20%」なもんで、デュオの癖に強い。後半になると攻撃力的に辛くなるのかも知れないが、ENフル改造＋デュオにEセーブでかなり使える。 それにつけても、スパロボ発売後ちょっとしてからやっぱり発売日に買ったような気がする種デス Generation C.E.があまりにもクソゲー過ぎる。「あんたはいったい何なんだ！」「あんたって人はーーーー！！！」と叫びたくなるクソゲっぷりだ。戦闘のアニメーションをキャンセルできないのが最悪。なんで出来ないんだろ、あれ。テスターさんもさぞかし苛ついたと思われるのだが。あまりにもテンポが悪いので、10話くらい進めたけどスーパー放置中。でもヤフオク見てみたら、3000円とかで入札ありやがる。売ろう……
+  </div>
+  
+</article>
+
+  
+</section>
+  </main>
+  <footer class="container global-footer">
+    <div class="copyright-note pull-left">
+      &copy; nobu666.com
+    </div>
+    <div class="sns-links hidden-print">
+  
+  <a href="ogata.nobu@gmail.com">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/nobu666" target="_blank">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  <a href="https://facebook.com/nobutoshi.ogata" target="_blank">
+    <i class="fa fa-facebook"></i>
+  </a>
+  
+  
+  <a href="https://github.com/nobu666" target="_blank">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  
+  <a href="https://linkedin.com/in/nobu666" target="_blank">
+    <i class="fa fa-linkedin"></i>
+  </a>
+  
+</div>
+
+  </footer>
+
+  <script src="http://nobu666.com/js/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-57485-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+  
 </body>
-
 </html>
+
+

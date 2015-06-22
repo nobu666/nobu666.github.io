@@ -5,7 +5,8 @@
     <link>http://nobu666.com/categories/program.html</link>
     <description>Recent content in Program on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; nobu666.com</copyright>
     <lastBuildDate>Wed, 13 Jul 2011 14:39:30 +0900</lastBuildDate>
     <atom:link href="http://nobu666.com/categories/program.xml" rel="self" type="application/rss+xml" />
     
@@ -35,63 +36,60 @@ Lucene詳しいかた、教えてくだしあ＞＜&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;2009/10/07: 解決したので後ろに追記しました。&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;[sourcecode lang=&amp;ldquo;java&amp;rdquo;]
-package hoge;
-import java.io.&lt;em&gt;;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package hoge;
+import java.io.*;
 import net.moraleboost.lucene.analysis.ja.StandardMeCabAnalyzer;
-import org.apache.lucene.&lt;/em&gt;;&lt;/p&gt;
+import org.apache.lucene.*;
 
-&lt;p&gt;public class MeCabTest {
+public class MeCabTest {
     public static final String DIC_ENCODING = System.getProperty(&amp;quot;net.moraleboost.mecab.encoding&amp;quot;);
     private static StandardMeCabAnalyzer analyzer = null;
     private static FSDirectory directory = null;
     private IndexWriter writer  = null;
-    private static final String DIR = &amp;quot;/path/to/index&amp;quot;;&lt;/p&gt;
+    private static final String DIR = &amp;quot;/path/to/index&amp;quot;;
 
-&lt;pre&gt;&lt;code&gt;public void setUp() throws Exception {
-    writer  = new IndexWriter(directory, analyzer, new MaxFieldLength(4096));
-    Document doc = new Document();
-    addField(doc, &amp;amp;quot;text&amp;amp;quot;, &amp;amp;quot;ほげほげ&amp;amp;quot;);
-    ....
-    ....
-    writer.commit();
-    writer.optimize();
-    writer.close();
-}
-private void addField(Document doc, String name, String value) throws Exception {
-    Field field = new Field(name, value, Store.YES, Field.Index.ANALYZED, Field.TermVector.YES);
-    doc.add(field);
-    writer.addDocument(doc);
-}
+    public void setUp() throws Exception {
+        writer  = new IndexWriter(directory, analyzer, new MaxFieldLength(4096));
+        Document doc = new Document();
+        addField(doc, &amp;quot;text&amp;quot;, &amp;quot;ほげほげ&amp;quot;);
+        ....
+        ....
+        writer.commit();
+        writer.optimize();
+        writer.close();
+    }
+    private void addField(Document doc, String name, String value) throws Exception {
+        Field field = new Field(name, value, Store.YES, Field.Index.ANALYZED, Field.TermVector.YES);
+        doc.add(field);
+        writer.addDocument(doc);
+    }
 
-public static void main(String[] args) {
-    MeCabTest t = new MeCabTest();
-    IndexSearcher searcher = null;
-    IndexReader reader = null;
-    analyzer = new StandardMeCabAnalyzer(DIC_ENCODING, &amp;amp;quot;&amp;amp;quot;);
-    directory = FSDirectory.open(new File(DIR));
-    t.setUp();
-    reader = IndexReader.open(DIR, false);
-    searcher = new IndexSearcher(directory, true);
-    QueryParser parser = new QueryParser(&amp;amp;quot;text&amp;amp;quot;, analyzer);
-    parser.setDefaultOperator(QueryParser.Operator.OR);
-    MoreLikeThis mlt = new MoreLikeThis(reader);
-    mlt.setAnalyzer(analyzer);
-    mlt.setMinTermFreq(1);
-    mlt.setFieldNames(new String[]{&amp;amp;quot;text&amp;amp;quot;});
-    Query query = mlt.like(new ByteArrayInputStream(&amp;amp;quot;ほげ&amp;amp;quot;.getBytes()));
-    TopDocs topDocs = searcher.search(query, 100);
-    if (topDocs.totalHits &amp;amp;gt; 0) {
-        for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
-            Document doc = searcher.doc(scoreDoc.doc);
-            System.out.println(doc.get(&amp;amp;quot;text&amp;amp;quot;));
+    public static void main(String[] args) {
+        MeCabTest t = new MeCabTest();
+        IndexSearcher searcher = null;
+        IndexReader reader = null;
+        analyzer = new StandardMeCabAnalyzer(DIC_ENCODING, &amp;quot;&amp;quot;);
+        directory = FSDirectory.open(new File(DIR));
+        t.setUp();
+        reader = IndexReader.open(DIR, false);
+        searcher = new IndexSearcher(directory, true);
+        QueryParser parser = new QueryParser(&amp;quot;text&amp;quot;, analyzer);
+        parser.setDefaultOperator(QueryParser.Operator.OR);
+        MoreLikeThis mlt = new MoreLikeThis(reader);
+        mlt.setAnalyzer(analyzer);
+        mlt.setMinTermFreq(1);
+        mlt.setFieldNames(new String[]{&amp;quot;text&amp;quot;});
+        Query query = mlt.like(new ByteArrayInputStream(&amp;quot;ほげ&amp;quot;.getBytes()));
+        TopDocs topDocs = searcher.search(query, 100);
+        if (topDocs.totalHits &amp;gt; 0) {
+            for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
+                Document doc = searcher.doc(scoreDoc.doc);
+                System.out.println(doc.get(&amp;quot;text&amp;quot;));
+            }
         }
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;}
-```&lt;/p&gt;
 
 &lt;p&gt;try〜catchとか省略。addField(&amp;hellip;);のところ、実際にはニュースサイトから本文引っ張ってきて、いくつかいれた。7個くらい適当に選んで、3個くらいは同じニュース（台風18号関連）を違うサイトから引用した。&lt;/p&gt;
 
@@ -118,7 +116,9 @@ public static void main(String[] args) {
 
 &lt;p&gt;で、色々質問されるけど全部デフォルトでOK。で&lt;/p&gt;
 
-&lt;p&gt;&amp;gt;cpan test Plagger&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;cpan test Plagger&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;p&gt;して依存モジュールがバラバラ出てくるので片っ端からinstallしていくだけ。基本的には&lt;a href=&#34;http://capsctrl.que.jp/kdmsnr/diary/20060803.html#p02&#34;&gt;http://capsctrl.que.jp/kdmsnr/diary/20060803.html#p02&lt;/a&gt;に書いてあるようにすりゃいけるはずなんだけど、そう甘くなかった。とりあえず、&lt;/p&gt;
 
@@ -240,7 +240,7 @@ field1:hogehoge,field2:mogemoge
 
 &lt;p&gt;でも客としてはやはり枯れた技術に拘りたいみたいだ。つか最初に確認したハズなんだが、今更になってJavaは1.4じゃなきゃダメとかいいだして大惨事に。なんとか1日でコンパイルは通るように修正したが、殆ど全部のファイルを修正する羽目になってしまった。&lt;/p&gt;
 
-&lt;p&gt;Generics使え、enum使えと口うるさくメンバーに言っていたので、非常に気が重かった…。せめてもの罪滅ぼしに（って俺が悪いわけではないのだが）、2/3ほどひとりで修正してenumもTypesafe Enumパターン使って全部置き換えた。Typesafe Enumは日本語のドキュメントがあまりないのだが、まぁ&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/redirect?link_code=ur2&amp;amp;camp=247&amp;amp;tag=realbeat-22&amp;amp;creative=1211&amp;amp;path=ASIN/4894714361&#34;&gt;Effective Java&lt;/a&gt;&lt;img src=&#34;http://www.assoc-amazon.jp/e/ir?t=realbeat-22&amp;amp;l=ur2&amp;amp;o=9&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; /&gt;読めってことです。&lt;/p&gt;
+&lt;p&gt;Generics使え、enum使えと口うるさくメンバーに言っていたので、非常に気が重かった…。せめてもの罪滅ぼしに（って俺が悪いわけではないのだが）、2/3ほどひとりで修正してenumもTypesafe Enumパターン使って全部置き換えた。Typesafe Enumは日本語のドキュメントがあまりないのだが、まぁ&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/redirect?link_code=ur2&amp;camp=247&amp;tag=realbeat-22&amp;creative=1211&amp;path=ASIN/4894714361&#34;&gt;Effective Java&lt;/a&gt;&lt;img src=&#34;http://www.assoc-amazon.jp/e/ir?t=realbeat-22&amp;l=ur2&amp;o=9&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; /&gt;読めってことです。&lt;/p&gt;
 
 &lt;p&gt;しかしこれ、switch文で使えないのが難点なのよね。Java5.0でも逆コンパイルしてみたら結局if-elseになってた。なにか美しい方法はないのかな……&lt;/p&gt;
 </description>
@@ -323,7 +323,7 @@ field1:hogehoge,field2:mogemoge
       <pubDate>Thu, 02 Sep 2004 11:04:18 +0900</pubDate>
       
       <guid>http://nobu666.com/2004/09/02/126.html</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://eany.mypost.ne.jp/archives/2004/08/windows_xp_sp2_1.html&#34; title=&#34;Windows XP SP2 日本語版&#34;&gt;前のエントリー&lt;/a&gt;で書いたSP2だが、Microsoftのダウンロードセンターで&lt;a href=&#34;http://www.microsoft.com/downloads/details.aspx?FamilyID=049c9dbe-3b8e-4f30-8245-9e368d3cdb5a&amp;amp;displaylang=ja&#34; title=&#34;Windows XP Service Pack 2 Network Installation Package for IT Professionals and Developers&#34;&gt;正式に公開&lt;/a&gt;された。&lt;/p&gt;
+      <description>&lt;p&gt;&lt;a href=&#34;http://eany.mypost.ne.jp/archives/2004/08/windows_xp_sp2_1.html&#34; title=&#34;Windows XP SP2 日本語版&#34;&gt;前のエントリー&lt;/a&gt;で書いたSP2だが、Microsoftのダウンロードセンターで&lt;a href=&#34;http://www.microsoft.com/downloads/details.aspx?FamilyID=049c9dbe-3b8e-4f30-8245-9e368d3cdb5a&amp;displaylang=ja&#34; title=&#34;Windows XP Service Pack 2 Network Installation Package for IT Professionals and Developers&#34;&gt;正式に公開&lt;/a&gt;された。&lt;/p&gt;
 
 &lt;p&gt;で、前から入手可能だったファイルは、&lt;a href=&#34;http://www.itmedia.co.jp/news/articles/0408/20/news015.html&#34; title=&#34;XP SP2日本語版正式バージョンがもう公開されている？&#34;&gt;Microsoftのコメント&lt;/a&gt;では「少なくとも正式版ではない」とある。何か変わってるのかと思って正式版もダウンロードして、md5とって見た（ツールはずるぼん氏作成の&lt;a href=&#34;http://www.vector.co.jp/soft/win95/util/se224884.html&#34; title=&#34;md5コマンド&#34;&gt;md5コマンド&lt;/a&gt;を使用。Cygwin要らずで便利）。するとどちらも286,396,136バイトで、ハッシュ値は84bc4f0157ccfe6217f3762e481dd126。とりあえず同一ファイルと思って良さそうだ。以前入手してインストールした人も、わざわざインストールしなおす必要はなさそう。&lt;/p&gt;
 </description>

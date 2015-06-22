@@ -5,7 +5,8 @@
     <link>http://nobu666.com/categories/memo.html</link>
     <description>Recent content in Memo on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; nobu666.com</copyright>
     <lastBuildDate>Wed, 11 Mar 2009 17:33:44 +0900</lastBuildDate>
     <atom:link href="http://nobu666.com/categories/memo.xml" rel="self" type="application/rss+xml" />
     
@@ -17,11 +18,10 @@
       <guid>http://nobu666.com/2009/03/11/756.html</guid>
       <description>&lt;p&gt;manを実行すると以下のようなエラーになることがある。&lt;/p&gt;
 
-&lt;p&gt;[sourcecode lang=&amp;ldquo;text&amp;rdquo;]
-XXX
+&lt;pre&gt;&lt;code class=&#34;language-text&#34;&gt;XXX
 XXX WARNING: old character encoding and/or character set
-XXX
-```&lt;/p&gt;
+XXX 
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;いろいろ調べた結果、libiconvが悪さしていた。/usr/bin/iconvではなく、/usr/local/bin/iconvを見に行っていたのが原因だった。/usr/local/bin/iconvのファイル名を変更したら治った。&lt;/p&gt;
 </description>
@@ -45,32 +45,29 @@ XXX
       <guid>http://nobu666.com/2008/02/28/568.html</guid>
       <description>&lt;p&gt;前回の&lt;a href=&#34;http://nobu666.com/2008/02/22/562.html&#34;&gt;wordpressのformatterがキモいタグを生成するので、どうにかする&lt;/a&gt;はME2.2.3以外でpatchすると、管理画面で激しくwarningが出てエライことになる。ので、v2.3.3用のpatch。&lt;/p&gt;
 
-&lt;p&gt;[sourcecode lang=&amp;ldquo;diff&amp;rdquo;]
-&amp;mdash; www/wp-includes/formatting.php.orig Thu Feb 28 16:37:29 2008
+&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;--- www/wp-includes/formatting.php.orig Thu Feb 28 16:37:29 2008
 +++ www/wp-includes/formatting.php      Thu Feb 28 16:39:27 2008
 @@ -63,7 +63,7 @@
         $pee = $pee . &amp;quot;\n&amp;quot;; // just to make things a little easier, pad the end
-        $pee = preg_replace(&amp;lsquo;|&amp;lt;br /&amp;gt;\s&lt;em&gt;&amp;lt;br /&amp;gt;|&amp;lsquo;, &amp;quot;\n\n&amp;quot;, $pee);
+        $pee = preg_replace(&#39;|&amp;lt;br /&amp;gt;\s*&amp;lt;br /&amp;gt;|&#39;, &amp;quot;\n\n&amp;quot;, $pee);
         // Space things out a little
--        $allblocks = &amp;lsquo;(?:table|thead|tfoot|caption|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|select|form|map|area|blockquote|address|math|style|input|p|h[1-6]|hr)&amp;lsquo;;
-+       $allblocks = &amp;lsquo;(?:code|table|thead|tfoot|caption|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|select|form|map|area|blockquote|address|math|style|input|p|h[1-6]|hr)&amp;lsquo;;
-        $pee = preg_replace(&amp;lsquo;!(&amp;lt;&amp;rsquo; . $allblocks . &amp;lsquo;[^&amp;gt;]&lt;/em&gt;&amp;gt;)!&amp;lsquo;, &amp;quot;\n$1&amp;quot;, $pee);
-        $pee = preg_replace(&amp;lsquo;!(&amp;lt;/&amp;rsquo; . $allblocks . &amp;lsquo;&amp;gt;)!&amp;lsquo;, &amp;quot;$1\n\n&amp;quot;, $pee);
+-        $allblocks = &#39;(?:table|thead|tfoot|caption|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|select|form|map|area|blockquote|address|math|style|input|p|h[1-6]|hr)&#39;;
++       $allblocks = &#39;(?:code|table|thead|tfoot|caption|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|select|form|map|area|blockquote|address|math|style|input|p|h[1-6]|hr)&#39;;
+        $pee = preg_replace(&#39;!(&amp;lt;&#39; . $allblocks . &#39;[^&amp;gt;]*&amp;gt;)!&#39;, &amp;quot;\n$1&amp;quot;, $pee);
+        $pee = preg_replace(&#39;!(&amp;lt;/&#39; . $allblocks . &#39;&amp;gt;)!&#39;, &amp;quot;$1\n\n&amp;quot;, $pee);
         $pee = str_replace(array(&amp;quot;\r\n&amp;quot;, &amp;quot;\r&amp;quot;), &amp;quot;\n&amp;quot;, $pee); // cross-platform newlines
 @@ -88,6 +88,10 @@
-        if (strpos($pee, &amp;lsquo;&amp;lt;pre&amp;rsquo;) !== false)
-                $pee = preg_replace_callback(&amp;lsquo;!(&amp;lt;pre.&lt;em&gt;?&amp;gt;)(.&lt;/em&gt;?)&amp;lt;/pre&amp;gt;!is&amp;rsquo;, &amp;lsquo;clean_pre&amp;rsquo;, $pee );
-        $pee = preg_replace( &amp;quot;|\n&amp;lt;/p&amp;gt;$|&amp;quot;, &amp;lsquo;&amp;lt;/p&amp;gt;&amp;rsquo;, $pee );
-+        $pee = preg_replace(&amp;lsquo;| {4}|&amp;rsquo;, str_repeat(&amp;rsquo; &amp;lsquo;,4), $pee);
-+        $pee = str_replace(&amp;rsquo;\&amp;rsquo;, &amp;lsquo;\\&amp;rsquo;, $pee);
-+        $pee = preg_replace(&amp;lsquo;|&amp;lt;code&amp;gt;.*?&amp;lt;/code&amp;gt;|se&amp;rsquo;, &amp;quot;str_replace(array(&amp;rsquo;&amp;lt;p&amp;gt;&amp;rsquo;, &amp;lsquo;&amp;lt;/p&amp;gt;&amp;rsquo;), array(&amp;ldquo;, &amp;lsquo;&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;&amp;rsquo;), &amp;lsquo;$0&amp;rsquo;)&amp;quot;, $pee);
-+        $pee = StripSlashes($pee);&lt;/p&gt;
+        if (strpos($pee, &#39;&amp;lt;pre&#39;) !== false)
+                $pee = preg_replace_callback(&#39;!(&amp;lt;pre.*?&amp;gt;)(.*?)&amp;lt;/pre&amp;gt;!is&#39;, &#39;clean_pre&#39;, $pee );
+        $pee = preg_replace( &amp;quot;|\n&amp;lt;/p&amp;gt;$|&amp;quot;, &#39;&amp;lt;/p&amp;gt;&#39;, $pee );
++        $pee = preg_replace(&#39;| {4}|&#39;, str_repeat(&#39; &#39;,4), $pee);
++        $pee = str_replace(&#39;\\&#39;, &#39;\\\\&#39;, $pee);
++        $pee = preg_replace(&#39;|&amp;lt;code&amp;gt;.*?&amp;lt;/code&amp;gt;|se&#39;, &amp;quot;str_replace(array(&#39;&amp;lt;p&amp;gt;&#39;, &#39;&amp;lt;/p&amp;gt;&#39;), array(&#39;&#39;, &#39;&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;&#39;), &#39;$0&#39;)&amp;quot;, $pee);
++        $pee = StripSlashes($pee);
 
-&lt;pre&gt;&lt;code&gt;    return $pee;
+        return $pee;
+ }
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;}
-```&lt;/p&gt;
 </description>
     </item>
     
@@ -80,37 +77,34 @@ XXX
       <pubDate>Fri, 22 Feb 2008 18:36:22 +0900</pubDate>
       
       <guid>http://nobu666.com/2008/02/22/562.html</guid>
-      <description>&lt;p&gt;&amp;lt;p&amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;とかいう謎タグが生成されて激しく気持ち悪いので、phpに手を入れる。&lt;a href=&#34;http://spring.sakurasaita.net/wordpress/25.html&#34;&gt;As You Like It ? Blog Archive ? WordPressのエディタとの付き合い方&lt;/a&gt;を参照して、その通りに書き換えるだけ。patchにしとく。&lt;/p&gt;
+      <description>&lt;p&gt;&lt;p&gt;&lt;/code&gt;&lt;/p&gt;とかいう謎タグが生成されて激しく気持ち悪いので、phpに手を入れる。&lt;a href=&#34;http://spring.sakurasaita.net/wordpress/25.html&#34;&gt;As You Like It ? Blog Archive ? WordPressのエディタとの付き合い方&lt;/a&gt;を参照して、その通りに書き換えるだけ。patchにしとく。&lt;/p&gt;
 
-&lt;p&gt;[sourcecode lang=&amp;ldquo;diff&amp;rdquo;]
-&amp;mdash; formatting.php.org  Fri Feb 22 18:23:52 2008
+&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;--- formatting.php.org  Fri Feb 22 18:23:52 2008
 +++ formatting.php      Fri Feb 22 18:21:16 2008
 @@ -55,7 +55,7 @@
         $pee = $pee . &amp;quot;\n&amp;quot;; // just to make things a little easier, pad the end
-        $pee = preg_replace(&amp;lsquo;|&amp;lt;br /&amp;gt;\s&lt;em&gt;&amp;lt;br /&amp;gt;|&amp;lsquo;, &amp;quot;\n\n&amp;quot;, $pee);
+        $pee = preg_replace(&#39;|&amp;lt;br /&amp;gt;\s*&amp;lt;br /&amp;gt;|&#39;, &amp;quot;\n\n&amp;quot;, $pee);
         // Space things out a little
--       $allblocks = &amp;lsquo;(?:table|thead|tfoot|caption|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|select|form|map|area|blockquote|address|math|style|input|p|h[1-6]|hr)&amp;lsquo;;
-+       $allblocks = &amp;lsquo;(?:code|table|thead|tfoot|caption|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|select|form|map|area|blockquote|address|math|style|input|p|h[1-6]|hr)&amp;lsquo;;
-        $pee = preg_replace(&amp;lsquo;!(&amp;lt;&amp;rsquo; . $allblocks . &amp;lsquo;[^&amp;gt;]&lt;/em&gt;&amp;gt;)!&amp;lsquo;, &amp;quot;\n$1&amp;quot;, $pee);
-        $pee = preg_replace(&amp;lsquo;!(&amp;lt;/&amp;rsquo; . $allblocks . &amp;lsquo;&amp;gt;)!&amp;lsquo;, &amp;quot;$1\n\n&amp;quot;, $pee);
+-       $allblocks = &#39;(?:table|thead|tfoot|caption|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|select|form|map|area|blockquote|address|math|style|input|p|h[1-6]|hr)&#39;;
++       $allblocks = &#39;(?:code|table|thead|tfoot|caption|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|select|form|map|area|blockquote|address|math|style|input|p|h[1-6]|hr)&#39;;
+        $pee = preg_replace(&#39;!(&amp;lt;&#39; . $allblocks . &#39;[^&amp;gt;]*&amp;gt;)!&#39;, &amp;quot;\n$1&amp;quot;, $pee);
+        $pee = preg_replace(&#39;!(&amp;lt;/&#39; . $allblocks . &#39;&amp;gt;)!&#39;, &amp;quot;$1\n\n&amp;quot;, $pee);
         $pee = str_replace(array(&amp;quot;\r\n&amp;quot;, &amp;quot;\r&amp;quot;), &amp;quot;\n&amp;quot;, $pee); // cross-platform newlines
 @@ -80,6 +80,13 @@
-        if (strpos($pee, &amp;lsquo;&amp;lt;pre&amp;rsquo;) !== false)
-                $pee = preg_replace(&amp;lsquo;!(&amp;lt;pre.&lt;em&gt;?&amp;gt;)(.&lt;/em&gt;?)&amp;lt;/pre&amp;gt;!ise&amp;rsquo;, &amp;quot; stripslashes(&amp;lsquo;$1&amp;rsquo;) .  stripslashes(clean_pre(&amp;lsquo;$2&amp;rsquo;))  . &amp;lsquo;&amp;lt;/pre&amp;gt;&amp;rsquo; &amp;quot;, $pee);
-        $pee = preg_replace( &amp;quot;|\n&amp;lt;/p&amp;gt;$|&amp;quot;, &amp;lsquo;&amp;lt;/p&amp;gt;&amp;rsquo;, $pee );
-+        $pee = preg_replace(&amp;lsquo;| {4}|&amp;rsquo;, str_repeat(&amp;rsquo;&amp;amp;amp;nbsp;&amp;lsquo;,4), $pee);
-+        $pee = str_replace(&amp;rsquo;\&amp;rsquo;, &amp;lsquo;\\&amp;rsquo;, $pee);
+        if (strpos($pee, &#39;&amp;lt;pre&#39;) !== false)
+                $pee = preg_replace(&#39;!(&amp;lt;pre.*?&amp;gt;)(.*?)&amp;lt;/pre&amp;gt;!ise&#39;, &amp;quot; stripslashes(&#39;$1&#39;) .  stripslashes(clean_pre(&#39;$2&#39;))  . &#39;&amp;lt;/pre&amp;gt;&#39; &amp;quot;, $pee);
+        $pee = preg_replace( &amp;quot;|\n&amp;lt;/p&amp;gt;$|&amp;quot;, &#39;&amp;lt;/p&amp;gt;&#39;, $pee );
++        $pee = preg_replace(&#39;| {4}|&#39;, str_repeat(&#39;&amp;amp;amp;nbsp;&#39;,4), $pee);
++        $pee = str_replace(&#39;\\&#39;, &#39;\\\\&#39;, $pee);
 +        $pee = preg_replace(
-+            &amp;lsquo;|&amp;lt;code&amp;gt;.*?&amp;lt;/code&amp;gt;|se&amp;rsquo;
-+            , &amp;quot;str_replace(array(&amp;rsquo;&amp;lt;p&amp;gt;&amp;rsquo;, &amp;lsquo;&amp;lt;/p&amp;gt;&amp;rsquo;), array(&amp;ldquo;, &amp;lsquo;&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;&amp;rsquo;), &amp;lsquo;$0&amp;rsquo;)&amp;quot;
++            &#39;|&amp;lt;code&amp;gt;.*?&amp;lt;/code&amp;gt;|se&#39;
++            , &amp;quot;str_replace(array(&#39;&amp;lt;p&amp;gt;&#39;, &#39;&amp;lt;/p&amp;gt;&#39;), array(&#39;&#39;, &#39;&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;&#39;), &#39;$0&#39;)&amp;quot;
 +            , $pee);
-+        $pee = StripSlashes($pee);&lt;/p&gt;
++        $pee = StripSlashes($pee);
 
-&lt;pre&gt;&lt;code&gt;    return $pee;
+        return $pee;
+ }
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;}
-```&lt;/p&gt;
 </description>
     </item>
     
@@ -121,9 +115,9 @@ XXX
       
       <guid>http://nobu666.com/2008/02/21/560.html</guid>
       <description>&lt;p&gt;そろそろ見てくれを変えてやろうと思って、そのついでにwordpressのバージョンアップ＋文字コードの変更。今時eucってのもあれなんで、ついでにutf-8化。&lt;/p&gt;
-&lt;code&gt;mysqldump -uroot -p -hHOST -q DATABASE &amp;gt; ./dumped.sql
+&lt;code&gt;mysqldump -uroot -p -hHOST -q DATABASE &gt; ./dumped.sql
 nkf -w --overwrite ./dumped.sql
-mysql -uroot -p -hHOST DATABASE &amp;lt; ./dumped.sql&lt;/code&gt;
+mysql -uroot -p -hHOST DATABASE &lt; ./dumped.sql&lt;/code&gt;
 &lt;p&gt;こんだけかと思いきや、権限周りが壊れてログイン不能になったので&lt;a href=&#34;http://wordpress-guide.com/2006/11/11/capabilities/&#34;&gt;「WordPress標準ガイドブック」サポートサイト ? capabilities.phpのエラーが表示された場合&lt;/a&gt; を参照してパッチを当てる。&lt;/p&gt;
 </description>
     </item>

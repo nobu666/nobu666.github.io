@@ -5,7 +5,8 @@
     <link>http://nobu666.com/2011.html</link>
     <description>Recent content in 2011s on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; nobu666.com</copyright>
     <lastBuildDate>Tue, 13 Sep 2011 01:40:58 +0900</lastBuildDate>
     <atom:link href="http://nobu666.com/2011.xml" rel="self" type="application/rss+xml" />
     
@@ -27,7 +28,7 @@
 &lt;ul&gt;
     &lt;li&gt;typoの話: ありがちなtypoをaliasでカバー&lt;/li&gt;
     &lt;li&gt;ヒストリ共有の話: プロセス間でヒストリを共有するオプションがあります、便利＞＜&lt;/li&gt;
-    &lt;li&gt;hint: あえて無意味なコマンドを入れることで、ヒストリを検索するときに楽をする技: C-rで検索するときに一発で見つかるように、echo &#34;hint&#34;&amp;gt;/dev/null;hogehoge みたいにしとく…ってこれzshとか関係ないですが&lt;/li&gt;
+    &lt;li&gt;hint: あえて無意味なコマンドを入れることで、ヒストリを検索するときに楽をする技: C-rで検索するときに一発で見つかるように、echo &#34;hint&#34;&gt;/dev/null;hogehoge みたいにしとく…ってこれzshとか関係ないですが&lt;/li&gt;
     &lt;li&gt;wgetでパラメタ指定すると悲しい話: ?がglobで展開されちゃうので面倒なんですが、autoload -Uz url-quote-magic;zle -N self-insert url-quote-magicしとくと幸せだよ&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -198,7 +199,7 @@ $ sudo vi /etc/apache2/sites-available/default #VirtualHostなりなんなり、
 $ sudo service apache2 restart
 $ sudo sysv-rc-conf #自動起動したいやつを適当に選択
 $ cp -a wordpress/* /var/www/wordpress #wordpressのバックアップ復元
-$ mysql -uroot -p -e&amp;quot;create database wp&amp;quot; #とりあえずDBつくる
+$ mysql -uroot -p -e&amp;rdquo;create database wp&amp;rdquo; #とりあえずDBつくる
 $ sudo cp my.cnf.backup /etc/my.cnf
 $ sudo service mysql restart
 $ mysql -uroot -p wp &amp;lt; dumpfile #dumpファイルからデータ復元
@@ -281,9 +282,9 @@ import org.apache.mahout.cf.taste.similarity.UserSimilarity;&lt;/p&gt;
     public static void main(String[] args) {
         DataModel model = new MySQLBooleanPrefJDBCDataModel(
             DataSourceManager.getInstance().getDataSouce(),
-            &amp;quot;TABLE_NAME&amp;quot;,
-            &amp;quot;USER_ID_COLUMN_NAME&amp;quot;,
-            &amp;quot;ITEM_ID_COLUMN_NAME&amp;quot;,
+            &amp;ldquo;TABLE_NAME&amp;rdquo;,
+            &amp;ldquo;USER_ID_COLUMN_NAME&amp;rdquo;,
+            &amp;ldquo;ITEM_ID_COLUMN_NAME&amp;rdquo;,
             null //TIMESTAMP_COLUMN_NAME
         );
         UserSimilarity similarity = null;
@@ -330,7 +331,7 @@ if __name__ == &#39;__main__&#39;:
           break
         continue
       idmap.append(id)
-      print &amp;amp;quot;insert into tbl values (&#39;&amp;amp;quot; + str(d) + &amp;amp;quot;&#39;,&amp;amp;quot; + str(id) + &amp;amp;quot;,&amp;amp;quot; + str(random.randint(1,3*28)) + &amp;amp;quot;);&amp;amp;quot;
+      print &amp;quot;insert into tbl values (&#39;&amp;quot; + str(d) + &amp;quot;&#39;,&amp;quot; + str(id) + &amp;quot;,&amp;quot; + str(random.randint(1,3*28)) + &amp;quot;);&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;こいつでSQLをつくってMySQLに食わせる。&lt;/p&gt;
@@ -352,20 +353,20 @@ $ python generate_date.py|mysql
       <description>&lt;p&gt;URLに@が入ってたりすると、ScreenNameのリンクとごっちゃになって割と対応に手間取ったのでメモとして。日本語のハッシュタグなんか最近見かけないからどうでもいいような気もするけど、まぁ一応対応。&lt;/p&gt;
 
 &lt;p&gt;[sourcecode language=&amp;ldquo;javascript&amp;rdquo; padlinenumbers=&amp;ldquo;2&amp;rdquo;]
-var text=&amp;quot;@xyz aaa &lt;a href=&#34;http://aaa.com:8080/@abc#asdf&#34;&gt;http://aaa.com:8080/@abc#asdf&lt;/a&gt; http://日本語.jp/?abc&amp;amp;amp;asdf &lt;a href=&#34;http://example.jp/a.b.c@d.e&#34;&gt;http://example.jp/a.b.c@d.e&lt;/a&gt; bbb @ccc/@ddd/＠eee #hash #日本語だめ #日本語おｋ_ &lt;a href=&#34;http://a.com/日本語&amp;quot;&#34;&gt;http://a.com/日本語&amp;quot;&lt;/a&gt;;
-text.replace(/(https?:\/\/(?:[^!&amp;quot;#$%&amp;amp;amp;&amp;rsquo;()&lt;em&gt;+,-./:;&amp;amp;lt;=&amp;amp;gt;\?@[\]^&lt;em&gt;`{|}~\s][.-](?=[^!&amp;quot;#$%&amp;amp;amp;&amp;rsquo;()*+,-./:;&amp;amp;lt;=&amp;amp;gt;\?@[\]^&lt;/em&gt;`{|}~\s])|[^!&amp;quot;#$%&amp;amp;amp;&amp;rsquo;()&lt;/em&gt;+,-./:;&amp;amp;lt;=&amp;amp;gt;\?@[\]^&lt;em&gt;`{|}~\s]){1,}.[a-z]{2,}(?::[0-9]+)?(?:\/(?:[\x21-\x7e]+)?)?)|(?:[@＠])([a-z0-9&lt;/em&gt;]{1,20})|(?:#|\uFF03)([^\s\/ \x21-\x2f\x3a-\x40\x5b-\x5e\x60\x7b-\x7e]+[a-z0-9_])/mgi, function(){
- if(arguments[1]!==&amp;quot;&amp;quot;){
-  return &amp;quot;&amp;amp;lt;a class=&amp;lsquo;url&amp;rsquo; href=&amp;rsquo;&amp;quot;+arguments[1]+&amp;quot;&amp;lsquo;&amp;amp;gt;&amp;quot;+arguments[1]+&amp;quot;&amp;amp;lt;/a&amp;amp;gt;&amp;quot;;
- }else if(arguments[2]==&amp;quot;&amp;quot; &amp;amp;amp;&amp;amp;amp; arguments[3]==&amp;quot;&amp;quot;){
+var text=&amp;ldquo;@xyz aaa &lt;a href=&#34;http://aaa.com:8080/@abc#asdf&#34;&gt;http://aaa.com:8080/@abc#asdf&lt;/a&gt; http://日本語.jp/?abc&amp;amp;asdf &lt;a href=&#34;http://example.jp/a.b.c@d.e&#34;&gt;http://example.jp/a.b.c@d.e&lt;/a&gt; bbb @ccc/@ddd/＠eee #hash #日本語だめ #日本語おｋ_ &lt;a href=&#34;http://a.com/日本語&amp;quot;&#34;&gt;http://a.com/日本語&amp;quot;&lt;/a&gt;;
+text.replace(/(https?:\/\/(?:[^!&amp;ldquo;#$%&amp;amp;&amp;lsquo;()&lt;em&gt;+,-./:;&amp;lt;=&amp;gt;\?@[\]^&lt;em&gt;`{|}~\s][.-](?=[^!&amp;ldquo;#$%&amp;amp;&amp;lsquo;()*+,-./:;&amp;lt;=&amp;gt;\?@[\]^&lt;/em&gt;`{|}~\s])|[^!&amp;ldquo;#$%&amp;amp;&amp;lsquo;()&lt;/em&gt;+,-./:;&amp;lt;=&amp;gt;\?@[\]^&lt;em&gt;`{|}~\s]){1,}.[a-z]{2,}(?::[0-9]+)?(?:\/(?:[\x21-\x7e]+)?)?)|(?:[@＠])([a-z0-9&lt;/em&gt;]{1,20})|(?:#|\uFF03)([^\s\/ \x21-\x2f\x3a-\x40\x5b-\x5e\x60\x7b-\x7e]+[a-z0-9_])/mgi, function(){
+ if(arguments[1]!==&amp;ldquo;&amp;rdquo;){
+  return &amp;ldquo;&lt;a class=&#39;url&#39; href=&#39;&#34;+arguments[1]+&#34;&#39;&gt;&amp;rdquo;+arguments[1]+&amp;rdquo;&lt;/a&gt;&amp;rdquo;;
+ }else if(arguments[2]==&amp;ldquo;&amp;rdquo; &amp;amp;&amp;amp; arguments[3]==&amp;ldquo;&amp;rdquo;){
   return arguments[1];
  }
- if(arguments[2]!==&amp;quot;&amp;quot;){
-  return &amp;quot;&amp;amp;lt;a class=&amp;lsquo;screen_name&amp;rsquo; href=&amp;lsquo;&lt;a href=&#34;http://twitter.com/&amp;quot;+arguments[2]+&amp;quot;&#39;&amp;amp;gt;@&amp;quot;+arguments[2]+&amp;quot;&amp;amp;lt;/a&amp;amp;gt;&amp;quot;&#34;&gt;http://twitter.com/&amp;quot;+arguments[2]+&amp;quot;&#39;&amp;amp;gt;@&amp;quot;+arguments[2]+&amp;quot;&amp;amp;lt;/a&amp;amp;gt;&amp;quot;&lt;/a&gt;;
- }else if (arguments[3]==&amp;quot;&amp;quot;){
+ if(arguments[2]!==&amp;ldquo;&amp;rdquo;){
+  return &amp;ldquo;&lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/&#34;+arguments[2]+&#34;&#39;&gt;@&amp;ldquo;+arguments[2]+&amp;rdquo;&lt;/a&gt;&amp;rdquo;;
+ }else if (arguments[3]==&amp;ldquo;&amp;rdquo;){
   return arguments[2];
  }
- if (arguments[3]!==&amp;quot;&amp;quot;){
-  return &amp;quot;&amp;amp;lt;a class=&amp;lsquo;hashtag&amp;rsquo; href=&amp;lsquo;&lt;a href=&#34;http://search.twitter.com/search?q=%23&amp;quot;+arguments[3]+&amp;quot;&#39;&amp;amp;gt;#&amp;quot;+arguments[3]+&amp;quot;&amp;amp;lt;/a&amp;amp;gt;&amp;quot;&#34;&gt;http://search.twitter.com/search?q=%23&amp;quot;+arguments[3]+&amp;quot;&#39;&amp;amp;gt;#&amp;quot;+arguments[3]+&amp;quot;&amp;amp;lt;/a&amp;amp;gt;&amp;quot;&lt;/a&gt;;
+ if (arguments[3]!==&amp;ldquo;&amp;rdquo;){
+  return &amp;ldquo;&lt;a class=&#39;hashtag&#39; href=&#39;http://search.twitter.com/search?q=%23&#34;+arguments[3]+&#34;&#39;&gt;#&amp;ldquo;+arguments[3]+&amp;rdquo;&lt;/a&gt;&amp;rdquo;;
  } else {
   return arguments[3];
  }
@@ -376,7 +377,7 @@ text.replace(/(https?:\/\/(?:[^!&amp;quot;#$%&amp;amp;amp;&amp;rsquo;()&lt;em&gt
 実行すると
 
 [sourcecode padlinenumbers=&amp;quot;2&amp;quot; language=&amp;quot;laguage=&amp;quot;]
-&amp;amp;quot;&amp;amp;amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/xyz&#39;&amp;amp;amp;gt;@xyz&amp;amp;amp;lt;/a&amp;amp;amp;gt; aaa &amp;amp;amp;lt;a class=&#39;url&#39; href=&#39;http://aaa.com:8080/@abc#asdf&#39;&amp;amp;amp;gt;http://aaa.com:8080/@abc#asdf&amp;amp;amp;lt;/a&amp;amp;amp;gt; &amp;amp;amp;lt;a class=&#39;url&#39; href=&#39;http://日本語.jp/?abc&amp;amp;amp;amp;asdf&#39;&amp;amp;amp;gt;http://日本語.jp/?abc&amp;amp;amp;amp;asdf&amp;amp;amp;lt;/a&amp;amp;amp;gt; &amp;amp;amp;lt;a class=&#39;url&#39; href=&#39;http://example.jp/a.b.c@d.e&#39;&amp;amp;amp;gt;http://example.jp/a.b.c@d.e&amp;amp;amp;lt;/a&amp;amp;amp;gt; bbb &amp;amp;amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/ccc&#39;&amp;amp;amp;gt;@ccc&amp;amp;amp;lt;/a&amp;amp;amp;gt;/&amp;amp;amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/ddd&#39;&amp;amp;amp;gt;@ddd&amp;amp;amp;lt;/a&amp;amp;amp;gt;/&amp;amp;amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/eee&#39;&amp;amp;amp;gt;@eee&amp;amp;amp;lt;/a&amp;amp;amp;gt; &amp;amp;amp;lt;a class=&#39;hashtag&#39; href=&#39;http://search.twitter.com/search?q=%23hash&#39;&amp;amp;amp;gt;#hash&amp;amp;amp;lt;/a&amp;amp;amp;gt; #日本語だめ &amp;amp;amp;lt;a class=&#39;hashtag&#39; href=&#39;http://search.twitter.com/search?q=%23日本語おｋ_&#39;&amp;amp;amp;gt;#日本語おｋ_&amp;amp;amp;lt;/a&amp;amp;amp;gt; &amp;amp;amp;lt;a class=&#39;url&#39; href=&#39;http://a.com/&#39;&amp;amp;amp;gt;http://a.com/&amp;amp;amp;lt;/a&amp;amp;amp;gt;日本語&amp;amp;quot;
+&amp;quot;&amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/xyz&#39;&amp;gt;@xyz&amp;lt;/a&amp;gt; aaa &amp;lt;a class=&#39;url&#39; href=&#39;http://aaa.com:8080/@abc#asdf&#39;&amp;gt;http://aaa.com:8080/@abc#asdf&amp;lt;/a&amp;gt; &amp;lt;a class=&#39;url&#39; href=&#39;http://日本語.jp/?abc&amp;amp;amp;asdf&#39;&amp;gt;http://日本語.jp/?abc&amp;amp;amp;asdf&amp;lt;/a&amp;gt; &amp;lt;a class=&#39;url&#39; href=&#39;http://example.jp/a.b.c@d.e&#39;&amp;gt;http://example.jp/a.b.c@d.e&amp;lt;/a&amp;gt; bbb &amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/ccc&#39;&amp;gt;@ccc&amp;lt;/a&amp;gt;/&amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/ddd&#39;&amp;gt;@ddd&amp;lt;/a&amp;gt;/&amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/eee&#39;&amp;gt;@eee&amp;lt;/a&amp;gt; &amp;lt;a class=&#39;hashtag&#39; href=&#39;http://search.twitter.com/search?q=%23hash&#39;&amp;gt;#hash&amp;lt;/a&amp;gt; #日本語だめ &amp;lt;a class=&#39;hashtag&#39; href=&#39;http://search.twitter.com/search?q=%23日本語おｋ_&#39;&amp;gt;#日本語おｋ_&amp;lt;/a&amp;gt; &amp;lt;a class=&#39;url&#39; href=&#39;http://a.com/&#39;&amp;gt;http://a.com/&amp;lt;/a&amp;gt;日本語&amp;quot;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;という文字列になり、以下のようにほぼ思ったとおりのリンクになる&lt;/p&gt;

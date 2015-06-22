@@ -5,7 +5,8 @@
     <link>http://nobu666.com/categories/linux.html</link>
     <description>Recent content in Linux on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; nobu666.com</copyright>
     <lastBuildDate>Wed, 27 Mar 2013 01:53:18 +0900</lastBuildDate>
     <atom:link href="http://nobu666.com/categories/linux.xml" rel="self" type="application/rss+xml" />
     
@@ -114,7 +115,7 @@ Server version: 5.5.8-log MySQL Community Server (GPL)&lt;/p&gt;
 &lt;ul&gt;
     &lt;li&gt;typoの話: ありがちなtypoをaliasでカバー&lt;/li&gt;
     &lt;li&gt;ヒストリ共有の話: プロセス間でヒストリを共有するオプションがあります、便利＞＜&lt;/li&gt;
-    &lt;li&gt;hint: あえて無意味なコマンドを入れることで、ヒストリを検索するときに楽をする技: C-rで検索するときに一発で見つかるように、echo &#34;hint&#34;&amp;gt;/dev/null;hogehoge みたいにしとく…ってこれzshとか関係ないですが&lt;/li&gt;
+    &lt;li&gt;hint: あえて無意味なコマンドを入れることで、ヒストリを検索するときに楽をする技: C-rで検索するときに一発で見つかるように、echo &#34;hint&#34;&gt;/dev/null;hogehoge みたいにしとく…ってこれzshとか関係ないですが&lt;/li&gt;
     &lt;li&gt;wgetでパラメタ指定すると悲しい話: ?がglobで展開されちゃうので面倒なんですが、autoload -Uz url-quote-magic;zle -N self-insert url-quote-magicしとくと幸せだよ&lt;/li&gt;
 &lt;/ul&gt;
 

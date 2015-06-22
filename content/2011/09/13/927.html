@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta property="og:title" content=" ターミナル勉強会で話してきました &middot;  Real Beat" />
+  <meta property="og:site_name" content="Real Beat" />
+  <meta property="og:url" content="http://localhost:1313/content/2011/09/13/927.html" />
+  
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:article:author" content="https://facebook.com/nobutoshi.ogata" />
+  
+  <meta property="og:article:published_time" content="2011-09-13T01:40:58&#43;09:00" />
+  
+  
+
+  <title>
+     ターミナル勉強会で話してきました &middot;  Real Beat
+  </title>
+
+  <link rel="stylesheet" href="http://localhost:1313/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://localhost:1313/css/main.css" />
+  <link rel="stylesheet" href="http://localhost:1313/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="http://localhost:1313/css/github.css" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
+  <link rel="shortcut icon" href="http://localhost:1313/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/images/apple-touch-icon.png" />
+  
+</head>
+<body>
+  <header class="global-header">
+    <section class="header-text">
+      <h1><a href="http://localhost:1313/">Real Beat</a></h1>
+      
+      <div class="sns-links hidden-print">
+  
+  <a href="ogata.nobu@gmail.com">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/nobu666" target="_blank">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  <a href="https://facebook.com/nobutoshi.ogata" target="_blank">
+    <i class="fa fa-facebook"></i>
+  </a>
+  
+  
+  <a href="https://github.com/nobu666" target="_blank">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  
+  <a href="https://linkedin.com/in/nobu666" target="_blank">
+    <i class="fa fa-linkedin"></i>
+  </a>
+  
+</div>
+
+      
+      <a href="http://localhost:1313/" class="btn-header btn-back hidden-xs">
+        <i class="fa fa-angle-left"></i>
+        &nbsp;Home
+      </a>
+      
+      
+    </section>
+  </header>
+  <main class="container">
+
+
+<article>
+  <header>
+    <h1 class="text-primary">ターミナル勉強会で話してきました</h1>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2011-09-13T01:40:58&#43;09:00">
+          Sep 13, 2011
+        </time>
+      </div>
+      <div class="pull-right">
+        
+      </div>
+    </div>
+  </header>
+  <section>
+    <p><a href="http://kokucheese.com/event/index/16461/">http://kokucheese.com/event/index/16461/</a></p>
+
+<p>一時はどうなることかと思いましたが、@Mr_K_O の活躍により無事LT枠も埋まり、盛況のうちに終わりました。関係者の方々、来てくださった方々ありがとうございました。</p>
+
+<p>資料はこちらにおいてあります。
+<a href="http://www.slideshare.net/NobutoshiOgata/zsh-9223115">http://www.slideshare.net/NobutoshiOgata/zsh-9223115</a></p>
+
+<p>思いの外30分はあっという間に過ぎてしまうもので、幾つか言い足りなかったこともあったのでここに補足させて頂きます。</p>
+
+<ul>
+    <li>typoの話: ありがちなtypoをaliasでカバー</li>
+    <li>ヒストリ共有の話: プロセス間でヒストリを共有するオプションがあります、便利＞＜</li>
+    <li>hint: あえて無意味なコマンドを入れることで、ヒストリを検索するときに楽をする技: C-rで検索するときに一発で見つかるように、echo "hint"&gt;/dev/null;hogehoge みたいにしとく…ってこれzshとか関係ないですが</li>
+    <li>wgetでパラメタ指定すると悲しい話: ?がglobで展開されちゃうので面倒なんですが、autoload -Uz url-quote-magic;zle -N self-insert url-quote-magicしとくと幸せだよ</li>
+</ul>
+
+<p>まぁ言い出すときりがないのでこのへんにしときます。次回は是非、dotfile晒し大会的なことをやりたいですね。</p>
+
+<p>さっそくまとめてくださった方が。ありがとうございます！ <a href="http://d.hatena.ne.jp/cointoss1973/20110912/1315840029">http://d.hatena.ne.jp/cointoss1973/20110912/1315840029</a></p>
+
+  </section>
+  <footer>
+    <section class="author-info row">
+      <div class="author-avatar col-md-2">
+        
+        <img alt="Author Avatar" src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" />
+        
+      </div>
+      <div class="author-meta col-md-6">
+        
+        <h1 class="author-name text-primary">nobu666</h1>
+        
+        
+      </div>
+      
+      <div class="author-contact col-md-4">
+        <a href="ogata.nobu@gmail.com">
+          <i class="fa fa-envelope-o"></i>
+          &nbsp;Contact me
+        </a>
+      </div>
+      
+    </section>
+    <ul class="pager">
+      
+      <li class="previous"><a href="http://localhost:1313/2011/08/04/923.html"><span aria-hidden="true">&larr;</span> Older</a></li>
+      
+      
+      <li class="next"><a href="http://localhost:1313/2011/09/13/927.html">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      
+    </ul>
+    
+  </footer>
+</article>
+
+  </main>
+  <footer class="container global-footer">
+    <div class="copyright-note pull-left">
+      &copy; nobu666.com
+    </div>
+    <div class="sns-links hidden-print">
+  
+  <a href="ogata.nobu@gmail.com">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/nobu666" target="_blank">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  <a href="https://facebook.com/nobutoshi.ogata" target="_blank">
+    <i class="fa fa-facebook"></i>
+  </a>
+  
+  
+  <a href="https://github.com/nobu666" target="_blank">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  
+  <a href="https://linkedin.com/in/nobu666" target="_blank">
+    <i class="fa fa-linkedin"></i>
+  </a>
+  
+</div>
+
+  </footer>
+
+  <script src="http://localhost:1313/js/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-57485-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+  
+<script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
+</html>
+

@@ -5,7 +5,8 @@
     <link>http://nobu666.com/categories/bookmarks.html</link>
     <description>Recent content in Bookmarks on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; nobu666.com</copyright>
     <lastBuildDate>Wed, 27 Oct 2010 09:14:37 +0900</lastBuildDate>
     <atom:link href="http://nobu666.com/categories/bookmarks.xml" rel="self" type="application/rss+xml" />
     
@@ -308,7 +309,7 @@
                 
                 &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://delicious.com/nobu666/engineer&#34;&gt;engineer&lt;/a&gt; &lt;a href=&#34;http://delicious.com/nobu666/programmer&#34;&gt;programmer&lt;/a&gt; &lt;a href=&#34;http://delicious.com/nobu666/business&#34;&gt;business&lt;/a&gt;)&lt;/div&gt;
             &lt;/li&gt;&lt;li&gt;
-                &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://journal.mycom.co.jp/articles/2007/06/08/gears/menu.html&#34;&gt;【ハウツー】&amp;quot;重たいJavaScript処理&amp;quot;もこれで解決! - Google Gearsのワーカプールを試す | エンタープライズ | マイコミジャーナル&lt;/a&gt;&lt;/div&gt;
+                &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://journal.mycom.co.jp/articles/2007/06/08/gears/menu.html&#34;&gt;【ハウツー】&#34;重たいJavaScript処理&#34;もこれで解決! - Google Gearsのワーカプールを試す | エンタープライズ | マイコミジャーナル&lt;/a&gt;&lt;/div&gt;
                 
                 &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://delicious.com/nobu666/javascript&#34;&gt;javascript&lt;/a&gt;)&lt;/div&gt;
             &lt;/li&gt;&lt;li&gt;
@@ -320,7 +321,7 @@
                 
                 &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://delicious.com/nobu666/security&#34;&gt;security&lt;/a&gt; &lt;a href=&#34;http://delicious.com/nobu666/browser&#34;&gt;browser&lt;/a&gt; &lt;a href=&#34;http://delicious.com/nobu666/ie&#34;&gt;ie&lt;/a&gt;)&lt;/div&gt;
             &lt;/li&gt;&lt;li&gt;
-                &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://blogs.itmedia.co.jp/burstlog/2009/02/twitter-fb00.html?ref=rssall&#34;&gt;海外速報部ログ &amp;gt; なぜTwitterするの？――正統派的ご意見 : ITmedia オルタナティブ・ブログ&lt;/a&gt;&lt;/div&gt;
+                &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://blogs.itmedia.co.jp/burstlog/2009/02/twitter-fb00.html?ref=rssall&#34;&gt;海外速報部ログ &gt; なぜTwitterするの？――正統派的ご意見 : ITmedia オルタナティブ・ブログ&lt;/a&gt;&lt;/div&gt;
                 
                 &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://delicious.com/nobu666/twitter&#34;&gt;twitter&lt;/a&gt;)&lt;/div&gt;
             &lt;/li&gt;&lt;li&gt;
@@ -382,7 +383,7 @@
                 
                 &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://delicious.com/nobu666/emacs&#34;&gt;emacs&lt;/a&gt;)&lt;/div&gt;
             &lt;/li&gt;&lt;li&gt;
-                &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://d.hatena.ne.jp/masartz/20090220/p1&#34;&gt;モダンPerl入門の読む順番 - masartz-&amp;gt;log&lt;/a&gt;&lt;/div&gt;
+                &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://d.hatena.ne.jp/masartz/20090220/p1&#34;&gt;モダンPerl入門の読む順番 - masartz-&gt;log&lt;/a&gt;&lt;/div&gt;
                 
                 &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://delicious.com/nobu666/books&#34;&gt;books&lt;/a&gt; &lt;a href=&#34;http://delicious.com/nobu666/perl&#34;&gt;perl&lt;/a&gt;)&lt;/div&gt;
             &lt;/li&gt;&lt;/ul&gt;
@@ -604,7 +605,7 @@
       
       <guid>http://nobu666.com/2009/02/09/737.html</guid>
       <description>&lt;ul class=&#34;delicious&#34;&gt;&lt;li&gt;
-                &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://advweb.seesaa.net/article/249734.html&#34;&gt;誰でも知ってるvimエディタネタ#2 AutoDate、Scratch、CdCurrent、テキストオブジェクト「i&amp;quot;」「a&amp;quot;」「i&amp;#039;」「a&amp;#039;」「c`」「i`」 : サイト更新停滞ちうっ [ 名無しのVIM使い ]&lt;/a&gt;&lt;/div&gt;
+                &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://advweb.seesaa.net/article/249734.html&#34;&gt;誰でも知ってるvimエディタネタ#2 AutoDate、Scratch、CdCurrent、テキストオブジェクト「i&#34;」「a&#34;」「i&amp;#039;」「a&amp;#039;」「c`」「i`」 : サイト更新停滞ちうっ [ 名無しのVIM使い ]&lt;/a&gt;&lt;/div&gt;
                 
                 &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://delicious.com/nobu666/vim&#34;&gt;vim&lt;/a&gt;)&lt;/div&gt;
             &lt;/li&gt;&lt;li&gt;

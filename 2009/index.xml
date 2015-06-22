@@ -5,7 +5,8 @@
     <link>http://nobu666.com/2009.html</link>
     <description>Recent content in 2009s on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; nobu666.com</copyright>
     <lastBuildDate>Thu, 31 Dec 2009 01:49:09 +0900</lastBuildDate>
     <atom:link href="http://nobu666.com/2009.xml" rel="self" type="application/rss+xml" />
     
@@ -72,15 +73,14 @@
 
 &lt;p&gt;以下のようにすることで、id=&amp;ldquo;piyo&amp;rdquo;配下のclass=&amp;ldquo;moge&amp;rdquo;にデータがたまっていく。空のdivを一個用意して、そこにprocessTemplateで新しいデータを入れていく。&lt;a href=&#34;http://twitter.com/hideaki_t/&#34;&gt;@hideaki_t&lt;/a&gt;、ありがとうございました。&lt;/p&gt;
 
-&lt;p&gt;[sourcecode lang=&amp;ldquo;javascript&amp;rdquo;]
-&amp;lt;html&amp;gt;
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;lt;html&amp;gt;
   &amp;lt;head&amp;gt;
     &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;js/jquery-1.3.2.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
     &amp;lt;script type=&amp;quot;text/javascript&amp;quot; src=&amp;quot;js/jquery-jtemplates.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
     &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
     $(document).ready(function() {
       hoge.count=1;
-      $(&amp;quot;#piyo &amp;gt; .moge &amp;gt; div:first&amp;quot;).setTemplate(&amp;quot;{#foreach $T as r}&amp;lt;div class=&amp;lsquo;hogera&amp;rsquo;&amp;gt;{$T.r.id}&amp;lt;/div&amp;gt;{#/for}&amp;quot;);
+      $(&amp;quot;#piyo &amp;gt; .moge &amp;gt; div:first&amp;quot;).setTemplate(&amp;quot;{#foreach $T as r}&amp;lt;div class=&#39;hogera&#39;&amp;gt;{$T.r.id}&amp;lt;/div&amp;gt;{#/for}&amp;quot;);
       hoge.show();
       window.setInterval(function(){
         hoge.show();
@@ -100,7 +100,7 @@
     &amp;lt;div id=&amp;quot;piyo&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;moge&amp;quot;&amp;gt;&amp;lt;div /&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;
   &amp;lt;/body&amp;gt;
 &amp;lt;/html&amp;gt;
-```&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -115,63 +115,60 @@ Lucene詳しいかた、教えてくだしあ＞＜&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;2009/10/07: 解決したので後ろに追記しました。&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;[sourcecode lang=&amp;ldquo;java&amp;rdquo;]
-package hoge;
-import java.io.&lt;em&gt;;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package hoge;
+import java.io.*;
 import net.moraleboost.lucene.analysis.ja.StandardMeCabAnalyzer;
-import org.apache.lucene.&lt;/em&gt;;&lt;/p&gt;
+import org.apache.lucene.*;
 
-&lt;p&gt;public class MeCabTest {
+public class MeCabTest {
     public static final String DIC_ENCODING = System.getProperty(&amp;quot;net.moraleboost.mecab.encoding&amp;quot;);
     private static StandardMeCabAnalyzer analyzer = null;
     private static FSDirectory directory = null;
     private IndexWriter writer  = null;
-    private static final String DIR = &amp;quot;/path/to/index&amp;quot;;&lt;/p&gt;
+    private static final String DIR = &amp;quot;/path/to/index&amp;quot;;
 
-&lt;pre&gt;&lt;code&gt;public void setUp() throws Exception {
-    writer  = new IndexWriter(directory, analyzer, new MaxFieldLength(4096));
-    Document doc = new Document();
-    addField(doc, &amp;amp;quot;text&amp;amp;quot;, &amp;amp;quot;ほげほげ&amp;amp;quot;);
-    ....
-    ....
-    writer.commit();
-    writer.optimize();
-    writer.close();
-}
-private void addField(Document doc, String name, String value) throws Exception {
-    Field field = new Field(name, value, Store.YES, Field.Index.ANALYZED, Field.TermVector.YES);
-    doc.add(field);
-    writer.addDocument(doc);
-}
+    public void setUp() throws Exception {
+        writer  = new IndexWriter(directory, analyzer, new MaxFieldLength(4096));
+        Document doc = new Document();
+        addField(doc, &amp;quot;text&amp;quot;, &amp;quot;ほげほげ&amp;quot;);
+        ....
+        ....
+        writer.commit();
+        writer.optimize();
+        writer.close();
+    }
+    private void addField(Document doc, String name, String value) throws Exception {
+        Field field = new Field(name, value, Store.YES, Field.Index.ANALYZED, Field.TermVector.YES);
+        doc.add(field);
+        writer.addDocument(doc);
+    }
 
-public static void main(String[] args) {
-    MeCabTest t = new MeCabTest();
-    IndexSearcher searcher = null;
-    IndexReader reader = null;
-    analyzer = new StandardMeCabAnalyzer(DIC_ENCODING, &amp;amp;quot;&amp;amp;quot;);
-    directory = FSDirectory.open(new File(DIR));
-    t.setUp();
-    reader = IndexReader.open(DIR, false);
-    searcher = new IndexSearcher(directory, true);
-    QueryParser parser = new QueryParser(&amp;amp;quot;text&amp;amp;quot;, analyzer);
-    parser.setDefaultOperator(QueryParser.Operator.OR);
-    MoreLikeThis mlt = new MoreLikeThis(reader);
-    mlt.setAnalyzer(analyzer);
-    mlt.setMinTermFreq(1);
-    mlt.setFieldNames(new String[]{&amp;amp;quot;text&amp;amp;quot;});
-    Query query = mlt.like(new ByteArrayInputStream(&amp;amp;quot;ほげ&amp;amp;quot;.getBytes()));
-    TopDocs topDocs = searcher.search(query, 100);
-    if (topDocs.totalHits &amp;amp;gt; 0) {
-        for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
-            Document doc = searcher.doc(scoreDoc.doc);
-            System.out.println(doc.get(&amp;amp;quot;text&amp;amp;quot;));
+    public static void main(String[] args) {
+        MeCabTest t = new MeCabTest();
+        IndexSearcher searcher = null;
+        IndexReader reader = null;
+        analyzer = new StandardMeCabAnalyzer(DIC_ENCODING, &amp;quot;&amp;quot;);
+        directory = FSDirectory.open(new File(DIR));
+        t.setUp();
+        reader = IndexReader.open(DIR, false);
+        searcher = new IndexSearcher(directory, true);
+        QueryParser parser = new QueryParser(&amp;quot;text&amp;quot;, analyzer);
+        parser.setDefaultOperator(QueryParser.Operator.OR);
+        MoreLikeThis mlt = new MoreLikeThis(reader);
+        mlt.setAnalyzer(analyzer);
+        mlt.setMinTermFreq(1);
+        mlt.setFieldNames(new String[]{&amp;quot;text&amp;quot;});
+        Query query = mlt.like(new ByteArrayInputStream(&amp;quot;ほげ&amp;quot;.getBytes()));
+        TopDocs topDocs = searcher.search(query, 100);
+        if (topDocs.totalHits &amp;gt; 0) {
+            for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
+                Document doc = searcher.doc(scoreDoc.doc);
+                System.out.println(doc.get(&amp;quot;text&amp;quot;));
+            }
         }
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;}
-```&lt;/p&gt;
 
 &lt;p&gt;try〜catchとか省略。addField(&amp;hellip;);のところ、実際にはニュースサイトから本文引っ張ってきて、いくつかいれた。7個くらい適当に選んで、3個くらいは同じニュース（台風18号関連）を違うサイトから引用した。&lt;/p&gt;
 
@@ -254,17 +251,16 @@ public static void main(String[] args) {
 
 &lt;p&gt;PS3でもう少し便利に遊ぶため、mediatombでDLNAサーバをたてる。emerge mediatombして依存関係諸々入れる。とりあえずこれだけでもいいのだが、これだと最新の0.12.0が入ってくれないので、一端emerge -C mediatombしてソースから入れる。&lt;/p&gt;
 
-&lt;p&gt;[sourcecode lang=&amp;ldquo;bash&amp;rdquo;]
-svn co &lt;a href=&#34;https://svn.mediatomb.cc/svnroot/mediatomb/trunk/mediatomb&#34;&gt;https://svn.mediatomb.cc/svnroot/mediatomb/trunk/mediatomb&lt;/a&gt; mediatomb0.12.0
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;svn co https://svn.mediatomb.cc/svnroot/mediatomb/trunk/mediatomb mediatomb0.12.0
 cd mediatomb0.12.0
 autoreconf -i
 ./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; sudo make install
 mysql -uroot -p
 mysql&amp;gt; create database mediatomb;
-mysql&amp;gt; grant select,insert,update,delete,create,drop on mediatomb.* to mediatomb@localhost identified by &amp;lsquo;mediatomb&amp;rsquo;;
+mysql&amp;gt; grant select,insert,update,delete,create,drop on mediatomb.* to mediatomb@localhost identified by &#39;mediatomb&#39;;
 mysql&amp;gt; flush privileges;
 mysql&amp;gt; exit;
-```&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;下準備はこれでおしまい。あとは設定ファイルを少し弄る。と言ってもアカウント周りと、コメントで for PS3云々と書いてあるのでその通り書き換えればいいだけ。細かいことは&lt;a href=&#34;http://kwmr.blogzine.jp/kanji/2009/01/ps3macyoutubeme_c28b.html&#34;&gt;いい感じ: PS3+Macで超・超快適メディアプレイヤー：Youtube-&amp;gt;Mediatomb on iMac -&amp;gt;PS3 -&amp;gt;BRAVIA&lt;/a&gt;を参照。&lt;/p&gt;
 

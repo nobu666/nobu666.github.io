@@ -1,90 +1,215 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Chef</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <link href="http://nobu666.com/categories/chef.xml" rel="alternate" type="application/rss+xml" title="Real Beat" />
-  <link href="http://nobu666.com//css/bootstrap.min.css" rel="stylesheet">
-  <link href="http://nobu666.com//css/hc.css" rel="stylesheet">
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<html lang="ja">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta property="og:title" content=" Chef &middot;  Real Beat" />
+  <meta property="og:site_name" content="Real Beat" />
+  <meta property="og:url" content="http://nobu666.com/categories/chef.html" />
   
-    
-    </head>
-    <body>
-<div class="nav-toggle"><i class="fa fa-bars fa-2x"></i> Herring Cove </div>
-      <div id = "wrapper">
+  
+  <meta property="og:type" content="website" />
+  
 
+  <title>
+     Chef &middot;  Real Beat
+  </title>
 
-<div class="navbar navbar-default" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <p class="navbar-brand">Real Beat</p>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-					
-					
-					<li><a href="http://nobu666.com//">Home </a></li>
-					
-          </ul>
-        </div>
+  <link rel="stylesheet" href="http://nobu666.com/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://nobu666.com/css/main.css" />
+  <link rel="stylesheet" href="http://nobu666.com/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="http://nobu666.com/css/github.css" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
+  <link rel="shortcut icon" href="http://nobu666.com/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://nobu666.com/images/apple-touch-icon.png" />
+  
+</head>
+<body>
+  <header class="global-header">
+    <section class="header-text">
+      <h1><a href="http://nobu666.com/">Real Beat</a></h1>
+      
+      <div class="sns-links hidden-print">
+  
+  <a href="ogata.nobu@gmail.com">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/nobu666" target="_blank">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  <a href="https://facebook.com/nobutoshi.ogata" target="_blank">
+    <i class="fa fa-facebook"></i>
+  </a>
+  
+  
+  <a href="https://github.com/nobu666" target="_blank">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  
+  <a href="https://linkedin.com/in/nobu666" target="_blank">
+    <i class="fa fa-linkedin"></i>
+  </a>
+  
+</div>
+
+      
+      <a href="http://nobu666.com/" class="btn-header btn-back hidden-xs">
+        <i class="fa fa-angle-left"></i>
+        &nbsp;Home
+      </a>
+      
+      
+      <a href="/index.xml" class="btn-header btn-subscribe hidden-xs">
+        <i class="fa fa-rss"></i>
+        &nbsp;Subscribe
+      </a>
+      
+    </section>
+  </header>
+  <main class="container">
+
+<section class="article-list">
+  <h1>Chef</h1>
+  
+  <hr/>
+  <article>
+  <header>
+    <h2><a href="http://nobu666.com/2013/03/13/985.html">Chef11のchef-serverをHA構成にする</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2013-03-13T15:36:50&#43;09:00">
+          Mar 13, 2013
+        </time>
       </div>
     </div>
+  </header>
+  <div>
+    Chef11のchef-serverをHA構成にする はじめに Chef11はいままでのChefとはserverの構成がガラリと変わり、APIがRubyからErlangに、バックエンドのCouchDBがPostgreSQLになりました。その他はフロントエンドにはnginx、WebUIにunicorn。RabbitMQとSolrはそのまま。 基本的にそのまま使ってて問題ないのだけども、やはりサーバーは壊れるのでバックアップがないと困るよね、ということで調べてもあんまり情報がなかったので、やってみたメモを残します。めんどいのでrootで作業しています。 とりあえずinstallする 先ほどのChef11のWikiにある、Quick Startをみて、Platformにあったパッケージをダウンロード。もしくはInstall Chefというページからダウンロード。Debian6でやりましたが、Ubuntu12用のパッケージではうまく動きませんでしたので、Ubuntu10用のを使いました。11のは知らん。 # wget https://opscode-omnitruck-release.s3.amazonaws.com/ubuntu/10.04/x86_64/chef-server_11.0.6-1.ubuntu.10.04_amd64.deb # dpkg -i chef-server_11.0.6-1.ubuntu.10.04_amd64.deb PrimaryとSecondary、2台のサーバーに入れましょう。 PostgreSQLのReplication PostgreSQLはほとんど知らないし、Chef11のパッケージは /opt/chef-server 以下にRubyやGemsやPostgreSQLやその他依存もろもろすっぽり収まって完結しているため、普通にPostgreSQLをinstallした場合とは勝手がちょっと違うので注意が必要です。 Primaryの設定 設定ファイルは /var/opt/chef-server/postgresql/data 以下にあります。まずアクセス許可。SECONDARY_SERVER_IPADDRESSは任意に読み替えてください。サブネットマスクまで必須です。 # echo &quot;host replication repl_user SECONDARY_SERVER_IPADDRESS/0 trust&quot; &gt;&gt; /var/opt/chef-server/postgresql/data/pg_hba.conf 次にReplicationの設定。/var/opt/chef-server/postgresql/data/postgresql.conf をエディタで開いて、以下のようにします。hot_standby = onの設定はここでは意味が無いですが、あとでこのファイルがそのままSecondary側にコピーされるのでここで変えておいて問題ないです。 listen_addresses = &lsquo;*&rsquo; wal_level = hot_standby max_wal_senders = 1 hot_standby = on 次にPostgreSQLのシェルに入ってユーザーを作りますが、opscode-pgsqlユーザーにならないとシェルに入れないので面倒です。 # su opscode-pgsql - $ pgsql postgres -c &quot;CREATE ROLE repl_user LOGIN REPLICATION PASSWORD 'P@ssw0Rd'&quot; ここまでやったらPostgreSQLを再起動。Chef11のコンポーネントたちは、daemontoolsの下で動いているので普通には再起動できません。が、専用の管理コマンドが用意されているのでそいつを使います。 # chef-server-ctl restart postgresql
+  </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2013/03/13/985.html">Read more &raquo;</a></li>
+    </ul>
+  </footer>
+  
+</article>
 
+  
+  <hr/>
+  <article>
+  <header>
+    <h2><a href="http://nobu666.com/2013/03/05/974.html">UbuntuにOpenGrokをinstall</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2013-03-05T14:36:15&#43;09:00">
+          Mar 5, 2013
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    俺メモ [sourcecode language=&ldquo;bash&rdquo;] sudo apt-get update sudo apt-get install openjdk-6-jdk sudo apt-get install tomcat7 wget http://prdownloads.sourceforge.net/ctags/ctags-5.8.tar.gz tar xf ctags-5.8.tar.gz cd ctags-5.8/ ./configure &amp;&amp; make &amp;&amp; sudo make install cd .. wget http://hub.opensolaris.org/bin/download/Project+opengrok/files/opengrok-0.11.1.tar.gz tar xf opengrok-0.11.1.tar.gz wget http://jflex.de/jflex-1.4.3.tar.gz tar xf jflex-1.4.3.tar.gz cp jflex-1.4.3/lib/JFlex.jar opengrok-0.11.1/lib/lib/ echo &ldquo;export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64&rdquo; &gt;&gt; .bashrc echo &ldquo;EXUBERANT_CTAGS=/usr/local/bin/ctags&rdquo; &gt;&gt; .bashrc sudo sed -i &ldquo;s/port=\&ldquo;8080\&ldquo;/port=\&ldquo;2424\&ldquo;/&rdquo; /etc/tomcat7/server.xml sudo /etc/init.d/tomcat restart sudo mkdir -p /var/opengrok/{etc,data,src} sudo chown -R tomcat7:tomcat7 /var/opengrok sudo
+  </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2013/03/05/974.html">Read more &raquo;</a></li>
+    </ul>
+  </footer>
+  
+</article>
 
+  
+  <hr/>
+  <article>
+  <header>
+    <h2><a href="http://nobu666.com/2013/02/21/959.html">ChefでRoleやRecipeを実行するとき渡すべき必須のattributesをチェックする</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2013-02-21T16:06:57&#43;09:00">
+          Feb 21, 2013
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    例えばlvsを構築するときに、その下にぶら下がるreal serverたちのIPアドレスとかって、chef-client実行するときに-jオプション使ってjsonでattributes渡して欲しいわけですが、実際に実行する前に必須のものがなければ弾きたい、と思って色々ためした結果 Roleならjsonに、Recipeならattributes/default.rbに、requiredとかそういう感じの名前でattributesを作って、そこに配列で指定必須のattributesを並べて書いておく。 [sourcecode language=&ldquo;javascript&rdquo;] { &ldquo;name&rdquo;: &ldquo;nannchara-kannchara&rdquo;, &ldquo;default_attributes&rdquo;: { }, &ldquo;json_class&rdquo;: &ldquo;Chef::Role&rdquo;, &ldquo;env_run_lists&rdquo;: { }, &ldquo;run_list&rdquo;: [ &ldquo;recipe[foo]&ldquo;, &ldquo;recipe[bar::baz]&rdquo; ], &ldquo;description&rdquo;: &ldquo;hogeraccho&rdquo;, &ldquo;chef_type&rdquo;: &ldquo;role&rdquo;, &ldquo;override_attributes&rdquo;: { &ldquo;required&ldquo;: [ &ldquo;test&rdquo;, &ldquo;test1&rdquo;, &ldquo;test2&rdquo; ] } } んで knife role from file nannchara-kannchara.json すると、knife search コマンドで取り出せるようになるので、あとは適当に整形すれば一覧として取り出せる [sourcecode language=&quot;bash&quot;] $ knife search role -F json -q &quot;name:nannchara-kannchara AND __required__:*&quot; | tr -d '\n' | tr -d ' ' | grep -oE &quot;required[^]]+&quot; |
+  </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2013/02/21/959.html">Read more &raquo;</a></li>
+    </ul>
+  </footer>
+  
+</article>
 
-       
-       <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-					<img src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" />
-          <li class="sidebar-brand"><a href="http://nobu666.com//"><h1 class="brand">Real Beat</h1></a><h3></h3></li>
-          <hr />
-					
-						<li><a href="http://nobu666.com//">Home </a></li>
-					
-          <hr />
-          <div id="social-wrapper">
-           <li> <a href="https://twitter.com/nobu666"><i class="fa fa-twitter-square"></i> @twitter</a></li>
-           
-           <li> <a href="https://www.facebook.com/nobutoshi.ogata"><i class="fa fa-facebook-square"></i> facebook</a></li>
-           <li> <a href="https://github.com/nobu666"><i class="fa fa-github-square"></i> github</a> </li>
-         </div>
-       </ul>
-     </div>
+  
+</section>
+  </main>
+  <footer class="container global-footer">
+    <div class="copyright-note pull-left">
+      &copy; nobu666.com
+    </div>
+    <div class="sns-links hidden-print">
+  
+  <a href="ogata.nobu@gmail.com">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/nobu666" target="_blank">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  <a href="https://facebook.com/nobutoshi.ogata" target="_blank">
+    <i class="fa fa-facebook"></i>
+  </a>
+  
+  
+  <a href="https://github.com/nobu666" target="_blank">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  
+  <a href="https://linkedin.com/in/nobu666" target="_blank">
+    <i class="fa fa-linkedin"></i>
+  </a>
+  
+</div>
 
+  </footer>
 
-
-     <div class="container">
-
-
-  <div id="article">
-      <h1>Chef</h1>
-  <ul class="posts">
-      
-      <li><span><a href="http://nobu666.com/2013/03/13/985.html">Chef11のchef-serverをHA構成にする</a><time class="pull-right post-list">Wed, Mar 13, 2013</h4></time></span></span></li>
-      
-      <li><span><a href="http://nobu666.com/2013/03/05/974.html">UbuntuにOpenGrokをinstall</a><time class="pull-right post-list">Tue, Mar 5, 2013</h4></time></span></span></li>
-      
-      <li><span><a href="http://nobu666.com/2013/02/21/959.html">ChefでRoleやRecipeを実行するとき渡すべき必須のattributesをチェックする</a><time class="pull-right post-list">Thu, Feb 21, 2013</h4></time></span></span></li>
-      
-  </ul>
-    <footer>
-
-        <p class="text-muted credit">&copy; 2015. All rights reserved. </p>
-    </footer>
- 
-    <script src="http://nobu666.com//js/jquery-1.10.2.min.js"></script>
-    <script src="http://nobu666.com//js/bootstrap.min.js"></script>
-    <script src="http://nobu666.com//js/bootstrap.js"></script>
-    <script type="text/javascript" src="http://nobu666.com//js/hc.js"></script>
+  <script src="http://nobu666.com/js/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-57485-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+  
 </body>
-
 </html>
+
+

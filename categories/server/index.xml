@@ -5,7 +5,8 @@
     <link>http://nobu666.com/categories/server.html</link>
     <description>Recent content in Server on Real Beat</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; nobu666.com</copyright>
     <lastBuildDate>Thu, 19 May 2011 22:32:28 +0900</lastBuildDate>
     <atom:link href="http://nobu666.com/categories/server.xml" rel="self" type="application/rss+xml" />
     
@@ -103,7 +104,7 @@ $ sudo vi /etc/apache2/sites-available/default #VirtualHostなりなんなり、
 $ sudo service apache2 restart
 $ sudo sysv-rc-conf #自動起動したいやつを適当に選択
 $ cp -a wordpress/* /var/www/wordpress #wordpressのバックアップ復元
-$ mysql -uroot -p -e&amp;quot;create database wp&amp;quot; #とりあえずDBつくる
+$ mysql -uroot -p -e&amp;rdquo;create database wp&amp;rdquo; #とりあえずDBつくる
 $ sudo cp my.cnf.backup /etc/my.cnf
 $ sudo service mysql restart
 $ mysql -uroot -p wp &amp;lt; dumpfile #dumpファイルからデータ復元
