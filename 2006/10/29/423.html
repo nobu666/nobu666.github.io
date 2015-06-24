@@ -79,9 +79,6 @@
 <article>
   <header>
     <h1 class="text-primary">[修正版][memo] postfix &#43; dovecotでSMTP AUTH &amp; IMAPなメールサーバを立ち上げる</h1>
-    <a href="http://b.hatena.ne.jp/entry/http://nobu666.com/2006/10/29/423.html">
-      <img src="http://b.hatena.ne.jp/entry/image/http://nobu666.com/2006/10/29/423.html/" alt="はてなブックマーク - [修正版][memo] postfix &#43; dovecotでSMTP AUTH &amp; IMAPなメールサーバを立ち上げる" title="はてなブックマーク - [修正版][memo] postfix &#43; dovecotでSMTP AUTH &amp; IMAPなメールサーバを立ち上げる">
-    </a>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
         Posted on
@@ -341,41 +338,6 @@ chmod 750 /var/run/dovecot/login
 まずはオレオレ認証局の証明書をクライアントに入れる必要がある（やらなくてもいいが警告が出るので…）。別にどうやってクライアントに渡してもOK。FTPとかSCPとかで適当に。メーラによって操作が違うがThunderbirdの場合は、ツール→オプション→プライバシー→セキュリティ→証明書を表示→認証局証明書→インポートと進んで、cacert.derを選択すればOK。あとはIMAPでアカウントを作って、受信は143番ポートでTLSを使うようにし、送信は587番ポートで同じくTLSを使うように設定する。送信テストするとユーザ名とパスワードが聞かれるので「パスワード無しで送信できないこと」「間違ったパスワードを入れて送信できないこと」「正しいパスワードを入れて送信できること」の3つを確認して終了。</p>
 
   </section>
-  <hr>
-  <section class="post-custom-share-buttons">
-    <a href="http://b.hatena.ne.jp/entry/http://nobu666.com/2006/10/29/423.html" class="hatena-bookmark-button" data-hatena-bookmark-title="[修正版][memo] postfix &#43; dovecotでSMTP AUTH &amp; IMAPなメールサーバを立ち上げる" data-hatena-bookmark-layout="vertical-balloon" data-hatena-bookmark-lang="en" title="Bookmark this entry"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="Bookmark this entry" width="20" height="20" style="border: none;"></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-
-    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://nobu666.com/2006/10/29/423.html" data-text="[修正版][memo] postfix &#43; dovecotでSMTP AUTH &amp; IMAPなメールサーバを立ち上げる" data-count="vertical">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-    <div class="fb-like" data-href="http://nobu666.com/2006/10/29/423.html" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.3&appId=524721300901204";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-
-    <a data-pocket-label="pocket" data-pocket-count="vertical" data-save-url="http://nobu666.com/2006/10/29/423.html" class="pocket-btn" data-lang="ja"></a>
-    <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
-  </section>
-  <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'realbeat';
-    var disqus_identifier = 'http:\/\/nobu666.com\/2006\/10\/29\/423.html';
-    var disqus_title = '[修正版][memo] postfix \x2b dovecotでSMTP AUTH \x26 IMAPなメールサーバを立ち上げる';
-    var disqus_url = 'http:\/\/nobu666.com\/2006\/10\/29\/423.html';
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   <footer>
     <section class="author-info row">
       <div class="author-avatar col-md-2">
