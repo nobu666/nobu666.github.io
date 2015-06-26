@@ -3,16 +3,16 @@
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-  <meta property="og:title" content=" Tags &middot;  Real Beat" />
+  <meta property="og:title" content=" Osx &middot;  Real Beat" />
   <meta property="og:site_name" content="Real Beat" />
-  <meta property="og:url" content="http://nobu666.com/tags.html" />
+  <meta property="og:url" content="http://nobu666.com/tags/osx.html" />
   
   
   <meta property="og:type" content="website" />
   
 
   <title>
-     Tags &middot;  Real Beat
+     Osx &middot;  Real Beat
   </title>
 
   <link rel="stylesheet" href="http://nobu666.com/css/bootstrap.min.css" />
@@ -75,17 +75,29 @@
   </header>
   <main class="container">
 
+<section class="article-list">
+  <h1>Osx</h1>
+  
+  <hr/>
+  <article>
+  <header>
+    <h2><a href="http://nobu666.com/2015/06/26/1016.html">Mac OS XでパスワードやトークンをKeychain管理にしてスクリプトから使う方法</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2015-06-26T20:46:09&#43;09:00">
+          Jun 26, 2015
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    例えば .zshrc とかに HOMEBREW_GITHUB_API_TOKEN をexportしてるけど、このファイルを人に見せることになると困る。回避方法としては ~/.github_token を別途作ってそっちに値を書き込んで置いて if [ -f ~/.github_token ]; then . ~/.github_token fi こんなふうにするという解決策もあるにはある。が、もうちょっとセキュアかつ簡単な方法はないものか、ということで以下のようにすると捗った Keychainに値を登録する security add-generic-password -a homebrew-github-api-key -s homebrew-github-api-key -w XXXXXXXXXXXXXXX Keychainから値をとりだす security find-generic-password -ga homebrew-github-api-key このままだと余計な情報もたくさん取れてきてしまうので、必要な部分だけ抜き出すようにする security find-generic-password -ga homebrew-github-api-key 2&gt;&amp;1 &gt;/dev/null | ruby -e 'print $1 if STDIN.gets =~ /^password: &quot;(.*)&quot;$/' これでファイルに直接書かないでよくなったので、.zshrcとかでexportするときも $(security ...) をexportしてやればいい。うむ。
+  </div>
+  
+</article>
 
-<section class="taxonomy-terms">
-  <h1>Tags</h1>
-  <ul>
-    
-    
-    <li><a href="http://nobu666.com//tags/osx">osx</a> 1</li>
-    
-    <li><a href="http://nobu666.com//tags/tips">tips</a> 1</li>
-    
-  </ul>
+  
 </section>
   </main>
   <footer class="container global-footer">

@@ -76,6 +76,26 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2015/06/26/1016.html">Mac OS XでパスワードやトークンをKeychain管理にしてスクリプトから使う方法</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2015-06-26T20:46:09&#43;09:00">
+          Jun 26, 2015
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    例えば .zshrc とかに HOMEBREW_GITHUB_API_TOKEN をexportしてるけど、このファイルを人に見せることになると困る。回避方法としては ~/.github_token を別途作ってそっちに値を書き込んで置いて if [ -f ~/.github_token ]; then . ~/.github_token fi こんなふうにするという解決策もあるにはある。が、もうちょっとセキュアかつ簡単な方法はないものか、ということで以下のようにすると捗った Keychainに値を登録する security add-generic-password -a homebrew-github-api-key -s homebrew-github-api-key -w XXXXXXXXXXXXXXX Keychainから値をとりだす security find-generic-password -ga homebrew-github-api-key このままだと余計な情報もたくさん取れてきてしまうので、必要な部分だけ抜き出すようにする security find-generic-password -ga homebrew-github-api-key 2&gt;&amp;1 &gt;/dev/null | ruby -e 'print $1 if STDIN.gets =~ /^password: &quot;(.*)&quot;$/' これでファイルに直接書かないでよくなったので、.zshrcとかでexportするときも $(security ...) をexportしてやればいい。うむ。
+  </div>
+  
+</article>
+
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2015/06/21/1015.html">WordPressからGitHub Pages &#43; hugoに移行した</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
