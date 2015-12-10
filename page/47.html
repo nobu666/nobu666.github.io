@@ -76,6 +76,32 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2015/12/10/1019.html">Itamae meetup #1 ( #itamae_meetup ) で「Itamaeで幸せになった話」をLTしてきた</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2015-12-10T10:03:53&#43;09:00">
+          Dec 10, 2015
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    Itamae meetup #1 Itamae は @ryot_a_rai くんの作ったプロビジョニングツールです。要は軽量版 Chef だと思えば大体あってます。で、めでたく meetup の第一回が開催されるということで、LT 枠でクックパッド社にお邪魔してきました。 話したこと LT ということでかなり端折った資料になっているため、資料だけ見てもよくわからないかもしれません。資料に書いていないこと、発表で話せなかったことを補足しつつまとめます。 The story became happy with itamae from Nobutoshi Ogata 導入の背景 以前は Chef が使われていたが、リポジトリが分散し、かつ依存があってカオスであった 整理するくらいなら作りなおしたほうがはやい Chef はやりたいことに大して大げさすぎる Ansible は冪等性を維持する書き方がすっきりかけなくてダルい Puppet は使いはじめるまでに覚えることが多すぎる 知り合いが作っている OSS であればいろいろ安心 SmartNews における事例 Github に push 大きめの修正を入れた時はpacker で AMI を build して、AutoScalingGroup に設定する CircleCI で共通部分のテストしたのち、S3 に zip して upload AutoScalingGroup で管理されている EC2 インスタンスが、起動時に zip を download し、自分のタグから role を判定して itamae local を実行 手動で即時反映したければ Fabric を叩く(この時も itamae ssh はしてなくて、各インスタンスが zip 落としてきて itamae local です あるいは AutoScalingGroup のインスタンスを総入れ替えするコマンドを作ってあるので、そいつを叩く Directory 構成 基本的に Best Practice 構成 .
+  </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2015/12/10/1019.html">Read more &raquo;</a></li>
+    </ul>
+  </footer>
+  
+</article>
+
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2015/09/16/1017.html">iPhone5sからiPod touchへ</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
