@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja-JP">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   <meta property="og:title" content=" Itamae meetup #1 ( #itamae_meetup ) で「Itamaeで幸せになった話」をLTしてきた &middot;  Real Beat" />
+  
   <meta property="og:site_name" content="Real Beat" />
   <meta property="og:url" content="http://nobu666.com/2015/12/10/1019.html" />
   
@@ -36,7 +37,7 @@
   
 </head>
 <body>
-  <header class="global-header">
+    <header class="global-header"  style="background-image:url( /images/bg.jpg )">
     <section class="header-text">
       <h1><a href="http://nobu666.com/">Real Beat</a></h1>
       
@@ -50,6 +51,7 @@
   <a href="https://twitter.com/nobu666" target="_blank">
     <i class="fa fa-twitter"></i>
   </a>
+  
   
   
   
@@ -68,11 +70,12 @@
     <i class="fa fa-linkedin"></i>
   </a>
   
+  
 </div>
 
       
       <a href="http://nobu666.com/" class="btn-header btn-back hidden-xs">
-        <i class="fa fa-angle-left"></i>
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
         &nbsp;Home
       </a>
       
@@ -189,34 +192,32 @@
 <li>default はどっちでも使われる</li>
 </ul></li>
 
-<li><p>production.rb</p></li>
+<li><p>production.rb
+```ruby
+node.reverse_merge!({
+java: {
+tomcat: {
+  java_opts: {
+    xmx: &ldquo;10240m&rdquo;,
+    xms: &ldquo;10240m&rdquo;,
+  },
+  maxThreads: &ldquo;512&rdquo;,
+},
+},
+td_agent: {
+forward: {
+  smartnews_action: true
+},
+},
+})</p></li>
 </ul>
 
-<pre><code class="language-ruby">node.reverse_merge!({
-  java: {
-    tomcat: {
-      java_opts: {
-        xmx: &quot;10240m&quot;,
-        xms: &quot;10240m&quot;,
-      },
-      maxThreads: &quot;512&quot;,
-    },
-  },
-  td_agent: {
-    forward: {
-      smartnews_action: true
-    },
-  },
-})
+<p>include_recipe &ldquo;default.rb&rdquo;</p>
 
-include_recipe &quot;default.rb&quot;
-</code></pre>
-
-<ul>
-<li>default.rb</li>
-</ul>
-
-<pre><code class="language-ruby">node.reverse_merge!({
+<pre><code>
+- default.rb
+```ruby
+node.reverse_merge!({
   app_name: &quot;hogehoge&quot;,
   java: {
     tomcat: {
@@ -290,6 +291,7 @@ include_recipe &quot;default.rb&quot;
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   <footer>
+    
     <section class="author-info row">
       <div class="author-avatar col-md-2">
         
@@ -305,7 +307,7 @@ include_recipe &quot;default.rb&quot;
       
       <div class="author-contact col-md-4">
         <a href="ogata.nobu@gmail.com">
-          <i class="fa fa-envelope-o"></i>
+          <i class="fa fa-envelope-o" aria-hidden="true"></i>
           &nbsp;Contact me
         </a>
       </div>
@@ -319,18 +321,6 @@ include_recipe &quot;default.rb&quot;
       <li class="next disabled"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
       
     </ul>
-    
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-      var disqus_shortname = 'realbeat';
-      (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    
   </footer>
 </article>
 
@@ -352,6 +342,7 @@ include_recipe &quot;default.rb&quot;
   
   
   
+  
   <a href="https://facebook.com/nobutoshi.ogata" target="_blank">
     <i class="fa fa-facebook"></i>
   </a>
@@ -366,6 +357,7 @@ include_recipe &quot;default.rb&quot;
   <a href="https://linkedin.com/in/nobu666" target="_blank">
     <i class="fa fa-linkedin"></i>
   </a>
+  
   
 </div>
 

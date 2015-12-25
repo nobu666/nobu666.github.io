@@ -83,14 +83,14 @@ __END__
       <pubDate>Sun, 19 Nov 2006 23:27:30 +0900</pubDate>
       
       <guid>http://nobu666.com/2006/11/19/449.html</guid>
-      <description>&lt;h4&gt;前提条件&lt;/h4&gt;
-基本的には&lt;a href=&#34;http://www.gentoo.org/doc/ja/distcc.xml&#34; target=&#34;_blank&#34;&gt;Gentoo distcc ドキュメント&lt;/a&gt;・&lt;a href=&#34;http://www.gentoo.org/doc/ja/cross-compiling-distcc.xml&#34; target=&#34;_blank&#34;&gt;DistCC クロスコンパイルガイド&lt;/a&gt;、この2つのドキュメントの通り行う。気をつけなきゃいけないのは、「資源を借りる側」と「資源を貸す側」で若干設定が異なる点。ここでは借りる側はi686(192.168.0.4)、貸す側はamd64(192.168.0.3)とする。
+      <description>&lt;p&gt;&lt;h4&gt;前提条件&lt;/h4&gt;
+基本的には&lt;a href=&#34;http://www.gentoo.org/doc/ja/distcc.xml&#34; target=&#34;_blank&#34;&gt;Gentoo distcc ドキュメント&lt;/a&gt;・&lt;a href=&#34;http://www.gentoo.org/doc/ja/cross-compiling-distcc.xml&#34; target=&#34;_blank&#34;&gt;DistCC クロスコンパイルガイド&lt;/a&gt;、この2つのドキュメントの通り行う。気をつけなきゃいけないのは、「資源を借りる側」と「資源を貸す側」で若干設定が異なる点。ここでは借りる側はi686(192.168.0.4)、貸す側はamd64(192.168.0.3)とする。&lt;/p&gt;
 
-貸す側と借りる側で、gccのバージョンは同じであること。3.3.x同時はOKだが、3.3.xと3.2.xは混ぜないこと。
+&lt;p&gt;貸す側と借りる側で、gccのバージョンは同じであること。3.3.x同時はOKだが、3.3.xと3.2.xは混ぜないこと。&lt;/p&gt;
 
-また、資源を借りる側は一方的に借りるだけで、相互に助け合わない設定とした。これは、貸す側はサーバなので24時間稼働しているが、借りる側はノートなのでそうした。
+&lt;p&gt;また、資源を借りる側は一方的に借りるだけで、相互に助け合わない設定とした。これは、貸す側はサーバなので24時間稼働しているが、借りる側はノートなのでそうした。&lt;/p&gt;
 
-&lt;h4&gt;資源を貸す側の設定&lt;/h4&gt;
+&lt;p&gt;&lt;h4&gt;資源を貸す側の設定&lt;/h4&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;emerge distcc crossdev
 vi /etc/make.conf
@@ -106,7 +106,7 @@ rc-update add distcc default
 crossdev -t i686
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;資源を借りる側の設定&lt;/h4&gt;
+&lt;p&gt;&lt;h4&gt;資源を借りる側の設定&lt;/h4&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;emerge distcc
 vi /etc/make.conf
@@ -500,28 +500,25 @@ rc-update add apcupsd default
       <guid>http://nobu666.com/2006/10/29/423.html</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://nobu666.com/2006/10/25/000420.html&#34;&gt;[memo] postfix + dovecotでSMTP AUTH &amp;amp; IMAPなメールサーバを立ち上げる&lt;/a&gt;があまり正しくないので修正版。&lt;/p&gt;
 
-&lt;h4&gt;ssmtpの削除&lt;/h4&gt;
-Gentooではいきなりpostfixを入れようとしても、デフォルトでssmtpが入っていてblockされるのでssmtpを消すのが先決。
+&lt;p&gt;&lt;h4&gt;ssmtpの削除&lt;/h4&gt;
+Gentooではいきなりpostfixを入れようとしても、デフォルトでssmtpが入っていてblockされるのでssmtpを消すのが先決。&lt;/p&gt;
 
-```bash
-emerge -C ssmtp
-```
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;emerge -C ssmtp
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;postfixとdovecotのインストール&lt;/h4&gt;
-Gentooの基本だけど、emergeするときはemerge -pvでどんなフラグが有効になるか必ず確認。必要ないならpackage.useで外す。あとsaslが必要なのでこれは付けておく。あとなんでかわからないけどpostfixにsaslを付けるとついてくるcyrus-saslで、gdbmやcryptをUSEするとコンパイルに失敗したので外した。
+&lt;p&gt;&lt;h4&gt;postfixとdovecotのインストール&lt;/h4&gt;
+Gentooの基本だけど、emergeするときはemerge -pvでどんなフラグが有効になるか必ず確認。必要ないならpackage.useで外す。あとsaslが必要なのでこれは付けておく。あとなんでかわからないけどpostfixにsaslを付けるとついてくるcyrus-saslで、gdbmやcryptをUSEするとコンパイルに失敗したので外した。&lt;/p&gt;
 
-```bash
-emerge -pv postfix dovecot
-echo &#34;mmail-mta/postfix -mysql sasl&#34; &gt;&gt; /etc/portage/package.use
-echo &#34;dev-libs/cyrus-sasl -mysql -java -gdbm -crypt&#34; &gt;&gt; /etc/portage/package.use
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;emerge -pv postfix dovecot
+echo &amp;quot;mmail-mta/postfix -mysql sasl&amp;quot; &amp;gt;&amp;gt; /etc/portage/package.use
+echo &amp;quot;dev-libs/cyrus-sasl -mysql -java -gdbm -crypt&amp;quot; &amp;gt;&amp;gt; /etc/portage/package.use
 emerge postfix dovecot
-```
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;オレオレ認証局の作成&lt;/h4&gt;
-Gentooでの方法なので他のディストリではパスが違うようなので注意。
+&lt;p&gt;&lt;h4&gt;オレオレ認証局の作成&lt;/h4&gt;
+Gentooでの方法なので他のディストリではパスが違うようなので注意。&lt;/p&gt;
 
-```bash
-mkdir /etc/certs
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;mkdir /etc/certs
 chmod 700 /etc/certs 
 cd /etc/certs
 cp /etc/ssl/misc/CA.pl .
@@ -565,16 +562,16 @@ Certificate is to be certified until Oct 28 06:15:58 2009 GMT (1095 days)
 
 Write out database with 1 new entries
 Data Base Updated
-```
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;クライアント用CA証明書とサーバ用CA証明書を作成&lt;/h4&gt;
+&lt;p&gt;&lt;h4&gt;クライアント用CA証明書とサーバ用CA証明書を作成&lt;/h4&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd /etc/certs/demoCA
 openssl x509 -inform pem -in cacert.pem -outform der -out cacert.der 
 openssl x509 -in ./cacert.pem -out ./cacert.crt
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;デジタル証明書のリクエストファイルを作成&lt;/h4&gt;
+&lt;p&gt;&lt;h4&gt;デジタル証明書のリクエストファイルを作成&lt;/h4&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;cd /etc/certs
 perl ./CA.pl -newreq-nodes
@@ -605,7 +602,7 @@ An optional company name []:(ENTER)
 Request is in newreq.pem, private key is in newkey.pem
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;リクエストファイルからX.509サーバ証明書の作成と署名&lt;/h4&gt;
+&lt;p&gt;&lt;h4&gt;リクエストファイルからX.509サーバ証明書の作成と署名&lt;/h4&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;perl ./CA.pl -sign
 Using configuration from /etc/ssl/openssl.cnf
@@ -648,13 +645,13 @@ Signed certificate is in newcert.pem
 openssl x509 -in newcert.pem -out server.crt
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;postfix用にシンボリックリンクを張る&lt;/h4&gt;
+&lt;p&gt;&lt;h4&gt;postfix用にシンボリックリンクを張る&lt;/h4&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ln -sf /etc/certs/server.crt /etc/ssl/postfix/server.crt
 ln -sf /etc/certs/newkey.pem /etc/ssl/postfix/server.key
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;postfixの設定&lt;/h4&gt;
+&lt;p&gt;&lt;h4&gt;postfixの設定&lt;/h4&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;vi /etc/postfix/main.cf
 
@@ -713,7 +710,7 @@ submission inet n      -       n       -       -       smtpd
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;saslの設定&lt;/h4&gt;
+&lt;p&gt;&lt;h4&gt;saslの設定&lt;/h4&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;vi /etc/sasl2/smtpd.conf
 
@@ -724,7 +721,7 @@ chmod 700 /var/state/saslauthd
 chown postfix /var/state/saslauthd
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4&gt;dovecotの設定&lt;/h4&gt;
+&lt;p&gt;&lt;h4&gt;dovecotの設定&lt;/h4&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;vi /etc/dovecot.conf
 

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja-JP">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   <meta property="og:title" content=" 2011s &middot;  Real Beat" />
+  
   <meta property="og:site_name" content="Real Beat" />
   <meta property="og:url" content="http://nobu666.com/2011.html" />
   
@@ -25,7 +26,7 @@
   
 </head>
 <body>
-  <header class="global-header">
+    <header class="global-header"  style="background-image:url( /images/bg.jpg )">
     <section class="header-text">
       <h1><a href="http://nobu666.com/">Real Beat</a></h1>
       
@@ -39,6 +40,7 @@
   <a href="https://twitter.com/nobu666" target="_blank">
     <i class="fa fa-twitter"></i>
   </a>
+  
   
   
   
@@ -57,17 +59,18 @@
     <i class="fa fa-linkedin"></i>
   </a>
   
+  
 </div>
 
       
       <a href="http://nobu666.com/" class="btn-header btn-back hidden-xs">
-        <i class="fa fa-angle-left"></i>
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
         &nbsp;Home
       </a>
       
       
-      <a href="/index.xml" class="btn-header btn-subscribe hidden-xs">
-        <i class="fa fa-rss"></i>
+      <a href="http://nobu666.com/2011.xml" class="btn-header btn-subscribe hidden-xs">
+        <i class="fa fa-rss" aria-hidden="true"></i>
         &nbsp;Subscribe
       </a>
       
@@ -197,7 +200,7 @@
   
   <footer>
     <ul class="pager">
-      <li class="next"><a href="http://nobu666.com/2011/05/19/904.html">Read more &raquo;</a></li>
+      <li class="next"><a href="http://nobu666.com/2011/05/19/904.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
     </ul>
   </footer>
   
@@ -223,7 +226,7 @@
   
   <footer>
     <ul class="pager">
-      <li class="next"><a href="http://nobu666.com/2011/02/21/812.html">Read more &raquo;</a></li>
+      <li class="next"><a href="http://nobu666.com/2011/02/21/812.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
     </ul>
   </footer>
   
@@ -249,7 +252,7 @@
   
   <footer>
     <ul class="pager">
-      <li class="next"><a href="http://nobu666.com/2011/02/17/839.html">Read more &raquo;</a></li>
+      <li class="next"><a href="http://nobu666.com/2011/02/17/839.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
     </ul>
   </footer>
   
@@ -270,12 +273,12 @@
     </div>
   </header>
   <div>
-    URLに@が入ってたりすると、ScreenNameのリンクとごっちゃになって割と対応に手間取ったのでメモとして。日本語のハッシュタグなんか最近見かけないからどうでもいいような気もするけど、まぁ一応対応。 [sourcecode language=&ldquo;javascript&rdquo; padlinenumbers=&ldquo;2&rdquo;] var text=&ldquo;@xyz aaa http://aaa.com:8080/@abc#asdf http://日本語.jp/?abc&amp;asdf http://example.jp/a.b.c@d.e bbb @ccc/@ddd/＠eee #hash #日本語だめ #日本語おｋ_ http://a.com/日本語&quot;; text.replace(/(https?:\/\/(?:[^!&ldquo;#$%&amp;&lsquo;()+,-./:;&lt;=&gt;\?@[\]^`{|}~\s][.-](?=[^!&ldquo;#$%&amp;&lsquo;()*+,-./:;&lt;=&gt;\?@[\]^`{|}~\s])|[^!&ldquo;#$%&amp;&lsquo;()+,-./:;&lt;=&gt;\?@[\]^`{|}~\s]){1,}.[a-z]{2,}(?::[0-9]+)?(?:\/(?:[\x21-\x7e]+)?)?)|(?:[@＠])([a-z0-9]{1,20})|(?:#|\uFF03)([^\s\/ \x21-\x2f\x3a-\x40\x5b-\x5e\x60\x7b-\x7e]+[a-z0-9_])/mgi, function(){ if(arguments[1]!==&ldquo;&rdquo;){ return &ldquo;&rdquo;+arguments[1]+&rdquo;&rdquo;; }else if(arguments[2]==&ldquo;&rdquo; &amp;&amp; arguments[3]==&ldquo;&rdquo;){ return arguments[1]; } if(arguments[2]!==&ldquo;&rdquo;){ return &ldquo;@&ldquo;+arguments[2]+&rdquo;&rdquo;; }else if (arguments[3]==&ldquo;&rdquo;){ return arguments[2]; } if (arguments[3]!==&ldquo;&rdquo;){ return &ldquo;#&ldquo;+arguments[3]+&rdquo;&rdquo;; } else { return arguments[3]; } } ) 実行すると [sourcecode padlinenumbers=&quot;2&quot; language=&quot;laguage=&quot;] &quot;&lt;a class='screen_name' href='http://twitter.com/xyz'&gt;@xyz&lt;/a&gt; aaa &lt;a class='url' href='http://aaa.com:8080/@abc#asdf'&gt;http://aaa.com:8080/@abc#asdf&lt;/a&gt; &lt;a class='url' href='http://日本語.jp/?abc&amp;amp;asdf'&gt;http://日本語.jp/?abc&amp;amp;asdf&lt;/a&gt; &lt;a class='url' href='http://example.jp/a.b.c@d.e'&gt;http://example.jp/a.b.c@d.e&lt;/a&gt; bbb &lt;a class='screen_name'
+    URLに@が入ってたりすると、ScreenNameのリンクとごっちゃになって割と対応に手間取ったのでメモとして。日本語のハッシュタグなんか最近見かけないからどうでもいいような気もするけど、まぁ一応対応。 [sourcecode language=&ldquo;javascript&rdquo; padlinenumbers=&ldquo;2&rdquo;] var text=&ldquo;@xyz aaa http://aaa.com:8080/@abc#asdf http://日本語.jp/?abc&amp;asdf http://example.jp/a.b.c@d.e bbb @ccc/@ddd/＠eee #hash #日本語だめ #日本語おｋ_ http://a.com/日本語&quot;; text.replace(/(https?:\/\/(?:[^!&ldquo;#$%&amp;&lsquo;()+,-./:;&lt;=&gt;\?@[\]^_\{\|\}~\s][\.-](?=[^!&quot;#$%&amp;amp;'\(\)*\+,-\./:;&lt;=&gt;\?@\[\\\]^_{|}~\s])|[^!&ldquo;#$%&amp;&lsquo;()+,-./:;&lt;=&gt;\?@[\]^`{|}~\s]){1,}.[a-z]{2,}(?::[0-9]+)?(?:\/(?:[\x21-\x7e]+)?)?)|(?:[@＠])([a-z0-9]{1,20})|(?:#|\uFF03)([^\s\/ \x21-\x2f\x3a-\x40\x5b-\x5e\x60\x7b-\x7e]+[a-z0-9_])/mgi, function(){ if(arguments[1]!==&ldquo;&rdquo;){ return &ldquo;&rdquo;+arguments[1]+&rdquo;&rdquo;; }else if(arguments[2]==&ldquo;&rdquo; &amp;&amp; arguments[3]==&ldquo;&rdquo;){ return arguments[1]; } if(arguments[2]!==&ldquo;&rdquo;){ return &ldquo;@&ldquo;+arguments[2]+&rdquo;&rdquo;; }else if (arguments[3]==&ldquo;&rdquo;){ return arguments[2]; } if (arguments[3]!==&ldquo;&rdquo;){ return &ldquo;#&ldquo;+arguments[3]+&rdquo;&rdquo;; } else { return arguments[3]; } } ) 実行すると [sourcecode padlinenumbers=&quot;2&quot; language=&quot;laguage=&quot;] &quot;&lt;a class='screen_name' href='http://twitter.com/xyz'&gt;@xyz&lt;/a&gt; aaa &lt;a class='url' href='http://aaa.com:8080/@abc#asdf'&gt;http://aaa.com:8080/@abc#asdf&lt;/a&gt; &lt;a class='url' href='http://日本語.jp/?abc&amp;amp;asdf'&gt;http://日本語.jp/?abc&amp;amp;asdf&lt;/a&gt; &lt;a class='url' href='http://example.jp/a.b.c@d.e'&gt;http://example.jp/a.b.c@d.e&lt;/a&gt; bbb &lt;a class='screen_name'
   </div>
   
   <footer>
     <ul class="pager">
-      <li class="next"><a href="http://nobu666.com/2011/01/20/831.html">Read more &raquo;</a></li>
+      <li class="next"><a href="http://nobu666.com/2011/01/20/831.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
     </ul>
   </footer>
   
@@ -301,6 +304,7 @@
   
   
   
+  
   <a href="https://facebook.com/nobutoshi.ogata" target="_blank">
     <i class="fa fa-facebook"></i>
   </a>
@@ -315,6 +319,7 @@
   <a href="https://linkedin.com/in/nobu666" target="_blank">
     <i class="fa fa-linkedin"></i>
   </a>
+  
   
 </div>
 

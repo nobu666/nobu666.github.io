@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja-JP">
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   <meta property="og:title" content=" PukiWiki1.4.7 WikiFarmEngine &middot;  Real Beat" />
+  
   <meta property="og:site_name" content="Real Beat" />
   <meta property="og:url" content="http://nobu666.com/2008/10/30/649.html" />
   
@@ -30,7 +31,7 @@
   
 </head>
 <body>
-  <header class="global-header">
+    <header class="global-header"  style="background-image:url( /images/bg.jpg )">
     <section class="header-text">
       <h1><a href="http://nobu666.com/">Real Beat</a></h1>
       
@@ -44,6 +45,7 @@
   <a href="https://twitter.com/nobu666" target="_blank">
     <i class="fa fa-twitter"></i>
   </a>
+  
   
   
   
@@ -62,11 +64,12 @@
     <i class="fa fa-linkedin"></i>
   </a>
   
+  
 </div>
 
       
       <a href="http://nobu666.com/" class="btn-header btn-back hidden-xs">
-        <i class="fa fa-angle-left"></i>
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
         &nbsp;Home
       </a>
       
@@ -103,7 +106,7 @@
 
 <h2>1.4.7ベースのFarm</h2>
 
-<h3>1.4.7のソースを持ってきてフォルダわけ</h3>
+<p><h3>1.4.7のソースを持ってきてフォルダわけ</h3></p>
 
 <pre><code class="language-bash">tar zxf pukiwiki-1.4.7_notb_utf8.tar.gz -C /var/www/html/farm
 cd /var/www/html/farm
@@ -218,7 +221,7 @@ mkdir {admin,datasource}/config
  ?&gt;
 </code></pre>
 
-<h3>ja.lng.php</h3>
+<p><h3>ja.lng.php</h3></p>
 
 <pre><code class="language-diff">--- pukiwiki-1.4.7_notb_utf8/ja.lng.php   2006-10-22 05:40:24.000000000 +0900
 +++ common/config/ja.lng.php    2008-10-09 11:28:33.000000000 +0900
@@ -242,7 +245,7 @@ $_err_notexist  = '未作成のページはありません。';
  ?&gt;
 </code></pre>
 
-<h3>lib/auth.php</h3>
+<p><h3>lib/auth.php</h3></p>
 
 <pre><code class="language-diff">--- pukiwiki-1.4.7_notb_utf8/lib/auth.php 2006-10-22 05:40:25.000000000 +0900
 +++ common/lib/auth.php 2008-10-09 13:07:24.000000000 +0900
@@ -259,7 +262,7 @@ $_err_notexist  = '未作成のページはありません。';
                 pkwk_hash_compute(
 </code></pre>
 
-<h3>lib/html.php</h3>
+<p><h3>lib/html.php</h3></p>
 
 <pre><code class="language-diff">--- pukiwiki-1.4.7_notb_utf8/lib/html.php 2006-10-22 05:40:25.000000000 +0900
 +++ common/lib/html.php 2008-10-09 16:34:57.000000000 +0900
@@ -275,7 +278,7 @@ $_err_notexist  = '未作成のページはありません。';
         $_LINK['copy']     = &quot;$script?plugin=template&amp;refer=$r_page&quot;;
 </code></pre>
 
-<h3>lib/pukiwiki.php</h3>
+<p><h3>lib/pukiwiki.php</h3></p>
 
 <pre><code class="language-diff">--- pukiwiki-1.4.7_notb_utf8/lib/pukiwiki.php     2006-10-22 05:40:25.000000000 +0900
 +++ common/lib/pukiwiki.php     2008-10-08 11:17:07.000000000 +0900
@@ -290,7 +293,7 @@ $_err_notexist  = '未作成のページはありません。';
  // Main
 </code></pre>
 
-<h3>skin/pukiwiki.skin.php</h3>
+<p><h3>skin/pukiwiki.skin.php</h3></p>
 
 <pre><code class="language-diff">--- pukiwiki-1.4.7_notb_utf8/skin/pukiwiki.skin.php       2006-10-22 05:40:28.000000000 +0900
 +++ common/skin/pukiwiki.skin.php       2008-10-08 19:31:22.000000000 +0900
@@ -316,7 +319,7 @@ $_err_notexist  = '未作成のページはありません。';
         ($trackback_javascript == 1) ? 'onclick=&quot;OpenTrackback(this.href); return false&quot;' : '') ?&gt; ]
 </code></pre>
 
-<h3>skin/pukiwiki.css.php</h3>
+<p><h3>skin/pukiwiki.css.php</h3></p>
 
 <pre><code class="language-diff">--- pukiwiki-1.4.7_notb_utf8/skin/pukiwiki.css.php        2006-10-22 05:40:27.000000000 +0900
 +++ common/skin/pukiwiki.css.php        2008-10-09 11:16:58.000000000 +0900
@@ -388,7 +391,7 @@ common/plugin/add_site.inc.php [#v644fe5c]
 <p><h2>新規</h2>
 adminで既存Wikiの一覧を出したいので、プラグインを作る</p>
 
-<h3>common/plugin/farmlist.inc.php</h3>
+<p><h3>common/plugin/farmlist.inc.php</h3></p>
 
 <pre><code class="language-php">&lt;?php
 // PukiWiki - Yet another WikiWikiWeb clone
@@ -566,7 +569,7 @@ sub hexEUCtoUTF8 {
 <li>やっぱEUCなのでnkfで変換</li>
 </ul></p>
 
-<h3>userauth.php</h3>
+<p><h3>userauth.php</h3></p>
 
 <pre><code class="language-diff">--- -   2008-10-09 19:06:09.129869766 +0900
 +++ datasource/userauth.php     2008-10-09 14:05:37.000000000 +0900
@@ -581,7 +584,7 @@ sub hexEUCtoUTF8 {
  // データ区切り記号(変える必要はありません)
 </code></pre>
 
-<h3>userauth_admin.php</h3>
+<p><h3>userauth_admin.php</h3></p>
 
 <pre><code class="language-diff">--- -   2008-10-09 19:07:01.886083742 +0900
 +++ datasource/userauth_admin.php       2008-10-09 17:16:53.000000000 +0900
@@ -712,6 +715,7 @@ function plugin_userauth_admin_convert()
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   <footer>
+    
     <section class="author-info row">
       <div class="author-avatar col-md-2">
         
@@ -727,7 +731,7 @@ function plugin_userauth_admin_convert()
       
       <div class="author-contact col-md-4">
         <a href="ogata.nobu@gmail.com">
-          <i class="fa fa-envelope-o"></i>
+          <i class="fa fa-envelope-o" aria-hidden="true"></i>
           &nbsp;Contact me
         </a>
       </div>
@@ -741,18 +745,6 @@ function plugin_userauth_admin_convert()
       <li class="next"><a href="http://nobu666.com/2008/10/31/650.html">Newer <span aria-hidden="true">&rarr;</span></a></li>
       
     </ul>
-    
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-      var disqus_shortname = 'realbeat';
-      (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    
   </footer>
 </article>
 
@@ -774,6 +766,7 @@ function plugin_userauth_admin_convert()
   
   
   
+  
   <a href="https://facebook.com/nobutoshi.ogata" target="_blank">
     <i class="fa fa-facebook"></i>
   </a>
@@ -788,6 +781,7 @@ function plugin_userauth_admin_convert()
   <a href="https://linkedin.com/in/nobu666" target="_blank">
     <i class="fa fa-linkedin"></i>
   </a>
+  
   
 </div>
 
