@@ -80,6 +80,34 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2011/05/19/904.html">さくらのVPSでCentOSからUbuntuに鞍替えまとめ</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2011-05-19T22:32:28&#43;09:00">
+          May 19, 2011
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    @macchaからリクエストがあったので、適当にまとめました。タイトルの通りです。 OS再インストールの準備 リモートコンソールの起動にJDK必須なので、作業するマシンにJDKが入ってなければいれとく。あとはTightVNCとか、必要ならどうぞ。あとバックアップ忘れずに。とりあえずwordpressだけ動いてる状態だったので [sourcecode language=&ldquo;text&rdquo; padlinenumbers=&ldquo;2&rdquo;] $ mysqldump -uroot -p wp -Q -c &ndash;opt &gt; dumpfile $ tar zcvf wordpress.tar.gz /var/www/wordpress $ tar zcvf ssh.tar.gz ~/.ssh みたいな感じでバックアップ取って作業マシンにscpなりlftpなりで持ってきておく。必要なら/etc/my.cnfとか/etc/php.iniとか、ホームのドットファイル類も。 &lt;h2&gt;OS再インストール&lt;/h2&gt; VPSコントロールパネルにログインして、OS再インストール→カスタムOSインストール→ubuntu 10.04 amd64を選択→&lt;a href=&quot;http://support.sakura.ad.jp/support/vps/menu_oscustom_ubuntu.shtml&quot;&gt;カスタムOSインストールガイド ： Ubuntu 10.04&lt;/a&gt;の通り進める。10分くらいありゃ終わる。 &lt;h2&gt;SSHの設定&lt;/h2&gt; 何はともあれrootのパスワードとSSHの設定をリモートコンソールからやる。scpなりで、バックアップファイルを転送しとくこと。 [sourcecode language=&quot;text&quot; padlinenumbers=&quot;2&quot;] $ sudo passwd $ tar zxf wordpress.tar.gz $ tar zxf ssh.tar.gz $ chmod 700 .ssh $ chmod 600 .ssh/* $ sudo vi /etc/ssh/sshd_config - Port 22 + Port 適当なポート - PermitRootLogin yes + PermitRootLogin no - #PasswordAuthentication yes + PasswordAuthentication no ポートは変えなくてもいいけどお好みで。ポート変えたら/etc/servicesのSSHのとこを合わせて変更するのも忘れずに。 [sourcecode language=&ldquo;text&rdquo; padlinenumbers=&ldquo;2&rdquo;] $ sudo sshd -t でチェックして、エラーが出なければOKなので再起動 [sourcecode language=&quot;text&quot; padlinenumbers=&quot;2&quot;] $ sudo service ssh restart ここで、もう一個ターミナル開いて問題なく接続できることを必ず確認。以降は普通に端末からSSHでつないで作業 諸々設定 もうあとはお好みでどうぞなんだけど、最低やることだけ書いとく [sourcecode language=&ldquo;text&rdquo; padlinenumbers=&ldquo;2&rdquo;] $ sudo apt-get update .
+  </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2011/05/19/904.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
+  
+</article>
+
+  
+  
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2011/02/21/812.html">自分の音楽にまつわる歴史をまとめてみた</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
@@ -298,28 +326,6 @@
   </header>
   <div>
     雨模様の中、山手トンネルウォーク行ってきました。もうすぐ高速道路として運用開始なので、歩ける最後のチャンス!ということで参加してきた。 大人が行っても楽しいものだったけど、子供がきたらテンション上がるだろうなーっていうイベント盛りだくさん。白バイとかパトカーとかいたし。3kmくらいだったと思うけど、割とあっという間に歩けて、車で通るだけでは絶対気付かないようなことに気付いたり、非常に楽しかった。思ったよりは寒くもなかったしね。 撮ってきた写真はこちら イルミネーションみたいなのがあったり、CG使った説明があったり模型があったりドライビングシミュレータがあったり…金かけてんなーって感じがするイベントでした。その分、雨にもかかわらず大盛況。池尻大橋の駅があんなに人で溢れてるところはじめて見たわ…
-  </div>
-  
-</article>
-
-  
-  
-  <hr/>
-  
-  <article>
-  <header>
-    <h2><a href="http://nobu666.com/2010/02/13/802.html">カメラのレンズ買った</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2010-02-13T01:27:42&#43;09:00">
-          Feb 13, 2010
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    ずっとマクロレンズが欲しくて探してたら、ヤフオクでほぼ新品のSP AF 90mm F/2.8 Di MACRO1:1が、かなり安くで出てたので購入。 かなり近くまで寄って撮れるのと、背景のぼけ具合がいい感じなので楽しい。贅沢を言えば超音波モーターじゃないのでAFが遅いのが難点か。いやもっと言えば手ぶれ補正も付いててくれた方がもちろん嬉しいんだけども。今度は180mmクラスのマクロレンズか、18-250mmとかのオールマイティなレンズか、あるいは10mmクラスの超広角レンズが欲しい。問題は、どいつもこいつも新品ではちょっと買いにくい値段なことなんだよなぁ。 写真はflickrに随時挙げてるので、アカウント持ってる人はコンタクトに入れてやってください。
   </div>
   
 </article>

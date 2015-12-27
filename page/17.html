@@ -80,6 +80,28 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2008/04/30/619.html">G.W.前半</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2008-04-30T00:51:53&#43;09:00">
+          Apr 30, 2008
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    まぁ予想通りモンハン三昧。4/25は誕生日だったのだけども、嫁（仮）実家にてご飯食べて、義弟（仮）と共にモンハンしてますた。お陰様でG級に。しかし実力的にはまだ上級なんで、地道に村で素材集め中。火竜の紅玉が出なくて、リオソウルUの頭と脚が出来ない。出なさすぎ。 とりあえず村クエ下位終わらせようと思ったら、ラージャン2頭とか無理。集会所で嫁（仮）と行ってみたけど、まるで勝てる気がしない。なにあのスーパーサイヤ人。何なの?馬鹿なの?死ぬの?ムービー見た感じ、近接よりボウガンとかのほうが楽そうなんで、ちょっと練習したいと思う。ボウガンで睡眠爆破が定番なのかし。 下位全クリは装備整えるまで諦めて、まずは村でリオソウルU揃えたい!ってことで、村★8のキークエ終わらせた。どうしてもガルルガに太刀で勝てなかったんだが、双剣でマスターセイバー作って、強走G飲んで乱舞祭りしたらあっさり。頑張って紅玉集めます。その前に村緊急のナルガやらんとだな。3人でしかやってないので、大丈夫かなー。ナルガX見る限り、弱点は火と雷なのかな。まずは鬼神斬破刃で突撃するか。 ゲームとは関係ないけど、連休中はずっとカレー食ってた。材料はオニオンペースト・ジャガイモ・人参摺り下ろし・ケチャップ・ソース・ニンニク微塵切り・ショウガ・牛肉・ブーケガルニ・インスタントコーヒー・ホールトマト・赤ワイン・バジル・林檎摺り下ろし・セロリ摺り下ろし。肉・芋を追加するときは、一旦炒めてからさらに茹でないと芯が残るな。チーズ入れたり、カレーうどんで食べたり、もう暫く食べられそう。
+  </div>
+  
+</article>
+
+  
+  
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2008/04/19/618.html">links for 2008-04-19</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
@@ -279,34 +301,6 @@
   <footer>
     <ul class="pager">
       <li class="next"><a href="http://nobu666.com/2008/04/04/610.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
-    </ul>
-  </footer>
-  
-</article>
-
-  
-  
-  <hr/>
-  
-  <article>
-  <header>
-    <h2><a href="http://nobu666.com/2008/04/03/609.html">mixiとblogをそのまま同期させると、del.icio.usのdaily postがmixiでは役立たずになってウザそうだからどうにかする</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2008-04-03T18:27:59&#43;09:00">
-          Apr 3, 2008
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    mixiにそのまま投稿しちゃうと、本来リンクじゃないと困るものが、ただのテキストになってしまうわけで。どっちみち携帯から見てる人には無用なエントリになっちゃうし、いっそのことmixiには投稿しないようにしようと。一番てっとり早いのはP::P::MixiDiary.pm内で、単純にif文でほげほげすることなんだけど。ちょっと気が向いたのでplugin初挑戦してみた。 package Plagger::Plugin::Filter::StripDeliciousDailyPost; use strict; use base qw( Plagger::Plugin ); sub register { my($self, $context) = @_; $context-&gt;register_hook( $self, 'update.entry.fixup' =&gt; \&amp;filter, ); } sub filter { my($self, $context, $args) = @_; my $title = $args-&gt;{entry}-&gt;title; for my $entry ($args-&gt;{feed}-&gt;entries) { if ($entry-&gt;title =~ /^links for \d{4}-\d{2}-\d{2}$/i) { $context-&gt;log(info =&gt; &quot;Delete Delicious daily post entry &quot; . $entry-&gt;link); $args-&gt;{feed}-&gt;delete_entry($entry); } } } 1; __END__ やはりperlは書き慣れんな。yamlを以下のようにして動作確認。 plugins: - module: Subscription::Config config:
-  </div>
-  
-  <footer>
-    <ul class="pager">
-      <li class="next"><a href="http://nobu666.com/2008/04/03/609.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
     </ul>
   </footer>
   

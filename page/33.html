@@ -80,6 +80,28 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2006/11/30/452.html">links for 2006-11-30</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2006-11-30T23:18:21&#43;09:00">
+          Nov 30, 2006
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    ウノウラボ Unoh Labs: WEBアプリのテストに必須なツール7種 (tags: development test tools) 技術メモ帳 - zshで出来ている新感覚エディタzed (tags: shell zsh editor) Yahoo UI Libraryを拡張した超リッチなコンポーネント集:phpspot開発日誌 (tags: yahoo ui library)
+  </div>
+  
+</article>
+
+  
+  
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2006/11/29/451.html">links for 2006-11-29</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
@@ -279,34 +301,6 @@
   <footer>
     <ul class="pager">
       <li class="next"><a href="http://nobu666.com/2006/11/12/443.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
-    </ul>
-  </footer>
-  
-</article>
-
-  
-  
-  <hr/>
-  
-  <article>
-  <header>
-    <h2><a href="http://nobu666.com/2006/11/12/442.html">[memo][Gentoo] SNMP&#43;RRDtool&#43;cactiでサーバ監視</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2006-11-12T12:03:34&#43;09:00">
-          Nov 12, 2006
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    インストールまでは上手くいったけど設定に嵌って酷い目にあった。 必要なものをインストールする 以下のものが必要。 net-snmp apache php mysql rrdtool cacti さくっとemergeするわけだが、USEフラグに注意。cactiにはapache2/snmp、phpにはapache2/snmp/sockets/mysqlあたりが必要(gdとかxmlも必須なのか?よくわらかんがこの辺は/etc/make.confでデフォルトで付けている)。 初期設定 cacti用のデータベースとユーザを作成し、付属のスクリプトでテーブルを作成する。 mysqladmin -u root create cacti -p mysql cacti -u root -p &gt; /var/www/localhost/htdocs/cacti/cacti.sql mysql -u root mysql -p -e&quot;GRANT ALL ON cacti.* TO cactiuser@localhost IDENTIFIED BY 'p4ssw0rd'&quot; mysql -u root mysql -p -e&quot;flush privileges&quot; 次にphpのconfigファイルを、今設定したものに合わせて書き換える。 vi /var/www/localhost/htdocs/cacti/include/config.php $database_username = &quot;cactiuser&quot;; $database_password = &quot;p4ssw0rd&quot;; cron実行用のシステムアカウント作成とパーミッション変更 useradd -g apache -d /dev/null -s /bin/false -c cacti cacti ホームディレクトリを/dev/null、ログインシェルを/bin/falseにすることで、cactiというユーザでログインできないようにする。この辺は適当に手を抜いてrootでやったりすると怖いので忘れずに。次にcactiユーザでデータの読み書きするためにパーミションを変える。 chown -R cacti:apache /var/www/localhost/htdocs/cacti 全部変えちゃったけどrraとlogディレクトリだけでいいかも。未検証。 cronの設定 適当なタイミングでスクリプトをブン回す。とりあえず5分間隔に設定。 vi /etc/crontab */5 * * * * cacti /usr/bin/php /var/www/localhost/htdocs/cacti/cmd.php &gt; /dev/null 2&gt;&amp;1 cactiの設定 ブラウザから http://hostname/cacti/ にアクセス。デフォルトのユーザとパスワードはadmin/admin。ウィザードが始まるがNext押していけばいい。adminのパスワードは適当なものに変更する。 色々設定するところがあるが、一番下にある参考URLらへんを参照。 ここでrrdtoolからACCESS DENIEDと言われてグラフが上手く表示されなかった。よくわからんがcactiでadminじゃなくてcactiというユーザを作り、User Management→cacti→Graph PermissionsでDenyをAllowにお変更してSave。Graph Managementからなんかグラフを選んで、右上の*Turn On Graph Debug Mode.をクリックするとログが見えるようになるので押してみる。今度は&rsquo;rra/localhost_load_1min_5.rrd&rsquo;: No such file or directoryとか怒られる。 見てみると確かにrraの下が空っぽなのでダメらしい。/var/www/localhost/htdocs/cacti/cmd.phpを実行してもエラーらしきものは出ておらず。しばらくココで嵌ったが、/var/www/localhost/htdocs/cacti/poller.phpを実行すればOKだった。1回目は前のデータがないので怒られるが、もう1度やると問題なく実行された。そのあとcactiからはちゃんと見えるようになった。 参考URL Net-SNMPの設定方法 net-snmp About Rrdtool RRDtoolのすすめ cacti グラフツールcactiとは?
-  </div>
-  
-  <footer>
-    <ul class="pager">
-      <li class="next"><a href="http://nobu666.com/2006/11/12/442.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
     </ul>
   </footer>
   

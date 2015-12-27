@@ -80,6 +80,28 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2006/10/28/421.html">[memo] iptablesが使えないのでkernel再構築 &amp; sshdへのアタックをどうにかする</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2006-10-28T04:12:00&#43;09:00">
+          Oct 28, 2006
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    なんつーかね、某krからのsshdへのBrute force attacksが酷すぎる。auth.logを埋め尽くすほどのアタックを食らったので対策することに。だが普通にインストールするとiptablesが動いてくれないので、カーネル再構築に挑戦する。 別に今回はkernelのバージョンを上げたいわけではなく、単純にカーネルのオプションを変えたいだけなので、emerge gentoo-sourcesはやらない。以下、rootになって作業を行う。あとmenuconfigはscreenの中でやると表示が乱れて酷いことになるので、screenをデタッチするなり抜けるなりしてからやったほうがいい。 cd /usr/src/linux make menuconfig Confgurationが立ち上がったら、まずLoad an Alternate Configuration Fileを選ぶ。&rdquo;.config&rdquo;が入力されているはずなので、そのままOKすると現在の設定が読み込まれる。そしたら Networking --- Networking options --- Network packet filtering (replaces ipchains) --- Core Netfilter Configuration --- Netfilter Xtables support (required for ip_tables) を選択。その下に色々あるが、よくわからないならMにしといてあとでModuleとして読めるようにしておくと吉。必要なのに何もチェックしないでおくと、再度カーネル再構築が必要になって面倒なので。チェックしたら1つ戻ってIP: Netfilter Configurationの中に入る。とりあえず必須なのはIP tables support (required for filtering/masq/NAT)と、IP range match support、Packet filtering、REJECT target support、address type match support、Full NAT、MASQUERADE target supportとかそのへん。終わったらTOPまで戻って、念のため設定ファイルをなんか名前付けて保存しておいたほうがいい。 あとはその辺のサイトに書いてあるとおり、お約束でOK。 make &amp;&amp; make modules_install cp arch/x86_64/boot/bzImage /boot/なんか適当な名前 vi /boot/grub/grub.conf grub.confの設定では、元々書いてあるものを絶対に消さないこと。消しちゃうと万が一再構築したカーネルで起動できなかったときに面倒。 [sourecode lang=&ldquo;text&rdquo;] title=Gentoo Linux 2.6.17-r8 root (hd0,0) kernel /さっきbootの下にcpしたファイル名 root=/dev/sda3 vga=ask とかで問題なし。vga=askの部分はまぁお好みで。/usr/src/linux/Documentation/fb/vesafb.txtとかを参考に。基本的にはこれでrebootして、上のtitleでつけた名前を選択して起動してやればとりあえずOKなはずだ。失敗したら残しておいた方で起動して修正すべし。消してしまったお馬鹿さんはinstall cdから起動して/dev/sda1とかをmountして編集すれば戻せる。あとvgaとかvideoのオプションは、間違うと画面に何も表示されなくなるので注意。まぁリモート操作がメインならそれでもいいのかも知れないけど、何かあったときにアレなんで…心配ならaskにしておいて選択するのが間違いない。 そこまで出来たらDebian GNU/Linux 3.1(sarge)運用ノートの&lt;a href=&quot;http://www.musicae.ath.cx/diary/?200506c&amp;to=200506272#200506272&quot; target=&quot;_blank&quot;&gt;SSH Brute force attacks&lt;/a&gt;の通りに設定してから ```bash /etc/init.d/iptables save /etc/init.d/iptables start rc-update add iptables default 以上で終了。エラーが出てiptablesが動かない場合は必要なモジュールが選択漏れでコンパイルされていないとか、Mを選択したのにmodprobeなりinsmodしてない。てか俺もこの手順にたどり着くまで5回くらい再構築してこんな時間に…もう寝る!
+  </div>
+  
+</article>
+
+  
+  
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2006/10/25/420.html">[memo] postfix &#43; dovecotでSMTP AUTH &amp; IMAPなメールサーバを立ち上げる</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
@@ -275,28 +297,6 @@
       <li class="next"><a href="http://nobu666.com/2006/10/20/411.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
     </ul>
   </footer>
-  
-</article>
-
-  
-  
-  <hr/>
-  
-  <article>
-  <header>
-    <h2><a href="http://nobu666.com/2006/10/20/410.html">自宅サーバ用のPCを購入したけど初期不良で動かず(2)</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2006-10-20T00:11:26&#43;09:00">
-          Oct 20, 2006
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    火曜日くらいには届くはず、と宣っていた角田祖父地図秋葉原店。わざわざ残業しないで早めに帰路についていたのだが、待てど暮らせど荷物は届かず。昨日も来なかったので電話してみると、「あのマザーボードにはCeleronMは載らない。確かにACアダプタは初期不良だったが、無理矢理載せたことでマザーまでイカレたっぽいので一旦全返品するか、マザー交換」とのこと。今調べてみたら普通に「FSB 533 / 400MHz の Pentium / Celeron M に対応」と書いてあるのだが…謎。 まぁ担当者が不在なので、状況について明日必ず電話すると約束させたのでヨシとしよう。別に急ぐもんじゃないし。で、相変わらずOSを決めかねていたのだが、とりあえず会社で暇を見てcoLinuxにGentoo入れてみた。coLinuxでは実際のインストール手順と勝手じゃ多少違うのだが、なんとなく雰囲気はつかめた。こいつは今まで経験したUNIX系OSのどれとも異なるものだな…。設定ファイルも他のディストリとは場所が違ったりしてとまどいがち。/etc/hostname作ったら、/etc/conf.d/hostnameにしろとか怒られたりする。基本的にバイナリのパッケージ管理を行わないのですべてコンパイルするわけだが、コンパイルオプションも細かく指定できて非常に面白い。たが非常に時間がかかる。細かい指定が可能な分、他のディストリのようにデフォルトでどこにインストールされたのかよくわからん、とかいう事態は避けられるし、安定版でも人柱版でも選び放題だ。 とりあえず使えるようになるまでに時間がかかる、ということは会社でちょっと使う分には（たとえばcoLinuxなどで）向いていない。だけど自宅サーバならいくら時間がかかろうが別に問題ないわけで、逆に言えば自宅サーバでGentoo使わないとGentoo使う機会がないような気がしてきた。いや、試してみて自分好みに作っていく感覚が面白かった、ってのもあるんだけど。あとは異常なほどの公式な日本語ドキュメントの充実っぷり。これは凄い。公式サイトに、あれだけ大量で詳細なインストールガイドやらなんやらが載っているディストリは他にないのではなかろうか。 そんなわけで自宅サーバにはGentooを入れようと心を決めつつある。肝心のマシンが来ないので、これからVMwareで予行演習する。ちなみに会社マシンのcoLinuxではDebian Serge。でもUbuntuに変えようかと思い中。Debianは安定版にこだわりがあるっぽいので、俺みたいになるべく新しい版を手軽に入れたいとか言う輩にはあんまり向いてない気がしてきた。
-  </div>
   
 </article>
 

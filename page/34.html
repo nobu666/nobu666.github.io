@@ -80,6 +80,34 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2006/11/12/442.html">[memo][Gentoo] SNMP&#43;RRDtool&#43;cactiでサーバ監視</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2006-11-12T12:03:34&#43;09:00">
+          Nov 12, 2006
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    インストールまでは上手くいったけど設定に嵌って酷い目にあった。 必要なものをインストールする 以下のものが必要。 net-snmp apache php mysql rrdtool cacti さくっとemergeするわけだが、USEフラグに注意。cactiにはapache2/snmp、phpにはapache2/snmp/sockets/mysqlあたりが必要(gdとかxmlも必須なのか?よくわらかんがこの辺は/etc/make.confでデフォルトで付けている)。 初期設定 cacti用のデータベースとユーザを作成し、付属のスクリプトでテーブルを作成する。 mysqladmin -u root create cacti -p mysql cacti -u root -p &gt; /var/www/localhost/htdocs/cacti/cacti.sql mysql -u root mysql -p -e&quot;GRANT ALL ON cacti.* TO cactiuser@localhost IDENTIFIED BY 'p4ssw0rd'&quot; mysql -u root mysql -p -e&quot;flush privileges&quot; 次にphpのconfigファイルを、今設定したものに合わせて書き換える。 vi /var/www/localhost/htdocs/cacti/include/config.php $database_username = &quot;cactiuser&quot;; $database_password = &quot;p4ssw0rd&quot;; cron実行用のシステムアカウント作成とパーミッション変更 useradd -g apache -d /dev/null -s /bin/false -c cacti cacti ホームディレクトリを/dev/null、ログインシェルを/bin/falseにすることで、cactiというユーザでログインできないようにする。この辺は適当に手を抜いてrootでやったりすると怖いので忘れずに。次にcactiユーザでデータの読み書きするためにパーミションを変える。 chown -R cacti:apache /var/www/localhost/htdocs/cacti 全部変えちゃったけどrraとlogディレクトリだけでいいかも。未検証。 cronの設定 適当なタイミングでスクリプトをブン回す。とりあえず5分間隔に設定。 vi /etc/crontab */5 * * * * cacti /usr/bin/php /var/www/localhost/htdocs/cacti/cmd.php &gt; /dev/null 2&gt;&amp;1 cactiの設定 ブラウザから http://hostname/cacti/ にアクセス。デフォルトのユーザとパスワードはadmin/admin。ウィザードが始まるがNext押していけばいい。adminのパスワードは適当なものに変更する。 色々設定するところがあるが、一番下にある参考URLらへんを参照。 ここでrrdtoolからACCESS DENIEDと言われてグラフが上手く表示されなかった。よくわからんがcactiでadminじゃなくてcactiというユーザを作り、User Management→cacti→Graph PermissionsでDenyをAllowにお変更してSave。Graph Managementからなんかグラフを選んで、右上の*Turn On Graph Debug Mode.をクリックするとログが見えるようになるので押してみる。今度は&rsquo;rra/localhost_load_1min_5.rrd&rsquo;: No such file or directoryとか怒られる。 見てみると確かにrraの下が空っぽなのでダメらしい。/var/www/localhost/htdocs/cacti/cmd.phpを実行してもエラーらしきものは出ておらず。しばらくココで嵌ったが、/var/www/localhost/htdocs/cacti/poller.phpを実行すればOKだった。1回目は前のデータがないので怒られるが、もう1度やると問題なく実行された。そのあとcactiからはちゃんと見えるようになった。 参考URL Net-SNMPの設定方法 net-snmp About Rrdtool RRDtoolのすすめ cacti グラフツールcactiとは?
+  </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/11/12/442.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
+  
+</article>
+
+  
+  
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2006/11/11/440.html">links for 2006-11-11</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
@@ -280,28 +308,6 @@
   </header>
   <div>
     思い立って御茶ノ水を久々に散策。なんか宅録熱が盛り上がってね。実は昨日もヨドバシとか行ってDAWソフトを漁ってたりしたんだけども…なんせDAWソフトは高い。一応オーディオインターフェースは持っているんだけど、安い奴は結局銭失いっぽい臭いがするんだわ。それなりにまともな奴を…と思うと5万6万あたり前だし、ドラムパターンの打ち込みもキーボートとマウスではやってられないわけで、MIDIコントローラにキーボードとか専用のPADが欲しくなったりしそうな訳で。10万コースになりそうなのでDAWはやめてMTRの線で行くことに。 するってぇと、なにやら妙に薄っぺらくて小さくて安くて素敵なものが!そいつがBOSSのデジタルMTR、BR-600。うちはそんな大きくないのでLet&rsquo;s Noteより小さいってのは魅力的。しかも8chもあるし、なによりドラムパターン打ち込みようのパッドが付いてるのがイイ!これは他のMTRにはないと思われ、非常にいい感じ。しかも強く叩けば強く、弱く叩けば弱く音が出るという、もう10年前のMTRやリズムマシンしか知らない俺様にはカルチャーショック。パッド小さすぎてそんな器用なことするのは結構難しいが、1つ1つパラメータを付けていくよりは全然よさげ。 BOSSらしくCOSMも当然搭載しており、ぶっちゃけコレ1台あればそれなりにまともな音が作れてしまう。ギター用だけじゃなくてベース用のエフェクトも搭載されてた。使わないけど。USBでPCと繋いで、将来的にDAWと連携も簡単らしいのもポイントか。これはしばらく遊べそうな感じがする。 ちなみに新古品だったので、かなり綺麗で安かった。明日はさわり倒して見る所存。
-  </div>
-  
-</article>
-
-  
-  
-  <hr/>
-  
-  <article>
-  <header>
-    <h2><a href="http://nobu666.com/2006/11/04/431.html">links for 2006-11-04</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2006-11-04T23:18:36&#43;09:00">
-          Nov 4, 2006
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    FrontPage - WX310K(京ぽん２)まとめwiki (tags: mobile wx310k willcom summary wiki) CSmap Wiki - WILLCOM通話・モバイル定額・GPS位置情報 Wiki (tags: mobile willcom summary wiki) AirWiki: WILLCOM/WX310K (tags: mobile willcom wx310k summary wiki)
   </div>
   
 </article>
