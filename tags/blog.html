@@ -3,17 +3,17 @@
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-  <meta property="og:title" content=" Tags &middot;  Real Beat" />
+  <meta property="og:title" content=" Blog &middot;  Real Beat" />
   
   <meta property="og:site_name" content="Real Beat" />
-  <meta property="og:url" content="http://nobu666.com/tags.html" />
+  <meta property="og:url" content="http://nobu666.com/tags/blog.html" />
   
   
   <meta property="og:type" content="website" />
   
 
   <title>
-     Tags &middot;  Real Beat
+     Blog &middot;  Real Beat
   </title>
 
   <link rel="stylesheet" href="http://nobu666.com/css/bootstrap.min.css" />
@@ -69,7 +69,7 @@
       </a>
       
       
-      <a href="http://nobu666.com/tags.xml" class="btn-header btn-subscribe hidden-xs">
+      <a href="http://nobu666.com/tags/blog.xml" class="btn-header btn-subscribe hidden-xs">
         <i class="fa fa-rss" aria-hidden="true"></i>
         &nbsp;Subscribe
       </a>
@@ -78,27 +78,35 @@
   </header>
   <main class="container">
 
+<section class="article-list">
+  <h1>Blog</h1>
+  
+  <hr/>
+  <article>
+  <header>
+    <h2><a href="http://nobu666.com/2015/12/31/1022.html">WerckerやめてCircleCIに移行</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2015-12-29T02:30:40&#43;09:00">
+          Dec 29, 2015
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    Wercker から CircleCI へ WordPressからGitHub Pages + hugoに移行した で書いたとおり GitHub と Hugo で Blog 書くことにしたものの、Wercker の UI がなんか微妙だったのと、仕事で CircleCI 使ってるのでいっその事移行することにした。 circle.yml こんな感じに machine: timezone: Asia/Tokyo checkout: post: - git submodule update --init --recursive dependencies: pre: - go get -v github.com/spf13/hugo - git config --global user.name &quot;nobu666&quot; - git config --global user.email &quot;ogata.nobu@gmail.com&quot; test: override: - echo deployment: master: branch: master commands: - git clone git@github.com:nobu666/nobu666.github.io.git public - hugo - cd public &amp;&amp; git add .
+  </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2015/12/31/1022.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
+  
+</article>
 
-<section class="taxonomy-terms">
-  <h1>Tags</h1>
-  <ul>
-    
-    
-    <li><a href="http://nobu666.com//tags/blog">blog</a> 1</li>
-    
-    <li><a href="http://nobu666.com//tags/itamae">itamae</a> 1</li>
-    
-    <li><a href="http://nobu666.com//tags/mobile">mobile</a> 1</li>
-    
-    <li><a href="http://nobu666.com//tags/osx">osx</a> 1</li>
-    
-    <li><a href="http://nobu666.com//tags/provisioning">provisioning</a> 1</li>
-    
-    <li><a href="http://nobu666.com//tags/tech">tech</a> 1</li>
-    
-    <li><a href="http://nobu666.com//tags/tips">tips</a> 1</li>
-    
-  </ul>
+  
 </section>
   </main>
   <footer class="container global-footer">

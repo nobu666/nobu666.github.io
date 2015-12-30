@@ -80,6 +80,34 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2015/12/31/1022.html">WerckerやめてCircleCIに移行</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2015-12-29T02:30:40&#43;09:00">
+          Dec 29, 2015
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    Wercker から CircleCI へ WordPressからGitHub Pages + hugoに移行した で書いたとおり GitHub と Hugo で Blog 書くことにしたものの、Wercker の UI がなんか微妙だったのと、仕事で CircleCI 使ってるのでいっその事移行することにした。 circle.yml こんな感じに machine: timezone: Asia/Tokyo checkout: post: - git submodule update --init --recursive dependencies: pre: - go get -v github.com/spf13/hugo - git config --global user.name &quot;nobu666&quot; - git config --global user.email &quot;ogata.nobu@gmail.com&quot; test: override: - echo deployment: master: branch: master commands: - git clone git@github.com:nobu666/nobu666.github.io.git public - hugo - cd public &amp;&amp; git add .
+  </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2015/12/31/1022.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
+  
+</article>
+
+  
+  
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2015/12/26/1020.html">2015年を振り返る</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
@@ -286,28 +314,6 @@
   </header>
   <div>
     最近コップ本一回読んだまま放置していたScalaをまた始めたので、とりあえず習うより慣れろの方針でProject Euler始めた。数学をかなり忘れているので、アルゴリズムを調べながらまったり進めようかと。コードはgithubにまとめていく所存。
-  </div>
-  
-</article>
-
-  
-  
-  <hr/>
-  
-  <article>
-  <header>
-    <h2><a href="http://nobu666.com/2013/03/27/991.html">Solr勉強会第10回で話をしてきました</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2013-03-27T01:53:18&#43;09:00">
-          Mar 27, 2013
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    Solr勉強会第10回に参加して、話をさせて頂きました。@johtaniさん、主催お疲れ様でした。また、会場を提供して頂き、ピザとビールをたらふくごちそうして頂いたVOYAGE GROUP様ありがとうございました。 発表させていただいた資料は以下になります。 Solr勉強会第10回 from Nobutoshi Ogata 歴史と銘打ったからにはもう少し古い時代の話を盛り込みたかったのですが、資料が現存していなかったりなんだりで、あまり突っ込んだ話をできませんでした。ただまぁSolr勉強会でSennaやTritonnの話を細かくしないでもいいかなということで、Luceneを使っていたときの話とSolrに乗り換えた話をメインにさせてもらいました。関口さんのプレゼンのあとだったので、これは空気的に俺が喋っていいのだろうかと思って内心焦ったのですがｗ 事例のひとつとしてなにかの参考なれば幸いです。 他の方の発表がどういう感じだったのかという辺りは、『第10回Solr勉強会 at VOYAGE GROUPに行ってきました』『第10回Solr勉強会を主催しました。#SolrJP』このあたりをご参照いただければ。 懇親会でもいろいろな方とお話しさせていただいて大変刺激を受けましたので、検索周りでなにか新しいことにチャレンジする機会があればぜひフィードバックしていきたいな思いました。Solr CloudやらElastic Searchやら最近おもしろいものが出てきていますし、Solr単体でもまだ色々工夫のしがいがあるところだと思いますので精進しようと思います。参加されたみなさまお疲れ様でした。
   </div>
   
 </article>

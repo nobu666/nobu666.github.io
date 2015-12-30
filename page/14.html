@@ -80,6 +80,28 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2008/11/07/656.html">links for 2008-11-06</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2008-11-07T09:06:48&#43;09:00">
+          Nov 7, 2008
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    ついに発見か？ 火星探査機「フェニックス」が撮影した氷のような白い層 - Technobahn (tags: universe news) ウェブ制作に便利そうなチートシート16選 | IDEA*IDEA (tags: cheatsheets list) 株式会社はてな主催・「はてなブックマークリニューアル発表会」レポート - 萌え理論Blog (tags: hatena sbm)
+  </div>
+  
+</article>
+
+  
+  
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2008/11/05/655.html">links for 2008-11-04</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
@@ -280,28 +302,6 @@
   </header>
   <div>
     jython2.2でicu4jを試したかったんだけど、どうにもうまくいかない。 &gt;&gt;&gt; from com.ibm.icu.text import Transliterator &gt;&gt;&gt; from java.lang import String &gt;&gt;&gt; print Transliterator.getInstance(&quot;Fullwidth-Halfwidth&quot;).transliterate(String(u&quot;テスト&quot;, &quot;UTF-8&quot;)) ??? なんだよぅ…普通にJavaで書いてやるとうまくいくんだけど。表示時におかしいのかとファイルにリダイレクトしてみたり、いきなりprintしないで変数に入れたりいろいろ試してて、ふとtypeしてみたら &lt;type 'str'&gt; とな。&rsquo;\uff83\uff7d\uff84&rsquo;とかいうだたの文字列になってて、ちゃんとUnicodeになってないみたいだ。んんん…
-  </div>
-  
-</article>
-
-  
-  
-  <hr/>
-  
-  <article>
-  <header>
-    <h2><a href="http://nobu666.com/2008/10/14/644.html">RTL8111/8168B PCI Express Gigabit Ethernet controllerはCent OS 5で認識されない</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2008-10-14T17:25:48&#43;09:00">
-          Oct 14, 2008
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    XC Cube EZ965にCent OS 5入れたんだけど、NICが認識されずにはまった。まぁそれ以前に、オンボードUSB殺さないとインストールすらできなかったんだけども。以下、動作させるまでの手順。 USB殺してなんとかインストールしたものの、/etc/sysconfig/network-scripts/ifcfg-eth0 が存在しない。とりあえず作ってみる。 DEVICE=eth0 ONBOOT=yes IPADDR=x.x.x.x NETMASK=x.x.x.x GATEWAY=x.x.x.x これでservice network startしてみるも、eth0: Device eth0 does not seem to be present, delaying initializationと怒られる。lspci|grep Ethernetとかすると見えてるので、ドライバがないことがわかった。Networkつながってないし、USB殺してるしで困ったわけだが、仕方ないので他のPCでドライバをダウンロードしてCD-Rに焼いた。 mkdir /mnt/cdrom mount /dev/cdrom /mnt/cdrom cp /mnt/cdrom/r8168-8.008.00.tar.bz2 . tar jxf r8168-8.008.00.tar.bz2 cd r8168-8.008.00 make clean modules make install depmod -a insmod ./src/r8168.ko lsmod | grep r8168 ifconfig eth0 up umount /mnt/cdrom これで無事にeth0があがり、通信できるようになった。やれやれ。
   </div>
   
 </article>
