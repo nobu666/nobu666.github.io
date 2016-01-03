@@ -80,6 +80,34 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2008/10/27/646.html">WordPressをAutoPagerizeとはてなスターに対応させる</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2008-10-27T13:08:57&#43;09:00">
+          Oct 27, 2008
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    前のテーマは最初からAutoPagerizeに対応してたので気にしてなかったんだが、テーマ変えてから効かなくなってたので対応させた。ついでにはてスタも復活させた。 まずAutoPagerize対応。wp-includes/link-template.phpのfunction next_posts_link部分とfunction previous_posts_link部分に、rel=&ldquo;next&rdquo;を追加する。 function next_posts_link($label='Next Page &amp;raquo;', $max_page=0) { global $paged, $wp_query; if ( !$max_page ) { $max_page = $wp_query-&gt;max_num_pages; } if ( !$paged ) $paged = 1; $nextpage = intval($paged) + 1; if ( (! is_single()) &amp;&amp; (empty($paged) || $nextpage &lt;= $max_page) ) { echo '&lt;a rel=&quot;next&quot; href=&quot;'; next_posts($max_page); echo '&quot;&gt;'. preg_replace('/&amp;([^#])(?![a-z]{1,8};)/', '&amp;#038;$1', $label) .'&lt;/a&gt;'; } } ↑こんな風に。echo &lsquo;&lt;a rel=&ldquo;next&rdquo; href=&ldquo;&lsquo;; の行だけ変更すればおｋ。telnetなりSSHなりで入って直接編集するなり、ローカルで編集してFTPするなりお好きなように。あとはテーマ側の話なので、Blogにログインして、テーマ編集。 テーマによって多少違うので一概には言えないのだが、WordPressのテーマは大体以下のような感じになっていることが多いはず。 &lt;?php get_header(); ?&gt; &lt;div id=&quot;content&quot;&gt;
+  </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2008/10/27/646.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
+  
+</article>
+
+  
+  
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2008/10/17/645.html">Jythonの日本語処理がよくわからない</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
@@ -274,28 +302,6 @@
   </header>
   <div>
     8月8日に入籍しました。別に北京オリンピックとは関係ないのですが、たまたま。2008/8/8で覚えやすいし、いいかなーと。 当日は身内だけでホームパーティー的なことをしてもらいました。ちなみに式や披露宴はしない予定。近いうちに写真は取りにいこうと思うけど。あと結婚指輪もちゃんとしたのを買わないと…。 既に一緒に住んでるので、別段変わりはないんだけども、一応ご報告ということで。これからもよろしくお願いします。
-  </div>
-  
-</article>
-
-  
-  
-  <hr/>
-  
-  <article>
-  <header>
-    <h2><a href="http://nobu666.com/2008/07/14/632.html">記憶が激しく飛んだ</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2008-07-14T21:24:30&#43;09:00">
-          Jul 14, 2008
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    土曜日に中学の同期連中と飲んだわけだが、二次会後半の記憶が全くありません。全く。ふと気がつくと25:30くらいで、上野で飲んでいたはずなのに何故か俺は池袋にいたwwwww 24時頃、電話がきて会話したようだがこの辺も全く記憶なし。すげーぜ人間。どうも俺は突如行方不明になったらしく…電話では全然普通に「今帰ってるとこ」とか言ってたらしい。知らねぇしwwwww 悩んでも仕方ないので、とりあえず池袋で漫画喫茶に入り、5時頃まで寝て帰った。エアコン効き過ぎで風邪引くかと思った。つかさっきスイカの履歴を見てみたら、上野からいったん渋谷の改札を通ってから池袋に行ってたことが判明。謎すぎる… 幸い盗まれたものもなくした物もないのでよかったが。テンション高いときの飲みは危ないなぁまじで…一次会の時点で飲みのペース凄かったからな。ピッチャー7回目までは数えてたんだがなw
   </div>
   
 </article>

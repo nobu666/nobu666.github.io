@@ -80,6 +80,34 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2006/10/30/424.html">[memo] GentooでUPS(APC ES 500)を使う</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2006-10-30T01:29:11&#43;09:00">
+          Oct 30, 2006
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    Amazonで\7,000ちょっとという値段だったので、購入したのが届いた。流石に24時間稼働だとUPSがないと怖い。今年の雷で瞬断も多くあったので。付属のPowerCuteはWindowsとMacOS Xと商用Linuxにしか対応していないので自力でどうにかする方法をメモ。 準備と接続、認識確認 emerge apcupsd なにはなくともコレがないと始まらない。とりあえずインストールしたら一旦シャットダウンしてコンセントをUPSにつなぎ変え、付属のUSB通信ケーブルでUPSとサーバを接続して再起動。再起動したらdmesgを見てサーバがES500を認識しているか確認。 usbcore: registered new driver hiddev hiddev0: USB HID v1.10 Device [APC APC ES 500 FW:803.p6.A USB FW:p6] on usb-0000:00:10.2-2 上記のようなメッセージがあれば問題ない。が、 es500 hid device not claimed とか出てたら認識していない。俺の場合は思い切り認識していなかった。要するにまたカーネル再構築。だがもう手慣れたモンなのでサクサクと再構築する。こういうときはマシンパワーがあると非常に楽だ。お約束の以下の呪文を唱える。 cd /usr/src/linux make menuconfig そして今の設定をLOADして、以下のところにチェックを付けて保存。 Device Drivers ---&gt; USB Support ---&gt; /dev/hiddev raw HID device support またお約束の呪文。 make &amp;&amp; make modules_install cp arch/x86_64/boot/bzImage /boot/なんか適当な名前 そしたら/boot/grub/grub.confを編集して再起動すればいい。今度はちゃんと認識されているはず。念のためapcaccess statusとやってエラーが出ないことを確認する。 設定と動作確認 次はapcupsdの設定を行う。 cat /etc/apcupsd/apcupsd.conf UPSCABLE usb UPSTYPE usb DEVICE LOCKFILE /var/lock ONBATTERYDELAY
+  </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/10/30/424.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
+  
+</article>
+
+  
+  
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2006/10/29/423.html">[修正版][memo] postfix &#43; dovecotでSMTP AUTH &amp; IMAPなメールサーバを立ち上げる</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
@@ -280,28 +308,6 @@
   </header>
   <div>
     新しい机と本棚のおかげで床の上にものが殆どなくなった。やはり整理されていると気持ちがいいので、最近の週末は掃除ばかりしている。とりあえず部屋の整理・掃除は殆ど終わったので、今週はキッチンと風呂場に手を付けた。ていうか要はサーバのインストール中なので、コンパイルの待ち時間に掃除しようってだけのことだ。キッチンは特に汚れが酷く、吹きこぼれて焦げがびっしりついてたりする。 とりあえずコンロを出来るだけバラして熱湯につける。しばらく置いてからクレンザー付けて焦げ取り用のスポンジで擦ったら、そこそこ綺麗になった。全部の焦げは取れなかったが…まぁヨシとしよう。一番酷いのは換気扇の金属フィルター。ここに住んで5年以上経っているが、実はココは一度も掃除したことがないという禁断の地なのだ。ホコリが詰まってるなーとは思っていたのだが、はずしてみるとそれはただのホコリではなく5年分の油が染み込んだホコリだということが判明……すげーヌルヌルで気持ち悪い。やっぱり熱湯につけて放置し、油汚れ用の洗剤をざぶざぶかけてまた放置。放置中はシンクとか壁とかをクレンザーで掃除。フィルターのほうは熱湯→洗剤コンボを3回くらい繰り返すと、だいぶ取れたっぽい感じになった。あとは歯ブラシでガシガシ擦ってやることで綺麗になった。流石にもう2度とゴメンなので、換気扇用の使い捨てフィルターを買ってきて貼り付けた。大して料理しないから要らないと思っていたのだが、現実は甘くなかったってコトだ。 掃除しつつ洗濯したり布団を干したりもしていたのだが、掃除が一通り終わってサーバの設定に夢中になってて、ふとベランダを見たら床が濡れている。気が付かないうちに雨が振っていたようで…干しっぱなしの布団はびしょびしょに!!小雨だったのでまだマシだが、これは切ない。羽毛布団なので絞ったりとか乱暴なことをするわけにも行かず、ただいま風呂場で乾燥中。まぁそろそろ冬用の布団に切り替えるころなので、クリーニングに出す時期と言えば時期なのだが。
-  </div>
-  
-</article>
-
-  
-  
-  <hr/>
-  
-  <article>
-  <header>
-    <h2><a href="http://nobu666.com/2006/10/22/413.html">[memo] Gentooインストールメモ</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2006-10-22T20:04:41&#43;09:00">
-          Oct 22, 2006
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    特に書くことないほどあっさり終了。LiveCDを焼いてそいつでブートし、デスクトップ画面が出てきたら&rdquo;Gentoo Linux installer&rdquo;をダブルクリックして指示に従っていくだけ。つかパソコンふぉあ障害者ず Gentoo Linux 2006.0(インストール-LiveCD-)を参考に。変えたところはIPアドレスとかその辺のネットワーク設定周りと、ステージを3からにしたのと、CFLAGで-O3にしたぐらい。インストールが終わったら上部のメニューからrebootしてCD抜いて終わり。 pingして外に繋がることを確認したら emerge --sync してから、必要なものをガンガン入れるんだが、その前に /etc/init.d/hdparm start してDMAを有効にしておく。んでいい加減sshで繋いで作業したいので nano -w /etc/ssh/sshd_config で適切にsshを設定。 PermitRootLogin no RSAAuthentication yes PubkeyAuthentication yes AuthorizedKeysFile .ssh/authorized_keys PasswordAuthentication no PermitEmptyPasswords no ChallengeResponseAuthentication no とかそんな感じに。 クライアントで鍵セットを作って、USBメモリでサーバに公開鍵を置く。マウントするのは mkdir /mnt/usbmemory mount -t vfat /dev/sdb1 /mnt/usbmemory で、/mnt/usbmemoryが見えるようになる。後は公開鍵を置いてパーミッション変えればOK。 mkdir ~/.ssh cat /mnt/usbmemory/id_rsa &gt;&gt; ~/.ssh/authorized_keys chmod 700 ~/.ssh chmod 600 ~/.ssh/authorized_keys クライアントからsshで繋いでrootになって、ひたすらemerge -av パッケージ名。入れたパッケージは以下の通り。 管理系:gentoolkit/htop/traceroute/tcpdump デーモン系:apache2/proftpd/mysql/subversion/trac/samba ユーティリティ系:sudo/screen/ftp/zsh/w3m/svk/lv/nkf 言語:python/ruby/jdk/groovy keywordでmaskされてるとか怒られるやつは ACCEPT_KEYWORDS=&quot;~amd64&quot; emerge -av パッケージ名 で入る。色々入れたり消したりしてるうちに依存関係がおかしくなったりしたときは、revdep-rebuildする。特定のライブラリに依存するもの、とかの指定もできる。 あとはapacheやらsambaやらの設定だな。
   </div>
   
 </article>

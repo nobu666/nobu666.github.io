@@ -80,6 +80,28 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2008/11/09/658.html">links for 2008-11-08</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2008-11-09T09:04:29&#43;09:00">
+          Nov 9, 2008
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    「悪魔の燻製講座」‐ニコニコ動画(秋) (tags: niconico cooking funny) 【三國無双 MAD】5大軍師でプリキュア５、スマイル go go!‐ニコニコ動画(秋) (tags: niconico mad)
+  </div>
+  
+</article>
+
+  
+  
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2008/11/08/657.html">links for 2008-11-07</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
@@ -279,34 +301,6 @@
   <footer>
     <ul class="pager">
       <li class="next"><a href="http://nobu666.com/2008/10/30/649.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
-    </ul>
-  </footer>
-  
-</article>
-
-  
-  
-  <hr/>
-  
-  <article>
-  <header>
-    <h2><a href="http://nobu666.com/2008/10/27/646.html">WordPressをAutoPagerizeとはてなスターに対応させる</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2008-10-27T13:08:57&#43;09:00">
-          Oct 27, 2008
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    前のテーマは最初からAutoPagerizeに対応してたので気にしてなかったんだが、テーマ変えてから効かなくなってたので対応させた。ついでにはてスタも復活させた。 まずAutoPagerize対応。wp-includes/link-template.phpのfunction next_posts_link部分とfunction previous_posts_link部分に、rel=&ldquo;next&rdquo;を追加する。 function next_posts_link($label='Next Page &amp;raquo;', $max_page=0) { global $paged, $wp_query; if ( !$max_page ) { $max_page = $wp_query-&gt;max_num_pages; } if ( !$paged ) $paged = 1; $nextpage = intval($paged) + 1; if ( (! is_single()) &amp;&amp; (empty($paged) || $nextpage &lt;= $max_page) ) { echo '&lt;a rel=&quot;next&quot; href=&quot;'; next_posts($max_page); echo '&quot;&gt;'. preg_replace('/&amp;([^#])(?![a-z]{1,8};)/', '&amp;#038;$1', $label) .'&lt;/a&gt;'; } } ↑こんな風に。echo &lsquo;&lt;a rel=&ldquo;next&rdquo; href=&ldquo;&lsquo;; の行だけ変更すればおｋ。telnetなりSSHなりで入って直接編集するなり、ローカルで編集してFTPするなりお好きなように。あとはテーマ側の話なので、Blogにログインして、テーマ編集。 テーマによって多少違うので一概には言えないのだが、WordPressのテーマは大体以下のような感じになっていることが多いはず。 &lt;?php get_header(); ?&gt; &lt;div id=&quot;content&quot;&gt;
-  </div>
-  
-  <footer>
-    <ul class="pager">
-      <li class="next"><a href="http://nobu666.com/2008/10/27/646.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
     </ul>
   </footer>
   

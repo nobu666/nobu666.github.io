@@ -80,6 +80,28 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2006/10/22/413.html">[memo] Gentooインストールメモ</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2006-10-22T20:04:41&#43;09:00">
+          Oct 22, 2006
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    特に書くことないほどあっさり終了。LiveCDを焼いてそいつでブートし、デスクトップ画面が出てきたら&rdquo;Gentoo Linux installer&rdquo;をダブルクリックして指示に従っていくだけ。つかパソコンふぉあ障害者ず Gentoo Linux 2006.0(インストール-LiveCD-)を参考に。変えたところはIPアドレスとかその辺のネットワーク設定周りと、ステージを3からにしたのと、CFLAGで-O3にしたぐらい。インストールが終わったら上部のメニューからrebootしてCD抜いて終わり。 pingして外に繋がることを確認したら emerge --sync してから、必要なものをガンガン入れるんだが、その前に /etc/init.d/hdparm start してDMAを有効にしておく。んでいい加減sshで繋いで作業したいので nano -w /etc/ssh/sshd_config で適切にsshを設定。 PermitRootLogin no RSAAuthentication yes PubkeyAuthentication yes AuthorizedKeysFile .ssh/authorized_keys PasswordAuthentication no PermitEmptyPasswords no ChallengeResponseAuthentication no とかそんな感じに。 クライアントで鍵セットを作って、USBメモリでサーバに公開鍵を置く。マウントするのは mkdir /mnt/usbmemory mount -t vfat /dev/sdb1 /mnt/usbmemory で、/mnt/usbmemoryが見えるようになる。後は公開鍵を置いてパーミッション変えればOK。 mkdir ~/.ssh cat /mnt/usbmemory/id_rsa &gt;&gt; ~/.ssh/authorized_keys chmod 700 ~/.ssh chmod 600 ~/.ssh/authorized_keys クライアントからsshで繋いでrootになって、ひたすらemerge -av パッケージ名。入れたパッケージは以下の通り。 管理系:gentoolkit/htop/traceroute/tcpdump デーモン系:apache2/proftpd/mysql/subversion/trac/samba ユーティリティ系:sudo/screen/ftp/zsh/w3m/svk/lv/nkf 言語:python/ruby/jdk/groovy keywordでmaskされてるとか怒られるやつは ACCEPT_KEYWORDS=&quot;~amd64&quot; emerge -av パッケージ名 で入る。色々入れたり消したりしてるうちに依存関係がおかしくなったりしたときは、revdep-rebuildする。特定のライブラリに依存するもの、とかの指定もできる。 あとはapacheやらsambaやらの設定だな。
+  </div>
+  
+</article>
+
+  
+  
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2006/10/22/412.html">自宅サーバ用のPCを購入したけど初期不良で動かず(3)</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
@@ -293,28 +315,6 @@
       <li class="next"><a href="http://nobu666.com/2006/10/13/404.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
     </ul>
   </footer>
-  
-</article>
-
-  
-  
-  <hr/>
-  
-  <article>
-  <header>
-    <h2><a href="http://nobu666.com/2006/10/12/403.html">links for 2006-10-12</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2006-10-12T23:19:10&#43;09:00">
-          Oct 12, 2006
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    スラッシュドット ジャパン | PostgreSQL用の日本語対応全文検索エンジン｢Ludia」 (tags: news oss search database postgresql senna fulltext japanese) mixCipher - mixi Diary Cryptographer (tags: bookmarklet mixi tools cipher) PFU、輪島塗キートップの50万円キーボード かっこいいが、いくら何でも高すぎる… (tags: keyboard hardware hhk) ITmedia Biz.ID：携帯から見られる「Googleニュース」が登場 (tags: google mobile news)
-  </div>
   
 </article>
 

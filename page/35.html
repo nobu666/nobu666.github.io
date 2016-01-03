@@ -80,6 +80,28 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2006/11/06/434.html">links for 2006-11-06</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2006-11-06T23:18:25&#43;09:00">
+          Nov 6, 2006
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    Cookie仕様 日本語訳 - futomi's CGI Cafe (tags: browser cookie specifications japanese) Microsoft XMLHTTP ActiveX Control Code Execution Vulnerability - Advisories - Secunia Extremely critical (tags: security microsoft windows activex vulnerability) 「OSのバグを毎日1件公開する」プロジェクトが始動，第1弾はMac関連のバグ：ITpro (tags: news security os) ITmedia エンタープライズ：新たなMac OS Xウイルスが出現――Macユーザーも対策を (tags: security virus mac) え？鏡を使わずに自分で自分の鼻毛を見る方法？ 自らの目で自らの鼻毛を見ることができる確率は10万分の1 (tags: neta)
+  </div>
+  
+</article>
+
+  
+  
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2006/11/05/433.html">links for 2006-11-05</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
@@ -281,34 +303,6 @@
   <div>
     最速インターフェース研究会 :: Gmailで未読のみ表示を切り替えるGreasemonkeyスクリプト (tags: google gmail greasemonkey) 304 Not Modified: 個人ニュースサイトをPlaggerで見よう＆Plagger役立ちリンク集 (tags: plagger links)
   </div>
-  
-</article>
-
-  
-  
-  <hr/>
-  
-  <article>
-  <header>
-    <h2><a href="http://nobu666.com/2006/10/30/424.html">[memo] GentooでUPS(APC ES 500)を使う</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2006-10-30T01:29:11&#43;09:00">
-          Oct 30, 2006
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    Amazonで\7,000ちょっとという値段だったので、購入したのが届いた。流石に24時間稼働だとUPSがないと怖い。今年の雷で瞬断も多くあったので。付属のPowerCuteはWindowsとMacOS Xと商用Linuxにしか対応していないので自力でどうにかする方法をメモ。 準備と接続、認識確認 emerge apcupsd なにはなくともコレがないと始まらない。とりあえずインストールしたら一旦シャットダウンしてコンセントをUPSにつなぎ変え、付属のUSB通信ケーブルでUPSとサーバを接続して再起動。再起動したらdmesgを見てサーバがES500を認識しているか確認。 usbcore: registered new driver hiddev hiddev0: USB HID v1.10 Device [APC APC ES 500 FW:803.p6.A USB FW:p6] on usb-0000:00:10.2-2 上記のようなメッセージがあれば問題ない。が、 es500 hid device not claimed とか出てたら認識していない。俺の場合は思い切り認識していなかった。要するにまたカーネル再構築。だがもう手慣れたモンなのでサクサクと再構築する。こういうときはマシンパワーがあると非常に楽だ。お約束の以下の呪文を唱える。 cd /usr/src/linux make menuconfig そして今の設定をLOADして、以下のところにチェックを付けて保存。 Device Drivers ---&gt; USB Support ---&gt; /dev/hiddev raw HID device support またお約束の呪文。 make &amp;&amp; make modules_install cp arch/x86_64/boot/bzImage /boot/なんか適当な名前 そしたら/boot/grub/grub.confを編集して再起動すればいい。今度はちゃんと認識されているはず。念のためapcaccess statusとやってエラーが出ないことを確認する。 設定と動作確認 次はapcupsdの設定を行う。 cat /etc/apcupsd/apcupsd.conf UPSCABLE usb UPSTYPE usb DEVICE LOCKFILE /var/lock ONBATTERYDELAY
-  </div>
-  
-  <footer>
-    <ul class="pager">
-      <li class="next"><a href="http://nobu666.com/2006/10/30/424.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
-    </ul>
-  </footer>
   
 </article>
 

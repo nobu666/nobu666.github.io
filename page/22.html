@@ -80,6 +80,28 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2008/02/29/570.html">4年に1度しかない日なので書いておく</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2008-02-29T23:46:09&#43;09:00">
+          Feb 29, 2008
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    2月29日記念カキコ モンスターハンターポータブル 2nd G(MHP2G)、買うかと聞いたら「当然でしょ」的な感じだったので、帰りにヨドバシで2つ予約。前作は、嫁（仮）のほうが進みまくっていた。弟パワー？ しかし1つずつ買わなきゃいけないのは、非効率っつーか無駄だよなー。家族登録すると2個目が半額、とかいう制度ができないものか。 モンスターハンターポータブル 2nd Gposted with amazlet on 08.03.04カプコン (2008/03/27) 売り上げランキング: 3 Amazon.co.jp で詳細を見る
+  </div>
+  
+</article>
+
+  
+  
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2008/02/29/569.html">links for 2008-02-29</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
@@ -292,28 +314,6 @@
   </header>
   <div>
     dmesg|grep eth してみたら、eth0からeth1にrenameしたよとか書いてあったorz ので、単純に ln -sf /etc/init.d/net.lo /etc/init.d/net.eth1 sed -i 's/eth0/eth1/g' /etc/conf.d/net /etc/init.d/net.eth1 start これだけでした。あとはルータ側でポート開けたり、スタティックルーティングしたりして、EM-ONE使って外から繋がることを確認。が、今度はメールが送れなくてしばし嵌った。プロバイダが変わったから、単純に/etc/postfix/main.cfのrelayhostを書き換えて、smtp_sasl_password_mapsで指定したファイルにSMTPホスト名とユーザ名とパスワード書いて、そいつをpostmapして/etc/init.d/postfix restartで終了だと思っていたのだが。 色々見直してmain.cfのrelayhostと、postmapするファイルの書き方を example.com:587 やら、[example.com]:587 やら試すもダメ。master.cf見直したりしても結局わからず。しかたないのでmain.cfの smtp* を全部虱潰しに調べるも特に以上は見あたらず。半ば諦めつつWebを検索してたらVine3.2のPostfixでSMTP認証ってエントリで →main.cf へ smtp_sasl の設定を追加。 smtpd_sasl じゃないので、要注意。 ……もしやと思って見てみたら、smtpd_sasl_auth_enable = yes という記述はあったけども、 smtp_sasl_auth_enable = yes がなかったのが原因でしたとさ…。疲れたわ。
-  </div>
-  
-</article>
-
-  
-  
-  <hr/>
-  
-  <article>
-  <header>
-    <h2><a href="http://nobu666.com/2008/02/18/556.html">ようやく落ち着いてきた…かな？</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2008-02-18T22:27:18&#43;09:00">
-          Feb 18, 2008
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    引っ越してから丸一週間、多少落ち着いてきた。まだまだ片付け途中だけど…ようやく早起きにも慣れつつある感じか。東京都とは名ばかりの郊外故に、車がやっぱり必要な予感がしている。が、とりあえずはドンキでチャリ買って我慢している。イトーヨーカドーが遠い。やっぱ軽自動車買おうかしら…。一人なら原付でもいいんだけどね。家の前の通り沿いに、自動車屋がやけに多すぎるのはやっぱ必須だからなのだろう、きっと。あの通り沿い、殆どの自動車メーカーの店があるんじゃなかろうか（笑 いやーしかし思ったより通勤がしんどいわけで。電車に乗ってる時間が1:40くらいで、駅までチャリで行く時間＋駐輪場に止める時間加えて大体2時間。電車の移動距離は片道50km超えていた…。もの凄い勢いで読書が進みまくりです。来週末は図書館行ってこよ。往復で4時間近くある訳だから、薄い単行本だと読み終わっちゃうよ。なんか有効な時間の使い方を考えないといかんな。 さて家のほうは、一応PCはセッティングしたものの、サーバ環境がまだ復活できず。なんかNIC認識しなくなって悲惨なことになってる。これはもうダメかもわからんね…。いっそのことGentooやめてUbuntuにでもしようかなもう。使われるより使いたいしな。自宅サーバのメールアドレス、結構使ってるからなくなっちゃうと困るんだ。早めに復活させないと。 [追記memo] カーネルからNICが認識されてるかdmesg見る moduleがloadされてない? modprobeとかinsmodとか lspciとか見てみる こんなの参照
   </div>
   
 </article>

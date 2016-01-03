@@ -80,6 +80,34 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2005/11/24/253.html">links for 2005-11-24</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2005-11-24T21:21:04&#43;09:00">
+          Nov 24, 2005
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    VS.Php IDE Visual Studio .Net - Jcx.Software (tags: .net visualstudio ide php) BIGLOBE、迷惑メール対策に送信ドメイン認証技術"SPF"を導入 (MYCOM PC WEB) (tags: security mail spf) ラベルとテキストボックスのきれいな並べ方とは！？ ? ＠IT (tags: .net visualstudio) Ajaxをコーディングレスで作成するAjaxBuilder - ＠IT (tags: programming ajax library) text-hatena.js 公開 [tech.nitoyon.com] (tags: hatena perl javascript library) 高木浩光＠自宅の日記 - 攻撃者視点ではなく開発者視点での解説を (tags: security web programming) はてなダイアリー - del.icio.usとは (tags: del.icio.us tips link) Ajax による Wikipedia インクリメンタルサーチ (tags: wikipedia ajax search) Feed2gmail - Misc CS (tags: rss google
+  </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2005/11/24/253.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
+  
+</article>
+
+  
+  
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2005/11/22/252.html">links for 2005-11-22</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
@@ -274,28 +302,6 @@
   </header>
   <div>
     今のプロジェクトでは自分のWindowsマシンに、TomcatとMySQLを入れてすべてローカルで開発している。ソース管理はLinuxサーバでSubversionを使っている。が、本番はLinuxで運用（最初はサーバ12台で運用予定）するので、環境の作り方を先に明確にしておく必要がある。 明日、発注先の人に「とりあえず今ここまで出来てます」というデモを行うため、ついでにLinuxサーバを立てて運用環境により近い形でデモ環境を作ることにした。みんなコーディングで忙しいので、環境を作るのは新人君に任せることにした。とは言っても、空いているマシンにはすでにJREもTomcatもMySQLもインストール済みだったため、それらサーバの設定ファイル書き換えて、今回作ったアプリケーションの設定ファイルを書き換えて、データベース作って、コンパイルしてclassファイルを設置すれば終了だ。普通にやれば小一時間で終わる作業だ。 14:30 新人に作業を依頼。「なぜそんなことをする必要があるのか」「なぜ君に頼んだのか」「何をすればいいのか」を口頭で説明し、期限は明日の15:00なのでわからないことはすぐに聞くように指示。 17:00 様子を見に行くと、まだローカルの環境を作っている。何故かSubversionから持ってきたファイル一式を、Eclipseのワークスペースにコピーしてプロジェクトを作成してある。それとは別にTomcat用にディレクトリを作ってまたコピーしている。凄い環境だ。意味がわからない。 18:00 ようやくまともな環境でコンパイルが通る。でも動かない。何故動かないのか調べようとして、設定ファイルをあれこれ開いて、眺めては唸っている。ログ見たらaccess deniedって書いてあるじゃねぇか……頼むからログ見てくれ。 19:30 DWRが上手く動いていない。原因究明に時間がかかりそうだったので、ローカルで動かすのはとりあえず諦めて、とっととサーバ側で試すように指示。一旦中断して飯。 20:00 Windowsでコンパイルしたclassファイルでは上手く動かないようだったので、サーバ上でantを使ってコンパイルするように指示。antって聞いたこともない、というので30分調べてわからなかったら聞くように言い、調べるポインタだけ示しておく。 20:30 すげー細かい説明が書かれている文書を、まさに隅々まで読もうとしていたため中断させる。だんだん面倒になってきたので、サンプルのbuild.xmlを渡してマンツーマンで教えることにした。秀丸を使っていながらマクロの使い方を知らなかったため、ついでに教える。マウスの操作までマクロで記録してくれると思っていたっぽい。「思ったより頭悪いですね」とか言ってる。君よりは頭いいと思うよ。 21:30 とりあえずbuild.xmlは書き終わるものの、コンパイルエラーが出まくる。ライブラリへのclasspathの通し方が間違っているのを指摘。ついでにソースファイルのエンコードが、UTF-8とUTF-8Nが混ざっているのを発見。担当者に直させる。Windowsではこの辺は問題にならないようだ。 22:00 build.xmlをWindows上で修正して、FTPでLinuxにアップロードしてコピーして…（vi使いたくないみたい）。何度修正してもそれがサーバに反映されない。おかしいと思ったら頑張って修正したファイルとは別のファイルをアップロードしていた。アホすぎ……。この辺から、新人君の動作が無駄に速くなってきた。笑える。動作が速くなった分、指数関数的にタイプミスや操作ミスが増えている。あんなに動いて筋肉痛にならないのか。 22:30 コンパイルは通ったものの、Tomcatで該当アプリケーションのコンテナが上手く起動していない。大量のログファイルをcat |moreで頑張って見ていた。tail使え… 23:30 終電がなくなるので帰宅させる。丸一日かかって結局終わらずか…。普段の10倍くらい疲れた。自分でやれば良かったと思ったが後の祭り。もうどうでもいいやｗ
-  </div>
-  
-</article>
-
-  
-  
-  <hr/>
-  
-  <article>
-  <header>
-    <h2><a href="http://nobu666.com/2005/11/17/243.html">links for 2005-11-17</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2005-11-17T21:21:23&#43;09:00">
-          Nov 17, 2005
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    オペラ、AJAXでモバイル対応 - CNET Japan (tags: browser opera mobile ajax) 「史上最悪のソフトウェアバグ」ワースト10を紹介(下) (tags: programming security bug)
   </div>
   
 </article>
