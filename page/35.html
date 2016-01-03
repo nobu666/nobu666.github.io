@@ -80,6 +80,28 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2006/11/05/433.html">links for 2006-11-05</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2006-11-05T23:18:41&#43;09:00">
+          Nov 5, 2006
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    技術日記＠kiwanami (tags: javascript oop) hetimaの日記 - TextMate で日本語をわりとまともに表示する (tags: mac japanese software editor howto) svk を当社比100倍高速化する方法: blog.bulknews.net (tags: subversion svn svk) Tomo’s HotLine: [P2P][DHT]ゼロ知識証明によるP2P認証方法の提案 (tags: security algorithm p2p idea authenticate)
+  </div>
+  
+</article>
+
+  
+  
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2006/11/04/432.html">デジタルMTR、BR-600を買った</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
@@ -285,34 +307,6 @@
   <footer>
     <ul class="pager">
       <li class="next"><a href="http://nobu666.com/2006/10/30/424.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
-    </ul>
-  </footer>
-  
-</article>
-
-  
-  
-  <hr/>
-  
-  <article>
-  <header>
-    <h2><a href="http://nobu666.com/2006/10/29/423.html">[修正版][memo] postfix &#43; dovecotでSMTP AUTH &amp; IMAPなメールサーバを立ち上げる</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2006-10-29T17:42:48&#43;09:00">
-          Oct 29, 2006
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    [memo] postfix + dovecotでSMTP AUTH &amp; IMAPなメールサーバを立ち上げるがあまり正しくないので修正版。 ssmtpの削除 Gentooではいきなりpostfixを入れようとしても、デフォルトでssmtpが入っていてblockされるのでssmtpを消すのが先決。 emerge -C ssmtp postfixとdovecotのインストール Gentooの基本だけど、emergeするときはemerge -pvでどんなフラグが有効になるか必ず確認。必要ないならpackage.useで外す。あとsaslが必要なのでこれは付けておく。あとなんでかわからないけどpostfixにsaslを付けるとついてくるcyrus-saslで、gdbmやcryptをUSEするとコンパイルに失敗したので外した。 emerge -pv postfix dovecot echo &quot;mmail-mta/postfix -mysql sasl&quot; &gt;&gt; /etc/portage/package.use echo &quot;dev-libs/cyrus-sasl -mysql -java -gdbm -crypt&quot; &gt;&gt; /etc/portage/package.use emerge postfix dovecot オレオレ認証局の作成 Gentooでの方法なので他のディストリではパスが違うようなので注意。 mkdir /etc/certs chmod 700 /etc/certs cd /etc/certs cp /etc/ssl/misc/CA.pl . perl ./CA.pl -newca CA certificate filename (or enter to create) (ENTER) Making CA certificate ... Generating a 1024 bit RSA private key ..................................++++++ .......................++++++ writing new private key to './demoCA/private/cakey.pem' Enter PEM pass phrase:(パスフレーズを入力) Verifying - Enter PEM pass phrase:(同じパスフレーズをもう一度入力) ----- You are about to be asked to enter information that will be incorporated into your certificate request.
-  </div>
-  
-  <footer>
-    <ul class="pager">
-      <li class="next"><a href="http://nobu666.com/2006/10/29/423.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
     </ul>
   </footer>
   

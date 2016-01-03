@@ -80,6 +80,34 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2006/10/29/423.html">[修正版][memo] postfix &#43; dovecotでSMTP AUTH &amp; IMAPなメールサーバを立ち上げる</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2006-10-29T17:42:48&#43;09:00">
+          Oct 29, 2006
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    [memo] postfix + dovecotでSMTP AUTH &amp; IMAPなメールサーバを立ち上げるがあまり正しくないので修正版。 ssmtpの削除 Gentooではいきなりpostfixを入れようとしても、デフォルトでssmtpが入っていてblockされるのでssmtpを消すのが先決。 emerge -C ssmtp postfixとdovecotのインストール Gentooの基本だけど、emergeするときはemerge -pvでどんなフラグが有効になるか必ず確認。必要ないならpackage.useで外す。あとsaslが必要なのでこれは付けておく。あとなんでかわからないけどpostfixにsaslを付けるとついてくるcyrus-saslで、gdbmやcryptをUSEするとコンパイルに失敗したので外した。 emerge -pv postfix dovecot echo &quot;mmail-mta/postfix -mysql sasl&quot; &gt;&gt; /etc/portage/package.use echo &quot;dev-libs/cyrus-sasl -mysql -java -gdbm -crypt&quot; &gt;&gt; /etc/portage/package.use emerge postfix dovecot オレオレ認証局の作成 Gentooでの方法なので他のディストリではパスが違うようなので注意。 mkdir /etc/certs chmod 700 /etc/certs cd /etc/certs cp /etc/ssl/misc/CA.pl . perl ./CA.pl -newca CA certificate filename (or enter to create) (ENTER) Making CA certificate ... Generating a 1024 bit RSA private key ..................................++++++ .......................++++++ writing new private key to './demoCA/private/cakey.pem' Enter PEM pass phrase:(パスフレーズを入力) Verifying - Enter PEM pass phrase:(同じパスフレーズをもう一度入力) ----- You are about to be asked to enter information that will be incorporated into your certificate request.
+  </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/10/29/423.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
+  
+</article>
+
+  
+  
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2006/10/28/422.html">links for 2006-10-28</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
@@ -274,28 +302,6 @@
   </header>
   <div>
     特に書くことないほどあっさり終了。LiveCDを焼いてそいつでブートし、デスクトップ画面が出てきたら&rdquo;Gentoo Linux installer&rdquo;をダブルクリックして指示に従っていくだけ。つかパソコンふぉあ障害者ず Gentoo Linux 2006.0(インストール-LiveCD-)を参考に。変えたところはIPアドレスとかその辺のネットワーク設定周りと、ステージを3からにしたのと、CFLAGで-O3にしたぐらい。インストールが終わったら上部のメニューからrebootしてCD抜いて終わり。 pingして外に繋がることを確認したら emerge --sync してから、必要なものをガンガン入れるんだが、その前に /etc/init.d/hdparm start してDMAを有効にしておく。んでいい加減sshで繋いで作業したいので nano -w /etc/ssh/sshd_config で適切にsshを設定。 PermitRootLogin no RSAAuthentication yes PubkeyAuthentication yes AuthorizedKeysFile .ssh/authorized_keys PasswordAuthentication no PermitEmptyPasswords no ChallengeResponseAuthentication no とかそんな感じに。 クライアントで鍵セットを作って、USBメモリでサーバに公開鍵を置く。マウントするのは mkdir /mnt/usbmemory mount -t vfat /dev/sdb1 /mnt/usbmemory で、/mnt/usbmemoryが見えるようになる。後は公開鍵を置いてパーミッション変えればOK。 mkdir ~/.ssh cat /mnt/usbmemory/id_rsa &gt;&gt; ~/.ssh/authorized_keys chmod 700 ~/.ssh chmod 600 ~/.ssh/authorized_keys クライアントからsshで繋いでrootになって、ひたすらemerge -av パッケージ名。入れたパッケージは以下の通り。 管理系:gentoolkit/htop/traceroute/tcpdump デーモン系:apache2/proftpd/mysql/subversion/trac/samba ユーティリティ系:sudo/screen/ftp/zsh/w3m/svk/lv/nkf 言語:python/ruby/jdk/groovy keywordでmaskされてるとか怒られるやつは ACCEPT_KEYWORDS=&quot;~amd64&quot; emerge -av パッケージ名 で入る。色々入れたり消したりしてるうちに依存関係がおかしくなったりしたときは、revdep-rebuildする。特定のライブラリに依存するもの、とかの指定もできる。 あとはapacheやらsambaやらの設定だな。
-  </div>
-  
-</article>
-
-  
-  
-  <hr/>
-  
-  <article>
-  <header>
-    <h2><a href="http://nobu666.com/2006/10/22/412.html">自宅サーバ用のPCを購入したけど初期不良で動かず(3)</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2006-10-22T18:50:08&#43;09:00">
-          Oct 22, 2006
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    紆余曲折あったが、結局のところ店員のミスでsocket479用のマザーなのにsocket478のCeleronMを突っ込んだのが原因だったっぽい。なんか面倒なのでベアボーンとCPUを交換することにした。静音に拘っていたけど、実際CPUファンのないタイプであればそんなに五月蠅くはなかろうと言うことで、AC電源のやつも諦め。Gentoo熱が高まっていることもあって、なるべく高速なマシンのほうが良くなってしちゃったので、思い切ってAMD64X2 3800+(65W版)にした。 多少高くついたが、そこは流石におまけしてくれた。動かしてみたらやっぱり静か。全然問題ない感じだ。
   </div>
   
 </article>
