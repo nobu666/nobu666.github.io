@@ -80,6 +80,34 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2008/10/30/649.html">PukiWiki1.4.7 WikiFarmEngine</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2008-10-30T00:17:50&#43;09:00">
+          Oct 30, 2008
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    HikiやFSWikiにはあるんだけどPukiWikiにはないので、どうにかならないかなぁと試行錯誤した結果。会社で社内Wiki用にまとめたけど、こっちにも書いておく。URLとかPathとかは適宜読み替えてください。ま、こんなもの参考にする人は何かあったときの未来の俺くらいだとは思うが。 http://www.aksum.jp/pukiwiki/index.php?%E3%83%8F%E3%83%83%E3%82%AF%2F04-WikiFarmEngine こんなものがあるにはあるのだけども、残念ながらPukiWiki1.4.6ベースで、文字コードがEUC。今時EUCはねーだろう、ということでどうにか1.4.7UTF-8ベースにする 1.4.7ベースのFarm 1.4.7のソースを持ってきてフォルダわけ tar zxf pukiwiki-1.4.7_notb_utf8.tar.gz -C /var/www/html/farm cd /var/www/html/farm mkdir {admin,common,datasource} cp -a {attach,backup,cache,counter,diff,trackback,wiki,.ht*,index.php} {admin,datasource} cp -a {config,image,lib,plugin,skin} common mkdir common/doc mkdir {admin,datasource}/config 延々とこんな感じでPukiFarmを参考に同じディレクトリ構成にする patch pukiwiki.ini.php --- pukiwiki-1.4.7_notb_utf8/pukiwiki.ini.php 2006-10-22 05:40:24.000000000 +0900 +++ common/config/pukiwiki.ini.php 2008-10-09 14:02:09.000000000 +0900 @@ -8,6 +8,8 @@ // // PukiWiki main setting file +$adminpage = ':config/admin'; + ///////////////////////////////////////////////// // Functionality settings @@ -77,7 +79,7 @@ define('UPLOAD_DIR', DATA_HOME . 'attach/' ); // Attached files and logs define('COUNTER_DIR', DATA_HOME .
+  </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2008/10/30/649.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
+  
+</article>
+
+  
+  
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2008/10/27/646.html">WordPressをAutoPagerizeとはてなスターに対応させる</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
@@ -285,28 +313,6 @@
 </article>
 
   
-  
-  <hr/>
-  
-  <article>
-  <header>
-    <h2><a href="http://nobu666.com/2008/08/10/633.html">入籍しました</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2008-08-10T13:27:25&#43;09:00">
-          Aug 10, 2008
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    8月8日に入籍しました。別に北京オリンピックとは関係ないのですが、たまたま。2008/8/8で覚えやすいし、いいかなーと。 当日は身内だけでホームパーティー的なことをしてもらいました。ちなみに式や披露宴はしない予定。近いうちに写真は取りにいこうと思うけど。あと結婚指輪もちゃんとしたのを買わないと…。 既に一緒に住んでるので、別段変わりはないんだけども、一応ご報告ということで。これからもよろしくお願いします。
-  </div>
-  
-</article>
-
-  
 </div>
 <nav class="pagination" role="navigation">
 
@@ -315,7 +321,7 @@
 
 <a class="newer-posts" href="/page/14.html"><span aria-hidden="true">&laquo;</span> Newer Posts</a>
 
-  <span class="page-number">Page 15 of 77</span>
+  <span class="page-number">Page 15 of 78</span>
 
 <a class="older-posts" href="/page/16.html">Older Posts <span aria-hidden="true">&raquo;</span></a>
 

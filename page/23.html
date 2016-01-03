@@ -80,6 +80,28 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2008/02/20/557.html">NICが認識しない件、解決</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2008-02-20T15:35:31&#43;09:00">
+          Feb 20, 2008
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    dmesg|grep eth してみたら、eth0からeth1にrenameしたよとか書いてあったorz ので、単純に ln -sf /etc/init.d/net.lo /etc/init.d/net.eth1 sed -i 's/eth0/eth1/g' /etc/conf.d/net /etc/init.d/net.eth1 start これだけでした。あとはルータ側でポート開けたり、スタティックルーティングしたりして、EM-ONE使って外から繋がることを確認。が、今度はメールが送れなくてしばし嵌った。プロバイダが変わったから、単純に/etc/postfix/main.cfのrelayhostを書き換えて、smtp_sasl_password_mapsで指定したファイルにSMTPホスト名とユーザ名とパスワード書いて、そいつをpostmapして/etc/init.d/postfix restartで終了だと思っていたのだが。 色々見直してmain.cfのrelayhostと、postmapするファイルの書き方を example.com:587 やら、[example.com]:587 やら試すもダメ。master.cf見直したりしても結局わからず。しかたないのでmain.cfの smtp* を全部虱潰しに調べるも特に以上は見あたらず。半ば諦めつつWebを検索してたらVine3.2のPostfixでSMTP認証ってエントリで →main.cf へ smtp_sasl の設定を追加。 smtpd_sasl じゃないので、要注意。 ……もしやと思って見てみたら、smtpd_sasl_auth_enable = yes という記述はあったけども、 smtp_sasl_auth_enable = yes がなかったのが原因でしたとさ…。疲れたわ。
+  </div>
+  
+</article>
+
+  
+  
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2008/02/18/556.html">ようやく落ち着いてきた…かな？</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
@@ -273,28 +295,6 @@
 </article>
 
   
-  
-  <hr/>
-  
-  <article>
-  <header>
-    <h2><a href="http://nobu666.com/2007/12/15/547.html">[禁煙]3日目?4日目 忘年会</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2007-12-15T23:56:53&#43;09:00">
-          Dec 15, 2007
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    会社の「いつものメンバー」でちゃんこ忘年会。渋谷は宮益坂にある、宮益亭というちゃんこ屋なんだが、超旨いのでお勧め。この時期は劇混みなんで、予約もまともに取れないけども。かなり誘惑があったけどもなんとか我慢し、飲み会を乗り切りましたわい。1本でも吸ったらゲームオーバーだと思ってるので、そこは自分に厳しく。 で4日目、今度はゲーム仲間と忘年会。鍋ウマー、生牡蠣ウマー、日本酒ウマー。ゲームで知り合ってもう何年だ?つか会社の人間より付き合い長いんだからな…かれこれ10年近く経つわけだ。たかがゲーム、されどゲームだよなー。またみんなで美味しいもの食おうぜぃ!!
-  </div>
-  
-</article>
-
-  
 </div>
 <nav class="pagination" role="navigation">
 
@@ -303,7 +303,7 @@
 
 <a class="newer-posts" href="/page/22.html"><span aria-hidden="true">&laquo;</span> Newer Posts</a>
 
-  <span class="page-number">Page 23 of 77</span>
+  <span class="page-number">Page 23 of 78</span>
 
 <a class="older-posts" href="/page/24.html">Older Posts <span aria-hidden="true">&raquo;</span></a>
 

@@ -80,6 +80,34 @@
   
   <article>
   <header>
+    <h2><a href="http://nobu666.com/2008/03/01/571.html">links for 2008-03-01</a></h2>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2008-03-01T09:40:22&#43;09:00">
+          Mar 1, 2008
+        </time>
+      </div>
+    </div>
+  </header>
+  <div>
+    dolipo, a wrapper of polipo [dh memoranda] (tags: mac proxy cache tools) polipo(dolipo)向けproxy.pac - otsune's SnakeOil - subtech (tags: mac proxy cache tools) Amua - Last.fm player for Mac OS X (tags: mac music last.fm) Stage6の後釜？ 高画質の動画共有サイト『Veoh』 - 敷居の先住民 (tags: movie web) チョークの粉も再現 黒板に落書きできる「こくばん.in」のこだわり - ITmedia News (tags: webservices communication) JavaScript Tips & Technique (tags: javascript document presentation programming) [N] タブをツリー形式で表示するFirefox機能拡張「Tree Style Tab」 (tags: firefox extension) PowerPointテンプレートサイトいろいろ - DesignWalker (tags: office powerpoint template business work) Google Social Graph APIを徹底解剖 - builder by ZDNet Japan (tags: google api graph visualization) Google、既存AppsをつなぐコラボサイトサービスGoogle Sitesを開始 - Engadget Japanese (tags: google) mod_gzip で Vary: * を send すると IE で SSL の挙動が変になる :: Drk7jp (tags: apache ssl ie) Word 2003 使用中または文書の保存時に "文書は保存されましたが、音声認識データを保存する十分な空き領域がないため、データは失われました" と表示される (tags: word bug howto) はてなリングは終わっちゃうけど方向性はそんなに悪くなかったんじゃないっていう話 - *mohri++ (tags: hatena) mixiがOpenID対応へ - ITmedia News (tags: mixi security authentication openid) 高校生の娘が彼氏を連れてきたんだが:ハムスター速報 ２ろぐ これは切ないｗ (tags: 2ch communication family) アサメグラフ 世界樹の迷宮２発売記念 アトラス特集 (tags: graphic comic) KB943198 がでた - 欝なエンジニア (tags: windows usb driver performance) 何言ってやがるこの野郎 - IT戦記 ソフトウエアエンジニアの集団転職は間違いなく最強の武器 - Future Insight (tags: business work engineer) id:fromdusktildawnの就職氷河期の話に突っ込みどころが多い件 - 見ろ！Zがゴミのようだ！ jpドメインはcomドメインよりも優れている - masaのメモ置き場 example[0-9].jp (tags: tips domain dns test) Lifehacker：Firefoxアドオンの作り方 - ITmedia Biz.ID (tags: firefox extension) SAKE TO RYOURI: 菜の花のクリームパスタ (tags: cooking recipe) Lucene + TinySegmenterというアイデア - spiritlooseのはてなダイアリー (tags: idea lucene) 東芝HD DVD終息で新聞広告を出すとしたら : Gizmodo Japan（ギズモード・ジャパン） (tags: neta advertisement) shunirr.org - OpenFLのクローラにPlagger::Plugin::Store::Fastladder使ってみた (tags: plagger fastladder ldr) ウェブ魚拓などpolipo（dolipo）を使うとおかしくなるサイトの対策 - ’(rubikitch wanna be (a .
+  </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2008/03/01/571.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
+  
+</article>
+
+  
+  
+  <hr/>
+  
+  <article>
+  <header>
     <h2><a href="http://nobu666.com/2008/02/29/570.html">4年に1度しかない日なので書いておく</a></h2>
     <div class="post-meta clearfix">
       <div class="post-date pull-left">
@@ -297,28 +325,6 @@
 </article>
 
   
-  
-  <hr/>
-  
-  <article>
-  <header>
-    <h2><a href="http://nobu666.com/2008/02/20/557.html">NICが認識しない件、解決</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2008-02-20T15:35:31&#43;09:00">
-          Feb 20, 2008
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    dmesg|grep eth してみたら、eth0からeth1にrenameしたよとか書いてあったorz ので、単純に ln -sf /etc/init.d/net.lo /etc/init.d/net.eth1 sed -i 's/eth0/eth1/g' /etc/conf.d/net /etc/init.d/net.eth1 start これだけでした。あとはルータ側でポート開けたり、スタティックルーティングしたりして、EM-ONE使って外から繋がることを確認。が、今度はメールが送れなくてしばし嵌った。プロバイダが変わったから、単純に/etc/postfix/main.cfのrelayhostを書き換えて、smtp_sasl_password_mapsで指定したファイルにSMTPホスト名とユーザ名とパスワード書いて、そいつをpostmapして/etc/init.d/postfix restartで終了だと思っていたのだが。 色々見直してmain.cfのrelayhostと、postmapするファイルの書き方を example.com:587 やら、[example.com]:587 やら試すもダメ。master.cf見直したりしても結局わからず。しかたないのでmain.cfの smtp* を全部虱潰しに調べるも特に以上は見あたらず。半ば諦めつつWebを検索してたらVine3.2のPostfixでSMTP認証ってエントリで →main.cf へ smtp_sasl の設定を追加。 smtpd_sasl じゃないので、要注意。 ……もしやと思って見てみたら、smtpd_sasl_auth_enable = yes という記述はあったけども、 smtp_sasl_auth_enable = yes がなかったのが原因でしたとさ…。疲れたわ。
-  </div>
-  
-</article>
-
-  
 </div>
 <nav class="pagination" role="navigation">
 
@@ -327,7 +333,7 @@
 
 <a class="newer-posts" href="/page/21.html"><span aria-hidden="true">&laquo;</span> Newer Posts</a>
 
-  <span class="page-number">Page 22 of 77</span>
+  <span class="page-number">Page 22 of 78</span>
 
 <a class="older-posts" href="/page/23.html">Older Posts <span aria-hidden="true">&raquo;</span></a>
 
