@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Plagger on Real Beat</title>
+    <link>http://nobu666.com/categories/plagger.html</link>
+    <description>Recent content in Plagger on Real Beat</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; nobu666.com</copyright>
+    <lastBuildDate>Fri, 08 Sep 2006 23:38:54 +0900</lastBuildDate>
+    <atom:link href="http://nobu666.com/categories/plagger/feed.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>otsuneさんのはてなダイアリーを購読してるとPlaggerがこける問題は修正されたっぽ</title>
+      <link>http://nobu666.com/2006/09/08/363.html</link>
+      <pubDate>Fri, 08 Sep 2006 23:38:54 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/08/363.html</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://nobu666.com/2006/08/23/000349.html/trackback/&#34;&gt;otsuneさんのはてなダイアリーを購読してるとPlaggerがこける&lt;/a&gt;件、&lt;a href=&#34;http://plagger.org/trac/changeset/1672&#34; target=&#34;_blank&#34;&gt;&lt;a href=&#34;http://plagger.org/trac/changeset/1672&#34;&gt;http://plagger.org/trac/changeset/1672&lt;/a&gt;&lt;/a&gt;修正されていました。単にnullチェック漏れだったっぽい。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>なんかPlagger動いてないと思ったら、otsuneさんのはてなダイアリーを購読してるとPlaggerがこけるっぽい</title>
+      <link>http://nobu666.com/2006/08/23/349.html</link>
+      <pubDate>Wed, 23 Aug 2006 01:15:15 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/23/349.html</guid>
+      <description>&lt;p&gt;なんかgmailが寂しいと思ったので、LogLevelをdebugにして動かしてみたら以下のようになった。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+Plagger::Plugin::Subscription::LivedoorReader [info] You have 614 unread item(s) on livedoor Reader.
+Plagger [info] plugin Plagger::Plugin::Aggregator::Simple loaded.
+Plagger::Plugin::Subscription::LivedoorReader [debug] Logging in to Livedoor Reader
+Plagger::Plugin::Subscription::LivedoorReader [debug] get unread items of 1967834
+Plagger::Plugin::Subscription::LivedoorReader [debug] get unread items of 2023794
+The &amp;lsquo;epoch&amp;rsquo; parameter (undef) to DateTime::from_epoch was an &amp;lsquo;undef&amp;rsquo;, which is not one of the allowed types: scalar
+ at /home/nobu666/perl/lib/site_perl/5.8.8/i386-freebsd/DateTime.pm line 430
+        DateTime::from_epoch(&amp;lsquo;undef&amp;rsquo;, &amp;lsquo;epoch&amp;rsquo;, &amp;lsquo;undef&amp;rsquo;, &amp;lsquo;time_zone&amp;rsquo;, &amp;lsquo;local&amp;rsquo;) called at /home/nobu666/perl/lib/site_perl/5.8.8/Plagger/Date.pm line 63
+        Plagger::Date::from_epoch(&amp;lsquo;Plagger::Date&amp;rsquo;, &amp;lsquo;undef&amp;rsquo;) called at /home/nobu666/perl/lib/site_perl/5.8.8/Plagger/Plugin/Subscription/LivedoorReader.pm line 97
+        Plagger::Plugin::Subscription::LivedoorReader::sync(&amp;lsquo;Plagger::Plugin::Subscription::LivedoorReader=HASH(0x8a3d72c)&amp;lsquo;, &amp;lsquo;Plagger=HASH(0x87b4d44)&amp;rsquo;, &amp;lsquo;HASH(0x901eae0)&amp;rsquo;) called at /home/nobu666/perl/lib/site_perl/5.8.8/Plagger/Plugin/Subscription/LivedoorReader.pm line 58
+        Plagger::Plugin::Subscription::LivedoorReader::&lt;strong&gt;ANON&lt;/strong&gt;(&amp;lsquo;Plagger=HASH(0x87b4d44)&amp;rsquo;, &amp;lsquo;HASH(0x901eae0)&amp;rsquo;) called at /home/nobu666/perl/lib/site_perl/5.8.8/Plagger.pm line 328
+        Plagger::run(&amp;lsquo;Plagger=HASH(0x87b4d44)&amp;rsquo;) called at /home/nobu666/perl/lib/site_perl/5.8.8/Plagger.pm line 69
+        Plagger::bootstrap(&amp;lsquo;Plagger&amp;rsquo;, &amp;lsquo;config&amp;rsquo;, &amp;lsquo;/home/nobu666/plagger/ldr2gmail.yaml&amp;rsquo;) called at /home/nobu666/perl/bin/plagger line 24&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;日付絡みで落ちているっぽい？2023794はsubscription_idっぽいので、LDRのAPIを &lt;a href=&#34;http://reader.livedoor.com/api/all?subscribe_id=？2023794&#34;&gt;http://reader.livedoor.com/api/all?subscribe_id=？2023794&lt;/a&gt; こんな感じで叩いてみた。返ってきたJSON抜粋。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+{&amp;ldquo;ads&amp;rdquo;:[{&amp;ldquo;url&amp;rdquo;:&amp;ldquo;&lt;a href=&#34;http://www.gyao.jp/rss/&amp;quot;,&amp;quot;title&amp;quot;:&amp;quot;完全無料パソコンテレビ「GyaO」&amp;quot;,&amp;quot;description&amp;quot;:&amp;quot;番組情報をジャンル別にRSS配信。新着情報をチェックすれば見逃しも防げる！&amp;quot;},{&amp;quot;url&amp;quot;:&amp;quot;http://blog.livedoor.com/cgm.html&amp;quot;,&amp;quot;title&amp;quot;:&amp;quot;&amp;amp;#65279;ライブドアのブログ・クチコミ&amp;quot;,&amp;quot;description&amp;quot;:&amp;quot;ウィキ、ソーシャルブックマーク、SNS、写真共有、キーワードすべてあります！&amp;quot;}],&amp;quot;subscribe_id&amp;quot;:&amp;quot;？2023794&amp;quot;,&amp;quot;channel&amp;quot;:{&amp;quot;error_count&amp;quot;:&amp;quot;0&amp;quot;,&amp;quot;link&amp;quot;:&amp;quot;http://d.hatena.ne.jp/otsune/&amp;quot;,&amp;quot;description&amp;quot;:&amp;quot;import&#34;&gt;http://www.gyao.jp/rss/&amp;quot;,&amp;quot;title&amp;quot;:&amp;quot;完全無料パソコンテレビ「GyaO」&amp;quot;,&amp;quot;description&amp;quot;:&amp;quot;番組情報をジャンル別にRSS配信。新着情報をチェックすれば見逃しも防げる！&amp;quot;},{&amp;quot;url&amp;quot;:&amp;quot;http://blog.livedoor.com/cgm.html&amp;quot;,&amp;quot;title&amp;quot;:&amp;quot;&amp;amp;#65279;ライブドアのブログ・クチコミ&amp;quot;,&amp;quot;description&amp;quot;:&amp;quot;ウィキ、ソーシャルブックマーク、SNS、写真共有、キーワードすべてあります！&amp;quot;}],&amp;quot;subscribe_id&amp;quot;:&amp;quot;？2023794&amp;quot;,&amp;quot;channel&amp;quot;:{&amp;quot;error_count&amp;quot;:&amp;quot;0&amp;quot;,&amp;quot;link&amp;quot;:&amp;quot;http://d.hatena.ne.jp/otsune/&amp;quot;,&amp;quot;description&amp;quot;:&amp;quot;import&lt;/a&gt; otsune from Hatena&amp;rdquo;,&amp;ldquo;image&amp;rdquo;:null,&amp;ldquo;title&amp;rdquo;:&amp;ldquo;import otsune from Hatena&amp;rdquo;,&amp;ldquo;feedlink&amp;rdquo;:&amp;ldquo;&lt;a href=&#34;http://d.hatena.ne.jp/otsune/rss&amp;quot;,&amp;quot;subscribers_count&amp;quot;:&amp;quot;178&amp;quot;,&amp;quot;expires&amp;quot;:1156265399},&amp;quot;items&amp;quot;:[{&amp;quot;enclosure&amp;quot;:null,&amp;quot;link&amp;quot;:&amp;quot;http://d.hatena.ne.jp/otsune/99990101/p1&amp;quot;,&amp;quot;enclosure_type&amp;quot;:null,&amp;quot;author&amp;quot;:&amp;quot;otsune&amp;quot;,&amp;quot;body&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;created_on&amp;quot;:null,&amp;quot;modified_on&amp;quot;:null,&amp;quot;id&amp;quot;:&amp;quot;554908&amp;quot;,&amp;quot;title&amp;quot;:&amp;quot;いそいで口で吸え&amp;quot;,&amp;quot;category&amp;quot;:&amp;quot;&amp;quot;},{&amp;quot;enclosure&amp;quot;:null,&amp;quot;link&amp;quot;:&amp;quot;http://d.hatena.ne.jp/otsune/20060821/AsyncMedia&amp;quot;,&amp;quot;enclosure_type&amp;quot;:null,&amp;quot;author&amp;quot;:&amp;quot;otsune&amp;quot;,&amp;quot;body&amp;quot;:&amp;quot;ntt&#34;&gt;http://d.hatena.ne.jp/otsune/rss&amp;quot;,&amp;quot;subscribers_count&amp;quot;:&amp;quot;178&amp;quot;,&amp;quot;expires&amp;quot;:1156265399},&amp;quot;items&amp;quot;:[{&amp;quot;enclosure&amp;quot;:null,&amp;quot;link&amp;quot;:&amp;quot;http://d.hatena.ne.jp/otsune/99990101/p1&amp;quot;,&amp;quot;enclosure_type&amp;quot;:null,&amp;quot;author&amp;quot;:&amp;quot;otsune&amp;quot;,&amp;quot;body&amp;quot;:&amp;quot;&amp;quot;,&amp;quot;created_on&amp;quot;:null,&amp;quot;modified_on&amp;quot;:null,&amp;quot;id&amp;quot;:&amp;quot;554908&amp;quot;,&amp;quot;title&amp;quot;:&amp;quot;いそいで口で吸え&amp;quot;,&amp;quot;category&amp;quot;:&amp;quot;&amp;quot;},{&amp;quot;enclosure&amp;quot;:null,&amp;quot;link&amp;quot;:&amp;quot;http://d.hatena.ne.jp/otsune/20060821/AsyncMedia&amp;quot;,&amp;quot;enclosure_type&amp;quot;:null,&amp;quot;author&amp;quot;:&amp;quot;otsune&amp;quot;,&amp;quot;body&amp;quot;:&amp;quot;ntt&lt;/a&gt;&lt;div&gt;\n\t\t\t&lt;p&gt;&lt;a href=\&#34;http://blogpal.seesaa.net/article/22560511.html\&#34;&gt;FIFTH　EDITION: メディア・ゲーム・ネットで進む非同期化&lt;/a&gt;&lt;/p&gt;\n\t\t\t&lt;blockquote&gt;\n\t\t\t&lt;p&gt;すいません。ちょっと分かりにくいところが有るので質問します。&lt;/p&gt;&amp;hellip;&amp;hellip;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;長いので途中で省略。「いそいで口で吸え」というエントリでcreated_onとmodified_onがnullなせいでしょうか。投稿日付が9999-01-01になってるのがそもそもの原因なの？よくわからない。Perlわかんねー…勉強せねば。&lt;/p&gt;
+
+&lt;p&gt;つーか「いそいで口で吸え」というと、「かんたまがきゆいのです」とか「やんこまりたい」とか「めんたまにきんそれーたむを塗ると、きつにじもちがいい」とか「ポール・マッカートニー取調室の菊池です」とか思い出しました。どうでもいいですね。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

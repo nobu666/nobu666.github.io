@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Psp on Real Beat</title>
+    <link>http://nobu666.com/categories/psp.html</link>
+    <description>Recent content in Psp on Real Beat</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; nobu666.com</copyright>
+    <lastBuildDate>Thu, 07 May 2009 02:40:01 +0900</lastBuildDate>
+    <atom:link href="http://nobu666.com/categories/psp/feed.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CFW5.00M33でPlayStation Storeのゲームを起動する</title>
+      <link>http://nobu666.com/2009/05/07/772.html</link>
+      <pubDate>Thu, 07 May 2009 02:40:01 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2009/05/07/772.html</guid>
+      <description>&lt;p&gt;PCでダウンロードするやり方だと、もろ最新のFW5.5を要求されるのと、そもそもWindowsじゃないと駄目。幸いPSPから直接PlayStation Storeいけるので、そこでゲーム買うなり体験版を落とすなりする。で、起動しようとすると、FWを5.02以上にしろと怒られて起動できない。FF7を1500円で買い、1.7GBものデータをダウンロードしたってのに!!&lt;/p&gt;
+
+&lt;p&gt;悔しいのでどうにかするため、以下のものを用意する。
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://dl.qj.net/PSARDUMPER-for-5.00-decryption-PSP-Homebrew-Applications/pg/12/fid/24342/catid/151&#34;&gt;PSARDUMPER for 5.00 decryption&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;公式FW5.03アップデータ&lt;/li&gt;
+&lt;/ul&gt;
+アップデータは&lt;a href=&#34;http://www.psp-hacks.com/category/36&#34;&gt;このへん&lt;/a&gt;から探す。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;PSARDUMPER for 5.00 decryptionを解凍し、メモステに突っ込む。new_psardumperフォルダを、PSP\GAMEフォルダに&lt;/li&gt;
+&lt;li&gt;アップデータを解凍、EBOOT.PBPをメモステのルートフォルダに突っ込む&lt;/li&gt;
+&lt;li&gt;普通にPSPを起動し、メモリースティックからNEW PSAR DUMPERを実行。□ボタンを押してファイルを展開&lt;/li&gt;
+&lt;li&gt;展開したらPCからメモリースティックを確認。ルートフォルダにF0フォルダができており、その中の vsh/etc/ 内にあるファイルをPCにバックアップ&lt;/li&gt;
+&lt;li&gt;バックアップしたversion.txtをReadOnlyに変更。Windowsなら右クリックしてプロパティから属性→読み取り専用にチェック。Macならchmod 555 version.txt&lt;/li&gt;
+&lt;li&gt;Rボタン押しっぱでPSPの電源を入れ、リカバリーモードで起動。Advanced -&gt;  を選択後、Toggle USB(flash0)でPCからflash0領域が覗けるようになるので、さっきバックアップしたファイル（ReadOnlyにしたversion.txtも含む）をコピー&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;これで5.03のversion.txtが書き込み禁止状態で起動するため、うまい具合に5.03だと思ってくれて晴れてPlayStaion Storeで買ったものなどが動作するようになる。&lt;/p&gt;
+
+&lt;p&gt;ちなみにFF7だけど、もともとPS用なわけで、ボタンの割り当てが微妙な感じ。PSPにはL/Rしかないけど、PSにはL1/L2/R1/R2あるからね（ものによっちゃアナログスティックを押すL3/R3も…）。単純にFF7自体の操作性もあまり良くないんだろうけど、若干違和感があるな。あとさすがに今となってはポリゴンがショボ過ぎて笑えてくるぐらいなので、まともにリメイクしてくれないものかしらね。やってなかったFFは7と9だけで、このポリゴンのショボさ故に手を出してなかったんだけど、PSPなら電車でも出来るので敷居が下がっていいな。でもやっぱり、バイクに乗ったりテレビみたりするFFって、違和感が拭えん。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
