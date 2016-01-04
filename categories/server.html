@@ -32,7 +32,7 @@
       
       <div class="sns-links hidden-print">
   
-  <a href="ogata.nobu@gmail.com">
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
     <i class="fa fa-envelope"></i>
   </a>
   
@@ -95,7 +95,7 @@
     </div>
   </header>
   <div>
-    @macchaからリクエストがあったので、適当にまとめました。タイトルの通りです。 OS再インストールの準備 リモートコンソールの起動にJDK必須なので、作業するマシンにJDKが入ってなければいれとく。あとはTightVNCとか、必要ならどうぞ。あとバックアップ忘れずに。とりあえずwordpressだけ動いてる状態だったので [sourcecode language=&ldquo;text&rdquo; padlinenumbers=&ldquo;2&rdquo;] $ mysqldump -uroot -p wp -Q -c &ndash;opt &gt; dumpfile $ tar zcvf wordpress.tar.gz /var/www/wordpress $ tar zcvf ssh.tar.gz ~/.ssh みたいな感じでバックアップ取って作業マシンにscpなりlftpなりで持ってきておく。必要なら/etc/my.cnfとか/etc/php.iniとか、ホームのドットファイル類も。 &lt;h2&gt;OS再インストール&lt;/h2&gt; VPSコントロールパネルにログインして、OS再インストール→カスタムOSインストール→ubuntu 10.04 amd64を選択→&lt;a href=&quot;http://support.sakura.ad.jp/support/vps/menu_oscustom_ubuntu.shtml&quot;&gt;カスタムOSインストールガイド ： Ubuntu 10.04&lt;/a&gt;の通り進める。10分くらいありゃ終わる。 &lt;h2&gt;SSHの設定&lt;/h2&gt; 何はともあれrootのパスワードとSSHの設定をリモートコンソールからやる。scpなりで、バックアップファイルを転送しとくこと。 [sourcecode language=&quot;text&quot; padlinenumbers=&quot;2&quot;] $ sudo passwd $ tar zxf wordpress.tar.gz $ tar zxf ssh.tar.gz $ chmod 700 .ssh $ chmod 600 .ssh/* $ sudo vi /etc/ssh/sshd_config - Port 22 + Port 適当なポート - PermitRootLogin yes + PermitRootLogin no - #PasswordAuthentication yes + PasswordAuthentication no ポートは変えなくてもいいけどお好みで。ポート変えたら/etc/servicesのSSHのとこを合わせて変更するのも忘れずに。 [sourcecode language=&ldquo;text&rdquo; padlinenumbers=&ldquo;2&rdquo;] $ sudo sshd -t でチェックして、エラーが出なければOKなので再起動 [sourcecode language=&quot;text&quot; padlinenumbers=&quot;2&quot;] $ sudo service ssh restart ここで、もう一個ターミナル開いて問題なく接続できることを必ず確認。以降は普通に端末からSSHでつないで作業 諸々設定 もうあとはお好みでどうぞなんだけど、最低やることだけ書いとく [sourcecode language=&ldquo;text&rdquo; padlinenumbers=&ldquo;2&rdquo;] $ sudo apt-get update .
+    @macchaからリクエストがあったので、適当にまとめました。タイトルの通りです。 OS再インストールの準備 リモートコンソールの起動にJDK必
   </div>
   
   <footer>
@@ -115,7 +115,7 @@
     </div>
     <div class="sns-links hidden-print">
   
-  <a href="ogata.nobu@gmail.com">
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
     <i class="fa fa-envelope"></i>
   </a>
   

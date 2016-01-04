@@ -32,7 +32,7 @@
       
       <div class="sns-links hidden-print">
   
-  <a href="ogata.nobu@gmail.com">
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
     <i class="fa fa-envelope"></i>
   </a>
   
@@ -95,8 +95,14 @@
     </div>
   </header>
   <div>
-    manを実行すると以下のようなエラーになることがある。 XXX XXX WARNING: old character encoding and/or character set XXX いろいろ調べた結果、libiconvが悪さしていた。/usr/bin/iconvではなく、/usr/local/bin/iconvを見に行っていたのが原因だった。/usr/local/bin/iconvのファイル名を変更したら治った。
+    manを実行すると以下のようなエラーになることがある。 XXX XXX WARNING: old character encoding and/or character set XXX いろいろ調べた結果、libiconvが悪さしていた。/usr/bi
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2009/03/11/756.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -135,7 +141,7 @@
     </div>
   </header>
   <div>
-    前回のwordpressのformatterがキモいタグを生成するので、どうにかするはME2.2.3以外でpatchすると、管理画面で激しくwarningが出てエライことになる。ので、v2.3.3用のpatch。 --- www/wp-includes/formatting.php.orig Thu Feb 28 16:37:29 2008 +++ www/wp-includes/formatting.php Thu Feb 28 16:39:27 2008 @@ -63,7 +63,7 @@ $pee = $pee . &quot;\n&quot;; // just to make things a little easier, pad the end $pee = preg_replace('|&lt;br /&gt;\s*&lt;br /&gt;|', &quot;\n\n&quot;, $pee); // Space things out a little - $allblocks = '(?:table|thead|tfoot|caption|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|select|form|map|area|blockquote|address|math|style|input|p|h[1-6]|hr)'; + $allblocks = '(?:code|table|thead|tfoot|caption|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|select|form|map|area|blockquote|address|math|style|input|p|h[1-6]|hr)'; $pee = preg_replace('!(&lt;' . $allblocks . '[^&gt;]*&gt;)!', &quot;\n$1&quot;, $pee); $pee = preg_replace('!(&lt;/' . $allblocks .
+    前回のwordpressのformatterがキモいタグを生成するので、どうにかするはME2.2.3以外でpatchすると、管理画面で激しく
   </div>
   
   <footer>
@@ -161,7 +167,7 @@
     </div>
   </header>
   <div>
-    とかいう謎タグが生成されて激しく気持ち悪いので、phpに手を入れる。As You Like It ? Blog Archive ? WordPressのエディタとの付き合い方を参照して、その通りに書き換えるだけ。patchにしとく。 --- formatting.php.org Fri Feb 22 18:23:52 2008 +++ formatting.php Fri Feb 22 18:21:16 2008 @@ -55,7 +55,7 @@ $pee = $pee . &quot;\n&quot;; // just to make things a little easier, pad the end $pee = preg_replace('|&lt;br /&gt;\s*&lt;br /&gt;|', &quot;\n\n&quot;, $pee); // Space things out a little - $allblocks = '(?:table|thead|tfoot|caption|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|select|form|map|area|blockquote|address|math|style|input|p|h[1-6]|hr)'; + $allblocks = '(?:code|table|thead|tfoot|caption|colgroup|tbody|tr|td|th|div|dl|dd|dt|ul|ol|li|pre|select|form|map|area|blockquote|address|math|style|input|p|h[1-6]|hr)'; $pee = preg_replace('!(&lt;' . $allblocks . '[^&gt;]*&gt;)!', &quot;\n$1&quot;, $pee); $pee = preg_replace('!(&lt;/' .
+    とかいう謎タグが生成されて激しく気持ち悪いので、phpに手を入れる。As You Like It ? Blog Archive ? WordPressのエディタとの付き合い方を参照して、
   </div>
   
   <footer>
@@ -187,8 +193,14 @@
     </div>
   </header>
   <div>
-    そろそろ見てくれを変えてやろうと思って、そのついでにwordpressのバージョンアップ＋文字コードの変更。今時eucってのもあれなんで、ついでにutf-8化。 mysqldump -uroot -p -hHOST -q DATABASE ./dumped.sql nkf -w --overwrite ./dumped.sql mysql -uroot -p -hHOST DATABASE こんだけかと思いきや、権限周りが壊れてログイン不能になったので「WordPress標準ガイドブック」サポートサイト ? capabilities.phpのエラーが表示された場合 を参照してパッチを当てる。
+    そろそろ見てくれを変えてやろうと思って、そのついでにwordpressのバージョンアップ＋文字コードの変更。今時eucってのもあれなんで、つ
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2008/02/21/560.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -201,7 +213,7 @@
     </div>
     <div class="sns-links hidden-print">
   
-  <a href="ogata.nobu@gmail.com">
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
     <i class="fa fa-envelope"></i>
   </a>
   

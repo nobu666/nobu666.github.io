@@ -32,7 +32,7 @@
       
       <div class="sns-links hidden-print">
   
-  <a href="ogata.nobu@gmail.com">
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
     <i class="fa fa-envelope"></i>
   </a>
   
@@ -95,7 +95,7 @@
     </div>
   </header>
   <div>
-    mixiにそのまま投稿しちゃうと、本来リンクじゃないと困るものが、ただのテキストになってしまうわけで。どっちみち携帯から見てる人には無用なエントリになっちゃうし、いっそのことmixiには投稿しないようにしようと。一番てっとり早いのはP::P::MixiDiary.pm内で、単純にif文でほげほげすることなんだけど。ちょっと気が向いたのでplugin初挑戦してみた。 package Plagger::Plugin::Filter::StripDeliciousDailyPost; use strict; use base qw( Plagger::Plugin ); sub register { my($self, $context) = @_; $context-&gt;register_hook( $self, 'update.entry.fixup' =&gt; \&amp;filter, ); } sub filter { my($self, $context, $args) = @_; my $title = $args-&gt;{entry}-&gt;title; for my $entry ($args-&gt;{feed}-&gt;entries) { if ($entry-&gt;title =~ /^links for \d{4}-\d{2}-\d{2}$/i) { $context-&gt;log(info =&gt; &quot;Delete Delicious daily post entry &quot; . $entry-&gt;link); $args-&gt;{feed}-&gt;delete_entry($entry); } } } 1; __END__ やはりperlは書き慣れんな。yamlを以下のようにして動作確認。 plugins: - module: Subscription::Config config:
+    mixiにそのまま投稿しちゃうと、本来リンクじゃないと困るものが、ただのテキストになってしまうわけで。どっちみち携帯から見てる人には無用なエ
   </div>
   
   <footer>
@@ -121,7 +121,7 @@
     </div>
   </header>
   <div>
-    前提条件 基本的にはGentoo distcc ドキュメント・DistCC クロスコンパイルガイド、この2つのドキュメントの通り行う。気をつけなきゃいけないのは、「資源を借りる側」と「資源を貸す側」で若干設定が異なる点。ここでは借りる側はi686(192.168.0.4)、貸す側はamd64(192.168.0.3)とする。 貸す側と借りる側で、gccのバージョンは同じであること。3.3.x同時はOKだが、3.3.xと3.2.xは混ぜないこと。 また、資源を借りる側は一方的に借りるだけで、相互に助け合わない設定とした。これは、貸す側はサーバなので24時間稼働しているが、借りる側はノートなのでそうした。 資源を貸す側の設定 emerge distcc crossdev vi /etc/make.conf MAKEOPTS=&quot;-j8&quot; #(CPUの数+1)*2 ここは全体じゃなくてサーバ単体で計算すべきなのかも。詳細不明…もしかしたら-j6が当たりなのかも? FEATURES=&quot;distcc&quot; DISTCC_DIR=&quot;/var/tmp/.distcc&quot; PORTDIR_OVERLAY=&quot;/usr/local/portage&quot; distcc-config --set-hosts &quot;localhost 192.168.0.4&quot; vi /etc/conf.d/distccd DISTCCD_OPTS=&quot;${DISTCCD_OPTS} --allow localhost --allow 192.168.0.4&quot; #--allow 192.168.0.0/24でも可 /etc/init.d/distcc start rc-update add distcc default crossdev -t i686 資源を借りる側の設定 emerge distcc vi /etc/make.conf MAKEOPTS=&quot;-j8&quot; #(CPUの数+1)*2 FEATURES=&quot;distcc&quot; DISTCC_DIR=&quot;/var/tmp/.distcc&quot; vi /etc/conf.d/distccd DISTCCD_OPTS=&quot;${DISTCCD_OPTS} --allow localhost&quot; #相互に助け合いたい場合は--allow 192.168.0.3を足すか--allow 192.168.0.0/24にする cd /usr/lib/distcc/bin rm c++ g++ gcc cc echo '#!/bin/bash' &gt; i686-pc-linux-gnu-wrapper echo
+    前提条件 基本的にはGentoo distcc ドキュメント・DistCC クロスコンパイルガイド、この2つのドキュメントの通り行う。気をつけなきゃいけないの
   </div>
   
   <footer>
@@ -147,7 +147,7 @@
     </div>
   </header>
   <div>
-    インストールまでは上手くいったけど設定に嵌って酷い目にあった。 必要なものをインストールする 以下のものが必要。 net-snmp apache php mysql rrdtool cacti さくっとemergeするわけだが、USEフラグに注意。cactiにはapache2/snmp、phpにはapache2/snmp/sockets/mysqlあたりが必要(gdとかxmlも必須なのか?よくわらかんがこの辺は/etc/make.confでデフォルトで付けている)。 初期設定 cacti用のデータベースとユーザを作成し、付属のスクリプトでテーブルを作成する。 mysqladmin -u root create cacti -p mysql cacti -u root -p &gt; /var/www/localhost/htdocs/cacti/cacti.sql mysql -u root mysql -p -e&quot;GRANT ALL ON cacti.* TO cactiuser@localhost IDENTIFIED BY 'p4ssw0rd'&quot; mysql -u root mysql -p -e&quot;flush privileges&quot; 次にphpのconfigファイルを、今設定したものに合わせて書き換える。 vi /var/www/localhost/htdocs/cacti/include/config.php $database_username = &quot;cactiuser&quot;; $database_password = &quot;p4ssw0rd&quot;; cron実行用のシステムアカウント作成とパーミッション変更 useradd -g apache -d /dev/null -s /bin/false -c cacti cacti ホームディレクトリを/dev/null、ログインシェルを/bin/falseにすることで、cactiというユーザでログインできないようにする。この辺は適当に手を抜いてrootでやったりすると怖いので忘れずに。次にcactiユーザでデータの読み書きするためにパーミションを変える。 chown -R cacti:apache /var/www/localhost/htdocs/cacti 全部変えちゃったけどrraとlogディレクトリだけでいいかも。未検証。 cronの設定 適当なタイミングでスクリプトをブン回す。とりあえず5分間隔に設定。 vi /etc/crontab */5 * * * * cacti /usr/bin/php /var/www/localhost/htdocs/cacti/cmd.php &gt; /dev/null 2&gt;&amp;1 cactiの設定 ブラウザから http://hostname/cacti/ にアクセス。デフォルトのユーザとパスワードはadmin/admin。ウィザードが始まるがNext押していけばいい。adminのパスワードは適当なものに変更する。 色々設定するところがあるが、一番下にある参考URLらへんを参照。 ここでrrdtoolからACCESS DENIEDと言われてグラフが上手く表示されなかった。よくわからんがcactiでadminじゃなくてcactiというユーザを作り、User Management→cacti→Graph PermissionsでDenyをAllowにお変更してSave。Graph Managementからなんかグラフを選んで、右上の*Turn On Graph Debug Mode.をクリックするとログが見えるようになるので押してみる。今度は&rsquo;rra/localhost_load_1min_5.rrd&rsquo;: No such file or directoryとか怒られる。 見てみると確かにrraの下が空っぽなのでダメらしい。/var/www/localhost/htdocs/cacti/cmd.phpを実行してもエラーらしきものは出ておらず。しばらくココで嵌ったが、/var/www/localhost/htdocs/cacti/poller.phpを実行すればOKだった。1回目は前のデータがないので怒られるが、もう1度やると問題なく実行された。そのあとcactiからはちゃんと見えるようになった。 参考URL Net-SNMPの設定方法 net-snmp About Rrdtool RRDtoolのすすめ cacti グラフツールcactiとは?
+    インストールまでは上手くいったけど設定に嵌って酷い目にあった。 必要なものをインストールする 以下のものが必要。 net-snmp apache php mysql rrdtool cacti さくっとemerge
   </div>
   
   <footer>
@@ -173,7 +173,7 @@
     </div>
   </header>
   <div>
-    Gentooにはg-cpanという素晴らしいものがあるのだが、そこはあえて使わずにいく。というかなんか知らないけど上手くいかなかったので、仕方なく手動で入れたとも言う。とりあえず自宅サーバと言うことで、サックリrootになって入れることにする。そのほうが簡単。以前レンタルサーバで悩んだのがウソのようだ。ちゃんとログを取ってないので曖昧な記憶でメモ。 準備 別段何もない。 perl -MCPAN -e shell 基本全部デフォルトのままENTER押してりゃよし。Gentooの場合、cpanでガンガン入れる前にまず emerge expat これをやっておく。次にCPANのConfigを弄る。 vi /usr/lib/perl5/5.8.8/CPAN/Config.pm $CPAN::Config = { 'build_cache' =&gt; q[100], 'build_dir' =&gt; q[/root/.cpan/build], 'bzip2' =&gt; q[/bin/bzip2], 'cache_metadata' =&gt; q[1], 'check_sigs' =&gt; q[0], 'colorize_output' =&gt; q[0], 'commandnumber_in_prompt' =&gt; q[1], 'cpan_home' =&gt; q[/root/.cpan], 'curl' =&gt; q[/usr/bin/curl], 'ftp' =&gt; q[/usr/bin/ftp], 'ftp_passive' =&gt; q[1], 'ftp_proxy' =&gt; q[], 'getcwd' =&gt; q[cwd], 'gpg' =&gt; q[], 'gzip' =&gt; q[/bin/gzip], 'histfile' =&gt; q[/root/.cpan/histfile], 'histsize' =&gt; q[100], 'http_proxy' =&gt; q[],
+    Gentooにはg-cpanという素晴らしいものがあるのだが、そこはあえて使わずにいく。というかなんか知らないけど上手くいかなかったので、仕
   </div>
   
   <footer>
@@ -199,7 +199,7 @@
     </div>
   </header>
   <div>
-    通勤時の電車の中では本を読んでいるか、暇つぶしに2ch見てるわけだが。どうせ携帯で見るなら自宅サーバのリソースも余ってることだし有効活用したい。そんなわけでrep2を使うことにした。 インストール とりあえずダウンロードして、/var/www/localhost/rep2とかに置く。apacheは当然SSL有効でコンパイルしておくこと。phpはやたらに使用可能なフラグが多いのでメモっておく。 emerge -pv php These are the packages that would be merged, in order: Calculating dependencies... done! [ebuild R ] dev-lang/php-5.1.6-r6 USE=&quot;apache2 bzip2 cjk cli crypt curl curlwrappers gd iconv mysql ncurses nls pcre readline sasl session spell ssl threads unicode xml xmlrpc zlib (-adabas) -apache -bcmath -berkdb (-birdstep) -calendar -cdb -cgi -concurrentmodphp -ctype -db2 -dbase (-dbmaker) -debug -discard-path -doc (-empress) (-empress-bcs) (-esoob) -exif -fastbuild (-fdftk) (-filepro) (-firebird)
+    通勤時の電車の中では本を読んでいるか、暇つぶしに2ch見てるわけだが。どうせ携帯で見るなら自宅サーバのリソースも余ってることだし有効活用した
   </div>
   
   <footer>
@@ -225,7 +225,7 @@
     </div>
   </header>
   <div>
-    Amazonで\7,000ちょっとという値段だったので、購入したのが届いた。流石に24時間稼働だとUPSがないと怖い。今年の雷で瞬断も多くあったので。付属のPowerCuteはWindowsとMacOS Xと商用Linuxにしか対応していないので自力でどうにかする方法をメモ。 準備と接続、認識確認 emerge apcupsd なにはなくともコレがないと始まらない。とりあえずインストールしたら一旦シャットダウンしてコンセントをUPSにつなぎ変え、付属のUSB通信ケーブルでUPSとサーバを接続して再起動。再起動したらdmesgを見てサーバがES500を認識しているか確認。 usbcore: registered new driver hiddev hiddev0: USB HID v1.10 Device [APC APC ES 500 FW:803.p6.A USB FW:p6] on usb-0000:00:10.2-2 上記のようなメッセージがあれば問題ない。が、 es500 hid device not claimed とか出てたら認識していない。俺の場合は思い切り認識していなかった。要するにまたカーネル再構築。だがもう手慣れたモンなのでサクサクと再構築する。こういうときはマシンパワーがあると非常に楽だ。お約束の以下の呪文を唱える。 cd /usr/src/linux make menuconfig そして今の設定をLOADして、以下のところにチェックを付けて保存。 Device Drivers ---&gt; USB Support ---&gt; /dev/hiddev raw HID device support またお約束の呪文。 make &amp;&amp; make modules_install cp arch/x86_64/boot/bzImage /boot/なんか適当な名前 そしたら/boot/grub/grub.confを編集して再起動すればいい。今度はちゃんと認識されているはず。念のためapcaccess statusとやってエラーが出ないことを確認する。 設定と動作確認 次はapcupsdの設定を行う。 cat /etc/apcupsd/apcupsd.conf UPSCABLE usb UPSTYPE usb DEVICE LOCKFILE /var/lock ONBATTERYDELAY
+    Amazonで\7,000ちょっとという値段だったので、購入したのが届いた。流石に24時間稼働だとUPSがないと怖い。今年の雷で瞬断も多くあ
   </div>
   
   <footer>
@@ -251,7 +251,7 @@
     </div>
   </header>
   <div>
-    [memo] postfix + dovecotでSMTP AUTH &amp; IMAPなメールサーバを立ち上げるがあまり正しくないので修正版。 ssmtpの削除 Gentooではいきなりpostfixを入れようとしても、デフォルトでssmtpが入っていてblockされるのでssmtpを消すのが先決。 emerge -C ssmtp postfixとdovecotのインストール Gentooの基本だけど、emergeするときはemerge -pvでどんなフラグが有効になるか必ず確認。必要ないならpackage.useで外す。あとsaslが必要なのでこれは付けておく。あとなんでかわからないけどpostfixにsaslを付けるとついてくるcyrus-saslで、gdbmやcryptをUSEするとコンパイルに失敗したので外した。 emerge -pv postfix dovecot echo &quot;mmail-mta/postfix -mysql sasl&quot; &gt;&gt; /etc/portage/package.use echo &quot;dev-libs/cyrus-sasl -mysql -java -gdbm -crypt&quot; &gt;&gt; /etc/portage/package.use emerge postfix dovecot オレオレ認証局の作成 Gentooでの方法なので他のディストリではパスが違うようなので注意。 mkdir /etc/certs chmod 700 /etc/certs cd /etc/certs cp /etc/ssl/misc/CA.pl . perl ./CA.pl -newca CA certificate filename (or enter to create) (ENTER) Making CA certificate ... Generating a 1024 bit RSA private key ..................................++++++ .......................++++++ writing new private key to './demoCA/private/cakey.pem' Enter PEM pass phrase:(パスフレーズを入力) Verifying - Enter PEM pass phrase:(同じパスフレーズをもう一度入力) ----- You are about to be asked to enter information that will be incorporated into your certificate request.
+    [memo] postfix + dovecotでSMTP AUTH &amp; IMAPなメールサーバを立ち上げるがあまり正しくないので修正版。 ssmtpの削除 Gentooではいきなりp
   </div>
   
   <footer>
@@ -277,8 +277,14 @@
     </div>
   </header>
   <div>
-    なんつーかね、某krからのsshdへのBrute force attacksが酷すぎる。auth.logを埋め尽くすほどのアタックを食らったので対策することに。だが普通にインストールするとiptablesが動いてくれないので、カーネル再構築に挑戦する。 別に今回はkernelのバージョンを上げたいわけではなく、単純にカーネルのオプションを変えたいだけなので、emerge gentoo-sourcesはやらない。以下、rootになって作業を行う。あとmenuconfigはscreenの中でやると表示が乱れて酷いことになるので、screenをデタッチするなり抜けるなりしてからやったほうがいい。 cd /usr/src/linux make menuconfig Confgurationが立ち上がったら、まずLoad an Alternate Configuration Fileを選ぶ。&rdquo;.config&rdquo;が入力されているはずなので、そのままOKすると現在の設定が読み込まれる。そしたら Networking --- Networking options --- Network packet filtering (replaces ipchains) --- Core Netfilter Configuration --- Netfilter Xtables support (required for ip_tables) を選択。その下に色々あるが、よくわからないならMにしといてあとでModuleとして読めるようにしておくと吉。必要なのに何もチェックしないでおくと、再度カーネル再構築が必要になって面倒なので。チェックしたら1つ戻ってIP: Netfilter Configurationの中に入る。とりあえず必須なのはIP tables support (required for filtering/masq/NAT)と、IP range match support、Packet filtering、REJECT target support、address type match support、Full NAT、MASQUERADE target supportとかそのへん。終わったらTOPまで戻って、念のため設定ファイルをなんか名前付けて保存しておいたほうがいい。 あとはその辺のサイトに書いてあるとおり、お約束でOK。 make &amp;&amp; make modules_install cp arch/x86_64/boot/bzImage /boot/なんか適当な名前 vi /boot/grub/grub.conf grub.confの設定では、元々書いてあるものを絶対に消さないこと。消しちゃうと万が一再構築したカーネルで起動できなかったときに面倒。 [sourecode lang=&ldquo;text&rdquo;] title=Gentoo Linux 2.6.17-r8 root (hd0,0) kernel /さっきbootの下にcpしたファイル名 root=/dev/sda3 vga=ask とかで問題なし。vga=askの部分はまぁお好みで。/usr/src/linux/Documentation/fb/vesafb.txtとかを参考に。基本的にはこれでrebootして、上のtitleでつけた名前を選択して起動してやればとりあえずOKなはずだ。失敗したら残しておいた方で起動して修正すべし。消してしまったお馬鹿さんはinstall cdから起動して/dev/sda1とかをmountして編集すれば戻せる。あとvgaとかvideoのオプションは、間違うと画面に何も表示されなくなるので注意。まぁリモート操作がメインならそれでもいいのかも知れないけど、何かあったときにアレなんで…心配ならaskにしておいて選択するのが間違いない。 そこまで出来たらDebian GNU/Linux 3.1(sarge)運用ノートの&lt;a href=&quot;http://www.musicae.ath.cx/diary/?200506c&amp;to=200506272#200506272&quot; target=&quot;_blank&quot;&gt;SSH Brute force attacks&lt;/a&gt;の通りに設定してから ```bash /etc/init.d/iptables save /etc/init.d/iptables start rc-update add iptables default 以上で終了。エラーが出てiptablesが動かない場合は必要なモジュールが選択漏れでコンパイルされていないとか、Mを選択したのにmodprobeなりinsmodしてない。てか俺もこの手順にたどり着くまで5回くらい再構築してこんな時間に…もう寝る!
+    なんつーかね、某krからのsshdへのBrute force attacksが酷すぎる。auth.logを埋め尽くすほどのアタックを食らったので対策する
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/10/28/421.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -297,8 +303,14 @@
     </div>
   </header>
   <div>
-    2006/10/29追記: イマイチ不正確なので[修正版][memo] postfix + dovecotでSMTP AUTH &amp; IMAPなメールサーバを立ち上げるで書き直しました。そちらをみてください。
+    2006/10/29追記: イマイチ不正確なので[修正版][memo] postfix + dovecotでSMTP AUTH &amp; IMAPなメールサーバを立ち上げるで書き
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/10/25/420.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -317,8 +329,14 @@
     </div>
   </header>
   <div>
-    [memo] サーバのCPU動作周波数を下げるの続き。 やってみないとわからんので、cpufreq_ondemandを試してみる。 modprobe cpufreq_ondemand echo ondemand &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor cd /sys/devices/system/cpu/cpu0/cpufreq/ondemand/ ls ignore_nice_load sampling_down_factor sampling_rate sampling_rate_max sampling_rate_min up_threshold cat ignore_nice_load 0 cat sampling_down_factor 1 cat sampling_rate 1040000 cat sampling_rate_max 520000000 cat sampling_rate_min 520000 cat up_threshold 80 詳細はKernel メモ ondemand参照。とりあえずignore_nice_loadは1に設定しておいた。急がないけど負荷になりそうな作業なんかはniceすること。 実際にemerge &ndash;syncとかして/proc/cpuinfoを見てたら、普段1GHzで動作しているのが2GHz→1.8GHzとなって1GHzに戻った。上手く動いているっぽい。試しにnice revdep-rebuildとかすると1GHzから変わらないことも確認。とりあえずこのまま運用してみる。
+    [memo] サーバのCPU動作周波数を下げるの続き。 やってみないとわからんので、cpufreq_ondemandを試してみる。 modprobe cpufreq_ondemand echo ondemand &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor cd /sys/devices/system/cpu/cpu0/cpufreq/ondemand/ ls ignore_nice_load
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/10/24/418.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -337,8 +355,14 @@
     </div>
   </header>
   <div>
-    普通にsshで繋がるようになったらsvn+sshを使いたくなる。サーバー側はemerge subversionするぐらいで設定は特にない。svnadmin create /var/svn/hoge とか svn import ~/moge file:///var/svn/hogeとかしておくだけ。svnserveを立ち上げる必要はない。svn+sshで接続するときは、sshで認証した後svnserve -tを勝手にしてくれ、接続を切るとsvnserveプロセスもなくなってくれる。よってルータで3690番のポートを開けておくとかいう作業は必要ない。22番だけ開いていればいい。 クライアント側は、Poderosaで作った鍵(例えばファイル名をid_rsaとする)しかない場合はPuTTY用の鍵を作る。puttygenを起動して、秘密鍵を読み込んでパスフレーズを入力すれば変換される。変換された秘密鍵をid_rsa.ppkとして保存。とりあえずPuTTYを起動して接続-データで自動ログインのユーザ名と、接続-SSH-認証で認証のためのプライベートキーファイルでさっきの.ppkファイルを設定。接続してみてパスフレーズ入力してログイン出来ればOK。 次にputty.exeと同じフォルダにあるpageant.exeを起動する。タスクトレイに常駐するので右クリックして鍵の追加を選んで、.ppkを選択する。パスフレーズを入力すれば作業終わり。以降、PuTTYでもTortoiseSVNでもパスフレーズは入力しないでもいい。ただ、これはWindowsにログインしなおすと消えてしまうので、ログイン毎に鍵の追加→パスフレーズの入力を行う必要がある。ランチャーに登録するかスタートアップに入れておく。 後はTortoiseSVNの設定で、ネットワークにあるSSHクライアントにTortoisePlink.exeを設定。これでTortoiseSVNからリボジトリブラウザを開いて、URL欄に svn+ssh://ユーザ名@ホスト名/var/svn/hoge と入力してエラーが出なければ終了。
+    普通にsshで繋がるようになったらsvn+sshを使いたくなる。サーバー側はemerge subversionするぐらいで設定は特にない。sv
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/10/24/417.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -357,8 +381,14 @@
     </div>
   </header>
   <div>
-    俺のようにしょっちゅうemergeしたい人はUSEフラグの管理が大変だ。知らないうちに勝手にgtk2フラグが有効になっててXがインストールされたりして大変ウザイ。そんなわけでGentoo使いの先輩に教えて貰ったeixとeuseを使ってみる。 sudo emerge eix sudo eix-sync euseはgentoolkitに入っている。eixはemerge &ndash;searchと似たようなモンだがこっちのほうが速いし使いやすい。んで、本題のeuseだが、使い方自体は&ndash;helpすりゃわかるんだが。フラグの説明見たり、どれが使われてるか見れたり、フラグを有効にしたり無効にしたりできる。つーか詳細はman euseで（ｗ euse使うとmake.confのUSEフラグの部分が整形されて見やすくなるのも嬉しい。まぁ説明見るだけなら /usr/portage/profiles/use.desc 見ればいいんだが。 同じくgentoolkitに含まれているequeryも激しく便利。こいつで equery depends mysql とかやってやればmysqlフラグに依存しているパッケージを調べることが出来るし、dependsをdepgraphに変えてやると依存関係をツリーで見れる。超便利。
+    俺のようにしょっちゅうemergeしたい人はUSEフラグの管理が大変だ。知らないうちに勝手にgtk2フラグが有効になっててXがインストールさ
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/10/24/416.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -377,8 +407,14 @@
     </div>
   </header>
   <div>
-    CPUに関する情報は/sys/devices/system/cpu/cpu0/cpufreq/で次のファイルをcatする。まぁファイル名のまんまだが。 affected_cpus : 影響する他のCPU。俺の場合はデュアルコアなので当然0と1 cpuinfo_cur_freq : 現在の動作周波数 cpuinfo_max_freq : 最大周波数。AMD64X2 3800+の場合は2000000 cpuinfo_min_freq : 最低周波数。AMD64X2 3800+の場合は1000000 scaling_available_freqyencies : 設定可能な周波数。AMD64X2 3800+の場合は2000000/1800000/1000000しかない。intelだともっと多いらしい scaling_available_governors : 設定可能な動作モード。Gentooのデフォルトではperformanceのみ scaling_cur_freq : 現在の動作周波数 scaling_driver : 周波数コントロールのための仕組みの名前 scaling_governor : 動作モード。scaling_available_governorsのどれか scaling_max_freq : cpuinfo_max_freqと何が違うのかわからん scaling_min_freq : cpuinfo_min_freqと何が違うのかわからん 普段は高周波数で動いてくれなくていいというか、その方が電気代が安くなって地球に優しいためいい感じ。そんなわけで以下の手順を踏んで周波数を下げてみた。 (今の周波数を確認) cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq (どんなdriverがあるか探す) find /lib/modules/2.6.17-gentoo-r7/ -name '*.ko'|grep cpu (明らかにそれっぽい奴を見つけたので読み込む) sudo modprobe cpufreq_powersave (動作モードが増えたことを確認) cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors (動作モードを上で確認したやつに変更) su - ; echo &quot;powersave&quot; &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor exit (周波数が下がったことを確認) cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq これだと確かに周波数は下がるが下がりっぱなしだ。Gentooだと最新を追っかけたい人はコンパイルをしょっちゅうするので、そういうときにいちいち戻すのが面倒だ。そこでcpufreq_ondeamndというdriverを使うと、なんかいい感じに自動化できそうな予感がする。が、もうちょっと調べて、しっかり設定しないと下がりっぱなしとか上がりっぱなしになりそうな予感がするのでとりあえずスルー。
+    CPUに関する情報は/sys/devices/system/cpu/cpu0/cpufreq/で次のファイルをcatする。まぁファイル名のま
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/10/23/415.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -397,8 +433,14 @@
     </div>
   </header>
   <div>
-    特に書くことないほどあっさり終了。LiveCDを焼いてそいつでブートし、デスクトップ画面が出てきたら&rdquo;Gentoo Linux installer&rdquo;をダブルクリックして指示に従っていくだけ。つかパソコンふぉあ障害者ず Gentoo Linux 2006.0(インストール-LiveCD-)を参考に。変えたところはIPアドレスとかその辺のネットワーク設定周りと、ステージを3からにしたのと、CFLAGで-O3にしたぐらい。インストールが終わったら上部のメニューからrebootしてCD抜いて終わり。 pingして外に繋がることを確認したら emerge --sync してから、必要なものをガンガン入れるんだが、その前に /etc/init.d/hdparm start してDMAを有効にしておく。んでいい加減sshで繋いで作業したいので nano -w /etc/ssh/sshd_config で適切にsshを設定。 PermitRootLogin no RSAAuthentication yes PubkeyAuthentication yes AuthorizedKeysFile .ssh/authorized_keys PasswordAuthentication no PermitEmptyPasswords no ChallengeResponseAuthentication no とかそんな感じに。 クライアントで鍵セットを作って、USBメモリでサーバに公開鍵を置く。マウントするのは mkdir /mnt/usbmemory mount -t vfat /dev/sdb1 /mnt/usbmemory で、/mnt/usbmemoryが見えるようになる。後は公開鍵を置いてパーミッション変えればOK。 mkdir ~/.ssh cat /mnt/usbmemory/id_rsa &gt;&gt; ~/.ssh/authorized_keys chmod 700 ~/.ssh chmod 600 ~/.ssh/authorized_keys クライアントからsshで繋いでrootになって、ひたすらemerge -av パッケージ名。入れたパッケージは以下の通り。 管理系:gentoolkit/htop/traceroute/tcpdump デーモン系:apache2/proftpd/mysql/subversion/trac/samba ユーティリティ系:sudo/screen/ftp/zsh/w3m/svk/lv/nkf 言語:python/ruby/jdk/groovy keywordでmaskされてるとか怒られるやつは ACCEPT_KEYWORDS=&quot;~amd64&quot; emerge -av パッケージ名 で入る。色々入れたり消したりしてるうちに依存関係がおかしくなったりしたときは、revdep-rebuildする。特定のライブラリに依存するもの、とかの指定もできる。 あとはapacheやらsambaやらの設定だな。
+    特に書くことないほどあっさり終了。LiveCDを焼いてそいつでブートし、デスクトップ画面が出てきたら&rdquo;Gentoo Linux instal
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/10/22/413.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -411,7 +453,7 @@
     </div>
     <div class="sns-links hidden-print">
   
-  <a href="ogata.nobu@gmail.com">
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
     <i class="fa fa-envelope"></i>
   </a>
   

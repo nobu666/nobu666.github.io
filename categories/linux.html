@@ -32,7 +32,7 @@
       
       <div class="sns-links hidden-print">
   
-  <a href="ogata.nobu@gmail.com">
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
     <i class="fa fa-envelope"></i>
   </a>
   
@@ -95,8 +95,14 @@
     </div>
   </header>
   <div>
-    Solr勉強会第10回に参加して、話をさせて頂きました。@johtaniさん、主催お疲れ様でした。また、会場を提供して頂き、ピザとビールをたらふくごちそうして頂いたVOYAGE GROUP様ありがとうございました。 発表させていただいた資料は以下になります。 Solr勉強会第10回 from Nobutoshi Ogata 歴史と銘打ったからにはもう少し古い時代の話を盛り込みたかったのですが、資料が現存していなかったりなんだりで、あまり突っ込んだ話をできませんでした。ただまぁSolr勉強会でSennaやTritonnの話を細かくしないでもいいかなということで、Luceneを使っていたときの話とSolrに乗り換えた話をメインにさせてもらいました。関口さんのプレゼンのあとだったので、これは空気的に俺が喋っていいのだろうかと思って内心焦ったのですがｗ 事例のひとつとしてなにかの参考なれば幸いです。 他の方の発表がどういう感じだったのかという辺りは、『第10回Solr勉強会 at VOYAGE GROUPに行ってきました』『第10回Solr勉強会を主催しました。#SolrJP』このあたりをご参照いただければ。 懇親会でもいろいろな方とお話しさせていただいて大変刺激を受けましたので、検索周りでなにか新しいことにチャレンジする機会があればぜひフィードバックしていきたいな思いました。Solr CloudやらElastic Searchやら最近おもしろいものが出てきていますし、Solr単体でもまだ色々工夫のしがいがあるところだと思いますので精進しようと思います。参加されたみなさまお疲れ様でした。
+    Solr勉強会第10回に参加して、話をさせて頂きました。@johtaniさん、主催お疲れ様でした。また、会場を提供して頂き、ピザとビールをた
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2013/03/27/991.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -115,7 +121,7 @@
     </div>
   </header>
   <div>
-    気づいたら年が明けていますが俺は元気です。 タイトル通りなんだけど、あるMySQLサーバへつなぐためには踏み台を通らないといけなくて、いちいち [sourcecode language=&ldquo;bash&rdquo; padlinenumbers=&ldquo;2&rdquo;] localhost$ ssh -t gateway ssh dbserver dbserver$ mysql -uhoge -p とかやらないといけなくて、めんどい。というかこれだとローカルの開発環境で、一時的にdbserverで動作してるMySQLのデータを使いたいときとか困る。ダンプしてローカルに持ってくればいいけど、データがものすごいデカかったりしてだるい。どうにかしたい。 というわけで、Port Forwardすればいいじゃないかと思って [sourcecode language=&quot;bash&quot; padlinenumbers=&quot;2&quot;] $ ssh -Nf -L 13306:dbserver:3306 gateway とかして、 [sourcecode language=&ldquo;text&rdquo; padlinenumbers=&ldquo;2&rdquo;] $ mysql -uhoge -p -P13306 これで勝つる！！！と思ったら、これでは繋がらない。でもtelnet localhost 13306とか叩いてみると繋がるように見える。 [sourcecode language=&quot;text&quot; padlinenumbers=&quot;2&quot;] $ telnet localhost 13306 Trying 127.0.0.1... Connected to localhost. Escape character is '^]'. L 5.5.8-log $;2)s.%n! ?QV;dgXbeUZBymysql_native_password なにこれどういうことなの、と思って色々試したり調べたりしていたら、答えは意外なところに。 What is SSH Port Forwarding and How It Worksってページに書いてあった。 When the remote SSH host is on a different machine than the MySQL server, replace 127.0.0.1 with the IP address of the MySQL server (relative to the SSH host).
+    気づいたら年が明けていますが俺は元気です。 タイトル通りなんだけど、あるMySQLサーバへつなぐためには踏み台を通らないといけなくて、いちいち
   </div>
   
   <footer>
@@ -141,8 +147,14 @@
     </div>
   </header>
   <div>
-    http://kokucheese.com/event/index/16461/ 一時はどうなることかと思いましたが、@Mr_K_O の活躍により無事LT枠も埋まり、盛況のうちに終わりました。関係者の方々、来てくださった方々ありがとうございました。 資料はこちらにおいてあります。 http://www.slideshare.net/NobutoshiOgata/zsh-9223115 思いの外30分はあっという間に過ぎてしまうもので、幾つか言い足りなかったこともあったのでここに補足させて頂きます。 typoの話: ありがちなtypoをaliasでカバー ヒストリ共有の話: プロセス間でヒストリを共有するオプションがあります、便利＞＜ hint: あえて無意味なコマンドを入れることで、ヒストリを検索するときに楽をする技: C-rで検索するときに一発で見つかるように、echo "hint"/dev/null;hogehoge みたいにしとく…ってこれzshとか関係ないですが wgetでパラメタ指定すると悲しい話: ?がglobで展開されちゃうので面倒なんですが、autoload -Uz url-quote-magic;zle -N self-insert url-quote-magicしとくと幸せだよ まぁ言い出すときりがないのでこのへんにしときます。次回は是非、dotfile晒し大会的なことをやりたいですね。 さっそくまとめてくださった方が。ありがとうございます！ http://d.hatena.ne.jp/cointoss1973/20110912/1315840029
+    http://kokucheese.com/event/index/16461/ 一時はどうなることかと思いましたが、@Mr_K_O の活躍により無事LT枠も埋まり、盛況のうちに終わりました。関係者の方々、来てくださった方
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2011/09/13/927.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -155,7 +167,7 @@
     </div>
     <div class="sns-links hidden-print">
   
-  <a href="ogata.nobu@gmail.com">
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
     <i class="fa fa-envelope"></i>
   </a>
   

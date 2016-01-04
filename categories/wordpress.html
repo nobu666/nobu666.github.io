@@ -32,7 +32,7 @@
       
       <div class="sns-links hidden-print">
   
-  <a href="ogata.nobu@gmail.com">
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
     <i class="fa fa-envelope"></i>
   </a>
   
@@ -95,7 +95,7 @@
     </div>
   </header>
   <div>
-    前のテーマは最初からAutoPagerizeに対応してたので気にしてなかったんだが、テーマ変えてから効かなくなってたので対応させた。ついでにはてスタも復活させた。 まずAutoPagerize対応。wp-includes/link-template.phpのfunction next_posts_link部分とfunction previous_posts_link部分に、rel=&ldquo;next&rdquo;を追加する。 function next_posts_link($label='Next Page &amp;raquo;', $max_page=0) { global $paged, $wp_query; if ( !$max_page ) { $max_page = $wp_query-&gt;max_num_pages; } if ( !$paged ) $paged = 1; $nextpage = intval($paged) + 1; if ( (! is_single()) &amp;&amp; (empty($paged) || $nextpage &lt;= $max_page) ) { echo '&lt;a rel=&quot;next&quot; href=&quot;'; next_posts($max_page); echo '&quot;&gt;'. preg_replace('/&amp;([^#])(?![a-z]{1,8};)/', '&amp;#038;$1', $label) .'&lt;/a&gt;'; } } ↑こんな風に。echo &lsquo;&lt;a rel=&ldquo;next&rdquo; href=&ldquo;&lsquo;; の行だけ変更すればおｋ。telnetなりSSHなりで入って直接編集するなり、ローカルで編集してFTPするなりお好きなように。あとはテーマ側の話なので、Blogにログインして、テーマ編集。 テーマによって多少違うので一概には言えないのだが、WordPressのテーマは大体以下のような感じになっていることが多いはず。 &lt;?php get_header(); ?&gt; &lt;div id=&quot;content&quot;&gt;
+    前のテーマは最初からAutoPagerizeに対応してたので気にしてなかったんだが、テーマ変えてから効かなくなってたので対応させた。ついでに
   </div>
   
   <footer>
@@ -115,7 +115,7 @@
     </div>
     <div class="sns-links hidden-print">
   
-  <a href="ogata.nobu@gmail.com">
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
     <i class="fa fa-envelope"></i>
   </a>
   

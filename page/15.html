@@ -34,7 +34,7 @@
       
       <div class="sns-links hidden-print">
   
-  <a href="ogata.nobu@gmail.com">
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
     <i class="fa fa-envelope"></i>
   </a>
   
@@ -91,7 +91,7 @@
     </div>
   </header>
   <div>
-    HikiやFSWikiにはあるんだけどPukiWikiにはないので、どうにかならないかなぁと試行錯誤した結果。会社で社内Wiki用にまとめたけど、こっちにも書いておく。URLとかPathとかは適宜読み替えてください。ま、こんなもの参考にする人は何かあったときの未来の俺くらいだとは思うが。 http://www.aksum.jp/pukiwiki/index.php?%E3%83%8F%E3%83%83%E3%82%AF%2F04-WikiFarmEngine こんなものがあるにはあるのだけども、残念ながらPukiWiki1.4.6ベースで、文字コードがEUC。今時EUCはねーだろう、ということでどうにか1.4.7UTF-8ベースにする 1.4.7ベースのFarm 1.4.7のソースを持ってきてフォルダわけ tar zxf pukiwiki-1.4.7_notb_utf8.tar.gz -C /var/www/html/farm cd /var/www/html/farm mkdir {admin,common,datasource} cp -a {attach,backup,cache,counter,diff,trackback,wiki,.ht*,index.php} {admin,datasource} cp -a {config,image,lib,plugin,skin} common mkdir common/doc mkdir {admin,datasource}/config 延々とこんな感じでPukiFarmを参考に同じディレクトリ構成にする patch pukiwiki.ini.php --- pukiwiki-1.4.7_notb_utf8/pukiwiki.ini.php 2006-10-22 05:40:24.000000000 +0900 +++ common/config/pukiwiki.ini.php 2008-10-09 14:02:09.000000000 +0900 @@ -8,6 +8,8 @@ // // PukiWiki main setting file +$adminpage = ':config/admin'; + ///////////////////////////////////////////////// // Functionality settings @@ -77,7 +79,7 @@ define('UPLOAD_DIR', DATA_HOME . 'attach/' ); // Attached files and logs define('COUNTER_DIR', DATA_HOME .
+    HikiやFSWikiにはあるんだけどPukiWikiにはないので、どうにかならないかなぁと試行錯誤した結果。会社で社内Wiki用にまとめた
   </div>
   
   <footer>
@@ -119,7 +119,7 @@
     </div>
   </header>
   <div>
-    前のテーマは最初からAutoPagerizeに対応してたので気にしてなかったんだが、テーマ変えてから効かなくなってたので対応させた。ついでにはてスタも復活させた。 まずAutoPagerize対応。wp-includes/link-template.phpのfunction next_posts_link部分とfunction previous_posts_link部分に、rel=&ldquo;next&rdquo;を追加する。 function next_posts_link($label='Next Page &amp;raquo;', $max_page=0) { global $paged, $wp_query; if ( !$max_page ) { $max_page = $wp_query-&gt;max_num_pages; } if ( !$paged ) $paged = 1; $nextpage = intval($paged) + 1; if ( (! is_single()) &amp;&amp; (empty($paged) || $nextpage &lt;= $max_page) ) { echo '&lt;a rel=&quot;next&quot; href=&quot;'; next_posts($max_page); echo '&quot;&gt;'. preg_replace('/&amp;([^#])(?![a-z]{1,8};)/', '&amp;#038;$1', $label) .'&lt;/a&gt;'; } } ↑こんな風に。echo &lsquo;&lt;a rel=&ldquo;next&rdquo; href=&ldquo;&lsquo;; の行だけ変更すればおｋ。telnetなりSSHなりで入って直接編集するなり、ローカルで編集してFTPするなりお好きなように。あとはテーマ側の話なので、Blogにログインして、テーマ編集。 テーマによって多少違うので一概には言えないのだが、WordPressのテーマは大体以下のような感じになっていることが多いはず。 &lt;?php get_header(); ?&gt; &lt;div id=&quot;content&quot;&gt;
+    前のテーマは最初からAutoPagerizeに対応してたので気にしてなかったんだが、テーマ変えてから効かなくなってたので対応させた。ついでに
   </div>
   
   <footer>
@@ -147,8 +147,14 @@
     </div>
   </header>
   <div>
-    jython2.2でicu4jを試したかったんだけど、どうにもうまくいかない。 &gt;&gt;&gt; from com.ibm.icu.text import Transliterator &gt;&gt;&gt; from java.lang import String &gt;&gt;&gt; print Transliterator.getInstance(&quot;Fullwidth-Halfwidth&quot;).transliterate(String(u&quot;テスト&quot;, &quot;UTF-8&quot;)) ??? なんだよぅ…普通にJavaで書いてやるとうまくいくんだけど。表示時におかしいのかとファイルにリダイレクトしてみたり、いきなりprintしないで変数に入れたりいろいろ試してて、ふとtypeしてみたら &lt;type 'str'&gt; とな。&rsquo;\uff83\uff7d\uff84&rsquo;とかいうだたの文字列になってて、ちゃんとUnicodeになってないみたいだ。んんん…
+    jython2.2でicu4jを試したかったんだけど、どうにもうまくいかない。 &gt;&gt;&gt; from com.ibm.icu.text import Transliterator &gt;&gt;&gt; from java.lang import String &gt;&gt;&gt; print Transliterator.getI
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2008/10/17/645.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -169,8 +175,14 @@
     </div>
   </header>
   <div>
-    XC Cube EZ965にCent OS 5入れたんだけど、NICが認識されずにはまった。まぁそれ以前に、オンボードUSB殺さないとインストールすらできなかったんだけども。以下、動作させるまでの手順。 USB殺してなんとかインストールしたものの、/etc/sysconfig/network-scripts/ifcfg-eth0 が存在しない。とりあえず作ってみる。 DEVICE=eth0 ONBOOT=yes IPADDR=x.x.x.x NETMASK=x.x.x.x GATEWAY=x.x.x.x これでservice network startしてみるも、eth0: Device eth0 does not seem to be present, delaying initializationと怒られる。lspci|grep Ethernetとかすると見えてるので、ドライバがないことがわかった。Networkつながってないし、USB殺してるしで困ったわけだが、仕方ないので他のPCでドライバをダウンロードしてCD-Rに焼いた。 mkdir /mnt/cdrom mount /dev/cdrom /mnt/cdrom cp /mnt/cdrom/r8168-8.008.00.tar.bz2 . tar jxf r8168-8.008.00.tar.bz2 cd r8168-8.008.00 make clean modules make install depmod -a insmod ./src/r8168.ko lsmod | grep r8168 ifconfig eth0 up umount /mnt/cdrom これで無事にeth0があがり、通信できるようになった。やれやれ。
+    XC Cube EZ965にCent OS 5入れたんだけど、NICが認識されずにはまった。まぁそれ以前に、オンボードUSB殺さないとインストールすらできなか
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2008/10/14/644.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -191,8 +203,14 @@
     </div>
   </header>
   <div>
-    土曜日、渋谷で中学の同期と飲んできた。その中の一人に、元スキージャンプ選手で、現大倉山シャンツェのバッケンレコード保持者、金子祐介がいるのだけども。この前の飲み会でも話はしたんだけど、今回は人数も少なかったのでもうちょっと深い話もできた。実際にあって話をして、その後で改めてテレビ放映された話を見たらもう泣けて泣けて… 金子祐介を知ってる人も知らない人も、番組を見るとなにか感じるものがあるのではないかと思ったので、ここで紹介します。 ベストハウス1・2・3 記憶喪失から奇跡の復活 バッケンレコードを超えて 【ニコニコ動画】バッケンレコードを超えて なんかね…俺みたいなもんが、やれ仕事が忙しいだのなんだのと、小さなこと言ってるのがバカバカしくなったというか。あいつに比べたら俺なんかなんにもしてねーんだなーと思った。
+    土曜日、渋谷で中学の同期と飲んできた。その中の一人に、元スキージャンプ選手で、現大倉山シャンツェのバッケンレコード保持者、金子祐介がいるのだ
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2008/10/13/643.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -213,8 +231,14 @@
     </div>
   </header>
   <div>
-    本家でバイナリ配布が復活してた。 知らない人のために解説すると、Explorer上で日本語インクリメンタルサーチするためのツールだ。普通のExplorerでもローマ字インクリメンタルサーチできるけど、こいつがあれば日本語もローマ字でサーチできちゃう。たとえば「マイ ミュージック」というフォルダを選択するには、「myu」とだけ打ってやればいい。便利すぎる。 「強制適用」するか、設定ファイルにウィンドウクラスをちゃんと指定するなりしてやれば、Explorerじゃなくても効くようになる。適当なファイラーでも、ファイルを開くダイアログでも。
+    本家でバイナリ配布が復活してた。 知らない人のために解説すると、Explorer上で日本語インクリメンタルサーチするためのツールだ。普通のEx
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2008/09/26/641.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -235,7 +259,7 @@
     </div>
   </header>
   <div>
-    前から使ってたけど今はあまり使ってないデスクトップ、最近主力のMacBook、たまに使うLet&rsquo;s NoteとうちにはPCが3台ある。あとGentooサーバー。全部の環境からmp3を共有したかったので、GentooでiTunesサーバーをたてて共有することにした。 まずはデスクトップからごっそり外付けHDDにmp3をコピー。1万曲超、60GBくらいあった。これをGentooにぶっさして、とりあえず放置。Gentooで環境構築。 wget http://www.porchdogsoft.com/download/howl-1.0.0.tar.gz tar zxf howl-1.0.0.tar.gz cd howl-1.0.0 ./configure &amp;&amp; make &amp;&amp; sudo make install &amp;&amp; cd sudo emerge libogg sudo emerge libvorbis sudo emerge mt-daapd sudo cp /etc/mt-daapd.conf.example /etc/mt-daapd.conf confは適当にmp3の入った外付けHDDのmount先を指定したりweb_rootのパスワード指定したりする程度。これであっさり行くと思ったら、まずこのままではmt-daapdが起動しない。なぜか知らないが/etc/init.d/mt-daapdで、depend()部分が間違ってるのが原因。mDNSResponderをmDNSResponderPosixに修正、mDNSResponderPosixを起動してから再度動かすと動いた。 これでとりあえず動いたものの、MacのiTunes上からは文字化けの嵐。WindowsのiTunesでは問題ない。つまり文字コードの問題だな。ここは先人の知恵を借り、ググってみるとwindows上で変換しるとよいことが判明。HDDを一旦デスクトップにつないで、iTunesで曲を全部選択して「ID3タグを変換」→「Unicodeを元に戻す」。何故かうまく行かないで化けちゃうのがあるので、個々に探して同様に変換したら直った。とりあえずこれでタグは問題なくUnicodeになったので、再度Gentooにつないでmountしてmt-daapdのキャッシュをクリアしたらok。ちなみにmountするときには、mount -o noauto,users,umask=000,iocharset=utf8とか言ってやらないと正しくGentoo上で日本語が読めない。 これでokかと思いきや、やっぱり文字化けは解消せず。色々調べてみたら、パッチを当てれば解決することが判明。 sudo emerge -C mt-daapd wget http://nchc.dl.sourceforge.net/sourceforge/mt-daapd/mt-daapd-0.2.4.2.tar.gz tar zxf mt-daapd-0.2.4.2.tar.gz cd mt-daapd-0.2.4.2 wget http://www.kzsoft.to/~kazu/mt-daapd/patch/mt-daapd-0.2.4-cp932.patch patch &lt; mt-daapd-0.2.4.2.tar.gz parser.cのパッチでこけるので、手動でパッチした。とりあえずdiffを残しておく。 --- src/parser.c.orig 2008-04-20 04:44:54.000000000 +0900 +++ src/parser.c 2008-09-23 17:16:15.000000000 +0900 @@ -132,8 +132,18 @@ #define AGO 287 #define INTERVAL 288 +#define USE_CP932 - +#ifdef USE_CP932 + #define UNKNOWN_STR &quot;UNKNOWN&quot; + #ifndef FILESYSTEM_CES + #define FILESYSTEM_CES &quot;CP932&quot; + /* + #define FILESYSTEM_CES &quot;UTF-8&quot; + #define FILESYSTEM_CES &quot;EUC-JP&quot; + */ + #endif +#endif /* Copy the first part of user declarations.
+    前から使ってたけど今はあまり使ってないデスクトップ、最近主力のMacBook、たまに使うLet&rsquo;s NoteとうちにはPCが3台あ
   </div>
   
   <footer>
@@ -285,8 +309,14 @@
     </div>
   </header>
   <div>
-    いくつか困っていることが最近ある。1つはすげー太ったこと。入籍を機に保険を見直したのだが、そのときに体重を書く欄がありまして、1年ぶりに体重計に乗ったらね…7キロくらい太ってるわけですよ…そりゃジーンズきつくなるって話よ。マジ危険な太り方なので、やっぱり近所のジム行こうかな。 2つ目は、早くも家が欲しくなってどうしようってこと。引っ越したばっかなんだけどな。色々調べると、近所でも安いんだよねこの辺は。今の家賃より家買ってローン払うほうが安かったり…あと年齢的な問題もあって、ローン組むならそろそろ限界がくるのでね。もう32だし。 3つ目は仕事のこと。つまんなそうな、かつ深みにはまりそうで引き受けたくない仕事があるんだけど。会社の状況的に受けざるを得ないような雰囲気で嫌だなぁと。10月はマジ仕事ないみたいで、工数空いちゃう人が多いっぽいな。結構危機的な状況っぽいから、冬のボーナスは出なさそうだなこりゃ。 あと悩みってんじゃなくて単純に疑問。数人合同でお祝いをもらったんだけど、こういうときは内祝いどうすりゃいいんだ?誰か教えてplz…
+    いくつか困っていることが最近ある。1つはすげー太ったこと。入籍を機に保険を見直したのだが、そのときに体重を書く欄がありまして、1年ぶりに体重
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2008/09/14/635.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -307,8 +337,14 @@
     </div>
   </header>
   <div>
-    なんかmixiで、モバイルでも外のURLが見えるようになったとか言う話なのでテスト投稿。plaggerで同期とるんじゃなくて、wp-mixipublisherでURLだけ書いてみる。
+    なんかmixiで、モバイルでも外のURLが見えるようになったとか言う話なのでテスト投稿。plaggerで同期とるんじゃなくて、wp-mixi
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2008/09/14/634.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -334,7 +370,7 @@
     </div>
     <div class="sns-links hidden-print">
   
-  <a href="ogata.nobu@gmail.com">
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
     <i class="fa fa-envelope"></i>
   </a>
   

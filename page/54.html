@@ -34,7 +34,7 @@
       
       <div class="sns-links hidden-print">
   
-  <a href="ogata.nobu@gmail.com">
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
     <i class="fa fa-envelope"></i>
   </a>
   
@@ -91,8 +91,14 @@
     </div>
   </header>
   <div>
-    今のプロジェクトでは自分のWindowsマシンに、TomcatとMySQLを入れてすべてローカルで開発している。ソース管理はLinuxサーバでSubversionを使っている。が、本番はLinuxで運用（最初はサーバ12台で運用予定）するので、環境の作り方を先に明確にしておく必要がある。 明日、発注先の人に「とりあえず今ここまで出来てます」というデモを行うため、ついでにLinuxサーバを立てて運用環境により近い形でデモ環境を作ることにした。みんなコーディングで忙しいので、環境を作るのは新人君に任せることにした。とは言っても、空いているマシンにはすでにJREもTomcatもMySQLもインストール済みだったため、それらサーバの設定ファイル書き換えて、今回作ったアプリケーションの設定ファイルを書き換えて、データベース作って、コンパイルしてclassファイルを設置すれば終了だ。普通にやれば小一時間で終わる作業だ。 14:30 新人に作業を依頼。「なぜそんなことをする必要があるのか」「なぜ君に頼んだのか」「何をすればいいのか」を口頭で説明し、期限は明日の15:00なのでわからないことはすぐに聞くように指示。 17:00 様子を見に行くと、まだローカルの環境を作っている。何故かSubversionから持ってきたファイル一式を、Eclipseのワークスペースにコピーしてプロジェクトを作成してある。それとは別にTomcat用にディレクトリを作ってまたコピーしている。凄い環境だ。意味がわからない。 18:00 ようやくまともな環境でコンパイルが通る。でも動かない。何故動かないのか調べようとして、設定ファイルをあれこれ開いて、眺めては唸っている。ログ見たらaccess deniedって書いてあるじゃねぇか……頼むからログ見てくれ。 19:30 DWRが上手く動いていない。原因究明に時間がかかりそうだったので、ローカルで動かすのはとりあえず諦めて、とっととサーバ側で試すように指示。一旦中断して飯。 20:00 Windowsでコンパイルしたclassファイルでは上手く動かないようだったので、サーバ上でantを使ってコンパイルするように指示。antって聞いたこともない、というので30分調べてわからなかったら聞くように言い、調べるポインタだけ示しておく。 20:30 すげー細かい説明が書かれている文書を、まさに隅々まで読もうとしていたため中断させる。だんだん面倒になってきたので、サンプルのbuild.xmlを渡してマンツーマンで教えることにした。秀丸を使っていながらマクロの使い方を知らなかったため、ついでに教える。マウスの操作までマクロで記録してくれると思っていたっぽい。「思ったより頭悪いですね」とか言ってる。君よりは頭いいと思うよ。 21:30 とりあえずbuild.xmlは書き終わるものの、コンパイルエラーが出まくる。ライブラリへのclasspathの通し方が間違っているのを指摘。ついでにソースファイルのエンコードが、UTF-8とUTF-8Nが混ざっているのを発見。担当者に直させる。Windowsではこの辺は問題にならないようだ。 22:00 build.xmlをWindows上で修正して、FTPでLinuxにアップロードしてコピーして…（vi使いたくないみたい）。何度修正してもそれがサーバに反映されない。おかしいと思ったら頑張って修正したファイルとは別のファイルをアップロードしていた。アホすぎ……。この辺から、新人君の動作が無駄に速くなってきた。笑える。動作が速くなった分、指数関数的にタイプミスや操作ミスが増えている。あんなに動いて筋肉痛にならないのか。 22:30 コンパイルは通ったものの、Tomcatで該当アプリケーションのコンテナが上手く起動していない。大量のログファイルをcat |moreで頑張って見ていた。tail使え… 23:30 終電がなくなるので帰宅させる。丸一日かかって結局終わらずか…。普段の10倍くらい疲れた。自分でやれば良かったと思ったが後の祭り。もうどうでもいいやｗ
+    今のプロジェクトでは自分のWindowsマシンに、TomcatとMySQLを入れてすべてローカルで開発している。ソース管理はLinuxサーバ
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2005/11/18/244.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -135,7 +141,7 @@
     </div>
   </header>
   <div>
-    [ThinkIT] 第1回：良いコードとは、心得5ヶ条 (1/4) (tags: java programming) interactively search for domains (tags: ajax search whois dns) dumpalink.com - My Diamond (tags: flash game) スラッシュドット ジャパン | No More "Sorry Japanese Only" Documents (tags: japanese software document) Webを安全にするというSSLの中身を見せて ?＠IT? (tags: network security ssl) ITmediaニュース：ヤフー、航空写真地図に参入 Ajaxでスクロール (tags: yahoo map ajax) 感覚的な言葉こそ論理的に使え ? ＠IT自分戦略研究所 (tags: business communication column) 「史上最悪のソフトウェアバグ」ワースト10を紹介(上) (tags: programming security bug) ITmedia +D LifeStyle：キモオタの発祥に見るコンテンツ社会の臨界点 (1/3) (tags: otaku column) オープンソースの高速Webサーバー「TUX」の実力：IT Pro (tags: apache iis tux web server benchmark) 窓の杜 - 【NEWS】「Daemon Tools」最新版v4.00にアドウェアが同梱 (tags: security software tools) ITmediaニュース：ブックオフがネット通販 (tags: book used shop) 【2ch】ニャー速VIPブログ (｢･ω･)｢ｶﾞｵｰ:ディズニーランドのキャストだけど質問受け付けるよ？ (tags: 2ch neta) Porsche社、次期「911 Turbo」に可変ノズルターボを搭載 - Automotive Technology - Tech-On!
+    [ThinkIT] 第1回：良いコードとは、心得5ヶ条 (1/4) (tags: java programming) interactively search for domains (tags: ajax search whois dns) dumpalink.com - My Diamond (tags: flash game) スラッシュドット ジャパン | No More "Sorry Japanese Only" Documents (tags: japanese software document) Webを安全にする
   </div>
   
   <footer>
@@ -163,8 +169,14 @@
     </div>
   </header>
   <div>
-    前のエントリの続き。 基本的なグリップ・スタンス・フォームを押さえたら、あとは投げ込むわけだが。ただ闇雲に投げてもそうそう上手くはならない。延々と何も考えずにブルだけ狙って投げてれば、まぁそのうち上手くはなるんだろうけど、時間がかかる。生きていられる時間は有限なのだから、わざと効率的にやらない理由がある場合を除いて、なるべく時間を有効に使うべきだ。 というわけでダーツに限らない話だが、ハードルを少しずつ上げていくようなミッションクリア型の練習が効果的なように思う。とりあえずここから先は「ダーツがボードに届くこと」を大前提として話を進めることにする（届かないは場合はフォームが全然ダメな場合が多い）。 まず第1のミッションは、左右の打ち分け。ボードの左の方なら左の方と決めて、とにかく左半分（20点エリア?17点エリア、あるいは1点エリアから3点エリア）にダーツが集まるように投げる。左半分やったら同じだけ右半分も練習。このとき、スタンスの左右の位置は変えても構わない。というか多分変えないと、体を微妙にねじったり、肘を変に傾けたりといった癖が付くかも知れないので注意。重要なのは、この練習の最中も前のエントリで述べたことを常に意識し続けること。特にリズムは大事だと俺は考えている。自分なりのリズムでダーツできるようになれば、自然に集中力も高まる。2/3で入るようになったら次のミッションへ進む。 第2ミッションは上下の打ち分け。やりかたは左右の時と同じだ。やってみればわかるが、左右よりも難しいはず。これも2/3でクリアとする。 左右にぶれる場合、フォロースルーがまっすぐ出来ているか確認する。ちゃんと狙った場所を指差す感じを意識して。上下にぶれる場合はリリースのタイミングと、リリース時に肘が動いていないかチェック。リリースのタイミングは考えればわかると思うが、早くリリースしすぎるとダーツは上へ行くし、逆に遅ければ下に行く。 こういう練習を反復することで、自分なりのグリップ・スタンス・フォームも固まってくるはず。思い通りに投げられたときのフォームをイメージして、なるべく同じフォームで投げられるようにするがいい。上手い人、フォームが綺麗な人の投げ方をマネしてみるのもいいかもしれない。友達と一緒に行って横で見てもらうとか、携帯でムービー撮ってもらう（大体ダーツバーは暗いので、上手く取れないと思うが）とか、鏡やガラスに映るフォームを見て確認ってもありか。 自分の部屋にボードがあれば毎日やる。10分でもいいから毎日。ダーツ公文式。ただ、あんまりやりすぎると肘が痛くなったりするので、ほどほどにどうぞ。練習方法はまだ続くが、それはまた次回で。なんかもう眠いｗ
+    前のエントリの続き。 基本的なグリップ・スタンス・フォームを押さえたら、あとは投げ込むわけだが。ただ闇雲に投げてもそうそう上手くはならない。延
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2005/11/15/241.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -185,8 +197,14 @@
     </div>
   </header>
   <div>
-    Ajaxを超える「Arax」採用、リッチクライアント新技術の内容は ? ＠IT (tags: arax programming web) Engadget Japanese (tags: game sony ps3) Python for PSP tutorial (tags: python psp programming) 芸能人トラックバックセンター（芸トラ、ゲイトラ）、タレント名鑑、芸能人ブログリンク集、有名人データベース (tags: blog 有名人 芸能人) 金のガチョウを殺すのか--MS、デスクトップアプリの無料提供を検討 - CNET Japan (tags: microsoft) inflash.com - Flash Games, Flash Shows, Flash Greetings and more! (tags: flash game) WebScan.JP - Webページキャプチャ生成ツール (tags: web screenshot tools useful browser)
+    Ajaxを超える「Arax」採用、リッチクライアント新技術の内容は ? ＠IT (tags: arax programming web) Engadget Japanese (tags: game sony ps3) Python for PSP tutorial (tags: python psp programming) 芸能人トラックバックセンター（
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2005/11/15/240.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -207,8 +225,14 @@
     </div>
   </header>
   <div>
-    いきなりですがShonanトコのダーツのエントリーに反応してみる。あくまで俺論なんで「そうじゃねー」って人もいると思うけど、まぁ参考程度にしておくれ。 まずはグリップだけど、どれがいいのか悩んでるならスリーフィンガー。一番自然に持つとそうなると思うし。ただ重心だけはちゃんと調べてグリップする。スタンスはクローズドがオススメ。理由は肘を運動させるとき、一番軸がブレないから。顔を真横に向けるので、慣れるまで辛いんだけど。でスローイングは、「振るか押すか」と言ってるけど押すのはダメかと思われ。押しで飛ばすのならば、テークバックの意味があまりないし、押すとブレが大きい。 アドレスからスムーズにテークバックして、溜めずにリリース（リリースという言葉からも、「押す」ものでないことは明らか。「離す」んです）。「溜めずに」が大事。リリース後はしっかりとフォロースルー。人差し指で狙った場所を指さす感じ。 この一連の動作の中で、肘の位置が動かないように注意する。リリース後のフォロースルー時は、肘が伸びるため動くけども。あとはリズム。アドレスしてからフォロースルーまで、頭の中で「1・2・3」とカウントするといいかもしれない。これは楽器と一緒で、速すぎても遅すぎてもダメ。さらに2投目、3投目と3ダーツの間隔も、同じリズムで淡々と行う。1投・2投とブル入れて、さて3投目って時に間を取ると大体緊張して取れないことが多い。左手から右手にダーツを持ち替えるときも、手だけ動かして足や頭を動かさないようにするといい。で、ここまでが超基本で、ここから基本の練習に入るわけだが…そろそろ風呂入って寝る時間なので、また今度ｗ
+    いきなりですがShonanトコのダーツのエントリーに反応してみる。あくまで俺論なんで「そうじゃねー」って人もいると思うけど、まぁ参考程度にし
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2005/11/14/239.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -229,7 +253,7 @@
     </div>
   </header>
   <div>
-    VMwareを利用した make world マシンの構築 (tags: freebsd vmware) Building Python Extensions with the MS Toolkit Compiler (tags: microsoft programming python windows extension .net) ITmedia +D モバイル：開発者が明かす「ここがコッソリと機能向上している」 (1/2) (tags: mobile docomo 902i) M.C.P.C.: PlanetでRSSを集め、RSS分離サービスで目的のものを得る。 (tags: rss) Engadget Japanese (tags: game music) Google Analytics (tags: google analyze tools server) 良いプレゼンと悪いプレゼン (tags: business presentation tips) RSF (tags: flash) ITmediaニュース：スーパーコンピュータランキング、1?3位をIBMが独占 (tags: supercomputer) カイゼン活動に参加したあるSEの日記：IT Pro (tags: project management) まるちゃんの情報セキュリティ気まぐれ日記: 文書化のポイント (tags: security manual) 情報システム部門コンサルタントのBlog：御社と貴社 使い分け (tags:
+    VMwareを利用した make world マシンの構築 (tags: freebsd vmware) Building Python Extensions with the MS Toolkit Compiler (tags: microsoft programming python windows extension .net) ITmedia +D モバイル：開発者が明かす「ここがコッソリと機能向上している」 (1/2)
   </div>
   
   <footer>
@@ -257,8 +281,14 @@
     </div>
   </header>
   <div>
-    前回の続き。ボチボチ進めて、ようやくアスキラの2人がミーティア取得、ラクスとバルトフェルドが仲間になるトコまで進めた。隠し機体を入手するため、仕方なく攻略サイトを拝見…って、なんかカガリとアストレイ3人娘の撃墜数合計が100以上、とか全然使ってなかったから無理！ZZの面々の撃墜数合計のもあったが、これはジュドーがMAP平気で大活躍しているので特に問題なく。 あとは撃墜数の末尾調整とか、そういうのも諸々あったので仕方なく全滅プレイ決行。エクセルで表を作って、1機撃墜するごとにカウント。めんどくさいがその甲斐あって、ノイエジール・白キュベレイ・ゲーマルク・ZZフルアーマーパーツ・ストライクルージュのIWSPと入手。白キュベレイにはカミーユ乗せてみたが、鬼強。カミーユの小隊長能力は反撃時の攻撃力20%アップなので、単機で突っ込ませておくだけで、次のターンには雑魚がいない。これは病み付きになる爽快感だ…。νガンダムでもできるんだけど、フィンファンネルが弾数制なのがなー（白キュベレイは消費EN10！）。 来週末にはなんとか1週目終われそう。意地でも全主人公終わらせてやる?
+    前回の続き。ボチボチ進めて、ようやくアスキラの2人がミーティア取得、ラクスとバルトフェルドが仲間になるトコまで進めた。隠し機体を入手するため
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2005/11/14/237.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -279,8 +309,14 @@
     </div>
   </header>
   <div>
-    誰もが生きるために戦っている(2ch発@パキスタン北部地震・被災者支援 宣伝FLASH) (tags: 2ch victim earthquake support) 大人の無法地帯【Japan】 (tags: culture history politics japan emperor) 「"read" になることはできませんでした」のひみつ (tags: windows localize) 危険な臭いのするメイルアドレス(IP順) (tags: mail security spam list) ITmediaビジネスモバイル：DoJaを超えるJava仕様を提供する──ドコモとサンの「スタープロジェクト」 (tags: mobile java docomo sun) mizzy.org - ajaxで「戻る」「進む」（feedbringerをremixin' #7） (tags: ajax greasemonkey javascript tips rss) 老舗のぷらっとほーむが年末で店舗閉店、Web通販で継続 (tags: akiba shop)
+    誰もが生きるために戦っている(2ch発@パキスタン北部地震・被災者支援 宣伝FLASH) (tags: 2ch victim earthquake support) 大人の無法地帯【Japan】 (tags: culture history politics japan emperor) 「"
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2005/11/13/236.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -301,7 +337,7 @@
     </div>
   </header>
   <div>
-    OpenID: Specs (tags: openid specifications) void GraphicWizardsLair( void ); // http://videntity.org/ でotsuneというIDを確保しといた (tags: openid) ここギコ！: OpenIDで個人サイト同士が繋がるSNS - Social_Networking_Unlimited (tags: openid sns) mizzy.org - perlでOpenID Consumerを実装してみる (tags: openid programming perl) WEBデザインツール：カラーパレットを自動作成するサイト数々：Goodpic (tags: css design html tools web) Tsundere - Wikipedia, the free encyclopedia 説明文が微妙にウケル (tags: neta wikipedia) 42cb8556.jpg (JPEG 画像, 1257x944 ピクセル) コーヒー噴いたｗ (tags: neta picture) サイボウズのウェブサイトに不正アクセス--原因は「rootkit」 - CNET Japan (tags: security rootkit) ITmediaニュース：「rootkit」騒動渦中のSONY BMG、XCP技術採用CDの製造を中止 (tags: security rootkit cd) LinkStation／玄箱をハックしよう (tags:
+    OpenID: Specs (tags: openid specifications) void GraphicWizardsLair( void ); // http://videntity.org/ でotsuneというIDを確保しといた (tags: openid) ここギコ！: OpenIDで個人サイト同士が繋がるSNS - Social_Networking_Unlimited (tags: openid sns) mizzy.org - perl
   </div>
   
   <footer>
@@ -334,7 +370,7 @@
     </div>
     <div class="sns-links hidden-print">
   
-  <a href="ogata.nobu@gmail.com">
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
     <i class="fa fa-envelope"></i>
   </a>
   

@@ -34,7 +34,7 @@
       
       <div class="sns-links hidden-print">
   
-  <a href="ogata.nobu@gmail.com">
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
     <i class="fa fa-envelope"></i>
   </a>
   
@@ -91,8 +91,14 @@
     </div>
   </header>
   <div>
-    新しい机と本棚のおかげで床の上にものが殆どなくなった。やはり整理されていると気持ちがいいので、最近の週末は掃除ばかりしている。とりあえず部屋の整理・掃除は殆ど終わったので、今週はキッチンと風呂場に手を付けた。ていうか要はサーバのインストール中なので、コンパイルの待ち時間に掃除しようってだけのことだ。キッチンは特に汚れが酷く、吹きこぼれて焦げがびっしりついてたりする。 とりあえずコンロを出来るだけバラして熱湯につける。しばらく置いてからクレンザー付けて焦げ取り用のスポンジで擦ったら、そこそこ綺麗になった。全部の焦げは取れなかったが…まぁヨシとしよう。一番酷いのは換気扇の金属フィルター。ここに住んで5年以上経っているが、実はココは一度も掃除したことがないという禁断の地なのだ。ホコリが詰まってるなーとは思っていたのだが、はずしてみるとそれはただのホコリではなく5年分の油が染み込んだホコリだということが判明……すげーヌルヌルで気持ち悪い。やっぱり熱湯につけて放置し、油汚れ用の洗剤をざぶざぶかけてまた放置。放置中はシンクとか壁とかをクレンザーで掃除。フィルターのほうは熱湯→洗剤コンボを3回くらい繰り返すと、だいぶ取れたっぽい感じになった。あとは歯ブラシでガシガシ擦ってやることで綺麗になった。流石にもう2度とゴメンなので、換気扇用の使い捨てフィルターを買ってきて貼り付けた。大して料理しないから要らないと思っていたのだが、現実は甘くなかったってコトだ。 掃除しつつ洗濯したり布団を干したりもしていたのだが、掃除が一通り終わってサーバの設定に夢中になってて、ふとベランダを見たら床が濡れている。気が付かないうちに雨が振っていたようで…干しっぱなしの布団はびしょびしょに!!小雨だったのでまだマシだが、これは切ない。羽毛布団なので絞ったりとか乱暴なことをするわけにも行かず、ただいま風呂場で乾燥中。まぁそろそろ冬用の布団に切り替えるころなので、クリーニングに出す時期と言えば時期なのだが。
+    新しい机と本棚のおかげで床の上にものが殆どなくなった。やはり整理されていると気持ちがいいので、最近の週末は掃除ばかりしている。とりあえず部屋
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/10/22/414.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -113,8 +119,14 @@
     </div>
   </header>
   <div>
-    特に書くことないほどあっさり終了。LiveCDを焼いてそいつでブートし、デスクトップ画面が出てきたら&rdquo;Gentoo Linux installer&rdquo;をダブルクリックして指示に従っていくだけ。つかパソコンふぉあ障害者ず Gentoo Linux 2006.0(インストール-LiveCD-)を参考に。変えたところはIPアドレスとかその辺のネットワーク設定周りと、ステージを3からにしたのと、CFLAGで-O3にしたぐらい。インストールが終わったら上部のメニューからrebootしてCD抜いて終わり。 pingして外に繋がることを確認したら emerge --sync してから、必要なものをガンガン入れるんだが、その前に /etc/init.d/hdparm start してDMAを有効にしておく。んでいい加減sshで繋いで作業したいので nano -w /etc/ssh/sshd_config で適切にsshを設定。 PermitRootLogin no RSAAuthentication yes PubkeyAuthentication yes AuthorizedKeysFile .ssh/authorized_keys PasswordAuthentication no PermitEmptyPasswords no ChallengeResponseAuthentication no とかそんな感じに。 クライアントで鍵セットを作って、USBメモリでサーバに公開鍵を置く。マウントするのは mkdir /mnt/usbmemory mount -t vfat /dev/sdb1 /mnt/usbmemory で、/mnt/usbmemoryが見えるようになる。後は公開鍵を置いてパーミッション変えればOK。 mkdir ~/.ssh cat /mnt/usbmemory/id_rsa &gt;&gt; ~/.ssh/authorized_keys chmod 700 ~/.ssh chmod 600 ~/.ssh/authorized_keys クライアントからsshで繋いでrootになって、ひたすらemerge -av パッケージ名。入れたパッケージは以下の通り。 管理系:gentoolkit/htop/traceroute/tcpdump デーモン系:apache2/proftpd/mysql/subversion/trac/samba ユーティリティ系:sudo/screen/ftp/zsh/w3m/svk/lv/nkf 言語:python/ruby/jdk/groovy keywordでmaskされてるとか怒られるやつは ACCEPT_KEYWORDS=&quot;~amd64&quot; emerge -av パッケージ名 で入る。色々入れたり消したりしてるうちに依存関係がおかしくなったりしたときは、revdep-rebuildする。特定のライブラリに依存するもの、とかの指定もできる。 あとはapacheやらsambaやらの設定だな。
+    特に書くことないほどあっさり終了。LiveCDを焼いてそいつでブートし、デスクトップ画面が出てきたら&rdquo;Gentoo Linux instal
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/10/22/413.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -135,8 +147,14 @@
     </div>
   </header>
   <div>
-    紆余曲折あったが、結局のところ店員のミスでsocket479用のマザーなのにsocket478のCeleronMを突っ込んだのが原因だったっぽい。なんか面倒なのでベアボーンとCPUを交換することにした。静音に拘っていたけど、実際CPUファンのないタイプであればそんなに五月蠅くはなかろうと言うことで、AC電源のやつも諦め。Gentoo熱が高まっていることもあって、なるべく高速なマシンのほうが良くなってしちゃったので、思い切ってAMD64X2 3800+(65W版)にした。 多少高くついたが、そこは流石におまけしてくれた。動かしてみたらやっぱり静か。全然問題ない感じだ。
+    紆余曲折あったが、結局のところ店員のミスでsocket479用のマザーなのにsocket478のCeleronMを突っ込んだのが原因だったっ
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/10/22/412.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -157,7 +175,7 @@
     </div>
   </header>
   <div>
-    酒日記 はてな支店 - PlaggerLDR hack が動かなくなってた (tags: plagger livedoor livedoorreader) Ohmsha - Binary Hacks ハッカー秘伝の100選 (tags: books) Onlooker+beta: 無断リンク問題で渦中のYokoさんとチャットで話した。その１ (tags: interview chat netwatch) Onlooker+beta: 無断リンク問題で渦中のYokoさんとチャットで話した。その２ (tags: interview chat netwatch) prototype.js リファレンス (tags: prototype.js javascript reference) My RSS 管理人 ブログ++: Google に頻繁にクロールしてもらうオプション (tags: google seo tips) 404 Blog Not Found:javascript vs perl - オブジェクトのメモリー効率 (tags: javascript perl programming object prototype memory) Metasploit Framework 3.0 Automated Exploitation [Pen-test.jpn.org] (tags: security tools) 写真で分かる，VMware初のパラ・バーチャライゼーション：ITpro
+    酒日記 はてな支店 - PlaggerLDR hack が動かなくなってた (tags: plagger livedoor livedoorreader) Ohmsha - Binary Hacks ハッカー秘伝の100選 (tags: books) Onlooker+beta: 無断リンク問題で渦中のYokoさんとチャットで話した。そ
   </div>
   
   <footer>
@@ -185,8 +203,14 @@
     </div>
   </header>
   <div>
-    火曜日くらいには届くはず、と宣っていた角田祖父地図秋葉原店。わざわざ残業しないで早めに帰路についていたのだが、待てど暮らせど荷物は届かず。昨日も来なかったので電話してみると、「あのマザーボードにはCeleronMは載らない。確かにACアダプタは初期不良だったが、無理矢理載せたことでマザーまでイカレたっぽいので一旦全返品するか、マザー交換」とのこと。今調べてみたら普通に「FSB 533 / 400MHz の Pentium / Celeron M に対応」と書いてあるのだが…謎。 まぁ担当者が不在なので、状況について明日必ず電話すると約束させたのでヨシとしよう。別に急ぐもんじゃないし。で、相変わらずOSを決めかねていたのだが、とりあえず会社で暇を見てcoLinuxにGentoo入れてみた。coLinuxでは実際のインストール手順と勝手じゃ多少違うのだが、なんとなく雰囲気はつかめた。こいつは今まで経験したUNIX系OSのどれとも異なるものだな…。設定ファイルも他のディストリとは場所が違ったりしてとまどいがち。/etc/hostname作ったら、/etc/conf.d/hostnameにしろとか怒られたりする。基本的にバイナリのパッケージ管理を行わないのですべてコンパイルするわけだが、コンパイルオプションも細かく指定できて非常に面白い。たが非常に時間がかかる。細かい指定が可能な分、他のディストリのようにデフォルトでどこにインストールされたのかよくわからん、とかいう事態は避けられるし、安定版でも人柱版でも選び放題だ。 とりあえず使えるようになるまでに時間がかかる、ということは会社でちょっと使う分には（たとえばcoLinuxなどで）向いていない。だけど自宅サーバならいくら時間がかかろうが別に問題ないわけで、逆に言えば自宅サーバでGentoo使わないとGentoo使う機会がないような気がしてきた。いや、試してみて自分好みに作っていく感覚が面白かった、ってのもあるんだけど。あとは異常なほどの公式な日本語ドキュメントの充実っぷり。これは凄い。公式サイトに、あれだけ大量で詳細なインストールガイドやらなんやらが載っているディストリは他にないのではなかろうか。 そんなわけで自宅サーバにはGentooを入れようと心を決めつつある。肝心のマシンが来ないので、これからVMwareで予行演習する。ちなみに会社マシンのcoLinuxではDebian Serge。でもUbuntuに変えようかと思い中。Debianは安定版にこだわりがあるっぽいので、俺みたいになるべく新しい版を手軽に入れたいとか言う輩にはあんまり向いてない気がしてきた。
+    火曜日くらいには届くはず、と宣っていた角田祖父地図秋葉原店。わざわざ残業しないで早めに帰路についていたのだが、待てど暮らせど荷物は届かず。昨
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/10/20/410.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -207,7 +231,7 @@
     </div>
   </header>
   <div>
-    マイクロソフト、VistaでPC間の移管を制限--著作権侵害対策の一環として - ZDNet Japan (tags: windows vista license) GetSen 日本語文章サマリ抽出システム - ほそいりょすけのほめぱげ (tags: summary text japanese) ”専門用語（キーワード）自動抽出システム”のページへようこそ (tags: keyword japanese research) Seasar Conference 2006 Autumn - トップページ (tags: java seasar event) [N] Mac OS Xでバックアップ「iBackup」 (tags: mac software backup) 「ウィルコム定額プラン」、070番号すべてが通話定額の対象に (tags: willcom mobile) dev2dev Online - ポータルメニューとウィンドウコントロール (tags: ie browser bug zindex html layer) おさかなラボ / Blog Archive / MixiとCookieドメイン (tags: mixi cookie rfc) スラッシュドット ジャパン | ミクシィ、画像に認可制御なしの欠陥を改修できず、ヘルプで弁解 (tags: mixi
+    マイクロソフト、VistaでPC間の移管を制限--著作権侵害対策の一環として - ZDNet Japan (tags: windows vista license) GetSen 日本語文章サマリ抽出システム - ほそいりょすけのほ
   </div>
   
   <footer>
@@ -235,7 +259,7 @@
     </div>
   </header>
   <div>
-    hetimaの日記 - iTunes のライブラリからファイルが存在しない曲を効率良く取り除く方法 (tags: itunes music software tips) しすろぐ : sshd_config の Match 指定 (tags: security server setting ssh tips) スラッシュドット ジャパン | LinuxにExt4ファイルシステム登場 (tags: filesystem linux) JavaScriptのメモリリークを検出するFirefox拡張「Leak Monitor」:phpspot開発日誌 (tags: firefox e extension javascript debug memory) Prototype.jsとjQueryのベンチマーク速度比較:phpspot開発日誌 (tags: javascript prototype.js jquery benchmark performance) hail2u.net - Weblog - HTMLヘルプのソースを公開 (tags: html help document) IT戦記 - それすぐ実行！JavaScript！ (tags: javascript tips) ソフトウエア等の脆弱性関連情報に関する届出状況2006年第3四半期 (tags: security) innerXHTML - Web standards, accessibility and coding techniques
+    hetimaの日記 - iTunes のライブラリからファイルが存在しない曲を効率良く取り除く方法 (tags: itunes music software tips) しすろぐ : sshd_config の Match 指定 (tags: security server setting ssh tips) スラッシュドット
   </div>
   
   <footer>
@@ -263,8 +287,14 @@
     </div>
   </header>
   <div>
-    土曜日に秋葉原で一式購入。とりあえずファイルサーバとして使いたいのと、個人用にSubversionとTrac、あとPlaggerをLivedoor ReaderをフロントエンドにするPlaggerLDR。で、そんなに性能は必要ないので、24時間部屋で動かしても電気代がたいしたことないことと、五月蠅くないことの方が大事なのだ。Plaggerはレンタルセーバで動かしてるけど、なにぶん共用サーバなので変な設定試して暴走させるのが嫌なので…できれば自宅サーバで動かしたいところ。 そんなわけで性能を犠牲にしてでも静音化して、なおかつ場所を取らないマシンを組むことにした。そんなわけで、キューブ型かつACアダプタ駆動というShuttle XPC SD11G5をチョイス。これならほぼファンレスでいける。多分HDDのアクセス音しかしないはずだ。CPUは安くて低電圧なCeleronM。上記のような使い方なら十分と踏んだ。 さくっと組んでみたがACアダプタの通電ランプがつかず、もちろん電源も入らない。組み上げたのが夜だったため、日曜日に買ったところに持って行ったら初期不良…土日でOSセットアップから最低限の設定まで終わらせたかったのに…。ついでなので、メインPCのメモリも買って増設しといた。いまどきXPを512MBで動かしてたんだけど、+2GBして2.5GBにしたら別マシンのように快適になった。すばらしい。 明日か明後日に配送されてくるはずだけど、未だにOS何入れるか迷い中。UbuntuかDebianかCentOSかFreeBSDかSolaris10か。gentooも興味あるけど、CPUパワーがないからコンパイル大変そうで却下。管理の楽さでいえばUbuntu/Debianっぽいけど、Solaris+ZFSっても惹かれる。でも仕事でRHEL使ってるから、慣れで言うとCentOSなのかもとか思ったり。でもでもFreeBSDの安定性も捨てがたいし…むぅぅぅ悩む…
+    土曜日に秋葉原で一式購入。とりあえずファイルサーバとして使いたいのと、個人用にSubversionとTrac、あとPlaggerをLived
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/10/17/407.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -285,8 +315,14 @@
     </div>
   </header>
   <div>
-    とりあえず結果だけ先に言うと、何も問題なし。まぁ一安心。憩室という胃の壁の一部が突き出たような状況になっていて、どうも俺の場合は先天的にそうなっているっぽいとのコト。潰瘍になっていたりすると治療がいるのだが、全く何ともないので放置してOKらしい。 感想を書こうと思ったけど、正直きつすぎて感想もクソもないな（笑）。ずっとゲーゲーいってたことしか覚えてない。あ、なんか胃の空気が出るのか知らないけど、胃カメラをグリグリされると今までしたことないような、すげーゲップがでた。グボォーっていったよ（笑）。力抜けとかゲップするなとか、無茶ばかり言われたが…無理なものは無理だ。2度とやりたくねぇ…
+    とりあえず結果だけ先に言うと、何も問題なし。まぁ一安心。憩室という胃の壁の一部が突き出たような状況になっていて、どうも俺の場合は先天的にそう
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/10/16/406.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -307,8 +343,14 @@
     </div>
   </header>
   <div>
-    WebアプリをC++で開発するためのテンプレート・エンジンをオープンソースとして公開：ITpro (tags: c++ template html oss) Uno, dos, tres, quatro!UTF-8で動かすgrepは遅い (tags: unix linux command encode grep performance tips) Tokyo Fuku-blog: グーフィーがミニーマウスを舞台裏でパコパコ…ディズニーランド関係者が撮影した動画が流出(動画あり) (tags: news movie) IPv6 サミット 2006 (tags: network event)
+    WebアプリをC++で開発するためのテンプレート・エンジンをオープンソースとして公開：ITpro (tags: c++ template html oss) Uno, dos, tres, quatro!UTF-8で動
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/10/14/405.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -334,7 +376,7 @@
     </div>
     <div class="sns-links hidden-print">
   
-  <a href="ogata.nobu@gmail.com">
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
     <i class="fa fa-envelope"></i>
   </a>
   

@@ -34,7 +34,7 @@
       
       <div class="sns-links hidden-print">
   
-  <a href="ogata.nobu@gmail.com">
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
     <i class="fa fa-envelope"></i>
   </a>
   
@@ -113,8 +113,14 @@
     </div>
   </header>
   <div>
-    TextMate stuff - hetima.com (tags: mac editor japanese software) macfox Firefox Themes (tags: browser firefox mac themes) Javaスクールの危険 - The Joel on Software Translation Project (tags: column development java) 秋元@サイボウズラボ・プログラマー・ブログ: Macノートの光センサでジェスチャー入力するソフト (tags: mac ui) BOSS BR-600について語ろう まとめ/ウェブリブログ (tags: music mtr tips) ITmedia News：4秒のVistaサウンドにかけた長い道のり (tags: music sound ui windows vista)
+    TextMate stuff - hetima.com (tags: mac editor japanese software) macfox Firefox Themes (tags: browser firefox mac themes) Javaスクールの危険 - The Joel on Software Translation Project (tags: column development java) 秋元@サイボウズラボ・プログラマー・ブログ: Macノートの光セ
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/11/14/445.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -135,8 +141,14 @@
     </div>
   </header>
   <div>
-    届かねぇｙｐ!!!!1111!!とか思ってたらamazonでは14日発売なんだな…今日発送したとメールが昼頃に来てた。 あ、そうそう、バイナリアン度チェックでは60点ですた…ヘボイ。つかね……extern &ldquo;C++&ldquo;とか知らないって。何に使うのそれ。extern &ldquo;C&rdquo;の存在意義はわかるんだけども。あと「数値 -1.75 を IEEE754 単精度浮動小数点数として表現」って問題、正直計算面倒になって勘で答えた。俺の勘は当てにならないことがよくわかった。まぁそんなわけで、本が届いたら間違えたところの答えを探しながら読むことにする。
+    届かねぇｙｐ!!!!1111!!とか思ってたらamazonでは14日発売なんだな…今日発送したとメールが昼頃に来てた。 あ、そうそう、バイナリ
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/11/13/444.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -157,7 +169,7 @@
     </div>
   </header>
   <div>
-    Net-SNMPの設定方法 (tags: network snmp server monitoring) Net-SNMP (tags: monitoring snmp server) About Rrdtool (tags: rrdtool graph monitoring server) RRDtoolのすすめ (tags: rrdtool graph monitoring server) Cacti: The Complete RRDTool-based Graphing Solution (tags: graph monitoring server webservice rrdtool cacti) cacti - グラフツールcactiとは? (tags: graph monitoring server webservice rrdtool cacti) SNMPによるネットワークシステムの監視第1回：SNMPの基礎 (tags: graph monitoring server webservice rrdtool cacti) RRDTool+Cactiによるサーバ監視(Linux編) (tags: graph monitoring server webservice rrdtool cacti) クローズアップ２００６：新型インフルエンザ 大流行へ対策急務?話題：MSN毎日インタラクティブ (tags: news) Mac OS Xをセキュアにする「SEDarwin」のソースコードが公開 (MYCOMジャーナル) (tags: mac os security bsd trustedbsd) 荒木先生執筆25周年祝賀パーティー (tags: neta event) 狐の王国 YouTubeリンク追加bookmarklet (tags: bookmarklet youtube) Wizard Bible vol.29 (2006,11,7) ads.mixi.jpにXSS脆弱性 (tags: mixi security document xss) 【コラム】OS X ハッキング!
+    Net-SNMPの設定方法 (tags: network snmp server monitoring) Net-SNMP (tags: monitoring snmp server) About Rrdtool (tags: rrdtool graph monitoring server) RRDtoolのすすめ (tags: rrdtool graph monitoring server) Cacti: The Complete RRDTool-based Graphing Solution (tags: graph monitoring server webservice rrdtool cacti) cacti - グラフツールcac
   </div>
   
   <footer>
@@ -185,7 +197,7 @@
     </div>
   </header>
   <div>
-    インストールまでは上手くいったけど設定に嵌って酷い目にあった。 必要なものをインストールする 以下のものが必要。 net-snmp apache php mysql rrdtool cacti さくっとemergeするわけだが、USEフラグに注意。cactiにはapache2/snmp、phpにはapache2/snmp/sockets/mysqlあたりが必要(gdとかxmlも必須なのか?よくわらかんがこの辺は/etc/make.confでデフォルトで付けている)。 初期設定 cacti用のデータベースとユーザを作成し、付属のスクリプトでテーブルを作成する。 mysqladmin -u root create cacti -p mysql cacti -u root -p &gt; /var/www/localhost/htdocs/cacti/cacti.sql mysql -u root mysql -p -e&quot;GRANT ALL ON cacti.* TO cactiuser@localhost IDENTIFIED BY 'p4ssw0rd'&quot; mysql -u root mysql -p -e&quot;flush privileges&quot; 次にphpのconfigファイルを、今設定したものに合わせて書き換える。 vi /var/www/localhost/htdocs/cacti/include/config.php $database_username = &quot;cactiuser&quot;; $database_password = &quot;p4ssw0rd&quot;; cron実行用のシステムアカウント作成とパーミッション変更 useradd -g apache -d /dev/null -s /bin/false -c cacti cacti ホームディレクトリを/dev/null、ログインシェルを/bin/falseにすることで、cactiというユーザでログインできないようにする。この辺は適当に手を抜いてrootでやったりすると怖いので忘れずに。次にcactiユーザでデータの読み書きするためにパーミションを変える。 chown -R cacti:apache /var/www/localhost/htdocs/cacti 全部変えちゃったけどrraとlogディレクトリだけでいいかも。未検証。 cronの設定 適当なタイミングでスクリプトをブン回す。とりあえず5分間隔に設定。 vi /etc/crontab */5 * * * * cacti /usr/bin/php /var/www/localhost/htdocs/cacti/cmd.php &gt; /dev/null 2&gt;&amp;1 cactiの設定 ブラウザから http://hostname/cacti/ にアクセス。デフォルトのユーザとパスワードはadmin/admin。ウィザードが始まるがNext押していけばいい。adminのパスワードは適当なものに変更する。 色々設定するところがあるが、一番下にある参考URLらへんを参照。 ここでrrdtoolからACCESS DENIEDと言われてグラフが上手く表示されなかった。よくわからんがcactiでadminじゃなくてcactiというユーザを作り、User Management→cacti→Graph PermissionsでDenyをAllowにお変更してSave。Graph Managementからなんかグラフを選んで、右上の*Turn On Graph Debug Mode.をクリックするとログが見えるようになるので押してみる。今度は&rsquo;rra/localhost_load_1min_5.rrd&rsquo;: No such file or directoryとか怒られる。 見てみると確かにrraの下が空っぽなのでダメらしい。/var/www/localhost/htdocs/cacti/cmd.phpを実行してもエラーらしきものは出ておらず。しばらくココで嵌ったが、/var/www/localhost/htdocs/cacti/poller.phpを実行すればOKだった。1回目は前のデータがないので怒られるが、もう1度やると問題なく実行された。そのあとcactiからはちゃんと見えるようになった。 参考URL Net-SNMPの設定方法 net-snmp About Rrdtool RRDtoolのすすめ cacti グラフツールcactiとは?
+    インストールまでは上手くいったけど設定に嵌って酷い目にあった。 必要なものをインストールする 以下のものが必要。 net-snmp apache php mysql rrdtool cacti さくっとemerge
   </div>
   
   <footer>
@@ -213,7 +225,7 @@
     </div>
   </header>
   <div>
-    更新履歴兼雑記 「記号しか打てないキーボードで作業する際など、 ` と ( の xor を取って H を作るという知識は日常業務でも使えそうですね」無理w (tags: neta perl) Geekなぺーじ：最速ブラウザは？ (tags: browser benchmark) Piece of a Puzzle - Weblog - Firefox 2.0 で利用している Add-ons (tags: firefox extension) ウノウラボ Unoh Labs: 無料でここまでできる！OS毎のセキュリティ対策まとめ (tags: os security) 技術メモ帳 - zshの Read/Write リダイレクト (tags: unix linux shell zsh) はじめてのにき(2006-11-07) (tags: java neta) Penguin Webcam - Antarctica - O'Higgins - Eselspinguine - gentoo penguins (tags: movie video webservice gentoo) ひげぽん OSとか作っちゃうかMona- - Google Code Searchに自分のコードをクロールしてもらう方法 (tags: google code search) (ひ)メモ - パイプラインの途中のコマンドの終了ステータスを知る方法 (tags: unix linux shell bash) .NET Framework 3.0の中身をのぞいてみよう！ ?
+    更新履歴兼雑記 「記号しか打てないキーボードで作業する際など、 ` と ( の xor を取って H を作るという知識は日常業務でも使えそうですね」無理w (tags: neta perl) G
   </div>
   
   <footer>
@@ -241,7 +253,7 @@
     </div>
   </header>
   <div>
-    Gentooにはg-cpanという素晴らしいものがあるのだが、そこはあえて使わずにいく。というかなんか知らないけど上手くいかなかったので、仕方なく手動で入れたとも言う。とりあえず自宅サーバと言うことで、サックリrootになって入れることにする。そのほうが簡単。以前レンタルサーバで悩んだのがウソのようだ。ちゃんとログを取ってないので曖昧な記憶でメモ。 準備 別段何もない。 perl -MCPAN -e shell 基本全部デフォルトのままENTER押してりゃよし。Gentooの場合、cpanでガンガン入れる前にまず emerge expat これをやっておく。次にCPANのConfigを弄る。 vi /usr/lib/perl5/5.8.8/CPAN/Config.pm $CPAN::Config = { 'build_cache' =&gt; q[100], 'build_dir' =&gt; q[/root/.cpan/build], 'bzip2' =&gt; q[/bin/bzip2], 'cache_metadata' =&gt; q[1], 'check_sigs' =&gt; q[0], 'colorize_output' =&gt; q[0], 'commandnumber_in_prompt' =&gt; q[1], 'cpan_home' =&gt; q[/root/.cpan], 'curl' =&gt; q[/usr/bin/curl], 'ftp' =&gt; q[/usr/bin/ftp], 'ftp_passive' =&gt; q[1], 'ftp_proxy' =&gt; q[], 'getcwd' =&gt; q[cwd], 'gpg' =&gt; q[], 'gzip' =&gt; q[/bin/gzip], 'histfile' =&gt; q[/root/.cpan/histfile], 'histsize' =&gt; q[100], 'http_proxy' =&gt; q[],
+    Gentooにはg-cpanという素晴らしいものがあるのだが、そこはあえて使わずにいく。というかなんか知らないけど上手くいかなかったので、仕
   </div>
   
   <footer>
@@ -291,8 +303,14 @@
     </div>
   </header>
   <div>
-    White Board ≪ 創材 ≫ 軽量自在のホワイトボード、とかいうものを買ってみた。これはすごくオヌヌメ。カッターで切れるので、打ち合わせ卓に持ち運べるくらいのサイズに2枚切り出して、残った大きい1枚は壁に立てかけて使い中。マグネット付かないのが残念だが…なんかコーディングがしてあって、普通のホワイトボードより書き心地滑らかだし、消しやすい。設計の時とか、アイデア出しのブレストする時なんかに便利。
+    White Board ≪ 創材 ≫ 軽量自在のホワイトボード、とかいうものを買ってみた。これはすごくオヌヌメ。カッターで切れるので、打ち合わせ卓に持ち運べるくらいの
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/11/09/437.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -313,8 +331,14 @@
     </div>
   </header>
   <div>
-    月曜日に喉が痛くなりはじめ、今は痛みも腫れも治まったが咳が止まらない。微妙に流行ってるっぽいので、みなさん伝染らないようにしてくだされ。もう今週はずっとほぼ定時帰りで、22時前には寝てる…MTR弄りたいのに。ゲフン。
+    月曜日に喉が痛くなりはじめ、今は痛みも腫れも治まったが咳が止まらない。微妙に流行ってるっぽいので、みなさん伝染らないようにしてくだされ。もう
   </div>
+  
+  <footer>
+    <ul class="pager">
+      <li class="next"><a href="http://nobu666.com/2006/11/09/436.html">Read more <span aria-hidden="true">&raquo;</span></a></li>
+    </ul>
+  </footer>
   
 </article>
 
@@ -340,7 +364,7 @@
     </div>
     <div class="sns-links hidden-print">
   
-  <a href="ogata.nobu@gmail.com">
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
     <i class="fa fa-envelope"></i>
   </a>
   

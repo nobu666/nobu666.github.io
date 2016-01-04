@@ -32,7 +32,7 @@
       
       <div class="sns-links hidden-print">
   
-  <a href="ogata.nobu@gmail.com">
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
     <i class="fa fa-envelope"></i>
   </a>
   
@@ -95,7 +95,7 @@
     </div>
   </header>
   <div>
-    気づいたら年が明けていますが俺は元気です。 タイトル通りなんだけど、あるMySQLサーバへつなぐためには踏み台を通らないといけなくて、いちいち [sourcecode language=&ldquo;bash&rdquo; padlinenumbers=&ldquo;2&rdquo;] localhost$ ssh -t gateway ssh dbserver dbserver$ mysql -uhoge -p とかやらないといけなくて、めんどい。というかこれだとローカルの開発環境で、一時的にdbserverで動作してるMySQLのデータを使いたいときとか困る。ダンプしてローカルに持ってくればいいけど、データがものすごいデカかったりしてだるい。どうにかしたい。 というわけで、Port Forwardすればいいじゃないかと思って [sourcecode language=&quot;bash&quot; padlinenumbers=&quot;2&quot;] $ ssh -Nf -L 13306:dbserver:3306 gateway とかして、 [sourcecode language=&ldquo;text&rdquo; padlinenumbers=&ldquo;2&rdquo;] $ mysql -uhoge -p -P13306 これで勝つる！！！と思ったら、これでは繋がらない。でもtelnet localhost 13306とか叩いてみると繋がるように見える。 [sourcecode language=&quot;text&quot; padlinenumbers=&quot;2&quot;] $ telnet localhost 13306 Trying 127.0.0.1... Connected to localhost. Escape character is '^]'. L 5.5.8-log $;2)s.%n! ?QV;dgXbeUZBymysql_native_password なにこれどういうことなの、と思って色々試したり調べたりしていたら、答えは意外なところに。 What is SSH Port Forwarding and How It Worksってページに書いてあった。 When the remote SSH host is on a different machine than the MySQL server, replace 127.0.0.1 with the IP address of the MySQL server (relative to the SSH host).
+    気づいたら年が明けていますが俺は元気です。 タイトル通りなんだけど、あるMySQLサーバへつなぐためには踏み台を通らないといけなくて、いちいち
   </div>
   
   <footer>
@@ -115,7 +115,7 @@
     </div>
     <div class="sns-links hidden-print">
   
-  <a href="ogata.nobu@gmail.com">
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
     <i class="fa fa-envelope"></i>
   </a>
   
