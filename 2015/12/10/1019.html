@@ -193,32 +193,34 @@
 <li>default はどっちでも使われる</li>
 </ul></li>
 
-<li><p>production.rb
-```ruby
-node.reverse_merge!({
-java: {
-tomcat: {
-  java_opts: {
-    xmx: &ldquo;10240m&rdquo;,
-    xms: &ldquo;10240m&rdquo;,
-  },
-  maxThreads: &ldquo;512&rdquo;,
-},
-},
-td_agent: {
-forward: {
-  smartnews_action: true
-},
-},
-})</p></li>
+<li><p>production.rb</p></li>
 </ul>
 
-<p>include_recipe &ldquo;default.rb&rdquo;</p>
+<pre><code>node.reverse_merge!({
+  java: {
+    tomcat: {
+      java_opts: {
+        xmx: &quot;10240m&quot;,
+        xms: &quot;10240m&quot;,
+      },
+      maxThreads: &quot;512&quot;,
+    },
+  },
+  td_agent: {
+    forward: {
+      smartnews_action: true
+    },
+  },
+})
 
-<pre><code>
-- default.rb
-```ruby
-node.reverse_merge!({
+include_recipe &quot;default.rb&quot;
+</code></pre>
+
+<ul>
+<li>default.rb</li>
+</ul>
+
+<pre><code>node.reverse_merge!({
   app_name: &quot;hogehoge&quot;,
   java: {
     tomcat: {

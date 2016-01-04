@@ -516,32 +516,34 @@ deployment:
 &lt;li&gt;default はどっちでも使われる&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;production.rb
-```ruby
-node.reverse_merge!({
-java: {
-tomcat: {
-  java_opts: {
-    xmx: &amp;ldquo;10240m&amp;rdquo;,
-    xms: &amp;ldquo;10240m&amp;rdquo;,
-  },
-  maxThreads: &amp;ldquo;512&amp;rdquo;,
-},
-},
-td_agent: {
-forward: {
-  smartnews_action: true
-},
-},
-})&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;production.rb&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;include_recipe &amp;ldquo;default.rb&amp;rdquo;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;node.reverse_merge!({
+  java: {
+    tomcat: {
+      java_opts: {
+        xmx: &amp;quot;10240m&amp;quot;,
+        xms: &amp;quot;10240m&amp;quot;,
+      },
+      maxThreads: &amp;quot;512&amp;quot;,
+    },
+  },
+  td_agent: {
+    forward: {
+      smartnews_action: true
+    },
+  },
+})
 
-&lt;pre&gt;&lt;code&gt;
-- default.rb
-```ruby
-node.reverse_merge!({
+include_recipe &amp;quot;default.rb&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;default.rb&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;node.reverse_merge!({
   app_name: &amp;quot;hogehoge&amp;quot;,
   java: {
     tomcat: {
