@@ -106,34 +106,32 @@
 <p>また、資源を借りる側は一方的に借りるだけで、相互に助け合わない設定とした。これは、貸す側はサーバなので24時間稼働しているが、借りる側はノートなのでそうした。</p>
 
 <p><h4>資源を貸す側の設定</h4></p>
-
-<pre><code class="language-bash">emerge distcc crossdev
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">emerge distcc crossdev
 vi /etc/make.conf
- MAKEOPTS=&quot;-j8&quot; #(CPUの数+1)*2 ここは全体じゃなくてサーバ単体で計算すべきなのかも。詳細不明…もしかしたら-j6が当たりなのかも?
- FEATURES=&quot;distcc&quot;
- DISTCC_DIR=&quot;/var/tmp/.distcc&quot;
- PORTDIR_OVERLAY=&quot;/usr/local/portage&quot;
-distcc-config --set-hosts &quot;localhost 192.168.0.4&quot;
+ <span style="color: #f8f8f2">MAKEOPTS</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;-j8&quot;</span> <span style="color: #75715e">#(CPUの数+1)*2 ここは全体じゃなくてサーバ単体で計算すべきなのかも。詳細不明…もしかしたら-j6が当たりなのかも?</span>
+ <span style="color: #f8f8f2">FEATURES</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;distcc&quot;</span>
+ <span style="color: #f8f8f2">DISTCC_DIR</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;/var/tmp/.distcc&quot;</span>
+ <span style="color: #f8f8f2">PORTDIR_OVERLAY</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;/usr/local/portage&quot;</span>
+distcc-config --set-hosts <span style="color: #e6db74">&quot;localhost 192.168.0.4&quot;</span>
 vi /etc/conf.d/distccd
- DISTCCD_OPTS=&quot;${DISTCCD_OPTS} --allow localhost --allow 192.168.0.4&quot; #--allow 192.168.0.0/24でも可
+ <span style="color: #f8f8f2">DISTCCD_OPTS</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">DISTCCD_OPTS</span><span style="color: #e6db74">} --allow localhost --allow 192.168.0.4&quot;</span> <span style="color: #75715e">#--allow 192.168.0.0/24でも可</span>
 /etc/init.d/distcc start
 rc-update add distcc default
 crossdev -t i686
-</code></pre>
+</pre></div>
 
 <p><h4>資源を借りる側の設定</h4></p>
-
-<pre><code class="language-bash">emerge distcc
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">emerge distcc
 vi /etc/make.conf
- MAKEOPTS=&quot;-j8&quot; #(CPUの数+1)*2
- FEATURES=&quot;distcc&quot;
- DISTCC_DIR=&quot;/var/tmp/.distcc&quot;
+ <span style="color: #f8f8f2">MAKEOPTS</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;-j8&quot;</span> <span style="color: #75715e">#(CPUの数+1)*2</span>
+ <span style="color: #f8f8f2">FEATURES</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;distcc&quot;</span>
+ <span style="color: #f8f8f2">DISTCC_DIR</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;/var/tmp/.distcc&quot;</span>
 vi /etc/conf.d/distccd
- DISTCCD_OPTS=&quot;${DISTCCD_OPTS} --allow localhost&quot; #相互に助け合いたい場合は--allow 192.168.0.3を足すか--allow 192.168.0.0/24にする
-cd /usr/lib/distcc/bin
+ <span style="color: #f8f8f2">DISTCCD_OPTS</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;${</span><span style="color: #f8f8f2">DISTCCD_OPTS</span><span style="color: #e6db74">} --allow localhost&quot;</span> <span style="color: #75715e">#相互に助け合いたい場合は--allow 192.168.0.3を足すか--allow 192.168.0.0/24にする</span>
+<span style="color: #f8f8f2">cd</span> /usr/lib/distcc/bin
 rm c++ g++ gcc cc
-echo '#!/bin/bash' &gt; i686-pc-linux-gnu-wrapper
-echo 'exec /usr/lib/distcc/bin/sparc-unknown-linux-gnu-${0##*/} &quot;$@&quot;' &gt;&gt; i686-pc-linux-gnu-wrapper
+<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&#39;#!/bin/bash&#39;</span> &gt; i686-pc-linux-gnu-wrapper
+<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&#39;exec /usr/lib/distcc/bin/sparc-unknown-linux-gnu-${0##*/} &quot;$@&quot;&#39;</span> &gt;&gt; i686-pc-linux-gnu-wrapper
 chmod a+x i686-pc-linux-gnu-wrapper
 ln -s i686-pc-linux-gnu-wrapper cc
 ln -s i686-pc-linux-gnu-wrapper gcc
@@ -141,8 +139,8 @@ ln -s i686-pc-linux-gnu-wrapper g++
 ln -s i686-pc-linux-gnu-wrapper c++
 /etc/init.d/distcc start
 rc-update add distcc default
-export CC=&quot;i686-pc-linux-gnu-gcc&quot;
-</code></pre>
+<span style="color: #f8f8f2">export CC</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;i686-pc-linux-gnu-gcc&quot;</span>
+</pre></div>
 
 <p><h4>実際に試す</h4>
 借りる側から何か(それなりに時間のかかりそうなものを)emergeし、貸す側でtopコマンドで見てみる。distccというUSERでdistccやcc1というプロセスが見えれば成功している。当たり前だがコンパイルは速くなるが、configureやアーカイブのunpackは速くならないのであしからず。また、貸す側ではデフォルトでnice -15で実行されている。これは /etc/conf.d/distccdのDISTCCD_NICEで設定されているので、貸す側が暇なマシンなら変更してもいい。</p>

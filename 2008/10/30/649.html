@@ -107,283 +107,274 @@
 <h2>1.4.7ベースのFarm</h2>
 
 <p><h3>1.4.7のソースを持ってきてフォルダわけ</h3></p>
-
-<pre><code class="language-bash">tar zxf pukiwiki-1.4.7_notb_utf8.tar.gz -C /var/www/html/farm
-cd /var/www/html/farm
-mkdir {admin,common,datasource}
-cp -a {attach,backup,cache,counter,diff,trackback,wiki,.ht*,index.php} {admin,datasource}
-cp -a {config,image,lib,plugin,skin} common
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">tar zxf pukiwiki-1.4.7_notb_utf8.tar.gz -C /var/www/html/farm
+<span style="color: #f8f8f2">cd</span> /var/www/html/farm
+mkdir <span style="color: #f92672">{</span>admin,common,datasource<span style="color: #f92672">}</span>
+cp -a <span style="color: #f92672">{</span>attach,backup,cache,counter,diff,trackback,wiki,.ht*,index.php<span style="color: #f92672">}</span> <span style="color: #f92672">{</span>admin,datasource<span style="color: #f92672">}</span>
+cp -a <span style="color: #f92672">{</span>config,image,lib,plugin,skin<span style="color: #f92672">}</span> common
 mkdir common/doc
-mkdir {admin,datasource}/config
-</code></pre>
+mkdir <span style="color: #f92672">{</span>admin,datasource<span style="color: #f92672">}</span>/config
+</pre></div>
 
 <p>延々とこんな感じでPukiFarmを参考に同じディレクトリ構成にする</p>
 
 <p><h2>patch</h2>
 <h3>pukiwiki.ini.php</h3></p>
-
-<pre><code class="language-diff">--- pukiwiki-1.4.7_notb_utf8/pukiwiki.ini.php     2006-10-22 05:40:24.000000000 +0900
-+++ common/config/pukiwiki.ini.php      2008-10-09 14:02:09.000000000 +0900
-@@ -8,6 +8,8 @@
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">--- pukiwiki-1.4.7_notb_utf8/pukiwiki.ini.php     2006-10-22 05:40:24.000000000 +0900</span>
+<span style="color: #a6e22e">+++ common/config/pukiwiki.ini.php      2008-10-09 14:02:09.000000000 +0900</span>
+<span style="color: #75715e">@@ -8,6 +8,8 @@</span>
  //
  // PukiWiki main setting file
 
-+$adminpage = ':config/admin';
-+
+<span style="color: #a6e22e">+$adminpage = &#39;:config/admin&#39;;</span>
+<span style="color: #a6e22e">+</span>
  /////////////////////////////////////////////////
  // Functionality settings
 
-@@ -77,7 +79,7 @@
- define('UPLOAD_DIR',    DATA_HOME . 'attach/'   ); // Attached files and logs
- define('COUNTER_DIR',   DATA_HOME . 'counter/'  ); // Counter plugin's counts
- define('TRACKBACK_DIR', DATA_HOME . 'trackback/'); // TrackBack logs
--define('PLUGIN_DIR',    DATA_HOME . 'plugin/'   ); // Plugin directory
-+define('PLUGIN_DIR',    COMMON_DIR . 'plugin/'   ); // Plugin directory
+<span style="color: #75715e">@@ -77,7 +79,7 @@</span>
+ define(&#39;UPLOAD_DIR&#39;,    DATA_HOME . &#39;attach/&#39;   ); // Attached files and logs
+ define(&#39;COUNTER_DIR&#39;,   DATA_HOME . &#39;counter/&#39;  ); // Counter plugin&#39;s counts
+ define(&#39;TRACKBACK_DIR&#39;, DATA_HOME . &#39;trackback/&#39;); // TrackBack logs
+<span style="color: #f92672">-define(&#39;PLUGIN_DIR&#39;,    DATA_HOME . &#39;plugin/&#39;   ); // Plugin directory</span>
+<span style="color: #a6e22e">+define(&#39;PLUGIN_DIR&#39;,    COMMON_DIR . &#39;plugin/&#39;   ); // Plugin directory</span>
 
  /////////////////////////////////////////////////
- // Directory settings II (ended with '/')
-@@ -89,8 +91,10 @@
+ // Directory settings II (ended with &#39;/&#39;)
+<span style="color: #75715e">@@ -89,8 +91,10 @@</span>
  // CSSs(*.css) and JavaScripts(*.js) are needed at
  // ./SKIN_DIR from index.php.
 
-+require(CONFIG_DIR . 'skin.ini.php');
-+
+<span style="color: #a6e22e">+require(CONFIG_DIR . &#39;skin.ini.php&#39;);</span>
+<span style="color: #a6e22e">+</span>
  // Static image files
--define('IMAGE_DIR', 'image/');
-+define('IMAGE_DIR', COMMON_DIR . 'image/');
+<span style="color: #f92672">-define(&#39;IMAGE_DIR&#39;, &#39;image/&#39;);</span>
+<span style="color: #a6e22e">+define(&#39;IMAGE_DIR&#39;, COMMON_DIR . &#39;image/&#39;);</span>
  // Keep this directory shown via web browsers like
  // ./IMAGE_DIR from index.php.
 
-@@ -190,7 +194,7 @@
+<span style="color: #75715e">@@ -190,7 +194,7 @@</span>
  // Admin password for this Wikisite
 
  // Default: always fail
--$adminpass = '{x-php-md5}!';
-+//$adminpass = '{x-php-md5}!';
+<span style="color: #f92672">-$adminpass = &#39;{x-php-md5}!&#39;;</span>
+<span style="color: #a6e22e">+//$adminpass = &#39;{x-php-md5}!&#39;;</span>
 
  // Sample:
- //$adminpass = 'pass'; // Cleartext
-@@ -230,42 +234,6 @@
- $pagereading_config_dict = ':config/PageReading/dict';
+ //$adminpass = &#39;pass&#39;; // Cleartext
+<span style="color: #75715e">@@ -230,42 +234,6 @@</span>
+ $pagereading_config_dict = &#39;:config/PageReading/dict&#39;;
 
  /////////////////////////////////////////////////
--// User definition
--$auth_users = array(
--       // Username =&gt; password
--       'foo'   =&gt; 'foo_passwd', // Cleartext
--       'bar'   =&gt; '{x-php-md5}f53ae779077e987718cc285b14dfbe86', // PHP md5() 'bar_passwd'
--       'hoge'  =&gt; '{SMD5}OzJo/boHwM4q5R+g7LCOx2xGMkFKRVEx',      // LDAP SMD5 'hoge_passwd'
--);
--
--/////////////////////////////////////////////////
--// Authentication method
--
--$auth_method_type      = 'pagename';   // By Page name
--//$auth_method_type    = 'contents';   // By Page contents
--
--/////////////////////////////////////////////////
--// Read auth (0:Disable, 1:Enable)
--$read_auth = 0;
--
--$read_auth_pages = array(
--       // Regex                   Username
--       '#HogeHoge#'            =&gt; 'hoge',
--       '#(NETABARE|NetaBare)#' =&gt; 'foo,bar,hoge',
--);
--
--/////////////////////////////////////////////////
--// Edit auth (0:Disable, 1:Enable)
--$edit_auth = 0;
--
--$edit_auth_pages = array(
--       // Regex                   Username
--       '#BarDiary#'            =&gt; 'bar',
--       '#HogeHoge#'            =&gt; 'hoge',
--       '#(NETABARE|NetaBare)#' =&gt; 'foo,bar,hoge',
--);
--
--/////////////////////////////////////////////////
+<span style="color: #f92672">-// User definition</span>
+<span style="color: #f92672">-$auth_users = array(</span>
+<span style="color: #f92672">-       // Username =&gt; password</span>
+<span style="color: #f92672">-       &#39;foo&#39;   =&gt; &#39;foo_passwd&#39;, // Cleartext</span>
+<span style="color: #f92672">-       &#39;bar&#39;   =&gt; &#39;{x-php-md5}f53ae779077e987718cc285b14dfbe86&#39;, // PHP md5() &#39;bar_passwd&#39;</span>
+<span style="color: #f92672">-       &#39;hoge&#39;  =&gt; &#39;{SMD5}OzJo/boHwM4q5R+g7LCOx2xGMkFKRVEx&#39;,      // LDAP SMD5 &#39;hoge_passwd&#39;</span>
+<span style="color: #f92672">-);</span>
+<span style="color: #f92672">-</span>
+<span style="color: #f92672">-/////////////////////////////////////////////////</span>
+<span style="color: #f92672">-// Authentication method</span>
+<span style="color: #f92672">-</span>
+<span style="color: #f92672">-$auth_method_type      = &#39;pagename&#39;;   // By Page name</span>
+<span style="color: #f92672">-//$auth_method_type    = &#39;contents&#39;;   // By Page contents</span>
+<span style="color: #f92672">-</span>
+<span style="color: #f92672">-/////////////////////////////////////////////////</span>
+<span style="color: #f92672">-// Read auth (0:Disable, 1:Enable)</span>
+<span style="color: #f92672">-$read_auth = 0;</span>
+<span style="color: #f92672">-</span>
+<span style="color: #f92672">-$read_auth_pages = array(</span>
+<span style="color: #f92672">-       // Regex                   Username</span>
+<span style="color: #f92672">-       &#39;#HogeHoge#&#39;            =&gt; &#39;hoge&#39;,</span>
+<span style="color: #f92672">-       &#39;#(NETABARE|NetaBare)#&#39; =&gt; &#39;foo,bar,hoge&#39;,</span>
+<span style="color: #f92672">-);</span>
+<span style="color: #f92672">-</span>
+<span style="color: #f92672">-/////////////////////////////////////////////////</span>
+<span style="color: #f92672">-// Edit auth (0:Disable, 1:Enable)</span>
+<span style="color: #f92672">-$edit_auth = 0;</span>
+<span style="color: #f92672">-</span>
+<span style="color: #f92672">-$edit_auth_pages = array(</span>
+<span style="color: #f92672">-       // Regex                   Username</span>
+<span style="color: #f92672">-       &#39;#BarDiary#&#39;            =&gt; &#39;bar&#39;,</span>
+<span style="color: #f92672">-       &#39;#HogeHoge#&#39;            =&gt; &#39;hoge&#39;,</span>
+<span style="color: #f92672">-       &#39;#(NETABARE|NetaBare)#&#39; =&gt; &#39;foo,bar,hoge&#39;,</span>
+<span style="color: #f92672">-);</span>
+<span style="color: #f92672">-</span>
+<span style="color: #f92672">-/////////////////////////////////////////////////</span>
  // Search auth
  // 0: Disabled (Search read-prohibited page contents)
  // 1: Enabled  (Search only permitted pages for the user)
-@@ -530,4 +498,12 @@
+<span style="color: #75715e">@@ -530,4 +498,12 @@</span>
 
-        array('pattern'=&gt;'#^#', 'profile'=&gt;'default'),  // Sentinel
+        array(&#39;pattern&#39;=&gt;&#39;#^#&#39;, &#39;profile&#39;=&gt;&#39;default&#39;),  // Sentinel
  );
-+
-+require(DATA_HOME . 'userauth.php');
-+$auth_users = $userauth-&gt;get_auth_users();
-+$auth_method_type = $userauth-&gt;get_auth_method_type();
-+$read_auth = $userauth-&gt;get_read_auth();
-+$read_auth_pages = $userauth-&gt;get_read_auth_pages();
-+$edit_auth = $userauth-&gt;get_edit_auth();
-+$edit_auth_pages = $userauth-&gt;get_edit_auth_pages();
+<span style="color: #a6e22e">+</span>
+<span style="color: #a6e22e">+require(DATA_HOME . &#39;userauth.php&#39;);</span>
+<span style="color: #a6e22e">+$auth_users = $userauth-&gt;get_auth_users();</span>
+<span style="color: #a6e22e">+$auth_method_type = $userauth-&gt;get_auth_method_type();</span>
+<span style="color: #a6e22e">+$read_auth = $userauth-&gt;get_read_auth();</span>
+<span style="color: #a6e22e">+$read_auth_pages = $userauth-&gt;get_read_auth_pages();</span>
+<span style="color: #a6e22e">+$edit_auth = $userauth-&gt;get_edit_auth();</span>
+<span style="color: #a6e22e">+$edit_auth_pages = $userauth-&gt;get_edit_auth_pages();</span>
  ?&gt;
-</code></pre>
+</pre></div>
 
 <p><h3>ja.lng.php</h3></p>
-
-<pre><code class="language-diff">--- pukiwiki-1.4.7_notb_utf8/ja.lng.php   2006-10-22 05:40:24.000000000 +0900
-+++ common/config/ja.lng.php    2008-10-09 11:28:33.000000000 +0900
-@@ -81,8 +81,8 @@
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">--- pukiwiki-1.4.7_notb_utf8/ja.lng.php   2006-10-22 05:40:24.000000000 +0900</span>
+<span style="color: #a6e22e">+++ common/config/ja.lng.php    2008-10-09 11:28:33.000000000 +0900</span>
+<span style="color: #75715e">@@ -81,8 +81,8 @@</span>
  
  ///////////////////////////////////////
  // Page name
--$rule_page = 'FormattingRules';        // Formatting rules
--$help_page = 'Help';           // Help
-+$rule_page = '整形ルール';     // Formatting rules
-+$help_page = 'ヘルプ';         // Help
+<span style="color: #f92672">-$rule_page = &#39;FormattingRules&#39;;        // Formatting rules</span>
+<span style="color: #f92672">-$help_page = &#39;Help&#39;;           // Help</span>
+<span style="color: #a6e22e">+$rule_page = &#39;整形ルール&#39;;     // Formatting rules</span>
+<span style="color: #a6e22e">+$help_page = &#39;ヘルプ&#39;;         // Help</span>
  
  ///////////////////////////////////////
  // TrackBack (REMOVED)
-@@ -442,4 +442,6 @@
+<span style="color: #75715e">@@ -442,4 +442,6 @@</span>
  // yetlist.inc.php
-$_title_yetlist = '未作成のページ一覧';
-$_err_notexist  = '未作成のページはありません。';
-+
-+$_LANG['skin']['admin']       = '管理';
+$_title_yetlist = &#39;未作成のページ一覧&#39;;
+$_err_notexist  = &#39;未作成のページはありません。&#39;;
+<span style="color: #a6e22e">+</span>
+<span style="color: #a6e22e">+$_LANG[&#39;skin&#39;][&#39;admin&#39;]       = &#39;管理&#39;;</span>
  ?&gt;
-</code></pre>
+</pre></div>
 
 <p><h3>lib/auth.php</h3></p>
-
-<pre><code class="language-diff">--- pukiwiki-1.4.7_notb_utf8/lib/auth.php 2006-10-22 05:40:25.000000000 +0900
-+++ common/lib/auth.php 2008-10-09 13:07:24.000000000 +0900
-@@ -197,8 +197,8 @@
-                        explode(':', base64_decode($matches[1]));
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">--- pukiwiki-1.4.7_notb_utf8/lib/auth.php 2006-10-22 05:40:25.000000000 +0900</span>
+<span style="color: #a6e22e">+++ common/lib/auth.php 2008-10-09 13:07:24.000000000 +0900</span>
+<span style="color: #75715e">@@ -197,8 +197,8 @@</span>
+                        explode(&#39;:&#39;, base64_decode($matches[1]));
         }
 
--       if (PKWK_READONLY ||
--               ! isset($_SERVER['PHP_AUTH_USER']) ||
-+//     if (PKWK_READONLY ||
-+       if(     ! isset($_SERVER['PHP_AUTH_USER']) ||
-                ! in_array($_SERVER['PHP_AUTH_USER'], $user_list) ||
-                ! isset($auth_users[$_SERVER['PHP_AUTH_USER']]) ||
+<span style="color: #f92672">-       if (PKWK_READONLY ||</span>
+<span style="color: #f92672">-               ! isset($_SERVER[&#39;PHP_AUTH_USER&#39;]) ||</span>
+<span style="color: #a6e22e">+//     if (PKWK_READONLY ||</span>
+<span style="color: #a6e22e">+       if(     ! isset($_SERVER[&#39;PHP_AUTH_USER&#39;]) ||</span>
+                ! in_array($_SERVER[&#39;PHP_AUTH_USER&#39;], $user_list) ||
+                ! isset($auth_users[$_SERVER[&#39;PHP_AUTH_USER&#39;]]) ||
                 pkwk_hash_compute(
-</code></pre>
+</pre></div>
 
 <p><h3>lib/html.php</h3></p>
-
-<pre><code class="language-diff">--- pukiwiki-1.4.7_notb_utf8/lib/html.php 2006-10-22 05:40:25.000000000 +0900
-+++ common/lib/html.php 2008-10-09 16:34:57.000000000 +0900
-@@ -37,6 +37,9 @@
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">--- pukiwiki-1.4.7_notb_utf8/lib/html.php 2006-10-22 05:40:25.000000000 +0900</span>
+<span style="color: #a6e22e">+++ common/lib/html.php 2008-10-09 16:34:57.000000000 +0900</span>
+<span style="color: #75715e">@@ -37,6 +37,9 @@</span>
         $r_page = rawurlencode($_page); 
  
         // Set $_LINK for skin
-+
-+        $_LINK['admin']      = &quot;$script?%3Aconfig%2Fadmin&quot;;
-+
-        $_LINK['add']      = &quot;$script?cmd=add&amp;page=$r_page&quot;;
-        $_LINK['backup']   = &quot;$script?cmd=backup&amp;page=$r_page&quot;;
-        $_LINK['copy']     = &quot;$script?plugin=template&amp;refer=$r_page&quot;;
-</code></pre>
+<span style="color: #a6e22e">+</span>
+<span style="color: #a6e22e">+        $_LINK[&#39;admin&#39;]      = &quot;$script?%3Aconfig%2Fadmin&quot;;</span>
+<span style="color: #a6e22e">+</span>
+        $_LINK[&#39;add&#39;]      = &quot;$script?cmd=add&amp;page=$r_page&quot;;
+        $_LINK[&#39;backup&#39;]   = &quot;$script?cmd=backup&amp;page=$r_page&quot;;
+        $_LINK[&#39;copy&#39;]     = &quot;$script?plugin=template&amp;refer=$r_page&quot;;
+</pre></div>
 
 <p><h3>lib/pukiwiki.php</h3></p>
-
-<pre><code class="language-diff">--- pukiwiki-1.4.7_notb_utf8/lib/pukiwiki.php     2006-10-22 05:40:25.000000000 +0900
-+++ common/lib/pukiwiki.php     2008-10-08 11:17:07.000000000 +0900
-@@ -68,6 +68,9 @@
-        require(LIB_DIR . 'trackback.php'); // TrackBack
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">--- pukiwiki-1.4.7_notb_utf8/lib/pukiwiki.php     2006-10-22 05:40:25.000000000 +0900</span>
+<span style="color: #a6e22e">+++ common/lib/pukiwiki.php     2008-10-08 11:17:07.000000000 +0900</span>
+<span style="color: #75715e">@@ -68,6 +68,9 @@</span>
+        require(LIB_DIR . &#39;trackback.php&#39;); // TrackBack
  }
 
-+ include_once( COMMON_DIR . 'plugin/paraedit.inc.php');
-+ $post[&quot;msg&quot;] = _plugin_paraedit_parse_postmsg($post[&quot;msg_before&quot;], $post[&quot;msg&quot;], $post[&quot;msg_after&quot;]);
-+
+<span style="color: #a6e22e">+ include_once( COMMON_DIR . &#39;plugin/paraedit.inc.php&#39;);</span>
+<span style="color: #a6e22e">+ $post[&quot;msg&quot;] = _plugin_paraedit_parse_postmsg($post[&quot;msg_before&quot;], $post[&quot;msg&quot;], $post[&quot;msg_after&quot;]);</span>
+<span style="color: #a6e22e">+</span>
  /////////////////////////////////////////////////
  // Main
-</code></pre>
+</pre></div>
 
 <p><h3>skin/pukiwiki.skin.php</h3></p>
-
-<pre><code class="language-diff">--- pukiwiki-1.4.7_notb_utf8/skin/pukiwiki.skin.php       2006-10-22 05:40:28.000000000 +0900
-+++ common/skin/pukiwiki.skin.php       2008-10-08 19:31:22.000000000 +0900
-@@ -76,8 +76,8 @@
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">--- pukiwiki-1.4.7_notb_utf8/skin/pukiwiki.skin.php       2006-10-22 05:40:28.000000000 +0900</span>
+<span style="color: #a6e22e">+++ common/skin/pukiwiki.skin.php       2008-10-08 19:31:22.000000000 +0900</span>
+<span style="color: #75715e">@@ -76,8 +76,8 @@</span>
   &lt;title&gt;&lt;?php echo $title ?&gt; - &lt;?php echo $page_title ?&gt;&lt;/title&gt;
  
-  &lt;link rel=&quot;SHORTCUT ICON&quot; href=&quot;&lt;?php echo $image['favicon'] ?&gt;&quot; /&gt;
-- &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;skin/pukiwiki.css.php?charset=&lt;?php echo $css_charset ?&gt;&quot; charset=&quot;&lt;?php echo $css_charset ?&gt;&quot; /&gt;
-- &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;print&quot;  href=&quot;skin/pukiwiki.css.php?charset=&lt;?php echo $css_charset ?&gt;&amp;media=print&quot; charset=&quot;&lt;?php echo $css_charset ?&gt;&quot; /&gt;
-+ &lt;link rel=&quot;stylesheet&quot; href=&quot;&lt;?php echo CSS_FILE ?&gt;?charset=&lt;?php echo $css_charset ?&gt;&quot; type=&quot;text/css&quot; media=&quot;screen&quot; charset=&quot;&lt;?php echo $css_charset ?&gt;&quot; /&gt;
-+ &lt;link rel=&quot;stylesheet&quot; href=&quot;&lt;?php echo CSS_FILE ?&gt;?charset=&lt;?php echo $css_charset ?&gt;&amp;media=print&quot; type=&quot;text/css&quot; media=&quot;print&quot; charset=&quot;&lt;?php echo $css_charset ?&gt;&quot; /&gt;
-   &lt;link rel=&quot;alternate&quot; type=&quot;application/rss+xml&quot; title=&quot;RSS&quot; href=&quot;&lt;?php echo $link['rss'] ?&gt;&quot; /&gt;&lt;?php // RSS auto-discovery ?&gt;
+  &lt;link rel=&quot;SHORTCUT ICON&quot; href=&quot;&lt;?php echo $image[&#39;favicon&#39;] ?&gt;&quot; /&gt;
+<span style="color: #f92672">- &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;skin/pukiwiki.css.php?charset=&lt;?php echo $css_charset ?&gt;&quot; charset=&quot;&lt;?php echo $css_charset ?&gt;&quot; /&gt;</span>
+<span style="color: #f92672">- &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;print&quot;  href=&quot;skin/pukiwiki.css.php?charset=&lt;?php echo $css_charset ?&gt;&amp;media=print&quot; charset=&quot;&lt;?php echo $css_charset ?&gt;&quot; /&gt;</span>
+<span style="color: #a6e22e">+ &lt;link rel=&quot;stylesheet&quot; href=&quot;&lt;?php echo CSS_FILE ?&gt;?charset=&lt;?php echo $css_charset ?&gt;&quot; type=&quot;text/css&quot; media=&quot;screen&quot; charset=&quot;&lt;?php echo $css_charset ?&gt;&quot; /&gt;</span>
+<span style="color: #a6e22e">+ &lt;link rel=&quot;stylesheet&quot; href=&quot;&lt;?php echo CSS_FILE ?&gt;?charset=&lt;?php echo $css_charset ?&gt;&amp;media=print&quot; type=&quot;text/css&quot; media=&quot;print&quot; charset=&quot;&lt;?php echo $css_charset ?&gt;&quot; /&gt;</span>
+   &lt;link rel=&quot;alternate&quot; type=&quot;application/rss+xml&quot; title=&quot;RSS&quot; href=&quot;&lt;?php echo $link[&#39;rss&#39;] ?&gt;&quot; /&gt;&lt;?php // RSS auto-discovery ?&gt;
  
   &lt;?php if (PKWK_ALLOW_JAVASCRIPT &amp;&amp; $trackback_javascript) { ?&gt; &lt;script type=&quot;text/javascript&quot; src=&quot;skin/trackback.js&quot;&gt;&lt;/script&gt;&lt;?php } ?&gt;
-@@ -154,6 +154,8 @@
-  | &lt;?php _navigator('help')   ?&gt;
+<span style="color: #75715e">@@ -154,6 +154,8 @@</span>
+  | &lt;?php _navigator(&#39;help&#39;)   ?&gt;
   ]
  
-+ [ &lt;?php _navigator('admin') ?&gt; ]
-+
+<span style="color: #a6e22e">+ [ &lt;?php _navigator(&#39;admin&#39;) ?&gt; ]</span>
+<span style="color: #a6e22e">+</span>
  &lt;?php if ($trackback) { ?&gt;
-  [ &lt;?php _navigator('trackback', $lang['trackback'] . '(' . tb_count($_page) . ')',
-        ($trackback_javascript == 1) ? 'onclick=&quot;OpenTrackback(this.href); return false&quot;' : '') ?&gt; ]
-</code></pre>
+  [ &lt;?php _navigator(&#39;trackback&#39;, $lang[&#39;trackback&#39;] . &#39;(&#39; . tb_count($_page) . &#39;)&#39;,
+        ($trackback_javascript == 1) ? &#39;onclick=&quot;OpenTrackback(this.href); return false&quot;&#39; : &#39;&#39;) ?&gt; ]
+</pre></div>
 
 <p><h3>skin/pukiwiki.css.php</h3></p>
-
-<pre><code class="language-diff">--- pukiwiki-1.4.7_notb_utf8/skin/pukiwiki.css.php        2006-10-22 05:40:27.000000000 +0900
-+++ common/skin/pukiwiki.css.php        2008-10-09 11:16:58.000000000 +0900
-@@ -170,7 +170,6 @@
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">--- pukiwiki-1.4.7_notb_utf8/skin/pukiwiki.css.php        2006-10-22 05:40:27.000000000 +0900</span>
+<span style="color: #a6e22e">+++ common/skin/pukiwiki.css.php        2008-10-09 11:16:58.000000000 +0900</span>
+<span style="color: #75715e">@@ -170,7 +170,6 @@</span>
  .style_table {
         padding:0px;
         border:0px;
--       margin:auto;
+<span style="color: #f92672">-       margin:auto;</span>
         text-align:left;
         color:inherit;
         background-color:#ccd5dd;
-@@ -196,7 +195,7 @@
+<span style="color: #75715e">@@ -196,7 +195,7 @@</span>
  ol.list2 { list-style-type:lower-roman; }
  ol.list3 { list-style-type:lower-alpha; }
 
--div.ie5 { text-align:center; }
-+div.ie5 { text-align:left; }
+<span style="color: #f92672">-div.ie5 { text-align:center; }</span>
+<span style="color: #a6e22e">+div.ie5 { text-align:left; }</span>
 
  span.noexists {
         color:inherit;
-</code></pre>
+</pre></div>
 
 <p><h2>1.4.7からじゃなくてPukiFarmからの差分</h2>
 PukiFarmのソースはEUC-JPなので、単純にコピーするだけでなく
 <code><pre>
 nkf &ndash;overwrite -w0 コピーしたソース</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #a6e22e">とか必ずやる</span>
 
-<pre><code>とか必ずやる
+<span style="color: #960050; background-color: #1e0010">```</span><span style="color: #a6e22e">diff</span>
+<span style="color: #a6e22e">common</span><span style="color: #f92672">/</span><span style="color: #a6e22e">plugin</span><span style="color: #f92672">/</span><span style="color: #a6e22e">add_site</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">inc</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">php</span> <span style="color: #75715e">[</span><span style="color: #f8f8f2">#v644fe5c</span><span style="color: #75715e">]</span>
+<span style="color: #f92672">---</span> <span style="color: #f92672">~</span><span style="color: #960050; background-color: #1e0010">/pukifarm/common/plugin/add_site.inc.php   2008-10-09 18:44:16.137051769 +0900</span>
+<span style="color: #f92672">+++</span> <span style="color: #a6e22e">common</span><span style="color: #f92672">/</span><span style="color: #a6e22e">plugin</span><span style="color: #f92672">/</span><span style="color: #a6e22e">add_site</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">inc</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">php</span>      <span style="color: #ae81ff">2008</span><span style="color: #f92672">-</span><span style="color: #ae81ff">10</span><span style="color: #f92672">-</span><span style="color: #ae81ff">09</span> <span style="color: #ae81ff">16</span><span style="color: #f92672">:</span><span style="color: #ae81ff">05</span><span style="color: #f92672">:</span><span style="color: #ae81ff">55.000000000</span> <span style="color: #f92672">+</span><span style="color: #ae81ff">0900</span>
+<span style="color: #960050; background-color: #1e0010">@@</span> <span style="color: #f92672">-</span><span style="color: #ae81ff">14</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">7</span> <span style="color: #f92672">+</span><span style="color: #ae81ff">14</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">7</span> <span style="color: #960050; background-color: #1e0010">@@</span>
+ <span style="color: #75715e">// サイトの元データ</span>
+ <span style="color: #a6e22e">define</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;INIT_DIR&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;../datasource/&#39;</span> <span style="color: #f8f8f2">);</span>
+ <span style="color: #75715e">// PukiFarm の URL (編集必須)</span>
+<span style="color: #f92672">-</span><span style="color: #a6e22e">define</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;FARM_URL&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;http://aksum.jp/pukifarm/admin/&#39;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f92672">+</span><span style="color: #a6e22e">define</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;FARM_URL&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;http://wiki/farm/&#39;</span><span style="color: #f8f8f2">);</span>
 
-```diff
-common/plugin/add_site.inc.php [#v644fe5c]
---- ~/pukifarm/common/plugin/add_site.inc.php   2008-10-09 18:44:16.137051769 +0900
-+++ common/plugin/add_site.inc.php      2008-10-09 16:05:55.000000000 +0900
-@@ -14,7 +14,7 @@
- // サイトの元データ
- define('INIT_DIR', '../datasource/' );
- // PukiFarm の URL (編集必須)
--define('FARM_URL', 'http://aksum.jp/pukifarm/admin/');
-+define('FARM_URL', 'http://wiki/farm/');
+ <span style="color: #66d9ef">function</span> <span style="color: #a6e22e">plugin_add_site_convert</span><span style="color: #f8f8f2">()</span>
+ <span style="color: #f8f8f2">{</span>
+<span style="color: #960050; background-color: #1e0010">@@</span> <span style="color: #f92672">-</span><span style="color: #ae81ff">73</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">8</span> <span style="color: #f92672">+</span><span style="color: #ae81ff">73</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">8</span> <span style="color: #960050; background-color: #1e0010">@@</span>
+     <span style="color: #a6e22e">closedir</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">$dir</span><span style="color: #f8f8f2">);</span>
 
- function plugin_add_site_convert()
- {
-@@ -73,8 +73,8 @@
-     closedir($dir);
+     <span style="color: #a6e22e">plugin_add_site_create_site</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">$id</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f92672">-</span>
+<span style="color: #f92672">-</span>    <span style="color: #a6e22e">$retval</span><span style="color: #75715e">[</span><span style="color: #e6db74">&#39;msg&#39;</span><span style="color: #75715e">]</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">$_registed</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f92672">+</span>
+<span style="color: #f92672">+</span>       <span style="color: #a6e22e">$retval</span><span style="color: #75715e">[</span><span style="color: #e6db74">&#39;msg&#39;</span><span style="color: #75715e">]</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">$_registed</span><span style="color: #f8f8f2">;</span>
+     <span style="color: #a6e22e">$retval</span><span style="color: #75715e">[</span><span style="color: #e6db74">&#39;body&#39;</span><span style="color: #75715e">]</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">convert_html</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;登録完了しました。&#39;</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">FARM_URL</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">$id</span><span style="color: #f8f8f2">.</span><span style="color: #e6db74">&#39;/ からアクセスして下さい。&#39;</span><span style="color: #f8f8f2">);</span>
 
-     plugin_add_site_create_site($id);
--
--    $retval['msg'] = $_registed;
-+
-+       $retval['msg'] = $_registed;
-     $retval['body'] = convert_html('登録完了しました。'.FARM_URL.$id.'/ からアクセスして下さい。');
+     <span style="color: #66d9ef">return</span> <span style="color: #a6e22e">$retval</span><span style="color: #f8f8f2">;</span>
+<span style="color: #960050; background-color: #1e0010">@@</span> <span style="color: #f92672">-</span><span style="color: #ae81ff">120</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">9</span> <span style="color: #f92672">+</span><span style="color: #ae81ff">120</span><span style="color: #f8f8f2">,</span><span style="color: #ae81ff">7</span> <span style="color: #960050; background-color: #1e0010">@@</span>
 
-     return $retval;
-@@ -120,9 +120,7 @@
+ <span style="color: #960050; background-color: #1e0010">\</span><span style="color: #a6e22e">$site_id</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&#39;{$id}&#39;</span><span style="color: #f8f8f2">;</span>
 
- \$site_id = '{$id}';
+ <span style="color: #a6e22e">require</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">CONFIG_DIR</span> <span style="color: #f8f8f2">.</span> <span style="color: #e6db74">&#39;password.ini.php&#39;</span><span style="color: #f8f8f2">);</span>
+ <span style="color: #a6e22e">require</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">CONFIG_DIR</span> <span style="color: #f8f8f2">.</span> <span style="color: #e6db74">&#39;baseconf.ini.php&#39;</span><span style="color: #f8f8f2">);</span>
+<span style="color: #f92672">-</span><span style="color: #a6e22e">require</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">CONFIG_DIR</span> <span style="color: #f8f8f2">.</span> <span style="color: #e6db74">&#39;amazon_id.ini.php&#39;</span><span style="color: #f8f8f2">);</span>
 
- require(CONFIG_DIR . 'password.ini.php');
- require(CONFIG_DIR . 'baseconf.ini.php');
--require(CONFIG_DIR . 'amazon_id.ini.php');
-
- /////////////////////////////////////////////////
- require(LIB_DIR . 'pukiwiki.php');
-</code></pre>
+ <span style="color: #75715e">/////////////////////////////////////////////////</span>
+ <span style="color: #a6e22e">require</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">LIB_DIR</span> <span style="color: #f8f8f2">.</span> <span style="color: #e6db74">&#39;pukiwiki.php&#39;</span><span style="color: #f8f8f2">);</span>
+</pre></div>
 
 <p><h2>追加</h2>
 あとは足りないファイルをPukiFarmからコピって、同様にnkfする</p>
@@ -392,174 +383,172 @@ common/plugin/add_site.inc.php [#v644fe5c]
 adminで既存Wikiの一覧を出したいので、プラグインを作る</p>
 
 <p><h3>common/plugin/farmlist.inc.php</h3></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">&lt;?php</span>
+<span style="color: #75715e">// PukiWiki - Yet another WikiWikiWeb clone</span>
+<span style="color: #75715e">// $Id: farmlist.inc.php,v 1.0 2008/10/08 nobu Exp $</span>
+<span style="color: #75715e">// Copyright (C)</span>
+<span style="color: #75715e">//   2002-2005 PukiWiki Developers Team</span>
+<span style="color: #75715e">//   2001-2002 Originally written by yu-ji</span>
+<span style="color: #75715e">// License: GPL v2 or (at your option) any later version</span>
+<span style="color: #75715e">//</span>
+<span style="color: #75715e">// WikiFarm List plugin</span>
 
-<pre><code class="language-php">&lt;?php
-// PukiWiki - Yet another WikiWikiWeb clone
-// $Id: farmlist.inc.php,v 1.0 2008/10/08 nobu Exp $
-// Copyright (C)
-//   2002-2005 PukiWiki Developers Team
-//   2001-2002 Originally written by yu-ji
-// License: GPL v2 or (at your option) any later version
-//
-// WikiFarm List plugin
+<span style="color: #66d9ef">function</span> <span style="color: #a6e22e">plugin_farmlist_convert</span><span style="color: #f8f8f2">()</span>
+<span style="color: #f8f8f2">{</span>
+        <span style="color: #f8f8f2">$path</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&#39;/var/www/html/farm/&#39;</span><span style="color: #f8f8f2">;</span>
+        <span style="color: #f8f8f2">$count</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+        <span style="color: #66d9ef">foreach</span> <span style="color: #f8f8f2">(glob($path</span> <span style="color: #f92672">.</span> <span style="color: #e6db74">&quot;*&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #a6e22e">GLOB_ONLYDIR</span><span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">$dirname)</span> <span style="color: #f8f8f2">{</span>
+                <span style="color: #75715e">//最初からある3つのディレクトリは除外</span>
+                <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(ereg(</span><span style="color: #e6db74">&quot;admin$&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">$dirname));</span>
+                <span style="color: #66d9ef">elseif</span> <span style="color: #f8f8f2">(ereg(</span><span style="color: #e6db74">&quot;datasource$&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">$dirname));</span>
+                <span style="color: #66d9ef">elseif</span> <span style="color: #f8f8f2">(ereg(</span><span style="color: #e6db74">&quot;common$&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">$dirname));</span>
+                <span style="color: #66d9ef">else</span> <span style="color: #f8f8f2">{</span>
+                        <span style="color: #f8f8f2">$list[]</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">array</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;name&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #f8f8f2">basename($dirname),</span> <span style="color: #e6db74">&#39;time&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #a6e22e">get_mtime</span><span style="color: #f8f8f2">($dirname));</span>
+                        <span style="color: #f8f8f2">$count</span><span style="color: #f92672">++</span><span style="color: #f8f8f2">;</span>
+                <span style="color: #f8f8f2">}</span>
+        <span style="color: #f8f8f2">}</span>
+        <span style="color: #f8f8f2">usort($list,</span> <span style="color: #e6db74">&quot;cmp&quot;</span><span style="color: #f8f8f2">);</span>
+        <span style="color: #f8f8f2">$liststr</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&#39;&#39;</span><span style="color: #f8f8f2">;</span>
+        <span style="color: #66d9ef">foreach</span> <span style="color: #f8f8f2">($list</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">$key</span> <span style="color: #f92672">=&gt;</span> <span style="color: #f8f8f2">$value)</span> <span style="color: #f8f8f2">{</span>
+                <span style="color: #f8f8f2">$liststr</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">$liststr</span> <span style="color: #f92672">.</span> <span style="color: #e6db74">&quot;&lt;tr&gt;</span><span style="color: #ae81ff">\n</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">;</span>
+                <span style="color: #f8f8f2">$liststr</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">$liststr</span> <span style="color: #f92672">.</span> <span style="color: #e6db74">&quot; &lt;td class=</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">style_td</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">&gt;&lt;a href=</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">http://wiki/farm/&quot;</span> <span style="color: #f92672">.</span> <span style="color: #f8f8f2">$value[</span><span style="color: #e6db74">&#39;name&#39;</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">.</span> <span style="color: #e6db74">&quot;/</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">&gt;&quot;</span> <span style="color: #f92672">.</span> <span style="color: #f8f8f2">$value[</span><span style="color: #e6db74">&#39;name&#39;</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">.</span> <span style="color: #e6db74">&quot;&lt;/td&gt;</span><span style="color: #ae81ff">\n</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">;</span>
+                <span style="color: #f8f8f2">$liststr</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">$liststr</span> <span style="color: #f92672">.</span> <span style="color: #e6db74">&quot; &lt;td class=</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">style_td</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">&gt;&quot;</span> <span style="color: #f92672">.</span> <span style="color: #f8f8f2">$value[</span><span style="color: #e6db74">&#39;time&#39;</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">.</span> <span style="color: #e6db74">&quot;&lt;/td&gt;</span><span style="color: #ae81ff">\n</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">;</span>
+                <span style="color: #f8f8f2">$liststr</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">$liststr</span> <span style="color: #f92672">.</span> <span style="color: #e6db74">&quot;&lt;/tr&gt;</span><span style="color: #ae81ff">\n</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">;</span>
+        <span style="color: #f8f8f2">}</span>
+        <span style="color: #f8f8f2">$string</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&lt;&lt;&lt;EOD</span>
+<span style="color: #e6db74">&lt;div class=&quot;ie5&quot;&gt;</span>
+<span style="color: #e6db74"> &lt;table class=&quot;style_table&quot; cellspacing=&quot;1&quot; border=&quot;0&quot;&gt;</span>
+<span style="color: #e6db74">  &lt;tbody&gt;</span>
+<span style="color: #e6db74">   &lt;tr&gt;</span>
+<span style="color: #e6db74">    &lt;th class=&quot;style_th&quot;&gt;wikiの名前&lt;/td&gt;</span>
+<span style="color: #e6db74">    &lt;th class=&quot;style_th&quot;&gt;最終更新日時&lt;/td&gt;</span>
+<span style="color: #e6db74">   &lt;/tr&gt;</span>
+<span style="color: #e6db74">   $liststr</span>
+<span style="color: #e6db74">  &lt;/tbody&gt;</span>
+<span style="color: #e6db74"> &lt;/table&gt;</span>
+<span style="color: #e6db74">&lt;/div&gt;</span>
+<span style="color: #e6db74">EOD;</span>
+        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">$string;</span>
+<span style="color: #f8f8f2">}</span>
 
-function plugin_farmlist_convert()
-{
-        $path = '/var/www/html/farm/';
-        $count = 0;
-        foreach (glob($path . &quot;*&quot;, GLOB_ONLYDIR) as $dirname) {
-                //最初からある3つのディレクトリは除外
-                if (ereg(&quot;admin$&quot;, $dirname));
-                elseif (ereg(&quot;datasource$&quot;, $dirname));
-                elseif (ereg(&quot;common$&quot;, $dirname));
-                else {
-                        $list[] = array('name' =&gt; basename($dirname), 'time' =&gt; get_mtime($dirname));
-                        $count++;
-                }
-        }
-        usort($list, &quot;cmp&quot;);
-        $liststr = '';
-        foreach ($list as $key =&gt; $value) {
-                $liststr = $liststr . &quot;&lt;tr&gt;\n&quot;;
-                $liststr = $liststr . &quot; &lt;td class=\&quot;style_td\&quot;&gt;&lt;a href=\&quot;http://wiki/farm/&quot; . $value['name'] . &quot;/\&quot;&gt;&quot; . $value['name'] . &quot;&lt;/td&gt;\n&quot;;
-                $liststr = $liststr . &quot; &lt;td class=\&quot;style_td\&quot;&gt;&quot; . $value['time'] . &quot;&lt;/td&gt;\n&quot;;
-                $liststr = $liststr . &quot;&lt;/tr&gt;\n&quot;;
-        }
-        $string = &lt;&lt;&lt;EOD
-&lt;div class=&quot;ie5&quot;&gt;
- &lt;table class=&quot;style_table&quot; cellspacing=&quot;1&quot; border=&quot;0&quot;&gt;
-  &lt;tbody&gt;
-   &lt;tr&gt;
-    &lt;th class=&quot;style_th&quot;&gt;wikiの名前&lt;/td&gt;
-    &lt;th class=&quot;style_th&quot;&gt;最終更新日時&lt;/td&gt;
-   &lt;/tr&gt;
-   $liststr
-  &lt;/tbody&gt;
- &lt;/table&gt;
-&lt;/div&gt;
-EOD;
-        return $string;
-}
+<span style="color: #66d9ef">function</span> <span style="color: #a6e22e">cmp</span><span style="color: #f8f8f2">($a,</span> <span style="color: #f8f8f2">$b)</span>
+<span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">($a[</span><span style="color: #e6db74">&#39;time&#39;</span><span style="color: #f8f8f2">]</span> <span style="color: #f92672">==</span> <span style="color: #f8f8f2">$b[</span><span style="color: #e6db74">&#39;time&#39;</span><span style="color: #f8f8f2">])</span> <span style="color: #f8f8f2">{</span>
+                <span style="color: #66d9ef">return</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span>
+        <span style="color: #f8f8f2">}</span>
+        <span style="color: #f8f8f2">$datea</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">strptime($a[</span><span style="color: #e6db74">&#39;time&#39;</span><span style="color: #f8f8f2">],</span> <span style="color: #e6db74">&quot;%Y/%m/%d %H:%M:%S&quot;</span><span style="color: #f8f8f2">);</span>
+        <span style="color: #f8f8f2">$dateb</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">strptime($b[</span><span style="color: #e6db74">&#39;time&#39;</span><span style="color: #f8f8f2">],</span> <span style="color: #e6db74">&quot;%Y/%m/%d %H:%M:%S&quot;</span><span style="color: #f8f8f2">);</span>
+        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">($datea</span> <span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">$dateb)</span> <span style="color: #f92672">?</span> <span style="color: #f92672">-</span><span style="color: #ae81ff">1</span> <span style="color: #f92672">:</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">}</span>
 
-function cmp($a, $b)
-{
-        if ($a['time'] == $b['time']) {
-                return 0;
-        }
-        $datea = strptime($a['time'], &quot;%Y/%m/%d %H:%M:%S&quot;);
-        $dateb = strptime($b['time'], &quot;%Y/%m/%d %H:%M:%S&quot;);
-        return ($datea &gt; $dateb) ? -1 : 1;
-}
-
-function get_mtime($path)
-{
-        $mtime = filemtime($path);
-        return date(&quot;Y/m/d H:i:s&quot;, $mtime);
-}
-?&gt;
-</code></pre>
+<span style="color: #66d9ef">function</span> <span style="color: #a6e22e">get_mtime</span><span style="color: #f8f8f2">($path)</span>
+<span style="color: #f8f8f2">{</span>
+        <span style="color: #f8f8f2">$mtime</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">filemtime($path);</span>
+        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">date(</span><span style="color: #e6db74">&quot;Y/m/d H:i:s&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">$mtime);</span>
+<span style="color: #f8f8f2">}</span>
+<span style="color: #75715e">?&gt;</span>
+</pre></div>
 
 <p><h2>datasource/wikiとadmin/wikiのファイル名変換</h2>
 PukiFarmから持ってくるとEUC-JPなので、UTF-8ではうまく日本語が読めない。<a href="http://d.hatena.ne.jp/kohiro2/20080711/p1">http://d.hatena.ne.jp/kohiro2/20080711/p1</a> からスクリプトを拝借、*/wikiのところだけ。</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">#!/usr/bin/perl -w</span>
 
-<pre><code class="language-perl">#!/usr/bin/perl -w
+<span style="color: #66d9ef">use</span> <span style="color: #f8f8f2">strict;</span>
+<span style="color: #66d9ef">use</span> <span style="color: #f8f8f2">warnings;</span>
+<span style="color: #66d9ef">use</span> <span style="color: #f8f8f2">Encode;</span>
+<span style="color: #66d9ef">use</span> <span style="color: #f8f8f2">File::Basename;</span>
+<span style="color: #66d9ef">use</span> <span style="color: #f8f8f2">File::Copy;</span>
+<span style="color: #66d9ef">use</span> <span style="color: #f8f8f2">IO::File;</span>
+<span style="color: #66d9ef">use</span> <span style="color: #f8f8f2">Path::Class::Dir;</span>
+<span style="color: #66d9ef">use</span> <span style="color: #f8f8f2">Path::Class::File;</span>
 
-use strict;
-use warnings;
-use Encode;
-use File::Basename;
-use File::Copy;
-use IO::File;
-use Path::Class::Dir;
-use Path::Class::File;
+<span style="color: #66d9ef">use</span> <span style="color: #f8f8f2">constant</span> <span style="color: #f8f8f2">REGEX_SUFFIX</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">qw(\..+$)</span><span style="color: #f8f8f2">;</span><span style="color: #f92672">&gt;</span>	<span style="color: #75715e"># 【最初】の . 以降を拡張子とする</span>
+<span style="color: #75715e">#use constant REGEX_SUFFIX =&gt; qw(\.[^\.]+$);	# 【最後】の . 以降を拡張子とする</span>
 
-use constant REGEX_SUFFIX =&gt; qw(\..+$);&gt;	# 【最初】の . 以降を拡張子とする
-#use constant REGEX_SUFFIX =&gt; qw(\.[^\.]+$);	# 【最後】の . 以降を拡張子とする
+<span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">main();</span>
 
-&amp;main();
+<span style="color: #66d9ef">sub </span><span style="color: #a6e22e">main</span> <span style="color: #f8f8f2">{</span>
+	<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(</span> <span style="color: #f8f8f2">$#ARGV</span> <span style="color: #f92672">!=</span> <span style="color: #ae81ff">1</span> <span style="color: #f8f8f2">){</span>
+		<span style="color: #66d9ef">print</span> <span style="color: #e6db74">&quot;error: $0 [source_dir] [target_dir]\n&quot;</span><span style="color: #f8f8f2">;</span>
+		<span style="color: #f8f8f2">exit</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+	<span style="color: #f8f8f2">}</span>
 
-sub main {
-	if ( $#ARGV != 1 ){
-		print &quot;error: $0 [source_dir] [target_dir]\n&quot;;
-		exit 1;
-	}
+	<span style="color: #f8f8f2">(</span><span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">$src_dir_root,</span> <span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">$trg_dir_root)</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">@ARGV;</span>
+	<span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">$subdir_name;</span>
+	<span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">@suffixes;</span>
+	<span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">$src_dir;</span>
+	<span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">$trg_dir;</span>
 
-	(my $src_dir_root, my $trg_dir_root) = @ARGV;
-	my $subdir_name;
-	my @suffixes;
-	my $src_dir;
-	my $trg_dir;
-
-	####### */wiki #######
-	$subdir_name = &quot;wiki&quot;;
-	@suffixes = (&quot;.txt&quot;);
-	($src_dir, $trg_dir) = &amp;set_dir($src_dir_root, $trg_dir_root, $subdir_name);
-	foreach my $src_file ($src_dir-&gt;children) {
-		if ($src_file-&gt;is_dir) { next; }
-		(my $hexname, undef, my $suffix) = fileparse($src_file-&gt;basename, REGEX_SUFFIX);
-		next if ( grep( /$suffix/, @suffixes) == 0 );
-		my $trg_file = Path::Class::File-&gt;new($trg_dir, &amp;hexEUCtoUTF8($hexname) . $suffix);
-		&amp;fileEUCtoUTF8($src_file-&gt;open('r'), $trg_file-&gt;open('w'));
-		utime $src_file-&gt;stat-&gt;atime, $src_file-&gt;stat-&gt;mtime, $trg_file;
-	}
-}
+	<span style="color: #75715e">####### */wiki #######</span>
+	<span style="color: #f8f8f2">$subdir_name</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;wiki&quot;</span><span style="color: #f8f8f2">;</span>
+	<span style="color: #f8f8f2">@suffixes</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;.txt&quot;</span><span style="color: #f8f8f2">);</span>
+	<span style="color: #f8f8f2">($src_dir,</span> <span style="color: #f8f8f2">$trg_dir)</span> <span style="color: #f92672">=</span> <span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">set_dir($src_dir_root,</span> <span style="color: #f8f8f2">$trg_dir_root,</span> <span style="color: #f8f8f2">$subdir_name);</span>
+	<span style="color: #66d9ef">foreach</span> <span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">$src_file</span> <span style="color: #f8f8f2">($src_dir</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">children)</span> <span style="color: #f8f8f2">{</span>
+		<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">($src_file</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">is_dir)</span> <span style="color: #f8f8f2">{</span> <span style="color: #66d9ef">next</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">}</span>
+		<span style="color: #f8f8f2">(</span><span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">$hexname,</span> <span style="color: #f8f8f2">undef,</span> <span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">$suffix)</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">fileparse($src_file</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">basename,</span> <span style="color: #f8f8f2">REGEX_SUFFIX);</span>
+		<span style="color: #66d9ef">next</span> <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(</span> <span style="color: #f8f8f2">grep(</span><span style="color: #e6db74"> /$suffix/</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">@suffixes)</span> <span style="color: #f92672">==</span> <span style="color: #ae81ff">0</span> <span style="color: #f8f8f2">);</span>
+		<span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">$trg_file</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Path::Class::File</span><span style="color: #f92672">-&gt;</span><span style="color: #66d9ef">new</span><span style="color: #f8f8f2">($trg_dir,</span> <span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">hexEUCtoUTF8($hexname)</span> <span style="color: #f92672">.</span> <span style="color: #f8f8f2">$suffix);</span>
+		<span style="color: #f92672">&amp;</span><span style="color: #f8f8f2">fileEUCtoUTF8($src_file</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">open(</span><span style="color: #e6db74">&#39;r&#39;</span><span style="color: #f8f8f2">),</span> <span style="color: #f8f8f2">$trg_file</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">open(</span><span style="color: #e6db74">&#39;w&#39;</span><span style="color: #f8f8f2">));</span>
+		<span style="color: #f8f8f2">utime</span> <span style="color: #f8f8f2">$src_file</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">stat</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">atime,</span> <span style="color: #f8f8f2">$src_file</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">stat</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">mtime,</span> <span style="color: #f8f8f2">$trg_file;</span>
+	<span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
  
-### 元先ディレクトリを設定
-sub set_dir {
-	my $src_rootdir = shift;
-	my $trg_rootdir = shift;
-	my $subdir = shift;
+<span style="color: #75715e">### 元先ディレクトリを設定</span>
+<span style="color: #66d9ef">sub </span><span style="color: #a6e22e">set_dir</span> <span style="color: #f8f8f2">{</span>
+	<span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">$src_rootdir</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">shift;</span>
+	<span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">$trg_rootdir</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">shift;</span>
+	<span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">$subdir</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">shift;</span>
 
-	my $src_dir = Path::Class::Dir-&gt;new($src_rootdir, $subdir);
-	my $trg_dir = Path::Class::Dir-&gt;new($trg_rootdir, $subdir);
+	<span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">$src_dir</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Path::Class::Dir</span><span style="color: #f92672">-&gt;</span><span style="color: #66d9ef">new</span><span style="color: #f8f8f2">($src_rootdir,</span> <span style="color: #f8f8f2">$subdir);</span>
+	<span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">$trg_dir</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Path::Class::Dir</span><span style="color: #f92672">-&gt;</span><span style="color: #66d9ef">new</span><span style="color: #f8f8f2">($trg_rootdir,</span> <span style="color: #f8f8f2">$subdir);</span>
 
-	# 元ディレクトリ確認
-	if ( ! -e $src_dir ) {
-		print &quot;ERROR: Can't locate source directory.\n&quot;;
-		exit 1;
-	}
+	<span style="color: #75715e"># 元ディレクトリ確認</span>
+	<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(</span> <span style="color: #f92672">!</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">e</span> <span style="color: #f8f8f2">$src_dir</span> <span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">{</span>
+		<span style="color: #66d9ef">print</span> <span style="color: #e6db74">&quot;ERROR: Can&#39;t locate source directory.\n&quot;</span><span style="color: #f8f8f2">;</span>
+		<span style="color: #f8f8f2">exit</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+	<span style="color: #f8f8f2">}</span>
 
-	# 先ディレクトリ確認
-	$trg_dir-&gt;mkpath if ( ! -e $trg_dir );
+	<span style="color: #75715e"># 先ディレクトリ確認</span>
+	<span style="color: #f8f8f2">$trg_dir</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">mkpath</span> <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">(</span> <span style="color: #f92672">!</span> <span style="color: #f92672">-</span><span style="color: #f8f8f2">e</span> <span style="color: #f8f8f2">$trg_dir</span> <span style="color: #f8f8f2">);</span>
 
-	return ($src_dir, $trg_dir);
-}
-
-
-### File EUC-JP =&gt; UTF-8
-sub fileEUCtoUTF8 {
-	my $src_fh = shift;
-	my $trg_fh = shift;
-
-	while (&lt;$src_fh&gt;) {
-		chomp;
-		my $tmp = encode('utf-8', decode(&quot;euc-jp&quot;, $_));
-		$trg_fh-&gt;print(&quot;$tmp\n&quot;);
-	}
-
-	$trg_fh-&gt;close;
-	$src_fh-&gt;close;
-}
+	<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">($src_dir,</span> <span style="color: #f8f8f2">$trg_dir);</span>
+<span style="color: #f8f8f2">}</span>
 
 
-### HEX =&gt; EUC-JP =&gt; UTF-8 =&gt; HEX =&gt; UPPER CASE
-sub hexEUCtoUTF8 {
-	my $string = shift;
+<span style="color: #75715e">### File EUC-JP =&gt; UTF-8</span>
+<span style="color: #66d9ef">sub </span><span style="color: #a6e22e">fileEUCtoUTF8</span> <span style="color: #f8f8f2">{</span>
+	<span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">$src_fh</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">shift;</span>
+	<span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">$trg_fh</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">shift;</span>
 
-	# 変換: 16進 → バイナリ
-	$string =~ s/([0-9A-Fa-f][0-9A-Fa-f])/pack(&quot;C&quot;, hex($1) )/eg;
-	# 変換: EUC-JP → UTF-8
-	$string = encode('utf-8', decode(&quot;euc-jp&quot;, $string));
-	# 変換: バイナリ → 16進
-	$string = unpack(&quot;H*&quot;, $string);
- 	# 変換: 小文字 → 大文字
-	$string =~ tr/a-z/A-Z/;
+	<span style="color: #66d9ef">while</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&lt;$src_fh&gt;</span><span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">{</span>
+		<span style="color: #f8f8f2">chomp;</span>
+		<span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">$tmp</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">encode(</span><span style="color: #e6db74">&#39;utf-8&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">decode(</span><span style="color: #e6db74">&quot;euc-jp&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">$_));</span>
+		<span style="color: #f8f8f2">$trg_fh</span><span style="color: #f92672">-&gt;</span><span style="color: #66d9ef">print</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;$tmp\n&quot;</span><span style="color: #f8f8f2">);</span>
+	<span style="color: #f8f8f2">}</span>
 
-	return $string;
-}
+	<span style="color: #f8f8f2">$trg_fh</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">close;</span>
+	<span style="color: #f8f8f2">$src_fh</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">close;</span>
+<span style="color: #f8f8f2">}</span>
 
-1;
-</code></pre>
+
+<span style="color: #75715e">### HEX =&gt; EUC-JP =&gt; UTF-8 =&gt; HEX =&gt; UPPER CASE</span>
+<span style="color: #66d9ef">sub </span><span style="color: #a6e22e">hexEUCtoUTF8</span> <span style="color: #f8f8f2">{</span>
+	<span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">$string</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">shift;</span>
+
+	<span style="color: #75715e"># 変換: 16進 → バイナリ</span>
+	<span style="color: #f8f8f2">$string</span> <span style="color: #f92672">=~</span> <span style="color: #e6db74">s/([0-9A-Fa-f][0-9A-Fa-f])/pack(&quot;C&quot;, hex($1) )/eg</span><span style="color: #f8f8f2">;</span>
+	<span style="color: #75715e"># 変換: EUC-JP → UTF-8</span>
+	<span style="color: #f8f8f2">$string</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">encode(</span><span style="color: #e6db74">&#39;utf-8&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">decode(</span><span style="color: #e6db74">&quot;euc-jp&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">$string));</span>
+	<span style="color: #75715e"># 変換: バイナリ → 16進</span>
+	<span style="color: #f8f8f2">$string</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">unpack(</span><span style="color: #e6db74">&quot;H*&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">$string);</span>
+ 	<span style="color: #75715e"># 変換: 小文字 → 大文字</span>
+	<span style="color: #f8f8f2">$string</span> <span style="color: #f92672">=~</span> <span style="color: #f8f8f2">tr</span><span style="color: #e6db74">/a-z/</span><span style="color: #f8f8f2">A</span><span style="color: #f92672">-</span><span style="color: #f8f8f2">Z</span><span style="color: #f92672">/</span><span style="color: #f8f8f2">;</span>
+
+	<span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">$string;</span>
+<span style="color: #f8f8f2">}</span>
+
+<span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+</pre></div>
 
 <p><h2>認証まわり</h2>
 <ul>
@@ -570,105 +559,100 @@ sub hexEUCtoUTF8 {
 </ul></p>
 
 <p><h3>userauth.php</h3></p>
-
-<pre><code class="language-diff">--- -   2008-10-09 19:06:09.129869766 +0900
-+++ datasource/userauth.php     2008-10-09 14:05:37.000000000 +0900
-@@ -65,7 +65,7 @@
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">--- -   2008-10-09 19:06:09.129869766 +0900</span>
+<span style="color: #a6e22e">+++ datasource/userauth.php     2008-10-09 14:05:37.000000000 +0900</span>
+<span style="color: #75715e">@@ -65,7 +65,7 @@</span>
  //       なら他の対策を考える必要があります。)
  //
  //       なお、この値と userauth_admin.php 内の設定は同じにして下さい。
-- 'file' =&gt; 'userauth.txt'
-+ 'file' =&gt; 'config/userauth.txt'
+<span style="color: #f92672">- &#39;file&#39; =&gt; &#39;userauth.txt&#39;</span>
+<span style="color: #a6e22e">+ &#39;file&#39; =&gt; &#39;config/userauth.txt&#39;</span>
  //////////////////// ここまで /////////////////// 
 
  // データ区切り記号(変える必要はありません)
-</code></pre>
+</pre></div>
 
 <p><h3>userauth_admin.php</h3></p>
-
-<pre><code class="language-diff">--- -   2008-10-09 19:07:01.886083742 +0900
-+++ datasource/userauth_admin.php       2008-10-09 17:16:53.000000000 +0900
-@@ -26,10 +26,11 @@
- //           md5('0123')       ←0123の部分がパスワード
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">--- -   2008-10-09 19:07:01.886083742 +0900</span>
+<span style="color: #a6e22e">+++ datasource/userauth_admin.php       2008-10-09 17:16:53.000000000 +0900</span>
+<span style="color: #75715e">@@ -26,10 +26,11 @@</span>
+ //           md5(&#39;0123&#39;)       ←0123の部分がパスワード
  //       のような記述でも使用できます。
- // $adminpass = 'eb62f6b9306db575c2d596b1279627a4';    //例
--$adminpass = md5('0123');
-+require('config/password.ini.php');
+ // $adminpass = &#39;eb62f6b9306db575c2d596b1279627a4&#39;;    //例
+<span style="color: #f92672">-$adminpass = md5(&#39;0123&#39;);</span>
+<span style="color: #a6e22e">+require(&#39;config/password.ini.php&#39;);</span>
 
  // * 戻るボタンの行き先
--$backurl = 'http://';
-+$backurl = 'index.php';
+<span style="color: #f92672">-$backurl = &#39;http://&#39;;</span>
+<span style="color: #a6e22e">+$backurl = &#39;index.php&#39;;</span>
 
  // * 認証データのファイル名指定
  //
-@@ -49,7 +50,7 @@
+<span style="color: #75715e">@@ -49,7 +50,7 @@</span>
  //       なら他の対策を考える必要があります。)
  //
  //       なお、この値と userauth.php 内の設定は同じにして下さい。
--$file = 'userauth.txt';
-+$file = 'config/userauth.txt';
+<span style="color: #f92672">-$file = &#39;userauth.txt&#39;;</span>
+<span style="color: #a6e22e">+$file = &#39;config/userauth.txt&#39;;</span>
 
  // * userauth.phpのファイル名(保存後のチェックで使用)
- $checkscript = 'userauth.php';
-@@ -523,19 +524,13 @@
+ $checkscript = &#39;userauth.php&#39;;
+<span style="color: #75715e">@@ -523,19 +524,13 @@</span>
 
  function admin_auth( &amp;$mes, $logout = FALSE ){
         global $adminpass;
--
--       // adminpassがデフォルトのままなら認証失敗
-        $dmes = '';
--       if($adminpass == 'eb62f6b9306db575c2d596b1279627a4'){
--               $mes = '&lt;b&gt;$adminpass&lt;/b&gt;の設定を変更して下さい'.&quot;\n&quot;;
--               $logout = TRUE;
--       }
+<span style="color: #f92672">-</span>
+<span style="color: #f92672">-       // adminpassがデフォルトのままなら認証失敗</span>
+        $dmes = &#39;&#39;;
+<span style="color: #f92672">-       if($adminpass == &#39;eb62f6b9306db575c2d596b1279627a4&#39;){</span>
+<span style="color: #f92672">-               $mes = &#39;&lt;b&gt;$adminpass&lt;/b&gt;の設定を変更して下さい&#39;.&quot;\n&quot;;</span>
+<span style="color: #f92672">-               $logout = TRUE;</span>
+<span style="color: #f92672">-       }</span>
 
-        if(!$logout &amp;&amp; !isset($_GET['logout']) &amp;&amp; isset($_SESSION['login'])){
-                $mes = 'login';
+        if(!$logout &amp;&amp; !isset($_GET[&#39;logout&#39;]) &amp;&amp; isset($_SESSION[&#39;login&#39;])){
+                $mes = &#39;login&#39;;
                 return TRUE;
-        } elseif(!$logout &amp;&amp; !isset($_GET['logout']) &amp;&amp; isset($_POST['lpassword'])){
--               $in_passwd = md5(rtrim($_POST['lpassword']));
-+               $in_passwd = '{x-php-md5}' . md5(rtrim($_POST['lpassword']));
+        } elseif(!$logout &amp;&amp; !isset($_GET[&#39;logout&#39;]) &amp;&amp; isset($_POST[&#39;lpassword&#39;])){
+<span style="color: #f92672">-               $in_passwd = md5(rtrim($_POST[&#39;lpassword&#39;]));</span>
+<span style="color: #a6e22e">+               $in_passwd = &#39;{x-php-md5}&#39; . md5(rtrim($_POST[&#39;lpassword&#39;]));</span>
                 if($in_passwd == $adminpass){
-                        $_SESSION['login'] = 1;
-                        $mes = 'login';
-</code></pre>
+                        $_SESSION[&#39;login&#39;] = 1;
+                        $mes = &#39;login&#39;;
+</pre></div>
 
 <p>これで管理者パスワードと共通化できる。あとは :config/admin から呼び出したいので、リンクを張るだけのpluginを書く。</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #75715e">&lt;?php</span>
+<span style="color: #75715e">// PukiWiki - Yet another WikiWikiWeb clone</span>
+<span style="color: #75715e">// $Id: comment.inc.php,v 1.0 2008/10/08 ogata.nobutoshi Exp $</span>
+<span style="color: #75715e">// Copyright (C)</span>
+<span style="color: #75715e">//   2002-2005 PukiWiki Developers Team</span>
+<span style="color: #75715e">//   2001-2002 Originally written by yu-ji</span>
+<span style="color: #75715e">// License: GPL v2 or (at your option) any later version</span>
+<span style="color: #75715e">//</span>
+<span style="color: #75715e">// WikiFarm List plugin</span>
 
-<pre><code class="language-php">&lt;?php
-// PukiWiki - Yet another WikiWikiWeb clone
-// $Id: comment.inc.php,v 1.0 2008/10/08 ogata.nobutoshi Exp $
-// Copyright (C)
-//   2002-2005 PukiWiki Developers Team
-//   2001-2002 Originally written by yu-ji
-// License: GPL v2 or (at your option) any later version
-//
-// WikiFarm List plugin
-
-function plugin_userauth_admin_convert()
-{
-    global $site_id;
-    return &quot;&lt;a href=\&quot;http://wiki/farm/&quot; . $site_id . &quot;/userauth_admin.php\&quot;&gt;ユーザー認証管理室&lt;/a&gt;&quot;;
-}
-?&gt;
-</code></pre>
+<span style="color: #66d9ef">function</span> <span style="color: #a6e22e">plugin_userauth_admin_convert</span><span style="color: #f8f8f2">()</span>
+<span style="color: #f8f8f2">{</span>
+    <span style="color: #66d9ef">global</span> <span style="color: #f8f8f2">$site_id;</span>
+    <span style="color: #66d9ef">return</span> <span style="color: #e6db74">&quot;&lt;a href=</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">http://wiki/farm/&quot;</span> <span style="color: #f92672">.</span> <span style="color: #f8f8f2">$site_id</span> <span style="color: #f92672">.</span> <span style="color: #e6db74">&quot;/userauth_admin.php</span><span style="color: #ae81ff">\&quot;</span><span style="color: #e6db74">&gt;ユーザー認証管理室&lt;/a&gt;&quot;</span><span style="color: #f8f8f2">;</span>
+<span style="color: #f8f8f2">}</span>
+<span style="color: #75715e">?&gt;</span>
+</pre></div>
 
 <p>:config/adminに余計なものがついてるので編集</p>
-
-<pre><code class="language-text">*管理画面 [#u0e4cc19]
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">*管理画面 [#u0e4cc19]
 
 **管理者パスワードの変更 [#zfee523b]
 #ch_password
 
 **その他のユーザー認証管理 [#v31ac382]
 #userauth_admin
-</code></pre>
+</pre></div>
 
 <p><h2>httpd</h2>
 <h3>httpd.conf</h3>
 適当に追加</p>
-
-<pre><code class="language-text">&lt;Directory /&gt;
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">&lt;Directory /&gt;
     AllowOverride All
 &lt;/Directory&gt;
 &lt;Directory &quot;/var/www/html/farm&quot;&gt;
@@ -676,7 +660,7 @@ function plugin_userauth_admin_convert()
     AddHandler cgi-script .cgi
     DirectoryIndex index.php
 &lt;/Directory&gt;
-</code></pre>
+</pre></div>
 
   </section>
   <hr>

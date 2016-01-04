@@ -103,96 +103,91 @@
 <h4>準備</h4>
 
 <p>別段何もない。</p>
-
-<pre><code class="language-bash">perl -MCPAN -e shell
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">perl -MCPAN -e shell
+</pre></div>
 
 <p>基本全部デフォルトのままENTER押してりゃよし。Gentooの場合、cpanでガンガン入れる前にまず</p>
-
-<pre><code class="language-bash">emerge expat
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">emerge expat
+</pre></div>
 
 <p>これをやっておく。次にCPANのConfigを弄る。</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f8f8f2">vi</span> <span style="color: #e6db74">/usr/</span><span style="color: #f8f8f2">lib</span><span style="color: #e6db74">/perl5/</span><span style="color: #ae81ff">5.8.8</span><span style="color: #e6db74">/CPAN/</span><span style="color: #f8f8f2">Config</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">pm</span>
+ <span style="color: #f8f8f2">$CPAN::Config</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">{</span>
+  <span style="color: #e6db74">&#39;build_cache&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[100]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;build_dir&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[/root/.cpan/build]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;bzip2&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[/bin/bzip2]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;cache_metadata&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[1]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;check_sigs&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[0]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;colorize_output&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[0]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;commandnumber_in_prompt&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[1]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;cpan_home&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[/root/.cpan]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;curl&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[/usr/bin/curl]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;ftp&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[/usr/bin/ftp]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;ftp_passive&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[1]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;ftp_proxy&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;getcwd&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[cwd]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;gpg&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;gzip&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[/bin/gzip]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;histfile&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[/root/.cpan/histfile]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;histsize&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[100]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;http_proxy&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;inactivity_timeout&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[0]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;index_expire&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[1]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;inhibit_startup_message&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[0]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;keep_source_where&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[/root/.cpan/sources]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;lynx&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;make&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[/usr/bin/make]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;make_arg&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;make_install_arg&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;make_install_make_command&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[/usr/bin/make]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;makepl_arg&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;mbuild_arg&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;mbuild_install_arg&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;mbuild_install_build_command&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[./Build]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;mbuildpl_arg&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;ncftp&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;ncftpget&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;no_proxy&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;pager&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[lv -Ou8 -c]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;prefer_installer&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[EUMM]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;prerequisites_policy&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[ask]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;scan_cache&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[atstart]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;shell&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[/bin/zsh]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;show_upload_date&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[1]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;tar&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[/usr/bin/tar]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;term_is_latin&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[1]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;term_ornaments&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[1]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;test_report&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[0]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;unzip&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[/usr/bin/unzip]</span><span style="color: #f8f8f2">,</span>
+  <span style="color: #e6db74">&#39;urllist&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #f8f8f2">[</span><span style="color: #e6db74">q[ftp://ftp.kddilabs.jp/CPAN/]</span><span style="color: #f8f8f2">],</span>
+  <span style="color: #e6db74">&#39;wget&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">q[/usr/bin/wget]</span><span style="color: #f8f8f2">,</span>
+ <span style="color: #f8f8f2">};</span>
+ <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+ <span style="color: #75715e">__END__</span>
 
-<pre><code class="language-perl">vi /usr/lib/perl5/5.8.8/CPAN/Config.pm
- $CPAN::Config = {
-  'build_cache' =&gt; q[100],
-  'build_dir' =&gt; q[/root/.cpan/build],
-  'bzip2' =&gt; q[/bin/bzip2],
-  'cache_metadata' =&gt; q[1],
-  'check_sigs' =&gt; q[0],
-  'colorize_output' =&gt; q[0],
-  'commandnumber_in_prompt' =&gt; q[1],
-  'cpan_home' =&gt; q[/root/.cpan],
-  'curl' =&gt; q[/usr/bin/curl],
-  'ftp' =&gt; q[/usr/bin/ftp],
-  'ftp_passive' =&gt; q[1],
-  'ftp_proxy' =&gt; q[],
-  'getcwd' =&gt; q[cwd],
-  'gpg' =&gt; q[],
-  'gzip' =&gt; q[/bin/gzip],
-  'histfile' =&gt; q[/root/.cpan/histfile],
-  'histsize' =&gt; q[100],
-  'http_proxy' =&gt; q[],
-  'inactivity_timeout' =&gt; q[0],
-  'index_expire' =&gt; q[1],
-  'inhibit_startup_message' =&gt; q[0],
-  'keep_source_where' =&gt; q[/root/.cpan/sources],
-  'lynx' =&gt; q[],
-  'make' =&gt; q[/usr/bin/make],
-  'make_arg' =&gt; q[],
-  'make_install_arg' =&gt; q[],
-  'make_install_make_command' =&gt; q[/usr/bin/make],
-  'makepl_arg' =&gt; q[],
-  'mbuild_arg' =&gt; q[],
-  'mbuild_install_arg' =&gt; q[],
-  'mbuild_install_build_command' =&gt; q[./Build],
-  'mbuildpl_arg' =&gt; q[],
-  'ncftp' =&gt; q[],
-  'ncftpget' =&gt; q[],
-  'no_proxy' =&gt; q[],
-  'pager' =&gt; q[lv -Ou8 -c],
-  'prefer_installer' =&gt; q[EUMM],
-  'prerequisites_policy' =&gt; q[ask],
-  'scan_cache' =&gt; q[atstart],
-  'shell' =&gt; q[/bin/zsh],
-  'show_upload_date' =&gt; q[1],
-  'tar' =&gt; q[/usr/bin/tar],
-  'term_is_latin' =&gt; q[1],
-  'term_ornaments' =&gt; q[1],
-  'test_report' =&gt; q[0],
-  'unzip' =&gt; q[/usr/bin/unzip],
-  'urllist' =&gt; [q[ftp://ftp.kddilabs.jp/CPAN/]],
-  'wget' =&gt; q[/usr/bin/wget],
- };
- 1;
- __END__
-
-cpan -i Bundle::CPAN
-</code></pre>
+<span style="color: #75715e">cpan -i Bundle::CPAN</span>
+</pre></div>
 
 <p><h4>CPANモジュールのインストール</h4>
 <a href="http://subtech.g.hatena.ne.jp/otsune/20060816/PlaggerCPAN" target="_blank">Bundle::CPANとPlaggerに依存するモジュール（メモ）</a>に従って進める。書いてあるとおり、TemplateとEncode::Detectはまともには入らないっぽいので諦めてforce installで。別段不都合はないので。</p>
 
 <p>なんかRDF::Coreが上手く入らなくて困った記憶がある。emerge expatしてないせいだった、という記憶もあるが…ちょっと覚えてない。でもコマンドの履歴に以下のものが残っていた。</p>
-
-<pre><code class="language-bash">wget http://ftp.yz.yamagata-u.ac.jp/pub/lang/cpan/modules/by-module/RDF/DPOKORNY/RDF-Core-0.50.tar.gz
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">wget http://ftp.yz.yamagata-u.ac.jp/pub/lang/cpan/modules/by-module/RDF/DPOKORNY/RDF-Core-0.50.tar.gz
 tar -zxvf RDF-Core-0.50.tar.gz
-cd RDF-Core-0.50
+<span style="color: #f8f8f2">cd </span>RDF-Core-0.50
 perl Makefile.PL
 make
-</code></pre>
+</pre></div>
 
 <p>手動で入れたっぽい。若年アルツで覚えてない。まぁとりあえず頑張って入れて、cpanシェルでtest Plaggerが通るまで頑張る。通ったらinstall Plagger。</p>
 
 <p><h4>リポジトリから最新取得</h4>
 subversionを使ってリポジトリから最新版を持ってきてmakeする。</p>
-
-<pre><code class="language-bash">svn co http://svn.bulknews.net/repos/plagger/trunk/plagger
-cd plagger
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">svn co http://svn.bulknews.net/repos/plagger/trunk/plagger
+<span style="color: #f8f8f2">cd </span>plagger
 perl Makefile.PL
 make
-</code></pre>
+</pre></div>
 
 <p>ここまで行ったら出来たも同然。Plagger3大罠の1つである、assetsのコピーを忘れないうちにやっておく。svnで最新版を入れたディレクトリのassets以下に、　.cpan/build/Plagger-x.x.xx/assets/plugins/Publish-Gmail/gmail_notify.tt をコピっておく。yamlのglobalでassets_pathを指定するのも忘れずに。ちなみにyamlのサンプルは .cpan/build/Plagger-x.x.xx/examples 以下に入っているので、適当な場所にコピって編集すべし。</p>
 

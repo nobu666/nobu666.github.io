@@ -101,12 +101,11 @@
     <p><a href="http://nobu666.com/2006/10/23/000415.html">[memo] サーバのCPU動作周波数を下げる</a>の続き。</p>
 
 <p>やってみないとわからんので、cpufreq_ondemandを試してみる。</p>
-
-<pre><code class="language-bash">modprobe cpufreq_ondemand
-echo ondemand &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">modprobe cpufreq_ondemand
+<span style="color: #f8f8f2">echo </span>ondemand &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 
-cd /sys/devices/system/cpu/cpu0/cpufreq/ondemand/
+<span style="color: #f8f8f2">cd</span> /sys/devices/system/cpu/cpu0/cpufreq/ondemand/
 ls
 ignore_nice_load  sampling_down_factor  sampling_rate  sampling_rate_max  sampling_rate_min  up_threshold
 
@@ -127,7 +126,7 @@ cat sampling_rate_min
 
 cat up_threshold
 80
-</code></pre>
+</pre></div>
 
 <p>詳細は<a href="http://mowamowa.p.utmc.or.jp/~amedama/cgi-bin/wiki/wiki.cgi?page=Kernel+%A5%E1%A5%E2+ondemand" target="_blank">Kernel メモ ondemand</a>参照。とりあえずignore_nice_loadは1に設定しておいた。急がないけど負荷になりそうな作業なんかはniceすること。</p>
 

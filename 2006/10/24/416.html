@@ -99,18 +99,16 @@
   </header>
   <section>
     <p>俺のようにしょっちゅうemergeしたい人はUSEフラグの管理が大変だ。知らないうちに勝手にgtk2フラグが有効になっててXがインストールされたりして大変ウザイ。そんなわけでGentoo使いの先輩に教えて貰ったeixとeuseを使ってみる。</p>
-
-<pre><code class="language-bash">sudo emerge eix
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">sudo emerge eix
 sudo eix-sync
-</code></pre>
+</pre></div>
 
 <p>euseはgentoolkitに入っている。eixはemerge &ndash;searchと似たようなモンだがこっちのほうが速いし使いやすい。んで、本題のeuseだが、使い方自体は&ndash;helpすりゃわかるんだが。フラグの説明見たり、どれが使われてるか見れたり、フラグを有効にしたり無効にしたりできる。つーか詳細はman euseで（ｗ euse使うとmake.confのUSEフラグの部分が整形されて見やすくなるのも嬉しい。まぁ説明見るだけなら /usr/portage/profiles/use.desc
  見ればいいんだが。</p>
 
 <p>同じくgentoolkitに含まれているequeryも激しく便利。こいつで</p>
-
-<pre><code class="language-bash">equery depends mysql
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">equery depends mysql
+</pre></div>
 
 <p>とかやってやればmysqlフラグに依存しているパッケージを調べることが出来るし、dependsをdepgraphに変えてやると依存関係をツリーで見れる。超便利。</p>
 

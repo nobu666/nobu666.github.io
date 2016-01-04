@@ -101,172 +101,167 @@
     <p>前から使ってたけど今はあまり使ってないデスクトップ、最近主力のMacBook、たまに使うLet&rsquo;s NoteとうちにはPCが3台ある。あとGentooサーバー。全部の環境からmp3を共有したかったので、GentooでiTunesサーバーをたてて共有することにした。</p>
 
 <p>まずはデスクトップからごっそり外付けHDDにmp3をコピー。1万曲超、60GBくらいあった。これをGentooにぶっさして、とりあえず放置。Gentooで環境構築。</p>
-
-<pre><code class="language-bash">wget http://www.porchdogsoft.com/download/howl-1.0.0.tar.gz
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">wget http://www.porchdogsoft.com/download/howl-1.0.0.tar.gz
 tar zxf howl-1.0.0.tar.gz
-cd howl-1.0.0
-./configure &amp;&amp; make &amp;&amp; sudo make install &amp;&amp; cd
+<span style="color: #f8f8f2">cd </span>howl-1.0.0
+./configure <span style="color: #f92672">&amp;&amp;</span> make <span style="color: #f92672">&amp;&amp;</span> sudo make install <span style="color: #f92672">&amp;&amp;</span> <span style="color: #f8f8f2">cd</span>
 sudo emerge libogg
 sudo emerge libvorbis
 sudo emerge mt-daapd
 sudo cp /etc/mt-daapd.conf.example /etc/mt-daapd.conf
-</code></pre>
+</pre></div>
 
 <p>confは適当にmp3の入った外付けHDDのmount先を指定したりweb_rootのパスワード指定したりする程度。これであっさり行くと思ったら、まずこのままではmt-daapdが起動しない。なぜか知らないが/etc/init.d/mt-daapdで、depend()部分が間違ってるのが原因。mDNSResponderをmDNSResponderPosixに修正、mDNSResponderPosixを起動してから再度動かすと動いた。</p>
 
 <p>これでとりあえず動いたものの、MacのiTunes上からは文字化けの嵐。WindowsのiTunesでは問題ない。つまり文字コードの問題だな。ここは先人の知恵を借り、ググってみるとwindows上で変換しるとよいことが判明。HDDを一旦デスクトップにつないで、iTunesで曲を全部選択して「ID3タグを変換」→「Unicodeを元に戻す」。何故かうまく行かないで化けちゃうのがあるので、個々に探して同様に変換したら直った。とりあえずこれでタグは問題なくUnicodeになったので、再度Gentooにつないでmountしてmt-daapdのキャッシュをクリアしたらok。ちなみにmountするときには、mount -o noauto,users,umask=000,iocharset=utf8とか言ってやらないと正しくGentoo上で日本語が読めない。</p>
 
 <p>これでokかと思いきや、やっぱり文字化けは解消せず。色々調べてみたら、<a href="http://www.kzsoft.to/~kazu/mt-daapd/">パッチ</a>を当てれば解決することが判明。</p>
-
-<pre><code class="language-bash">sudo emerge -C mt-daapd
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">sudo emerge -C mt-daapd
 wget http://nchc.dl.sourceforge.net/sourceforge/mt-daapd/mt-daapd-0.2.4.2.tar.gz
 tar zxf mt-daapd-0.2.4.2.tar.gz
-cd mt-daapd-0.2.4.2
+<span style="color: #f8f8f2">cd </span>mt-daapd-0.2.4.2
 wget http://www.kzsoft.to/~kazu/mt-daapd/patch/mt-daapd-0.2.4-cp932.patch
 patch &lt; mt-daapd-0.2.4.2.tar.gz
-</code></pre>
+</pre></div>
 
 <p>parser.cのパッチでこけるので、手動でパッチした。とりあえずdiffを残しておく。</p>
-
-<pre><code class="language-diff">--- src/parser.c.orig   2008-04-20 04:44:54.000000000 +0900
-+++ src/parser.c        2008-09-23 17:16:15.000000000 +0900
-@@ -132,8 +132,18 @@
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">--- src/parser.c.orig   2008-04-20 04:44:54.000000000 +0900</span>
+<span style="color: #a6e22e">+++ src/parser.c        2008-09-23 17:16:15.000000000 +0900</span>
+<span style="color: #75715e">@@ -132,8 +132,18 @@</span>
  #define AGO 287
  #define INTERVAL 288
  
-+#define USE_CP932
+<span style="color: #a6e22e">+#define USE_CP932</span>
  
--
-+#ifdef USE_CP932
-+  #define UNKNOWN_STR    &quot;UNKNOWN&quot;
-+  #ifndef FILESYSTEM_CES
-+    #define FILESYSTEM_CES &quot;CP932&quot;
-+  /*
-+    #define FILESYSTEM_CES &quot;UTF-8&quot;
-+    #define FILESYSTEM_CES &quot;EUC-JP&quot;
-+  */
-+  #endif
-+#endif
+<span style="color: #f92672">-</span>
+<span style="color: #a6e22e">+#ifdef USE_CP932</span>
+<span style="color: #a6e22e">+  #define UNKNOWN_STR    &quot;UNKNOWN&quot;</span>
+<span style="color: #a6e22e">+  #ifndef FILESYSTEM_CES</span>
+<span style="color: #a6e22e">+    #define FILESYSTEM_CES &quot;CP932&quot;</span>
+<span style="color: #a6e22e">+  /*</span>
+<span style="color: #a6e22e">+    #define FILESYSTEM_CES &quot;UTF-8&quot;</span>
+<span style="color: #a6e22e">+    #define FILESYSTEM_CES &quot;EUC-JP&quot;</span>
+<span style="color: #a6e22e">+  */</span>
+<span style="color: #a6e22e">+  #endif</span>
+<span style="color: #a6e22e">+#endif</span>
  
  /* Copy the first part of user declarations.  */
  #line 1 &quot;parser.y&quot;
-@@ -167,6 +177,11 @@
+<span style="color: #75715e">@@ -167,6 +177,11 @@</span>
  #include &lt;string.h&gt;
  #include &quot;playlist.h&quot;
  
-+#ifdef USE_CP932
-+ #include &lt;iconv.h&gt;
-+ #include &lt;errno.h&gt;
-+#endif
-+
+<span style="color: #a6e22e">+#ifdef USE_CP932</span>
+<span style="color: #a6e22e">+ #include &lt;iconv.h&gt;</span>
+<span style="color: #a6e22e">+ #include &lt;errno.h&gt;</span>
+<span style="color: #a6e22e">+#endif</span>
+<span style="color: #a6e22e">+</span>
  #define YYERROR_VERBOSE 1
  
  extern int yyerror(char *msg);
-@@ -1828,6 +1843,43 @@
+<span style="color: #75715e">@@ -1828,6 +1843,43 @@</span>
  
  
  #line 174 &quot;parser.y&quot;
-+#ifdef USE_CP932
-+#define MAX_ICONV_BUF 1024
-+
-+typedef enum {
-+  ICONV_OK,
-+  ICONV_TRYNEXT,
-+  ICONV_FATAL
-+} iconv_result;
-+
-+static iconv_result do_convert(const char* to_ces, const char* from_ces, 
-+                              char *inbuf,  size_t inbytesleft,
-+                              char *outbuf_orig, size_t outbytesleft_orig) {
-+  size_t rc;
-+  iconv_result ret = ICONV_OK;
-+
-+  size_t outbytesleft = outbytesleft_orig - 1; 
-+  char* outbuf = outbuf_orig;
-+
-+  iconv_t cd  = iconv_open(to_ces, from_ces);
-+  if (cd == (iconv_t)-1) {
-+    return ICONV_FATAL;
-+  }
-+  rc = iconv(cd, &amp;inbuf, &amp;inbytesleft, &amp;outbuf, &amp;outbytesleft);
-+  if (rc == (size_t)-1) {
-+    if (errno == E2BIG) {
-+      ret = ICONV_FATAL;
-+    } else {
-+      ret = ICONV_TRYNEXT;
-+      memset(outbuf_orig, '&amp;#92;&amp;#48;', outbytesleft_orig);
-+    }
-+  }
-+  iconv_close(cd);
-+
-+  return ret;
-+}
-+#endif
-+
+<span style="color: #a6e22e">+#ifdef USE_CP932</span>
+<span style="color: #a6e22e">+#define MAX_ICONV_BUF 1024</span>
+<span style="color: #a6e22e">+</span>
+<span style="color: #a6e22e">+typedef enum {</span>
+<span style="color: #a6e22e">+  ICONV_OK,</span>
+<span style="color: #a6e22e">+  ICONV_TRYNEXT,</span>
+<span style="color: #a6e22e">+  ICONV_FATAL</span>
+<span style="color: #a6e22e">+} iconv_result;</span>
+<span style="color: #a6e22e">+</span>
+<span style="color: #a6e22e">+static iconv_result do_convert(const char* to_ces, const char* from_ces, </span>
+<span style="color: #a6e22e">+                              char *inbuf,  size_t inbytesleft,</span>
+<span style="color: #a6e22e">+                              char *outbuf_orig, size_t outbytesleft_orig) {</span>
+<span style="color: #a6e22e">+  size_t rc;</span>
+<span style="color: #a6e22e">+  iconv_result ret = ICONV_OK;</span>
+<span style="color: #a6e22e">+</span>
+<span style="color: #a6e22e">+  size_t outbytesleft = outbytesleft_orig - 1; </span>
+<span style="color: #a6e22e">+  char* outbuf = outbuf_orig;</span>
+<span style="color: #a6e22e">+</span>
+<span style="color: #a6e22e">+  iconv_t cd  = iconv_open(to_ces, from_ces);</span>
+<span style="color: #a6e22e">+  if (cd == (iconv_t)-1) {</span>
+<span style="color: #a6e22e">+    return ICONV_FATAL;</span>
+<span style="color: #a6e22e">+  }</span>
+<span style="color: #a6e22e">+  rc = iconv(cd, &amp;inbuf, &amp;inbytesleft, &amp;outbuf, &amp;outbytesleft);</span>
+<span style="color: #a6e22e">+  if (rc == (size_t)-1) {</span>
+<span style="color: #a6e22e">+    if (errno == E2BIG) {</span>
+<span style="color: #a6e22e">+      ret = ICONV_FATAL;</span>
+<span style="color: #a6e22e">+    } else {</span>
+<span style="color: #a6e22e">+      ret = ICONV_TRYNEXT;</span>
+<span style="color: #a6e22e">+      memset(outbuf_orig, &#39;\0&#39;, outbytesleft_orig);</span>
+<span style="color: #a6e22e">+    }</span>
+<span style="color: #a6e22e">+  }</span>
+<span style="color: #a6e22e">+  iconv_close(cd);</span>
+<span style="color: #a6e22e">+</span>
+<span style="color: #a6e22e">+  return ret;</span>
+<span style="color: #a6e22e">+}</span>
+<span style="color: #a6e22e">+#endif</span>
+<span style="color: #a6e22e">+</span>
  
  PL_NODE *pl_newintpredicate(int tag, int op, int value) {
      PL_NODE *pnew;
-@@ -1867,7 +1919,25 @@
+<span style="color: #75715e">@@ -1867,7 +1919,25 @@</span>
      pnew-&gt;op=op;
      pnew-&gt;type=T_STR;
      pnew-&gt;arg1.ival=tag;
-+#ifdef USE_CP932
-+    if (!strcasecmp(FILESYSTEM_CES, &quot;UTF-8&quot;)) {
+<span style="color: #a6e22e">+#ifdef USE_CP932</span>
+<span style="color: #a6e22e">+    if (!strcasecmp(FILESYSTEM_CES, &quot;UTF-8&quot;)) {</span>
      pnew-&gt;arg2.cval=value;
-+      } else {
-+       char* iconv_buf = (char*)calloc(MAX_ICONV_BUF, sizeof(char));
-+       if (iconv_buf) {
-+         iconv_result rc = do_convert(&quot;UTF-8&quot;, FILESYSTEM_CES, value, strlen(value), 
-+                                      iconv_buf, MAX_ICONV_BUF);
-+         if(rc == ICONV_OK) {
-+           pnew-&gt;arg2.cval = iconv_buf;
-+         } else {
-+           pnew-&gt;arg2.cval = strdup(UNKNOWN_STR);
-+           free(iconv_buf);
-+         }
-+       }
-+      } // if utf-8
-+#else
-+    pnew-&gt;arg2.cval=value;
-+#endif
+<span style="color: #a6e22e">+      } else {</span>
+<span style="color: #a6e22e">+       char* iconv_buf = (char*)calloc(MAX_ICONV_BUF, sizeof(char));</span>
+<span style="color: #a6e22e">+       if (iconv_buf) {</span>
+<span style="color: #a6e22e">+         iconv_result rc = do_convert(&quot;UTF-8&quot;, FILESYSTEM_CES, value, strlen(value), </span>
+<span style="color: #a6e22e">+                                      iconv_buf, MAX_ICONV_BUF);</span>
+<span style="color: #a6e22e">+         if(rc == ICONV_OK) {</span>
+<span style="color: #a6e22e">+           pnew-&gt;arg2.cval = iconv_buf;</span>
+<span style="color: #a6e22e">+         } else {</span>
+<span style="color: #a6e22e">+           pnew-&gt;arg2.cval = strdup(UNKNOWN_STR);</span>
+<span style="color: #a6e22e">+           free(iconv_buf);</span>
+<span style="color: #a6e22e">+         }</span>
+<span style="color: #a6e22e">+       }</span>
+<span style="color: #a6e22e">+      } // if utf-8</span>
+<span style="color: #a6e22e">+#else</span>
+<span style="color: #a6e22e">+    pnew-&gt;arg2.cval=value;</span>
+<span style="color: #a6e22e">+#endif</span>
      return pnew;
  }
-</code></pre>
+</pre></div>
 
 <p>こけるのは#ifdef USE_CP932から#endifまでなので、まぁ手動で当てても特別問題はないだろう。あとは普通にconfigureしてmake &amp;&amp; make installなんだが。このままだと/etc/init.d/mt-daapdが使えないので、適当に以下のように編集する。</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f8f8f2">PIDFILE</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;/var/run/mt-daapd.pid&quot;</span>
+<span style="color: #f8f8f2">CONFFILE</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;/etc/mt-daapd.conf&quot;</span>
 
-<pre><code class="language-bash">PIDFILE=&quot;/var/run/mt-daapd.pid&quot;
-CONFFILE=&quot;/etc/mt-daapd.conf&quot;
-
-depend() {
+depend<span style="color: #f92672">()</span> <span style="color: #f92672">{</span>
     need net
     need mDNSResponderPosix
-}
+<span style="color: #f92672">}</span>
 
-start() {
-    ebegin &quot;Starting mt-daapd DAAP server&quot;
-    /usr/sbin/mt-daapd -c ${CONFFILE} &amp;
-    eend $?
-}
+start<span style="color: #f92672">()</span> <span style="color: #f92672">{</span>
+    ebegin <span style="color: #e6db74">&quot;Starting mt-daapd DAAP server&quot;</span>
+    /usr/sbin/mt-daapd -c <span style="color: #e6db74">${</span><span style="color: #f8f8f2">CONFFILE</span><span style="color: #e6db74">}</span> <span style="color: #f8f8f2">&amp;</span>
+    eend <span style="color: #f8f8f2">$?</span>
+<span style="color: #f92672">}</span>
 
-stop() {
-    ebegin &quot;Stopping mt-daapd DAAP server&quot;
-    kill `cat ${PIDFILE}`
-    eend $?
+stop<span style="color: #f92672">()</span> <span style="color: #f92672">{</span>
+    ebegin <span style="color: #e6db74">&quot;Stopping mt-daapd DAAP server&quot;</span>
+    <span style="color: #f8f8f2">kill</span> <span style="color: #e6db74">`</span>cat <span style="color: #e6db74">${</span><span style="color: #f8f8f2">PIDFILE</span><span style="color: #e6db74">}`</span>
+    eend <span style="color: #f8f8f2">$?</span>
 
-    rm -f ${PIDFILE}
-}
-</code></pre>
+    rm -f <span style="color: #e6db74">${</span><span style="color: #f8f8f2">PIDFILE</span><span style="color: #e6db74">}</span>
+<span style="color: #f92672">}</span>
+</pre></div>
 
 <p>とりあえず今あるものを共有する、という意味ではこれで万事よいのだが、俺の環境ではまだ問題があった。実は外付けHDDは元々Windowsで使っていたものなので、当然フォーマットはNTFS。でもmountしてるのはGentooなわけなので、普通にmountしたのではどうがんばってもリードオンリーになってしまう。これでは新しく曲を追加したり出来ない訳で、これは困る。メインはMacBookなので、samba経由で書き込めないと困ってしまう訳だ。色々試行錯誤したんだけど、ntfs-3gとかいうのを使ったらすげーあっさりと書き込みできるようになった。</p>
-
-<pre><code class="language-bash">sudo emerge ntfs3g
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">sudo emerge ntfs3g
 sudo update-modules
 sudo su -
-echo &quot;/dev/sdb5   /mnt/usbhdd ntfs-3g    noauto,users,umask=000,iocharset=utf8 0 0&quot; &gt;&gt; /etc/fstab
-logout
+<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;/dev/sdb5   /mnt/usbhdd ntfs-3g    noauto,users,umask=000,iocharset=utf8 0 0&quot;</span> &gt;&gt; /etc/fstab
+<span style="color: #f8f8f2">logout</span>
 sudo mount  /dev/sdb5 /mnt/usbhdd
-</code></pre>
+</pre></div>
 
 <p>あとは/etc/mt-daapd.confで、rescan_intervalを適当な値に設定しておいてやればok。</p>
 

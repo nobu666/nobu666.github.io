@@ -99,11 +99,10 @@
   </header>
   <section>
     <p>manを実行すると以下のようなエラーになることがある。</p>
-
-<pre><code class="language-text">XXX
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">XXX
 XXX WARNING: old character encoding and/or character set
 XXX 
-</code></pre>
+</pre></div>
 
 <p>いろいろ調べた結果、libiconvが悪さしていた。/usr/bin/iconvではなく、/usr/local/bin/iconvを見に行っていたのが原因だった。/usr/local/bin/iconvのファイル名を変更したら治った。</p>
 

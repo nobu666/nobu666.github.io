@@ -45,34 +45,30 @@
 &lt;p&gt;[sourcecode language=&amp;ldquo;bash&amp;rdquo; padlinenumbers=&amp;ldquo;2&amp;rdquo;]
 localhost$ ssh -t gateway ssh dbserver
 dbserver$ mysql -uhoge -p&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;
-とかやらないといけなくて、めんどい。というかこれだとローカルの開発環境で、一時的にdbserverで動作してるMySQLのデータを使いたいときとか困る。ダンプしてローカルに持ってくればいいけど、データがものすごいデカかったりしてだるい。どうにかしたい。
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;とかやらないといけなくて、めんどい。というかこれだとローカルの開発環境で、一時的にdbserverで動作してるMySQLのデータを使いたいときとか困る。ダンプしてローカルに持ってくればいいけど、データがものすごいデカかったりしてだるい。どうにかしたい。
 
 というわけで、Port Forwardすればいいじゃないかと思って
 
 [sourcecode language=&amp;quot;bash&amp;quot; padlinenumbers=&amp;quot;2&amp;quot;]
 $ ssh -Nf -L 13306:dbserver:3306 gateway
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;とかして、&lt;/p&gt;
 
 &lt;p&gt;[sourcecode language=&amp;ldquo;text&amp;rdquo; padlinenumbers=&amp;ldquo;2&amp;rdquo;]
 $ mysql -uhoge -p -P13306&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;
-これで勝つる！！！と思ったら、これでは繋がらない。でもtelnet localhost 13306とか叩いてみると繋がるように見える。
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;これで勝つる！！！と思ったら、これでは繋がらない。でもtelnet localhost 13306とか叩いてみると繋がるように見える。
 
 [sourcecode language=&amp;quot;text&amp;quot; padlinenumbers=&amp;quot;2&amp;quot;]
 $ telnet localhost 13306
 Trying 127.0.0.1...
 Connected to localhost.
-Escape character is &#39;^]&#39;.
+Escape character is &amp;#39;^]&amp;#39;.
 L
 5.5.8-log
          $;2)s.%n!
                   ?QV;dgXbeUZBymysql_native_password
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;なにこれどういうことなの、と思って色々試したり調べたりしていたら、答えは意外なところに。&lt;/p&gt;
 

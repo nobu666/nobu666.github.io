@@ -99,11 +99,10 @@
   </header>
   <section>
     <p>dmesg|grep eth してみたら、eth0からeth1にrenameしたよとか書いてあったorz ので、単純に</p>
-
-<pre><code class="language-bash">ln -sf /etc/init.d/net.lo /etc/init.d/net.eth1
-sed -i 's/eth0/eth1/g' /etc/conf.d/net
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">ln -sf /etc/init.d/net.lo /etc/init.d/net.eth1
+sed -i <span style="color: #e6db74">&#39;s/eth0/eth1/g&#39;</span> /etc/conf.d/net
 /etc/init.d/net.eth1 start
-</code></pre>
+</pre></div>
 
 <p>これだけでした。あとはルータ側でポート開けたり、スタティックルーティングしたりして、EM-ONE使って外から繋がることを確認。が、今度はメールが送れなくてしばし嵌った。プロバイダが変わったから、単純に/etc/postfix/main.cfのrelayhostを書き換えて、smtp_sasl_password_mapsで指定したファイルにSMTPホスト名とユーザ名とパスワード書いて、そいつをpostmapして/etc/init.d/postfix restartで終了だと思っていたのだが。</p>
 

@@ -118,39 +118,34 @@
 <h4>初期設定</h4>
 
 <p>cacti用のデータベースとユーザを作成し、付属のスクリプトでテーブルを作成する。</p>
-
-<pre><code class="language-bash">mysqladmin -u root create cacti -p
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">mysqladmin -u root create cacti -p
 mysql cacti -u root -p &gt; /var/www/localhost/htdocs/cacti/cacti.sql
-mysql -u root mysql -p -e&quot;GRANT ALL ON cacti.* TO cactiuser@localhost IDENTIFIED BY 'p4ssw0rd'&quot;
-mysql -u root mysql -p -e&quot;flush privileges&quot;
-</code></pre>
+mysql -u root mysql -p -e<span style="color: #e6db74">&quot;GRANT ALL ON cacti.* TO cactiuser@localhost IDENTIFIED BY &#39;p4ssw0rd&#39;&quot;</span>
+mysql -u root mysql -p -e<span style="color: #e6db74">&quot;flush privileges&quot;</span>
+</pre></div>
 
 <p>次にphpのconfigファイルを、今設定したものに合わせて書き換える。</p>
-
-<pre><code class="language-bash">vi /var/www/localhost/htdocs/cacti/include/config.php
- $database_username = &quot;cactiuser&quot;;
- $database_password = &quot;p4ssw0rd&quot;;
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">vi /var/www/localhost/htdocs/cacti/include/config.php
+ <span style="color: #f8f8f2">$database_username</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;cactiuser&quot;</span><span style="color: #f8f8f2">;</span>
+ <span style="color: #f8f8f2">$database_password</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;p4ssw0rd&quot;</span><span style="color: #f8f8f2">;</span>
+</pre></div>
 
 <h4>cron実行用のシステムアカウント作成とパーミッション変更</h4>
-
-<pre><code class="language-bash">useradd -g apache -d /dev/null -s /bin/false -c cacti cacti
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">useradd -g apache -d /dev/null -s /bin/false -c cacti cacti
+</pre></div>
 
 <p>ホームディレクトリを/dev/null、ログインシェルを/bin/falseにすることで、cactiというユーザでログインできないようにする。この辺は適当に手を抜いてrootでやったりすると怖いので忘れずに。次にcactiユーザでデータの読み書きするためにパーミションを変える。</p>
-
-<pre><code class="language-bash">chown -R cacti:apache /var/www/localhost/htdocs/cacti
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">chown -R cacti:apache /var/www/localhost/htdocs/cacti
+</pre></div>
 
 <p>全部変えちゃったけどrraとlogディレクトリだけでいいかも。未検証。</p>
 
 <h4>cronの設定</h4>
 
 <p>適当なタイミングでスクリプトをブン回す。とりあえず5分間隔に設定。</p>
-
-<pre><code class="language-bash">vi /etc/crontab
- */5 * * * * cacti   /usr/bin/php /var/www/localhost/htdocs/cacti/cmd.php &gt; /dev/null 2&gt;&amp;1
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">vi /etc/crontab
+ */5 * * * * cacti   /usr/bin/php /var/www/localhost/htdocs/cacti/cmd.php &gt; /dev/null 2&gt;<span style="color: #f8f8f2">&amp;</span>1
+</pre></div>
 
 <h4>cactiの設定</h4>
 

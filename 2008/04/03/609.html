@@ -99,63 +99,60 @@
   </header>
   <section>
     <p>mixiにそのまま投稿しちゃうと、本来リンクじゃないと困るものが、ただのテキストになってしまうわけで。どっちみち携帯から見てる人には無用なエントリになっちゃうし、いっそのことmixiには投稿しないようにしようと。一番てっとり早いのはP::P::MixiDiary.pm内で、単純にif文でほげほげすることなんだけど。ちょっと気が向いたのでplugin初挑戦してみた。</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f8f8f2">package</span> <span style="color: #f8f8f2">Plagger::Plugin::Filter::StripDeliciousDailyPost;</span>
+<span style="color: #66d9ef">use</span> <span style="color: #f8f8f2">strict;</span>
+<span style="color: #66d9ef">use</span> <span style="color: #f8f8f2">base</span> <span style="color: #e6db74">qw( Plagger::Plugin )</span><span style="color: #f8f8f2">;</span>
 
-<pre><code class="language-perl">package Plagger::Plugin::Filter::StripDeliciousDailyPost;
-use strict;
-use base qw( Plagger::Plugin );
+<span style="color: #66d9ef">sub </span><span style="color: #a6e22e">register</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #66d9ef">my</span><span style="color: #f8f8f2">($self,</span> <span style="color: #f8f8f2">$context)</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">@_;</span>
+    <span style="color: #f8f8f2">$context</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">register_hook(</span>
+        <span style="color: #f8f8f2">$self,</span>
+        <span style="color: #e6db74">&#39;update.entry.fixup&#39;</span> <span style="color: #f92672">=&gt;</span> <span style="color: #f92672">\&amp;</span><span style="color: #f8f8f2">filter,</span>
+    <span style="color: #f8f8f2">);</span>
+<span style="color: #f8f8f2">}</span>
 
-sub register {
-    my($self, $context) = @_;
-    $context-&gt;register_hook(
-        $self,
-        'update.entry.fixup' =&gt; \&amp;filter,
-    );
-}
+<span style="color: #66d9ef">sub </span><span style="color: #a6e22e">filter</span> <span style="color: #f8f8f2">{</span>
+    <span style="color: #66d9ef">my</span><span style="color: #f8f8f2">($self,</span> <span style="color: #f8f8f2">$context,</span> <span style="color: #f8f8f2">$args)</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">@_;</span>
 
-sub filter {
-    my($self, $context, $args) = @_;
+    <span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">$title</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">$args</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">{entry}</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">title;</span>
+    <span style="color: #66d9ef">for</span> <span style="color: #66d9ef">my</span> <span style="color: #f8f8f2">$entry</span> <span style="color: #f8f8f2">($args</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">{feed}</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">entries)</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">($entry</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">title</span> <span style="color: #f92672">=~</span><span style="color: #e6db74"> /^links for \d{4}-\d{2}-\d{2}$/i</span><span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">{</span>
+            <span style="color: #f8f8f2">$context</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">log(info</span> <span style="color: #f92672">=&gt;</span> <span style="color: #e6db74">&quot;Delete Delicious daily post entry &quot;</span> <span style="color: #f92672">.</span> <span style="color: #f8f8f2">$entry</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">link);</span>
+            <span style="color: #f8f8f2">$args</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">{feed}</span><span style="color: #f92672">-&gt;</span><span style="color: #f8f8f2">delete_entry($entry);</span>
+        <span style="color: #f8f8f2">}</span>
+    <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span>
 
-    my $title = $args-&gt;{entry}-&gt;title;
-    for my $entry ($args-&gt;{feed}-&gt;entries) {
-        if ($entry-&gt;title =~ /^links for \d{4}-\d{2}-\d{2}$/i) {
-            $context-&gt;log(info =&gt; &quot;Delete Delicious daily post entry &quot; . $entry-&gt;link);
-            $args-&gt;{feed}-&gt;delete_entry($entry);
-        }
-    }
-}
-
-1;
-__END__
-</code></pre>
+<span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+<span style="color: #75715e">__END__</span>
+</pre></div>
 
 <p>やはりperlは書き慣れんな。yamlを以下のようにして動作確認。</p>
-
-<pre><code class="language-perl">plugins:
-  - module: Subscription::Config
-    config:
-      feed:
-        - url: http://nobu666.com/rss?feed=rss2
-  - module: Filter::Rule
-    rule:
-      module: Deduped
-      path: /tmp/blog2mixi.tmp
-      compare_body: 1
-  - module: Filter::Reverse
-  - module: Filter::FindEnclosures
-  - module: Filter::FetchEnclosure
-    config:
-      dir: /tmp/fetch-image
-  - module: Filter::FormatText
-  - module: Filter::EntryFullText
-  - module: Filter::StripDeliciousDailyPost
-  - module: Publish::MixiDiary
-    config:
-      username: メールアドレス
-      password: パスワード
-      interval: 10
-      originally_link: 1
-
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f8f8f2">plugins:</span>
+  <span style="color: #f92672">-</span> <span style="color: #f8f8f2">module:</span> <span style="color: #f8f8f2">Subscription::Config</span>
+    <span style="color: #f8f8f2">config:</span>
+      <span style="color: #f8f8f2">feed:</span>
+        <span style="color: #f92672">-</span> <span style="color: #f8f8f2">url:</span> <span style="color: #f8f8f2">http:</span><span style="color: #e6db74">//</span><span style="color: #f8f8f2">nobu666</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">com</span><span style="color: #f92672">/</span><span style="color: #f8f8f2">rss?feed</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">rss2</span>
+  <span style="color: #f92672">-</span> <span style="color: #f8f8f2">module:</span> <span style="color: #f8f8f2">Filter::Rule</span>
+    <span style="color: #f8f8f2">rule:</span>
+      <span style="color: #f8f8f2">module:</span> <span style="color: #f8f8f2">Deduped</span>
+      <span style="color: #f8f8f2">path:</span> <span style="color: #e6db74">/tmp/</span><span style="color: #f8f8f2">blog2mixi</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">tmp</span>
+      <span style="color: #f8f8f2">compare_body:</span> <span style="color: #ae81ff">1</span>
+  <span style="color: #f92672">-</span> <span style="color: #f8f8f2">module:</span> <span style="color: #f8f8f2">Filter::Reverse</span>
+  <span style="color: #f92672">-</span> <span style="color: #f8f8f2">module:</span> <span style="color: #f8f8f2">Filter::FindEnclosures</span>
+  <span style="color: #f92672">-</span> <span style="color: #f8f8f2">module:</span> <span style="color: #f8f8f2">Filter::FetchEnclosure</span>
+    <span style="color: #f8f8f2">config:</span>
+      <span style="color: #f8f8f2">dir:</span> <span style="color: #e6db74">/tmp/</span><span style="color: #f8f8f2">fetch</span><span style="color: #f92672">-</span><span style="color: #f8f8f2">image</span>
+  <span style="color: #f92672">-</span> <span style="color: #f8f8f2">module:</span> <span style="color: #f8f8f2">Filter::FormatText</span>
+  <span style="color: #f92672">-</span> <span style="color: #f8f8f2">module:</span> <span style="color: #f8f8f2">Filter::EntryFullText</span>
+  <span style="color: #f92672">-</span> <span style="color: #f8f8f2">module:</span> <span style="color: #f8f8f2">Filter::StripDeliciousDailyPost</span>
+  <span style="color: #f92672">-</span> <span style="color: #f8f8f2">module:</span> <span style="color: #f8f8f2">Publish::MixiDiary</span>
+    <span style="color: #f8f8f2">config:</span>
+      <span style="color: #f8f8f2">username:</span> <span style="color: #960050; background-color: #1e0010">メールアドレス</span>
+      <span style="color: #f8f8f2">password:</span> <span style="color: #960050; background-color: #1e0010">パスワード</span>
+      <span style="color: #f8f8f2">interval:</span> <span style="color: #ae81ff">10</span>
+      <span style="color: #f8f8f2">originally_link:</span> <span style="color: #ae81ff">1</span>
+</pre></div>
 
   </section>
   <hr>

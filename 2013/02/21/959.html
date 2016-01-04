@@ -124,16 +124,14 @@
       ]
   }
 }</p>
-
-<pre><code>
-んで knife role from file nannchara-kannchara.json すると、knife search コマンドで取り出せるようになるので、あとは適当に整形すれば一覧として取り出せる
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">んで knife role from file nannchara-kannchara.json すると、knife search コマンドで取り出せるようになるので、あとは適当に整形すれば一覧として取り出せる
 
 [sourcecode language=&quot;bash&quot;]
-$ knife search role -F json -q &quot;name:nannchara-kannchara AND __required__:*&quot; | tr -d '\n' | tr -d ' ' | grep -oE &quot;required[^]]+&quot; | awk -F[ '{print $2}' | tr ',' '\n' | tr -d '&quot;'
+$ knife search role -F json -q &quot;name:nannchara-kannchara AND __required__:*&quot; | tr -d &#39;\n&#39; | tr -d &#39; &#39; | grep -oE &quot;required[^]]+&quot; | awk -F[ &#39;{print $2}&#39; | tr &#39;,&#39; &#39;\n&#39; | tr -d &#39;&quot;&#39;
 test
 test1
 test2
-</code></pre>
+</pre></div>
 
 <p>無理やり感があるがまぁ使えるのでよし。</p>
 

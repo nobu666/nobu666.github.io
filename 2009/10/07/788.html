@@ -102,61 +102,60 @@
 Lucene詳しいかた、教えてくだしあ＞＜</p>
 
 <p><strong>2009/10/07: 解決したので後ろに追記しました。</strong></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">package</span> <span style="color: #f8f8f2">hoge</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.*</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">net.moraleboost.lucene.analysis.ja.StandardMeCabAnalyzer</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">org.apache.lucene.*</span><span style="color: #f92672">;</span>
 
-<pre><code class="language-java">package hoge;
-import java.io.*;
-import net.moraleboost.lucene.analysis.ja.StandardMeCabAnalyzer;
-import org.apache.lucene.*;
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">MeCabTest</span> <span style="color: #f92672">{</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">final</span> <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">DIC_ENCODING</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getProperty</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;net.moraleboost.mecab.encoding&quot;</span><span style="color: #f92672">);</span>
+    <span style="color: #66d9ef">private</span> <span style="color: #66d9ef">static</span> <span style="color: #f8f8f2">StandardMeCabAnalyzer</span> <span style="color: #f8f8f2">analyzer</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">;</span>
+    <span style="color: #66d9ef">private</span> <span style="color: #66d9ef">static</span> <span style="color: #f8f8f2">FSDirectory</span> <span style="color: #f8f8f2">directory</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">;</span>
+    <span style="color: #66d9ef">private</span> <span style="color: #f8f8f2">IndexWriter</span> <span style="color: #f8f8f2">writer</span>  <span style="color: #f92672">=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">;</span>
+    <span style="color: #66d9ef">private</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">final</span> <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">DIR</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;/path/to/index&quot;</span><span style="color: #f92672">;</span>
 
-public class MeCabTest {
-    public static final String DIC_ENCODING = System.getProperty(&quot;net.moraleboost.mecab.encoding&quot;);
-    private static StandardMeCabAnalyzer analyzer = null;
-    private static FSDirectory directory = null;
-    private IndexWriter writer  = null;
-    private static final String DIR = &quot;/path/to/index&quot;;
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setUp</span><span style="color: #f92672">()</span> <span style="color: #66d9ef">throws</span> <span style="color: #f8f8f2">Exception</span> <span style="color: #f92672">{</span>
+        <span style="color: #f8f8f2">writer</span>  <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">IndexWriter</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">directory</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">analyzer</span><span style="color: #f92672">,</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">MaxFieldLength</span><span style="color: #f92672">(</span><span style="color: #ae81ff">4096</span><span style="color: #f92672">));</span>
+        <span style="color: #f8f8f2">Document</span> <span style="color: #f8f8f2">doc</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Document</span><span style="color: #f92672">();</span>
+        <span style="color: #f8f8f2">addField</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">doc</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;text&quot;</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;ほげほげ&quot;</span><span style="color: #f92672">);</span>
+        <span style="color: #f92672">....</span>
+        <span style="color: #f92672">....</span>
+        <span style="color: #f8f8f2">writer</span><span style="color: #f92672">.</span><span style="color: #a6e22e">commit</span><span style="color: #f92672">();</span>
+        <span style="color: #f8f8f2">writer</span><span style="color: #f92672">.</span><span style="color: #a6e22e">optimize</span><span style="color: #f92672">();</span>
+        <span style="color: #f8f8f2">writer</span><span style="color: #f92672">.</span><span style="color: #a6e22e">close</span><span style="color: #f92672">();</span>
+    <span style="color: #f92672">}</span>
+    <span style="color: #66d9ef">private</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">addField</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">Document</span> <span style="color: #f8f8f2">doc</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">name</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">value</span><span style="color: #f92672">)</span> <span style="color: #66d9ef">throws</span> <span style="color: #f8f8f2">Exception</span> <span style="color: #f92672">{</span>
+        <span style="color: #f8f8f2">Field</span> <span style="color: #f8f8f2">field</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Field</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">name</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">value</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">Store</span><span style="color: #f92672">.</span><span style="color: #a6e22e">YES</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">Field</span><span style="color: #f92672">.</span><span style="color: #a6e22e">Index</span><span style="color: #f92672">.</span><span style="color: #a6e22e">ANALYZED</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">Field</span><span style="color: #f92672">.</span><span style="color: #a6e22e">TermVector</span><span style="color: #f92672">.</span><span style="color: #a6e22e">YES</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">doc</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">field</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">writer</span><span style="color: #f92672">.</span><span style="color: #a6e22e">addDocument</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">doc</span><span style="color: #f92672">);</span>
+    <span style="color: #f92672">}</span>
 
-    public void setUp() throws Exception {
-        writer  = new IndexWriter(directory, analyzer, new MaxFieldLength(4096));
-        Document doc = new Document();
-        addField(doc, &quot;text&quot;, &quot;ほげほげ&quot;);
-        ....
-        ....
-        writer.commit();
-        writer.optimize();
-        writer.close();
-    }
-    private void addField(Document doc, String name, String value) throws Exception {
-        Field field = new Field(name, value, Store.YES, Field.Index.ANALYZED, Field.TermVector.YES);
-        doc.add(field);
-        writer.addDocument(doc);
-    }
-
-    public static void main(String[] args) {
-        MeCabTest t = new MeCabTest();
-        IndexSearcher searcher = null;
-        IndexReader reader = null;
-        analyzer = new StandardMeCabAnalyzer(DIC_ENCODING, &quot;&quot;);
-        directory = FSDirectory.open(new File(DIR));
-        t.setUp();
-        reader = IndexReader.open(DIR, false);
-        searcher = new IndexSearcher(directory, true);
-        QueryParser parser = new QueryParser(&quot;text&quot;, analyzer);
-        parser.setDefaultOperator(QueryParser.Operator.OR);
-        MoreLikeThis mlt = new MoreLikeThis(reader);
-        mlt.setAnalyzer(analyzer);
-        mlt.setMinTermFreq(1);
-        mlt.setFieldNames(new String[]{&quot;text&quot;});
-        Query query = mlt.like(new ByteArrayInputStream(&quot;ほげ&quot;.getBytes()));
-        TopDocs topDocs = searcher.search(query, 100);
-        if (topDocs.totalHits &gt; 0) {
-            for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
-                Document doc = searcher.doc(scoreDoc.doc);
-                System.out.println(doc.get(&quot;text&quot;));
-            }
-        }
-    }
-}
-</code></pre>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+        <span style="color: #f8f8f2">MeCabTest</span> <span style="color: #f8f8f2">t</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">MeCabTest</span><span style="color: #f92672">();</span>
+        <span style="color: #f8f8f2">IndexSearcher</span> <span style="color: #f8f8f2">searcher</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">;</span>
+        <span style="color: #f8f8f2">IndexReader</span> <span style="color: #f8f8f2">reader</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">;</span>
+        <span style="color: #f8f8f2">analyzer</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">StandardMeCabAnalyzer</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">DIC_ENCODING</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;&quot;</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">directory</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">FSDirectory</span><span style="color: #f92672">.</span><span style="color: #a6e22e">open</span><span style="color: #f92672">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">File</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">DIR</span><span style="color: #f92672">));</span>
+        <span style="color: #f8f8f2">t</span><span style="color: #f92672">.</span><span style="color: #a6e22e">setUp</span><span style="color: #f92672">();</span>
+        <span style="color: #f8f8f2">reader</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">IndexReader</span><span style="color: #f92672">.</span><span style="color: #a6e22e">open</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">DIR</span><span style="color: #f92672">,</span> <span style="color: #66d9ef">false</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">searcher</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">IndexSearcher</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">directory</span><span style="color: #f92672">,</span> <span style="color: #66d9ef">true</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">QueryParser</span> <span style="color: #f8f8f2">parser</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">QueryParser</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;text&quot;</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">analyzer</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">parser</span><span style="color: #f92672">.</span><span style="color: #a6e22e">setDefaultOperator</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">QueryParser</span><span style="color: #f92672">.</span><span style="color: #a6e22e">Operator</span><span style="color: #f92672">.</span><span style="color: #a6e22e">OR</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">MoreLikeThis</span> <span style="color: #f8f8f2">mlt</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">MoreLikeThis</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">reader</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">mlt</span><span style="color: #f92672">.</span><span style="color: #a6e22e">setAnalyzer</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">analyzer</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">mlt</span><span style="color: #f92672">.</span><span style="color: #a6e22e">setMinTermFreq</span><span style="color: #f92672">(</span><span style="color: #ae81ff">1</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">mlt</span><span style="color: #f92672">.</span><span style="color: #a6e22e">setFieldNames</span><span style="color: #f92672">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">String</span><span style="color: #f92672">[]{</span><span style="color: #e6db74">&quot;text&quot;</span><span style="color: #f92672">});</span>
+        <span style="color: #f8f8f2">Query</span> <span style="color: #f8f8f2">query</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">mlt</span><span style="color: #f92672">.</span><span style="color: #a6e22e">like</span><span style="color: #f92672">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">ByteArrayInputStream</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;ほげ&quot;</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getBytes</span><span style="color: #f92672">()));</span>
+        <span style="color: #f8f8f2">TopDocs</span> <span style="color: #f8f8f2">topDocs</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">searcher</span><span style="color: #f92672">.</span><span style="color: #a6e22e">search</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">query</span><span style="color: #f92672">,</span> <span style="color: #ae81ff">100</span><span style="color: #f92672">);</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">topDocs</span><span style="color: #f92672">.</span><span style="color: #a6e22e">totalHits</span> <span style="color: #f92672">&gt;</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+            <span style="color: #66d9ef">for</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">ScoreDoc</span> <span style="color: #f8f8f2">scoreDoc</span> <span style="color: #f92672">:</span> <span style="color: #f8f8f2">topDocs</span><span style="color: #f92672">.</span><span style="color: #a6e22e">scoreDocs</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+                <span style="color: #f8f8f2">Document</span> <span style="color: #f8f8f2">doc</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">searcher</span><span style="color: #f92672">.</span><span style="color: #a6e22e">doc</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">scoreDoc</span><span style="color: #f92672">.</span><span style="color: #a6e22e">doc</span><span style="color: #f92672">);</span>
+                <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">doc</span><span style="color: #f92672">.</span><span style="color: #a6e22e">get</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;text&quot;</span><span style="color: #f92672">));</span>
+            <span style="color: #f92672">}</span>
+        <span style="color: #f92672">}</span>
+    <span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span>
+</pre></div>
 
 <p>try〜catchとか省略。addField(&hellip;);のところ、実際にはニュースサイトから本文引っ張ってきて、いくつかいれた。7個くらい適当に選んで、3個くらいは同じニュース（台風18号関連）を違うサイトから引用した。</p>
 

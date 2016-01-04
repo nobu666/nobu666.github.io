@@ -102,127 +102,121 @@
 
 <p><h4>ssmtpの削除</h4>
 Gentooではいきなりpostfixを入れようとしても、デフォルトでssmtpが入っていてblockされるのでssmtpを消すのが先決。</p>
-
-<pre><code class="language-bash">emerge -C ssmtp
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">emerge -C ssmtp
+</pre></div>
 
 <p><h4>postfixとdovecotのインストール</h4>
 Gentooの基本だけど、emergeするときはemerge -pvでどんなフラグが有効になるか必ず確認。必要ないならpackage.useで外す。あとsaslが必要なのでこれは付けておく。あとなんでかわからないけどpostfixにsaslを付けるとついてくるcyrus-saslで、gdbmやcryptをUSEするとコンパイルに失敗したので外した。</p>
-
-<pre><code class="language-bash">emerge -pv postfix dovecot
-echo &quot;mmail-mta/postfix -mysql sasl&quot; &gt;&gt; /etc/portage/package.use
-echo &quot;dev-libs/cyrus-sasl -mysql -java -gdbm -crypt&quot; &gt;&gt; /etc/portage/package.use
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">emerge -pv postfix dovecot
+<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;mmail-mta/postfix -mysql sasl&quot;</span> &gt;&gt; /etc/portage/package.use
+<span style="color: #f8f8f2">echo</span> <span style="color: #e6db74">&quot;dev-libs/cyrus-sasl -mysql -java -gdbm -crypt&quot;</span> &gt;&gt; /etc/portage/package.use
 emerge postfix dovecot
-</code></pre>
+</pre></div>
 
 <p><h4>オレオレ認証局の作成</h4>
 Gentooでの方法なので他のディストリではパスが違うようなので注意。</p>
-
-<pre><code class="language-bash">mkdir /etc/certs
-chmod 700 /etc/certs 
-cd /etc/certs
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">mkdir /etc/certs
+chmod <span style="color: #ae81ff">700</span> /etc/certs 
+<span style="color: #f8f8f2">cd</span> /etc/certs
 cp /etc/ssl/misc/CA.pl .
 perl ./CA.pl -newca
-CA certificate filename (or enter to create)
-(ENTER)
+CA certificate filename <span style="color: #f92672">(</span>or enter to create<span style="color: #f92672">)</span>
+<span style="color: #f92672">(</span>ENTER<span style="color: #f92672">)</span>
 Making CA certificate ...
-Generating a 1024 bit RSA private key
+Generating a <span style="color: #ae81ff">1024</span> bit RSA private key
 ..................................++++++
 .......................++++++
-writing new private key to './demoCA/private/cakey.pem'
-Enter PEM pass phrase:(パスフレーズを入力)
-Verifying - Enter PEM pass phrase:(同じパスフレーズをもう一度入力)
+writing new private key to <span style="color: #e6db74">&#39;./demoCA/private/cakey.pem&#39;</span>
+Enter PEM pass phrase:<span style="color: #f92672">(</span>パスフレーズを入力<span style="color: #f92672">)</span>
+Verifying - Enter PEM pass phrase:<span style="color: #f92672">(</span>同じパスフレーズをもう一度入力<span style="color: #f92672">)</span>
 -----
 You are about to be asked to enter information that will be incorporated
 into your certificate request.
 What you are about to enter is what is called a Distinguished Name or a DN.
 There are quite a few fields but you can leave some blank
 For some fields there will be a default value,
-If you enter '.', the field will be left blank.
+If you enter <span style="color: #e6db74">&#39;.&#39;</span>, the field will be left blank.
 -----
-Country Name (2 letter code) [AU]:JP
-State or Province Name (full name) [Some-State]:Kanagawa
-Locality Name (eg, city) []:Yokohama
-Organization Name (eg, company) [Internet Widgits Pty Ltd]:Private
-Organizational Unit Name (eg, section) []:Private
-Common Name (eg, YOUR name) []:nobu666.fam.cx
-Email Address []:root@nobu666.fam.cx
+Country Name <span style="color: #f92672">(</span><span style="color: #ae81ff">2</span> letter code<span style="color: #f92672">)</span> <span style="color: #f92672">[</span>AU<span style="color: #f92672">]</span>:JP
+State or Province Name <span style="color: #f92672">(</span>full name<span style="color: #f92672">)</span> <span style="color: #f92672">[</span>Some-State<span style="color: #f92672">]</span>:Kanagawa
+Locality Name <span style="color: #f92672">(</span>eg, city<span style="color: #f92672">)</span> <span style="color: #f92672">[]</span>:Yokohama
+Organization Name <span style="color: #f92672">(</span>eg, company<span style="color: #f92672">)</span> <span style="color: #f92672">[</span>Internet Widgits Pty Ltd<span style="color: #f92672">]</span>:Private
+Organizational Unit Name <span style="color: #f92672">(</span>eg, section<span style="color: #f92672">)</span> <span style="color: #f92672">[]</span>:Private
+Common Name <span style="color: #f92672">(</span>eg, YOUR name<span style="color: #f92672">)</span> <span style="color: #f92672">[]</span>:nobu666.fam.cx
+Email Address <span style="color: #f92672">[]</span>:root@nobu666.fam.cx
 
-Please enter the following 'extra' attributes
+Please enter the following <span style="color: #e6db74">&#39;extra&#39;</span> attributes
 to be sent with your certificate request
-A challenge password []:(ENTER)
-An optional company name []:(ENTER)
+A challenge password <span style="color: #f92672">[]</span>:<span style="color: #f92672">(</span>ENTER<span style="color: #f92672">)</span>
+An optional company name <span style="color: #f92672">[]</span>:<span style="color: #f92672">(</span>ENTER<span style="color: #f92672">)</span>
 Using configuration from /etc/ssl/openssl.cnf
-Enter pass phrase for ./demoCA/private/cakey.pem:
+Enter pass phrase <span style="color: #66d9ef">for</span> ./demoCA/private/cakey.pem:
 Check that the request matches the signature
 Signature ok
 Certificate Details:
- (略)
-Certificate is to be certified until Oct 28 06:15:58 2009 GMT (1095 days)
+ <span style="color: #f92672">(</span>略<span style="color: #f92672">)</span>
+Certificate is to be certified <span style="color: #66d9ef">until</span> Oct <span style="color: #ae81ff">28</span> 06:15:58 <span style="color: #ae81ff">2009</span> GMT <span style="color: #f92672">(</span><span style="color: #ae81ff">1095</span> days<span style="color: #f92672">)</span>
 
-Write out database with 1 new entries
+Write out database with <span style="color: #ae81ff">1</span> new entries
 Data Base Updated
-</code></pre>
+</pre></div>
 
 <p><h4>クライアント用CA証明書とサーバ用CA証明書を作成</h4></p>
-
-<pre><code class="language-bash">cd /etc/certs/demoCA
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f8f8f2">cd</span> /etc/certs/demoCA
 openssl x509 -inform pem -in cacert.pem -outform der -out cacert.der 
 openssl x509 -in ./cacert.pem -out ./cacert.crt
-</code></pre>
+</pre></div>
 
 <p><h4>デジタル証明書のリクエストファイルを作成</h4></p>
-
-<pre><code class="language-bash">cd /etc/certs
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f8f8f2">cd</span> /etc/certs
 perl ./CA.pl -newreq-nodes
-Generating a 1024 bit RSA private key
+Generating a <span style="color: #ae81ff">1024</span> bit RSA private key
 ...++++++
 ...............................................................................................................++++++
-writing new private key to 'newkey.pem'
+writing new private key to <span style="color: #e6db74">&#39;newkey.pem&#39;</span>
 -----
 You are about to be asked to enter information that will be incorporated
 into your certificate request.
 What you are about to enter is what is called a Distinguished Name or a DN.
 There are quite a few fields but you can leave some blank
 For some fields there will be a default value,
-If you enter '.', the field will be left blank.
+If you enter <span style="color: #e6db74">&#39;.&#39;</span>, the field will be left blank.
 -----
-Country Name (2 letter code) [AU]:JP
-State or Province Name (full name) [Some-State]:Kanagawa
-Locality Name (eg, city) []:Yokohama
-Organization Name (eg, company) [Internet Widgits Pty Ltd]:nobu666.fam.cx
-Organizational Unit Name (eg, section) []:Admin
-Common Name (eg, YOUR name) []:nobu666.fam.cx
-Email Address []:root@nobu666.fam.cx
+Country Name <span style="color: #f92672">(</span><span style="color: #ae81ff">2</span> letter code<span style="color: #f92672">)</span> <span style="color: #f92672">[</span>AU<span style="color: #f92672">]</span>:JP
+State or Province Name <span style="color: #f92672">(</span>full name<span style="color: #f92672">)</span> <span style="color: #f92672">[</span>Some-State<span style="color: #f92672">]</span>:Kanagawa
+Locality Name <span style="color: #f92672">(</span>eg, city<span style="color: #f92672">)</span> <span style="color: #f92672">[]</span>:Yokohama
+Organization Name <span style="color: #f92672">(</span>eg, company<span style="color: #f92672">)</span> <span style="color: #f92672">[</span>Internet Widgits Pty Ltd<span style="color: #f92672">]</span>:nobu666.fam.cx
+Organizational Unit Name <span style="color: #f92672">(</span>eg, section<span style="color: #f92672">)</span> <span style="color: #f92672">[]</span>:Admin
+Common Name <span style="color: #f92672">(</span>eg, YOUR name<span style="color: #f92672">)</span> <span style="color: #f92672">[]</span>:nobu666.fam.cx
+Email Address <span style="color: #f92672">[]</span>:root@nobu666.fam.cx
 
-Please enter the following 'extra' attributes
+Please enter the following <span style="color: #e6db74">&#39;extra&#39;</span> attributes
 to be sent with your certificate request
-A challenge password []:(ENTER)
-An optional company name []:(ENTER)
+A challenge password <span style="color: #f92672">[]</span>:<span style="color: #f92672">(</span>ENTER<span style="color: #f92672">)</span>
+An optional company name <span style="color: #f92672">[]</span>:<span style="color: #f92672">(</span>ENTER<span style="color: #f92672">)</span>
 Request is in newreq.pem, private key is in newkey.pem
-</code></pre>
+</pre></div>
 
 <p><h4>リクエストファイルからX.509サーバ証明書の作成と署名</h4></p>
-
-<pre><code class="language-bash">perl ./CA.pl -sign
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">perl ./CA.pl -sign
 Using configuration from /etc/ssl/openssl.cnf
-Enter pass phrase for ./demoCA/private/cakey.pem:
+Enter pass phrase <span style="color: #66d9ef">for</span> ./demoCA/private/cakey.pem:
 Check that the request matches the signature
 Signature ok
 Certificate Details:
         Serial Number:
             ce:db:05:2a:6a:dc:75:17
         Validity
-            Not Before: Oct 29 06:51:11 2006 GMT
-            Not After : Oct 29 06:51:11 2007 GMT
+            Not Before: Oct <span style="color: #ae81ff">29</span> 06:51:11 <span style="color: #ae81ff">2006</span> GMT
+            Not After : Oct <span style="color: #ae81ff">29</span> 06:51:11 <span style="color: #ae81ff">2007</span> GMT
         Subject:
-            countryName               = JP
-            stateOrProvinceName       = Kanagawa
-            localityName              = Yokohama
-            organizationName          = nobu666.fam.cx
-            organizationalUnitName    = Admin
-            commonName                = nobu666.fam.cx
-            emailAddress              = root@nobu666.fam.cx
+            <span style="color: #f8f8f2">countryName</span>               <span style="color: #f92672">=</span> JP
+            <span style="color: #f8f8f2">stateOrProvinceName</span>       <span style="color: #f92672">=</span> Kanagawa
+            <span style="color: #f8f8f2">localityName</span>              <span style="color: #f92672">=</span> Yokohama
+            <span style="color: #f8f8f2">organizationName</span>          <span style="color: #f92672">=</span> nobu666.fam.cx
+            <span style="color: #f8f8f2">organizationalUnitName</span>    <span style="color: #f92672">=</span> Admin
+            <span style="color: #f8f8f2">commonName</span>                <span style="color: #f92672">=</span> nobu666.fam.cx
+            <span style="color: #f8f8f2">emailAddress</span>              <span style="color: #f92672">=</span> root@nobu666.fam.cx
         X509v3 extensions:
             X509v3 Basic Constraints:
                 CA:FALSE
@@ -233,70 +227,68 @@ Certificate Details:
             X509v3 Authority Key Identifier:
                 keyid:A7:51:EC:0A:BD:B6:70:68:A5:01:ED:8E:76:1F:FE:0C:4D:B2:A0:19
 
-Certificate is to be certified until Oct 29 06:51:11 2007 GMT (365 days)
-Sign the certificate? [y/n]:y
+Certificate is to be certified <span style="color: #66d9ef">until</span> Oct <span style="color: #ae81ff">29</span> 06:51:11 <span style="color: #ae81ff">2007</span> GMT <span style="color: #f92672">(</span><span style="color: #ae81ff">365</span> days<span style="color: #f92672">)</span>
+Sign the certificate? <span style="color: #f92672">[</span>y/n<span style="color: #f92672">]</span>:y
 
 
-1 out of 1 certificate requests certified, commit? [y/n]y
-Write out database with 1 new entries
+<span style="color: #ae81ff">1</span> out of <span style="color: #ae81ff">1</span> certificate requests certified, commit? <span style="color: #f92672">[</span>y/n<span style="color: #f92672">]</span>y
+Write out database with <span style="color: #ae81ff">1</span> new entries
 Data Base Updated
 Signed certificate is in newcert.pem
 
 openssl x509 -in newcert.pem -out server.crt
-</code></pre>
+</pre></div>
 
 <p><h4>postfix用にシンボリックリンクを張る</h4></p>
-
-<pre><code class="language-bash">ln -sf /etc/certs/server.crt /etc/ssl/postfix/server.crt
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">ln -sf /etc/certs/server.crt /etc/ssl/postfix/server.crt
 ln -sf /etc/certs/newkey.pem /etc/ssl/postfix/server.key
-</code></pre>
+</pre></div>
 
 <p><h4>postfixの設定</h4></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">vi /etc/postfix/main.cf
 
-<pre><code class="language-bash">vi /etc/postfix/main.cf
+<span style="color: #f8f8f2">queue_directory</span> <span style="color: #f92672">=</span> /var/spool/postfix
+<span style="color: #f8f8f2">command_directory</span> <span style="color: #f92672">=</span> /usr/sbin
+<span style="color: #f8f8f2">daemon_directory</span> <span style="color: #f92672">=</span> /usr/lib/postfix
+<span style="color: #f8f8f2">mail_owner</span> <span style="color: #f92672">=</span> postfix
+<span style="color: #f8f8f2">myhostname</span> <span style="color: #f92672">=</span> nobu666.fam.cx
+<span style="color: #f8f8f2">mydomain</span> <span style="color: #f92672">=</span> nobu666.fam.cx
+<span style="color: #f8f8f2">myorigin</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">$mydomain</span>
+<span style="color: #f8f8f2">inet_interfaces</span> <span style="color: #f92672">=</span> all
+<span style="color: #f8f8f2">mydestination</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">$myhostname</span>, localhost.<span style="color: #f8f8f2">$mydomain</span>, <span style="color: #f8f8f2">$mydomain</span>, mail.<span style="color: #f8f8f2">$mydomain</span>, localhost
+<span style="color: #f8f8f2">unknown_local_recipient_reject_code</span> <span style="color: #f92672">=</span> 550
+<span style="color: #f8f8f2">mynetworks_style</span> <span style="color: #f92672">=</span> subnet
+<span style="color: #f8f8f2">mynetworks</span> <span style="color: #f92672">=</span> 192.168.0.0/24, 127.0.0.0/8
+<span style="color: #f8f8f2">relay_domains</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">$mydestination</span>
+<span style="color: #f8f8f2">alias_maps</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">hash</span>:/etc/mail/aliases
+<span style="color: #f8f8f2">alias_database</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">hash</span>:/etc/mail/aliases
+<span style="color: #f8f8f2">home_mailbox</span> <span style="color: #f92672">=</span> .Maildir/
 
-queue_directory = /var/spool/postfix
-command_directory = /usr/sbin
-daemon_directory = /usr/lib/postfix
-mail_owner = postfix
-myhostname = nobu666.fam.cx
-mydomain = nobu666.fam.cx
-myorigin = $mydomain
-inet_interfaces = all
-mydestination = $myhostname, localhost.$mydomain, $mydomain, mail.$mydomain, localhost
-unknown_local_recipient_reject_code = 550
-mynetworks_style = subnet
-mynetworks = 192.168.0.0/24, 127.0.0.0/8
-relay_domains = $mydestination
-alias_maps = hash:/etc/mail/aliases
-alias_database = hash:/etc/mail/aliases
-home_mailbox = .Maildir/
-
-header_checks = regexp:/etc/postfix/header_checks
-smtpd_banner = $myhostname ESMTP $mail_name ($mail_version)
-mydestination = $myhostname, localhost.$mydomain, $myhostname.$mydomain, mail.$mydomain, localhost
-debug_peer_level = 2
-debugger_command =
-         PATH=/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
-         xxgdb $daemon_directory/$process_name $process_id &amp;amp; sleep 5
-sendmail_path = /usr/sbin/sendmail
-mailq_path = /usr/bin/mailq
-setgid_group = postdrop
-html_directory = /usr/share/doc/postfix-2.2.10/html
-manpage_directory = /usr/share/man
-sample_directory = /etc/postfix
-readme_directory = /usr/share/doc/postfix-2.2.10/readme
-smtpd_use_tls = yes
-smtpd_tls_loglevel = 1
-smtpd_tls_cert_file = /etc/ssl/postfix/server.crt
-smtpd_tls_key_file = /etc/ssl/postfix/server.key
-smtpd_tls_session_cache_database = btree:/etc/postfix/smtpd_scache
-smtpd_sasl_auth_enable = yes
-smtpd_sasl_security_options = noanonymous
-smtp_sasl_security_options = noanonymous
-allow_mail_to_commands = alias,forward,include
-message_size_limit = 1024000
-smtpd_client_restrictions =
+<span style="color: #f8f8f2">header_checks</span> <span style="color: #f92672">=</span> regexp:/etc/postfix/header_checks
+<span style="color: #f8f8f2">smtpd_banner</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">$myhostname</span> ESMTP <span style="color: #f8f8f2">$mail_name</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">$mail_version</span><span style="color: #f92672">)</span>
+<span style="color: #f8f8f2">mydestination</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">$myhostname</span>, localhost.<span style="color: #f8f8f2">$mydomain</span>, <span style="color: #f8f8f2">$myhostname</span>.<span style="color: #f8f8f2">$mydomain</span>, mail.<span style="color: #f8f8f2">$mydomain</span>, localhost
+<span style="color: #f8f8f2">debug_peer_level</span> <span style="color: #f92672">=</span> 2
+<span style="color: #f8f8f2">debugger_command</span> <span style="color: #f92672">=</span>
+         <span style="color: #f8f8f2">PATH</span><span style="color: #f92672">=</span>/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
+         xxgdb <span style="color: #f8f8f2">$daemon_directory</span>/<span style="color: #f8f8f2">$process_name</span> <span style="color: #f8f8f2">$process_id</span> <span style="color: #f8f8f2">&amp;</span> sleep 5
+<span style="color: #f8f8f2">sendmail_path</span> <span style="color: #f92672">=</span> /usr/sbin/sendmail
+<span style="color: #f8f8f2">mailq_path</span> <span style="color: #f92672">=</span> /usr/bin/mailq
+<span style="color: #f8f8f2">setgid_group</span> <span style="color: #f92672">=</span> postdrop
+<span style="color: #f8f8f2">html_directory</span> <span style="color: #f92672">=</span> /usr/share/doc/postfix-2.2.10/html
+<span style="color: #f8f8f2">manpage_directory</span> <span style="color: #f92672">=</span> /usr/share/man
+<span style="color: #f8f8f2">sample_directory</span> <span style="color: #f92672">=</span> /etc/postfix
+<span style="color: #f8f8f2">readme_directory</span> <span style="color: #f92672">=</span> /usr/share/doc/postfix-2.2.10/readme
+<span style="color: #f8f8f2">smtpd_use_tls</span> <span style="color: #f92672">=</span> yes
+<span style="color: #f8f8f2">smtpd_tls_loglevel</span> <span style="color: #f92672">=</span> 1
+<span style="color: #f8f8f2">smtpd_tls_cert_file</span> <span style="color: #f92672">=</span> /etc/ssl/postfix/server.crt
+<span style="color: #f8f8f2">smtpd_tls_key_file</span> <span style="color: #f92672">=</span> /etc/ssl/postfix/server.key
+<span style="color: #f8f8f2">smtpd_tls_session_cache_database</span> <span style="color: #f92672">=</span> btree:/etc/postfix/smtpd_scache
+<span style="color: #f8f8f2">smtpd_sasl_auth_enable</span> <span style="color: #f92672">=</span> yes
+<span style="color: #f8f8f2">smtpd_sasl_security_options</span> <span style="color: #f92672">=</span> noanonymous
+<span style="color: #f8f8f2">smtp_sasl_security_options</span> <span style="color: #f92672">=</span> noanonymous
+<span style="color: #f8f8f2">allow_mail_to_commands</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">alias</span>,forward,include
+<span style="color: #f8f8f2">message_size_limit</span> <span style="color: #f92672">=</span> 1024000
+<span style="color: #f8f8f2">smtpd_client_restrictions</span> <span style="color: #f92672">=</span>
             permit_mynetworks,
             permit_sasl_authenticated,
             permit_auth_destination,
@@ -305,35 +297,32 @@ smtpd_client_restrictions =
 vi /etc/postfix/master.cf
 
 submission inet n      -       n       -       -       smtpd
-        -o smtpd_etrn_restrictions=reject
-        -o smtpd_client_restrictions=permit_sasl_authenticated,reject
-
-</code></pre>
+        -o <span style="color: #f8f8f2">smtpd_etrn_restrictions</span><span style="color: #f92672">=</span>reject
+        -o <span style="color: #f8f8f2">smtpd_client_restrictions</span><span style="color: #f92672">=</span>permit_sasl_authenticated,reject
+</pre></div>
 
 <p><h4>saslの設定</h4></p>
-
-<pre><code class="language-bash">vi /etc/sasl2/smtpd.conf
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">vi /etc/sasl2/smtpd.conf
 
 pwcheck_method: saslauthd
 
 mkdir /var/state/saslauthd
-chmod 700 /var/state/saslauthd
+chmod <span style="color: #ae81ff">700</span> /var/state/saslauthd
 chown postfix /var/state/saslauthd
-</code></pre>
+</pre></div>
 
 <p><h4>dovecotの設定</h4></p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">vi /etc/dovecot.conf
 
-<pre><code class="language-bash">vi /etc/dovecot.conf
+<span style="color: #f8f8f2">protocols</span> <span style="color: #f92672">=</span> pop3 imap
+<span style="color: #f8f8f2">ssl_disable</span> <span style="color: #f92672">=</span> no
+<span style="color: #f8f8f2">ssl_cert_file</span> <span style="color: #f92672">=</span> /etc/ssl/postfix/server.crt
+<span style="color: #f8f8f2">ssl_key_file</span> <span style="color: #f92672">=</span> /etc/ssl/postfix/server.key
+<span style="color: #f8f8f2">default_mail_env</span> <span style="color: #f92672">=</span> maildir:%h/.Maildir
 
-protocols = pop3 imap
-ssl_disable = no
-ssl_cert_file = /etc/ssl/postfix/server.crt
-ssl_key_file = /etc/ssl/postfix/server.key
-default_mail_env = maildir:%h/.Maildir
-
-chmod 755 /var/run/dovecot
-chmod 750 /var/run/dovecot/login
-</code></pre>
+chmod <span style="color: #ae81ff">755</span> /var/run/dovecot
+chmod <span style="color: #ae81ff">750</span> /var/run/dovecot/login
+</pre></div>
 
 <p>あとはデフォルトのまま。</p>
 

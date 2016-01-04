@@ -109,28 +109,24 @@
     
 
 <p>例えば <code>.zshrc</code> とかに <code>HOMEBREW_GITHUB_API_TOKEN</code> をexportしてるけど、このファイルを人に見せることになると困る。回避方法としては <code>~/.github_token</code> を別途作ってそっちに値を書き込んで置いて</p>
-
-<pre><code class="language-bash">if [ -f ~/.github_token ]; then
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #66d9ef">if</span> <span style="color: #f92672">[</span> -f ~/.github_token <span style="color: #f92672">]</span><span style="color: #f8f8f2">;</span> <span style="color: #66d9ef">then</span>
   . ~/.github_token
-fi
-</code></pre>
+<span style="color: #66d9ef">fi</span>
+</pre></div>
 
 <p>こんなふうにするという解決策もあるにはある。が、もうちょっとセキュアかつ簡単な方法はないものか、ということで以下のようにすると捗った</p>
 
 <h2 id="keychainに値を登録する:e1867217de400bc30fb87cf008200204">Keychainに値を登録する</h2>
-
-<pre><code class="language-bash">security add-generic-password -a homebrew-github-api-key -s homebrew-github-api-key -w XXXXXXXXXXXXXXX
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">security add-generic-password -a homebrew-github-api-key -s homebrew-github-api-key -w XXXXXXXXXXXXXXX
+</pre></div>
 
 <h2 id="keychainから値をとりだす:e1867217de400bc30fb87cf008200204">Keychainから値をとりだす</h2>
-
-<pre><code class="language-bash">security find-generic-password -ga homebrew-github-api-key
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">security find-generic-password -ga homebrew-github-api-key
+</pre></div>
 
 <p>このままだと余計な情報もたくさん取れてきてしまうので、必要な部分だけ抜き出すようにする</p>
-
-<pre><code class="language-bash">security find-generic-password -ga homebrew-github-api-key 2&gt;&amp;1 &gt;/dev/null | ruby -e 'print $1 if STDIN.gets =~ /^password: &quot;(.*)&quot;$/'
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">security find-generic-password -ga homebrew-github-api-key 2&gt;<span style="color: #f8f8f2">&amp;</span><span style="color: #ae81ff">1</span> &gt;/dev/null <span style="color: #f8f8f2">|</span> ruby -e <span style="color: #e6db74">&#39;print $1 if STDIN.gets =~ /^password: &quot;(.*)&quot;$/&#39;</span>
+</pre></div>
 
 <p>これでファイルに直接書かないでよくなったので、.zshrcとかでexportするときも <code>$(security ...)</code> をexportしてやればいい。うむ。</p>
 

@@ -101,46 +101,40 @@
     <p>特に書くことないほどあっさり終了。<a href="http://mirror.gentoo.gr.jp/releases/amd64/current/livecd/livecd-amd64-installer-2006.1.iso">LiveCD</a>を焼いてそいつでブートし、デスクトップ画面が出てきたら&rdquo;Gentoo Linux installer&rdquo;をダブルクリックして指示に従っていくだけ。つか<a href="http://www9.ocn.ne.jp/~pcvolu/pcnet/gentopage122.htm" target="_blank">パソコンふぉあ障害者ず Gentoo Linux 2006.0(インストール-LiveCD-)</a>を参考に。変えたところはIPアドレスとかその辺のネットワーク設定周りと、ステージを3からにしたのと、CFLAGで-O3にしたぐらい。インストールが終わったら上部のメニューからrebootしてCD抜いて終わり。</p>
 
 <p>pingして外に繋がることを確認したら</p>
-
-<pre><code class="language-bash">emerge --sync
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">emerge --sync
+</pre></div>
 
 <p>してから、必要なものをガンガン入れるんだが、その前に</p>
-
-<pre><code class="language-bash">/etc/init.d/hdparm start
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">/etc/init.d/hdparm start
+</pre></div>
 
 <p>してDMAを有効にしておく。んでいい加減sshで繋いで作業したいので</p>
-
-<pre><code class="language-bash">nano -w /etc/ssh/sshd_config
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">nano -w /etc/ssh/sshd_config
+</pre></div>
 
 <p>で適切にsshを設定。</p>
-
-<pre><code class="language-text">PermitRootLogin no
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">PermitRootLogin no
 RSAAuthentication yes
 PubkeyAuthentication yes
 AuthorizedKeysFile .ssh/authorized_keys
 PasswordAuthentication no
 PermitEmptyPasswords no
 ChallengeResponseAuthentication no
-</code></pre>
+</pre></div>
 
 <p>とかそんな感じに。</p>
 
 <p>クライアントで鍵セットを作って、USBメモリでサーバに公開鍵を置く。マウントするのは</p>
-
-<pre><code class="language-bash">mkdir /mnt/usbmemory
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">mkdir /mnt/usbmemory
 mount -t vfat /dev/sdb1 /mnt/usbmemory
-</code></pre>
+</pre></div>
 
 <p>で、/mnt/usbmemoryが見えるようになる。後は公開鍵を置いてパーミッション変えればOK。</p>
-
-<pre><code class="language-bash">mkdir ~/.ssh
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">mkdir ~/.ssh
 cat /mnt/usbmemory/id_rsa &gt;&gt; ~/.ssh/authorized_keys
-chmod 700 ~/.ssh
-chmod 600 ~/.ssh/authorized_keys
-</code></pre>
+chmod <span style="color: #ae81ff">700</span> ~/.ssh
+chmod <span style="color: #ae81ff">600</span> ~/.ssh/authorized_keys
+</pre></div>
 
 <p>クライアントからsshで繋いでrootになって、ひたすら<code>emerge -av パッケージ名</code>。入れたパッケージは以下の通り。</p>
 
@@ -152,9 +146,8 @@ chmod 600 ~/.ssh/authorized_keys
 </ul>
 
 <p>keywordでmaskされてるとか怒られるやつは</p>
-
-<pre><code class="language-bash">ACCEPT_KEYWORDS=&quot;~amd64&quot; emerge -av パッケージ名
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f8f8f2">ACCEPT_KEYWORDS</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;~amd64&quot;</span> emerge -av パッケージ名
+</pre></div>
 
 <p>で入る。色々入れたり消したりしてるうちに依存関係がおかしくなったりしたときは、revdep-rebuildする。特定のライブラリに依存するもの、とかの指定もできる。</p>
 

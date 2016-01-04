@@ -105,34 +105,30 @@
 <p>[sourcecode language=&ldquo;bash&rdquo; padlinenumbers=&ldquo;2&rdquo;]
 localhost$ ssh -t gateway ssh dbserver
 dbserver$ mysql -uhoge -p</p>
-
-<pre><code>
-とかやらないといけなくて、めんどい。というかこれだとローカルの開発環境で、一時的にdbserverで動作してるMySQLのデータを使いたいときとか困る。ダンプしてローカルに持ってくればいいけど、データがものすごいデカかったりしてだるい。どうにかしたい。
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">とかやらないといけなくて、めんどい。というかこれだとローカルの開発環境で、一時的にdbserverで動作してるMySQLのデータを使いたいときとか困る。ダンプしてローカルに持ってくればいいけど、データがものすごいデカかったりしてだるい。どうにかしたい。
 
 というわけで、Port Forwardすればいいじゃないかと思って
 
 [sourcecode language=&quot;bash&quot; padlinenumbers=&quot;2&quot;]
 $ ssh -Nf -L 13306:dbserver:3306 gateway
-</code></pre>
+</pre></div>
 
 <p>とかして、</p>
 
 <p>[sourcecode language=&ldquo;text&rdquo; padlinenumbers=&ldquo;2&rdquo;]
 $ mysql -uhoge -p -P13306</p>
-
-<pre><code>
-これで勝つる！！！と思ったら、これでは繋がらない。でもtelnet localhost 13306とか叩いてみると繋がるように見える。
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">これで勝つる！！！と思ったら、これでは繋がらない。でもtelnet localhost 13306とか叩いてみると繋がるように見える。
 
 [sourcecode language=&quot;text&quot; padlinenumbers=&quot;2&quot;]
 $ telnet localhost 13306
 Trying 127.0.0.1...
 Connected to localhost.
-Escape character is '^]'.
+Escape character is &#39;^]&#39;.
 L
 5.5.8-log
          $;2)s.%n!
                   ?QV;dgXbeUZBymysql_native_password
-</code></pre>
+</pre></div>
 
 <p>なにこれどういうことなの、と思って色々試したり調べたりしていたら、答えは意外なところに。</p>
 

@@ -103,35 +103,34 @@
 <p>$(&ldquo;#piyopiyo&rdquo;).processTemplate(data) とかやると、id=&ldquo;piyopiyo&rdquo;な要素の内容が全部置き換わってしまうので、古いデータが消えてしまう。たとえばTwitterクライアントみたいなものを作ろうと思ったら、定期的に新しいtimelineをとってきたら、古いデータを残しつつ、新しいものだけ上に出てきてほしい。</p>
 
 <p>以下のようにすることで、id=&ldquo;piyo&rdquo;配下のclass=&ldquo;moge&rdquo;にデータがたまっていく。空のdivを一個用意して、そこにprocessTemplateで新しいデータを入れていく。<a href="http://twitter.com/hideaki_t/">@hideaki_t</a>、ありがとうございました。</p>
-
-<pre><code class="language-javascript">&lt;html&gt;
-  &lt;head&gt;
-    &lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-1.3.2.js&quot;&gt;&lt;/script&gt;
-    &lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery-jtemplates.js&quot;&gt;&lt;/script&gt;
-    &lt;script type=&quot;text/javascript&quot;&gt;
-    $(document).ready(function() {
-      hoge.count=1;
-      $(&quot;#piyo &gt; .moge &gt; div:first&quot;).setTemplate(&quot;{#foreach $T as r}&lt;div class='hogera'&gt;{$T.r.id}&lt;/div&gt;{#/for}&quot;);
-      hoge.show();
-      window.setInterval(function(){
-        hoge.show();
-      }, 5000);
-    });
-    var hoge = {
-      show:function() {
-        var data = &quot;[{id:&quot; + hoge.count++ + &quot;}]&quot;;
-        var t = $(&quot;#piyo &gt; .moge &gt; div:first&quot;);
-        t.after(t.children());
-        t.processTemplate(eval(data));
-      }
-    }
-    &lt;/script&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;div id=&quot;piyo&quot;&gt;&lt;div class=&quot;moge&quot;&gt;&lt;div /&gt;&lt;/div&gt;&lt;/div&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&lt;</span><span style="color: #a6e22e">html</span><span style="color: #f92672">&gt;</span>
+  <span style="color: #f92672">&lt;</span><span style="color: #a6e22e">head</span><span style="color: #f92672">&gt;</span>
+    <span style="color: #f92672">&lt;</span><span style="color: #a6e22e">script</span> <span style="color: #a6e22e">type</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;text/javascript&quot;</span> <span style="color: #a6e22e">src</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;js/jquery-1.3.2.js&quot;</span><span style="color: #f92672">&gt;&lt;</span><span style="color: #960050; background-color: #1e0010">/script&gt;</span>
+    <span style="color: #f92672">&lt;</span><span style="color: #a6e22e">script</span> <span style="color: #a6e22e">type</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;text/javascript&quot;</span> <span style="color: #a6e22e">src</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;js/jquery-jtemplates.js&quot;</span><span style="color: #f92672">&gt;&lt;</span><span style="color: #960050; background-color: #1e0010">/script&gt;</span>
+    <span style="color: #f92672">&lt;</span><span style="color: #a6e22e">script</span> <span style="color: #a6e22e">type</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;text/javascript&quot;</span><span style="color: #f92672">&gt;</span>
+    <span style="color: #a6e22e">$</span><span style="color: #f8f8f2">(document).</span><span style="color: #a6e22e">ready</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">function</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+      <span style="color: #a6e22e">hoge</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">count</span><span style="color: #f92672">=</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span>
+      <span style="color: #a6e22e">$</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;#piyo &gt; .moge &gt; div:first&quot;</span><span style="color: #f8f8f2">).</span><span style="color: #a6e22e">setTemplate</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;{#foreach $T as r}&lt;div class=&#39;hogera&#39;&gt;{$T.r.id}&lt;/div&gt;{#/for}&quot;</span><span style="color: #f8f8f2">);</span>
+      <span style="color: #a6e22e">hoge</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">show</span><span style="color: #f8f8f2">();</span>
+      <span style="color: #f8f8f2">window.</span><span style="color: #a6e22e">setInterval</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">function</span><span style="color: #f8f8f2">(){</span>
+        <span style="color: #a6e22e">hoge</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">show</span><span style="color: #f8f8f2">();</span>
+      <span style="color: #f8f8f2">},</span> <span style="color: #ae81ff">5000</span><span style="color: #f8f8f2">);</span>
+    <span style="color: #f8f8f2">});</span>
+    <span style="color: #66d9ef">var</span> <span style="color: #a6e22e">hoge</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">{</span>
+      <span style="color: #a6e22e">show</span><span style="color: #f92672">:</span><span style="color: #66d9ef">function</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+        <span style="color: #66d9ef">var</span> <span style="color: #a6e22e">data</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;[{id:&quot;</span> <span style="color: #f92672">+</span> <span style="color: #a6e22e">hoge</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">count</span><span style="color: #f92672">++</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;}]&quot;</span><span style="color: #f8f8f2">;</span>
+        <span style="color: #66d9ef">var</span> <span style="color: #a6e22e">t</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">$</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;#piyo &gt; .moge &gt; div:first&quot;</span><span style="color: #f8f8f2">);</span>
+        <span style="color: #a6e22e">t</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">after</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">t</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">children</span><span style="color: #f8f8f2">());</span>
+        <span style="color: #a6e22e">t</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">processTemplate</span><span style="color: #f8f8f2">(eval(</span><span style="color: #a6e22e">data</span><span style="color: #f8f8f2">));</span>
+      <span style="color: #f8f8f2">}</span>
+    <span style="color: #f8f8f2">}</span>
+    <span style="color: #f92672">&lt;</span><span style="color: #960050; background-color: #1e0010">/script&gt;</span>
+  <span style="color: #f92672">&lt;</span><span style="color: #960050; background-color: #1e0010">/head&gt;</span>
+  <span style="color: #f92672">&lt;</span><span style="color: #a6e22e">body</span><span style="color: #f92672">&gt;</span>
+    <span style="color: #f92672">&lt;</span><span style="color: #a6e22e">div</span> <span style="color: #a6e22e">id</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;piyo&quot;</span><span style="color: #f92672">&gt;&lt;</span><span style="color: #a6e22e">div</span> <span style="color: #66d9ef">class</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;moge&quot;</span><span style="color: #f92672">&gt;&lt;</span><span style="color: #a6e22e">div</span> <span style="color: #f92672">/&gt;&lt;</span><span style="color: #960050; background-color: #1e0010">/div&gt;&lt;/div&gt;</span>
+  <span style="color: #f92672">&lt;</span><span style="color: #960050; background-color: #1e0010">/body&gt;</span>
+<span style="color: #f92672">&lt;</span><span style="color: #960050; background-color: #1e0010">/html&gt;</span>
+</pre></div>
 
   </section>
   <hr>

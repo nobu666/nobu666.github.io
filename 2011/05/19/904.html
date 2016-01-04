@@ -107,14 +107,12 @@
 $ mysqldump -uroot -p wp -Q -c &ndash;opt &gt; dumpfile
 $ tar zcvf wordpress.tar.gz /var/www/wordpress
 $ tar zcvf ssh.tar.gz ~/.ssh</p>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">みたいな感じでバックアップ取って作業マシンにscpなりlftpなりで持ってきておく。必要なら/etc/my.cnfとか/etc/php.iniとか、ホームのドットファイル類も。
 
-<pre><code>
-みたいな感じでバックアップ取って作業マシンにscpなりlftpなりで持ってきておく。必要なら/etc/my.cnfとか/etc/php.iniとか、ホームのドットファイル類も。
+<span style="color: #f92672">&lt;h2&gt;</span>OS再インストール<span style="color: #f92672">&lt;/h2&gt;</span>
+VPSコントロールパネルにログインして、OS再インストール→カスタムOSインストール→ubuntu 10.04 amd64を選択→<span style="color: #f92672">&lt;a</span> <span style="color: #a6e22e">href=</span><span style="color: #e6db74">&quot;http://support.sakura.ad.jp/support/vps/menu_oscustom_ubuntu.shtml&quot;</span><span style="color: #f92672">&gt;</span>カスタムOSインストールガイド ： Ubuntu 10.04<span style="color: #f92672">&lt;/a&gt;</span>の通り進める。10分くらいありゃ終わる。
 
-&lt;h2&gt;OS再インストール&lt;/h2&gt;
-VPSコントロールパネルにログインして、OS再インストール→カスタムOSインストール→ubuntu 10.04 amd64を選択→&lt;a href=&quot;http://support.sakura.ad.jp/support/vps/menu_oscustom_ubuntu.shtml&quot;&gt;カスタムOSインストールガイド ： Ubuntu 10.04&lt;/a&gt;の通り進める。10分くらいありゃ終わる。
-
-&lt;h2&gt;SSHの設定&lt;/h2&gt;
+<span style="color: #f92672">&lt;h2&gt;</span>SSHの設定<span style="color: #f92672">&lt;/h2&gt;</span>
 何はともあれrootのパスワードとSSHの設定をリモートコンソールからやる。scpなりで、バックアップファイルを転送しとくこと。
 
 [sourcecode language=&quot;text&quot; padlinenumbers=&quot;2&quot;]
@@ -132,19 +130,17 @@ $ sudo vi /etc/ssh/sshd_config
 
 - #PasswordAuthentication yes
 + PasswordAuthentication no
-</code></pre>
+</pre></div>
 
 <p>ポートは変えなくてもいいけどお好みで。ポート変えたら/etc/servicesのSSHのとこを合わせて変更するのも忘れずに。</p>
 
 <p>[sourcecode language=&ldquo;text&rdquo; padlinenumbers=&ldquo;2&rdquo;]
 $ sudo sshd -t</p>
-
-<pre><code>
-でチェックして、エラーが出なければOKなので再起動
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">でチェックして、エラーが出なければOKなので再起動
 
 [sourcecode language=&quot;text&quot; padlinenumbers=&quot;2&quot;]
 $ sudo service ssh restart
-</code></pre>
+</pre></div>
 
 <p>ここで、もう一個ターミナル開いて問題なく接続できることを必ず確認。以降は普通に端末からSSHでつないで作業</p>
 

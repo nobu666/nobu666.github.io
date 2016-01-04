@@ -153,8 +153,7 @@
 <h3 id="directory-構成:6d5055e16bfca6fb1a3947c2e8ba0343">Directory 構成</h3>
 
 <p>基本的に <a href="https://github.com/itamae-kitchen/itamae/wiki/Best-Practice">Best Practice</a> 構成</p>
-
-<pre><code>.
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">.
 ├── ci
 ├── cookbooks -&gt; packer/cookbooks
 ├── fabfile
@@ -179,7 +178,7 @@
 │       └── packer
 ├── roles -&gt; packer/roles
 └── spec -&gt; packer/spec
-</code></pre>
+</pre></div>
 
 <ul>
 <li>nodes はインスタンス個別に yml を設定したいときにつかう想定…だったけど AutoScalingGroup 使い始めたこともあって使っていない</li>
@@ -213,9 +212,7 @@ forward: {
 </ul>
 
 <p>include_recipe &ldquo;default.rb&rdquo;</p>
-
-<pre><code>
-- default.rb
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">- default.rb
 ```ruby
 node.reverse_merge!({
   app_name: &quot;hogehoge&quot;,
@@ -242,7 +239,7 @@ node.reverse_merge!({
     dd_agent::fluentd
   },
 })
-</code></pre>
+</pre></div>
 
 <ul>
 <li>なんかこんな感じになっていて、 <code>itamae local bootstrap.rb</code> すると <code>bootstrap.rb</code> の中で、上述したようなタグに応じて適切に <code>include_recipe</code> してくれるという構成です</li>

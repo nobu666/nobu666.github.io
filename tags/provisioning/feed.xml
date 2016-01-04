@@ -59,8 +59,7 @@
 &lt;h3 id=&#34;directory-構成:6d5055e16bfca6fb1a3947c2e8ba0343&#34;&gt;Directory 構成&lt;/h3&gt;
 
 &lt;p&gt;基本的に &lt;a href=&#34;https://github.com/itamae-kitchen/itamae/wiki/Best-Practice&#34;&gt;Best Practice&lt;/a&gt; 構成&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;.
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;.
 ├── ci
 ├── cookbooks -&amp;gt; packer/cookbooks
 ├── fabfile
@@ -85,7 +84,7 @@
 │       └── packer
 ├── roles -&amp;gt; packer/roles
 └── spec -&amp;gt; packer/spec
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;nodes はインスタンス個別に yml を設定したいときにつかう想定…だったけど AutoScalingGroup 使い始めたこともあって使っていない&lt;/li&gt;
@@ -119,9 +118,7 @@ forward: {
 &lt;/ul&gt;
 
 &lt;p&gt;include_recipe &amp;ldquo;default.rb&amp;rdquo;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;
-- default.rb
+&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;- default.rb
 ```ruby
 node.reverse_merge!({
   app_name: &amp;quot;hogehoge&amp;quot;,
@@ -148,7 +145,7 @@ node.reverse_merge!({
     dd_agent::fluentd
   },
 })
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/pre&gt;&lt;/div&gt;
 
 &lt;ul&gt;
 &lt;li&gt;なんかこんな感じになっていて、 &lt;code&gt;itamae local bootstrap.rb&lt;/code&gt; すると &lt;code&gt;bootstrap.rb&lt;/code&gt; の中で、上述したようなタグに応じて適切に &lt;code&gt;include_recipe&lt;/code&gt; してくれるという構成です&lt;/li&gt;

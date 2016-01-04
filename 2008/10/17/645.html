@@ -99,17 +99,15 @@
   </header>
   <section>
     <p>jython2.2で<a href="http://www.icu-project.org/">icu4j</a>を試したかったんだけど、どうにもうまくいかない。</p>
-
-<pre><code class="language-python">&gt;&gt;&gt; from com.ibm.icu.text import Transliterator
-&gt;&gt;&gt; from java.lang import String
-&gt;&gt;&gt; print Transliterator.getInstance(&quot;Fullwidth-Halfwidth&quot;).transliterate(String(u&quot;テスト&quot;, &quot;UTF-8&quot;))
-???
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #f92672">from</span> <span style="color: #f8f8f2">com.ibm.icu.text</span> <span style="color: #f92672">import</span> <span style="color: #f8f8f2">Transliterator</span>
+<span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #f92672">from</span> <span style="color: #f8f8f2">java.lang</span> <span style="color: #f92672">import</span> <span style="color: #f8f8f2">String</span>
+<span style="color: #f92672">&gt;&gt;&gt;</span> <span style="color: #66d9ef">print</span> <span style="color: #f8f8f2">Transliterator</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">getInstance(</span><span style="color: #e6db74">&quot;Fullwidth-Halfwidth&quot;</span><span style="color: #f8f8f2">)</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">transliterate(String(</span><span style="color: #e6db74">u&quot;テスト&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;UTF-8&quot;</span><span style="color: #f8f8f2">))</span>
+<span style="color: #960050; background-color: #1e0010">???</span>
+</pre></div>
 
 <p>なんだよぅ…普通にJavaで書いてやるとうまくいくんだけど。表示時におかしいのかとファイルにリダイレクトしてみたり、いきなりprintしないで変数に入れたりいろいろ試してて、ふとtypeしてみたら</p>
-
-<pre><code class="language-python">&lt;type 'str'&gt;
-</code></pre>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">type</span> <span style="color: #e6db74">&#39;str&#39;</span><span style="color: #f92672">&gt;</span>
+</pre></div>
 
 <p>とな。&rsquo;\uff83\uff7d\uff84&rsquo;とかいうだたの文字列になってて、ちゃんとUnicodeになってないみたいだ。んんん…</p>
 

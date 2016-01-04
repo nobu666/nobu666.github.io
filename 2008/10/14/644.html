@@ -101,29 +101,27 @@
     <p><a href="http://aopen.jp/products/baresystem/ez965.html">XC Cube EZ965</a>にCent OS 5入れたんだけど、NICが認識されずにはまった。まぁそれ以前に、オンボードUSB殺さないとインストールすらできなかったんだけども。以下、動作させるまでの手順。</p>
 
 <p>USB殺してなんとかインストールしたものの、/etc/sysconfig/network-scripts/ifcfg-eth0 が存在しない。とりあえず作ってみる。</p>
-
-<pre><code class="language-text">DEVICE=eth0
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">DEVICE=eth0
 ONBOOT=yes
 IPADDR=x.x.x.x
 NETMASK=x.x.x.x
 GATEWAY=x.x.x.x
-</code></pre>
+</pre></div>
 
 <p>これでservice network startしてみるも、eth0: Device eth0 does not seem to be present, delaying initializationと怒られる。lspci|grep Ethernetとかすると見えてるので、ドライバがないことがわかった。Networkつながってないし、USB殺してるしで困ったわけだが、仕方ないので他のPCで<a href="http://www.realtek.com.tw/downloads/downloadsView.aspx?Langid=1&PNid=5&PFid=5&Level=5&Conn=4&DownTypeID=3&GetDown=false#RTL8111B/RTL8168B/RTL8111/RTL8168/RTL8111C">ドライバをダウンロード</a>してCD-Rに焼いた。</p>
-
-<pre><code class="language-bash">mkdir /mnt/cdrom
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">mkdir /mnt/cdrom
 mount /dev/cdrom /mnt/cdrom
 cp /mnt/cdrom/r8168-8.008.00.tar.bz2 .
 tar jxf r8168-8.008.00.tar.bz2
-cd r8168-8.008.00
+<span style="color: #f8f8f2">cd </span>r8168-8.008.00
 make clean modules
 make install
 depmod -a
 insmod ./src/r8168.ko
-lsmod | grep r8168
+lsmod <span style="color: #f8f8f2">|</span> grep r8168
 ifconfig eth0 up
 umount /mnt/cdrom
-</code></pre>
+</pre></div>
 
 <p>これで無事にeth0があがり、通信できるようになった。やれやれ。</p>
 
