@@ -25,12 +25,14 @@
 $ mysqldump -uroot -p wp -Q -c &amp;ndash;opt &amp;gt; dumpfile
 $ tar zcvf wordpress.tar.gz /var/www/wordpress
 $ tar zcvf ssh.tar.gz ~/.ssh&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;みたいな感じでバックアップ取って作業マシンにscpなりlftpなりで持ってきておく。必要なら/etc/my.cnfとか/etc/php.iniとか、ホームのドットファイル類も。
 
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;OS再インストール&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
-VPSコントロールパネルにログインして、OS再インストール→カスタムOSインストール→ubuntu 10.04 amd64を選択→&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;a&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;href=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;http://support.sakura.ad.jp/support/vps/menu_oscustom_ubuntu.shtml&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;カスタムOSインストールガイド ： Ubuntu 10.04&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;の通り進める。10分くらいありゃ終わる。
+&lt;pre&gt;&lt;code&gt;
+みたいな感じでバックアップ取って作業マシンにscpなりlftpなりで持ってきておく。必要なら/etc/my.cnfとか/etc/php.iniとか、ホームのドットファイル類も。
 
-&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;h2&amp;gt;&lt;/span&gt;SSHの設定&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/h2&amp;gt;&lt;/span&gt;
+&amp;lt;h2&amp;gt;OS再インストール&amp;lt;/h2&amp;gt;
+VPSコントロールパネルにログインして、OS再インストール→カスタムOSインストール→ubuntu 10.04 amd64を選択→&amp;lt;a href=&amp;quot;http://support.sakura.ad.jp/support/vps/menu_oscustom_ubuntu.shtml&amp;quot;&amp;gt;カスタムOSインストールガイド ： Ubuntu 10.04&amp;lt;/a&amp;gt;の通り進める。10分くらいありゃ終わる。
+
+&amp;lt;h2&amp;gt;SSHの設定&amp;lt;/h2&amp;gt;
 何はともあれrootのパスワードとSSHの設定をリモートコンソールからやる。scpなりで、バックアップファイルを転送しとくこと。
 
 [sourcecode language=&amp;quot;text&amp;quot; padlinenumbers=&amp;quot;2&amp;quot;]
@@ -48,17 +50,19 @@ $ sudo vi /etc/ssh/sshd_config
 
 - #PasswordAuthentication yes
 + PasswordAuthentication no
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;ポートは変えなくてもいいけどお好みで。ポート変えたら/etc/servicesのSSHのとこを合わせて変更するのも忘れずに。&lt;/p&gt;
 
 &lt;p&gt;[sourcecode language=&amp;ldquo;text&amp;rdquo; padlinenumbers=&amp;ldquo;2&amp;rdquo;]
 $ sudo sshd -t&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;でチェックして、エラーが出なければOKなので再起動
+
+&lt;pre&gt;&lt;code&gt;
+でチェックして、エラーが出なければOKなので再起動
 
 [sourcecode language=&amp;quot;text&amp;quot; padlinenumbers=&amp;quot;2&amp;quot;]
 $ sudo service ssh restart
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;ここで、もう一個ターミナル開いて問題なく接続できることを必ず確認。以降は普通に端末からSSHでつないで作業&lt;/p&gt;
 

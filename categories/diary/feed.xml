@@ -278,7 +278,9 @@ import org.apache.mahout.cf.taste.similarity.UserSimilarity;&lt;/p&gt;
         }
     }
 }&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;統計学の知識がないのでドキュメント読んでもよくわからなかったので、これであってるのかどうかはよくわからん。色々試して、LogLikelihoodSimilarityじゃないと点数のフィールドがねーから使えないよと怒られた。GenericUserBasedRecommenderはRecommenderってIFで受けるのが筋なんだろうけど、そうするとmostSimilarUserIDSメソッドが使えないのでそのままの型で受けてる。
+
+&lt;pre&gt;&lt;code&gt;
+統計学の知識がないのでドキュメント読んでもよくわからなかったので、これであってるのかどうかはよくわからん。色々試して、LogLikelihoodSimilarityじゃないと点数のフィールドがねーから使えないよと怒られた。GenericUserBasedRecommenderはRecommenderってIFで受けるのが筋なんだろうけど、そうするとmostSimilarUserIDSメソッドが使えないのでそのままの型で受けてる。
 
 mostSimilarUserIDsの第一引数が比較したいユーザID、第二引数が何人リコメンドするか。少ないデータで試して、期待する結果が返ってくるのは確認済み。んで大量のデータだとどうなんだろうと思って、以下のスクリプトで140万件のデータを作ってみた。
 
@@ -289,7 +291,7 @@ import string
 import random
 import sys
 
-if __name__ == &amp;#39;__main__&amp;#39;:
+if __name__ == &#39;__main__&#39;:
   for d in xrange(20110201, 20110229):
     idmap = []
     for i in xrange(50000):
@@ -301,8 +303,8 @@ if __name__ == &amp;#39;__main__&amp;#39;:
           break
         continue
       idmap.append(id)
-      print &amp;quot;insert into tbl values (&amp;#39;&amp;quot; + str(d) + &amp;quot;&amp;#39;,&amp;quot; + str(id) + &amp;quot;,&amp;quot; + str(random.randint(1,3*28)) + &amp;quot;);&amp;quot;
-&lt;/pre&gt;&lt;/div&gt;
+      print &amp;quot;insert into tbl values (&#39;&amp;quot; + str(d) + &amp;quot;&#39;,&amp;quot; + str(id) + &amp;quot;,&amp;quot; + str(random.randint(1,3*28)) + &amp;quot;);&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;こいつでSQLをつくってMySQLに食わせる。&lt;/p&gt;
 
@@ -342,11 +344,13 @@ text.replace(/(https?:\/\/(?:[^!&amp;ldquo;#$%&amp;amp;&amp;lsquo;()&lt;em&gt;+,
  }
 }
 )&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;実行すると
+
+&lt;pre&gt;&lt;code&gt;
+実行すると
 
 [sourcecode padlinenumbers=&amp;quot;2&amp;quot; language=&amp;quot;laguage=&amp;quot;]
-&amp;quot;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;a&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;screen_name&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;href=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;http://twitter.com/xyz&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;@xyz&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; aaa &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;a&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;url&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;href=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;http://aaa.com:8080/@abc#asdf&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;http://aaa.com:8080/@abc#asdf&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;a&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;url&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;href=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;http://日本語.jp/?abc&amp;amp;asdf&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;http://日本語.jp/?abc&lt;span style=&#34;color: #960050; background-color: #1e0010&#34;&gt;&amp;amp;&lt;/span&gt;asdf&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;a&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;url&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;href=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;http://example.jp/a.b.c@d.e&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;http://example.jp/a.b.c@d.e&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; bbb &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;a&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;screen_name&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;href=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;http://twitter.com/ccc&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;@ccc&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;/&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;a&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;screen_name&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;href=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;http://twitter.com/ddd&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;@ddd&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;/&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;a&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;screen_name&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;href=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;http://twitter.com/eee&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;@eee&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;a&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;hashtag&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;href=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;http://search.twitter.com/search?q=%23hash&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;#hash&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; #日本語だめ &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;a&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;hashtag&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;href=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;http://search.twitter.com/search?q=%23日本語おｋ_&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;#日本語おｋ_&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;a&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;class=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;url&amp;#39;&lt;/span&gt; &lt;span style=&#34;color: #a6e22e&#34;&gt;href=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;http://a.com/&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;&amp;gt;&lt;/span&gt;http://a.com/&lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;日本語&amp;quot;
-&lt;/pre&gt;&lt;/div&gt;
+&amp;quot;&amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/xyz&#39;&amp;gt;@xyz&amp;lt;/a&amp;gt; aaa &amp;lt;a class=&#39;url&#39; href=&#39;http://aaa.com:8080/@abc#asdf&#39;&amp;gt;http://aaa.com:8080/@abc#asdf&amp;lt;/a&amp;gt; &amp;lt;a class=&#39;url&#39; href=&#39;http://日本語.jp/?abc&amp;amp;amp;asdf&#39;&amp;gt;http://日本語.jp/?abc&amp;amp;amp;asdf&amp;lt;/a&amp;gt; &amp;lt;a class=&#39;url&#39; href=&#39;http://example.jp/a.b.c@d.e&#39;&amp;gt;http://example.jp/a.b.c@d.e&amp;lt;/a&amp;gt; bbb &amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/ccc&#39;&amp;gt;@ccc&amp;lt;/a&amp;gt;/&amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/ddd&#39;&amp;gt;@ddd&amp;lt;/a&amp;gt;/&amp;lt;a class=&#39;screen_name&#39; href=&#39;http://twitter.com/eee&#39;&amp;gt;@eee&amp;lt;/a&amp;gt; &amp;lt;a class=&#39;hashtag&#39; href=&#39;http://search.twitter.com/search?q=%23hash&#39;&amp;gt;#hash&amp;lt;/a&amp;gt; #日本語だめ &amp;lt;a class=&#39;hashtag&#39; href=&#39;http://search.twitter.com/search?q=%23日本語おｋ_&#39;&amp;gt;#日本語おｋ_&amp;lt;/a&amp;gt; &amp;lt;a class=&#39;url&#39; href=&#39;http://a.com/&#39;&amp;gt;http://a.com/&amp;lt;/a&amp;gt;日本語&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;という文字列になり、以下のようにほぼ思ったとおりのリンクになる&lt;/p&gt;
 

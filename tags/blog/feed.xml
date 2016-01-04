@@ -25,31 +25,32 @@
 &lt;h2 id=&#34;circle-yml:60091336f7408d77f4ebbe4dfdae639e&#34;&gt;circle.yml&lt;/h2&gt;
 
 &lt;p&gt;こんな感じに&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;machine:&lt;/span&gt;
-  &lt;span style=&#34;color: #f8f8f2&#34;&gt;timezone:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Asia&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Tokyo&lt;/span&gt;
 
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;checkout:&lt;/span&gt;
-  &lt;span style=&#34;color: #f8f8f2&#34;&gt;post:&lt;/span&gt;
-    &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;submodule&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;update&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;init&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;recursive&lt;/span&gt;
+&lt;pre&gt;&lt;code&gt;machine:
+  timezone: Asia/Tokyo
 
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;dependencies:&lt;/span&gt;
-  &lt;span style=&#34;color: #f8f8f2&#34;&gt;pre:&lt;/span&gt;
-    &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;go&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;get&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;v&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;github.com&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;spf13&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;hugo&lt;/span&gt;
-    &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;config&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;global&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;user.name&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;nobu666&amp;quot;&lt;/span&gt;
-    &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;config&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;global&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;user.email&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;ogata.nobu@gmail.com&amp;quot;&lt;/span&gt;
+checkout:
+  post:
+    - git submodule update --init --recursive
 
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;test:&lt;/span&gt;
-  &lt;span style=&#34;color: #f8f8f2&#34;&gt;override:&lt;/span&gt;
-   &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt;
+dependencies:
+  pre:
+    - go get -v github.com/spf13/hugo
+    - git config --global user.name &amp;quot;nobu666&amp;quot;
+    - git config --global user.email &amp;quot;ogata.nobu@gmail.com&amp;quot;
 
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;deployment:&lt;/span&gt;
-  &lt;span style=&#34;color: #f8f8f2&#34;&gt;master:&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;branch:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;master&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;commands:&lt;/span&gt;
-      &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git@github.com:nobu666&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;nobu666.github.io.git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;public&lt;/span&gt;
-      &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;hugo&lt;/span&gt;
-      &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;add&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;commit&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;m&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;[ci skip] publish&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color: #960050; background-color: #1e0010&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;eq&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;];&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;then&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;push&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;origin&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;master;&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;fi&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+test:
+  override:
+   - echo
+
+deployment:
+  master:
+    branch: master
+    commands:
+      - git clone git@github.com:nobu666/nobu666.github.io.git public
+      - hugo
+      - cd public &amp;amp;&amp;amp; git add . &amp;amp;&amp;amp; git commit -m &amp;quot;[ci skip] publish&amp;quot;; if [ $? -eq 0 ]; then git push origin master; else :; fi
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;test 部分はなんか書いとかないと warning が出てしまうので適当に。deployment のとこは、 README だけ変えたいときとかに &lt;code&gt;git commit&lt;/code&gt; が空振りしたエラーになるのを避けるため条件分岐している。&lt;/p&gt;
 

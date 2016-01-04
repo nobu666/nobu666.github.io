@@ -25,31 +25,32 @@
 &lt;h2 id=&#34;circle-yml:60091336f7408d77f4ebbe4dfdae639e&#34;&gt;circle.yml&lt;/h2&gt;
 
 &lt;p&gt;こんな感じに&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;machine:&lt;/span&gt;
-  &lt;span style=&#34;color: #f8f8f2&#34;&gt;timezone:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Asia&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Tokyo&lt;/span&gt;
 
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;checkout:&lt;/span&gt;
-  &lt;span style=&#34;color: #f8f8f2&#34;&gt;post:&lt;/span&gt;
-    &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;submodule&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;update&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;init&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;recursive&lt;/span&gt;
+&lt;pre&gt;&lt;code&gt;machine:
+  timezone: Asia/Tokyo
 
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;dependencies:&lt;/span&gt;
-  &lt;span style=&#34;color: #f8f8f2&#34;&gt;pre:&lt;/span&gt;
-    &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;go&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;get&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;v&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;github.com&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;spf13&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;hugo&lt;/span&gt;
-    &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;config&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;global&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;user.name&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;nobu666&amp;quot;&lt;/span&gt;
-    &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;config&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;global&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;user.email&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;ogata.nobu@gmail.com&amp;quot;&lt;/span&gt;
+checkout:
+  post:
+    - git submodule update --init --recursive
 
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;test:&lt;/span&gt;
-  &lt;span style=&#34;color: #f8f8f2&#34;&gt;override:&lt;/span&gt;
-   &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt;
+dependencies:
+  pre:
+    - go get -v github.com/spf13/hugo
+    - git config --global user.name &amp;quot;nobu666&amp;quot;
+    - git config --global user.email &amp;quot;ogata.nobu@gmail.com&amp;quot;
 
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;deployment:&lt;/span&gt;
-  &lt;span style=&#34;color: #f8f8f2&#34;&gt;master:&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;branch:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;master&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;commands:&lt;/span&gt;
-      &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git@github.com:nobu666&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;nobu666.github.io.git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;public&lt;/span&gt;
-      &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;hugo&lt;/span&gt;
-      &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;add&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;commit&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;m&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;[ci skip] publish&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color: #960050; background-color: #1e0010&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;eq&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;];&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;then&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;push&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;origin&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;master;&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;fi&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+test:
+  override:
+   - echo
+
+deployment:
+  master:
+    branch: master
+    commands:
+      - git clone git@github.com:nobu666/nobu666.github.io.git public
+      - hugo
+      - cd public &amp;amp;&amp;amp; git add . &amp;amp;&amp;amp; git commit -m &amp;quot;[ci skip] publish&amp;quot;; if [ $? -eq 0 ]; then git push origin master; else :; fi
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;test 部分はなんか書いとかないと warning が出てしまうので適当に。deployment のとこは、 README だけ変えたいときとかに &lt;code&gt;git commit&lt;/code&gt; が空振りしたエラーになるのを避けるため条件分岐している。&lt;/p&gt;
 
@@ -301,7 +302,8 @@
 &lt;h3 id=&#34;directory-構成:6d5055e16bfca6fb1a3947c2e8ba0343&#34;&gt;Directory 構成&lt;/h3&gt;
 
 &lt;p&gt;基本的に &lt;a href=&#34;https://github.com/itamae-kitchen/itamae/wiki/Best-Practice&#34;&gt;Best Practice&lt;/a&gt; 構成&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;.
+
+&lt;pre&gt;&lt;code&gt;.
 ├── ci
 ├── cookbooks -&amp;gt; packer/cookbooks
 ├── fabfile
@@ -326,7 +328,7 @@
 │       └── packer
 ├── roles -&amp;gt; packer/roles
 └── spec -&amp;gt; packer/spec
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
 &lt;li&gt;nodes はインスタンス個別に yml を設定したいときにつかう想定…だったけど AutoScalingGroup 使い始めたこともあって使っていない&lt;/li&gt;
@@ -360,7 +362,9 @@ forward: {
 &lt;/ul&gt;
 
 &lt;p&gt;include_recipe &amp;ldquo;default.rb&amp;rdquo;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;- default.rb
+
+&lt;pre&gt;&lt;code&gt;
+- default.rb
 ```ruby
 node.reverse_merge!({
   app_name: &amp;quot;hogehoge&amp;quot;,
@@ -387,7 +391,7 @@ node.reverse_merge!({
     dd_agent::fluentd
   },
 })
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
 &lt;li&gt;なんかこんな感じになっていて、 &lt;code&gt;itamae local bootstrap.rb&lt;/code&gt; すると &lt;code&gt;bootstrap.rb&lt;/code&gt; の中で、上述したようなタグに応じて適切に &lt;code&gt;include_recipe&lt;/code&gt; してくれるという構成です&lt;/li&gt;
@@ -463,24 +467,28 @@ node.reverse_merge!({
       <description>
 
 &lt;p&gt;例えば &lt;code&gt;.zshrc&lt;/code&gt; とかに &lt;code&gt;HOMEBREW_GITHUB_API_TOKEN&lt;/code&gt; をexportしてるけど、このファイルを人に見せることになると困る。回避方法としては &lt;code&gt;~/.github_token&lt;/code&gt; を別途作ってそっちに値を書き込んで置いて&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt; -f ~/.github_token &lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;then&lt;/span&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;if [ -f ~/.github_token ]; then
   . ~/.github_token
-&lt;span style=&#34;color: #66d9ef&#34;&gt;fi&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+fi
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;こんなふうにするという解決策もあるにはある。が、もうちょっとセキュアかつ簡単な方法はないものか、ということで以下のようにすると捗った&lt;/p&gt;
 
 &lt;h2 id=&#34;keychainに値を登録する:e1867217de400bc30fb87cf008200204&#34;&gt;Keychainに値を登録する&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;security add-generic-password -a homebrew-github-api-key -s homebrew-github-api-key -w XXXXXXXXXXXXXXX
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;security add-generic-password -a homebrew-github-api-key -s homebrew-github-api-key -w XXXXXXXXXXXXXXX
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;keychainから値をとりだす:e1867217de400bc30fb87cf008200204&#34;&gt;Keychainから値をとりだす&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;security find-generic-password -ga homebrew-github-api-key
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;security find-generic-password -ga homebrew-github-api-key
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;このままだと余計な情報もたくさん取れてきてしまうので、必要な部分だけ抜き出すようにする&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;security find-generic-password -ga homebrew-github-api-key 2&amp;gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt; &amp;gt;/dev/null &lt;span style=&#34;color: #f8f8f2&#34;&gt;|&lt;/span&gt; ruby -e &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;print $1 if STDIN.gets =~ /^password: &amp;quot;(.*)&amp;quot;$/&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;security find-generic-password -ga homebrew-github-api-key 2&amp;gt;&amp;amp;1 &amp;gt;/dev/null | ruby -e &#39;print $1 if STDIN.gets =~ /^password: &amp;quot;(.*)&amp;quot;$/&#39;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;これでファイルに直接書かないでよくなったので、.zshrcとかでexportするときも &lt;code&gt;$(security ...)&lt;/code&gt; をexportしてやればいい。うむ。&lt;/p&gt;
 </description>

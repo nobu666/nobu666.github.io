@@ -200,31 +200,32 @@
 &lt;h2 id=&#34;circle-yml:60091336f7408d77f4ebbe4dfdae639e&#34;&gt;circle.yml&lt;/h2&gt;
 
 &lt;p&gt;こんな感じに&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;machine:&lt;/span&gt;
-  &lt;span style=&#34;color: #f8f8f2&#34;&gt;timezone:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;Asia&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;Tokyo&lt;/span&gt;
 
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;checkout:&lt;/span&gt;
-  &lt;span style=&#34;color: #f8f8f2&#34;&gt;post:&lt;/span&gt;
-    &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;submodule&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;update&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;init&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;recursive&lt;/span&gt;
+&lt;pre&gt;&lt;code&gt;machine:
+  timezone: Asia/Tokyo
 
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;dependencies:&lt;/span&gt;
-  &lt;span style=&#34;color: #f8f8f2&#34;&gt;pre:&lt;/span&gt;
-    &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;go&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;get&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;v&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;github.com&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;spf13&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;hugo&lt;/span&gt;
-    &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;config&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;global&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;user.name&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;nobu666&amp;quot;&lt;/span&gt;
-    &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;config&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;--&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;global&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;user.email&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;ogata.nobu@gmail.com&amp;quot;&lt;/span&gt;
+checkout:
+  post:
+    - git submodule update --init --recursive
 
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;test:&lt;/span&gt;
-  &lt;span style=&#34;color: #f8f8f2&#34;&gt;override:&lt;/span&gt;
-   &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;echo&lt;/span&gt;
+dependencies:
+  pre:
+    - go get -v github.com/spf13/hugo
+    - git config --global user.name &amp;quot;nobu666&amp;quot;
+    - git config --global user.email &amp;quot;ogata.nobu@gmail.com&amp;quot;
 
-&lt;span style=&#34;color: #f8f8f2&#34;&gt;deployment:&lt;/span&gt;
-  &lt;span style=&#34;color: #f8f8f2&#34;&gt;master:&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;branch:&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;master&lt;/span&gt;
-    &lt;span style=&#34;color: #f8f8f2&#34;&gt;commands:&lt;/span&gt;
-      &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;clone&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git@github.com:nobu666&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;nobu666.github.io.git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;public&lt;/span&gt;
-      &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;hugo&lt;/span&gt;
-      &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;add&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;commit&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;m&lt;/span&gt; &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;[ci skip] publish&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color: #960050; background-color: #1e0010&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;eq&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;];&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;then&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;git&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;push&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;origin&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;master;&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;fi&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+test:
+  override:
+   - echo
+
+deployment:
+  master:
+    branch: master
+    commands:
+      - git clone git@github.com:nobu666/nobu666.github.io.git public
+      - hugo
+      - cd public &amp;amp;&amp;amp; git add . &amp;amp;&amp;amp; git commit -m &amp;quot;[ci skip] publish&amp;quot;; if [ $? -eq 0 ]; then git push origin master; else :; fi
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;test 部分はなんか書いとかないと warning が出てしまうので適当に。deployment のとこは、 README だけ変えたいときとかに &lt;code&gt;git commit&lt;/code&gt; が空振りしたエラーになるのを避けるため条件分岐している。&lt;/p&gt;
 
@@ -476,7 +477,8 @@
 &lt;h3 id=&#34;directory-構成:6d5055e16bfca6fb1a3947c2e8ba0343&#34;&gt;Directory 構成&lt;/h3&gt;
 
 &lt;p&gt;基本的に &lt;a href=&#34;https://github.com/itamae-kitchen/itamae/wiki/Best-Practice&#34;&gt;Best Practice&lt;/a&gt; 構成&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;.
+
+&lt;pre&gt;&lt;code&gt;.
 ├── ci
 ├── cookbooks -&amp;gt; packer/cookbooks
 ├── fabfile
@@ -501,7 +503,7 @@
 │       └── packer
 ├── roles -&amp;gt; packer/roles
 └── spec -&amp;gt; packer/spec
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
 &lt;li&gt;nodes はインスタンス個別に yml を設定したいときにつかう想定…だったけど AutoScalingGroup 使い始めたこともあって使っていない&lt;/li&gt;
@@ -535,7 +537,9 @@ forward: {
 &lt;/ul&gt;
 
 &lt;p&gt;include_recipe &amp;ldquo;default.rb&amp;rdquo;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;- default.rb
+
+&lt;pre&gt;&lt;code&gt;
+- default.rb
 ```ruby
 node.reverse_merge!({
   app_name: &amp;quot;hogehoge&amp;quot;,
@@ -562,7 +566,7 @@ node.reverse_merge!({
     dd_agent::fluentd
   },
 })
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;ul&gt;
 &lt;li&gt;なんかこんな感じになっていて、 &lt;code&gt;itamae local bootstrap.rb&lt;/code&gt; すると &lt;code&gt;bootstrap.rb&lt;/code&gt; の中で、上述したようなタグに応じて適切に &lt;code&gt;include_recipe&lt;/code&gt; してくれるという構成です&lt;/li&gt;
@@ -638,24 +642,28 @@ node.reverse_merge!({
       <description>
 
 &lt;p&gt;例えば &lt;code&gt;.zshrc&lt;/code&gt; とかに &lt;code&gt;HOMEBREW_GITHUB_API_TOKEN&lt;/code&gt; をexportしてるけど、このファイルを人に見せることになると困る。回避方法としては &lt;code&gt;~/.github_token&lt;/code&gt; を別途作ってそっちに値を書き込んで置いて&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;[&lt;/span&gt; -f ~/.github_token &lt;span style=&#34;color: #f92672&#34;&gt;]&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;then&lt;/span&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;if [ -f ~/.github_token ]; then
   . ~/.github_token
-&lt;span style=&#34;color: #66d9ef&#34;&gt;fi&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+fi
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;こんなふうにするという解決策もあるにはある。が、もうちょっとセキュアかつ簡単な方法はないものか、ということで以下のようにすると捗った&lt;/p&gt;
 
 &lt;h2 id=&#34;keychainに値を登録する:e1867217de400bc30fb87cf008200204&#34;&gt;Keychainに値を登録する&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;security add-generic-password -a homebrew-github-api-key -s homebrew-github-api-key -w XXXXXXXXXXXXXXX
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;security add-generic-password -a homebrew-github-api-key -s homebrew-github-api-key -w XXXXXXXXXXXXXXX
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;keychainから値をとりだす:e1867217de400bc30fb87cf008200204&#34;&gt;Keychainから値をとりだす&lt;/h2&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;security find-generic-password -ga homebrew-github-api-key
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;security find-generic-password -ga homebrew-github-api-key
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;このままだと余計な情報もたくさん取れてきてしまうので、必要な部分だけ抜き出すようにする&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;security find-generic-password -ga homebrew-github-api-key 2&amp;gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt; &amp;gt;/dev/null &lt;span style=&#34;color: #f8f8f2&#34;&gt;|&lt;/span&gt; ruby -e &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;#39;print $1 if STDIN.gets =~ /^password: &amp;quot;(.*)&amp;quot;$/&amp;#39;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;security find-generic-password -ga homebrew-github-api-key 2&amp;gt;&amp;amp;1 &amp;gt;/dev/null | ruby -e &#39;print $1 if STDIN.gets =~ /^password: &amp;quot;(.*)&amp;quot;$/&#39;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;これでファイルに直接書かないでよくなったので、.zshrcとかでexportするときも &lt;code&gt;$(security ...)&lt;/code&gt; をexportしてやればいい。うむ。&lt;/p&gt;
 </description>
@@ -906,9 +914,10 @@ node.reverse_merge!({
 
 &lt;p&gt;&lt;h2&gt;とりあえずinstallする&lt;/h2&gt;
 先ほどの&lt;a href=&#34;http://wiki.opscode.com/display/chef/Chef+11+Server+Preview&#34; title=&#34;Chef11&#34;&gt;Chef11&lt;/a&gt;のWikiにある、Quick Startをみて、Platformにあったパッケージをダウンロード。もしくは&lt;a href=&#34;http://www.opscode.com/chef/install/&#34; title=&#34;Install Chef&#34;&gt;Install Chef&lt;/a&gt;というページからダウンロード。Debian6でやりましたが、Ubuntu12用のパッケージではうまく動きませんでしたので、Ubuntu10用のを使いました。11のは知らん。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;# wget https://opscode-omnitruck-release.s3.amazonaws.com/ubuntu/10.04/x86_64/chef-server_11.0.6-1.ubuntu.10.04_amd64.deb
+
+&lt;pre&gt;&lt;code&gt;# wget https://opscode-omnitruck-release.s3.amazonaws.com/ubuntu/10.04/x86_64/chef-server_11.0.6-1.ubuntu.10.04_amd64.deb
 # dpkg -i chef-server_11.0.6-1.ubuntu.10.04_amd64.deb
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;PrimaryとSecondary、2台のサーバーに入れましょう。&lt;/p&gt;
 
@@ -917,8 +926,9 @@ PostgreSQLはほとんど知らないし、Chef11のパッケージは /opt/chef
 
 &lt;p&gt;&lt;h3&gt;Primaryの設定&lt;/h3&gt;
 設定ファイルは /var/opt/chef-server/postgresql/data 以下にあります。まずアクセス許可。SECONDARY_SERVER_IPADDRESSは任意に読み替えてください。サブネットマスクまで必須です。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;# echo &amp;quot;host replication repl_user SECONDARY_SERVER_IPADDRESS/0 trust&amp;quot; &amp;gt;&amp;gt; /var/opt/chef-server/postgresql/data/pg_hba.conf
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;# echo &amp;quot;host replication repl_user SECONDARY_SERVER_IPADDRESS/0 trust&amp;quot; &amp;gt;&amp;gt; /var/opt/chef-server/postgresql/data/pg_hba.conf
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;次にReplicationの設定。/var/opt/chef-server/postgresql/data/postgresql.conf をエディタで開いて、以下のようにします。hot_standby = onの設定はここでは意味が無いですが、あとでこのファイルがそのままSecondary側にコピーされるのでここで変えておいて問題ないです。
 &lt;ul&gt;
@@ -929,27 +939,32 @@ PostgreSQLはほとんど知らないし、Chef11のパッケージは /opt/chef
 &lt;/ul&gt;&lt;/p&gt;
 
 &lt;p&gt;次にPostgreSQLのシェルに入ってユーザーを作りますが、opscode-pgsqlユーザーにならないとシェルに入れないので面倒です。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;# su opscode-pgsql -
-$ pgsql postgres -c &amp;quot;CREATE ROLE repl_user LOGIN REPLICATION PASSWORD &amp;#39;P@ssw0Rd&amp;#39;&amp;quot;
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;# su opscode-pgsql -
+$ pgsql postgres -c &amp;quot;CREATE ROLE repl_user LOGIN REPLICATION PASSWORD &#39;P@ssw0Rd&#39;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;ここまでやったらPostgreSQLを再起動。Chef11のコンポーネントたちは、daemontoolsの下で動いているので普通には再起動できません。が、専用の管理コマンドが用意されているのでそいつを使います。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;# chef-server-ctl restart postgresql
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;# chef-server-ctl restart postgresql
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;h3&gt;Secondaryの設定&lt;/h3&gt;
 Primaryからdebファイルをscpするなりこっちでもwgetするなりして、dpkg -iまでは一緒。installが終わったらPostgreSQLまわりの掃除をします。とりあえず止めて、消す。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;# chef-server-ctl stop postgresql
+
+&lt;pre&gt;&lt;code&gt;# chef-server-ctl stop postgresql
 # rm -rf /var/opt/chef-server/postgresql/data
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;消したらPrimaryからデータを持ってきます。PRIMARY_SERVER_IPADDRESSは任意に読み替えてください。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;# /opt/chef-server/embedded/bin/pg_basebackup -x -p 5432 -h PRIMARY_SERVER_IPADDRESS -U repl_user -W -D /var/opt/chef-server/postgresql/data --progress --verbose
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;# /opt/chef-server/embedded/bin/pg_basebackup -x -p 5432 -h PRIMARY_SERVER_IPADDRESS -U repl_user -W -D /var/opt/chef-server/postgresql/data --progress --verbose
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;終わったらrecovery.confを作ります。sampleからコピって書き換えます。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;# cp /opt/chef-server/embedded/share/postgresql/recovery.conf.sample /var/opt/chef-server/postgresql/data/recovery.conf
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;# cp /opt/chef-server/embedded/share/postgresql/recovery.conf.sample /var/opt/chef-server/postgresql/data/recovery.conf
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;/var/opt/chef-server/postgresql/data/recovery.conf で最低限以下のようにいじる。application_nameは別になんでもいいっぽいです。
 &lt;ul&gt;
@@ -958,22 +973,26 @@ Primaryからdebファイルをscpするなりこっちでもwgetするなりし
 &lt;/ul&gt;&lt;/p&gt;
 
 &lt;p&gt;あとはrootで作業してしまったのでownerを変えて起動。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;# chown -R opscode-pgsql:opscode-pgsql /var/opt/chef-server/postgresql/data
+
+&lt;pre&gt;&lt;code&gt;# chown -R opscode-pgsql:opscode-pgsql /var/opt/chef-server/postgresql/data
 # chef-server-ctl start postgresql
-&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;chef-server-ctl tailでログをみたり、chef-server-ctl statusでpostgresqlがrunになっていることを確認できればOKです。また、Primary側で以下のコマンドを叩くことでも確認できます。stateがstreamingになっていればOK。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$ &lt;/span&gt;sudo -u opscode-pgsql psql opscode_chef -c &lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;SELECT * FROM pg_stat_replication&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo -u opscode-pgsql psql opscode_chef -c &amp;quot;SELECT * FROM pg_stat_replication&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;念のためSolrのindexは作りなおしておいたほうがいいです。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;# chef-server-ctl reindex
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;# chef-server-ctl reindex
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;h2&gt;切り替える&lt;/h2&gt;
 さてフェイルオーバーさせてみます。いくつか方法がありますが、とりあえず手動でやります。Secondary側で、opscode-pgsqlユーザーで操作します。SecondaryはRead-Onlyなので、 CREATE TABLE test (i integer) とかやって失敗→切り替え→もっかいやったら成功、でPrimaryになったことを確認できます。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;$ &lt;/span&gt;/opt/chef-server/embedded/bin/pg_ctl promote -D /var/opt/chef-server/postgresql/data
-&lt;/pre&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code&gt;$ /opt/chef-server/embedded/bin/pg_ctl promote -D /var/opt/chef-server/postgresql/data
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;こんだけ。また2台構成に戻すには、同じ事をやってやればいいはずです。が、時間経ちすぎてWALファイルがなくなっちゃったとか、転送前にコケてて欠落してるとか、そういう場合はその限りではありません。ていうかそれはChefと関係ないんでそっち方面のマニュアルみるなり調べるなりしてください。&lt;/p&gt;
 </description>

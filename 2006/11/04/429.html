@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="http://nobu666.com/css/font-awesome.min.css" />
   <link rel="stylesheet" href="http://nobu666.com/css/github.css" />
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/monokai-sublime.min.css">
   <link rel="shortcut icon" href="http://nobu666.com/images/favicon.ico" />
   <link rel="apple-touch-icon" href="http://nobu666.com/images/apple-touch-icon.png" />
   
@@ -102,62 +103,69 @@
 
 <p><h4>インストール</h4>
 とりあえずダウンロードして、/var/www/localhost/rep2とかに置く。apacheは当然SSL有効でコンパイルしておくこと。phpはやたらに使用可能なフラグが多いのでメモっておく。</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">emerge -pv php
+
+<pre><code class="language-bash">emerge -pv php
 
 These are the packages that would be merged, in order:
 
-Calculating dependencies... <span style="color: #66d9ef">done</span>!
-<span style="color: #f92672">[</span>ebuild   R   <span style="color: #f92672">]</span> dev-lang/php-5.1.6-r6  <span style="color: #f8f8f2">USE</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;apache2 bzip2 cjk cli crypt curl curlwrappers gd iconv mysql ncurses nls pcre readline sasl session spell ssl threads unicode xml xmlrpc zlib (-adabas) -apache -bcmath -berkdb (-birdstep) -calendar -cdb -cgi -concurrentmodphp -ctype -db2 -dbase (-dbmaker) -debug -discard-path -doc (-empress) (-empress-bcs) (-esoob) -exif -fastbuild (-fdftk) (-filepro) (-firebird) -flatfile -force-cgi-redirect (-frontbase) -ftp -gd-external -gdbm -gmp -hardenedphp -hash -hyperwave-api -imap (-informix) -inifile -interbase -iodbc -ipv6 -java-external -kerberos -ldap -libedit -mcve -memlimit -mhash -ming -msql -mssql -mysqli -oci8 (-oci8-instant-client) -odbc -pcntl -pdo -pdo-external -pic -posix -postgres -qdbm -recode -reflection -sapdb -sharedext -sharedmem -simplexml -snmp -soap -sockets (-solid) -spl -sqlite (-sybase) (-sybase-ct) -sysvipc -tidy -tokenizer -truetype -vm-goto -vm-switch -wddx -xmlreader -xmlwriter -xpm -xsl -yaz -zip&quot;</span> <span style="color: #ae81ff">0</span> kB
-</pre></div>
+Calculating dependencies... done!
+[ebuild   R   ] dev-lang/php-5.1.6-r6  USE=&quot;apache2 bzip2 cjk cli crypt curl curlwrappers gd iconv mysql ncurses nls pcre readline sasl session spell ssl threads unicode xml xmlrpc zlib (-adabas) -apache -bcmath -berkdb (-birdstep) -calendar -cdb -cgi -concurrentmodphp -ctype -db2 -dbase (-dbmaker) -debug -discard-path -doc (-empress) (-empress-bcs) (-esoob) -exif -fastbuild (-fdftk) (-filepro) (-firebird) -flatfile -force-cgi-redirect (-frontbase) -ftp -gd-external -gdbm -gmp -hardenedphp -hash -hyperwave-api -imap (-informix) -inifile -interbase -iodbc -ipv6 -java-external -kerberos -ldap -libedit -mcve -memlimit -mhash -ming -msql -mssql -mysqli -oci8 (-oci8-instant-client) -odbc -pcntl -pdo -pdo-external -pic -posix -postgres -qdbm -recode -reflection -sapdb -sharedext -sharedmem -simplexml -snmp -soap -sockets (-solid) -spl -sqlite (-sybase) (-sybase-ct) -sysvipc -tidy -tokenizer -truetype -vm-goto -vm-switch -wddx -xmlreader -xmlwriter -xpm -xsl -yaz -zip&quot; 0 kB
+</code></pre>
 
 <p>rep2はPEARモジュールのいくつかが必須なので、PEARもと必須モジュールを入れる。eixで見つからなかったものはpearコマンドで入れ、見つかったものはemergeで入れた。</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">emerge PEAR-PEAR
+
+<pre><code class="language-bash">emerge PEAR-PEAR
 pear install Net_UserAgent_Mobile-beta
 pear install PHP_Compat
 emerge PEAR-HTTP_Request
 emerge PEAR-Pager
 emerge PEAR-File
-</pre></div>
+</code></pre>
 
 <p><h4>phpの設定</h4>
 /etc/php/apache2-php5/php.iniの次のコメントアウトを外す。</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">[mbstring]
+
+<pre><code class="language-php">[mbstring]
 mbstring.internal_encoding = EUC-JP
 mbstring.http_input = auto
 mbstring.http_output = EUC-JP
 mbstring.detect_order = auto
 mbstring.substitute_character = none;
-</pre></div>
+</code></pre>
 
 <p><h4>apacheの設定</h4>
 SSLを使うため、認証局と証明書が必要。<a href="http://nobu666.com/2006/10/29/000423.html">[修正版][memo] postfix + dovecotでSMTP AUTH &amp; IMAPなメールサーバを立ち上げる</a>で作成したものがあるのでそれを流用する。</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">cp -p /etc/ssl/postfix/server.crt /etc/apache2/ssl/ 
+
+<pre><code class="language-bash">cp -p /etc/ssl/postfix/server.crt /etc/apache2/ssl/ 
 cp -p /etc/ssl/postfix/server.key /etc/apache2/ssl/
-</pre></div>
+</code></pre>
 
 <p>次にBasic認証に使う.htaccessをフォルダで上書きできるようにしておくため、/etc/apache2/modules.d/41_mod_ssl.default-vhost.confと/etc/apache2/vhosts.d/00_default_vhost.confの<directory "/var/www/localhost/htdocs">部分を以下のように設定する。</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span style="color: #f92672">&lt;directory</span> <span style="color: #960050; background-color: #1e0010">&quot;/var/www/localhost/htdocs&quot;</span><span style="color: #f92672">&gt;</span>
+
+<pre><code class="language-xml">&lt;directory &quot;/var/www/localhost/htdocs&quot;&gt;
     Options FollowSymLinks
     AllowOverride AuthConfig
-<span style="color: #f92672">&lt;/directory&gt;</span>
-</pre></div>
+&lt;/directory&gt;
+</code></pre>
 
 <p><h4>.htaccessの設定</h4>
 /var/www/localhost/htdocs/rep2に.htaccessを作成(サイト全体に認証をかけたいならhtdocsの下でも可)。</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">vi /var/www/localhost/htdocs/rep2/.htaccess
- AuthName <span style="color: #e6db74">&quot;User Authentication Required&quot;</span>
+
+<pre><code class="language-bash">vi /var/www/localhost/htdocs/rep2/.htaccess
+ AuthName &quot;User Authentication Required&quot;
  AuthType Basic
  Require valid-user
  AuthUserFile /etc/apache2/.htpasswd
 htpasswd2 -c /etc/apache2/.htpasswd ユーザ名
-</pre></div>
+</code></pre>
 
 <p><h4>apacheの起動パラメータ</h4>
 gentooのapacheは、有効にしたいモジュールを明示しないといけないので、/etc/conf.d/apache2を修正。</p>
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">vi /etc/conf.d/apache2
- <span style="color: #f8f8f2">APACHE2_OPTS</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;-D SSL -D PHP5 -D DEFAULT_VHOST -D SSL_DEFAULT_VHOST&quot;</span>
+
+<pre><code class="language-bash">vi /etc/conf.d/apache2
+ APACHE2_OPTS=&quot;-D SSL -D PHP5 -D DEFAULT_VHOST -D SSL_DEFAULT_VHOST&quot;
 /etc/init.d/apache2 restart
-</pre></div>
+</code></pre>
 
 <p>これで　https://ホスト名:443/rep2/　に行けばユーザ名とパスワードが聞かれるはず。念のため携帯からもアクセスして問題なく認証できれば万事OK。ただ携帯でパスワードを入力するのは面倒なので、どうにか携帯の固有IDでパスできないか調べ中。auだとHTTP_X_UP_SUBNOで取れるみたいなんだが…</p>
 
@@ -270,10 +278,8 @@ gentooのapacheは、有効にしたいモジュールを明示しないとい�
 
   </footer>
 
-  <script src="http://nobu666.com/js/highlight.pack.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad();
-  </script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
   
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
