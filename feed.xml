@@ -7,8 +7,61 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
     <copyright>&amp;copy; nobu666.com</copyright>
-    <lastBuildDate>Mon, 04 Jan 2016 01:21:45 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 09 Jan 2016 18:43:58 +0900</lastBuildDate>
     <atom:link href="http://nobu666.com/feed.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>iPhone から Android へ本格移行してから 2ヶ月ほど使ってみて思ったこと</title>
+      <link>http://nobu666.com/2016/01/09/1026.html</link>
+      <pubDate>Sat, 09 Jan 2016 18:43:58 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2016/01/09/1026.html</guid>
+      <description>
+
+&lt;h1 id=&#34;tl-dr:624bc8c2a4a71c62dbb43a4e1f38dc53&#34;&gt;TL;DR&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://nobu666.com/2015/09/16/1017.html&#34;&gt;iPhone5sからiPod touchへ&lt;/a&gt; というエントリーに書いたように、 4 から 3 台ほど使ってきた iPhone をやめてみたのだが、やはり iPod では不満な点が多く、いっそのこと Android のほうを買い換えてそっちをメインにしよう、ということでメインを Nexus 6P にしたら困ることは特になかった。&lt;/p&gt;
+
+&lt;h1 id=&#34;nexus-6p:624bc8c2a4a71c62dbb43a4e1f38dc53&#34;&gt;Nexus 6P&lt;/h1&gt;
+
+&lt;p&gt;どうせなら Android 6 の端末がいいよなぁということで、この時点で Nexus 5X か Nexus 6P がどっちかしかない。 5X は周りで買うと言ってる人もいたし、画面の大きさについては iPhone 6 Plus を触らせてもらって、コレならいけるかなという感覚があったので Nexus 6P に。&lt;/p&gt;
+
+&lt;h2 id=&#34;os:624bc8c2a4a71c62dbb43a4e1f38dc53&#34;&gt;OS&lt;/h2&gt;
+
+&lt;p&gt;Android はとても進化している。以前が鼻くそすぎて、「更生した不良が偉い」みたいな感じもなきにしもあらずだが。&lt;/p&gt;
+
+&lt;h2 id=&#34;sim:624bc8c2a4a71c62dbb43a4e1f38dc53&#34;&gt;SIM&lt;/h2&gt;
+
+&lt;p&gt;せっかくの SIM フリー端末なのだから、MVNO 使って安く済ませようと計画して各社の調査を進めていた。が、いざドコモへ行って MNP しようと思ったら、家の光回線がドコモ契約なので、契約してる端末が1つでも残っていないと、家の回線も解約になってしまうと判明。なんというベンダーロックイン…… しかたないのでマイクロ SIM をナノ SIM に交換してもらってそのまま継続。&lt;/p&gt;
+
+&lt;h2 id=&#34;サイズ:624bc8c2a4a71c62dbb43a4e1f38dc53&#34;&gt;サイズ&lt;/h2&gt;
+
+&lt;p&gt;大は小を兼ねる。コミックを Kindle アプリで読む時など、画面の大きさそのまま満足度になると言っても過言ではない。が、 Wi-Fi の ON/OFF 切り替えたり、通知を観たい時に画面一番上を操作する必要があり、流石に素の状態だと指が届かない。頑張って届かせようとすると、人差し指と中指で本体を安定させた上で親指を移動することになる。出来なくはないのだがとても不安定で怖いので、バンカーリングを使っている。&lt;/p&gt;
+
+&lt;div class=&#34;kaerebalink-box&#34;&gt;&lt;div class=&#34;kaerebalink-image&#34;&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B009GETF2A/realbeat-22/ref=nosim/&#34; target=&#34;_blank&#34; &gt;&lt;img src=&#34;http://ecx.images-amazon.com/images/I/419%2BhiaQlKL._SL160_.jpg&#34; style=&#34;border: none;&#34; /&gt;&lt;/a&gt;&lt;/div&gt;&lt;div class=&#34;kaerebalink-info&#34;&gt;&lt;div class=&#34;kaerebalink-name&#34;&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B009GETF2A/realbeat-22/ref=nosim/&#34; target=&#34;_blank&#34; &gt;BUNKER RING 3 (全5色) バンカーリング  iPhone/iPad/iPod/Galaxy/Xperia/スマートフォン・タブレットPCを指1本で保持・落下防止・スタンド機能(ブラック)&lt;/a&gt;&lt;div class=&#34;kaerebalink-powered-date&#34;&gt;posted with &lt;a href=&#34;http://kaereba.com&#34; rel=&#34;nofollow&#34; target=&#34;_blank&#34;&gt;カエレバ&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;kaerebalink-detail&#34;&gt; i&amp;PLUS     &lt;/div&gt;&lt;div class=&#34;kaerebalink-link1&#34;&gt;&lt;div class=&#34;shoplinkamazon&#34;&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/search?keywords=%83o%83%93%83J%81%5B%83%8A%83%93%83O&amp;__mk_ja_JP=%83J%83%5E%83J%83i&amp;tag=realbeat-22&#34; target=&#34;_blank&#34; &gt;Amazon&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;booklink-footer&#34;&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;背面の &lt;code&gt;nexus&lt;/code&gt; という文字が見事に見えなくなってしまうものの、安定感はとても増した。位置決めのときは&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;指紋センサーに人差し指が当たらないか&lt;/li&gt;
+&lt;li&gt;電源ボタンに触ってしまわないか&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;上記2点はちゃんと確認したほうがよい。&lt;/p&gt;
+
+&lt;h2 id=&#34;アプリ:624bc8c2a4a71c62dbb43a4e1f38dc53&#34;&gt;アプリ&lt;/h2&gt;
+
+&lt;p&gt;使っていたアプリの中で iPhone にしかないアプリというのが殆どなかったため、特に問題なし。唯一 &lt;a href=&#34;https://itunes.apple.com/jp/app/tmbrtext-for-tumblr/id520093864?mt=8&#34;&gt;tmbrtext&lt;/a&gt; という Tumblr アプリが使えなくなるのは痛かった。しかしいくつか試した中で &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.tumblrunning&amp;amp;hl=ja&#34;&gt;tumblrunning&lt;/a&gt; なるものに出会い、これを使っている。 Queue に入れたり、複数の Blog を使い分け出来たりするので優秀。 &amp;ldquo;同じ記事をスキップ&amp;rdquo; という項目が設定にあるので、それをつけておけば快適になった。&lt;/p&gt;
+
+&lt;h2 id=&#34;カメラ:624bc8c2a4a71c62dbb43a4e1f38dc53&#34;&gt;カメラ&lt;/h2&gt;
+
+&lt;p&gt;Android のカメラはクソばかりだと思っていたが、相当健闘している。 iPhone6s と比較しても十分戦える。写真は暗いところでもかなりよく映るし、色の出方やホワイトバランスも自然だ。ただ、動画に関しては正直イマイチ。あと手ぶれ補正がないので、そこは注意が必要だ。&lt;/p&gt;
+
+&lt;h2 id=&#34;バッテリー:624bc8c2a4a71c62dbb43a4e1f38dc53&#34;&gt;バッテリー&lt;/h2&gt;
+
+&lt;p&gt;十分に1日持つ容量だが、特筆すべきは充電の速さだ。USB Type-C 恐るべし。感動する速さで充電が終わる。ワイヤレス充電には対応していないので、そこはちょっと残念。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>CANON EOS 6D と EF24-105mm F4L IS USM を買った</title>
@@ -897,106 +950,6 @@ fi
 &lt;p&gt;他の方の発表がどういう感じだったのかという辺りは、『&lt;a href=&#34;http://shinodogg.com/?p=5098&#34; title=&#34;第10回Solr勉強会 at VOYAGE GROUPに行ってきました&#34;&gt;第10回Solr勉強会 at VOYAGE GROUPに行ってきました&lt;/a&gt;』『&lt;a href=&#34;http://johtani.jugem.jp/?eid=124&#34; title=&#34;第10回Solr勉強会を主催しました。#SolrJP&#34;&gt;第10回Solr勉強会を主催しました。#SolrJP&lt;/a&gt;』このあたりをご参照いただければ。&lt;/p&gt;
 
 &lt;p&gt;懇親会でもいろいろな方とお話しさせていただいて大変刺激を受けましたので、検索周りでなにか新しいことにチャレンジする機会があればぜひフィードバックしていきたいな思いました。Solr CloudやらElastic Searchやら最近おもしろいものが出てきていますし、Solr単体でもまだ色々工夫のしがいがあるところだと思いますので精進しようと思います。参加されたみなさまお疲れ様でした。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Chef11のchef-serverをHA構成にする</title>
-      <link>http://nobu666.com/2013/03/13/985.html</link>
-      <pubDate>Wed, 13 Mar 2013 15:36:50 +0900</pubDate>
-      
-      <guid>http://nobu666.com/2013/03/13/985.html</guid>
-      <description>&lt;h1&gt;Chef11のchef-serverをHA構成にする&lt;/h1&gt;
-
-&lt;h2&gt;はじめに&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://wiki.opscode.com/display/chef/Chef+11+Server+Preview&#34; title=&#34;Chef11&#34;&gt;Chef11&lt;/a&gt;はいままでのChefとはserverの構成がガラリと変わり、APIがRubyからErlangに、バックエンドのCouchDBがPostgreSQLになりました。その他はフロントエンドには&lt;a href=&#34;http://nginx.org/&#34; title=&#34;nginx&#34;&gt;nginx&lt;/a&gt;、WebUIに&lt;a href=&#34;http://unicorn.bogomips.org/&#34; title=&#34;unicorn&#34;&gt;unicorn&lt;/a&gt;。&lt;a href=&#34;http://www.rabbitmq.com/&#34; title=&#34;RabbitMQ&#34;&gt;RabbitMQ&lt;/a&gt;と&lt;a href=&#34;http://lucene.apache.org/solr/&#34; title=&#34;Solr&#34;&gt;Solr&lt;/a&gt;はそのまま。&lt;/p&gt;
-
-&lt;p&gt;基本的にそのまま使ってて問題ないのだけども、やはりサーバーは壊れるのでバックアップがないと困るよね、ということで調べてもあんまり情報がなかったので、やってみたメモを残します。めんどいのでrootで作業しています。&lt;/p&gt;
-
-&lt;p&gt;&lt;h2&gt;とりあえずinstallする&lt;/h2&gt;
-先ほどの&lt;a href=&#34;http://wiki.opscode.com/display/chef/Chef+11+Server+Preview&#34; title=&#34;Chef11&#34;&gt;Chef11&lt;/a&gt;のWikiにある、Quick Startをみて、Platformにあったパッケージをダウンロード。もしくは&lt;a href=&#34;http://www.opscode.com/chef/install/&#34; title=&#34;Install Chef&#34;&gt;Install Chef&lt;/a&gt;というページからダウンロード。Debian6でやりましたが、Ubuntu12用のパッケージではうまく動きませんでしたので、Ubuntu10用のを使いました。11のは知らん。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# wget https://opscode-omnitruck-release.s3.amazonaws.com/ubuntu/10.04/x86_64/chef-server_11.0.6-1.ubuntu.10.04_amd64.deb
-# dpkg -i chef-server_11.0.6-1.ubuntu.10.04_amd64.deb
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;PrimaryとSecondary、2台のサーバーに入れましょう。&lt;/p&gt;
-
-&lt;p&gt;&lt;h2&gt;PostgreSQLのReplication&lt;/h2&gt;
-PostgreSQLはほとんど知らないし、Chef11のパッケージは /opt/chef-server 以下にRubyやGemsやPostgreSQLやその他依存もろもろすっぽり収まって完結しているため、普通にPostgreSQLをinstallした場合とは勝手がちょっと違うので注意が必要です。&lt;/p&gt;
-
-&lt;p&gt;&lt;h3&gt;Primaryの設定&lt;/h3&gt;
-設定ファイルは /var/opt/chef-server/postgresql/data 以下にあります。まずアクセス許可。SECONDARY_SERVER_IPADDRESSは任意に読み替えてください。サブネットマスクまで必須です。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# echo &amp;quot;host replication repl_user SECONDARY_SERVER_IPADDRESS/0 trust&amp;quot; &amp;gt;&amp;gt; /var/opt/chef-server/postgresql/data/pg_hba.conf
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;次にReplicationの設定。/var/opt/chef-server/postgresql/data/postgresql.conf をエディタで開いて、以下のようにします。hot_standby = onの設定はここでは意味が無いですが、あとでこのファイルがそのままSecondary側にコピーされるのでここで変えておいて問題ないです。
-&lt;ul&gt;
-    &lt;li&gt;listen_addresses = &amp;lsquo;*&amp;rsquo;&lt;/li&gt;
-    &lt;li&gt;wal_level = hot_standby&lt;/li&gt;
-    &lt;li&gt;max_wal_senders = 1&lt;/li&gt;
-    &lt;li&gt;hot_standby = on&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-
-&lt;p&gt;次にPostgreSQLのシェルに入ってユーザーを作りますが、opscode-pgsqlユーザーにならないとシェルに入れないので面倒です。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# su opscode-pgsql -
-$ pgsql postgres -c &amp;quot;CREATE ROLE repl_user LOGIN REPLICATION PASSWORD &#39;P@ssw0Rd&#39;&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ここまでやったらPostgreSQLを再起動。Chef11のコンポーネントたちは、daemontoolsの下で動いているので普通には再起動できません。が、専用の管理コマンドが用意されているのでそいつを使います。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# chef-server-ctl restart postgresql
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;h3&gt;Secondaryの設定&lt;/h3&gt;
-Primaryからdebファイルをscpするなりこっちでもwgetするなりして、dpkg -iまでは一緒。installが終わったらPostgreSQLまわりの掃除をします。とりあえず止めて、消す。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# chef-server-ctl stop postgresql
-# rm -rf /var/opt/chef-server/postgresql/data
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;消したらPrimaryからデータを持ってきます。PRIMARY_SERVER_IPADDRESSは任意に読み替えてください。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# /opt/chef-server/embedded/bin/pg_basebackup -x -p 5432 -h PRIMARY_SERVER_IPADDRESS -U repl_user -W -D /var/opt/chef-server/postgresql/data --progress --verbose
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;終わったらrecovery.confを作ります。sampleからコピって書き換えます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# cp /opt/chef-server/embedded/share/postgresql/recovery.conf.sample /var/opt/chef-server/postgresql/data/recovery.conf
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;/var/opt/chef-server/postgresql/data/recovery.conf で最低限以下のようにいじる。application_nameは別になんでもいいっぽいです。
-&lt;ul&gt;
-    &lt;li&gt;standby_mode = on&lt;/li&gt;
-    &lt;li&gt;primary_conninfo = &amp;lsquo;host=PRIMARY_SERVER_IPADDRESS port=5432 user=repl_user password=P@ssw0Rd application_name=stby&amp;rsquo;&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-
-&lt;p&gt;あとはrootで作業してしまったのでownerを変えて起動。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# chown -R opscode-pgsql:opscode-pgsql /var/opt/chef-server/postgresql/data
-# chef-server-ctl start postgresql
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;chef-server-ctl tailでログをみたり、chef-server-ctl statusでpostgresqlがrunになっていることを確認できればOKです。また、Primary側で以下のコマンドを叩くことでも確認できます。stateがstreamingになっていればOK。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ sudo -u opscode-pgsql psql opscode_chef -c &amp;quot;SELECT * FROM pg_stat_replication&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;念のためSolrのindexは作りなおしておいたほうがいいです。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# chef-server-ctl reindex
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;h2&gt;切り替える&lt;/h2&gt;
-さてフェイルオーバーさせてみます。いくつか方法がありますが、とりあえず手動でやります。Secondary側で、opscode-pgsqlユーザーで操作します。SecondaryはRead-Onlyなので、 CREATE TABLE test (i integer) とかやって失敗→切り替え→もっかいやったら成功、でPrimaryになったことを確認できます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ /opt/chef-server/embedded/bin/pg_ctl promote -D /var/opt/chef-server/postgresql/data
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こんだけ。また2台構成に戻すには、同じ事をやってやればいいはずです。が、時間経ちすぎてWALファイルがなくなっちゃったとか、転送前にコケてて欠落してるとか、そういう場合はその限りではありません。ていうかそれはChefと関係ないんでそっち方面のマニュアルみるなり調べるなりしてください。&lt;/p&gt;
 </description>
     </item>
     
