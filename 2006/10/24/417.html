@@ -99,6 +99,10 @@
     </div>
   </header>
   <section>
+    
+  </section>
+  <hr>
+  <section>
     <p>普通にsshで繋がるようになったらsvn+sshを使いたくなる。サーバー側はemerge subversionするぐらいで設定は特にない。svnadmin create /var/svn/hoge とか svn import ~/moge file:///var/svn/hogeとかしておくだけ。svnserveを立ち上げる必要はない。svn+sshで接続するときは、sshで認証した後svnserve -tを勝手にしてくれ、接続を切るとsvnserveプロセスもなくなってくれる。よってルータで3690番のポートを開けておくとかいう作業は必要ない。22番だけ開いていればいい。</p>
 
 <p>クライアント側は、Poderosaで作った鍵(例えばファイル名をid_rsaとする)しかない場合はPuTTY用の鍵を作る。puttygenを起動して、秘密鍵を読み込んでパスフレーズを入力すれば変換される。変換された秘密鍵をid_rsa.ppkとして保存。とりあえずPuTTYを起動して接続-データで自動ログインのユーザ名と、接続-SSH-認証で認証のためのプライベートキーファイルでさっきの.ppkファイルを設定。接続してみてパスフレーズ入力してログイン出来ればOK。</p>
