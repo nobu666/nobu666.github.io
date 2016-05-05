@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta property="og:title" content=" [memo] 異なるアーキテクチャ間でクロスコンパイル &middot;  Real Beat" />
+  
+  <meta property="og:site_name" content="Real Beat" />
+  <meta property="og:url" content="http://nobu666.com/2006/11/19/449.html" />
+  
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:article:author" content="https://facebook.com/nobutoshi.ogata" />
+  
+  <meta property="og:article:published_time" content="2006-11-19T23:27:30&#43;09:00" />
+  
+  
+
+  <title>
+     [memo] 異なるアーキテクチャ間でクロスコンパイル &middot;  Real Beat
+  </title>
+
+  <link rel="stylesheet" href="http://nobu666.com/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://nobu666.com/css/main.css" />
+  <link rel="stylesheet" href="http://nobu666.com/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="http://nobu666.com/css/github.css" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/monokai-sublime.min.css">
+  <link rel="shortcut icon" href="http://nobu666.com/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://nobu666.com/images/apple-touch-icon.png" />
+  
+</head>
+<body>
+    <header class="global-header"  style="background-image:url( /images/bg.jpg )">
+    <section class="header-text">
+      <h1><a href="http://nobu666.com/">Real Beat</a></h1>
+      
+      <div class="sns-links hidden-print">
+  
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/nobu666" target="_blank">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://facebook.com/nobutoshi.ogata" target="_blank">
+    <i class="fa fa-facebook"></i>
+  </a>
+  
+  
+  <a href="https://github.com/nobu666" target="_blank">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  
+  <a href="https://linkedin.com/in/nobu666" target="_blank">
+    <i class="fa fa-linkedin"></i>
+  </a>
+  
+  
+</div>
+
+      
+      <a href="http://nobu666.com/" class="btn-header btn-back hidden-xs">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        &nbsp;Home
+      </a>
+      
+      
+    </section>
+  </header>
+  <main class="container">
+
+
+<article>
+  <header>
+    <h1 class="text-primary">[memo] 異なるアーキテクチャ間でクロスコンパイル</h1>
+    <a href="http://b.hatena.ne.jp/entry/http://nobu666.com/2006/11/19/449.html">
+      <img src="http://b.hatena.ne.jp/entry/image/http://nobu666.com/2006/11/19/449.html/" alt="はてなブックマーク - [memo] 異なるアーキテクチャ間でクロスコンパイル" title="はてなブックマーク - [memo] 異なるアーキテクチャ間でクロスコンパイル">
+    </a>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2006-11-19T23:27:30&#43;09:00">
+          Nov 19, 2006
+        </time>
+      </div>
+      <div class="pull-right">
+        
+      </div>
+    </div>
+  </header>
+  <section>
+    
+  </section>
+  <hr>
+  <section>
+    <p><h4>前提条件</h4>
+基本的には<a href="http://www.gentoo.org/doc/ja/distcc.xml" target="_blank">Gentoo distcc ドキュメント</a>・<a href="http://www.gentoo.org/doc/ja/cross-compiling-distcc.xml" target="_blank">DistCC クロスコンパイルガイド</a>、この2つのドキュメントの通り行う。気をつけなきゃいけないのは、「資源を借りる側」と「資源を貸す側」で若干設定が異なる点。ここでは借りる側はi686(192.168.0.4)、貸す側はamd64(192.168.0.3)とする。</p>
+
+<p>貸す側と借りる側で、gccのバージョンは同じであること。3.3.x同時はOKだが、3.3.xと3.2.xは混ぜないこと。</p>
+
+<p>また、資源を借りる側は一方的に借りるだけで、相互に助け合わない設定とした。これは、貸す側はサーバなので24時間稼働しているが、借りる側はノートなのでそうした。</p>
+
+<p><h4>資源を貸す側の設定</h4></p>
+
+<pre><code class="language-bash">emerge distcc crossdev
+vi /etc/make.conf
+ MAKEOPTS=&quot;-j8&quot; #(CPUの数+1)*2 ここは全体じゃなくてサーバ単体で計算すべきなのかも。詳細不明…もしかしたら-j6が当たりなのかも?
+ FEATURES=&quot;distcc&quot;
+ DISTCC_DIR=&quot;/var/tmp/.distcc&quot;
+ PORTDIR_OVERLAY=&quot;/usr/local/portage&quot;
+distcc-config --set-hosts &quot;localhost 192.168.0.4&quot;
+vi /etc/conf.d/distccd
+ DISTCCD_OPTS=&quot;${DISTCCD_OPTS} --allow localhost --allow 192.168.0.4&quot; #--allow 192.168.0.0/24でも可
+/etc/init.d/distcc start
+rc-update add distcc default
+crossdev -t i686
+</code></pre>
+
+<p><h4>資源を借りる側の設定</h4></p>
+
+<pre><code class="language-bash">emerge distcc
+vi /etc/make.conf
+ MAKEOPTS=&quot;-j8&quot; #(CPUの数+1)*2
+ FEATURES=&quot;distcc&quot;
+ DISTCC_DIR=&quot;/var/tmp/.distcc&quot;
+vi /etc/conf.d/distccd
+ DISTCCD_OPTS=&quot;${DISTCCD_OPTS} --allow localhost&quot; #相互に助け合いたい場合は--allow 192.168.0.3を足すか--allow 192.168.0.0/24にする
+cd /usr/lib/distcc/bin
+rm c++ g++ gcc cc
+echo '#!/bin/bash' &gt; i686-pc-linux-gnu-wrapper
+echo 'exec /usr/lib/distcc/bin/sparc-unknown-linux-gnu-${0##*/} &quot;$@&quot;' &gt;&gt; i686-pc-linux-gnu-wrapper
+chmod a+x i686-pc-linux-gnu-wrapper
+ln -s i686-pc-linux-gnu-wrapper cc
+ln -s i686-pc-linux-gnu-wrapper gcc
+ln -s i686-pc-linux-gnu-wrapper g++
+ln -s i686-pc-linux-gnu-wrapper c++
+/etc/init.d/distcc start
+rc-update add distcc default
+export CC=&quot;i686-pc-linux-gnu-gcc&quot;
+</code></pre>
+
+<p><h4>実際に試す</h4>
+借りる側から何か(それなりに時間のかかりそうなものを)emergeし、貸す側でtopコマンドで見てみる。distccというUSERでdistccやcc1というプロセスが見えれば成功している。当たり前だがコンパイルは速くなるが、configureやアーカイブのunpackは速くならないのであしからず。また、貸す側ではデフォルトでnice -15で実行されている。これは /etc/conf.d/distccdのDISTCCD_NICEで設定されているので、貸す側が暇なマシンなら変更してもいい。</p>
+
+  </section>
+  <hr>
+  <section class="post-custom-share-buttons">
+    <a href="http://b.hatena.ne.jp/entry/http://nobu666.com/2006/11/19/449.html" class="hatena-bookmark-button" data-hatena-bookmark-title="[memo] 異なるアーキテクチャ間でクロスコンパイル" data-hatena-bookmark-layout="vertical-balloon" data-hatena-bookmark-lang="en" title="Bookmark this entry"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="Bookmark this entry" width="20" height="20" style="border: none;"></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://nobu666.com/2006/11/19/449.html" data-text="[memo] 異なるアーキテクチャ間でクロスコンパイル" data-count="vertical">Tweet</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+    <div class="fb-like" data-href="http://nobu666.com/2006/11/19/449.html" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.3&appId=524721300901204";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <a data-pocket-label="pocket" data-pocket-count="vertical" data-save-url="http://nobu666.com/2006/11/19/449.html" class="pocket-btn" data-lang="ja"></a>
+    <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+  </section>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'realbeat';
+    var disqus_identifier = 'http:\/\/nobu666.com\/2006\/11\/19\/449.html';
+    var disqus_title = '[memo] 異なるアーキテクチャ間でクロスコンパイル';
+    var disqus_url = 'http:\/\/nobu666.com\/2006\/11\/19\/449.html';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  <footer>
+    
+    <section class="author-info row">
+      <div class="author-avatar col-md-2">
+        
+        <img alt="Author Avatar" src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" />
+        
+      </div>
+      <div class="author-meta col-md-6">
+        
+        <h1 class="author-name text-primary">nobu666</h1>
+        
+        
+      </div>
+      
+      <div class="author-contact col-md-4">
+        <a href="mailto:ogata.nobu%20at%20gmail.com">
+          <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          &nbsp;Contact me
+        </a>
+      </div>
+      
+    </section>
+    <ul class="pager">
+      
+      <li class="previous"><a href="http://nobu666.com/2006/11/17/448.html"><span aria-hidden="true">&larr;</span> Older</a></li>
+      
+      
+      <li class="next"><a href="http://nobu666.com/2006/11/21/450.html">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+  </main>
+  <footer class="container global-footer">
+    <div class="copyright-note pull-left">
+      &copy; nobu666.com
+    </div>
+    <div class="sns-links hidden-print">
+  
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/nobu666" target="_blank">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://facebook.com/nobutoshi.ogata" target="_blank">
+    <i class="fa fa-facebook"></i>
+  </a>
+  
+  
+  <a href="https://github.com/nobu666" target="_blank">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  
+  <a href="https://linkedin.com/in/nobu666" target="_blank">
+    <i class="fa fa-linkedin"></i>
+  </a>
+  
+  
+</div>
+
+  </footer>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-57485-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+  
+</body>
+</html>
+

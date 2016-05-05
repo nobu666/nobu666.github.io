@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hardware on Real Beat</title>
+    <link>http://localhost:1313/categories/hardware.html</link>
+    <description>Recent content in Hardware on Real Beat</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; nobu666.com</copyright>
+    <lastBuildDate>Sun, 23 Jul 2006 16:21:56 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/hardware.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>シャープ端末のバグ</title>
+      <link>http://localhost:1313/2006/07/23/311.html</link>
+      <pubDate>Sun, 23 Jul 2006 16:21:56 +0900</pubDate>
+      
+      <guid>http://localhost:1313/2006/07/23/311.html</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://plusdblog.itmedia.co.jp/hiro/2006/07/shoin4_8e8c.html&#34;&gt;「みられまくっちゃ」でフリーズ――シャープ製端末搭載shoin4に不具合か？&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;既に色々ニュースになってるけど。買った瞬間にコレかよっと思いつつも、まぁ回避できるものなのでそれほど影響はないかな。SH902iSで試しにやってみたら見事にメール作成アプリが強制終了し、その後無反応になった。「みられまくっちゃ」「うたれまくっちゃ」など、「??まくっちゃ」を文節区切らずに一気に入力しようとするとダメなようだ。形態素解析周りがおかしいのかね。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>WX310K</title>
+      <link>http://localhost:1313/2006/06/10/299.html</link>
+      <pubDate>Sat, 10 Jun 2006 00:30:16 +0900</pubDate>
+      
+      <guid>http://localhost:1313/2006/06/10/299.html</guid>
+      <description>&lt;p&gt;俗に言う京ぽん2買った。MacBook買ったのをきっかけに、定額で使えるモバイル環境を調べてたんだけど、定額でPCにつなげて通信できるのってPHSしかないのね。今の職場が本社じゃないので、VPNで本社につなぎたいという理由なんだけど。すぐ側で同じプロジェクトの人がWX310K使ってるから帯域取り合いになっちゃうけど、まぁ普通に使えてる。4xで契約してるけど、実行速度は64kぐらいだな。それでもDNSキャッシュとか、高速化サービス併用すれば、メールとtelnet中心の使い方なら十分実用的。&lt;/p&gt;
+
+&lt;p&gt;MacBookでBluetooth接続してみたけど、午前中で電池切れ。使えない。結局USBケーブルでつなぐ羽目に。USBでつないでも急速充電モードにしてないと一日持たない。急速充電モードなら行き帰りの電車内でガンガンWeb見ても余裕があるっぽい。しかもBluetoothが非常安定してない気がする。PHS側を再起動してやらないと、MacBookで認識しなかったりする。あくまで緊急用って感じで考えておくのが吉。やっぱモバイルで料金を気にしなくていいのは非常に安心感がある。Opeｒａ搭載でJavascriptも使えるのはいいんだけど、Javaに対応してないのが難点。日本語入力の予測変換がイマイチなのも気にくわないけど、学習させていけばなんとかなりそうなので、育てる楽しみはあるのかも。これについはもうちょっと使い込んでから改めて報告しようと思う。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

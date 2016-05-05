@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta property="og:title" content=" [memo] GentooにPlaggerをインストール &middot;  Real Beat" />
+  
+  <meta property="og:site_name" content="Real Beat" />
+  <meta property="og:url" content="http://nobu666.com/2006/11/11/439.html" />
+  
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:article:author" content="https://facebook.com/nobutoshi.ogata" />
+  
+  <meta property="og:article:published_time" content="2006-11-11T01:29:02&#43;09:00" />
+  
+  
+
+  <title>
+     [memo] GentooにPlaggerをインストール &middot;  Real Beat
+  </title>
+
+  <link rel="stylesheet" href="http://nobu666.com/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="http://nobu666.com/css/main.css" />
+  <link rel="stylesheet" href="http://nobu666.com/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="http://nobu666.com/css/github.css" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/monokai-sublime.min.css">
+  <link rel="shortcut icon" href="http://nobu666.com/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://nobu666.com/images/apple-touch-icon.png" />
+  
+</head>
+<body>
+    <header class="global-header"  style="background-image:url( /images/bg.jpg )">
+    <section class="header-text">
+      <h1><a href="http://nobu666.com/">Real Beat</a></h1>
+      
+      <div class="sns-links hidden-print">
+  
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/nobu666" target="_blank">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://facebook.com/nobutoshi.ogata" target="_blank">
+    <i class="fa fa-facebook"></i>
+  </a>
+  
+  
+  <a href="https://github.com/nobu666" target="_blank">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  
+  <a href="https://linkedin.com/in/nobu666" target="_blank">
+    <i class="fa fa-linkedin"></i>
+  </a>
+  
+  
+</div>
+
+      
+      <a href="http://nobu666.com/" class="btn-header btn-back hidden-xs">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        &nbsp;Home
+      </a>
+      
+      
+    </section>
+  </header>
+  <main class="container">
+
+
+<article>
+  <header>
+    <h1 class="text-primary">[memo] GentooにPlaggerをインストール</h1>
+    <a href="http://b.hatena.ne.jp/entry/http://nobu666.com/2006/11/11/439.html">
+      <img src="http://b.hatena.ne.jp/entry/image/http://nobu666.com/2006/11/11/439.html/" alt="はてなブックマーク - [memo] GentooにPlaggerをインストール" title="はてなブックマーク - [memo] GentooにPlaggerをインストール">
+    </a>
+    <div class="post-meta clearfix">
+      <div class="post-date pull-left">
+        Posted on
+        <time datetime="2006-11-11T01:29:02&#43;09:00">
+          Nov 11, 2006
+        </time>
+      </div>
+      <div class="pull-right">
+        
+      </div>
+    </div>
+  </header>
+  <section>
+    
+  </section>
+  <hr>
+  <section>
+    <p>Gentooにはg-cpanという素晴らしいものがあるのだが、そこはあえて使わずにいく。というかなんか知らないけど上手くいかなかったので、仕方なく手動で入れたとも言う。とりあえず自宅サーバと言うことで、サックリrootになって入れることにする。そのほうが簡単。以前レンタルサーバで悩んだのがウソのようだ。ちゃんとログを取ってないので曖昧な記憶でメモ。</p>
+
+<h4>準備</h4>
+
+<p>別段何もない。</p>
+
+<pre><code class="language-bash">perl -MCPAN -e shell
+</code></pre>
+
+<p>基本全部デフォルトのままENTER押してりゃよし。Gentooの場合、cpanでガンガン入れる前にまず</p>
+
+<pre><code class="language-bash">emerge expat
+</code></pre>
+
+<p>これをやっておく。次にCPANのConfigを弄る。</p>
+
+<pre><code class="language-perl">vi /usr/lib/perl5/5.8.8/CPAN/Config.pm
+ $CPAN::Config = {
+  'build_cache' =&gt; q[100],
+  'build_dir' =&gt; q[/root/.cpan/build],
+  'bzip2' =&gt; q[/bin/bzip2],
+  'cache_metadata' =&gt; q[1],
+  'check_sigs' =&gt; q[0],
+  'colorize_output' =&gt; q[0],
+  'commandnumber_in_prompt' =&gt; q[1],
+  'cpan_home' =&gt; q[/root/.cpan],
+  'curl' =&gt; q[/usr/bin/curl],
+  'ftp' =&gt; q[/usr/bin/ftp],
+  'ftp_passive' =&gt; q[1],
+  'ftp_proxy' =&gt; q[],
+  'getcwd' =&gt; q[cwd],
+  'gpg' =&gt; q[],
+  'gzip' =&gt; q[/bin/gzip],
+  'histfile' =&gt; q[/root/.cpan/histfile],
+  'histsize' =&gt; q[100],
+  'http_proxy' =&gt; q[],
+  'inactivity_timeout' =&gt; q[0],
+  'index_expire' =&gt; q[1],
+  'inhibit_startup_message' =&gt; q[0],
+  'keep_source_where' =&gt; q[/root/.cpan/sources],
+  'lynx' =&gt; q[],
+  'make' =&gt; q[/usr/bin/make],
+  'make_arg' =&gt; q[],
+  'make_install_arg' =&gt; q[],
+  'make_install_make_command' =&gt; q[/usr/bin/make],
+  'makepl_arg' =&gt; q[],
+  'mbuild_arg' =&gt; q[],
+  'mbuild_install_arg' =&gt; q[],
+  'mbuild_install_build_command' =&gt; q[./Build],
+  'mbuildpl_arg' =&gt; q[],
+  'ncftp' =&gt; q[],
+  'ncftpget' =&gt; q[],
+  'no_proxy' =&gt; q[],
+  'pager' =&gt; q[lv -Ou8 -c],
+  'prefer_installer' =&gt; q[EUMM],
+  'prerequisites_policy' =&gt; q[ask],
+  'scan_cache' =&gt; q[atstart],
+  'shell' =&gt; q[/bin/zsh],
+  'show_upload_date' =&gt; q[1],
+  'tar' =&gt; q[/usr/bin/tar],
+  'term_is_latin' =&gt; q[1],
+  'term_ornaments' =&gt; q[1],
+  'test_report' =&gt; q[0],
+  'unzip' =&gt; q[/usr/bin/unzip],
+  'urllist' =&gt; [q[ftp://ftp.kddilabs.jp/CPAN/]],
+  'wget' =&gt; q[/usr/bin/wget],
+ };
+ 1;
+ __END__
+
+cpan -i Bundle::CPAN
+</code></pre>
+
+<p><h4>CPANモジュールのインストール</h4>
+<a href="http://subtech.g.hatena.ne.jp/otsune/20060816/PlaggerCPAN" target="_blank">Bundle::CPANとPlaggerに依存するモジュール（メモ）</a>に従って進める。書いてあるとおり、TemplateとEncode::Detectはまともには入らないっぽいので諦めてforce installで。別段不都合はないので。</p>
+
+<p>なんかRDF::Coreが上手く入らなくて困った記憶がある。emerge expatしてないせいだった、という記憶もあるが…ちょっと覚えてない。でもコマンドの履歴に以下のものが残っていた。</p>
+
+<pre><code class="language-bash">wget http://ftp.yz.yamagata-u.ac.jp/pub/lang/cpan/modules/by-module/RDF/DPOKORNY/RDF-Core-0.50.tar.gz
+tar -zxvf RDF-Core-0.50.tar.gz
+cd RDF-Core-0.50
+perl Makefile.PL
+make
+</code></pre>
+
+<p>手動で入れたっぽい。若年アルツで覚えてない。まぁとりあえず頑張って入れて、cpanシェルでtest Plaggerが通るまで頑張る。通ったらinstall Plagger。</p>
+
+<p><h4>リポジトリから最新取得</h4>
+subversionを使ってリポジトリから最新版を持ってきてmakeする。</p>
+
+<pre><code class="language-bash">svn co http://svn.bulknews.net/repos/plagger/trunk/plagger
+cd plagger
+perl Makefile.PL
+make
+</code></pre>
+
+<p>ここまで行ったら出来たも同然。Plagger3大罠の1つである、assetsのコピーを忘れないうちにやっておく。svnで最新版を入れたディレクトリのassets以下に、　.cpan/build/Plagger-x.x.xx/assets/plugins/Publish-Gmail/gmail_notify.tt をコピっておく。yamlのglobalでassets_pathを指定するのも忘れずに。ちなみにyamlのサンプルは .cpan/build/Plagger-x.x.xx/examples 以下に入っているので、適当な場所にコピって編集すべし。</p>
+
+<p>まぁ何が言いたいかって言うとレン鯖だと非常に苦労したインストールも、自宅鯖なら超簡単だぜってことです。gmailのメール送信量制限も、自宅鯖なら無関係。cacheもレン鯖だと、HDDが1Gくらいしかないので気にしなきゃいけないけど自宅鯖にはほぼ無関係。足りなくなったら増やせばイイだけだし。Plagger自体それなりに負荷があるので、レン鯖の場合は30分単位くらいで回さないと怒られそうなのだが、それを気にしなくていいのが一番でかい。もう5分とかで回してる。</p>
+
+  </section>
+  <hr>
+  <section class="post-custom-share-buttons">
+    <a href="http://b.hatena.ne.jp/entry/http://nobu666.com/2006/11/11/439.html" class="hatena-bookmark-button" data-hatena-bookmark-title="[memo] GentooにPlaggerをインストール" data-hatena-bookmark-layout="vertical-balloon" data-hatena-bookmark-lang="en" title="Bookmark this entry"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="Bookmark this entry" width="20" height="20" style="border: none;"></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://nobu666.com/2006/11/11/439.html" data-text="[memo] GentooにPlaggerをインストール" data-count="vertical">Tweet</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+    <div class="fb-like" data-href="http://nobu666.com/2006/11/11/439.html" data-layout="box_count" data-action="like" data-show-faces="false" data-share="false"></div>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.3&appId=524721300901204";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <a data-pocket-label="pocket" data-pocket-count="vertical" data-save-url="http://nobu666.com/2006/11/11/439.html" class="pocket-btn" data-lang="ja"></a>
+    <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+  </section>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'realbeat';
+    var disqus_identifier = 'http:\/\/nobu666.com\/2006\/11\/11\/439.html';
+    var disqus_title = '[memo] GentooにPlaggerをインストール';
+    var disqus_url = 'http:\/\/nobu666.com\/2006\/11\/11\/439.html';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+  <footer>
+    
+    <section class="author-info row">
+      <div class="author-avatar col-md-2">
+        
+        <img alt="Author Avatar" src="https://avatars0.githubusercontent.com/u/51591?v=3&amp;s=460" />
+        
+      </div>
+      <div class="author-meta col-md-6">
+        
+        <h1 class="author-name text-primary">nobu666</h1>
+        
+        
+      </div>
+      
+      <div class="author-contact col-md-4">
+        <a href="mailto:ogata.nobu%20at%20gmail.com">
+          <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          &nbsp;Contact me
+        </a>
+      </div>
+      
+    </section>
+    <ul class="pager">
+      
+      <li class="previous"><a href="http://nobu666.com/2006/11/09/438.html"><span aria-hidden="true">&larr;</span> Older</a></li>
+      
+      
+      <li class="next"><a href="http://nobu666.com/2006/11/11/440.html">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      
+    </ul>
+  </footer>
+</article>
+
+  </main>
+  <footer class="container global-footer">
+    <div class="copyright-note pull-left">
+      &copy; nobu666.com
+    </div>
+    <div class="sns-links hidden-print">
+  
+  <a href="mailto:ogata.nobu%20at%20gmail.com">
+    <i class="fa fa-envelope"></i>
+  </a>
+  
+  
+  <a href="https://twitter.com/nobu666" target="_blank">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  
+  <a href="https://facebook.com/nobutoshi.ogata" target="_blank">
+    <i class="fa fa-facebook"></i>
+  </a>
+  
+  
+  <a href="https://github.com/nobu666" target="_blank">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  
+  <a href="https://linkedin.com/in/nobu666" target="_blank">
+    <i class="fa fa-linkedin"></i>
+  </a>
+  
+  
+</div>
+
+  </footer>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-57485-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+  
+</body>
+</html>
+

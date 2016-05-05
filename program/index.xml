@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Program on Real Beat</title>
+    <link>http://localhost:1313/categories/program.html</link>
+    <description>Recent content in Program on Real Beat</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; nobu666.com</copyright>
+    <lastBuildDate>Wed, 13 Jul 2011 14:39:30 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/program.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Twitterの日本語ハッシュタグ抽出する正規表現</title>
+      <link>http://localhost:1313/2011/07/13/914.html</link>
+      <pubDate>Wed, 13 Jul 2011 14:39:30 +0900</pubDate>
+      
+      <guid>http://localhost:1313/2011/07/13/914.html</guid>
+      <description>&lt;p&gt;正式に日本語ハッシュタグが使えるようになったので、色々ためした結果、以下の正規表現でほぼ公式と同じ動作になった。「ほぼ」なのはちゃんとテストしたわけじゃないので。使うなら自己責任でどうぞ。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;?:#|uFF03&#34;&gt;sourcecode language=&amp;ldquo;text&amp;rdquo;&lt;/a&gt;([a-zA-Z0-9_\u3041-\u3094\u3099-\u309C\u30A1-\u30FA\u3400-\uD7FF\uFF10-\uFF19\uFF20-\uFF3A\uFF41-\uFF5A\uFF66-\uFF9E]+)
+```&lt;/p&gt;
+
+&lt;p&gt;iPhoneの公式クライアントだとなんか動きが違ったりするし、half-widthのカタカナ半濁点はだめだったりとかなんかバグなのか仕様なのかよくわからず。半濁点も通すようにしたければ、FF9EをFF9Fにすればおｋ。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>cmecab-javaとLuceneでMoreLikeThis</title>
+      <link>http://localhost:1313/2009/10/07/788.html</link>
+      <pubDate>Wed, 07 Oct 2009 00:32:04 +0900</pubDate>
+      
+      <guid>http://localhost:1313/2009/10/07/788.html</guid>
+      <description>&lt;p&gt;類似検索やりたくて試したんだけどなんかうまくいかねーです。
+Lucene詳しいかた、教えてくだしあ＞＜&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2009/10/07: 解決したので後ろに追記しました。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;package hoge;
+import java.io.*;
+import net.moraleboost.lucene.analysis.ja.StandardMeCabAnalyzer;
+import org.apache.lucene.*;
+
+public class MeCabTest {
+    public static final String DIC_ENCODING = System.getProperty(&amp;quot;net.moraleboost.mecab.encoding&amp;quot;);
+    private static StandardMeCabAnalyzer analyzer = null;
+    private static FSDirectory directory = null;
+    private IndexWriter writer  = null;
+    private static final String DIR = &amp;quot;/path/to/index&amp;quot;;
+
+    public void setUp() throws Exception {
+        writer  = new IndexWriter(directory, analyzer, new MaxFieldLength(4096));
+        Document doc = new Document();
+        addField(doc, &amp;quot;text&amp;quot;, &amp;quot;ほげほげ&amp;quot;);
+        ....
+        ....
+        writer.commit();
+        writer.optimize();
+        writer.close();
+    }
+    private void addField(Document doc, String name, String value) throws Exception {
+        Field field = new Field(name, value, Store.YES, Field.Index.ANALYZED, Field.TermVector.YES);
+        doc.add(field);
+        writer.addDocument(doc);
+    }
+
+    public static void main(String[] args) {
+        MeCabTest t = new MeCabTest();
+        IndexSearcher searcher = null;
+        IndexReader reader = null;
+        analyzer = new StandardMeCabAnalyzer(DIC_ENCODING, &amp;quot;&amp;quot;);
+        directory = FSDirectory.open(new File(DIR));
+        t.setUp();
+        reader = IndexReader.open(DIR, false);
+        searcher = new IndexSearcher(directory, true);
+        QueryParser parser = new QueryParser(&amp;quot;text&amp;quot;, analyzer);
+        parser.setDefaultOperator(QueryParser.Operator.OR);
+        MoreLikeThis mlt = new MoreLikeThis(reader);
+        mlt.setAnalyzer(analyzer);
+        mlt.setMinTermFreq(1);
+        mlt.setFieldNames(new String[]{&amp;quot;text&amp;quot;});
+        Query query = mlt.like(new ByteArrayInputStream(&amp;quot;ほげ&amp;quot;.getBytes()));
+        TopDocs topDocs = searcher.search(query, 100);
+        if (topDocs.totalHits &amp;gt; 0) {
+            for (ScoreDoc scoreDoc : topDocs.scoreDocs) {
+                Document doc = searcher.doc(scoreDoc.doc);
+                System.out.println(doc.get(&amp;quot;text&amp;quot;));
+            }
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;try〜catchとか省略。addField(&amp;hellip;);のところ、実際にはニュースサイトから本文引っ張ってきて、いくつかいれた。7個くらい適当に選んで、3個くらいは同じニュース（台風18号関連）を違うサイトから引用した。&lt;/p&gt;
+
+&lt;p&gt;MoreLikeThis#like()には、台風18号関連のさらに別のニュースを入れてみたが、topDocs.totalHitsがindexに入れたニュース数と同数、つまり全部ヒットになっちゃった。しかも1件目に入れたやつしか表示されない…なんのこっちゃい??&lt;/p&gt;
+
+&lt;p&gt;明日以降もうちょっと調べて、わかったら追記しよう…&lt;/p&gt;
+
+&lt;p&gt;[追記]
+すげーポカやってるし…。単純にDocumentクラスを使い回しちゃダメってことみたい。そりゃそうだよね、別のDocumentとして扱いたいんだから、インスタンスも別だわな。というわけでaddFieldメソッドにDocument渡すのやめて、メソッド内でDocumentクラスのインスタンスを作るようにしたら、上手く動くようになりました。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>レンタルサーバにPlaggerをインストール</title>
+      <link>http://localhost:1313/2006/08/12/338.html</link>
+      <pubDate>Sat, 12 Aug 2006 23:45:51 +0900</pubDate>
+      
+      <guid>http://localhost:1313/2006/08/12/338.html</guid>
+      <description>&lt;p&gt;最近契約したinetdというレンタルサーバに、&lt;a href=&#34;http://plagger.org/trac&#34;&gt;Plagger&lt;/a&gt;をインストール。Plaggerはなにかっつーと、要するにmixiとかBloglinesとかLivedoor Readerとかそういうところからデータを持ってきて、何かしら変換して吐き出すためのPerlスクリプト。俺の場合は普段Livedoor Readerを使ってRSSを読んでるので、そっから未読のフィードだけを取ってきてGmailで読めるようにした。ついでにmixiのマイミク新着記事やメッセージも、全部Gmailで読めるように。すばらしい。&lt;/p&gt;
+
+&lt;p&gt;Plaggerは依存モジュールがかなり多いので、インストールは結構大変。でもまぁPerl素人な俺でも出来たので、基本的には誰でも出来そうな気がする。手順としては&lt;/p&gt;
+
+&lt;p&gt;$ perl -MCPAN -e shell&lt;/p&gt;
+
+&lt;p&gt;で、色々質問されるけど全部デフォルトでOK。で&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;cpan test Plagger&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;して依存モジュールがバラバラ出てくるので片っ端からinstallしていくだけ。基本的には&lt;a href=&#34;http://capsctrl.que.jp/kdmsnr/diary/20060803.html#p02&#34;&gt;http://capsctrl.que.jp/kdmsnr/diary/20060803.html#p02&lt;/a&gt;に書いてあるようにすりゃいけるはずなんだけど、そう甘くなかった。とりあえず、&lt;/p&gt;
+
+&lt;p&gt;$ perl -MCPAN -e &amp;lsquo;CPAN::Shell-&amp;gt;install(CPAN::Shell-&amp;gt;r)&amp;rsquo;&lt;/p&gt;
+
+&lt;p&gt;で最新にして、あとはエラーが出てるモジュールをシコシコ手動でインストールしたらいけた。&lt;/p&gt;
+
+&lt;p&gt;足りないモジュールをメモっておく→1つずつCPAN searchで調べる→tar.gzなファイルをwgetで持ってくる→perl Makefile.PL→gmake→gmake test→gmake install の繰り返し。時間かかったけどとりあえず動くようになった…のでcronでmixiは1時間ごと、フィードは10分ごとに回してる。快適すぎる！つかEntryFullTextプラグインがすごい。del.icio.usのnetwork RSSなんかもオリジナルのサイトへ行って全文取ってきてくれるので非常に便利。やばい。&lt;/p&gt;
+
+&lt;p&gt;というわけで、俺のmixiのログイン時間は常に1時間以内になっていると思われ、かつマイミクのみんなのとこには足跡が付きまくっていると思われ…まぁ気にしない方向でお願いします。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>XSS - 表示系パラメータに存在する盲点</title>
+      <link>http://localhost:1313/2006/08/02/327.html</link>
+      <pubDate>Wed, 02 Aug 2006 23:44:24 +0900</pubDate>
+      
+      <guid>http://localhost:1313/2006/08/02/327.html</guid>
+      <description>&lt;p&gt;ぼくはまちちゃん！で有名なはまちや２さんのエントリ、&lt;a href=&#34;http://mxxi.hamachiya.com/2006/08/xss_1.html&#34;&gt;XSS - 表示系パラメータに存在する盲点&lt;/a&gt;を見て。&lt;/p&gt;
+
+&lt;p&gt;そもそもWebアプリケーションにおいて、表示系だとかユーザからの入力で云々だとか、そんなこととは関係なくシステムが扱う外部からの入力では、かつ出力に影響する部分ではすべからくスクリプトの無効化を行うべきでしょう。パラメータ然り、HTTPヘッダ然り。改行コードを削除して、&amp;gt;・&amp;lt;・&amp;rsquo;・&amp;rdquo;・&amp;amp;・スペースは全部エスケープ。コーディングする人は「それが実際にエスケープする必要があるのかどうか」は考えなくていいようにするべきだ。&lt;/p&gt;
+
+&lt;p&gt;たとえばどう考えても数値しか取らない変数hogeと、何が入ってくるのかわからない変数mogeがあったとして、それを出力するときにmogeだけをエスケープするのは間違っている。hogeもmogeも同じように処理するのが正しい。なぜならhogeが数値しか取らないことを確認するためには、ソースコードの他の部分を参照して確認する必要があるからだ。そんなのは時間の無駄。そこだけを見て問題ないことが確認できるようにしておくべき。もちろんエスケープすると想定の動作をしないこともあるわけだが、そんなことは例外。どうしてもタグを出力したいとかいうときだけ、例外的に特定のタグだけ許すようにするべき。&lt;/p&gt;
+
+&lt;p&gt;なんでそういうことをちゃんと書いてあるセキュリティ関係の本ってないのかな。あるけど俺が知らないだけ？&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[MySQL] MyISAMとInnoDB</title>
+      <link>http://localhost:1313/2006/07/30/320.html</link>
+      <pubDate>Sun, 30 Jul 2006 02:15:14 +0900</pubDate>
+      
+      <guid>http://localhost:1313/2006/07/30/320.html</guid>
+      <description>&lt;p&gt;今運用している某システム、MyISAMのある難癖によって非常に辛い目に遭っております。それはもちろんテーブルロック。これはもうMyISAMを選択した時点でどうしても避けては通れない道。そこんところ仕組みをちゃんと理解してないと、MyISAMのほうが速いって言うから選んだのに、なんだよ全然遅いじゃん！っていうか使い物にならないよウワァァァァンみたいなことになりがち。今のシステムでどうやってMyISAMかInnoDBかを分けたのかというと、単純に更新頻度だった。頻繁に更新されるテーブルはInnoDB、そうじゃなければMyISAM。参照が殆どならInnoDBを選択するメリットは何もないと思っていた。が、実は全然そうじゃなかった。&lt;/p&gt;
+
+&lt;p&gt;MyISAMが辛いのは、INSERT文実行時にテーブルロックされることもそうだが、時間のかかるSELECT文を実行したときにREADロックされることなんじゃなかろうか。特に業務系のシステムを構築する場合、何かと複雑なSQLを発行せざるを得ない場合がある。それはもちろんテーブル設計を行った者の技量不足や、プログラマの技量不足が原因であることが多いのだが、不可避な理由（例えばクソくだらない出来損ないのコーディング規約など）によってそうせざるを得ない場合も、悲しいかな下っ端風情の一プログラマには良くあることだ。そこを正していくのが本筋だけども、そこはオトナの事情というかまぁ色々あるので以下略（もちろん技量不足が理由の大半なんだろうけども）。&lt;/p&gt;
+
+&lt;p&gt;この場合レプリケーションしていたとしても、悲惨な結末を辿る。例えばマスタ1台に対してスレーブを3台用意していたとしよう。普通に考えるとスレーブへの接続はラウンドロビンで順番に割り振ってやるわけだが、あるSQLによって1台のスレーブが長時間テーブルロックするとシステム全体に影響が及んでしまう。アクセス数が多ければ多いほど（というか発行するSELECT文が多ければ多いほど）、ある時間のかかるSQLによってどっかがテーブルロック→ロックしてないスレーブではすぐに結果を返す→単純なラウンドロビンなのでロックしてるスレーブにすぐに順番が回ってくる→ひたすら実行待ちSQLがキューに入る→コネクション使い切る。かと言ってロックを監視して、それによってどのスレーブに接続するかを選択するってのはオーバーヘッドが大きすぎる気が。ロックによる待ち時間よりは全然ましかも知れないけど…&lt;/p&gt;
+
+&lt;p&gt;と言うわけで、InnoDBにするかMyISAMにするかは、単純に更新頻度で考えてはいけないことになる。例え参照が大半を占めようとも、ある程度複雑で時間のかかるSQLを投げることが避けられないのならInnoDBにするべきだ。で、InnoDBとMyISAMと共存してるけど、特にInnoDBだからどうこうということはないように思うです。バックアップに関してはレプリケーションしてれば特に問題ないと思うし、気になるとすれば速度とディスク容量でしょうか。結構InnoDBは容量食うので注意が必要。速度に関してはSQLによるとしか言いようがないので、実際に試してみる以外ないかと。&lt;a href=&#34;http://d.hatena.ne.jp/naoya/20060729/1154139996&#34;&gt;naoyaさんが言っている&lt;/a&gt;ような「運用が面倒臭いのは萎える」のは例えばどのようなことを言ってるのかわかりかねますが…俺の中のイメージでは定期的にoptimizeしてあげたりしなくちゃいけない分、MyISAMのほうが運用は面倒なのではと思ったりします。&lt;/p&gt;
+
+&lt;p&gt;ちなみにMyISAM の「速い」というのがどう速いのか、という疑問についてはインデックスが絡んでいるのでは?MyISAMは文字列のキーに対してプリフィックス圧縮を行うのに対してInnoDBでは単なるB-Tree。また、InnoDBではINSERTやUPDATEのたびにインデックスの統計情報が最適化されるが、MyISAMではoptimize tableしない限り最適化しない。あとMyISAMはMVCCじゃないので、COUNTがインデックス見ただけで分かるので速い。それ以上はソース読んでないのでわかりませぬ…ちゃんと読んでみようと思いながら怠けてます。&lt;/p&gt;
+
+&lt;p&gt;結局のところ俺の中では、単純なSELECT文しか発行しない、かつDELETEやUPDATEが極端に少ないテーブルならMyISAM、それ以外はInnoDB、という結論で落ち着いています。あくまで4.1系の話ですが…5系はInnoDBが極端に遅いという話も聞く（検証はしてない）のでよくわからず。でも5.1からNDB Clusterがオンメンモリじゃなくても動くようになるらしいので、それについては動向をウォッチして行きたい所存。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>[MySQL]optimizeの落とし穴</title>
+      <link>http://localhost:1313/2006/07/28/317.html</link>
+      <pubDate>Fri, 28 Jul 2006 01:47:07 +0900</pubDate>
+      
+      <guid>http://localhost:1313/2006/07/28/317.html</guid>
+      <description>&lt;p&gt;MySQLのMyISAM型テーブルは、レコードの追加・削除を繰り返しているとどんどん効率が悪くなっていく。そこで定期的にoptimize tableを発行して統計情報の更新や、インデックスページのソートを行ってやることでテーブルの状態を最適化することが出来る。のだが…そこで思いっきり嵌った。&lt;/p&gt;
+
+&lt;p&gt;全部のテーブルをoptimizeして、今までslow-logに出ていたあるSQLを実行すると7秒かかっていた処理が1秒かからないまでに実行時間が短縮されたため、効果が出たと喜んでいたのだが。しばらく経って普通にシステムを使ってみると、時折異様に処理が遅いことがある。いままでDBの構成はMaster1+Slave1の２台構成だったのだが、メンテナンスでSlaveを2台増やした。どうも増設したSlaveにアクセスすると重いことがわかった。既存のSlaveと増設Slaveでの違いは、optimizeしたかどうか。optimizeしたSlaveのほうが、ある特定のSQLで200倍も遅くなっていることが判明した…200倍って！&lt;/p&gt;
+
+&lt;p&gt;問題になったSQLは、outer joinやunionを使いまくった、一目見ただけでは何をしているのかサッパリわからないほど複雑なSQLだった。保守性を考えれば、そういう複雑なSQLは使わずに、プログラム側でループを使うなりハッシュを使うなりしてわかりやすくするべきだ。しかし今回はあくまで処理速度重視というかアプリサーバとDBサーバ間の通信を極力減らす必要があったため、複雑なSQL1発で済ませなければならない事情があった。&lt;/p&gt;
+
+&lt;p&gt;最適化していないDBでは、explainしてみるときちんとインデックスが使われているのに対し、最適化したほうのDBではkeyがnullになっており、あるテーブルがフルスキャンされていた。そのフルスキャンされているテーブルはレコードが100万近く入っており、そりゃ時間かかるわなって話。2000秒以上テーブルロックして（MyISAM型は行ロックではなくテーブルロックがかかる…その間readもwriteも不可）、そのせいでアプリサーバもウェブサーバもコネクション使い切って死ぬ。&lt;/p&gt;
+
+&lt;p&gt;結局その問題はforce indexを使うことで無理矢理解決。あるいはstraight joinを使うことでも同様の効果が得られた。たまたま同じデータで最適化したものとしてないものがあったので、explainでどのindexを使えば速くなるのかすぐわかったので助かった…&lt;/p&gt;
+
+&lt;p&gt;実際のところforce joinよりもstraight joinのほうが、optimizerが順序を考えなくて済む分若干速いのかな？その辺はちゃんと調べる余裕がなかったので謎。まぁ複雑なクエリを投げるときはoptimizerに頼っちゃダメってことですな…&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>俺メモ : bashでCSVを扱う</title>
+      <link>http://localhost:1313/2006/07/20/309.html</link>
+      <pubDate>Thu, 20 Jul 2006 02:39:23 +0900</pubDate>
+      
+      <guid>http://localhost:1313/2006/07/20/309.html</guid>
+      <description>&lt;p&gt;bashで本格的なCSVを扱うにはPerlなんかを使うほか道はないっぽいけど、ダブルクォート内のカンマは文字列として扱うとか、そういうことを無視して極単純なCSVを扱うだけならbashだけで以下のようにいける。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+$ cat read_csv
+IFS=,
+while read FILE
+do
+  set &amp;ndash; $FILE
+  echo &amp;ldquo;field1:&amp;rdquo; $1 &amp;ldquo;,field2:&amp;rdquo; $2
+done
+$ cat data.csv
+aiueo,12345
+hogehoge,mogemoge
+$ sh ./read_csv &amp;lt; ./data.csv
+field1:aiueo,field2:12345
+field1:hogehoge,field2:mogemoge
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;なんかPerlとか使うと負けた気がするのよね…&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>lessとtail -f</title>
+      <link>http://localhost:1313/2006/07/17/306.html</link>
+      <pubDate>Mon, 17 Jul 2006 14:57:13 +0900</pubDate>
+      
+      <guid>http://localhost:1313/2006/07/17/306.html</guid>
+      <description>&lt;p&gt;&lt;ul&gt;
+&lt;li&gt;lessでファイルを開いてshift+f押すとtail -fのように動作する。止めるときはctrl+c&lt;/li&gt;
+&lt;li&gt;tail -fと同じ動作をする（厳密には微妙に違うが）その名もズバリtailfというコマンドがある&lt;/li&gt;
+&lt;/ul&gt;
+知らなかった…&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>j2se5.0から1.4へ</title>
+      <link>http://localhost:1313/2005/11/09/227.html</link>
+      <pubDate>Wed, 09 Nov 2005 01:51:30 +0900</pubDate>
+      
+      <guid>http://localhost:1313/2005/11/09/227.html</guid>
+      <description>&lt;p&gt;新しもの好きの俺的には、仕事にも新しいものをガンガン取り入れて行きたい派。なので、今回のプロジェクトもJavaは5.0、MySQLも5.0ととにかく最新の安定版を使った開発を提案して実践していた。幸いPMも新しもの好きだったので、あっさりOK出て良かったのだが。&lt;/p&gt;
+
+&lt;p&gt;でも客としてはやはり枯れた技術に拘りたいみたいだ。つか最初に確認したハズなんだが、今更になってJavaは1.4じゃなきゃダメとかいいだして大惨事に。なんとか1日でコンパイルは通るように修正したが、殆ど全部のファイルを修正する羽目になってしまった。&lt;/p&gt;
+
+&lt;p&gt;Generics使え、enum使えと口うるさくメンバーに言っていたので、非常に気が重かった…。せめてもの罪滅ぼしに（って俺が悪いわけではないのだが）、2/3ほどひとりで修正してenumもTypesafe Enumパターン使って全部置き換えた。Typesafe Enumは日本語のドキュメントがあまりないのだが、まぁ&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/redirect?link_code=ur2&amp;camp=247&amp;tag=realbeat-22&amp;creative=1211&amp;path=ASIN/4894714361&#34;&gt;Effective Java&lt;/a&gt;&lt;img src=&#34;http://www.assoc-amazon.jp/e/ir?t=realbeat-22&amp;l=ur2&amp;o=9&#34; width=&#34;1&#34; height=&#34;1&#34; border=&#34;0&#34; alt=&#34;&#34; /&gt;読めってことです。&lt;/p&gt;
+
+&lt;p&gt;しかしこれ、switch文で使えないのが難点なのよね。Java5.0でも逆コンパイルしてみたら結局if-elseになってた。なにか美しい方法はないのかな……&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Winnyの技術</title>
+      <link>http://localhost:1313/2005/10/10/199.html</link>
+      <pubDate>Mon, 10 Oct 2005 15:28:15 +0900</pubDate>
+      
+      <guid>http://localhost:1313/2005/10/10/199.html</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/4756145485/realbeat-22/ref=nosim/&#34;&gt;&lt;img src=&#34;http://images-jp.amazon.com/images/P/4756145485.09.TZZZZZZZ.jpg&#34; alt=&#34;Winnyの技術&#34; border=&#34;0&#34; /&gt;&lt;/a&gt;
+買って読んだ。ソースコードは一行も書いてないが、ネットワークに関する深い知識が無くても（基本的な知識さえあれば）普通に読める。ノードの管理方法、クエリやキーの管理方法、暗号化、プロトコルに至るまで、一通りの説明がなされている。これを読んだらWinnyと同等の機能を持ったソフトを作ることも、ある程度の知識がある人ならば可能だろう。&lt;/p&gt;
+
+&lt;p&gt;なんか金子勇氏本人が、この書籍をPDF化したものをWinnyに流すとか言っているようだが、興味があるならそんなケチくさいこと言わないで買うべき。説明も凄くわかりやすいので、やっぱこの人は頭がいいのだなぁと改めて思う。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>AjaxFaces</title>
+      <link>http://localhost:1313/2005/07/26/141.html</link>
+      <pubDate>Tue, 26 Jul 2005 00:34:13 +0900</pubDate>
+      
+      <guid>http://localhost:1313/2005/07/26/141.html</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://pcweb.mycom.co.jp/news/2005/06/07/025.html&#34;&gt;JSFでAjaxを簡単に実現 - AjaxFaces 1.0公開&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;AjaxはWebのUIにおいては、とても有益な技術というか手法であることは間違いないのだけど、実装が異様に面倒だという点で敬遠していた人も多いのではないかと思う。なので、こういったツールが出現することは必然ではあったのだけど、吉報ですな。他にも&lt;a href=&#34;http://www.getahead.ltd.uk/dwr/index.html&#34;&gt;DWR&lt;/a&gt;、&lt;a href=&#34;http://www.modernmethod.com/sajax/&#34;&gt;Sajax&lt;/a&gt;なんかがあるけど、選択肢が増えるのはいいことだわ。早速明日にでも、会社で遊んでみようかと。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>RSSリーダー</title>
+      <link>http://localhost:1313/2005/07/25/140.html</link>
+      <pubDate>Mon, 25 Jul 2005 23:34:05 +0900</pubDate>
+      
+      <guid>http://localhost:1313/2005/07/25/140.html</guid>
+      <description>&lt;p&gt;新しいプロジェクトの絡みで、RSS関連のサービスについてあれこれ調べたり使ってみたりしている。主に調べているのはソフトをダウンロードして、クライアント側で使うRSSリーダーではなく、Web型のもの。で、単なるRSSリーダーではなく、なんらかの付加機能（たとえば今注目されている記事をお勧めしてくれる、とかそんなような機能）の付いているものを調査中。&lt;/p&gt;
+
+&lt;p&gt;今日Internet Watchで&lt;a href=&#34;http://internet.watch.impress.co.jp/cda/news/2005/07/25/8537.html&#34;&gt;紹介&lt;/a&gt;されていた&lt;a href=&#34;http://feedbringer.net/&#34;&gt;FeedBringer&lt;/a&gt;、凄い。Alpha版ということで、まだ実装されていない機能があったりするんだけど、使い勝手がいい。個人的にはBloglinesより好きだ。ドラッグ&amp;amp;ドロップ使えるのが新しい感じ。Ajax駆使してますな…&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.u-1.net/t/20050725.html#p02&#34;&gt;今日も今日とて&lt;/a&gt;さんで言及されているが、個人的にありがたいのはフォルダが2階層掘れる点。元々Sageを使っていたんだけど、このOPMLをエクスポートしてBloglinesでインポートしてみたら上手くいかなくて、イラついていたのです。FeedBringerではサックリとインポートできた。&lt;/p&gt;
+
+&lt;p&gt;あとはユーザ数が増えたときに、どれだけ安定して動作するかって点が問題か。こればっかりは時間が経ってみたいと評価しようがないのだけど。これからBeta、正式版とバージョンがあがるにつれて、どんなサービスが提供されるのか注目していきたい。&lt;/p&gt;
+
+&lt;p&gt;ていうかぶっちゃけた話、非常においしいタイミングで出てきてくれたサービスなんだな。今、某所某プロジェクトの企画書書いてる段階なんだけど、ガッツリ参考にさせてもらいますよｗ&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>最近の興味はXUL</title>
+      <link>http://localhost:1313/2005/05/24/137.html</link>
+      <pubDate>Tue, 24 May 2005 01:12:17 +0900</pubDate>
+      
+      <guid>http://localhost:1313/2005/05/24/137.html</guid>
+      <description>&lt;p&gt;Firefoxのプラグインとして、とあるものを作りたいと思っている。あまり受けそうなものではないが、少なくともうちの会社の人はあれば便利と思ってくれるものになる……予定ｗ&lt;/p&gt;
+
+&lt;p&gt;以下、参考になりそうなとこ。&lt;/p&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;a href=&#34;http://wiki.fdiary.net/xul/&#34;&gt;XUL Wiki&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;http://xul-app.hp.infoseek.co.jp/&#34;&gt;XUL研&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;http://www.mozilla-japan.org/catalog/architecture/xul/&#34;&gt;Mozilla 資料集: コアアーキテクチャ: XUL&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&#34;http://roachfiend.com/&#34;&gt;roachfiend.com&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+
+&lt;p&gt;その絡みで@ITの連載、&lt;a href=&#34;http://www.atmarkit.co.jp/fxml/rensai2/xmltool01/01.html&#34;&gt;役に立つXMLツール集&lt;/a&gt;も一通り目を通したい。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>あれこれポップアップ</title>
+      <link>http://localhost:1313/2004/09/06/127.html</link>
+      <pubDate>Mon, 06 Sep 2004 22:33:14 +0900</pubDate>
+      
+      <guid>http://localhost:1313/2004/09/06/127.html</guid>
+      <description>&lt;p&gt;リンクなんかにカーソルをあわせた時に、ポップアップウィンドウで情報を表示させるように&lt;a href=&#34;http://www.remus.dti.ne.jp/~a-satomi/bunsyorou/ArekorePopup.html&#34; title=&#34;あれこれポップアップ&#34;&gt;あれこれポップアップ&lt;/a&gt;を入れてみた。便利だし、なかなか&amp;#65398;&amp;#65402;&amp;#65394;&amp;#65394;ではないか。&lt;/p&gt;
+
+&lt;p&gt;でもどうしても「見難い」とか「ウゼー」って人は、&lt;a href=&#34;http://www.remus.dti.ne.jp/~a-satomi/bunsyorou/ArekorePopup.html#userFAQ&#34; title=&#34;適用サイト利用者向け FAQ&#34;&gt;適用サイト利用者向け FAQ&lt;/a&gt;を参考に。ポップアップを止める方法が書かれているので。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Windows XP SP2 続報</title>
+      <link>http://localhost:1313/2004/09/02/126.html</link>
+      <pubDate>Thu, 02 Sep 2004 11:04:18 +0900</pubDate>
+      
+      <guid>http://localhost:1313/2004/09/02/126.html</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://eany.mypost.ne.jp/archives/2004/08/windows_xp_sp2_1.html&#34; title=&#34;Windows XP SP2 日本語版&#34;&gt;前のエントリー&lt;/a&gt;で書いたSP2だが、Microsoftのダウンロードセンターで&lt;a href=&#34;http://www.microsoft.com/downloads/details.aspx?FamilyID=049c9dbe-3b8e-4f30-8245-9e368d3cdb5a&amp;displaylang=ja&#34; title=&#34;Windows XP Service Pack 2 Network Installation Package for IT Professionals and Developers&#34;&gt;正式に公開&lt;/a&gt;された。&lt;/p&gt;
+
+&lt;p&gt;で、前から入手可能だったファイルは、&lt;a href=&#34;http://www.itmedia.co.jp/news/articles/0408/20/news015.html&#34; title=&#34;XP SP2日本語版正式バージョンがもう公開されている？&#34;&gt;Microsoftのコメント&lt;/a&gt;では「少なくとも正式版ではない」とある。何か変わってるのかと思って正式版もダウンロードして、md5とって見た（ツールはずるぼん氏作成の&lt;a href=&#34;http://www.vector.co.jp/soft/win95/util/se224884.html&#34; title=&#34;md5コマンド&#34;&gt;md5コマンド&lt;/a&gt;を使用。Cygwin要らずで便利）。するとどちらも286,396,136バイトで、ハッシュ値は84bc4f0157ccfe6217f3762e481dd126。とりあえず同一ファイルと思って良さそうだ。以前入手してインストールした人も、わざわざインストールしなおす必要はなさそう。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
