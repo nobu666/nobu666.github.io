@@ -99,10 +99,6 @@
     </div>
   </header>
   <section>
-    
-  </section>
-  <hr>
-  <section>
     <p>会社から帰るも、なんだがダルイ。別に具合が悪いわけでもないのだが&hellip;これが噂の鬱なのか？そうなのか？プログラマは鬱病になりやすいとよくいわれる。確かに、仕事をしていると殆ど人と話をしない。ただひたすらディスプレイを見つめて、キーボードを叩く。そりゃーハムスターの一匹も飼いたくなるっちゅ?の。なんかそのまま寝てしまおうかとも思ったのだが、腹は減っていた。相変わらず台所には洗っていない食器が山積みに&hellip;面倒なのでコンビニで弁当を買い、ランチの女王を見ながら食べる。単純な俺は、竹内結子を見て元気charged（笑）。溜まっていた食器を洗って風呂に入って&hellip;竹内結子に救われますた。</p>
 
 <p>ちょびっと<a href="./about.shtml">About</a>を更新。そのうち巷で流行っている「100の質問」でもやってみよう。あ、その前にBBSのXHTML化が先か。</p>
@@ -133,20 +129,25 @@
     <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
   </section>
   <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'realbeat';
-    var disqus_identifier = 'http:\/\/nobu666.com\/2002\/08\/26\/46.html';
-    var disqus_title = '癒されたい、今日この頃';
-    var disqus_url = 'http:\/\/nobu666.com\/2002\/08\/26\/46.html';
-
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "realbeat" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   <footer>
     
     <section class="author-info row">

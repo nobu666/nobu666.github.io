@@ -99,10 +99,6 @@
     </div>
   </header>
   <section>
-    
-  </section>
-  <hr>
-  <section>
     <p>XHTMLとCSSをちょっとまじめに使ってリニューアル。デザイン的な要素はすべてCSSでやっているため、古いブラウザでは潔いほどシンプルに表示される。半端にデザインが崩れて読みにくくなったりするよりマシかと。一気に修正したら結構疲れた&hellip;</p>
 
 <p>給料も入ったことだし、早速本屋へ。ソフ開の問題集（午前・午後各1冊）、「よりぬきイヌマンガ」、「脳の時計、ゲノムの時計」を購入。ついでに漫画も2冊。イヌマンガはまぁ軽い息抜きに。「脳の時計&hellip;」は前々から欲しかったモノ。「利己的な遺伝子」を高校生の頃に読んで以来、この手の本は結構ハマって読んでいる。物語でも何でもなくないこの手の本は、純粋な知識欲から読みたくなって読むのだが、下手なミステリーなんかよりよっぽど面白いことが多い。読む前からワクワクするなー。</p>
@@ -129,20 +125,25 @@
     <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
   </section>
   <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'realbeat';
-    var disqus_identifier = 'http:\/\/nobu666.com\/2002\/08\/23\/43.html';
-    var disqus_title = '本代に消えていく金';
-    var disqus_url = 'http:\/\/nobu666.com\/2002\/08\/23\/43.html';
-
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "realbeat" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   <footer>
     
     <section class="author-info row">

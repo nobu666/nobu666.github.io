@@ -103,26 +103,13 @@
     </div>
   </header>
   <section>
-    <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#wercker-から-circleci-へ:60091336f7408d77f4ebbe4dfdae639e">Wercker から CircleCI へ</a></li>
-<li><a href="#circle-yml:60091336f7408d77f4ebbe4dfdae639e">circle.yml</a></li>
-<li><a href="#circleci-側の設定:60091336f7408d77f4ebbe4dfdae639e">CircleCI 側の設定</a></li>
-</ul></li>
-</ul>
-</nav>
-  </section>
-  <hr>
-  <section>
     
 
-<h2 id="wercker-から-circleci-へ:60091336f7408d77f4ebbe4dfdae639e">Wercker から CircleCI へ</h2>
+<h2 id="wercker-から-circleci-へ">Wercker から CircleCI へ</h2>
 
 <p><a href="http://nobu666.com/2015/06/21/1015.html">WordPressからGitHub Pages + hugoに移行した</a> で書いたとおり GitHub と Hugo で Blog 書くことにしたものの、Wercker の UI がなんか微妙だったのと、仕事で CircleCI 使ってるのでいっその事移行することにした。</p>
 
-<h2 id="circle-yml:60091336f7408d77f4ebbe4dfdae639e">circle.yml</h2>
+<h2 id="circle-yml">circle.yml</h2>
 
 <p>こんな感じに</p>
 
@@ -154,7 +141,7 @@ deployment:
 
 <p>test 部分はなんか書いとかないと warning が出てしまうので適当に。deployment のとこは、 README だけ変えたいときとかに <code>git commit</code> が空振りしたエラーになるのを避けるため条件分岐している。</p>
 
-<h2 id="circleci-側の設定:60091336f7408d77f4ebbe4dfdae639e">CircleCI 側の設定</h2>
+<h2 id="circleci-側の設定">CircleCI 側の設定</h2>
 
 <ol>
 <li>CircleCI の Project Settings で設定画面を開く</li>
@@ -187,20 +174,25 @@ deployment:
     <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
   </section>
   <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'realbeat';
-    var disqus_identifier = 'http:\/\/nobu666.com\/2015\/12\/31\/1022.html';
-    var disqus_title = 'WerckerやめてCircleCIに移行';
-    var disqus_url = 'http:\/\/nobu666.com\/2015\/12\/31\/1022.html';
-
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "realbeat" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   <footer>
     
     <section class="author-info row">

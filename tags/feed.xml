@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Real Beat</title>
+    <link>http://nobu666.com/tags.html</link>
+    <description>Recent content in Tags on Real Beat</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-JP</language>
+    <copyright>&amp;copy; nobu666.com</copyright>
+    <lastBuildDate>Tue, 29 Dec 2015 02:30:40 +0900</lastBuildDate>
+    
+	<atom:link href="http://nobu666.com/tags/feed.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blog</title>
+      <link>http://nobu666.com/tags/blog.html</link>
+      <pubDate>Tue, 29 Dec 2015 02:30:40 +0900</pubDate>
+      
+      <guid>http://nobu666.com/tags/blog.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Camera</title>
+      <link>http://nobu666.com/tags/camera.html</link>
+      <pubDate>Mon, 04 Jan 2016 01:21:45 +0900</pubDate>
+      
+      <guid>http://nobu666.com/tags/camera.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Itamae</title>
+      <link>http://nobu666.com/tags/itamae.html</link>
+      <pubDate>Thu, 10 Dec 2015 10:03:53 +0900</pubDate>
+      
+      <guid>http://nobu666.com/tags/itamae.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mac</title>
+      <link>http://nobu666.com/tags/mac.html</link>
+      <pubDate>Sat, 16 Jan 2016 01:44:47 +0900</pubDate>
+      
+      <guid>http://nobu666.com/tags/mac.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Miscellaneous</title>
+      <link>http://nobu666.com/tags/miscellaneous.html</link>
+      <pubDate>Thu, 05 May 2016 13:56:54 +0900</pubDate>
+      
+      <guid>http://nobu666.com/tags/miscellaneous.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mobile</title>
+      <link>http://nobu666.com/tags/mobile.html</link>
+      <pubDate>Sat, 09 Jan 2016 18:43:58 +0900</pubDate>
+      
+      <guid>http://nobu666.com/tags/mobile.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Osx</title>
+      <link>http://nobu666.com/tags/osx.html</link>
+      <pubDate>Fri, 26 Jun 2015 20:46:09 +0900</pubDate>
+      
+      <guid>http://nobu666.com/tags/osx.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Provisioning</title>
+      <link>http://nobu666.com/tags/provisioning.html</link>
+      <pubDate>Thu, 10 Dec 2015 10:03:53 +0900</pubDate>
+      
+      <guid>http://nobu666.com/tags/provisioning.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tech</title>
+      <link>http://nobu666.com/tags/tech.html</link>
+      <pubDate>Thu, 10 Dec 2015 10:03:53 +0900</pubDate>
+      
+      <guid>http://nobu666.com/tags/tech.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tips</title>
+      <link>http://nobu666.com/tags/tips.html</link>
+      <pubDate>Fri, 26 Jun 2015 20:46:09 +0900</pubDate>
+      
+      <guid>http://nobu666.com/tags/tips.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Travels</title>
+      <link>http://nobu666.com/tags/travels.html</link>
+      <pubDate>Thu, 05 May 2016 13:56:54 +0900</pubDate>
+      
+      <guid>http://nobu666.com/tags/travels.html</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

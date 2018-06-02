@@ -99,10 +99,6 @@
     </div>
   </header>
   <section>
-    
-  </section>
-  <hr>
-  <section>
     <p>5.0からHEAPテーブルでも可変長レコードがサポートされたのだが（BLOBとTEXTは未サポート）、VARCHARでフィールド作っても固定でメモリを食われている気がする…まだちゃんと調べてないけど。</p>
 
 <p>とりあえず、MySQLのデフォルト文字コードをUTF-8にしている場合、HEAPテーブルを使う際には注意が必要だと言うことはわかった。注意が必要って言うか、要はテーブルとフィールドのデフォルト文字コードに気をつけようって言うだけ。日本語を扱わないのであれば、UTF-8のまま使っているとメモリをかなり喰う。30バイト以内のランダムな文字列 + URL、っていうテーブルをHEAPで使っていたのだが、最初はテーブルの定義をVARCHAR(100) + VARCHAR(2048)とかにしていたら、show table statusするとAvg_row_lengthが5kとかになっていた。それをVARCHAR(30) + VARCHAR(512)に変えると2kくらいに減少。ALTER TABLEでテーブルとフィールドの文字コードをUTF-8からASCIIに変えてあげたら550バイトくらいまで小さくなった。やっぱ日本語が絶対に入らないとわかっているのなら、UTF-8を使うのはメモリ（ディスク）の無駄だ。拡張性はあるんだけど、URLとかidとかはASCIIで済むのだから。</p>
@@ -129,20 +125,25 @@
     <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
   </section>
   <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'realbeat';
-    var disqus_identifier = 'http:\/\/nobu666.com\/2007\/03\/28\/511.html';
-    var disqus_title = 'MySQLのHEAPテーブル';
-    var disqus_url = 'http:\/\/nobu666.com\/2007\/03\/28\/511.html';
-
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "realbeat" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   <footer>
     
     <section class="author-info row">

@@ -8,7 +8,9 @@
     <language>ja-JP</language>
     <copyright>&amp;copy; nobu666.com</copyright>
     <lastBuildDate>Tue, 17 Dec 2002 00:00:00 +0900</lastBuildDate>
-    <atom:link href="http://nobu666.com/2002/feed.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://nobu666.com/2002/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>2002年も終了間際</title>
@@ -16,22 +18,7 @@
       <pubDate>Tue, 17 Dec 2002 00:00:00 +0900</pubDate>
       
       <guid>http://nobu666.com/2002/12/17/97.html</guid>
-      <description>&lt;p&gt;もう今年も残すところ2週間、毎年毎年思うことであるが一年というのは過ぎてみれば早いもので。今年一年を振り返ってみてぱっと頭に浮かぶことは&amp;hellip;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;就職...26歳にしてようやく社会人に。いきなり冬のボーナスなしは厳しいぜおい。3月に臨時ボーナス出るかな、どうかな...あまり期待はしないでおこう。就職と同時に上京・一人暮らしも始めたが、今ではすっかり慣れた。寂しくないといえば嘘になるが、それよりも面倒さのほうが先に立つ。なんとか掃除洗濯だけは休日にやっているが。&lt;/li&gt;
-&lt;li&gt;ハムスターを飼った...一人暮らしでも、どうしてもなにか動物を飼いたかった。一番飼育が楽だろうということでハムスターなんだが。可愛いけど、最近寒くなってきてなかなか顔を見せてくれない。&lt;/li&gt;
-&lt;li&gt;ワールドカップ...正直サッカーには興味のない俺でさえ、なんとなくテレビを見てしまうほどの大騒ぎぶり。よくもそこまで右向け右になるのもだと、なんとなく関心さえしてしまった。やっぱり俺も日本人なんだね、と。&lt;/li&gt;
-&lt;li&gt;北朝鮮...近いようで遠い国。韓国は近いなーと思うんだけど。それはそうと金正男、またディズニーランドですな。そんなにねずみが好きなのか。今度はまともにビザ申請を行って、当たり前のように却下されたようだけど（笑）。フランスのねずみに会いたかったようだけど、そんなに会いたいならびびってないでアメリカ行けよ（笑）。&lt;/li&gt;
-&lt;li&gt;ブロードバンド...一人暮らしを初めたと同時に、念願のブロードバンド環境に。現在はさらにパワーアップされて調子がいいと下り9MBとか出る感じ。実家ではずっとISDNで、ADSLだのなんだのという友人を羨ましく思っていたわけだが。「別にブロードバンドじゃなくてもいいよ」なんて思っていたけど、やっぱりそれはただの僻みでしかなかった模様（笑）。いまさらナローには戻れませんなぁ。&lt;/li&gt;
-&lt;/ul&gt;
-気がつくと今年ももう終わってしまいそうで、予定していたことが全然出来てないことにフト気付いてみたり。資格を取ろう！なんて思って本まで買ったけど、勉強なんてま????ったくしてないし。でもOracleは実務で環境構築からやらせて貰えて、モリモリ使ってるので数日やればSilver程度は取れそうではあるが。てか試験料高すぎなんだよね。貯金もある程度やろうと思ってたのに、全然貯まりません。今や貯める気もなくなってきました（笑）。だって金が欲しいから働いてるんだも??ん。金が欲しいのは生活のためでもあるのだが、やっぱり欲しいものを買いたいから。おいしいものを食べたいから。楽しく遊びたいから。金がない、という理由で何も出来ないのはどうにも空しいわけで。現状、忙しすぎて欲しいものを買いに行くことも、おいしいものを食べに行くことも、楽しく遊ぶことも出来ずにいて、徐々にそれらの欲求が溜まっていってるのがわかってちょっと怖かったりもするのだが。
-
-&lt;h3&gt;:: Today&#39;s Music ::&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;No Music...&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>もう今年も残すところ2週間、毎年毎年思うことであるが一年というのは過ぎてみれば早いもので。今年一年を振り返ってみてぱっと頭に浮かぶことは&amp;h</description>
     </item>
     
     <item>
@@ -40,21 +27,7 @@
       <pubDate>Sat, 14 Dec 2002 00:00:00 +0900</pubDate>
       
       <guid>http://nobu666.com/2002/12/14/96.html</guid>
-      <description>&lt;p&gt;忙しいです。10/21で「未だにプログラミングに入れない」とあるが、さすがにというかようやくプログラミングに入り。しかし仕様が決まらないうちに始めているので、作っているうちにコロコロ仕様が変わるわけで。テーブルが変更になったり、はたまた画面自体が変更になったり（笑）。散々遅れているおかげで、スケジュールも超濃密。線表ではプログラミングしている人は5人いることになっている。5人で作業しないとスケジュール通りに終わらないからである。しかし、実際には3人で作業している。残り2人の名前は、名前だけ借りているのであって、プロジェクトとは何の関わりもない人である（笑）。そして3人のうち1人は、あまりに人手が足りないと言うことで急遽参加したヘルパーである。会議にもまったく出席いていないし、俺が書いた仕様書を丸投げしてコーディングしてもらうだけ。要するにややこしい部分は任せられないわけで、仕様書をぱっと眺めればすぐに書けるような部分だけをお願いしている。&lt;/p&gt;
-
-&lt;p&gt;俺の方も、とりあえず簡単に出来そうな部分から潰していったわけだが、どうしても避けて通れない、今回のシステムにおいて根幹をなす中枢部分に手をつけざるを得なくなった。線表上では、金曜日までに終わらせなくてはいけないことになっているのだが、現在40%も終わっていない。というわけで、14・15と当たり前のように出社なわけで。うぐぅ。&lt;/p&gt;
-
-&lt;p&gt;集中力切れまくりで全然仕事が進まないので、18時過ぎに諦めて退社。そのままじぇじぇ＆みすくとともに、某焼き鳥と釜飯の店へ行く。相変わらずここの釜飯は絶品である。ノーマルとハーフがあり、ノーマルは御飯2.5膳分？くらいあるそうだが、3人で2つペロリと平らげる。串もそれなりにたのんで、満腹満腹。今月に入ってから、忙しすぎてまともに飯を食ってなかったな。つか、誰かと会話をしながら笑顔で食事をしたのが、凄まじく久しぶりのような（笑）。&lt;/p&gt;
-
-&lt;p&gt;ずっと更新してしなかったし、メールの返事もろくに書けていない状態だったので、心配してくれた人もいたようで。一応生きてます。会社と家の往復しかしていないと、あまり書くネタもなかったりするんだけど。まぁ息抜きがてらに更新もがむばりますよ&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;最近また眠れない病が。疲れているのに眠れないのは苦痛ですな。かと言って運動するような元気も時間もないわけで。実は今日記を書いているのも、ベッドに潜り込んだものの眠れなくて書いていたり。もう3時デスヨ&amp;hellip;。「眠らなければならない」と思えば思うほど眠れない。かと言って起きていると、6時とか半端な時間に強烈な眠気が&amp;hellip;どうしろと。&lt;/p&gt;
-
-&lt;p&gt;&lt;h3&gt;:: Today&amp;rsquo;s Music ::&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;No Music&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-</description>
+      <description>忙しいです。10/21で「未だにプログラミングに入れない」とあるが、さすがにというかようやくプログラミングに入り。しかし仕様が決まらないうち</description>
     </item>
     
     <item>
@@ -63,16 +36,7 @@
       <pubDate>Mon, 21 Oct 2002 00:00:00 +0900</pubDate>
       
       <guid>http://nobu666.com/2002/10/21/95.html</guid>
-      <description>&lt;p&gt;未だにプログラミングに入れないプロジェクト。こんな調子で大丈夫なのかマジで。未だにUIに手直しが入ったりして、仕様書の修正に追われる日々。そんな折り、上司から「Webサービスの部分は任せるから暇作ってJSP勉強しておいて」と言われる。サーブレットはやったことがないが、やれと言われたらやるしかあるまい&amp;hellip;Javaはあんまり経験もないので、まずはなんかひとつ適当なもの作ってみるかな。&lt;/p&gt;
-
-&lt;p&gt;OnlineゲームやFTPやIRCなど、1時間に1度は落ちる現象が前から発生していたのだが、いろいろ調べてみるとルータが原因ぽい。フィルタリング全部切っても、どうしてもDHCPサーバのReplyがなくなる。DHCPサーバ自体がショボイのか？とも思ったが、ケーブルモデム直結だと問題ないので、やっぱルータが腐ってるようだ。とりあえず手元にあったスイッチングハブでその場しのぎは可能なんだが、セキュリティ的に無防備になるのがアレでナニ。&lt;a href=&#34;http://www.mrl.co.jp/catalog/nw/mr-nwgopt90.htm&#34;&gt;NetGenessisOPT90&lt;/a&gt;が、秋葉原のSuccessあたりで結構安いようなので、今月給料日に秋葉原直行か。今のこのルータは&amp;hellip;オークションにでも出すか。新品で1万切るような値段なので、あまり足しにもならなさそうではあるが。&lt;/p&gt;
-
-&lt;p&gt;&lt;h3&gt;:: Today&amp;rsquo;s Music ::&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Evil Warning / Angra&lt;/li&gt;
-&lt;li&gt;Superheroes / RacerX&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-</description>
+      <description>未だにプログラミングに入れないプロジェクト。こんな調子で大丈夫なのかマジで。未だにUIに手直しが入ったりして、仕様書の修正に追われる日々。そ</description>
     </item>
     
     <item>
@@ -81,17 +45,7 @@
       <pubDate>Sun, 20 Oct 2002 00:00:00 +0900</pubDate>
       
       <guid>http://nobu666.com/2002/10/20/94.html</guid>
-      <description>&lt;p&gt;土曜・日曜と両親が来た。先週頭から親戚が危篤になったので慌ててきたのだが、なんとか持ちこたえたようで。一時は血圧が50とか60とかいってたのでダメだと思ったのだが。一命は取り留めたものの、意識を取り戻すかどうかはわからないそうだ。とにかく話すのが好きな人で、放っておけば一日中でも喋っているような人だったのだが&amp;hellip;。まぁすぐに葬式をしなくちゃいけない事態は免れたものの、いつどうなるかわからないなぁ。&lt;/p&gt;
-
-&lt;p&gt;親父が俺の部屋に来るのは初めてだったのが、それなりに快適に過ごせたようだ。ウチの親は寝る時間が異様に早く、下手すると21時前とかに寝てしまう。流石にそんな時間にそれは眠れないので多少お付き合いいただいたが。つか寝ないでゲームする予定だったのだが、全力で却下された（笑）。ビールを2人で4リットル近く空けてしまったので、結構酔っぱらって意外と早くに寝ちゃったけど。久しぶりにスキヤキなんぞをたらふく食って、たんまりビール飲めたんでまぁいいかな感じ。&lt;/p&gt;
-
-&lt;p&gt;なんだがあっちこっちと掃除して帰っていったが&amp;hellip;客が来て部屋が綺麗になったのは初めてだ（笑）。親父がまた結構神経質というか、すげー細かいことが気になる人で。俺もその血を引いていると言えばまぁそうなんだが、親父ほどではないな。トイレの換気扇を掃除したり、ガラスを拭いたりしてた。トイレの換気扇なんて、どのくらい汚れてるのか見たことすらなかったけど。つか、やっぱ家族っていいよね。ウチの親ももう若くないんだし、なるべく親孝行しておこうとか思った週末。正月に札幌帰ったら、温泉にでも連れて行こうかのぅ。&lt;/p&gt;
-
-&lt;p&gt;&lt;h3&gt;:: Today&amp;rsquo;s Music ::&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;1996 / 坂本龍一&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-</description>
+      <description>土曜・日曜と両親が来た。先週頭から親戚が危篤になったので慌ててきたのだが、なんとか持ちこたえたようで。一時は血圧が50とか60とかいってたの</description>
     </item>
     
     <item>
@@ -100,17 +54,7 @@
       <pubDate>Thu, 17 Oct 2002 00:00:00 +0900</pubDate>
       
       <guid>http://nobu666.com/2002/10/17/93.html</guid>
-      <description>&lt;p&gt;いやーやっぱEQやり始めると時間が&amp;hellip;会社帰って20時、飯＆風呂で21時、そっから25時くらいまで遊んで寝るみたいな。ゲームにハマってると金使わないで済むのはいいのだが、EQの場合はいかんせん時間のかかるゲームなので、他のことができなくなる。仕方ないので、最近は昼休みに勉強してまつ。まぁ一時間でもやらないよりはいいし、毎日やってりゃそれなりに効率もよかろうと。EQ復活ついでに&lt;a href=&#34;./eq/&#34;&gt;サイト&lt;/a&gt;も改装中。&lt;/p&gt;
-
-&lt;p&gt;最近我が家のハムスタービット君、やたらとケージを登るようになった。さっきフトみたら、天井に手だけでつかまってた、雲梯のように。もちろんすとーんと落ちるわけだが、そのうち怪我でもしないかと心配なり。骨折したとかいう話も聞くしな。登れないように柵になってないケージがあればいいのだけど、それだと風通しが悪くて夏場、可哀想だし&amp;hellip;どうしたものか。&lt;/p&gt;
-
-&lt;p&gt;そういえば&lt;a href=&#34;http://www.itscom.net/&#34;&gt;itscom&lt;/a&gt;に新サービス申し込んで、もう結構経つのだが何の音沙汰もなし。ちょっとむかついたので、&lt;a href=&#34;http://www.usen.com/gate01/&#34;&gt;U-sen&lt;/a&gt;の申し込みもしてみる（笑）。引っ越してきたときはサービスエリアじゃなくて諦めていたのだが、予約受付中で近日サービス開始となっている。これでU-senのほうがレスポンス早くて、工事の日程とかチャチャッと決まれば、もうU-senにしちゃいたい。やっぱケーブルだと、いろいろ制約が多くてダメですな。IRCに繋がらないときとかあるし。それに引き替え、U-senのほうは値段の割に魅力的なサービス内容。グローバルIPアドレス固定だし、なんせ100MBのくせに4800円/月と激安。基本工事費も15000円だし、やっぱどう考えても安い。どの割には悪い噂もあんまり聞かない。あぁダメだ、すげぇ引きたくなってきた。もはや心の中では60%くらいU-senで決定な感じ。&lt;/p&gt;
-
-&lt;p&gt;&lt;h3&gt;:: Today&amp;rsquo;s Music ::&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;No Music&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-</description>
+      <description>いやーやっぱEQやり始めると時間が&amp;hellip;会社帰って20時、飯＆風呂で21時、そっから25時くらいまで遊んで寝るみたいな。ゲームにハ</description>
     </item>
     
     <item>
@@ -119,20 +63,7 @@
       <pubDate>Mon, 14 Oct 2002 00:00:00 +0900</pubDate>
       
       <guid>http://nobu666.com/2002/10/14/92.html</guid>
-      <description>&lt;p&gt;がっつりサボっちまったが、怒濤の週末を過ごした。金曜日は会社帰り、溝の口の本屋にいたらShonanに呼び出され新宿へ。Shonanの友達がバンドをやっており、Liveを観る。これから売ってくぜ?な感じで、実際人気もあるようだし、それなりに売れる予感。その後牛タンを御馳走になってShonan邸でEQ。超久しぶりにEQやったら、インターフェースとか変わってて浦島状態。すっぱりゲームはやめようと思ったのに、一回やってしまうと麻薬のごとく&amp;hellip;結局次の日、池袋へ出向いた俺の手にはGeForce4Ti4200が（笑）。そういえば買い物へ行く前、Shonan邸のおすぐそばにある某ラーメン屋でつけ麺を食べたのだが。値段が700円で種類が選べる。種類といっても味の種類ではなく、選べるのは量である。小・中・大・地球盛り・銀河盛り・宇宙盛り・ビックバーンと順に増えていく。ビックバーンに至っては麺が1kgあるっぽい（笑）。そっから二人して地球盛りを食らう。3玉とのことなので普通に食えるかと思ったら、最後のほうはもう逆流しそうな勢いで&amp;hellip;最後の一口は手伝ってもらった。ちなみに残すと値段が倍になるらしい（笑）。Shonanは銀河盛りだか宇宙盛り＋水餃子を食したことがあるらしい&amp;hellip;恐ろしや。&lt;/p&gt;
-
-&lt;p&gt;家に帰って早速セットアップするもやっぱEQは起動せず。ビデオカードのせいだとばかり思っていたのに、全然関係なかったっぽ。まぁビデオカードのお下がりでサブPCのほうもパワーアップするから、とりあえず良しとしておくか。なんかマウスの動きが怪しかったり、たまに不正処理でエクスプローラが落ちたりと不安定だったのでOSから入れ直し。なんか半年に一回はOSの入れ直しをしているような気がする。&lt;/p&gt;
-
-&lt;p&gt;日曜は夕方にY/N姉妹とM氏が襲来。曰く「ハムスターを見に来た」と。しばしハムスターで遊びながら談笑して、ウチの近くの絶対一人じゃいかないイタ飯屋へ。決して安くはないが、それなりにリッチ感を味わい満足。お約束でその後しっかりカラオケへ&amp;hellip;つか4人で1時間じゃ短い。また近いうちに、今度は時間に余裕を持って行きませう。&lt;/p&gt;
-
-&lt;p&gt;んで今日は、朝までゲームをやってしまい起きたら夕方という最悪のパターン。会社行くの辛くなるから12時には起きようと思って、ちゃんと目覚ましを3つ使って起きたのだが。風呂に入ってすっきりしたらまた寝てしまった模様（笑）。マシンの環境を復活させていると実家から荷物が送られてきた。そういやメールで荷物送るっていってたっけ。なんか「楽しみにしてろ」と言っていたので期待して開けてみると、解凍したらすぐ食えるようなもの数品と、いくらの醤油漬けがたっぷりめに入っていた。早速、どんぶりにいくらをドパーっとかけて食った。涙が出るほど旨かった。結構量があるので、まだしばらくは持ちそう。いくら最高。&lt;/p&gt;
-
-&lt;p&gt;&lt;h3&gt;:: Today&amp;rsquo;s Music ::&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;唄ひ手冥利?其の壱?　亀PactDisc / 椎名林檎&lt;/li&gt;
-&lt;li&gt;Seven Hills / Anthem&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-</description>
+      <description>がっつりサボっちまったが、怒濤の週末を過ごした。金曜日は会社帰り、溝の口の本屋にいたらShonanに呼び出され新宿へ。Shonanの友達がバ</description>
     </item>
     
     <item>
@@ -141,16 +72,7 @@
       <pubDate>Thu, 10 Oct 2002 00:00:00 +0900</pubDate>
       
       <guid>http://nobu666.com/2002/10/10/91.html</guid>
-      <description>&lt;p&gt;14時から20時まで外出先で会議&amp;hellip;疲れた。あんなに苦労して書いた仕様書なのだが、様々な仕様変更に伴ってかなり大幅に書き直し＆追加が決定。6時間延々と変更部分の説明を受ける。さすがに萎える&amp;hellip;帰りに、新宿で上司にメシをおごってもらう。久しぶりにトンカツ食べた。&lt;/p&gt;
-
-&lt;p&gt;めっきり夜は寒くなってきた。そろそろ夜に半袖で出歩くのは無理っぽい。昼間はかなり暖かいのだが、気温の落差が結構ある。北海道ではそろそろ紅葉の季節&amp;hellip;そりゃ寒くもなってきますな。寒くなってくると思い出すのは、中学時代のバンド活動。中学生は基本的にバイトしないわけで、金がないのがデフォルト。バンドの練習をしたくても、スタジオなんぞには行けるはずもない。たまたまドラマーの家は地下が車庫兼物置になっており、それなりのスペースがあった。そこに中古で買ったドラムを設置し、みんなでアンプを持ち寄って毎日そこで練習をしていたのだが、所詮車庫なので冬は半端なく寒いのである。がっちりコートを着込んで練習するのだが、流石に手はどうしようもない。もう寒くて握力がなくなるほどで&amp;hellip;.。暖房がなかったので仕方なく、&lt;strong&gt;裸電球で手を暖めた&lt;/strong&gt;なんともほろ苦いおもひで。&lt;/p&gt;
-
-&lt;p&gt;&lt;h3&gt;:: Today&amp;rsquo;s Music ::&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Lean Into It / Mr. Big&lt;/li&gt;
-&lt;li&gt;&amp;hellip;And Justice For All / Metallica&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-</description>
+      <description>14時から20時まで外出先で会議&amp;hellip;疲れた。あんなに苦労して書いた仕様書なのだが、様々な仕様変更に伴ってかなり大幅に書き直し＆追</description>
     </item>
     
     <item>
@@ -159,13 +81,7 @@
       <pubDate>Wed, 09 Oct 2002 00:00:00 +0900</pubDate>
       
       <guid>http://nobu666.com/2002/10/09/90.html</guid>
-      <description>&lt;p&gt;さんざん悩んでいた問題が解決&amp;hellip;要するにDHCPを使っていたのがダメだった模様。2台とも静的にIPアドレスを設定し、ゲートウェイをルータに、DNSはプロバイダのサーバを指定。かつそれぞれのマシンに同じhostsファイルを置くことで万事解決。telnet・ftp共につながることを確認、sambaも普通に使えるようになった。感動した！！で、次のステップとして、telnetの代わりにOpenSSHを、WU-FTPdの代わりにProFTPdを導入。SSHのインストール時に依存の問題が出たが古いバージョンをrpmコマンドで一括削除、新しいのを一括インストールで解決。Linuxとかってファイルをダウンロードしてくると「openssh-askpass-gnome-3.4p-1.i386.rpm」とか異様に長ったらしいファイル名なんだが。こりゃコマンド打つの大変だなぁなんてぼやきながら、いままでシコシコ間違えないように手入力していたのだが。一文字打ってTABを押すと、名前が補完されることに気が付いて驚喜（アホ）。何はともあれ無事にSSHも使えるようになった。明日はアンチウイルスと、便利げな管理ツールの導入でもするかな。&lt;/p&gt;
-
-&lt;p&gt;&lt;h3&gt;:: Today&amp;rsquo;s Music ::&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Mother Earth / 大黒摩季&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-</description>
+      <description>さんざん悩んでいた問題が解決&amp;hellip;要するにDHCPを使っていたのがダメだった模様。2台とも静的にIPアドレスを設定し、ゲートウェイ</description>
     </item>
     
     <item>
@@ -174,17 +90,7 @@
       <pubDate>Tue, 08 Oct 2002 00:00:00 +0900</pubDate>
       
       <guid>http://nobu666.com/2002/10/08/89.html</guid>
-      <description>&lt;p&gt;午後から会社を抜けて渋谷へ健康診断へ。明治通りを原宿方面へ歩いていくのだが、考えてみたら田園都市線メインな俺はハチ公口ばかり使っていて、駅の反対側へは殆ど行ったことがなかったことに気づいた。なんたる行動範囲の狭さか&amp;hellip;。週末は3連休だし、散歩がてらにウロウロしてみようかと思ったのだが、ウロウロしてたら絶対買い物するのでやめよう。健診の方は何事もなく終了。血圧を5回ぐらい測り直されたのだが&amp;hellip;結構急ぎ足で歩いてきたので血圧が上がっていたのだろうか。微妙に汗かいてたくらいだし（笑）。つか、血圧って普段計らないから数字言われてもよくわからない。結局120いくつの70いくつとか言ってたような。恐れていた胸部レントゲンでも異常なく、禁煙命令は出なかった。命令されないでも止めろとか言われそうだが&amp;hellip;ほら、タバコ吸いたくなるのは病気だから。ニコチン中毒というか依存症というか。病人には優しくすれ！会社に帰ったら禁煙命令を下されて1週間目のN先輩が、目を輝かせて「なんか言われた？やめろって？ねぇ、やめろって？？」と聞いてきたが、反応時間0.1ナノ秒でさも美味そうにタバコを吸って差し上げた。軽く殺意に満ちた目で「チッ&amp;hellip;.」とか言われたが。&lt;/p&gt;
-
-&lt;p&gt;相変わらずひたすらRedhatと格闘するが、やはり上手いこといかない。とりあえず現状のまとめメモ。「pingはIPアドレス、マシン名どちらでも通る」「Redhat側で、自分にtelnet・ftpは出来る」「Windowsからはtelnet・ftpともにIPアドレスでもマシン名でもつながらない」「SambaはWindowsから見えるけどネットワークパスが見つからないと怒られて使えない」「どちらからもインターネットには間違いなく接続できている」となると怪しいのはDNS・DHCPあたりか？ローカルなマシン名を、プロバイダのDNSに引きに行っているのかも。まぁとりあえずしばらく放置かなぁ。インターネットにつながってれば使い道はあるし、勉強にはちょうど良かろう。固定グローバルIPが貰えない現状、ドメイン取れないのでDNSサーバも動かせないし。itscomよ、早く工事に来ておくれ&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;h3&gt;:: Today&amp;rsquo;s Music ::&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;BOUNCE / Bon Jovi&lt;/li&gt;
-&lt;li&gt;BEST of BEST / 大黒摩季&lt;/li&gt;
-&lt;li&gt;Dreams Of Dust / Sly&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-</description>
+      <description>午後から会社を抜けて渋谷へ健康診断へ。明治通りを原宿方面へ歩いていくのだが、考えてみたら田園都市線メインな俺はハチ公口ばかり使っていて、駅の</description>
     </item>
     
     <item>
@@ -193,13 +99,7 @@
       <pubDate>Mon, 07 Oct 2002 00:00:00 +0900</pubDate>
       
       <guid>http://nobu666.com/2002/10/07/88.html</guid>
-      <description>&lt;p&gt;様々なサイトを参考にしながらRedhatのセキュリティを強化。それはいいんだけど、WindowsからSambaが見えるのにダブルクリックすると実は繋がらないことが判明。hostsやlmhostの設定をRedhat・Windows共に行ってみるもやっぱダメ。ネットワークパスが見つからない&amp;hellip;。お互いから「ping マシン名」「ping ローカルIPアドレス」どちらも通る。ファイアウォール切ったりもしてみたんだけどどうも上手くいかない。Sambaの設定がおかしいのかとsmb.confも見てみたけど特におかしいところはないんだよなぁ&amp;hellip;わからねぇ。なんか色々いじっているうちにtelnetもftpも繋がらなくなった。ますますわからねぇ&amp;hellip;&amp;hellip;なんでpingだけokなんだろう。&lt;/p&gt;
-
-&lt;p&gt;&lt;h3&gt;:: Today&amp;rsquo;s Music ::&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;No Music&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-</description>
+      <description>様々なサイトを参考にしながらRedhatのセキュリティを強化。それはいいんだけど、WindowsからSambaが見えるのにダブルクリックする</description>
     </item>
     
     <item>
@@ -208,17 +108,7 @@
       <pubDate>Sun, 06 Oct 2002 00:00:00 +0900</pubDate>
       
       <guid>http://nobu666.com/2002/10/06/87.html</guid>
-      <description>&lt;p&gt;不覚にも目覚めると15時&amp;hellip;こりゃ明日会社行くの辛そうだよ。といっても寝てしまったものは仕方がない。昨日インストールしてIRCに繋いだまま放置しておいたRedhatだが、なんか延々と再起動モードに突入していた。BIOS起動してOSがロードされる直前に再起動がかかっている。どうやら寝ている間中再起動していたようだ（笑）。実はこの症状は以前からで、昨日インストールする直前に3枚差さっていたメモリを2枚引っこ抜いて1枚にしてテスト起動。するとやっぱダメで、メモリを取り替えてみると安定したようだったのでインストール作業に入ったのだが。原因はメモリではないらしい。以前はWinXPで今Redhatということは、OSも原因ではない。となると怪しいのは電源である。見てみたら230Wの電源でAthlonを動かしていたんだな、今まで。加えてタバコのせいでFANも汚れているし&amp;hellip;散々使いまわしてきたものなので、経年劣化もあるだろう。ともかくサーバとして使おうとしているのに、勝手に再起動されてはたまらない。秋葉原まで足を運び、ふらっと立ち寄った店で、3台ほど限定で400W電源が3000円ちょっとで売っていたので即購入。ついでにメインマシンのCD-ROMドライブも、読み込みが悪くなっていたのでDVDドライブを購入。あわせて1万で釣りがきた。多少電源のFANの音が五月蝿くなったが、まぁ耐えられないほどではないし良しとしよう。&lt;/p&gt;
-
-&lt;p&gt;ルータの設定をしたり、カーネルレベルでパケットフィルタリングを行う設定をしたりとセキュリティ関連にチロチロと手を入れつつ、テレビなんぞを見ているとShonanが電話が。要するに「EQ復活しないの？」って電話だったのだが（笑）。ビデオカードがいかれててEQ無理?、買おうにも金無い?とか言ってたら、速攻で余りもののEQがそれなりに動くビデオカードが手配されてしまった（笑）。堂々と引退宣言した手前、いまさら復活しましたなんてのも憚られるのだが&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;h3&gt;:: Today&amp;rsquo;s Music ::&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Helloween - Walls of Jericho - Judas / Helloween&lt;/li&gt;
-&lt;li&gt;Californication / Red Hot Chili Peppers&lt;/li&gt;
-&lt;li&gt;Pornograffitti / EXTREME&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-</description>
+      <description>不覚にも目覚めると15時&amp;hellip;こりゃ明日会社行くの辛そうだよ。といっても寝てしまったものは仕方がない。昨日インストールしてIRCに</description>
     </item>
     
     <item>
@@ -227,22 +117,7 @@
       <pubDate>Sat, 05 Oct 2002 00:00:00 +0900</pubDate>
       
       <guid>http://nobu666.com/2002/10/05/86.html</guid>
-      <description>&lt;p&gt;ふと思い立って放置していた2ndマシンの環境を再構築。WinXPを使っていたのだが、RedHat7.3なんぞを入れてみる。なんで突然そんなことをしたのかというと、プロバイダであるitscomに新サービスを申し込んだから。今のサービスは下り10MB/上り256kbpsで、グローバルIPアドレスが貰えない。自前でサーバを建てたいと思っていたのだが、グローバルIPアドレスがないのはちょっとアレだったのだが、今回の新サービスによりグローバルIPアドレスが貰えるようになったのである。回線も下り30MB/上り10MBにパワーアップする（とは言っても、ケーブルモデムの性能上の問題で、実際のスループットは最高で10MB/4MB程度で頭打ちになるらしい。まぁ十分だけど）。そんなこともあって、開通したら即サーバの運用が出来るようにある程度環境を作っておくことにした。とりあえずApache・WU-FTPd・Telnet・Sambaだけ設定しておく。疲れた&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;結局、例のカスタマイズページの作成はまったく手つかず。別に何をしてたと言う訳じゃないのだけれど&amp;hellip;。Oracleの勉強したり、Emacsの使い方を勉強したり、ベース弾いたり。ベースは少しだけ昔の勘を取り戻した感じ。とは言ってもドラムなしで、本当の意味での「昔の勘」は戻らないのだが。ベースといえば&lt;a href=&#34;http://www.h2.dion.ne.jp/~amefuri/bakuretsubassist.htm&#34;&gt;爆裂ベーシスト列伝&lt;/a&gt;、面白い。俺的には、これに加えてロッコ・プレスティア、ニッキー・シックス、ウィル・リー、ティム・ボガード、ラリー・グラハム、マーク・キング、スチュアート・ハム、江川ほーじん、ジョン・エントウィッスル、須藤満、鳴瀬喜博&amp;hellip;このくらい並んでいれば相当お腹一杯になれたのに。つか、日本人で名前の挙がっているのが、沢田泰司とゼノン石川ってのが謎。最近ベースマガジン買ってないなぁ。俺が買っていた頃は、ソノシートなんてものがついていたが。&lt;/p&gt;
-
-&lt;p&gt;ソノシートで思い出したが、遥か昔にドラえもんのソノシートがうちにあった。なにかのおまけだったのか、はたまた買ったものなのかは全然わからないし、内容も殆ど覚えていない。唯一覚えているのは、なぜか「宇宙人の声」が録音されていたこと。人間が宇宙人の言葉を話していたものだったのか、それとも宇宙人の声そのものだったのかまで覚えていないのだが&amp;hellip;幼稚園に行っているような頃のことだが、その「宇宙人語」はやけに耳に残っている。怖いもの見たさ（というか聞きたさ？）で何度も何度も聞いていた覚えがある。考えてみれば俺の不思議な物好きは、この頃からだったらしい。&lt;/p&gt;
-
-&lt;p&gt;&lt;h3&gt;:: Today&amp;rsquo;s Music ::&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Superheroes / RacerX&lt;/li&gt;
-&lt;li&gt;Cryptic Writings / MEGADETH&lt;/li&gt;
-&lt;li&gt;Rust in Peace / MEGADETH&lt;/li&gt;
-&lt;li&gt;HEY MAN / Mr.Big&lt;/li&gt;
-&lt;li&gt;Passion and Warfare / Steve Vai&lt;/li&gt;
-&lt;li&gt;Awake / Dream Theater&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-</description>
+      <description>ふと思い立って放置していた2ndマシンの環境を再構築。WinXPを使っていたのだが、RedHat7.3なんぞを入れてみる。なんで突然そんなこ</description>
     </item>
     
     <item>
@@ -251,21 +126,7 @@
       <pubDate>Fri, 04 Oct 2002 00:00:00 +0900</pubDate>
       
       <guid>http://nobu666.com/2002/10/04/85.html</guid>
-      <description>&lt;p&gt;WindowBlindsの解説ページ作成のために、色々やっちゃおうかなとか思ってたのにIRCで談笑してしまいあっさり断念。明日やろう&amp;hellip;なんとか土日で作ってしまいたい感じ。Linkも見直さなきゃなーと思ってCustom系のサイト行ってみたら、カスタマイズにハマっていた頃お世話になっていたサイトが殆どなくなっていた。道理でこんな辺鄙なサイトに人が来るわけだ。こりゃちょっと本腰入れてカスタム系の情報をば発信していくのも悪くないかな？でも実際、自宅PCで仕事することもあるから、最近殆どカスタマイズしてないんだよな。どうしても不安定になったり重くなったりしちゃうし。&lt;/p&gt;
-
-&lt;p&gt;EQの方のサイト、ここ数日アクセスが凄い。放置してるのに申し訳ない感じである。気が付いたら50000hit超えてるし。あっちも暇を見て、明らかに古くなっている情報についてはupdateかけようかな。EQ自体、遊んでないのにEQのサイトは毎日見て回っている。いろいろと変更が入っていて「あぁやっぱり面白そうだなぁ」とか思ったりするわけだが、ハマると会社行かなくなっちゃうような感じも（笑）あるので&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;なんか今日はイトーヨーカドーで妙に鶏肉が安かった。胸肉がグラム39円とか。勢いで買ったものの、どうやって食べようか考えたあげく&amp;hellip;キャベツを千切りにして皿に盛り、鶏肉を普通に塩コショウで焼いたらその上にどさっと乗せて、ポン酢をぶっかけて食べた。旨っ！安くて簡単で旨い。それはいいんだけど、洗い物が面倒なんだよな。一人暮らしだとこまめに洗わないと、すぐ食器なくなるし。洗い物のことまで考えるとこれからの季節、鍋がイイかもな。鍋の材料も、一人分とか言って袋に入って売ってたし。野菜も結構な種類入っていたので、なかなかよさげ。&lt;/p&gt;
-
-&lt;p&gt;&lt;h3&gt;:: Today&amp;rsquo;s Music ::&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;LEAN INTO IT / Mr.Big&lt;/li&gt;
-&lt;li&gt;bump ahead / Mr.Big&lt;/li&gt;
-&lt;li&gt;PROMISED LAND / QUEENSRYCHE&lt;/li&gt;
-&lt;li&gt;Countdown To Extinction / MEGADETH&lt;/li&gt;
-&lt;li&gt;Powerslave / IRON MAIDEN&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-</description>
+      <description>WindowBlindsの解説ページ作成のために、色々やっちゃおうかなとか思ってたのにIRCで談笑してしまいあっさり断念。明日やろう&amp;hel</description>
     </item>
     
     <item>
@@ -274,19 +135,7 @@
       <pubDate>Thu, 03 Oct 2002 00:00:00 +0900</pubDate>
       
       <guid>http://nobu666.com/2002/10/03/84.html</guid>
-      <description>&lt;p&gt;会社のベランダでタバコを吸っていると、近くにある保育園だか幼稚園だかの園庭の様子が見える。なんかココ2・3日、プチ運動会みたいなことしてる。11Fからタバコを吸いつつ、そんな微笑ましい光景を「子供はいいなぁ」と思いながら眺める&amp;hellip;&lt;strong&gt;訳はなく&lt;/strong&gt;。あくまでそういう振りをしつつ、&lt;strong&gt;単に保母さんを見ている&lt;/strong&gt;26歳独身です、よろしくお願いします。&lt;/p&gt;
-
-&lt;p&gt;N先輩が健康診断で医者に禁煙を勧められ、本日禁煙3日目。医者にかなり脅されたようである。禁煙中であるにも関わらず謎に喫煙所に現れる。やはり「全然集中できない」とのこと。「もう死んでもいいから吸いたい」とまで言っていた。&lt;a href=&#34;http://www.nicorette-j.com/&#34;&gt;ニコレット&lt;/a&gt;使ってるみたいだけど、&lt;strong&gt;ニコレットがやめられないんじゃないか&lt;/strong&gt;と余計な心配までしていた。結構効くみたいよ、ニコレット。N先輩はニコレット中毒を恐れて（笑）いきなり2個/日とかで我慢してるようだけど。常習的に摂取していたニコチンの欠乏によるイライラや集中力の欠如、そういった禁煙のネガティブな面を減らす為のニコレットだと思うのだが&amp;hellip;結局我慢していらついてたら意味ない気味（笑）。ちなみに俺は禁煙経験なし&amp;hellip;来週俺も健康診断だけど、やめろって言われそうだなぁ。もう10年近く吸ってるし。止めようかなと思うことは結構あるんだけど、次の瞬間には吸ってたりする。タバコの量が増えるのは土日の暇なとき、飲み会、カラオケ。タバコ吸っててもいいことなんか特にないのにな。なんで吸ってるんだろう。吸い始めたきっかけは、なんだったっけな。多分タバコを吸うという行為が、カッコいいと思ったからだろう。大人への憧れであり、親や教師や社会への理由なき反抗。そんなところか。正直、タバコをおいしいと思ったことってないな。じゃぁなんで吸うのかといわれれば、それは惰性であり、惰性で吸い続けたことによる中毒である。うぅむ、書いてて情けなくなってきた&amp;hellip;俺も禁煙しようかな。あ、でも買い置きがあるからとりあえずそれが無くなってから&amp;hellip;とか思う時点で禁煙無理くさ（笑)。あ、そうそう。ニコレットのCMに出てくるタバコ人間。あれ、「吸いたくなるマン」って名前だって、知ってた？いやどうでもいいんだけどね、そんなの（笑）。&lt;/p&gt;
-
-&lt;p&gt;「世にも奇妙な物語　秋の特別編」を観る。林原めぐみが顔の下半分と声だけで出演してた。声優さんってのは本当にイイ声してんだなぁ。とか感心してたら、藤原紀香が出てきて。「あれぇ、こんなおばさんだったっけ」みたいな。主婦の役だったからそういうメイクだったのかな。つーか、相変わらずお約束で最後は感動話。それはいいんだけどさ、&lt;strong&gt;一平の子が二平かよ！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;h3&gt;:: Today&amp;rsquo;s Music ::&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Blood Sugar Sex Magik / Red Hot Chili Peppers&lt;/li&gt;
-&lt;li&gt;Power Plant / Gamma Ray&lt;/li&gt;
-&lt;li&gt;Seventh Sign / Yngwie J. Malmsteen&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-</description>
+      <description>会社のベランダでタバコを吸っていると、近くにある保育園だか幼稚園だかの園庭の様子が見える。なんかココ2・3日、プチ運動会みたいなことしてる。</description>
     </item>
     
     <item>
@@ -295,16 +144,529 @@
       <pubDate>Wed, 02 Oct 2002 00:00:00 +0900</pubDate>
       
       <guid>http://nobu666.com/2002/10/02/83.html</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://unit.aist.go.jp/it/knoppix/&#34;&gt;KNOPPIX 3.1日本語版&lt;/a&gt;を使ってみた。いいねぇ、凄くイイ！昔はLinuxといえば、日本語表示するのも一苦労で大変な思いをしたわけだが。今じゃすっかり全自動&amp;hellip;ネットワークの設定までできちゃうんですな。速攻で使える状態でブートされる。HDDにインストール不要で、CD-ROM突っ込んで再起動するだけのお手軽さ。Linuxちょっと使ってみたいけど敷居が高くて&amp;hellip;なんて人に最適かと。緊急用にも十分使える。なによりびっくりしたのは付属のWindowsエミュレータ。かなりいい出来だなぁ&amp;hellip;OpenOfficeなんてのも最近あるし、ゲーマーじゃないならWindows使うメリットもなくなりつつあるのかな。&lt;a href=&#34;http://info.lindows.com/screenshots/screenshot_gallery.htm&#34;&gt;Lindows&lt;/a&gt;なんてのもあるしねぇ。&lt;/p&gt;
-
-&lt;p&gt;エンゲル係数向上計画、順調な感じ。相変わらず朝の缶コーヒーは飲んでいるものの、それ以外は会社にあるティーバッグで紅茶を入れて飲んでいる。朝飯も家で食べるようにしている。納豆ぶっかけて食べてるけど、サンドイッチよりは体にも良さそうだし。洗い物とかやっぱ面倒なんだけど&amp;hellip;果たしていつまで続くか？&lt;/p&gt;
-
-&lt;p&gt;&lt;h3&gt;:: Today&amp;rsquo;s Music ::&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&amp;hellip;And Justice For All / Metallica&lt;/li&gt;
-&lt;li&gt;Live &amp;amp; Loud / Ozzy Osbourne&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-</description>
+      <description>KNOPPIX 3.1日本語版を使ってみた。いいねぇ、凄くイイ！昔はLinuxといえば、日本語表示するのも一苦労で大変な思いをしたわけだが。今じゃすっかり</description>
+    </item>
+    
+    <item>
+      <title>音によるイマジネーション</title>
+      <link>http://nobu666.com/2002/10/01/82.html</link>
+      <pubDate>Tue, 01 Oct 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/10/01/82.html</guid>
+      <description>あからさまにオタク丸出しの会話を繰り広げる会社の先輩（あ、いっとくけどオタクな人が嫌いとかそういうことはアリマセン。何事も「極まった」人は凄</description>
+    </item>
+    
+    <item>
+      <title>エンゲル係数</title>
+      <link>http://nobu666.com/2002/09/30/81.html</link>
+      <pubDate>Mon, 30 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/30/81.html</guid>
+      <description>あまりにもWindowBlinds関係のサーチで飛んでくる人が多いので、結局新たにページを作ることにした。とりあえずインストールからレジスト</description>
+    </item>
+    
+    <item>
+      <title>青芝</title>
+      <link>http://nobu666.com/2002/09/29/80.html</link>
+      <pubDate>Sun, 29 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/29/80.html</guid>
+      <description>支払いだけするつもりでマルイへ行くも、やっぱり見ていると物欲がフツフツと。手始めにシルバーアクセを物色するが、欲しいものはどれも高すぎてやめ</description>
+    </item>
+    
+    <item>
+      <title>美容室</title>
+      <link>http://nobu666.com/2002/09/28/79.html</link>
+      <pubDate>Sat, 28 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/28/79.html</guid>
+      <description>休みの日は時間の過ぎるのが早い&amp;hellip;新聞読んだり、ぼーっとテレビを見ているうちにあっという間に暗くなってしまった。休みの日なのに特</description>
+    </item>
+    
+    <item>
+      <title>横濱家</title>
+      <link>http://nobu666.com/2002/09/27/78.html</link>
+      <pubDate>Fri, 27 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/27/78.html</guid>
+      <description>ついに会社のPCがぶっ壊れる。日本語が入力できないどころか、ついにキーボードを打鍵した瞬間にフリーズするという悲惨な状況に陥ってしまった。ち</description>
+    </item>
+    
+    <item>
+      <title>??系</title>
+      <link>http://nobu666.com/2002/09/26/77.html</link>
+      <pubDate>Thu, 26 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/26/77.html</guid>
+      <description>昨日の夜書いた通り、枕に香水を、ちょっと遠くから軽くひと吹きしてみた。ついでに掛け布団の端っこにも。すると昨日は嘘のように眠れた。イイ感じ。</description>
+    </item>
+    
+    <item>
+      <title>不眠症？</title>
+      <link>http://nobu666.com/2002/09/25/76.html</link>
+      <pubDate>Wed, 25 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/25/76.html</guid>
+      <description>給料日だというのに、会社が終わるとATM閉まってた。当然イトーヨーカドーも閉まっており、優勝セールなんて行けやしない&amp;hellip;damn</description>
+    </item>
+    
+    <item>
+      <title>野球</title>
+      <link>http://nobu666.com/2002/09/24/75.html</link>
+      <pubDate>Tue, 24 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/24/75.html</guid>
+      <description>会社帰りにイトーヨーカドーへ立ち寄ると、塩焼きのサンマが売っていた。しばらく焼き魚なんぞ食べていなかったので無性に食べたくなり、買ってみる。</description>
+    </item>
+    
+    <item>
+      <title>おえません...？</title>
+      <link>http://nobu666.com/2002/09/23/74.html</link>
+      <pubDate>Mon, 23 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/23/74.html</guid>
+      <description>昼頃Shonanが帰り、そのまま夕方まで寝る。そのまま寝続けると夜中にばっちり目が覚めて会社に行くのが大変そうなので、適当な時間に無理矢理起</description>
+    </item>
+    
+    <item>
+      <title>徹夜</title>
+      <link>http://nobu666.com/2002/09/22/73.html</link>
+      <pubDate>Sun, 22 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/22/73.html</guid>
+      <description>EQで知り合った友人Shonanが夜に来襲。徹夜をしたのは久しぶりだ。「この曲のリフがどうのこうの」「あの曲のソロはあぁだこうだ」とベースの</description>
+    </item>
+    
+    <item>
+      <title>深夜番組</title>
+      <link>http://nobu666.com/2002/09/21/72.html</link>
+      <pubDate>Sat, 21 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/21/72.html</guid>
+      <description>久しぶりに時間ができたのでベースの練習。なんだがピックの使い方が怪しい&amp;hellip;弦を弾く位置や強さ、弦に当てる角度なんかで微妙な音色の</description>
+    </item>
+    
+    <item>
+      <title>ねみぃ...</title>
+      <link>http://nobu666.com/2002/09/20/71.html</link>
+      <pubDate>Fri, 20 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/20/71.html</guid>
+      <description>帰宅後、冷凍のピラフをレンジに突っ込み、ガツガツ食ってTV観てたらいつのまにか眠っていた。起きたら1:40&amp;hellip;なんか損した気分だ</description>
+    </item>
+    
+    <item>
+      <title>ﾊﾑｽﾀｰ ｷﾀｰ*･゜ﾟ･*:.｡..｡.:*･゜(ﾟ∀ﾟ)ﾟ･*:.｡. .｡.:*･゜ﾟ･*!!!!!</title>
+      <link>http://nobu666.com/2002/09/19/70.html</link>
+      <pubDate>Thu, 19 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/19/70.html</guid>
+      <description>ようやく仕事にケリ&amp;hellip;じゃなく一段落ついて、殆ど残業なしで会社を出る。そのまま近くのペットショップに寄る。一番ちっこくて、色の気</description>
+    </item>
+    
+    <item>
+      <title>遅刻により肉体疲労40%回復</title>
+      <link>http://nobu666.com/2002/09/18/69.html</link>
+      <pubDate>Wed, 18 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/18/69.html</guid>
+      <description>目覚めると11時。起きたときに素で「うがー！」と声を発して会社に電話をかける。フレックスとはいっても、10時を過ぎて出社する場合には出社時間</description>
+    </item>
+    
+    <item>
+      <title>仕事、趣味、夢</title>
+      <link>http://nobu666.com/2002/09/17/68.html</link>
+      <pubDate>Tue, 17 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/17/68.html</guid>
+      <description>なんとか最終電車に間に合わせて帰宅&amp;hellip;ﾊｧﾊｧ。まぁ最終といっても、実際は最終の一本前なんだけど。ホントの最終に乗っちゃうと鷺沼</description>
+    </item>
+    
+    <item>
+      <title>異性間の友情と同性間の友情って違うよね</title>
+      <link>http://nobu666.com/2002/09/16/67.html</link>
+      <pubDate>Mon, 16 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/16/67.html</guid>
+      <description>会社で、仕事の合間にA（09/07の日記参照）とメールのやり取りを。前も書いたように、今まで付き合った人で、未だに友達であり続けている唯一の</description>
+    </item>
+    
+    <item>
+      <title>自宅で残業</title>
+      <link>http://nobu666.com/2002/09/15/66.html</link>
+      <pubDate>Sun, 15 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/15/66.html</guid>
+      <description>PMから自宅作業の許可が下りたので、出社はせずに掃除・洗濯しながら仕事。自宅作業分も作業日報をつけてもいいとのことなので、家にいながらにして</description>
+    </item>
+    
+    <item>
+      <title>選択する時間がなくて、そろそろパンツがピンチ（笑</title>
+      <link>http://nobu666.com/2002/09/14/65.html</link>
+      <pubDate>Sat, 14 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/14/65.html</guid>
+      <description>夜オフ会に参加するため、朝から出勤。ヘッドホンを会社に一つ持っていったので、今日からは音楽を聴きながら仕事ができる。っつーかもっと早くそうす</description>
+    </item>
+    
+    <item>
+      <title>13日の金曜日...特に変わったことなし（笑</title>
+      <link>http://nobu666.com/2002/09/13/64.html</link>
+      <pubDate>Fri, 13 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/13/64.html</guid>
+      <description>一応横浜市民である俺の所にも、「黙ってたら住基ネット登録しちゃうぞ」とかいうハガキが。当然セキュリティ的にヤヴァイだろ、ってことで非通知申込</description>
+    </item>
+    
+    <item>
+      <title>爆音中毒</title>
+      <link>http://nobu666.com/2002/09/12/63.html</link>
+      <pubDate>Thu, 12 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/12/63.html</guid>
+      <description>今日も何とか今日のうちに帰宅。ゲーム友達のShonan（無論、お互い本名を知らない。知らなくても困らないのでまぁ別にいいのだが。）から電話が</description>
+    </item>
+    
+    <item>
+      <title>人間は考える葦である。では考えない人間は何？</title>
+      <link>http://nobu666.com/2002/09/11/62.html</link>
+      <pubDate>Wed, 11 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/11/62.html</guid>
+      <description>なんとか日が変わる前に帰ってこれた。昨日の予想通り、大事な部分は「えぇとペンディングで&amp;hellip;&amp;hellip;今週中には&amp;helli</description>
+    </item>
+    
+    <item>
+      <title>書き上げてから思った。「早く寝ろよ」と（笑</title>
+      <link>http://nobu666.com/2002/09/10/61.html</link>
+      <pubDate>Tue, 10 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/10/61.html</guid>
+      <description>突然忙しくなるますた！今書いているUI仕様書の締め切りが20日。残りは章にして6、画面数にして18程度。20日の金曜日までの出勤日、水曜の打</description>
+    </item>
+    
+    <item>
+      <title>湾岸ミッドナイト</title>
+      <link>http://nobu666.com/2002/09/09/60.html</link>
+      <pubDate>Mon, 09 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/09/60.html</guid>
+      <description>「湾岸ミッドナイト」の24巻購入。多くの車関連漫画を読んできたし、今でも読んでいるがこれが一番好きだ。かといってZが好きなのかというと、そう</description>
+    </item>
+    
+    <item>
+      <title>ヒッキー</title>
+      <link>http://nobu666.com/2002/09/08/59.html</link>
+      <pubDate>Sun, 08 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/08/59.html</guid>
+      <description>ヒッキーといっても、結婚の話題で世間が騒いでいるあの人ではなく、引き篭もりのヒッキーだったり。ずーっと音楽を聴きながら、いつものように掃除洗</description>
+    </item>
+    
+    <item>
+      <title>元恋人、現友人</title>
+      <link>http://nobu666.com/2002/09/07/58.html</link>
+      <pubDate>Sat, 07 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/07/58.html</guid>
+      <description>特に用事のない休日。相変わらずの迷惑な広告メールに紛れて、Aからメールが来ていた。中学生の頃に付き合っていた女で、現人妻。旦那の仕事の関係で</description>
+    </item>
+    
+    <item>
+      <title>トモダチ</title>
+      <link>http://nobu666.com/2002/09/06/57.html</link>
+      <pubDate>Fri, 06 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/06/57.html</guid>
+      <description>19時頃仕事を切り上げて帰宅。仕事はあったのだが、帰らないと「北の国から」見れないじゃん！やはり道産子としては見ておかねば&amp;hellip;ガ</description>
+    </item>
+    
+    <item>
+      <title>昔から金遣い荒かったんだなぁ</title>
+      <link>http://nobu666.com/2002/09/05/56.html</link>
+      <pubDate>Thu, 05 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/05/56.html</guid>
+      <description>いつも見てくれているある人から、「トップページの日記は一日分しかないので、毎日チェックしていても時間帯によってはDIARYの方に流れてしまう</description>
+    </item>
+    
+    <item>
+      <title>どうやら俺も「オラオラ一派」であるらしい</title>
+      <link>http://nobu666.com/2002/09/04/55.html</link>
+      <pubDate>Wed, 04 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/04/55.html</guid>
+      <description>毎週水曜は、進捗会議につきスーツで出社し、午後から初台へ。午前中、この暑い中スーツなんか着て外出したくねぇ?、超ダリ?とか思っていたのだが、</description>
+    </item>
+    
+    <item>
+      <title>久々にベースの練習</title>
+      <link>http://nobu666.com/2002/09/03/54.html</link>
+      <pubDate>Tue, 03 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/03/54.html</guid>
+      <description>仕事を終えて渋谷の石橋楽器へ。修理したからにはちゃんと練習しないとと思い、練習用にヘッドフォン端子のついた安いマルチエフェクターを買う。マル</description>
+    </item>
+    
+    <item>
+      <title>節約とは辛いモノなり</title>
+      <link>http://nobu666.com/2002/09/02/53.html</link>
+      <pubDate>Mon, 02 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/02/53.html</guid>
+      <description>定時も間近の17時、フト上司が俺を呼びつけ「例の仕様書、あれ今日中に仕上げてね」とかのたまう。「まだ仕様が固まってないから、その部分はやらな</description>
+    </item>
+    
+    <item>
+      <title>次は北京ダックが食いたいです...＞誰とはなく</title>
+      <link>http://nobu666.com/2002/09/01/52.html</link>
+      <pubDate>Sun, 01 Sep 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/09/01/52.html</guid>
+      <description>謎に9:30頃目覚めてモゾモゾ。もう一眠りしたかったが、ちょいと暑いせいもあり断念。お疲れらしくひたすら寝ているNを起こさないように、こっそ</description>
+    </item>
+    
+    <item>
+      <title>ビデオ3本立てはきついっぽ...</title>
+      <link>http://nobu666.com/2002/08/31/51.html</link>
+      <pubDate>Sat, 31 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/31/51.html</guid>
+      <description>休みだというのに7:30頃目が覚める。damn&amp;hellip;なんか悔しいので、弱めにエアコンをつけてからもう一度寝る。結局昼過ぎまで寝て、</description>
+    </item>
+    
+    <item>
+      <title>一生の宝物、持ってる？</title>
+      <link>http://nobu666.com/2002/08/30/50.html</link>
+      <pubDate>Fri, 30 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/30/50.html</guid>
+      <description>仕事を早めに切り上げて急いで家に帰り、ベースを持って渋谷へ。G.W.に実家からベースを持ってきたのだが、サーキット部分の接触不良（多分アース</description>
+    </item>
+    
+    <item>
+      <title>たまには気になるニュースをまとめてみたりする</title>
+      <link>http://nobu666.com/2002/08/29/49.html</link>
+      <pubDate>Thu, 29 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/29/49.html</guid>
+      <description>俺の恋愛偏差値は62だそうだ。思ったより高いなぁ&amp;hellip;なんかそれはそれでツマランです。っていうか、一問目の「今まで付き合った人の数</description>
+    </item>
+    
+    <item>
+      <title>秋はまだか...</title>
+      <link>http://nobu666.com/2002/08/28/48.html</link>
+      <pubDate>Wed, 28 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/28/48.html</guid>
+      <description>先日バーゲンで買ったYシャツを着て出社。首周りがキツイ。ネクタイ締めると苦しい&amp;hellip;こっそり緩め・太めにネクタイをして、一番上のボ</description>
+    </item>
+    
+    <item>
+      <title>(･∀･)ｲｲ!匂い</title>
+      <link>http://nobu666.com/2002/08/27/47.html</link>
+      <pubDate>Tue, 27 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/27/47.html</guid>
+      <description>近所のサンホームビデオで、最近香水を売り始めた。GUCCI/ENVY for man?NIKOS/SCULPTURE HOMMEと使ってきたが、その後なかなか気に入ったものに出会えずにい</description>
+    </item>
+    
+    <item>
+      <title>癒されたい、今日この頃</title>
+      <link>http://nobu666.com/2002/08/26/46.html</link>
+      <pubDate>Mon, 26 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/26/46.html</guid>
+      <description>会社から帰るも、なんだがダルイ。別に具合が悪いわけでもないのだが&amp;hellip;これが噂の鬱なのか？そうなのか？プログラマは鬱病になりやすい</description>
+    </item>
+    
+    <item>
+      <title>歴史は繰り返す</title>
+      <link>http://nobu666.com/2002/08/25/45.html</link>
+      <pubDate>Sun, 25 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/25/45.html</guid>
+      <description>溝口のマルイにブラっといってみるとバーゲンをやっていた。もう秋物とか売ってるのね&amp;hellip;バリバリ暑いんだけど。だいぶ関東の暑さに慣れ</description>
+    </item>
+    
+    <item>
+      <title>だら?り</title>
+      <link>http://nobu666.com/2002/08/24/44.html</link>
+      <pubDate>Sat, 24 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/24/44.html</guid>
+      <description>昼過ぎまで寝て掃除・洗濯。ビール飲みつつ読書。ヽ(´ー｀)ノ ﾏﾀｰﾘ せっかくリニューアルしたので、BBSも修正しようと試みるも途中で放棄。め</description>
+    </item>
+    
+    <item>
+      <title>本代に消えていく金</title>
+      <link>http://nobu666.com/2002/08/23/43.html</link>
+      <pubDate>Fri, 23 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/23/43.html</guid>
+      <description>XHTMLとCSSをちょっとまじめに使ってリニューアル。デザイン的な要素はすべてCSSでやっているため、古いブラウザでは潔いほどシンプルに表</description>
+    </item>
+    
+    <item>
+      <title>Life is very short</title>
+      <link>http://nobu666.com/2002/08/22/42.html</link>
+      <pubDate>Thu, 22 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/22/42.html</guid>
+      <description>札幌の友人Rに、久々に電話してみる。特に用事はなかったのだが。Rとはもう、20年近い友人だ。もっと古くから付き合いのある友人もいることはいる</description>
+    </item>
+    
+    <item>
+      <title>上になる女</title>
+      <link>http://nobu666.com/2002/08/21/41.html</link>
+      <pubDate>Wed, 21 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/21/41.html</guid>
+      <description>今日は久しぶりに外出。うちの会社は基本的には服装など自由であるのだが、さすがに客先へ行くときはスーツを着なければならないのはまぁ当然で。スー</description>
+    </item>
+    
+    <item>
+      <title>実家の犬は元気かな？</title>
+      <link>http://nobu666.com/2002/08/20/40.html</link>
+      <pubDate>Tue, 20 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/20/40.html</guid>
+      <description>会社近くのペットショップに帰りにちらっと寄る。いるよ&amp;hellip;いっぱいいるよ&amp;hellip;なんでみんな訴えるような目をするんだろう。</description>
+    </item>
+    
+    <item>
+      <title>雨に想う</title>
+      <link>http://nobu666.com/2002/08/19/39.html</link>
+      <pubDate>Mon, 19 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/19/39.html</guid>
+      <description>どよーんと曇り空、微妙に雨。「雨が降ると憂鬱」とか言う人が多いんだが、俺は雨嫌いじゃない。好きでもないけど。雨の日には雨の日なりの発見とかが</description>
+    </item>
+    
+    <item>
+      <title>なにも用事がない休日ってシアワセなのか？</title>
+      <link>http://nobu666.com/2002/08/18/38.html</link>
+      <pubDate>Sun, 18 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/18/38.html</guid>
+      <description>な?んにもない日曜日。昼近くまで寝て、おもむろにビデオを観る。高校くらいからドラマをあまり見なくなって久しいのだが、上京して一人暮らしを始め</description>
+    </item>
+    
+    <item>
+      <title>気合い掃除Day</title>
+      <link>http://nobu666.com/2002/08/17/37.html</link>
+      <pubDate>Sat, 17 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/17/37.html</guid>
+      <description>土曜日。基本的に休みの日は夕方近くなってから行動することが多い。のんびり昼くらいまで寝て、テレビを見てるんだか見てないんだかって感じで飯を食</description>
+    </item>
+    
+    <item>
+      <title>いい塩梅にヘタレてます</title>
+      <link>http://nobu666.com/2002/08/16/36.html</link>
+      <pubDate>Fri, 16 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/16/36.html</guid>
+      <description>会社の喫煙室でホエホエと他愛もないメールのやりとりから、ふいにN（もう今後、人の名前は全部こんな感じで。必要に応じて敬称をつけたりしようかと</description>
+    </item>
+    
+    <item>
+      <title>常識の檻</title>
+      <link>http://nobu666.com/2002/08/15/35.html</link>
+      <pubDate>Thu, 15 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/15/35.html</guid>
+      <description>昨日書いたとおりバニラ・スカイの感想なんぞを。 「オープン・ユア・アイズ」というスペイン映画のリメイク。トム・クルーズがその映画権を買い上げて</description>
+    </item>
+    
+    <item>
+      <title>デジカメ</title>
+      <link>http://nobu666.com/2002/08/14/34.html</link>
+      <pubDate>Wed, 14 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/14/34.html</guid>
+      <description>鎌倉に行ってから無性にデジカメが欲しくなり、会社帰りに値段調査。大体相場は200万画素クラスで\25kあたりのようだ。正直、500万画素とか</description>
+    </item>
+    
+    <item>
+      <title>論理的思考</title>
+      <link>http://nobu666.com/2002/08/13/33.html</link>
+      <pubDate>Tue, 13 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/13/33.html</guid>
+      <description>普段は何気なく見過ごしてしまったり、特に意識することのない「○○なのはなぜか」といったことについて調べたり、考えたりすることが最近増えた。身</description>
+    </item>
+    
+    <item>
+      <title>鎌倉と富士山と中華街（後編）</title>
+      <link>http://nobu666.com/2002/08/12/32.html</link>
+      <pubDate>Mon, 12 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/12/32.html</guid>
+      <description>時間がないのでそそくさと長谷寺を後にし、夕焼けを見に稲村ヶ崎へ向かう。稲村ヶ崎と言えば「稲村ジェーン」ですな。サザンの歌しか記憶に残っていな</description>
+    </item>
+    
+    <item>
+      <title>鎌倉と富士山と中華街（前編）</title>
+      <link>http://nobu666.com/2002/08/11/31.html</link>
+      <pubDate>Sun, 11 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/11/31.html</guid>
+      <description>泊めてもらって起きたら10時半。姉ちゃんの仕事の下見のため、9時ごろ起きてレンタカーで鎌倉へ行く予定だったのだが、いきなり寝坊ed。泊まる予</description>
+    </item>
+    
+    <item>
+      <title>神楽坂食いだおれ</title>
+      <link>http://nobu666.com/2002/08/10/30.html</link>
+      <pubDate>Sat, 10 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/10/30.html</guid>
+      <description>友達姉妹と遊ぶ約束をしていたので、神楽坂まで行って遊ぶ（この時点でEQ関係者には誰のことだかわかってしまうな&amp;hellip;でも更新してなか</description>
+    </item>
+    
+    <item>
+      <title>近況</title>
+      <link>http://nobu666.com/2002/08/09/29.html</link>
+      <pubDate>Fri, 09 Aug 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/08/09/29.html</guid>
+      <description>なんと5ヶ月ぶりの更新である。札幌から上京してきて早4ヶ月。人の多さと異様な湿気にもようやく慣れてきた今日この頃である。慣れてきたとはいえ、</description>
+    </item>
+    
+    <item>
+      <title>秒殺カクテル</title>
+      <link>http://nobu666.com/2002/03/14/28.html</link>
+      <pubDate>Thu, 14 Mar 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/03/14/28.html</guid>
+      <description>最近、朝方の生活に慣れようと頑張って早起きしている。が、やはり昼間眠くなり結局昼寝するので意味はあまりない。今日も今日とて昼寝かましていると</description>
+    </item>
+    
+    <item>
+      <title>箱詰め</title>
+      <link>http://nobu666.com/2002/03/13/27.html</link>
+      <pubDate>Wed, 13 Mar 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/03/13/27.html</guid>
+      <description>いつまでもぼーっとしているわけにもいかず、引っ越し日が近くなっていく。普段使わないものから段ボールに詰めておこうと、10個ほど段ボールを購入</description>
+    </item>
+    
+    <item>
+      <title>見つからないコトバ</title>
+      <link>http://nobu666.com/2002/03/12/26.html</link>
+      <pubDate>Tue, 12 Mar 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/03/12/26.html</guid>
+      <description>先日、卒業式を終えた。本当は当日、最低でも翌日にはこのことを書いてアップする予定でいた。だが出来なかった。人生の節目、新たな出発点として喜ば</description>
+    </item>
+    
+    <item>
+      <title>2002年初更新...</title>
+      <link>http://nobu666.com/2002/02/09/25.html</link>
+      <pubDate>Sat, 09 Feb 2002 00:00:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2002/02/09/25.html</guid>
+      <description>いつのまにやら年は明け、あっというまに2月。ここだけ時が止まったままになっていたようだが。どうにか本日、大学のほうから葉書にて単位習得の知ら</description>
     </item>
     
   </channel>

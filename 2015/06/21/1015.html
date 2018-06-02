@@ -99,29 +99,9 @@
     </div>
   </header>
   <section>
-    <nav id="TableOfContents">
-<ul>
-<li><a href="#wordpressからgithub-pages-hugoに移行した:ba6f5a981bdff4ffd1776fc8905f369b">WordPressからGitHub Pages + hugoに移行した</a>
-<ul>
-<li><a href="#install:ba6f5a981bdff4ffd1776fc8905f369b">install</a></li>
-<li><a href="#作業ディレクトリの作成:ba6f5a981bdff4ffd1776fc8905f369b">作業ディレクトリの作成</a></li>
-<li><a href="#themeを選ぶ:ba6f5a981bdff4ffd1776fc8905f369b">themeを選ぶ</a></li>
-<li><a href="#wordpressからimport:ba6f5a981bdff4ffd1776fc8905f369b">WordPressからimport</a></li>
-<li><a href="#画像を持ってくる:ba6f5a981bdff4ffd1776fc8905f369b">画像を持ってくる</a></li>
-<li><a href="#ローカルで起動:ba6f5a981bdff4ffd1776fc8905f369b">ローカルで起動</a></li>
-<li><a href="#公開用のファイルを生成する:ba6f5a981bdff4ffd1776fc8905f369b">公開用のファイルを生成する</a></li>
-<li><a href="#公開する:ba6f5a981bdff4ffd1776fc8905f369b">公開する</a></li>
-<li><a href="#独自ドメインでgithub-pagesを使う:ba6f5a981bdff4ffd1776fc8905f369b">独自ドメインでGitHub Pagesを使う</a></li>
-<li><a href="#今後の方針:ba6f5a981bdff4ffd1776fc8905f369b">今後の方針</a></li>
-</ul></li>
-</ul>
-</nav>
-  </section>
-  <hr>
-  <section>
     
 
-<h1 id="wordpressからgithub-pages-hugoに移行した:ba6f5a981bdff4ffd1776fc8905f369b">WordPressからGitHub Pages + hugoに移行した</h1>
+<h1 id="wordpressからgithub-pages-hugoに移行した">WordPressからGitHub Pages + hugoに移行した</h1>
 
 <p>WordPressでずっと運用してきたのだけど、PHPやWordPressの脆弱性の多さにつかれたのと、そろそろVPS自体管理するの辞めたいと思っていたので、static site generatorであるところのHugoを使ってGithub Pagesで運用することにしました。</p>
 
@@ -143,39 +123,39 @@
 
 <p>というところ。ただデメリットもあって、まだイマイチマイナーなため、themeの数が少ないです。あと単純に-t hogehogeでtheme選ぶだけではERROR出て動かないことがままあります。</p>
 
-<h2 id="install:ba6f5a981bdff4ffd1776fc8905f369b">install</h2>
+<h2 id="install">install</h2>
 
 <p>Macなら<code>brew install hugo</code>で一発です</p>
 
-<h2 id="作業ディレクトリの作成:ba6f5a981bdff4ffd1776fc8905f369b">作業ディレクトリの作成</h2>
+<h2 id="作業ディレクトリの作成">作業ディレクトリの作成</h2>
 
 <p><code>hugo new site nobu666.com</code>を適当な場所で作ります。</p>
 
-<h2 id="themeを選ぶ:ba6f5a981bdff4ffd1776fc8905f369b">themeを選ぶ</h2>
+<h2 id="themeを選ぶ">themeを選ぶ</h2>
 
 <p><code>git clone --recursive https://github.com/spf13/hugoThemes.git themes</code>で一括で持ってこれます。が、ここにはないthemeを公開してる人もいるので、好きなのが決まってればそれを<code>themes/</code>の下に<code>git clone</code>してくればいいです</p>
 
-<h2 id="wordpressからimport:ba6f5a981bdff4ffd1776fc8905f369b">WordPressからimport</h2>
+<h2 id="wordpressからimport">WordPressからimport</h2>
 
 <p><a href="https://gist.github.com/rakuishi/3163f6e8c5a496329bc7">wp-xml-hugo-import.rb</a>をまるっと拝借して、WordPressからexportしたxmlを変換します。自分のblogではpermalinkが<code>yyyy/mm/dd/post_id.html</code>だったので、それに合わせてslugの指定を削除したり、ソースコードの部分を<code>[sourcecode][/sourcecode]</code>で囲んで書いていたのでそこをmarkdownに書き換える処理を入れたりしました。あとtitleに <code>&quot;</code> が入ってるとparse errorになってしまうので、<code>\&quot;</code>に置換しておきます。ファイル名も yyyy-mm-dd-post_id では都合がわるいので、既存の形式に合わせてmkdirしたり出力したりします。</p>
 
-<h2 id="画像を持ってくる:ba6f5a981bdff4ffd1776fc8905f369b">画像を持ってくる</h2>
+<h2 id="画像を持ってくる">画像を持ってくる</h2>
 
 <p>既存のサイトの<code>wp-contents/uploads</code>から、ローカルの<code>static/images</code>にscpなりなんなりで持ってきます。</p>
 
-<h2 id="ローカルで起動:ba6f5a981bdff4ffd1776fc8905f369b">ローカルで起動</h2>
+<h2 id="ローカルで起動">ローカルで起動</h2>
 
 <p><code>hugo server -t テーマの名前 -D -w</code>でローカル環境が起動します。 <code>http://localhost:1313</code>をブラウザで開いて動作確認しましょう。サイト名とかslug使わないで.htmlにしたいとか、そういうのはconfig.tomlで設定します。残念ながらconfig.tomlの変更はライブリロード対応してないので、変更したら立ち上げ直す必要があります。自分の場合はslug使っていなかったので、<code>uglyurls = true</code>はとりあえず必須でした。</p>
 
-<h2 id="公開用のファイルを生成する:ba6f5a981bdff4ffd1776fc8905f369b">公開用のファイルを生成する</h2>
+<h2 id="公開用のファイルを生成する">公開用のファイルを生成する</h2>
 
 <p><code>hugo -t テーマの名前</code>でファイルが生成されます。</p>
 
-<h2 id="公開する:ba6f5a981bdff4ffd1776fc8905f369b">公開する</h2>
+<h2 id="公開する">公開する</h2>
 
 <p>publicディレクトリで<code>git init</code>とかごにょごにょして<code>アカウント名.github.io</code>なリポジトリにpushします。基本的にはこれでおしまい。</p>
 
-<h2 id="独自ドメインでgithub-pagesを使う:ba6f5a981bdff4ffd1776fc8905f369b">独自ドメインでGitHub Pagesを使う</h2>
+<h2 id="独自ドメインでgithub-pagesを使う">独自ドメインでGitHub Pagesを使う</h2>
 
 <p>subdomainありかなしかでやることが違います。</p>
 
@@ -196,7 +176,7 @@
 </ul></li>
 </ul>
 
-<h2 id="今後の方針:ba6f5a981bdff4ffd1776fc8905f369b">今後の方針</h2>
+<h2 id="今後の方針">今後の方針</h2>
 
 <p><a href="http://gohugo.io/tutorials/automated-deployments">本家のチュートリアルに従って</a>Wercker使ってpushしたらそのまま公開される仕組みにしたい。</p>
 
@@ -222,20 +202,25 @@
     <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
   </section>
   <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'realbeat';
-    var disqus_identifier = 'http:\/\/nobu666.com\/2015\/06\/21\/1015.html';
-    var disqus_title = 'WordPressからGitHub Pages \x2b hugoに移行した';
-    var disqus_url = 'http:\/\/nobu666.com\/2015\/06\/21\/1015.html';
-
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "realbeat" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   <footer>
     
     <section class="author-info row">

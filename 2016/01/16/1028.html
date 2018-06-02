@@ -103,32 +103,19 @@
     </div>
   </header>
   <section>
-    <nav id="TableOfContents">
-<ul>
-<li><a href="#うっかりパーティションを作ってしまう:fce6ea1adab524068d5783e971b0c22e">うっかりパーティションを作ってしまう</a></li>
-<li><a href="#el-capitan-でのパーティション削除:fce6ea1adab524068d5783e971b0c22e">El Capitan でのパーティション削除</a>
-<ul>
-<li><a href="#ターミナルからやる:fce6ea1adab524068d5783e971b0c22e">ターミナルからやる</a></li>
-<li><a href="#元のパーティションを拡張する:fce6ea1adab524068d5783e971b0c22e">元のパーティションを拡張する</a></li>
-</ul></li>
-</ul>
-</nav>
-  </section>
-  <hr>
-  <section>
     
 
-<h1 id="うっかりパーティションを作ってしまう:fce6ea1adab524068d5783e971b0c22e">うっかりパーティションを作ってしまう</h1>
+<h1 id="うっかりパーティションを作ってしまう">うっかりパーティションを作ってしまう</h1>
 
 <p>Adobe製品をinstallしようとしたら、大文字小文字を区別する format だとだめだよと怒られる。しかたないので大文字小文字を区別しない パーティションを作ったのだが、そもそも起動ディスクの format によって弾かれてしまうので、意味ないじゃん、戻したいという話</p>
 
 <p><img src="/images/2016/01/2016-01-16-2.03.08.jpg"></p>
 
-<h1 id="el-capitan-でのパーティション削除:fce6ea1adab524068d5783e971b0c22e">El Capitan でのパーティション削除</h1>
+<h1 id="el-capitan-でのパーティション削除">El Capitan でのパーティション削除</h1>
 
 <p>El Capitan じゃなければ多分 GUI からさくっとできる。 El Capitan はディスクユーティリティからのパーティション操作に関して、ひどく劣化している気がする。作れるけど消せない</p>
 
-<h2 id="ターミナルからやる:fce6ea1adab524068d5783e971b0c22e">ターミナルからやる</h2>
+<h2 id="ターミナルからやる">ターミナルからやる</h2>
 
 <p><code>diskutil(8)</code> を使う。</p>
 
@@ -171,7 +158,7 @@ $ diskutil list                                                                 
 
 <p>消えた。<code>Free\ Space not</code> とかなんだよその呪文は、と思うわけだが <code>man diskutil</code> に書いてある。</p>
 
-<h2 id="元のパーティションを拡張する:fce6ea1adab524068d5783e971b0c22e">元のパーティションを拡張する</h2>
+<h2 id="元のパーティションを拡張する">元のパーティションを拡張する</h2>
 
 <p>消えっぱなしで時空の狭間に行ってしまった領域を、元の領域に戻す</p>
 
@@ -260,20 +247,25 @@ Finished CoreStorage operation
     <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
   </section>
   <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'realbeat';
-    var disqus_identifier = 'http:\/\/nobu666.com\/2016\/01\/16\/1028.html';
-    var disqus_title = 'El Capitan でうっかりパーティションを作ってしまったが元に戻したいときにやること';
-    var disqus_url = 'http:\/\/nobu666.com\/2016\/01\/16\/1028.html';
-
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "realbeat" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   <footer>
     
     <section class="author-info row">

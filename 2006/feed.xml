@@ -8,7 +8,9 @@
     <language>ja-JP</language>
     <copyright>&amp;copy; nobu666.com</copyright>
     <lastBuildDate>Fri, 29 Dec 2006 23:18:13 +0900</lastBuildDate>
-    <atom:link href="http://nobu666.com/2006/feed.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://nobu666.com/2006/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>links for 2006-12-29</title>
@@ -16,25 +18,7 @@
       <pubDate>Fri, 29 Dec 2006 23:18:13 +0900</pubDate>
       
       <guid>http://nobu666.com/2006/12/29/476.html</guid>
-      <description>&lt;ul class=&#34;delicious&#34;&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://reggie.ashworth.googlepages.com/appdelete&#34;&gt;Reggie Ashworth - AppDelete&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/mac&#34;&gt;mac&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/software&#34;&gt;software&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://www5e.biglobe.ne.jp/~kousoku/&#34;&gt;高速フーリエ変換ギター&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/music&#34;&gt;music&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/guitar&#34;&gt;guitar&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://opengl.jp/blogger/2006/12/lasttv.html&#34;&gt;Last.tv - 安藤日記&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/last.fm&#34;&gt;last.fm&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/youtube&#34;&gt;youtube&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/music&#34;&gt;music&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/video&#34;&gt;video&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/movie&#34;&gt;movie&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://jsonml.org/&#34;&gt;JsonML (JSON Markup Language)&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/javascript&#34;&gt;javascript&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/json&#34;&gt;json&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>Reggie Ashworth - AppDelete (tags: mac software) 高速フーリエ変換ギター (tags: music guitar) Last.tv - 安藤日記 (tags: last.fm youtube music video movie) JsonML (JSON Markup Language) (tags: javascript json)</description>
     </item>
     
     <item>
@@ -43,13 +27,7 @@
       <pubDate>Thu, 28 Dec 2006 23:18:38 +0900</pubDate>
       
       <guid>http://nobu666.com/2006/12/28/475.html</guid>
-      <description>&lt;ul class=&#34;delicious&#34;&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://net.intap.or.jp/INTAP/s-web/data/18-20070125_swc/index.html&#34;&gt;セマンティックWebコンファレンス2007&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/event&#34;&gt;event&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/web&#34;&gt;web&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/semanticweb&#34;&gt;semanticweb&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>セマンティックWebコンファレンス2007 (tags: event web semanticweb)</description>
     </item>
     
     <item>
@@ -58,25 +36,7 @@
       <pubDate>Wed, 27 Dec 2006 23:17:36 +0900</pubDate>
       
       <guid>http://nobu666.com/2006/12/27/474.html</guid>
-      <description>&lt;ul class=&#34;delicious&#34;&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://support.microsoft.com/kb/909095/ja&#34;&gt;Windows XP Service Pack 2、Windows XP Tablet PC Edition 2005 または Windows XP Media Center Edition 2005 を実行するコンピュータで、休止状態にならず、エラー メッセージ &#34;システム リソースが不足するため、API&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/windows&#34;&gt;windows&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/xp&#34;&gt;xp&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/hibernation&#34;&gt;hibernation&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://dsas.blog.klab.org/archives/50860867.html&#34;&gt;DSAS開発者の部屋:5分でできる、MySQLのメモリ関係のチューニング！&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/database&#34;&gt;database&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/mysql&#34;&gt;mysql&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/optimize&#34;&gt;optimize&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/tuning&#34;&gt;tuning&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/performance&#34;&gt;performance&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/tips&#34;&gt;tips&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://itpro.nikkeibp.co.jp/article/COLUMN/20061211/256519/&#34;&gt;Vistaで化ける字，化けない字：ITpro&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/windows&#34;&gt;windows&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/vista&#34;&gt;vista&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/japanese&#34;&gt;japanese&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/charactercode&#34;&gt;charactercode&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/font&#34;&gt;font&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://itpro.nikkeibp.co.jp/article/COLUMN/20061221/257533/&#34;&gt;Vistaで化ける字，化けない字（続報）：ITpro&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/windows&#34;&gt;windows&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/vista&#34;&gt;vista&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/japanese&#34;&gt;japanese&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/charactercode&#34;&gt;charactercode&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/font&#34;&gt;font&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>Windows XP Service Pack 2、Windows XP Tablet PC Edition 2005 または Windows XP Media Center Edition 2005 を実行するコンピュータで、休止状態にならず、エラー メッセージ &#34;システム リソースが不足す</description>
     </item>
     
     <item>
@@ -85,33 +45,7 @@
       <pubDate>Sat, 23 Dec 2006 23:19:38 +0900</pubDate>
       
       <guid>http://nobu666.com/2006/12/23/473.html</guid>
-      <description>&lt;ul class=&#34;delicious&#34;&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://internet.watch.impress.co.jp/cda/news/2006/12/22/14336.html&#34;&gt;「ホットペッパー」がサイトのAPIを公開、57万件の店舗情報を利用可能&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/webservice&#34;&gt;webservice&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/api&#34;&gt;api&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://pc.watch.impress.co.jp/docs/2006/1222/ms.htm&#34;&gt;マイクロソフト、プレゼンターマウスなど2製品を国内出荷停止&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/news&#34;&gt;news&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/microsoft&#34;&gt;microsoft&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/mouse&#34;&gt;mouse&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/hardware&#34;&gt;hardware&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/presentation&#34;&gt;presentation&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://neta.ywcafe.net/000694.html&#34;&gt;*.htmlを*.html.gzに圧縮しても*.htmlのままでアクセスできるようにしてディスク容量を節約する&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/apache&#34;&gt;apache&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/gzip&#34;&gt;gzip&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/server&#34;&gt;server&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/web&#34;&gt;web&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/storage&#34;&gt;storage&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/tips&#34;&gt;tips&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://toremoro.tea-nifty.com/tomos_hotline/2006/12/voipvoip_confer_727b.html&#34;&gt;Tomo’s HotLine: [VoIP]VoIP Conferenceの講演概要＆参加者募集開始について&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/event&#34;&gt;event&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/voip&#34;&gt;voip&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/network&#34;&gt;network&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://www.atmarkit.co.jp/fembedded/column/nakane/nakane05.html&#34;&gt;第5回　CPU・MPUはどうやって動く？ ? RAMとクロック ? ＠IT&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/study&#34;&gt;study&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/hardware&#34;&gt;hardware&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/rom&#34;&gt;rom&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/ram&#34;&gt;ram&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/memory&#34;&gt;memory&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/cpu&#34;&gt;cpu&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://www.unfindable.net/~yabuki/blog/2006/12/vmware_vs_virtual_pc_1.html&#34;&gt;{informa,computa,evolu}tion: VMware vs Virtual PC （第2ラウンド）&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/virtualmachine&#34;&gt;virtualmachine&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/performance&#34;&gt;performance&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>「ホットペッパー」がサイトのAPIを公開、57万件の店舗情報を利用可能 (tags: webservice api) マイクロソフト、プレゼンターマウスなど2製品を国内出荷停止 (tags: news microsoft</description>
     </item>
     
     <item>
@@ -120,33 +54,7 @@
       <pubDate>Wed, 20 Dec 2006 23:18:42 +0900</pubDate>
       
       <guid>http://nobu666.com/2006/12/20/472.html</guid>
-      <description>&lt;ul class=&#34;delicious&#34;&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://facta.co.jp/article/200609061.html&#34;&gt;ケータイクレジットに致命的な弱点：FACTA online&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/security&#34;&gt;security&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/felica&#34;&gt;felica&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://manuals.rubyonrails.com/read/book/17&#34;&gt;Capistrano: Automating Application Deployment |&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/ca&#34;&gt;ca&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/capistrano&#34;&gt;capistrano&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/tools&#34;&gt;tools&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/tutorial&#34;&gt;tutorial&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/deployment&#34;&gt;deployment&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://openjsan.org/&#34;&gt;JSAN - Home&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/javascript&#34;&gt;javascript&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://ajaxian.com/archives/assl-ajax-secure-service-layer&#34;&gt;Ajaxian ? aSSL - Ajax Secure Service Layer&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/javascript&#34;&gt;javascript&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/library&#34;&gt;library&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/ajax&#34;&gt;ajax&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/ssl&#34;&gt;ssl&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/security&#34;&gt;security&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://labs.unoh.net/2006/12/mac_os_x.html&#34;&gt;ウノウラボ Unoh Labs: Mac OS Xで携帯サイトの開発環境を整える&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/mac&#34;&gt;mac&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/howto&#34;&gt;howto&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/mobile&#34;&gt;mobile&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/development&#34;&gt;development&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://blog.livedoor.jp/dankogai/archives/50718637.html&#34;&gt;404 Blog Not Found:javascript - どこにあるかなジェネレーター&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/javascript&#34;&gt;javascript&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>ケータイクレジットに致命的な弱点：FACTA online (tags: security felica) Capistrano: Automating Application Deployment | (tags: ca capistrano tools tutorial deployment) JSAN - Home (tags: javascript) Ajaxian ? aSSL - Ajax Secure Service Layer (tags: javascript library ajax ssl security) ウノウラボ Unoh Labs: Mac OS Xで携帯サ</description>
     </item>
     
     <item>
@@ -155,21 +63,7 @@
       <pubDate>Tue, 19 Dec 2006 23:18:30 +0900</pubDate>
       
       <guid>http://nobu666.com/2006/12/19/471.html</guid>
-      <description>&lt;ul class=&#34;delicious&#34;&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://tachibana.blog.ocn.ne.jp/blog/2006/05/ez_7a39.html&#34;&gt;たちばな弁当: 個体識別情報、EZ番号、端末シリアル番号の取得方法&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/mobile&#34;&gt;mobile&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/tips&#34;&gt;tips&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://tachibana.blog.ocn.ne.jp/blog/2006/05/post_3d8b.html&#34;&gt;たちばな弁当: 携帯電話のキャリア識別&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/mobile&#34;&gt;mobile&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/apache&#34;&gt;apache&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/mod_rewrite&#34;&gt;mod_rewrite&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://d.hatena.ne.jp/trickstar_os/20061218/1166443712&#34;&gt;集積蔵 - 携帯サイト開発にあたっての下調べメモ&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/mobile&#34;&gt;mobile&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/links&#34;&gt;links&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>たちばな弁当: 個体識別情報、EZ番号、端末シリアル番号の取得方法 (tags: mobile tips) たちばな弁当: 携帯電話のキャリア識別 (tags: mobile apache mod_rewrite) 集積蔵 - 携帯サイト開発にあ</description>
     </item>
     
     <item>
@@ -178,50 +72,7 @@
       <pubDate>Mon, 18 Dec 2006 23:18:37 +0900</pubDate>
       
       <guid>http://nobu666.com/2006/12/18/470.html</guid>
-      <description>&lt;ul class=&#34;delicious&#34;&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://blogs.yahoo.co.jp/lucy_tinycafe/888580.html&#34;&gt;Yahoo!ブログ - *Yoko&#39;s Room*&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-extended&#34;&gt;相変わらず痛々しく、大変香ばしい&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/netwatch&#34;&gt;netwatch&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/neta&#34;&gt;neta&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://blog.woremacx.com/2006/12/merge-entries-of-itmedia-with-plagger.html&#34;&gt;blog.woremacx.com: ITmedia で複数ページにまたがってる記事を 1 つのエントリにまとめちゃう&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/plagger&#34;&gt;plagger&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://blog.livedoor.jp/techblog/paper/ldtech2006/&#34;&gt;Technologies for UI&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/presentation&#34;&gt;presentation&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/ui&#34;&gt;ui&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/usability&#34;&gt;usability&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/performance&#34;&gt;performance&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://www.seshop.com/event/dev/2007/&#34;&gt;Developers Summit 2007 - デブサミ2007&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/event&#34;&gt;event&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://www.popxpop.com/archives/2006/12/clicky.html&#34;&gt;セッション毎の訪問者の動きがわかる『Clicky』 | p o p * p o p&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/analyze&#34;&gt;analyze&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/blog&#34;&gt;blog&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/tools&#34;&gt;tools&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/webservice&#34;&gt;webservice&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://d.hatena.ne.jp/ysano2005/20061102/1162445347&#34;&gt;CMS researcher - zsh: diffの結果をvimで色付けして表示するグローバルエイリアス&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/unix&#34;&gt;unix&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/linux&#34;&gt;linux&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/shell&#34;&gt;shell&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/zsh&#34;&gt;zsh&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/vim&#34;&gt;vim&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/tips&#34;&gt;tips&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/diff&#34;&gt;diff&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://hamasta.g.hatena.ne.jp/hamasta/20060930&#34;&gt;駆け出しプログラマーのグループ - hamastaの日記 ?Pythonで学ぶプログラミングの世界? - *[Python]Pythonの資料、pdfほか&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/python&#34;&gt;python&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/document&#34;&gt;document&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/links&#34;&gt;links&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/study&#34;&gt;study&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://business.nikkeibp.co.jp/article/world/20061214/115674/?P=1&#34;&gt;え！中国では下水溝から食用油が作られる？ (世界鑑測　北村豊の「中国・キタムラリポート」)：NBonline(日経ビジネス オンライン)&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/news&#34;&gt;news&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/life&#34;&gt;life&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/food&#34;&gt;food&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://0xcc.net/blog/archives/000151.html&#34;&gt;いやなブログ - Binary 2.0カンファレンス 2006 発表資料とレポート&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/binary&#34;&gt;binary&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/2.0&#34;&gt;2.0&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/conference&#34;&gt;conference&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/event&#34;&gt;event&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/presentation&#34;&gt;presentation&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/list&#34;&gt;list&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://wwww.vis.ne.jp/mt/archives/000673.html&#34;&gt;141 WebLog: DarwiinRemote で使う携帯電話 IR センサーバーを作った。&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/nintendo&#34;&gt;nintendo&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/wii&#34;&gt;wii&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/hardware&#34;&gt;hardware&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/mobile&#34;&gt;mobile&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/ir&#34;&gt;ir&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>Yahoo!ブログ - *Yoko&#39;s Room* 相変わらず痛々しく、大変香ばしい (tags: netwatch neta) blog.woremacx.com: ITmedia で複数ページにまたがってる記事を 1 つのエントリにまとめちゃう (tags: plagger) Technologies for UI (tags: presentation</description>
     </item>
     
     <item>
@@ -230,45 +81,7 @@
       <pubDate>Sun, 17 Dec 2006 23:21:15 +0900</pubDate>
       
       <guid>http://nobu666.com/2006/12/17/469.html</guid>
-      <description>&lt;ul class=&#34;delicious&#34;&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://slashdot.jp/developers/article.pl?sid=06/12/15/0157210&amp;amp&#34;&gt;スラッシュドット ジャパン | XenSource、無償版を含む新製品をリリース&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/xen&#34;&gt;xen&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/virtualmachine&#34;&gt;virtualmachine&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://d.hatena.ne.jp/koyachi/20061210/1165755939&#34;&gt;koyachiの日記 - Cache&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/mochikit&#34;&gt;mochikit&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/javascript&#34;&gt;javascript&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/cache&#34;&gt;cache&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://www-06.ibm.com/jp/developerworks/linux/021220/j_l-psyco.html&#34;&gt;IBM 魅力的なPython: PsycoでPythonの実行速度をCと同等にする - Japan&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/python&#34;&gt;python&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/performance&#34;&gt;performance&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/optimize&#34;&gt;optimize&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://www.ark-web.jp/blog/archives/2006/12/yahoojapanapi.html?rssatm&#34;&gt;Yahoo!地図情報API公開! さっそく試してみました : アークウェブ ビジネスブログ&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/yahoo&#34;&gt;yahoo&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/api&#34;&gt;api&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://blog.livedoor.jp/dqnplus/archives/876686.html&#34;&gt;痛いニュース(ﾉ∀`):なぜ若者は３年で辞めるのか？…「親の甘やかし」「非正社員でもいいやという考え」と人事担当、大学教授ら分析&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/news&#34;&gt;news&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://www.nintendo-inside.jp/news/196/19679.html&#34;&gt;Wiiリモコンのストラップ、0.6mmのものを交換に - Nintendo iNSIDE&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/news&#34;&gt;news&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/game&#34;&gt;game&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/hardware&#34;&gt;hardware&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/nintendo&#34;&gt;nintendo&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/wii&#34;&gt;wii&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://blog.yappo.jp/yappo/archives/000487.html&#34;&gt;YappoLogs: Wiiリモコンのリコールの件&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/nintendo&#34;&gt;nintendo&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/wii&#34;&gt;wii&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/hardware&#34;&gt;hardware&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://www.nintendo-inside.jp/news/196/19680.html&#34;&gt;DSのACアダプターもリコールへ - Nintendo iNSIDE&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/news&#34;&gt;news&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/nintendo&#34;&gt;nintendo&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/nds&#34;&gt;nds&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/hardware&#34;&gt;hardware&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://labs.cybozu.co.jp/blog/akky/archives/2006/12/ipv4_map.html&#34;&gt;秋元@サイボウズラボ・プログラマー・ブログ: IPv4アドレス空間での自分の位置をビジュアライズ&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/network&#34;&gt;network&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/visualization&#34;&gt;visualization&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>スラッシュドット ジャパン | XenSource、無償版を含む新製品をリリース (tags: xen virtualmachine) koyachiの日記 - Cache (tags: mochikit javascript cache) IBM 魅力的なPython: Ps</description>
     </item>
     
     <item>
@@ -277,79 +90,7 @@
       <pubDate>Sun, 17 Dec 2006 21:04:59 +0900</pubDate>
       
       <guid>http://nobu666.com/2006/12/17/468.html</guid>
-      <description>&lt;p&gt;会社にレポートを提出しなきゃ行けないので、簡単に内容のポイントまとめ。&lt;a href=&#34;http://www.c-sq.com/modules/article/article111.html&#34; target=&#34;_blank&#34;&gt;コンポーネントスクエア&lt;/a&gt;にプレゼン資料置いてあるので、行けなかった人も資料だけは見られるので、興味があれば。&lt;/p&gt;
-
-&lt;p&gt;&lt;h4&gt;システム開発パラダイムの変化 - 萩本順三氏&lt;/h4&gt;
-&lt;ul&gt;
-    &lt;li&gt;ビジネスオーナー・システム開発者・実務担当者と3者でそれぞれ思いが違う&lt;/li&gt;
-    &lt;li&gt;実務担当者の要求が、ビジネスとして価値あるものとは限らない&lt;/li&gt;
-    &lt;li&gt;ビジネス課題ありきのシステム設計→ゴールの見える化が必要&lt;/li&gt;
-    &lt;li&gt;ビジネス価値の高いものから先にリリース→縦ではなく横に割ってリスクヘッジ&lt;/li&gt;
-    &lt;li&gt;TFPモデルからアーキテクチャモデルへ落とし込む&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;h4&gt;Java とスクリプトの微妙な関係 - 櫻庭裕一氏&lt;/h4&gt;
-&lt;ul&gt;
-    &lt;li&gt;Apache BSF → JSR223&lt;/li&gt;
-    &lt;li&gt;JSR223でできること
-&lt;ul&gt;
-    &lt;li&gt;スクリプトエンジンの生成&lt;/li&gt;
-    &lt;li&gt;スクリプトの実行&lt;/li&gt;
-    &lt;li&gt;スクリプトからJavaへのアクセス&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-    &lt;li&gt;要はアプリとスクリプトのI/Fが決まっているだけ&lt;/li&gt;
-    &lt;li&gt;パフォーマンスはスクリプトエンジンのパフォーマンス次第。Rhinoは速いが、Groovyはまだ遅い&lt;/li&gt;
-    &lt;li&gt;JSR223 → JSR292&lt;/li&gt;
-    &lt;li&gt;Hotswappingでメソッドの中身だけではなく、シグネチャの変更やフィールドの変更やメソッド自体の追加削除もできるように!!
-&lt;ul&gt;
-    &lt;li&gt;とは言っても出来るかどうかはまだわからない&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;h4&gt;混ぜるな危険!?　SOAとWeb2.0をマッシュアップせよ! - 鈴木雄介氏&lt;/h4&gt;
-&lt;ul&gt;
-    &lt;li&gt;LL → 思考と直結したコードが書きやすい → 試行錯誤に向いている&lt;/li&gt;
-    &lt;li&gt;だがエンタープライズシステムの場合、LLは使えない → でも使えるところはあるはず
-&lt;ul&gt;
-    &lt;li&gt;アウターゼリー&lt;/li&gt;
-    &lt;li&gt;インナーゼリー
-&lt;ul&gt;
-    &lt;li&gt;Sarugau JS → HTMLとスクリプトを完全に分離分業できる&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-    &lt;li&gt;スーパーグルー&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-    &lt;li&gt;LLが必要とされていることの本質は「試行錯誤」&lt;/li&gt;
-    &lt;li&gt;試行錯誤をエンタープライズシステムにどう取り入れるか → たとえばアジャイルが1つの答え&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;h4&gt;JavaへのClosureの導入 - 丸山不二夫氏&lt;/h4&gt;
-&lt;ul&gt;
-    &lt;li&gt;Closureとは
-&lt;ul&gt;
-    &lt;li&gt;値ではなく機能をやりとり&lt;/li&gt;
-    &lt;li&gt;クラス定義、メソッド定義からは自立したコードブロック&lt;/li&gt;
-    &lt;li&gt;遅延評価&lt;/li&gt;
-    &lt;li&gt;定義時点のlexicial scopeを参照&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-    &lt;li&gt;curry化
-&lt;ul&gt;
-    &lt;li&gt;プログラミング言語Haskellの名前の由来はHaskell Curry&lt;/li&gt;
-    &lt;li&gt;複数の引数をとる関数を、引数が「もとの関数の最初の引数」で戻り値が「もとの関数の残りの引数を取り結果を返す関数」であるような関数にすること&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-    &lt;li&gt;GroovyでのClosure
-&lt;ul&gt;
-    &lt;li&gt;Builder
-&lt;ul&gt;
-    &lt;li&gt;メタ構造をClosureで記述することでXMLなどのMarkupが簡単に&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-    &lt;li&gt;JavaにとってのClosure
-&lt;ul&gt;
-    &lt;li&gt;不格好な抽象表現をスマートに&lt;/li&gt;
-    &lt;li&gt;アルゴリズムを抽象化してリファクタリング&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/p&gt;
-</description>
+      <description>会社にレポートを提出しなきゃ行けないので、簡単に内容のポイントまとめ。コンポーネントスクエアにプレゼン資料置いてあるので、行けなかった人も資</description>
     </item>
     
     <item>
@@ -358,29 +99,7 @@
       <pubDate>Sun, 17 Dec 2006 19:57:12 +0900</pubDate>
       
       <guid>http://nobu666.com/2006/12/17/467.html</guid>
-      <description>&lt;p&gt;ここ1?2ヶ月で買った本たち。他にも何冊か買った気がするけど、とりあえずオススメな本だけ書いておこう。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/4797338261/realbeat-22/ref=nosim/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://images-jp.amazon.com/images/P/4797338261.09.MZZZZZZZ.jpg&#34; alt=&#34;Linuxカーネル2.6解読室&#34; /&gt;&lt;/a&gt;
-分厚いので電車で読むのは無理。が、500万行を超えるLinuxカーネルのソースコードをぎゅっと凝縮してあると思えば、納得のページ数か。洋書も含めて、2.6系カーネルをここまで詳しく書いてある本は、たぶんこれだけ。リファレンスとしても使えるし、カーネル初心者の勉強にも向いていると思う。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/4873112885/realbeat-22/ref=nosim/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://images-jp.amazon.com/images/P/4873112885.09.MZZZZZZZ.jpg&#34; alt=&#34;Binary Hacks ―ハッカー秘伝のテクニック100選&#34; /&gt;&lt;/a&gt;
-Linux上でCやC++を使っている人なら、割と常識的なことしか書いてないのかも知れない。逆に言うとそうでない人にとっては、ここに書かれているような低レイヤの技術に触れるのに良い本。ある程度の基礎知識がないと読むのが辛いけど。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/4886487602/realbeat-22/ref=nosim/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://images-jp.amazon.com/images/P/4886487602.09.MZZZZZZZ.jpg&#34; alt=&#34;実践Python~文字列操作からWebアプリケーション開発まで&#34; /&gt;&lt;/a&gt;
-Python啓蒙用に非常に有用。細かい言語仕様よりもよく使われる部分を重点的に解説してあり、サンプルコードも豊富なのでリファレンスとしても活用できる。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/487311151X/realbeat-22/ref=nosim/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://images-jp.amazon.com/images/P/487311151X.09.MZZZZZZZ.jpg&#34; alt=&#34;LinuxサーバHacks―プロが使うテクニック&amp;ツール100選&#34; /&gt;&lt;/a&gt;
-まったくの初心者には向いていないが、自宅サーバを管理しているとか、初めて仕事で管理を任されたとかいう人にはうってつけ。常識過ぎず、マニアック過ぎず、役に立つTips満載で非常に便利。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/4873113067/realbeat-22/ref=nosim/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://images-jp.amazon.com/images/P/4873113067.09.MZZZZZZZ.jpg&#34; alt=&#34;Linuxサーバ Hacks 2 ―コネクティング、モニタリング、トラブルシューティング&#34; /&gt;&lt;/a&gt;
-副題の通り、モニタリングやトラブルシューティングが中心となっており、1とは若干趣が異なる。しかし「常識過ぎず、マニアック過ぎず、役に立つ」という点では同じなので、両方持っておいて損はない。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/4873112060/realbeat-22/ref=nosim/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://images-jp.amazon.com/images/P/4873112060.09.MZZZZZZZ.jpg&#34; alt=&#34;ネットワークセキュリティHacks―プロが使うテクニック&amp;ツール100選&#34; /&gt;&lt;/a&gt;
-ツールと使い方の紹介が主。この手の本では珍しく、Windowsサーバについても触れられている。手元に置いておいて使う本ではないと思うが、目を通しておくだけでも意味がある気がする。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/4798011894/realbeat-22/ref=nosim/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://images-jp.amazon.com/images/P/4798011894.09.MZZZZZZZ.jpg&#34; alt=&#34;Linuxアドバンストネットワークサーバ構築ガイド HAサーバ構築編&#34; /&gt;&lt;/a&gt;
-LVMやLVS、Keepalivedといったその界隈で話題になった技術の解説書。エンタープライズ製品を使わずとも、Linuxだけでここまでやれるんだということを示したことに意味がある。開発?環境構築?運用まで手がける人には必携と言えるレベルで、高度な内容をわかりやすく説明してある。&lt;/p&gt;
-</description>
+      <description>ここ1?2ヶ月で買った本たち。他にも何冊か買った気がするけど、とりあえずオススメな本だけ書いておこう。 分厚いので電車で読むのは無理。が、50</description>
     </item>
     
     <item>
@@ -389,34 +108,7 @@ LVMやLVS、Keepalivedといったその界隈で話題になった技術の解�
       <pubDate>Fri, 15 Dec 2006 23:18:45 +0900</pubDate>
       
       <guid>http://nobu666.com/2006/12/15/466.html</guid>
-      <description>&lt;ul class=&#34;delicious&#34;&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://japan.cnet.com/news/media/story/0,2000056023,20338674,00.htm&#34;&gt;C2cube、文脈分析するブログ検索のAPIを公開へ - CNET Japan&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/search&#34;&gt;search&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/api&#34;&gt;api&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/%E5%BD%A2%E6%85%8B%E7%B4%A0%E8%A7%A3%E6%9E%90&#34;&gt;形態素解析&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/text&#34;&gt;text&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/analyze&#34;&gt;analyze&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://www.atmarkit.co.jp/fjava/rensai4/myeclipse01/myeclipse01.html&#34;&gt;Ajax＋Java連携のEoDを実現するMyEclipse (1/1) - ＠IT&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/java&#34;&gt;java&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/ajax&#34;&gt;ajax&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/ide&#34;&gt;ide&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://d.hatena.ne.jp/nowokay/20061214#1166110771&#34;&gt;単体テストとか結合テストとか言うのはやめませんか？ - きしだのはてな&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-extended&#34;&gt;わかる…「単体テストの定義」とか「結合テストの定義」を毎回確認するのはうざい&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/test&#34;&gt;test&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://hyper-text.org/archives/2006/12/knack_entry_title.shtml&#34;&gt;これで完璧？タイトルのつけ方まとめ | WWW WATCH&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/blog&#34;&gt;blog&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/title&#34;&gt;title&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/neta&#34;&gt;neta&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://d.hatena.ne.jp/sweetlove/20061214/p1&#34;&gt;+LOVE2.0+ - モヒカン族を好きになってしまったら&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/neta&#34;&gt;neta&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://www.radiumsoftware.com/0612.html#061215&#34;&gt;0^0=1 - Radium Software Development&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/math&#34;&gt;math&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>C2cube、文脈分析するブログ検索のAPIを公開へ - CNET Japan (tags: search api 形態素解析 text analyze) Ajax＋Java連携のEoDを実現するMyEclipse (1/1) -</description>
     </item>
     
     <item>
@@ -425,8 +117,7 @@ LVMやLVS、Keepalivedといったその界隈で話題になった技術の解�
       <pubDate>Thu, 14 Dec 2006 23:31:15 +0900</pubDate>
       
       <guid>http://nobu666.com/2006/12/14/465.html</guid>
-      <description>&lt;p&gt;抽選に当選したので明日は&lt;a href=&#34;http://www.c-sq.com/modules/article/article111.html&#34; target=&#34;_blank&#34;&gt;丸山先生レクチャーシリーズ in 東京 2006-2007&lt;/a&gt;へ行ってくる。JaveOneに行けなかったこともあって（先日のLivedoorのセミナーも行けなかったし…）、結構楽しみ。しかしこの協賛、すげー面子だな。&lt;/p&gt;
-</description>
+      <description>抽選に当選したので明日は丸山先生レクチャーシリーズ in 東京 2006-2007へ行ってくる。JaveOneに行けなかったこともあって（先日のLi</description>
     </item>
     
     <item>
@@ -435,85 +126,7 @@ LVMやLVS、Keepalivedといったその界隈で話題になった技術の解�
       <pubDate>Thu, 14 Dec 2006 23:19:03 +0900</pubDate>
       
       <guid>http://nobu666.com/2006/12/14/464.html</guid>
-      <description>&lt;ul class=&#34;delicious&#34;&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://www.geocities.jp/f9305710/henkanji.html&#34;&gt;漢字部屋&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/funny&#34;&gt;funny&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/japanese&#34;&gt;japanese&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/neta&#34;&gt;neta&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/kanji&#34;&gt;kanji&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://www.gamespark.jp/modules/news/index.php?p=559&#34;&gt;Game*Spark - : Blizzardから脱退したチームがMMORPGを開発 目指すはMMO界のピクサー by riot_兄&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/game&#34;&gt;game&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://www.forest.impress.co.jp/article/2006/12/13/processwalkerex.html&#34;&gt;窓の杜 - 【NEWS】実行中プロセスの詳細情報を表示できる「ProcessWalker Express」v5.1.960.4&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/monitoring&#34;&gt;monitoring&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/software&#34;&gt;software&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/tools&#34;&gt;tools&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/windows&#34;&gt;windows&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://sourceforge.net/projects/darwiin-remote&#34;&gt;SourceForge.net: DarwiinRemote&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/mac&#34;&gt;mac&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/wii&#34;&gt;wii&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://d.hatena.ne.jp/hetima/20061213/1166021698&#34;&gt;hetimaの日記 - PSMTabBarControl&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/library&#34;&gt;library&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/cocoa&#34;&gt;cocoa&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/mac&#34;&gt;mac&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://takagi-hiromitsu.jp/diary/20061212.html#p01&#34;&gt;高木浩光＠自宅の日記 - Winnyの問題で作者を罪に問おうとしたことが社会に残した禍根&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/winny&#34;&gt;winny&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/copyright&#34;&gt;copyright&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/law&#34;&gt;law&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/news&#34;&gt;news&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/p2p&#34;&gt;p2p&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://blog.livedoor.jp/dankogai/archives/50713129.html&#34;&gt;404 Blog Not Found:極めて不当かつ想定の範囲内の判決&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/winny&#34;&gt;winny&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/copyright&#34;&gt;copyright&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/law&#34;&gt;law&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/news&#34;&gt;news&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/p2p&#34;&gt;p2p&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://blog.livedoor.jp/dankogai/archives/50713802.html&#34;&gt;404 Blog Not Found:表現としてのソフトウェア&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/law&#34;&gt;law&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/software&#34;&gt;software&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://d.hatena.ne.jp/m-hiyama/20061214/1166055868&#34;&gt;檜山正幸のキマイラ飼育記 - グラフ理論の基本概念とその誤用例 -- mixiがどうしたってぇ？&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/math&#34;&gt;math&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/graph&#34;&gt;graph&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://my-chunqiu.cocolog-nifty.com/blog/2006/12/post_9745.html&#34;&gt;我的春秋: CMS の見出しレベルに悩む&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/markup&#34;&gt;markup&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/html&#34;&gt;html&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/xhtml&#34;&gt;xhtml&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://www.otsune.com/diary/2006/12/12/1.html#200612121&#34;&gt;void GraphicWizardsLair( void ); // 今のコンピュータは20年前から続く文化に「部分最適化」されすぎていて直感的では無いよなぁと思う事がある&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/software&#34;&gt;software&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/computer&#34;&gt;computer&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://blog.bulknews.net/mt/archives/002087.html&#34;&gt;学校では教えてくれないエンジニアリング英語 #4: Works for me: blog.bulknews.net&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/engineer&#34;&gt;engineer&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/english&#34;&gt;english&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/study&#34;&gt;study&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://coreblog.org/ats/YouTube-is-almost-entirely-written-in-Python&#34;&gt;YouTubeのほとんどの部分はPythonで書かれているらしい ? TRIVIAL TECHNOLOGIES 2.0&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/neta&#34;&gt;neta&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/python&#34;&gt;python&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/youtube&#34;&gt;youtube&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://openmya.hacker.jp/hasegawa/public/20061209/momiji.html&#34;&gt;それ Unicode で&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/unicode&#34;&gt;unicode&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/charactercode&#34;&gt;charactercode&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/xss&#34;&gt;xss&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/security&#34;&gt;security&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://www.technorati.jp/mini/&#34;&gt;テクノラティミニ&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/blog&#34;&gt;blog&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/search&#34;&gt;search&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/tools&#34;&gt;tools&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://d.hatena.ne.jp/naoya/20061214/1166063145&#34;&gt;naoyaのはてなダイアリー - ライブドアのテクノロジーセミナーでしゃべってきました。&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/presentation&#34;&gt;presentation&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/lvs&#34;&gt;lvs&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/mysql&#34;&gt;mysql&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/server&#34;&gt;server&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/performance&#34;&gt;performance&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/scalability&#34;&gt;scalability&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://www.atmarkit.co.jp/fjava/column/andoh/andoh30.html&#34;&gt;Ruby On Railsのチームから学ぶ仕事術 - ＠IT&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/capistrano&#34;&gt;capistrano&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/tools&#34;&gt;tools&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://kawara.homelinux.net/pukiwiki/pukiwiki.php?SwitchTower&#34;&gt;SwitchTower - kawara&#39;s PukiWiki&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/tutorial&#34;&gt;tutorial&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/capistrano&#34;&gt;capistrano&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://d.hatena.ne.jp/sfujiwara/20061214/1166096044&#34;&gt;酒日記 はてな支店 - LVS + Ultra Monkey で負荷分散 (設定編)&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/server&#34;&gt;server&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/lvs&#34;&gt;lvs&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/loadbalance&#34;&gt;loadbalance&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>漢字部屋 (tags: funny japanese neta kanji) Game*Spark - : Blizzardから脱退したチームがMMORPGを開発 目指すはMMO界のピクサー by riot_兄 (tags: game) 窓の杜 - 【NEWS</description>
     </item>
     
     <item>
@@ -522,29 +135,7 @@ LVMやLVS、Keepalivedといったその界隈で話題になった技術の解�
       <pubDate>Wed, 13 Dec 2006 23:18:46 +0900</pubDate>
       
       <guid>http://nobu666.com/2006/12/13/463.html</guid>
-      <description>&lt;ul class=&#34;delicious&#34;&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://internet.watch.impress.co.jp/cda/news/2006/12/13/14223.html&#34;&gt;米Google、検索結果ページのユーザーインターフェイスを意匠特許に&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/search&#34;&gt;search&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/searchengine&#34;&gt;searchengine&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/ui&#34;&gt;ui&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/copyright&#34;&gt;copyright&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://www.oreilly.co.jp/books/4873113113/&#34;&gt;oreilly.co.jp -- Online Catalog: スケーラブルWebサイト&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/book&#34;&gt;book&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/server&#34;&gt;server&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/performance&#34;&gt;performance&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/scalability&#34;&gt;scalability&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://blog.zuzara.com/2006/12/10/171/&#34;&gt;zuzara : 文章からキーワードを抜き出すAPI: KOSHIAN&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/japanese&#34;&gt;japanese&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/%E5%BD%A2%E6%85%8B%E7%B4%A0%E8%A7%A3%E6%9E%90&#34;&gt;形態素解析&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/keyword&#34;&gt;keyword&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/api&#34;&gt;api&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://www.aivy.co.jp/BLOG_TEST/nagasawa/a/archives/2006/12/adobekuler.html&#34;&gt;Modern Syntax : Adobeのラボからリリースされたカラーピッカー「kuler」&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/adobe&#34;&gt;adobe&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/tools&#34;&gt;tools&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        &lt;div class=&#34;delicious-link&#34;&gt;&lt;a href=&#34;http://www.gizmodo.jp/2006/12/ds.html&#34;&gt;任天堂DSモーションセンサー用カード : Gizmodo Japan（ギズモード・ジャパン）&lt;/a&gt;&lt;/div&gt;
-        &lt;div class=&#34;delicious-tags&#34;&gt;(tags: &lt;a href=&#34;http://del.icio.us/nobu666/nintendo&#34;&gt;nintendo&lt;/a&gt; &lt;a href=&#34;http://del.icio.us/nobu666/nds&#34;&gt;nds&lt;/a&gt;)&lt;/div&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>米Google、検索結果ページのユーザーインターフェイスを意匠特許に (tags: search searchengine ui copyright) oreilly.co.jp -- Online Catalog: スケーラブルWebサイト (tags: book server performance scalability) zuzara : 文章からキーワー</description>
     </item>
     
     <item>
@@ -553,10 +144,1690 @@ LVMやLVS、Keepalivedといったその界隈で話題になった技術の解�
       <pubDate>Tue, 12 Dec 2006 01:35:43 +0900</pubDate>
       
       <guid>http://nobu666.com/2006/12/12/462.html</guid>
-      <description>&lt;p&gt;結局思った通りの評価でした…平均より1つ上止まり。A評価が付くとボーナスが0.5ヶ月分ほど増えるんだけどなぁ…残念。ある程度何言われるか予想できてる、って状態は良くないよな。何が悪いか自分でわかってるけど、直せてないって事だからな。とはいっても性格的な部分って、なかなか直すのは難しい。「勘が良くて今何をすべきか的確に把握している。でもだからこそ手を抜けるときに抜いている」って言われたんだけど、そこで抜かずに頑張っちゃうと折れちゃうんじゃないかって思ったりして、日和ってるんだろうなぁ。ただでさえ管理面ばっか任されて、コード書けずにモチベーション上がりにくいし。管理は管理で面白いし奥が深いんだけど、それってもっと親父になってからでイイじゃん?っていう思いが捨てきれない。でも早いウチにその世界に触れておくことは、絶対プラスだって事もわかってはいるんだけども。&lt;/p&gt;
-
-&lt;p&gt;まぁとりあえず、公務員の平均支給額程度のボーナスは出るようなので一安心。貯金するか、32型くらいの液晶TVを買うか、ファンの音がうるさいメインPCをリプレースするか…PS3買ってLinux入れて遊ぶってのもありはありか。ゲームはメタルギアくらいしかやりたいのないし、Wiiはどこいっても買えないし。でも正月実家帰ったらなにかと金使いそうだし、とりあえずは貯金かなぁ…同世代と比べて貯金少ないしなぁ俺ｗ&lt;/p&gt;
-</description>
+      <description>結局思った通りの評価でした…平均より1つ上止まり。A評価が付くとボーナスが0.5ヶ月分ほど増えるんだけどなぁ…残念。ある程度何言われるか予想</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-12-11</title>
+      <link>http://nobu666.com/2006/12/11/461.html</link>
+      <pubDate>Mon, 11 Dec 2006 23:19:05 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/12/11/461.html</guid>
+      <description>Japan.internet.com Webテクノロジー - eEye、未対応脆弱性の情報サイト『Zero-Day Tracker』を開設 (tags: security) ipythonの凄さはbgで炸裂する｜d</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-12-10</title>
+      <link>http://nobu666.com/2006/12/10/460.html</link>
+      <pubDate>Sun, 10 Dec 2006 23:18:42 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/12/10/460.html</guid>
+      <description>く・崩れかかってる！？ビヨンセの衝撃画像 : ABC（アメリカン・バカコメディ）振興会 (tags: neta photo) Latest topics 正規表現のパターンを得るためのアルゴリズム - outsider reflex</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-12-08</title>
+      <link>http://nobu666.com/2006/12/08/459.html</link>
+      <pubDate>Fri, 08 Dec 2006 23:19:14 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/12/08/459.html</guid>
+      <description>Ajaxian ? DWR 2.0 RC 1 Available (tags: java library dwr javascript ajax) つーちゃんねるブログ 金正日総書記、平壌の会員制ゴルフクラブで11ホールインワン達成 wwwwwwwwww (tags: neta news northkorea) つーちゃんねるブログ ド</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-12-07</title>
+      <link>http://nobu666.com/2006/12/07/458.html</link>
+      <pubDate>Thu, 07 Dec 2006 23:19:35 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/12/07/458.html</guid>
+      <description>セルゲームに学ぶ「再チャレンジ支援税制」 : ひろゆき＠オープンSNS (tags: comic funny neta links) Geekなぺーじ：こんなあなたは。。。(ry (tags: neta) HTMLをJav</description>
+    </item>
+    
+    <item>
+      <title>「ひとつ上のヒューマンマネジメント」?臍で茶が沸きまくりんぐｗ</title>
+      <link>http://nobu666.com/2006/12/07/457.html</link>
+      <pubDate>Thu, 07 Dec 2006 02:05:28 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/12/07/457.html</guid>
+      <description>芦屋広太 ひとつ上のヒューマンマネジメント : 5分で人を育てる技術 (5)言うことを聞かない“自信過剰な部下”という記事、これ本当にマネジメントの</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-12-06</title>
+      <link>http://nobu666.com/2006/12/06/456.html</link>
+      <pubDate>Wed, 06 Dec 2006 23:18:46 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/12/06/456.html</guid>
+      <description>JavaScriptist - javascript/ajax/サンプル/入門/リファレンス/ライブラリ (tags: javascript sample tips re reference tutorial) 連載 その１ あなたはビルゲイツの試験に受かる？ (tags: column microsoft</description>
+    </item>
+    
+    <item>
+      <title>ダメなプログラマ</title>
+      <link>http://nobu666.com/2006/12/05/455.html</link>
+      <pubDate>Tue, 05 Dec 2006 23:20:31 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/12/05/455.html</guid>
+      <description>先輩2人と昼飯食いながらグチ大会になったときに話題に出た。なんとなく簡単にまとめるとこういうことだ。 勉強しないやつはダメだ逆引きリファレンス</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-12-05</title>
+      <link>http://nobu666.com/2006/12/05/454.html</link>
+      <pubDate>Tue, 05 Dec 2006 23:18:32 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/12/05/454.html</guid>
+      <description>瞬時にテストデータを大量生成してくれる『Data Generator』 | i d e a * i d e a (tags: data generator test tools webservice) Disinterest - Stackless Python 2.4.3 on the Nintendo DS (tags: nintendo ds development python) KH Coder Index Page (tags: text</description>
+    </item>
+    
+    <item>
+      <title>今更だけどAurora Consurgensを聴いた</title>
+      <link>http://nobu666.com/2006/12/01/453.html</link>
+      <pubDate>Fri, 01 Dec 2006 00:04:36 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/12/01/453.html</guid>
+      <description>ブラジルの至宝、ANGRAのAurora Consurgensを今更ながら聴いた。前作のデキが素晴らしく良かったので期待していたんだけど…なん</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-11-30</title>
+      <link>http://nobu666.com/2006/11/30/452.html</link>
+      <pubDate>Thu, 30 Nov 2006 23:18:21 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/30/452.html</guid>
+      <description>ウノウラボ Unoh Labs: WEBアプリのテストに必須なツール7種 (tags: development test tools) 技術メモ帳 - zshで出来ている新感覚エディタzed (tags: shell zsh editor) Yahoo UI Libraryを拡</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-11-29</title>
+      <link>http://nobu666.com/2006/11/29/451.html</link>
+      <pubDate>Wed, 29 Nov 2006 23:20:31 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/29/451.html</guid>
+      <description>IFRAMEを使わずにHTMLファイルから他のHTMLファイルを読み込む方法:phpspot開発日誌 (tags: html tips object iframe) MEGAUPLOAD （50GB無料のオンラインス</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-11-21</title>
+      <link>http://nobu666.com/2006/11/21/450.html</link>
+      <pubDate>Tue, 21 Nov 2006 23:19:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/21/450.html</guid>
+      <description> Top10SQLPerformanceTips - MySQLForge Wiki (tags: database mysql tips list performance tuning)   </description>
+    </item>
+    
+    <item>
+      <title>[memo] 異なるアーキテクチャ間でクロスコンパイル</title>
+      <link>http://nobu666.com/2006/11/19/449.html</link>
+      <pubDate>Sun, 19 Nov 2006 23:27:30 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/19/449.html</guid>
+      <description>前提条件 基本的にはGentoo distcc ドキュメント・DistCC クロスコンパイルガイド、この2つのドキュメントの通り行う。気をつけなきゃいけないの</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-11-17</title>
+      <link>http://nobu666.com/2006/11/17/448.html</link>
+      <pubDate>Fri, 17 Nov 2006 23:19:05 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/17/448.html</guid>
+      <description>Jettison - Home (tags: java javascript json parser stax) blogSetomits : mixi2rss.py - マイミクシィ最新日記／コミュニティ最新書き込みを RSS 化 - (tags: mixi rss python)</description>
+    </item>
+    
+    <item>
+      <title>ボジョレー買ってきた</title>
+      <link>http://nobu666.com/2006/11/16/447.html</link>
+      <pubDate>Thu, 16 Nov 2006 21:58:54 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/16/447.html</guid>
+      <description>風呂入ってから、Binary Hacks読みつつチビチビ飲む予定。なんか毎年テレビとかで「今年のは最高の出来」とか言ってる気がする。映画の宣伝</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-11-15</title>
+      <link>http://nobu666.com/2006/11/15/446.html</link>
+      <pubDate>Wed, 15 Nov 2006 23:22:14 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/15/446.html</guid>
+      <description>つーちゃんねるブログ 【速報！】 オーストリアの国名が変わります ネタかと思ったらマジだった (tags: news)</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-11-14</title>
+      <link>http://nobu666.com/2006/11/14/445.html</link>
+      <pubDate>Tue, 14 Nov 2006 23:19:29 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/14/445.html</guid>
+      <description>TextMate stuff - hetima.com (tags: mac editor japanese software) macfox Firefox Themes (tags: browser firefox mac themes) Javaスクールの危険 - The Joel on Software Translation Project (tags: column development java) 秋元@サイボウズラボ・プログラマー・ブログ: Macノートの光セ</description>
+    </item>
+    
+    <item>
+      <title>Binary Hacksが来ない</title>
+      <link>http://nobu666.com/2006/11/13/444.html</link>
+      <pubDate>Mon, 13 Nov 2006 22:34:08 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/13/444.html</guid>
+      <description>届かねぇｙｐ!!!!1111!!とか思ってたらamazonでは14日発売なんだな…今日発送したとメールが昼頃に来てた。 あ、そうそう、バイナリ</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-11-12</title>
+      <link>http://nobu666.com/2006/11/12/443.html</link>
+      <pubDate>Sun, 12 Nov 2006 23:18:17 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/12/443.html</guid>
+      <description>Net-SNMPの設定方法 (tags: network snmp server monitoring) Net-SNMP (tags: monitoring snmp server) About Rrdtool (tags: rrdtool graph monitoring server) RRDtoolのすすめ (tags: rrdtool graph monitoring server) Cacti: The Complete RRDTool-based Graphing Solution (tags: graph monitoring server webservice rrdtool cacti) cacti - グラフツールcac</description>
+    </item>
+    
+    <item>
+      <title>[memo][Gentoo] SNMP&#43;RRDtool&#43;cactiでサーバ監視</title>
+      <link>http://nobu666.com/2006/11/12/442.html</link>
+      <pubDate>Sun, 12 Nov 2006 12:03:34 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/12/442.html</guid>
+      <description>インストールまでは上手くいったけど設定に嵌って酷い目にあった。 必要なものをインストールする 以下のものが必要。 net-snmp apache php mysql rrdtool cacti さくっとemerge</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-11-11</title>
+      <link>http://nobu666.com/2006/11/11/440.html</link>
+      <pubDate>Sat, 11 Nov 2006 23:18:26 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/11/440.html</guid>
+      <description>更新履歴兼雑記 「記号しか打てないキーボードで作業する際など、 ` と ( の xor を取って H を作るという知識は日常業務でも使えそうですね」無理w (tags: neta perl) G</description>
+    </item>
+    
+    <item>
+      <title>[memo] GentooにPlaggerをインストール</title>
+      <link>http://nobu666.com/2006/11/11/439.html</link>
+      <pubDate>Sat, 11 Nov 2006 01:29:02 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/11/439.html</guid>
+      <description>Gentooにはg-cpanという素晴らしいものがあるのだが、そこはあえて使わずにいく。というかなんか知らないけど上手くいかなかったので、仕</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-11-09</title>
+      <link>http://nobu666.com/2006/11/09/438.html</link>
+      <pubDate>Thu, 09 Nov 2006 23:18:19 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/09/438.html</guid>
+      <description>技術メモ帳 - zshのzptyを使って端末が必要な処理を自動化する (tags: unix linux shell zsh tips) ZAKZAK - ギターに続け、エアセックス妙技…世界選手権開催 (tags: neta)</description>
+    </item>
+    
+    <item>
+      <title>オフィスで使うホワイトボード</title>
+      <link>http://nobu666.com/2006/11/09/437.html</link>
+      <pubDate>Thu, 09 Nov 2006 22:02:26 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/09/437.html</guid>
+      <description>White Board ≪ 創材 ≫ 軽量自在のホワイトボード、とかいうものを買ってみた。これはすごくオヌヌメ。カッターで切れるので、打ち合わせ卓に持ち運べるくらいの</description>
+    </item>
+    
+    <item>
+      <title>風邪が治らない</title>
+      <link>http://nobu666.com/2006/11/09/436.html</link>
+      <pubDate>Thu, 09 Nov 2006 21:54:31 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/09/436.html</guid>
+      <description>月曜日に喉が痛くなりはじめ、今は痛みも腫れも治まったが咳が止まらない。微妙に流行ってるっぽいので、みなさん伝染らないようにしてくだされ。もう</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-11-07</title>
+      <link>http://nobu666.com/2006/11/07/435.html</link>
+      <pubDate>Tue, 07 Nov 2006 23:18:58 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/07/435.html</guid>
+      <description>caramel*vanilla ? Keyword Forecastでトレンドチェック (tags: keyword) ＠IT：特集：ネットワーク構築の基本はVLANから（第1回） (tags: network study virtual lan vlan) spamhaus.org</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-11-06</title>
+      <link>http://nobu666.com/2006/11/06/434.html</link>
+      <pubDate>Mon, 06 Nov 2006 23:18:25 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/06/434.html</guid>
+      <description>Cookie仕様 日本語訳 - futomi&#39;s CGI Cafe (tags: browser cookie specifications japanese) Microsoft XMLHTTP ActiveX Control Code Execution Vulnerability - Advisories - Secunia Extremely critical (tags: security microsoft windows activex vulnerability) 「OSのバグを毎日1件公開する」プロジェクトが始動，第1弾は</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-11-05</title>
+      <link>http://nobu666.com/2006/11/05/433.html</link>
+      <pubDate>Sun, 05 Nov 2006 23:18:41 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/05/433.html</guid>
+      <description>技術日記＠kiwanami (tags: javascript oop) hetimaの日記 - TextMate で日本語をわりとまともに表示する (tags: mac japanese software editor howto) svk を当社比100倍高速化する方法: blog.bulknews.net (tags: subversion svn</description>
+    </item>
+    
+    <item>
+      <title>デジタルMTR、BR-600を買った</title>
+      <link>http://nobu666.com/2006/11/04/432.html</link>
+      <pubDate>Sat, 04 Nov 2006 23:45:16 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/04/432.html</guid>
+      <description>思い立って御茶ノ水を久々に散策。なんか宅録熱が盛り上がってね。実は昨日もヨドバシとか行ってDAWソフトを漁ってたりしたんだけども…なんせDA</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-11-04</title>
+      <link>http://nobu666.com/2006/11/04/431.html</link>
+      <pubDate>Sat, 04 Nov 2006 23:18:36 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/04/431.html</guid>
+      <description>FrontPage - WX310K(京ぽん２)まとめwiki (tags: mobile wx310k willcom summary wiki) CSmap Wiki - WILLCOM通話・モバイル定額・GPS位置情報 Wiki (tags: mobile willcom summary wiki) AirWiki: WILLCOM/WX310K (tags: mobile willcom wx310k summary wiki)</description>
+    </item>
+    
+    <item>
+      <title>評価で言われそうなこと</title>
+      <link>http://nobu666.com/2006/11/04/430.html</link>
+      <pubDate>Sat, 04 Nov 2006 02:59:14 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/04/430.html</guid>
+      <description>ウチの会社はボーナス時期と期末に、各人に直属の上司と部長・副部長から評価を言い渡される。評価には短期評価と長期評価の2種類があって、短期評価</description>
+    </item>
+    
+    <item>
+      <title>[memo] rep2をSSL&#43;Basic認証で使う</title>
+      <link>http://nobu666.com/2006/11/04/429.html</link>
+      <pubDate>Sat, 04 Nov 2006 02:24:07 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/04/429.html</guid>
+      <description>通勤時の電車の中では本を読んでいるか、暇つぶしに2ch見てるわけだが。どうせ携帯で見るなら自宅サーバのリソースも余ってることだし有効活用した</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-11-02</title>
+      <link>http://nobu666.com/2006/11/02/428.html</link>
+      <pubDate>Thu, 02 Nov 2006 23:18:50 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/02/428.html</guid>
+      <description>Mozilla Firefox (tags: firefox security) ITmedia エンタープライズ：Visual Studio 2005に危険度高の脆弱性 (tags: microsoft visualstudio visualstudio2005 security vulnerability) スポニチ Sponichi Annex ニュース サッカー シューマッハ スイス３部リーグに</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-11-01</title>
+      <link>http://nobu666.com/2006/11/01/427.html</link>
+      <pubDate>Wed, 01 Nov 2006 23:18:44 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/11/01/427.html</guid>
+      <description>Mozilla Firefox まとめサイト (tags: browser firefox summary reference) SmallStyle - Firefox をインストールしたらまず行う設定(Firefox 2.0 版) (tags: firefox 2.0 custom) Download Statusbar | Firefox Add-ons | Mozilla Corporation Download Managerを開かずにステ</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-10-31</title>
+      <link>http://nobu666.com/2006/10/31/426.html</link>
+      <pubDate>Tue, 31 Oct 2006 23:19:33 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/31/426.html</guid>
+      <description>Saving Money ? Del.icio.us User To Win 80GB Apple iPod On November 22nd, Enter This Contest (tags: apple ipod del.icio.us) ITmedia エンタープライズ：レビュー：Firefox 2.0に施された堅実な改善点 (1/4) (tags: browser firefox review) 出現頻度と連接頻度</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-10-30</title>
+      <link>http://nobu666.com/2006/10/30/425.html</link>
+      <pubDate>Mon, 30 Oct 2006 23:20:31 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/30/425.html</guid>
+      <description>最速インターフェース研究会 :: Gmailで未読のみ表示を切り替えるGreasemonkeyスクリプト (tags: google gmail greasemonkey) 304 Not Modified: 個人ニュースサイトをPlag</description>
+    </item>
+    
+    <item>
+      <title>[memo] GentooでUPS(APC ES 500)を使う</title>
+      <link>http://nobu666.com/2006/10/30/424.html</link>
+      <pubDate>Mon, 30 Oct 2006 01:29:11 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/30/424.html</guid>
+      <description>Amazonで\7,000ちょっとという値段だったので、購入したのが届いた。流石に24時間稼働だとUPSがないと怖い。今年の雷で瞬断も多くあ</description>
+    </item>
+    
+    <item>
+      <title>[修正版][memo] postfix &#43; dovecotでSMTP AUTH &amp; IMAPなメールサーバを立ち上げる</title>
+      <link>http://nobu666.com/2006/10/29/423.html</link>
+      <pubDate>Sun, 29 Oct 2006 17:42:48 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/29/423.html</guid>
+      <description>[memo] postfix + dovecotでSMTP AUTH &amp;amp; IMAPなメールサーバを立ち上げるがあまり正しくないので修正版。 ssmtpの削除 Gentooではいきなりp</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-10-28</title>
+      <link>http://nobu666.com/2006/10/28/422.html</link>
+      <pubDate>Sat, 28 Oct 2006 23:18:21 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/28/422.html</guid>
+      <description>404 Blog Not Found:Bookmarklet - URI Escape (tags: javascript bookmarklet encode) maruの研究記録 - Mouseover Dictionary (tags: firefox dictionary extention) Clouder::Blogger: mod_loadaverage_redirect (tags: apache module) JSAN - JSONScriptRequest 0.02 (tags: javascript library json jsonp) subtechグループ - ピンク ブロッサム ダイアリー - テスト</description>
+    </item>
+    
+    <item>
+      <title>[memo] iptablesが使えないのでkernel再構築 &amp; sshdへのアタックをどうにかする</title>
+      <link>http://nobu666.com/2006/10/28/421.html</link>
+      <pubDate>Sat, 28 Oct 2006 04:12:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/28/421.html</guid>
+      <description>なんつーかね、某krからのsshdへのBrute force attacksが酷すぎる。auth.logを埋め尽くすほどのアタックを食らったので対策する</description>
+    </item>
+    
+    <item>
+      <title>[memo] postfix &#43; dovecotでSMTP AUTH &amp; IMAPなメールサーバを立ち上げる</title>
+      <link>http://nobu666.com/2006/10/25/420.html</link>
+      <pubDate>Wed, 25 Oct 2006 23:59:30 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/25/420.html</guid>
+      <description>2006/10/29追記: イマイチ不正確なので[修正版][memo] postfix + dovecotでSMTP AUTH &amp;amp; IMAPなメールサーバを立ち上げるで書き</description>
+    </item>
+    
+    <item>
+      <title>[memo] サーバのCPU動作周波数を動的に変える</title>
+      <link>http://nobu666.com/2006/10/24/418.html</link>
+      <pubDate>Tue, 24 Oct 2006 15:50:23 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/24/418.html</guid>
+      <description>[memo] サーバのCPU動作周波数を下げるの続き。 やってみないとわからんので、cpufreq_ondemandを試してみる。 modprobe cpufreq_ondemand echo ondemand &amp;gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor cd /sys/devices/system/cpu/cpu0/cpufreq/ondemand/ ls ignore_nice_load</description>
+    </item>
+    
+    <item>
+      <title>[memo] TortoiseSVNからsvn&#43;sshを使う</title>
+      <link>http://nobu666.com/2006/10/24/417.html</link>
+      <pubDate>Tue, 24 Oct 2006 15:36:27 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/24/417.html</guid>
+      <description>普通にsshで繋がるようになったらsvn+sshを使いたくなる。サーバー側はemerge subversionするぐらいで設定は特にない。sv</description>
+    </item>
+    
+    <item>
+      <title>[memo] USEフラグをいい感じに管理する</title>
+      <link>http://nobu666.com/2006/10/24/416.html</link>
+      <pubDate>Tue, 24 Oct 2006 02:40:03 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/24/416.html</guid>
+      <description>俺のようにしょっちゅうemergeしたい人はUSEフラグの管理が大変だ。知らないうちに勝手にgtk2フラグが有効になっててXがインストールさ</description>
+    </item>
+    
+    <item>
+      <title>[memo] サーバのCPU動作周波数を下げる</title>
+      <link>http://nobu666.com/2006/10/23/415.html</link>
+      <pubDate>Mon, 23 Oct 2006 23:59:04 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/23/415.html</guid>
+      <description>CPUに関する情報は/sys/devices/system/cpu/cpu0/cpufreq/で次のファイルをcatする。まぁファイル名のま</description>
+    </item>
+    
+    <item>
+      <title>掃除ずくし</title>
+      <link>http://nobu666.com/2006/10/22/414.html</link>
+      <pubDate>Sun, 22 Oct 2006 20:26:33 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/22/414.html</guid>
+      <description>新しい机と本棚のおかげで床の上にものが殆どなくなった。やはり整理されていると気持ちがいいので、最近の週末は掃除ばかりしている。とりあえず部屋</description>
+    </item>
+    
+    <item>
+      <title>[memo] Gentooインストールメモ</title>
+      <link>http://nobu666.com/2006/10/22/413.html</link>
+      <pubDate>Sun, 22 Oct 2006 20:04:41 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/22/413.html</guid>
+      <description>特に書くことないほどあっさり終了。LiveCDを焼いてそいつでブートし、デスクトップ画面が出てきたら&amp;rdquo;Gentoo Linux instal</description>
+    </item>
+    
+    <item>
+      <title>自宅サーバ用のPCを購入したけど初期不良で動かず(3)</title>
+      <link>http://nobu666.com/2006/10/22/412.html</link>
+      <pubDate>Sun, 22 Oct 2006 18:50:08 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/22/412.html</guid>
+      <description>紆余曲折あったが、結局のところ店員のミスでsocket479用のマザーなのにsocket478のCeleronMを突っ込んだのが原因だったっ</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-10-20</title>
+      <link>http://nobu666.com/2006/10/20/411.html</link>
+      <pubDate>Fri, 20 Oct 2006 23:18:41 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/20/411.html</guid>
+      <description>酒日記 はてな支店 - PlaggerLDR hack が動かなくなってた (tags: plagger livedoor livedoorreader) Ohmsha - Binary Hacks ハッカー秘伝の100選 (tags: books) Onlooker+beta: 無断リンク問題で渦中のYokoさんとチャットで話した。そ</description>
+    </item>
+    
+    <item>
+      <title>自宅サーバ用のPCを購入したけど初期不良で動かず(2)</title>
+      <link>http://nobu666.com/2006/10/20/410.html</link>
+      <pubDate>Fri, 20 Oct 2006 00:11:26 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/20/410.html</guid>
+      <description>火曜日くらいには届くはず、と宣っていた角田祖父地図秋葉原店。わざわざ残業しないで早めに帰路についていたのだが、待てど暮らせど荷物は届かず。昨</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-10-18</title>
+      <link>http://nobu666.com/2006/10/18/409.html</link>
+      <pubDate>Wed, 18 Oct 2006 23:21:13 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/18/409.html</guid>
+      <description>マイクロソフト、VistaでPC間の移管を制限--著作権侵害対策の一環として - ZDNet Japan (tags: windows vista license) GetSen 日本語文章サマリ抽出システム - ほそいりょすけのほ</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-10-17</title>
+      <link>http://nobu666.com/2006/10/17/408.html</link>
+      <pubDate>Tue, 17 Oct 2006 23:24:43 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/17/408.html</guid>
+      <description>hetimaの日記 - iTunes のライブラリからファイルが存在しない曲を効率良く取り除く方法 (tags: itunes music software tips) しすろぐ : sshd_config の Match 指定 (tags: security server setting ssh tips) スラッシュドット</description>
+    </item>
+    
+    <item>
+      <title>自宅サーバ用のPCを購入したけど初期不良で動かず</title>
+      <link>http://nobu666.com/2006/10/17/407.html</link>
+      <pubDate>Tue, 17 Oct 2006 00:16:14 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/17/407.html</guid>
+      <description>土曜日に秋葉原で一式購入。とりあえずファイルサーバとして使いたいのと、個人用にSubversionとTrac、あとPlaggerをLived</description>
+    </item>
+    
+    <item>
+      <title>胃カメラ飲んできた</title>
+      <link>http://nobu666.com/2006/10/16/406.html</link>
+      <pubDate>Mon, 16 Oct 2006 23:44:29 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/16/406.html</guid>
+      <description>とりあえず結果だけ先に言うと、何も問題なし。まぁ一安心。憩室という胃の壁の一部が突き出たような状況になっていて、どうも俺の場合は先天的にそう</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-10-14</title>
+      <link>http://nobu666.com/2006/10/14/405.html</link>
+      <pubDate>Sat, 14 Oct 2006 23:18:44 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/14/405.html</guid>
+      <description>WebアプリをC++で開発するためのテンプレート・エンジンをオープンソースとして公開：ITpro (tags: c++ template html oss) Uno, dos, tres, quatro!UTF-8で動</description>
+    </item>
+    
+    <item>
+      <title>会社のPC環境羅列(再インストール用のメモとも言う)</title>
+      <link>http://nobu666.com/2006/10/13/404.html</link>
+      <pubDate>Fri, 13 Oct 2006 00:44:33 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/13/404.html</guid>
+      <description>CPU:Prescott-2Mの3.2GHz メモリ:2GB ヂィスプレイ:iiyamaの20inch液晶 1600x1200 キーボード:HHKB Proffessional マウス:Log</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-10-12</title>
+      <link>http://nobu666.com/2006/10/12/403.html</link>
+      <pubDate>Thu, 12 Oct 2006 23:19:10 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/12/403.html</guid>
+      <description>スラッシュドット ジャパン | PostgreSQL用の日本語対応全文検索エンジン｢Ludia」 (tags: news oss search database postgresql senna fulltext japanese) mixCipher - mixi Diary Cryptographer (tags: bookmarklet mixi tools cipher) PFU、輪島</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-10-11</title>
+      <link>http://nobu666.com/2006/10/11/402.html</link>
+      <pubDate>Wed, 11 Oct 2006 23:19:10 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/11/402.html</guid>
+      <description>日本であなたが今すぐ学ぶべき１０のプログラミング言語 - Open MagicVox.net (tags: programming language enquete) [ThinkIT] 第6回：ストレージエンジンの処理性能比較 (1/3) (tags: mysql database strage engine table file memory) いよいよ「ボリ</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-10-10</title>
+      <link>http://nobu666.com/2006/10/10/401.html</link>
+      <pubDate>Tue, 10 Oct 2006 23:19:18 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/10/401.html</guid>
+      <description>やねうらお?よっちゃんイカ(ry - 7-zipによるsfx (tags: tools archive .net sfx) My Life Between Silicon Valley and Japan - GoogleがYouTube買収!!! 圧倒的に正しい戦略が</description>
+    </item>
+    
+    <item>
+      <title>人間ドックの結果がキタコレ</title>
+      <link>http://nobu666.com/2006/10/10/400.html</link>
+      <pubDate>Tue, 10 Oct 2006 23:18:30 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/10/400.html</guid>
+      <description>余裕でオールA、流石俺。とか書く予定が、残念な結果に（笑 A以外の項目を列挙してみる。 一般検査 - B : 尿蛋白(+-)。経過観察。 蛋白・腎機能・尿</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-10-09</title>
+      <link>http://nobu666.com/2006/10/09/399.html</link>
+      <pubDate>Mon, 09 Oct 2006 23:21:48 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/09/399.html</guid>
+      <description>pythonを使ってvimからGoogleカレンダーに予定を投げる (ueBLOG) (tags: google calendar python vim tips) コピペ中のハードディスクの中は一体どうなっているのか？ - GIGAZINE (tags:</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-10-07</title>
+      <link>http://nobu666.com/2006/10/07/398.html</link>
+      <pubDate>Sat, 07 Oct 2006 23:18:26 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/07/398.html</guid>
+      <description>自信を持って Apacheを操るために (tags: pdf apache document tutorial web server) mod_proxy_ajpによるApache - Tomcatの連携 -- BONNOH FRACTION 13 (tags: apache tomcat ajp13 mod_proxy_ajp web server) ASF Bugzilla</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-10-06</title>
+      <link>http://nobu666.com/2006/10/06/397.html</link>
+      <pubDate>Fri, 06 Oct 2006 23:19:19 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/06/397.html</guid>
+      <description>DXPresentation (tags: presentation windows software tools 3d) 【ハウツー】これはすごい! Web案件必須 Selenium - 人気急上昇中自動テストツール (1) 最近人気のSelenium (MYCOMジャーナル) (tags:</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-10-05</title>
+      <link>http://nobu666.com/2006/10/05/396.html</link>
+      <pubDate>Thu, 05 Oct 2006 23:20:11 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/05/396.html</guid>
+      <description>要らないギ術者一覧 (tags: engineer neta) TechCrunch Japanese アーカイブ ? SlideShareはPowerPoint + YouTube (tags: presentation sharing tools youtube webservices)</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-10-04</title>
+      <link>http://nobu666.com/2006/10/04/395.html</link>
+      <pubDate>Wed, 04 Oct 2006 23:18:39 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/04/395.html</guid>
+      <description>人力検索はてな - 日本にいる有名なハッカーさん、クラッカーさんを教えてください。 ホームページを持っている方なら、そのアドレスや、「どんなジャン</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-10-03</title>
+      <link>http://nobu666.com/2006/10/03/394.html</link>
+      <pubDate>Tue, 03 Oct 2006 23:19:12 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/03/394.html</guid>
+      <description>gooラボ、次世代型ブログ検索エンジン「BLOGRANGER 2.0」を公開 - ニュース - nikkei BPnet (tags: blog seach api) 9800個のフリーフォント配布サイト - GIGAZINE (tags:</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-10-02</title>
+      <link>http://nobu666.com/2006/10/02/393.html</link>
+      <pubDate>Mon, 02 Oct 2006 23:18:49 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/02/393.html</guid>
+      <description>hail2u.net - Weblog - XPIパッケージにまとめるバッチ・スクリプト (tags: firefox extension xpi tools) KeN&#39;s GNU/Linux Diary | 『みんなのPython』 (tags: python book review)</description>
+    </item>
+    
+    <item>
+      <title>本日の戦利品</title>
+      <link>http://nobu666.com/2006/10/02/392.html</link>
+      <pubDate>Mon, 02 Oct 2006 01:02:10 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/02/392.html</guid>
+      <description>ケビン・ミトニック著。カリフォルニア大学サンディエゴにあるスーパーコンピューターに侵入し、rhostの改ざんに至りアメリカでその手の犯罪で始</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-10-01</title>
+      <link>http://nobu666.com/2006/10/01/391.html</link>
+      <pubDate>Sun, 01 Oct 2006 23:18:45 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/10/01/391.html</guid>
+      <description>Rhythm Collision wordpress : 面白そうなWordpressのPlugins (tags: wordpress blog plugin) code:zshttpd [ZshWiki] (tags: zsh shell shellscript httpd server) DSAS開発者の部屋:DBサーバ向けLinuxチューニングを考え</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-30</title>
+      <link>http://nobu666.com/2006/09/30/390.html</link>
+      <pubDate>Sat, 30 Sep 2006 23:18:54 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/30/390.html</guid>
+      <description>Design Detector (tags: bug css browser ie7) Sankei Web ＞ 政治 ＞ 安倍首相 所信表明演説の全文(09/29 16:13) (tags: japanese politics) ITエンジニアのためのマインドマップ入門 ? ＠IT自分戦略研究所 (tags: min mindmap</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-29</title>
+      <link>http://nobu666.com/2006/09/29/389.html</link>
+      <pubDate>Fri, 29 Sep 2006 23:19:11 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/29/389.html</guid>
+      <description>Pure JavaScriptによるQRコード生成ライブラリ (tags: javascript library qrcode) VisualRoute traceroute server: trace IP address, trace route, IP trace, IP address locations (tags: network tools visualization ip traceroute dns search) Hibernate EntityManager (tags: java hibernate) AJAX: Is your application secure enough? ? (tags: security ajax javascript) JSP Tutorials, EJB</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-28</title>
+      <link>http://nobu666.com/2006/09/28/388.html</link>
+      <pubDate>Thu, 28 Sep 2006 23:20:36 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/28/388.html</guid>
+      <description>Ajaxフレームワークとプラットフォーム人気投票 (Unknown Quality) (tags: ajax javascript framework) ブログやブックマーク、共有サイトのタグを一括検索できる「TAGGY」 (tags: web2.0 search) 無料で</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-27</title>
+      <link>http://nobu666.com/2006/09/27/387.html</link>
+      <pubDate>Wed, 27 Sep 2006 23:20:11 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/27/387.html</guid>
+      <description>フォーカル、Mac mini似のUSB TVキャプチャユニット (tags: mac tv hardware) Open Tech Press | Berkeley DBが、MySQLで選択可能なストレージ・エンジンから除外される</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-26</title>
+      <link>http://nobu666.com/2006/09/26/386.html</link>
+      <pubDate>Tue, 26 Sep 2006 23:20:02 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/26/386.html</guid>
+      <description>404 Blog Not Found:javascript - ページはいつ再描画されるか (tags: javascript tips programming) 404 Blog Not Found:議論に愛想をつかす前に (tags: book review) snippets from shinichitomita’s journal - 非同期処理</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-25</title>
+      <link>http://nobu666.com/2006/09/25/385.html</link>
+      <pubDate>Mon, 25 Sep 2006 23:19:56 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/25/385.html</guid>
+      <description>mizzy.org - Plagger プラグインの実行フェーズ (tags: perl plagger plugin reference) 川o・-・）＜2nd life - ruby のスクレイピングツールキット scrAPI (tags: ruby library css html) 404 Blog Not Found:javascript + perl - yubin2jsonp (tags: javascript perl jsonp) wrong, rogue and log :</description>
+    </item>
+    
+    <item>
+      <title>机と椅子と本棚を買ったよ</title>
+      <link>http://nobu666.com/2006/09/25/384.html</link>
+      <pubDate>Mon, 25 Sep 2006 00:00:26 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/25/384.html</guid>
+      <description>部屋の掃除してたらいい加減本が邪魔で邪魔で仕方なくなり、本棚を買いに行くことに。どうせ本棚を買うんだったら、ついでに机と椅子も買ってしまえと</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-23</title>
+      <link>http://nobu666.com/2006/09/23/383.html</link>
+      <pubDate>Sat, 23 Sep 2006 23:19:14 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/23/383.html</guid>
+      <description>ITmedia +D Games：「FFXII」がニンテンドーDSで――ヴァンとパンネロの新たな物語 おいよいよ！ (tags: nintendo nds game ff)</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-22</title>
+      <link>http://nobu666.com/2006/09/22/382.html</link>
+      <pubDate>Fri, 22 Sep 2006 23:20:30 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/22/382.html</guid>
+      <description>[α]超絶あるふぁ:【YouTube】iPodやDivXに変換しながらDL+RSS生成+Podcast化 vixy.net - livedoor Blog（ブログ） (tags: youtube podcasting rss tips ipod</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-21</title>
+      <link>http://nobu666.com/2006/09/21/381.html</link>
+      <pubDate>Thu, 21 Sep 2006 23:19:31 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/21/381.html</guid>
+      <description>gdi++.dll (tags: font japanese tools) M+ と IPAフォントの合成フォント (tags: font download linux windows) Load-balancing Mongrel with Apache 2.0 (tags: apache tips mod_proxy mod_rewrite) 呼び名で分かる：地域編 出身地を推測できる「ばんそうこう」?家庭：MS</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-20</title>
+      <link>http://nobu666.com/2006/09/20/380.html</link>
+      <pubDate>Wed, 20 Sep 2006 23:20:13 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/20/380.html</guid>
+      <description>ITmedia エンタープライズ：PowerPointに危険度高の脆弱性 (tags: microsoft office 2000 powerpoint vulnerability) ITmedia エンタープライズ：Adobe Readerなどに脆弱性、Web経由で攻</description>
+    </item>
+    
+    <item>
+      <title>なんか最近クラシックづいている</title>
+      <link>http://nobu666.com/2006/09/20/379.html</link>
+      <pubDate>Wed, 20 Sep 2006 01:16:48 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/20/379.html</guid>
+      <description>彼女がクラシックが聞きたいというので、適当に色々チョイスするため久しぶりにクラシックを色々聴いた。やっぱりクラシックはいいね…。基本的にはバ</description>
+    </item>
+    
+    <item>
+      <title>キリ番</title>
+      <link>http://nobu666.com/2006/09/20/378.html</link>
+      <pubDate>Wed, 20 Sep 2006 00:21:58 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/20/378.html</guid>
+      <description>さっきある人のコミュを覗いたらキリ番を発見。美しい… ってよくみたら65535じゃねぇじゃん！！だまされた！俺FUCK！ｗ ファイル名を6553</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-19</title>
+      <link>http://nobu666.com/2006/09/19/377.html</link>
+      <pubDate>Tue, 19 Sep 2006 23:19:28 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/19/377.html</guid>
+      <description>*LOVE IS DESIGN* - Favicon（お気に入りアイコン）が簡単に作成できるWebツール (tags: favicon browser design webservices tools) memologue - zshで16進→10進変換 (tags: tips zsh bash shell) ブラウザの墓場</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-18</title>
+      <link>http://nobu666.com/2006/09/18/376.html</link>
+      <pubDate>Mon, 18 Sep 2006 23:18:47 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/18/376.html</guid>
+      <description>Ajaxの裏の本質 - 「新しい」こと探し [ITmedia オルタナティブ・ブログ] (tags: ajax javascript column) nagaton ＞ /hatena.d - OSX の utf-8 な zsh で日本語入力とか (tags: mac shell zsh) Uno, dos, tres, quatro!XML</description>
+    </item>
+    
+    <item>
+      <title>最近買った本</title>
+      <link>http://nobu666.com/2006/09/18/375.html</link>
+      <pubDate>Mon, 18 Sep 2006 13:29:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/18/375.html</guid>
+      <description>みんPyこと、みんなのPython。オライリーに「初めてのPython」があるけど、こっちのほうが読みやすいと感じた。電車で読んでも苦になら</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-17</title>
+      <link>http://nobu666.com/2006/09/17/374.html</link>
+      <pubDate>Sun, 17 Sep 2006 23:18:08 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/17/374.html</guid>
+      <description>Collection &amp; Copy - JSON入門 (tags: javascript json reference links) ニンニクのふりかけライス - シェフに教わる賄い料理 - nikkeibp.jp (tags: food cooking) 窓の杜 - 【NEWS】MS、Word文書に電子的な“墨</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-16</title>
+      <link>http://nobu666.com/2006/09/16/373.html</link>
+      <pubDate>Sat, 16 Sep 2006 23:18:45 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/16/373.html</guid>
+      <description>技術メモ帳 - location.hash の危険性 (tags: javascript security xss) Ajaxアプリのビジュアル開発ツール，デファクトを狙いNTTデータがオープンソースとして公開へ：ITpro (tags: eclipse</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-15</title>
+      <link>http://nobu666.com/2006/09/15/372.html</link>
+      <pubDate>Fri, 15 Sep 2006 23:19:30 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/15/372.html</guid>
+      <description>YouTube - 言葉にできない ﾜﾛｼｭｗ (tags: 2ch funny movie neta video) Wii Preview 社長プレゼン全文 - Ｗｉｉ (tags: wii nintendo presentation) いやなブログ: PuTTYのフォントを「モトヤシーダ1等幅」に設定</description>
+    </item>
+    
+    <item>
+      <title>Canon Rock練習中…</title>
+      <link>http://nobu666.com/2006/09/15/371.html</link>
+      <pubDate>Fri, 15 Sep 2006 23:06:23 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/15/371.html</guid>
+      <description>かなり前からギタリストの間で密かなブームになっていたCanon Rock。言わずもがな、「3つのヴァイオリンと通奏低音のためのカノンとジーグニ</description>
+    </item>
+    
+    <item>
+      <title>人間ドック初体験</title>
+      <link>http://nobu666.com/2006/09/15/370.html</link>
+      <pubDate>Fri, 15 Sep 2006 22:45:39 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/15/370.html</guid>
+      <description>人間ドックとやらに行ってきた。やったのはこんな感じ。 検尿/検便 身長/体重 視力/聴力/眼圧 血圧 血液検査 心電図 肺機能検査 眼底検査 腹部エコー 胸部レ</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-14</title>
+      <link>http://nobu666.com/2006/09/14/369.html</link>
+      <pubDate>Thu, 14 Sep 2006 23:18:19 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/14/369.html</guid>
+      <description>ピヨピヨ ZeroMemory( ) ? Blog Archive ? OSXでは半角￥マークとバックスラッシュは区別される 0×5cを入力しようとしたら option を押しながら￥マークをおさないといけな</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-13</title>
+      <link>http://nobu666.com/2006/09/13/368.html</link>
+      <pubDate>Wed, 13 Sep 2006 23:21:41 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/13/368.html</guid>
+      <description>ジョブズキーノート &#34;It&#39;s Showtime&#34; - Engadget Japanese (tags: apple presentation mac ipod keynote) 学校では教えてくれないエンジニアリング英語 #2: Push the code: blog.bulknews.net (tags: english language computer tips) Radium Software Development (tags: google tips) naoyaのはてなダイアリ</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-12</title>
+      <link>http://nobu666.com/2006/09/12/367.html</link>
+      <pubDate>Tue, 12 Sep 2006 23:19:24 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/12/367.html</guid>
+      <description>Open Tech Press | NetBSDの将来 (tags: bsd netbsd os oss) 正規表現 - ソフトウェア＆ソースコード (tags: software tools regex programming) ポッドキャスト的生活「Bonchicast」(Podcas</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-11</title>
+      <link>http://nobu666.com/2006/09/11/366.html</link>
+      <pubDate>Mon, 11 Sep 2006 23:18:32 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/11/366.html</guid>
+      <description>北岡弘章の「知っておきたいIT法律入門」：ITpro (tags: law column) [N] プレゼンの際の手元資料の作り方 (tags: presentation tips document) mixi DIARYed (tags: mixi tools) Python - アクセンスのおまけ - Trac (tags: python tips)</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-09</title>
+      <link>http://nobu666.com/2006/09/09/365.html</link>
+      <pubDate>Sat, 09 Sep 2006 23:18:30 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/09/365.html</guid>
+      <description>Mac OS X と MONO で動かすIronPython (tags: mac mono python ironpython) Vistaは電源を切らずに “スリープ”を使うのが常識に！？ / デジタルARENA (tags: microsoft windows vista) TechCrunch Japanese ア</description>
+    </item>
+    
+    <item>
+      <title>Development Environment Conferenceに行ってきた</title>
+      <link>http://nobu666.com/2006/09/09/364.html</link>
+      <pubDate>Sat, 09 Sep 2006 00:21:38 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/09/364.html</guid>
+      <description>Development Environment Conferenceに会社の先輩と二人で行ってきた。12:00に受付開始して12:03で定員に達したとか…俺の受付は12:02だったので</description>
+    </item>
+    
+    <item>
+      <title>otsuneさんのはてなダイアリーを購読してるとPlaggerがこける問題は修正されたっぽ</title>
+      <link>http://nobu666.com/2006/09/08/363.html</link>
+      <pubDate>Fri, 08 Sep 2006 23:38:54 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/08/363.html</guid>
+      <description>otsuneさんのはてなダイアリーを購読してるとPlaggerがこける件、http://plagger.org/trac/changeset</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-08</title>
+      <link>http://nobu666.com/2006/09/08/362.html</link>
+      <pubDate>Fri, 08 Sep 2006 23:18:29 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/08/362.html</guid>
+      <description>kamo from scratch: apacheのrewriteモジュールとproxyモジュールを同時に使う (tags: apache mod_rewrite mod_proxy)</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-05</title>
+      <link>http://nobu666.com/2006/09/05/361.html</link>
+      <pubDate>Tue, 05 Sep 2006 23:19:19 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/05/361.html</guid>
+      <description>【レビュー】結構使える!! Windows互換レイヤー&#34;CrossOver Mac 6.0.0&#34; (1) Camp、Parallels、お次はCrossOver (MYC</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-09-03</title>
+      <link>http://nobu666.com/2006/09/03/360.html</link>
+      <pubDate>Sun, 03 Sep 2006 23:18:31 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/09/03/360.html</guid>
+      <description>技術メモ帳 - グローバルオブジェクトへの参照は遅い (tags: javascript performance) ColorDoctor : FUJITSU Japan (tags: usability accecibility web tools)</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-31</title>
+      <link>http://nobu666.com/2006/08/31/359.html</link>
+      <pubDate>Thu, 31 Aug 2006 23:19:55 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/31/359.html</guid>
+      <description>高木浩光＠自宅の日記 - サイボウズが再び「闇改修」をしたので電話で抗議したが無駄骨だった (tags: security) はてなダイアリーのヘルプ - はてなダイアリーXSS対</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-30</title>
+      <link>http://nobu666.com/2006/08/30/358.html</link>
+      <pubDate>Wed, 30 Aug 2006 23:19:16 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/30/358.html</guid>
+      <description>技術メモ帳 - 隣接兄弟セレクタ (tags: css tips) PCサイト-携帯変換スクリプト (tags: mobile script tools browser)</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-29</title>
+      <link>http://nobu666.com/2006/08/29/357.html</link>
+      <pubDate>Tue, 29 Aug 2006 23:19:13 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/29/357.html</guid>
+      <description>IEBlog : IE + JavaScript Performance Recommendations - Part 1 (tags: ie javascript performance programming) 西尾泰和のブログ: Pythonでワンライナーを作成する際のノウハウ集 (tags: python tips) しげふみメモ:Windowsで簡単に</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-28</title>
+      <link>http://nobu666.com/2006/08/28/356.html</link>
+      <pubDate>Mon, 28 Aug 2006 23:19:17 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/28/356.html</guid>
+      <description>野良Plugin - Shibuya.Plaggers::Publish::Kwiki (tags: plagger plugin links)</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-26</title>
+      <link>http://nobu666.com/2006/08/26/355.html</link>
+      <pubDate>Sat, 26 Aug 2006 23:18:57 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/26/355.html</guid>
+      <description>テキストエリアとかリサイズ可能にする JavaScript (tags: javascript tips) 学校では教えてくれないエンジニアリング英語 #1: blog.bulknews.net (tags: english language computer tips) 秋元@サイボウズ研究所プログラマーBlo</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-24</title>
+      <link>http://nobu666.com/2006/08/24/354.html</link>
+      <pubDate>Thu, 24 Aug 2006 23:19:20 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/24/354.html</guid>
+      <description>P::P::Publish::MixiDiary #2 (tags: plagger plugin mixi) subtechグループ - Bulknews::Subtech - [Plagger] 天気予報をメールで (tags: plagger) 筋肉トレーニング講座 腹筋 (tags: life training) Understanding CSS Specificity - snook.ca (tags: css tips) ssh scp sftp の正しい自動実行方法 (tags: ssh</description>
+    </item>
+    
+    <item>
+      <title>早くFFで遊びたいし風呂にも入りたいのだが、どっちの料理ショーが気になって何も出来ない件</title>
+      <link>http://nobu666.com/2006/08/24/353.html</link>
+      <pubDate>Thu, 24 Aug 2006 21:46:47 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/24/353.html</guid>
+      <description>ウニーーーーーーーっっっ、アワビーーーーーーーっっっ！！！！！どっちも旨そうでやばい、こんなの選べるかボケアホクソ食べたいうわぁーあｑｗせｄ</description>
+    </item>
+    
+    <item>
+      <title>FF3届いた?っ</title>
+      <link>http://nobu666.com/2006/08/24/352.html</link>
+      <pubDate>Thu, 24 Aug 2006 21:09:38 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/24/352.html</guid>
+      <description>冒険するぜ冒険するぜ！</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-23</title>
+      <link>http://nobu666.com/2006/08/23/351.html</link>
+      <pubDate>Wed, 23 Aug 2006 23:18:35 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/23/351.html</guid>
+      <description>RetroEngine: sed アーカイブ (tags: unix linux sed) SED Lecture (tags: unix linux sed) イザ！:【亡食の時代】科学技術が作った“霜降り肉”-話題！ニュース (tags: news science food) Scriptio - A JavaScript Presentation Framework (tags: javascript framework library) void GraphicWizardsLair( void ); // F</description>
+    </item>
+    
+    <item>
+      <title>あのこの事もっと知りたいバトン</title>
+      <link>http://nobu666.com/2006/08/23/350.html</link>
+      <pubDate>Wed, 23 Aug 2006 01:58:59 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/23/350.html</guid>
+      <description>１: 回す人 回しませんｗ ２:お名前は？ のぶ ３:おいくつですか？ 花の30歳 ４:ご職業は？ プログラマーというかシステムエンジニアというか。 ５:ご趣</description>
+    </item>
+    
+    <item>
+      <title>なんかPlagger動いてないと思ったら、otsuneさんのはてなダイアリーを購読してるとPlaggerがこけるっぽい</title>
+      <link>http://nobu666.com/2006/08/23/349.html</link>
+      <pubDate>Wed, 23 Aug 2006 01:15:15 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/23/349.html</guid>
+      <description>なんかgmailが寂しいと思ったので、LogLevelをdebugにして動かしてみたら以下のようになった。 Plagger::Plugin::Subscription::LivedoorReader [info] You have 614 unread item(s) on livedoor Reader. Plagger [info] plugin Plagger::Plugin::Aggregator::Simple loaded. Plagger::Plugin::Subscription::LivedoorReader [debug]</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-22</title>
+      <link>http://nobu666.com/2006/08/22/348.html</link>
+      <pubDate>Tue, 22 Aug 2006 23:19:46 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/22/348.html</guid>
+      <description>nlog(n): 外部リンクにアイコンをつけるには (tags: css tips) キーボードの前で食べてはいけないもの（とキーボードの上手な掃除方法） - ZDNet Japan (tags: hardware keyboard life food) www.zone-h.org - Kevin Mitnick creampied by Pakistani rage</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-21</title>
+      <link>http://nobu666.com/2006/08/21/347.html</link>
+      <pubDate>Mon, 21 Aug 2006 23:18:16 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/21/347.html</guid>
+      <description>検索結果で有利になる知られざるHTMLタグ5種類 - GIGAZINE (tags: html seo tips) ついにWindows開発から離れた「闘うプログラマー」：ITpro (tags: microsoft windows news) 10.2 有害</description>
+    </item>
+    
+    <item>
+      <title>残念…駒大苫小牧夢をありがとう</title>
+      <link>http://nobu666.com/2006/08/21/346.html</link>
+      <pubDate>Mon, 21 Aug 2006 15:06:00 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/21/346.html</guid>
+      <description>仕事さぼってインターネットライブ中継見てた。早実は強かった…3連覇見たかったが。最後ホームランが出て、危うく職場で叫びそうになったぞ。いい試</description>
+    </item>
+    
+    <item>
+      <title>WordPressの記事をMixiに投稿するPlugin</title>
+      <link>http://nobu666.com/2006/08/20/345.html</link>
+      <pubDate>Sun, 20 Aug 2006 15:36:08 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/20/345.html</guid>
+      <description>なんかWordPressに変えてから、というかinetdからさくらインターネットにサーバを変えてから、うまくMixiが更新を拾ってくれないの</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-19</title>
+      <link>http://nobu666.com/2006/08/19/344.html</link>
+      <pubDate>Sat, 19 Aug 2006 23:19:10 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/19/344.html</guid>
+      <description>hail2u.net - Weblog - Amazon.co.jpの新しいアソシエイト・ツール: インスタントストア (tags: amazon webservice idea) YourKit Java Profiler - YourKit Profiler for .NET - The profilers for Java and .NET professionals (tags: java jvm performance profiler tools software programming development)</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-18</title>
+      <link>http://nobu666.com/2006/08/18/343.html</link>
+      <pubDate>Fri, 18 Aug 2006 23:18:02 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/18/343.html</guid>
+      <description>ALL ABOUT ベーマガ (tags: history programming magazine) 【ハウツー】たった一行、これは簡単 - JSFでAjax、Ajax4jsf (2) Hello Ajax4jsf! (MYCOMジャーナル) (tags: ajax java jsf library) 最速インタ</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-17</title>
+      <link>http://nobu666.com/2006/08/17/342.html</link>
+      <pubDate>Thu, 17 Aug 2006 23:21:21 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/17/342.html</guid>
+      <description>スラッシュドット ジャパン | javacとHotSpot JVMがオープンソース化 (tags: java oss jvm) Hatebu Addiction (tags: hatena javascript idea sbm useful tools) ルービックキューブ簡単６面完成法 (tags: neta tutorial</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-16</title>
+      <link>http://nobu666.com/2006/08/16/341.html</link>
+      <pubDate>Wed, 16 Aug 2006 23:21:14 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/16/341.html</guid>
+      <description>カメラ付き携帯を無線マウスにするハック - Engadget Japanese (tags: mobile hardware mouse) ITmedia News：AirMac、iSightが使えるようになったBoot Camp新β版 (tags: mac bootcamp) 3</description>
+    </item>
+    
+    <item>
+      <title>about me</title>
+      <link>http://nobu666.com/2006/08/14/2.html</link>
+      <pubDate>Mon, 14 Aug 2006 13:01:48 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/14/2.html</guid>
+      <description>中の人はこんな人です。 http://iddy.jp/profile/nobu666/ | facebook 中の人 nobu 性別 ♂ 生年月日 1976/04/25 職業 ソフトウェア技術者。Web+DB系をメインになんでも。 好きな言語 Java, Python, C, Scala 好きなOS L</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-13</title>
+      <link>http://nobu666.com/2006/08/13/340.html</link>
+      <pubDate>Sun, 13 Aug 2006 23:18:25 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/13/340.html</guid>
+      <description>ITmedia エンタープライズ：Yahoo!、Python開発者センターを立ち上げ (tags: python yahoo) Uno, dos, tres, quatro!: Plaggerで自分のblogの人気エントリを表示 (tags: plagger movabletype</description>
+    </item>
+    
+    <item>
+      <title>今日の戦利品</title>
+      <link>http://nobu666.com/2006/08/13/339.html</link>
+      <pubDate>Sun, 13 Aug 2006 00:38:07 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/13/339.html</guid>
+      <description>Hughes&amp;amp;Kettner TubeFactor買った。こいつはギターでもベースでもいい感じに鳴る。かなり好み。青く光るってだけで好み（笑）。ベースに使っても、歪みに</description>
+    </item>
+    
+    <item>
+      <title>レンタルサーバにPlaggerをインストール</title>
+      <link>http://nobu666.com/2006/08/12/338.html</link>
+      <pubDate>Sat, 12 Aug 2006 23:45:51 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/12/338.html</guid>
+      <description>最近契約したinetdというレンタルサーバに、Plaggerをインストール。Plaggerはなにかっつーと、要するにmixiとかBlogli</description>
+    </item>
+    
+    <item>
+      <title>鈴置洋孝氏死去</title>
+      <link>http://nobu666.com/2006/08/10/337.html</link>
+      <pubDate>Thu, 10 Aug 2006 23:45:20 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/10/337.html</guid>
+      <description>声優の鈴置洋孝氏が亡くなったそうで。セイラさんに続いてブライトさんまで…まだ56歳という若さだったのに。 ドラゴンボールの天津飯、ダイターン3</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-10</title>
+      <link>http://nobu666.com/2006/08/10/336.html</link>
+      <pubDate>Thu, 10 Aug 2006 23:19:19 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/10/336.html</guid>
+      <description>「最後通牒・こぼれ話」 - 二ノ宮知子『のだめカンタービレ』がドラマ化＆TVアニメ化決定 (tags: anime drama) i d e a * i d e a - 80個以上のプチプログラムでW</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-09</title>
+      <link>http://nobu666.com/2006/08/09/335.html</link>
+      <pubDate>Wed, 09 Aug 2006 23:18:32 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/09/335.html</guid>
+      <description>高木浩光＠自宅の日記 - 銀行スパイウェア犯と同じ手法でWindows XP SP2の警告を回避する警察庁電子申請システム, 政府機関は政府の電子申請シ</description>
+    </item>
+    
+    <item>
+      <title>唾くれおじさん</title>
+      <link>http://nobu666.com/2006/08/08/334.html</link>
+      <pubDate>Tue, 08 Aug 2006 23:09:15 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/08/334.html</guid>
+      <description>「唾くれおじさん」出没！小学生女児に被害相次ぐ ネーミングも凄いが…「みなさんのおかげです」で木梨がやってた「息くれよ」を思い出して噴いた（笑</description>
+    </item>
+    
+    <item>
+      <title>DivX Stage6</title>
+      <link>http://nobu666.com/2006/08/08/333.html</link>
+      <pubDate>Tue, 08 Aug 2006 22:26:21 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/08/333.html</guid>
+      <description>こりゃまた凄いのが出てきました。その名もDivX Stage6。ポストYouTubeの最右翼じゃね? 再エンコードされないので、なんせ画質がいい</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-07</title>
+      <link>http://nobu666.com/2006/08/07/332.html</link>
+      <pubDate>Mon, 07 Aug 2006 23:20:34 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/07/332.html</guid>
+      <description>鍵の9割は10本の合い鍵のどれかでいとも簡単に開いてしまう - GIGAZINE (tags: life security) messy networks (tags: funny photo server)</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-06</title>
+      <link>http://nobu666.com/2006/08/06/331.html</link>
+      <pubDate>Sun, 06 Aug 2006 23:20:33 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/06/331.html</guid>
+      <description>200個以上のVMware Player用のOSイメージを無料でダウンロード - GIGAZINE (tags: software vmware os) あるＳＥのつぶやき: Ajaxライブラリまとめ (tags: ajax library links)</description>
+    </item>
+    
+    <item>
+      <title>バーベキューしてきたよ</title>
+      <link>http://nobu666.com/2006/08/06/330.html</link>
+      <pubDate>Sun, 06 Aug 2006 21:09:31 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/06/330.html</guid>
+      <description>某新婚さん宅でバーベキューするということで、お呼ばれしてきました。昼ぐらいに来て、と言われていたので、もしかしたらこのクソ暑い炎天下のもとで</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-05</title>
+      <link>http://nobu666.com/2006/08/05/329.html</link>
+      <pubDate>Sat, 05 Aug 2006 23:22:07 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/05/329.html</guid>
+      <description>Clouder::Blogger: ApacheであるURIだけ認証したくないときの設定 (tags: apache authenticate) The innotop MySQL and InnoDB monitor - Xaprb (tags: database mysql monitoring tools performance)</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-03</title>
+      <link>http://nobu666.com/2006/08/03/328.html</link>
+      <pubDate>Thu, 03 Aug 2006 23:21:23 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/03/328.html</guid>
+      <description>これはスゴイ！ JavaScript統合開発環境「Aptana」: Recently Ajax (tags: javascript ide development) TechCrunch Japanese アーカイブ ? 調べ物が百倍楽しくなるツール、Diigo (tags: search tools) 城</description>
+    </item>
+    
+    <item>
+      <title>XSS - 表示系パラメータに存在する盲点</title>
+      <link>http://nobu666.com/2006/08/02/327.html</link>
+      <pubDate>Wed, 02 Aug 2006 23:44:24 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/02/327.html</guid>
+      <description>ぼくはまちちゃん！で有名なはまちや２さんのエントリ、XSS - 表示系パラメータに存在する盲点を見て。 そもそもWebアプリケーションにおいて、表</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-08-02</title>
+      <link>http://nobu666.com/2006/08/02/326.html</link>
+      <pubDate>Wed, 02 Aug 2006 23:21:35 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/02/326.html</guid>
+      <description>スラッシュドット ジャパン | 15インチMacBook Proバッテリー交換プログラム (tags: mac) BKCon 2006 - にぽたん研究所 (tags: webservices server tuning database mixi) 最速配信研究会 - squid vs apache (tags:</description>
+    </item>
+    
+    <item>
+      <title>Stadium Arcadium</title>
+      <link>http://nobu666.com/2006/08/01/325.html</link>
+      <pubDate>Tue, 01 Aug 2006 23:23:49 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/08/01/325.html</guid>
+      <description>Red Hot Chili Peppersの新作聴いた。通して1回聴いただけなんだけど、今のところ印象はあんまり良くないデス…Blood Sugar Sex MagikとかMoth</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-07-31</title>
+      <link>http://nobu666.com/2006/07/31/324.html</link>
+      <pubDate>Mon, 31 Jul 2006 23:19:07 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/07/31/324.html</guid>
+      <description>メディア・パブ: YouTubeの瀕死説が浮上 (tags: business youtube) 次世代Windowsシェル「Windows PowerShell」を試す（前編） ? ＠IT (tags: microsoft</description>
+    </item>
+    
+    <item>
+      <title>アウトレットパーク ラ・フェット多摩に行くの巻</title>
+      <link>http://nobu666.com/2006/07/31/323.html</link>
+      <pubDate>Mon, 31 Jul 2006 00:29:53 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/07/31/323.html</guid>
+      <description>南大沢くんだりまで1時間かけて行ってきた。別にそれが目的だったわけではないのだけど、ラ・フェット多摩 南大沢店に寄ってブラブラしてみた。ふらり</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-07-30</title>
+      <link>http://nobu666.com/2006/07/30/322.html</link>
+      <pubDate>Sun, 30 Jul 2006 23:21:05 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/07/30/322.html</guid>
+      <description>PSPunch!! MP4 download site for PSP動画配信サイト (tags: psp video) hail2u.net - Weblog - Online XSLT 2.0 Service (tags: xml xslt webservice web2.0) プログラミングと開発者のためのCodeZine：SeamでJavaプロジェクト</description>
+    </item>
+    
+    <item>
+      <title>WinRAR 3.51が2006/7/30の1日だけ無料で入手できる</title>
+      <link>http://nobu666.com/2006/07/30/321.html</link>
+      <pubDate>Sun, 30 Jul 2006 15:48:09 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/07/30/321.html</guid>
+      <description>現地時間の7月30日の0時から24時までWinRarのシングルライセンスが無料でもらえるみたい。日本時間では明日の朝8時？まで。 http:/</description>
+    </item>
+    
+    <item>
+      <title>[MySQL] MyISAMとInnoDB</title>
+      <link>http://nobu666.com/2006/07/30/320.html</link>
+      <pubDate>Sun, 30 Jul 2006 02:15:14 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/07/30/320.html</guid>
+      <description>今運用している某システム、MyISAMのある難癖によって非常に辛い目に遭っております。それはもちろんテーブルロック。これはもうMyISAMを</description>
+    </item>
+    
+    <item>
+      <title>本日の戦利品</title>
+      <link>http://nobu666.com/2006/07/29/319.html</link>
+      <pubDate>Sat, 29 Jul 2006 18:48:41 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/07/29/319.html</guid>
+      <description>みるみる理解できる相対性理論―特殊相対論も一般相対論も実はむずかしくなかった! これやばい、超面白い。小難しい単語をあんまり使わずに、かなり砕</description>
+    </item>
+    
+    <item>
+      <title>世界最速ギタリスト</title>
+      <link>http://nobu666.com/2006/07/29/318.html</link>
+      <pubDate>Sat, 29 Jul 2006 02:12:23 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/07/29/318.html</guid>
+      <description>ギネスに認定されている世界最速ギタリストらしいんだけど。確かに凄まじく速いのはわかるし、人並み外れた努力の成果なんだろうけど、なんだかなぁｗ</description>
+    </item>
+    
+    <item>
+      <title>[MySQL]optimizeの落とし穴</title>
+      <link>http://nobu666.com/2006/07/28/317.html</link>
+      <pubDate>Fri, 28 Jul 2006 01:47:07 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/07/28/317.html</guid>
+      <description>MySQLのMyISAM型テーブルは、レコードの追加・削除を繰り返しているとどんどん効率が悪くなっていく。そこで定期的にoptimize ta</description>
+    </item>
+    
+    <item>
+      <title>夜勤は結局悲惨な結末に</title>
+      <link>http://nobu666.com/2006/07/28/316.html</link>
+      <pubDate>Fri, 28 Jul 2006 01:11:29 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/07/28/316.html</guid>
+      <description>前の日なんとか明け方4時頃まで起きてて、昼まで寝る。んで17時頃出社して事前準備を色々やって。前半は割と順調に作業を消化してたのに、すったも</description>
+    </item>
+    
+    <item>
+      <title>笑えるYouTube</title>
+      <link>http://nobu666.com/2006/07/25/315.html</link>
+      <pubDate>Tue, 25 Jul 2006 02:10:50 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/07/25/315.html</guid>
+      <description>http://www.youtube.com/watch?v=p_tuLEmWccM &#34;I&#39;m so fat&#34;ってｗ http://www.youtube.com/watch?v=1WpeHE-jI5U Michael Angelo様の変態ギターその1。凄すぎて格好悪いあたりが凄い http://www.youtube.com/watch?v=CLuCK8tYgaY Michael Angelo様の変態ギターその2。1:50からの手</description>
+    </item>
+    
+    <item>
+      <title>25日?26日は夜勤なのです…</title>
+      <link>http://nobu666.com/2006/07/25/314.html</link>
+      <pubDate>Tue, 25 Jul 2006 01:26:29 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/07/25/314.html</guid>
+      <description>25日17時出社→26日9時退社予定。作業者が2フロアに別れているので、2フロアとも、夜間にエアコンを止めないように申請を出したら20万以上</description>
+    </item>
+    
+    <item>
+      <title>Beatallica</title>
+      <link>http://nobu666.com/2006/07/24/313.html</link>
+      <pubDate>Mon, 24 Jul 2006 18:08:58 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/07/24/313.html</guid>
+      <description>Metallica + Beatles で Beatallica。「&amp;hellip;And Justice For All My Loving」とか曲名からしてキテるｗ</description>
+    </item>
+    
+    <item>
+      <title>ミッション・インポッシブル</title>
+      <link>http://nobu666.com/2006/07/24/312.html</link>
+      <pubDate>Mon, 24 Jul 2006 00:22:53 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/07/24/312.html</guid>
+      <description>TVでやってたのを何となく録画して、さっき観た。3回目くらいだけど。改めて観るとツッコミどころ満載で面白かった。 まずイーサンの使っているラッ</description>
+    </item>
+    
+    <item>
+      <title>シャープ端末のバグ</title>
+      <link>http://nobu666.com/2006/07/23/311.html</link>
+      <pubDate>Sun, 23 Jul 2006 16:21:56 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/07/23/311.html</guid>
+      <description>「みられまくっちゃ」でフリーズ――シャープ製端末搭載shoin4に不具合か？ 既に色々ニュースになってるけど。買った瞬間にコレかよっと思いつつ</description>
+    </item>
+    
+    <item>
+      <title>筋肉少女帯復活!</title>
+      <link>http://nobu666.com/2006/07/23/310.html</link>
+      <pubDate>Sun, 23 Jul 2006 15:59:42 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/07/23/310.html</guid>
+      <description>復活するらしいぞっ!!こりゃエライこっちゃ!!っていうか太田明(Dr.)はどこ行った!! これでX.Y.Z.→Aのメンバー、それぞれが活動休止</description>
+    </item>
+    
+    <item>
+      <title>俺メモ : bashでCSVを扱う</title>
+      <link>http://nobu666.com/2006/07/20/309.html</link>
+      <pubDate>Thu, 20 Jul 2006 02:39:23 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/07/20/309.html</guid>
+      <description>bashで本格的なCSVを扱うにはPerlなんかを使うほか道はないっぽいけど、ダブルクォート内のカンマは文字列として扱うとか、そういうことを</description>
+    </item>
+    
+    <item>
+      <title>ロングロングバトン</title>
+      <link>http://nobu666.com/2006/07/19/308.html</link>
+      <pubDate>Wed, 19 Jul 2006 02:05:16 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/07/19/308.html</guid>
+      <description>回してくれた方の印象をどうぞ 年下の先輩、妙に年中忙しい男。ジダン系。なんでも勢いでどうにかしようとする気がある。そして割とどうにかなってるｗ</description>
+    </item>
+    
+    <item>
+      <title>lessとtail -f</title>
+      <link>http://nobu666.com/2006/07/17/306.html</link>
+      <pubDate>Mon, 17 Jul 2006 14:57:13 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/07/17/306.html</guid>
+      <description>lessでファイルを開いてshift+f押すとtail -fのように動作する。止めるときはctrl+c tail -fと同じ動作をする（厳密には微妙に違</description>
+    </item>
+    
+    <item>
+      <title>携帯代えた</title>
+      <link>http://nobu666.com/2006/07/17/305.html</link>
+      <pubDate>Mon, 17 Jul 2006 14:39:25 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/07/17/305.html</guid>
+      <description>金曜日徹夜してなんとか3連休。しかし徹夜の反動で土曜日は寝たきりに…orz 腹いせに(?)携帯を新品に。見た目に惹かれてSH902iSにした。</description>
+    </item>
+    
+    <item>
+      <title>LOUTPARK06</title>
+      <link>http://nobu666.com/2006/07/05/304.html</link>
+      <pubDate>Wed, 05 Jul 2006 01:10:48 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/07/05/304.html</guid>
+      <description>http://www.loudpark.com/ やべぇぇぇぇぇぇぇ、なんだこの面子!!!!これでMetallica入ったら四天王揃い踏みじゃんか。まぁ今のMegadethとかあんま興味な</description>
+    </item>
+    
+    <item>
+      <title>酒バトン</title>
+      <link>http://nobu666.com/2006/06/27/303.html</link>
+      <pubDate>Tue, 27 Jun 2006 01:26:19 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/06/27/303.html</guid>
+      <description>モンゴルマンとこで拾ったので書いてみる。 ■好きなドリンクは？■ ビール（発泡酒系も含む）、鍛高譚、吟香露、れんと、万寿、千寿、越乃寒梅、あぁ…</description>
+    </item>
+    
+    <item>
+      <title>友人の結婚式へ行ってきたお</title>
+      <link>http://nobu666.com/2006/06/25/302.html</link>
+      <pubDate>Sun, 25 Jun 2006 00:22:45 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/06/25/302.html</guid>
+      <description>金曜日、仕事から帰ってきたのが32時（笑）くらいだったので、16時の結婚式に出るためには14時半には家を出発する必要がある。すると13時には</description>
+    </item>
+    
+    <item>
+      <title>見たらやるバトン</title>
+      <link>http://nobu666.com/2006/06/21/301.html</link>
+      <pubDate>Wed, 21 Jun 2006 02:38:34 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/06/21/301.html</guid>
+      <description>なんか日記を書け、とプレッシャーかける人がいるので書こうと思う。が、守秘義務のある仕事してて、ぶっちゃけ仕事しかしてないので書くことがない。</description>
+    </item>
+    
+    <item>
+      <title>POPFile</title>
+      <link>http://nobu666.com/2006/06/20/300.html</link>
+      <pubDate>Tue, 20 Jun 2006 02:37:21 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/06/20/300.html</guid>
+      <description>割と最近（と言っても2週間くらい前）POPFileっつーspamメールを振り分けてくれるソフトを入れたんですわ。Thunderbirdにもベ</description>
+    </item>
+    
+    <item>
+      <title>WX310K</title>
+      <link>http://nobu666.com/2006/06/10/299.html</link>
+      <pubDate>Sat, 10 Jun 2006 00:30:16 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/06/10/299.html</guid>
+      <description>俗に言う京ぽん2買った。MacBook買ったのをきっかけに、定額で使えるモバイル環境を調べてたんだけど、定額でPCにつなげて通信できるのって</description>
+    </item>
+    
+    <item>
+      <title>ナビスコカップ　フロンターレ vs レッズ</title>
+      <link>http://nobu666.com/2006/06/09/298.html</link>
+      <pubDate>Fri, 09 Jun 2006 23:52:33 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/06/09/298.html</guid>
+      <description>普段サッカーあんま見ないんだけど、W杯年ってことで行ってきましたよ、川崎フロンターレvs浦和レッズ。7日なんですでに古い話なんだけども。会社</description>
+    </item>
+    
+    <item>
+      <title>6月5日 Interopのワークショップ行ってきた</title>
+      <link>http://nobu666.com/2006/06/09/297.html</link>
+      <pubDate>Fri, 09 Jun 2006 23:27:50 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/06/09/297.html</guid>
+      <description>ちょっとゴタゴタしていて書けなかったのだが、タイトルの通りInterop Tokyo 2006のワークショップ、Web環境の進化で変わる情報検索アーキテ</description>
+    </item>
+    
+    <item>
+      <title>巡回サイト</title>
+      <link>http://nobu666.com/2006/06/04/296.html</link>
+      <pubDate>Sun, 04 Jun 2006 23:41:06 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/06/04/296.html</guid>
+      <description>RSSリーダーのOPMLから引っこ抜いてみた。結構数あるな…1時間くらいあれば斜め読みできる。ちょっと興味ある奴はdel.icio.usでブ</description>
+    </item>
+    
+    <item>
+      <title>MacBook 買った</title>
+      <link>http://nobu666.com/2006/06/04/295.html</link>
+      <pubDate>Sun, 04 Jun 2006 21:06:55 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/06/04/295.html</guid>
+      <description>どうもご無沙汰…半年に一回しか更新されないblogになりつつありますな。年がら年中「忙しい忙しい」とうわごとのように言っている気がするのだが</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-03-17</title>
+      <link>http://nobu666.com/2006/03/17/294.html</link>
+      <pubDate>Fri, 17 Mar 2006 21:17:38 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/03/17/294.html</guid>
+      <description>IT戦記 - Prototype.js を使った JavaScript OOP 講座 #01 (tags: programming prototype.js javascript study)</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-03-15</title>
+      <link>http://nobu666.com/2006/03/15/293.html</link>
+      <pubDate>Wed, 15 Mar 2006 21:17:12 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/03/15/293.html</guid>
+      <description>ITmedia +D モバイル：KDDI研、携帯向け高速暗号アルゴリズム「K2」を共同開発 (tags: mobile cipher algorithm)</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-03-14</title>
+      <link>http://nobu666.com/2006/03/14/292.html</link>
+      <pubDate>Tue, 14 Mar 2006 21:17:49 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/03/14/292.html</guid>
+      <description>24面マルチディスプレイでFPSゲーム - Engadget Japanese (tags: hardware clastering)</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-03-13</title>
+      <link>http://nobu666.com/2006/03/13/291.html</link>
+      <pubDate>Mon, 13 Mar 2006 21:18:11 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/03/13/291.html</guid>
+      <description>huixingの日記 - del.icio.usをベースに関連サイトを表示するsimilicio.us (tags: del.icio.us mashup) はてなランナー (tags: game hatena javascript) svnbook</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-03-10</title>
+      <link>http://nobu666.com/2006/03/10/290.html</link>
+      <pubDate>Fri, 10 Mar 2006 21:17:20 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/03/10/290.html</guid>
+      <description>[結] 2005年10月 - 結城浩の日記 : 勉強日記の書き方 (tags: lifehacks idea study)</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-03-09</title>
+      <link>http://nobu666.com/2006/03/09/289.html</link>
+      <pubDate>Thu, 09 Mar 2006 21:18:34 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/03/09/289.html</guid>
+      <description>『ちよろず。』 - P2PでRSSを配信する”FeedTree” (tags: p2p rss)</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-03-08</title>
+      <link>http://nobu666.com/2006/03/08/288.html</link>
+      <pubDate>Wed, 08 Mar 2006 21:18:02 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/03/08/288.html</guid>
+      <description>[教えて！goo] お腹をへこませる為の腹筋の仕方 (tags: training lifehacks)</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-03-07</title>
+      <link>http://nobu666.com/2006/03/07/287.html</link>
+      <pubDate>Tue, 07 Mar 2006 21:18:03 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/03/07/287.html</guid>
+      <description>  Hack MySQL :: Delve Deeply Into MySQL (tags: database mysql performance reference)   Direct Manipulation Using JavaScript and CSS (tags: programming tips dhtml dom javascript css)   </description>
+    </item>
+    
+    <item>
+      <title>links for 2006-03-06</title>
+      <link>http://nobu666.com/2006/03/06/286.html</link>
+      <pubDate>Mon, 06 Mar 2006 21:17:52 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/03/06/286.html</guid>
+      <description>  XSS (Cross Site Scripting) Cheat sheet: Esp: for filter evasion - by RSnake (tags: security xss programming reference)   </description>
+    </item>
+    
+    <item>
+      <title>links for 2006-03-03</title>
+      <link>http://nobu666.com/2006/03/03/285.html</link>
+      <pubDate>Fri, 03 Mar 2006 21:17:33 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/03/03/285.html</guid>
+      <description>カギは問題認知能力にあり ? ＠IT情報マネジメント (tags: security management column) Ajax非互換性データベース ? ＠IT (tags: ajax database incompatibility) The AJAX Toolkit Framework (ATF) Project (tags: ajax eclipse framework javascript)</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-03-02</title>
+      <link>http://nobu666.com/2006/03/02/284.html</link>
+      <pubDate>Thu, 02 Mar 2006 21:17:25 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/03/02/284.html</guid>
+      <description>Prototype Dissected - snook.ca (tags: javascript reference prototype.js) 現場指向のレプリケーション詳説 (tags: mysql database document) 議論のしかた (tags: lifehacks discussion howto) TurboWidgets, presented by TurboAjax Group (tags: ajax widgets javascript programming) [戯] Web アプリケーションテストツール Selenium のテスト</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-01-24</title>
+      <link>http://nobu666.com/2006/01/24/283.html</link>
+      <pubDate>Tue, 24 Jan 2006 21:18:38 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/01/24/283.html</guid>
+      <description>ProgrammableWeb: Web 2.0 Mashup Matrix (tags: web2.0 api reference webservices) ３年後ヤバイ!?技術力が腐る職場のぬるま湯度チェック／Ｔｅｃｈ総研 (tags: check business) ロカポDIYマップ：自分だけのオリジナルマップを</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-01-19</title>
+      <link>http://nobu666.com/2006/01/19/282.html</link>
+      <pubDate>Thu, 19 Jan 2006 21:23:49 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/01/19/282.html</guid>
+      <description>GeckoユーザーのためのユーザースタイルシートTips (tags: css firefox) ネット上の匿名性を保護する『Anonym.OS』 (tags: security os network) SeasarのDBアク</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-01-18</title>
+      <link>http://nobu666.com/2006/01/18/281.html</link>
+      <pubDate>Wed, 18 Jan 2006 21:22:20 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/01/18/281.html</guid>
+      <description>Rubyでアジャイルプロトタイピング（3） ? ＠IT (tags: programming rubyonrails agile) Collection &amp; Copy (tags: programming ruby java) 浸透する成果主義 エンジニア300人の査定大公開！ ? ＠IT自分戦略研究</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-01-17</title>
+      <link>http://nobu666.com/2006/01/17/280.html</link>
+      <pubDate>Tue, 17 Jan 2006 21:22:42 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/01/17/280.html</guid>
+      <description>FrontPage - プログラミング言語 スル。 (tags: .net smalltalk ruby language programming) kuranukiの日記 - ディフェンシブな開発 ? SIビジネスの致命的欠陥 (tags: agile business programming engineer development) だめだめ日記(20</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-01-16</title>
+      <link>http://nobu666.com/2006/01/16/279.html</link>
+      <pubDate>Mon, 16 Jan 2006 21:21:29 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/01/16/279.html</guid>
+      <description>ITmedia エンタープライズ：Gmailサーバに実装された？ OpenOffice.org (1/3) (tags: gmail openoffice oss) Hawk&#39;s Laboratory ? prototype.js 1.4.0を読む：prototype.js?base.js (tags: javascript prototype.js programming) System.exit(); -</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-01-15</title>
+      <link>http://nobu666.com/2006/01/15/278.html</link>
+      <pubDate>Sun, 15 Jan 2006 21:21:03 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/01/15/278.html</guid>
+      <description>F&#39;s Garage：Java圏とPHP,Perl圏の断絶について。 (tags: java perl column)</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-01-13</title>
+      <link>http://nobu666.com/2006/01/13/277.html</link>
+      <pubDate>Fri, 13 Jan 2006 21:20:27 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/01/13/277.html</guid>
+      <description>アルゴリズムマニアの日記 - ベータ分布からガンマ分布、そしてディリクレ分布へ (tags: algorithm programming) PSP Video 9 (tags: mobile psp software tools) 川o・-・）＜2nd life - perl でインタラクティブ</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-01-12</title>
+      <link>http://nobu666.com/2006/01/12/276.html</link>
+      <pubDate>Thu, 12 Jan 2006 21:20:15 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/01/12/276.html</guid>
+      <description>dig, a DNS query tool for Windows and replacement for nslookup (tags: windows network tools unix) XUL、JSF、AJAXで実現するリッチUI - xulfaces 0.3 公開 (MYCOM PC WEB) (tags: xul jsf java programming ajax) Windows用ダンプツール、マイク</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-01-11</title>
+      <link>http://nobu666.com/2006/01/11/275.html</link>
+      <pubDate>Wed, 11 Jan 2006 21:20:20 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/01/11/275.html</guid>
+      <description>【2ch】ニュー速クオリティ -VIP-:なぜマリオはクリボーに触れただけで他界するのか？本気討論 (tags: 2ch neta) @nifty：デイリーポータルZ：アメ</description>
+    </item>
+    
+    <item>
+      <title>links for 2006-01-10</title>
+      <link>http://nobu666.com/2006/01/10/274.html</link>
+      <pubDate>Tue, 10 Jan 2006 21:19:55 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/01/10/274.html</guid>
+      <description>日々の生活から起きていることを観察しよう!! by ムギ: ドラッグは世界をいかに変えたか?酒・たばこ・カフェインの歴史上の役割を理解する (tags: drag) nao</description>
+    </item>
+    
+    <item>
+      <title>タイプバトン</title>
+      <link>http://nobu666.com/2006/01/05/273.html</link>
+      <pubDate>Thu, 05 Jan 2006 11:54:19 +0900</pubDate>
+      
+      <guid>http://nobu666.com/2006/01/05/273.html</guid>
+      <description>遅まきながら明けましておめでとうございます。去年はなんだか良くも悪くも平坦な一年だったんだが、今年はどうかね。やっぱり平坦がいいような、それ</description>
     </item>
     
   </channel>

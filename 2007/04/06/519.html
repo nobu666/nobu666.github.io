@@ -99,10 +99,6 @@
     </div>
   </header>
   <section>
-    
-  </section>
-  <hr>
-  <section>
     <p><a href="http://www.teamxlink.co.uk/" target="_blank">xlink kai</a>とは、要するにアドホック通信をPCを介することによって無理矢理インターネット経由で通信できるようにするツール。これによって、アドホック通信でしか対戦や協力プレイができないソフトでも、インターネットを通じて様々な人と遊べるようになる。PSPに限らずDSでももちろん使えるため、環境として用意しておいて損はないツールだ。</p>
 
 <p>とりあえずpspwikiの<a href="http://pspwiki.to/index.php?Xlink%A4%CE%BB%C8%A4%A4%CA%FD" target="_blank">xlinkの使い方</a>を参考にすれば普通の環境ならうまく動くはず。でも我が家のPCはVMware使ってるはcolinuxでブリッジ接続にしてるはで、うまく動かず。結局メインPCで動かすのは諦めて、ノートのほうに入れたらあっさり動いた。VMwareやブリッジ接続との共存は諦めた方がよさげ。ちなみに、これだけのために買った無線LANアダプタは<div class="amazlet-box" style="margin-bottom:0px;"><div class="amazlet-image" style="float:left;"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000FOTJSU/realbeat-22/ref=nosim/" target="_blank"><img src="http://images-jp.amazon.com/images/P/B000FOTJSU.09.MZZZZZZZ.jpg" alt="PLANEX IEEE802.11b+g WLAN USBアダプタ GW-US54GXS" style="border: none;" /></a></div><div class="amazlet-info" style="float:left;margin-left:15px;line-height:120%"><div class="amazlet-name" style="margin-bottom:10px;line-height:120%"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000FOTJSU/realbeat-22/ref=nosim/" target="_blank">PLANEX IEEE802.11b+g WLAN USBアダプタ GW-US54GXS</a><div class="amazlet-powered-date" style="font-size:7pt;margin-top:5px;font-family:verdana;line-height:120%">posted with <a href="http://www.amazlet.com/browse/ASIN/B000FOTJSU/realbeat-22" title="PLANEX IEEE802.11b+g WLAN USBアダプタ GW-US54GXS" target="_blank">amazlet</a> on 07.04.06</div></div><div class="amazlet-detail">プラネックス (2006/05/23)<br />売り上げランキング: 2<br /></div><div class="amazlet-link" style="margin-top: 5px"><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B000FOTJSU/realbeat-22/ref=nosim/" target="_blank">Amazon.co.jp で詳細を見る</a></div></div><div class="amazlet-footer" style="clear: left"></div></div>GW-US54GXS。xlinkと提携しているので、多分現在では最も安心してxlinkが使えるアダプタと思われる。付属CD-ROMのドライバは古いので、それは使わずに<a href="http://www.planex.co.jp/support/download/bwave/gw-us54gxs.shtml" target="_blank">PLANEXからダウンロード</a>すること。あとはルータ使ってる人はポートを開けて、xlinkを動かすPCに該当ポートをフォワードしてファイアウォールで通信を許可してやるだけ。</p>
@@ -131,20 +127,25 @@
     <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
   </section>
   <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'realbeat';
-    var disqus_identifier = 'http:\/\/nobu666.com\/2007\/04\/06\/519.html';
-    var disqus_title = '[MHP2] xlink kaiを入れてみる';
-    var disqus_url = 'http:\/\/nobu666.com\/2007\/04\/06\/519.html';
-
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "realbeat" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   <footer>
     
     <section class="author-info row">

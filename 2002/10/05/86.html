@@ -99,10 +99,6 @@
     </div>
   </header>
   <section>
-    
-  </section>
-  <hr>
-  <section>
     <p>ふと思い立って放置していた2ndマシンの環境を再構築。WinXPを使っていたのだが、RedHat7.3なんぞを入れてみる。なんで突然そんなことをしたのかというと、プロバイダであるitscomに新サービスを申し込んだから。今のサービスは下り10MB/上り256kbpsで、グローバルIPアドレスが貰えない。自前でサーバを建てたいと思っていたのだが、グローバルIPアドレスがないのはちょっとアレだったのだが、今回の新サービスによりグローバルIPアドレスが貰えるようになったのである。回線も下り30MB/上り10MBにパワーアップする（とは言っても、ケーブルモデムの性能上の問題で、実際のスループットは最高で10MB/4MB程度で頭打ちになるらしい。まぁ十分だけど）。そんなこともあって、開通したら即サーバの運用が出来るようにある程度環境を作っておくことにした。とりあえずApache・WU-FTPd・Telnet・Sambaだけ設定しておく。疲れた&hellip;</p>
 
 <p>結局、例のカスタマイズページの作成はまったく手つかず。別に何をしてたと言う訳じゃないのだけれど&hellip;。Oracleの勉強したり、Emacsの使い方を勉強したり、ベース弾いたり。ベースは少しだけ昔の勘を取り戻した感じ。とは言ってもドラムなしで、本当の意味での「昔の勘」は戻らないのだが。ベースといえば<a href="http://www.h2.dion.ne.jp/~amefuri/bakuretsubassist.htm">爆裂ベーシスト列伝</a>、面白い。俺的には、これに加えてロッコ・プレスティア、ニッキー・シックス、ウィル・リー、ティム・ボガード、ラリー・グラハム、マーク・キング、スチュアート・ハム、江川ほーじん、ジョン・エントウィッスル、須藤満、鳴瀬喜博&hellip;このくらい並んでいれば相当お腹一杯になれたのに。つか、日本人で名前の挙がっているのが、沢田泰司とゼノン石川ってのが謎。最近ベースマガジン買ってないなぁ。俺が買っていた頃は、ソノシートなんてものがついていたが。</p>
@@ -141,20 +137,25 @@
     <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
   </section>
   <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'realbeat';
-    var disqus_identifier = 'http:\/\/nobu666.com\/2002\/10\/05\/86.html';
-    var disqus_title = '宇宙人';
-    var disqus_url = 'http:\/\/nobu666.com\/2002\/10\/05\/86.html';
-
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "realbeat" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   <footer>
     
     <section class="author-info row">

@@ -99,10 +99,6 @@
     </div>
   </header>
   <section>
-    
-  </section>
-  <hr>
-  <section>
     <p>年末からひたすら仕事に追われまくり。3月一杯までは終電コースであるな。これだけ残業してると残業代で給料が倍くらいになるのだが、不思議とあまり残らない（笑）。我が家のパソコン2台は、ゲームをやる時間がないのでブラウザとメーラ程度しか起動しなくなってしまったのだが、なぜか格段にパワーアップしており（笑）。スピーカも今まで、2000円しないようなショボショボなやつだったのが、10倍の値段の立派なモノに変身してですね。光ケーブルで繋ぐとヒスノイズもほぼ皆無でいい感じですな。次は5.1chな音を作り出してくれるヘッドフォンシステムを狙い中。貯金？なんすか、それ。</p>
 
 <p>仕事の方はITで出てきた障害に対応しつつ、Serverのほうを100%任されてしまったので、勉強しつつPG。最初はJSPとかいってたのに、客の要望でIIS+ASPと相成りまして。しかもASP.NETじゃなく、ふつうのASP+VBScript。その手の仕事は、今までJSPやPHPでやっていたようで、ASP+VBScriptなライブラリが何もない。よって、時間がないにもかかわらず、他のプロジェクトでも流用が効くような形で共通関数から作っていかなければならない。これは結構骨の折れる作業だったが、やはり誰かの作ったライブラリで、楽してPGするより面白いことは確かだ。どうすれば他の人が楽をできるか、汎用性を持たせられるか、高負荷に耐えられるか、などなど考えることはたくさんあって、忙しいけど面白い。他のプロジェクトのマネージャに、「うちもASPの仕事これからやるんだけど、君のライブラリ使わせてもらうからよろしく」とプレッシャーもいい感じにかかってきて、睡眠時間も着々と減っております。</p>
@@ -136,20 +132,25 @@
     <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
   </section>
   <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'realbeat';
-    var disqus_identifier = 'http:\/\/nobu666.com\/2003\/02\/04\/98.html';
-    var disqus_title = 'あけおめ！（遅';
-    var disqus_url = 'http:\/\/nobu666.com\/2003\/02\/04\/98.html';
-
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "realbeat" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   <footer>
     
     <section class="author-info row">

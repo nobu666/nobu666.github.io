@@ -8,7 +8,9 @@
     <language>ja-JP</language>
     <copyright>&amp;copy; nobu666.com</copyright>
     <lastBuildDate>Tue, 29 Dec 2015 02:30:40 +0900</lastBuildDate>
-    <atom:link href="http://nobu666.com/2015/feed.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://nobu666.com/2015/feed.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>WerckerやめてCircleCIに移行</title>
@@ -16,55 +18,7 @@
       <pubDate>Tue, 29 Dec 2015 02:30:40 +0900</pubDate>
       
       <guid>http://nobu666.com/2015/12/31/1022.html</guid>
-      <description>
-
-&lt;h2 id=&#34;wercker-から-circleci-へ:60091336f7408d77f4ebbe4dfdae639e&#34;&gt;Wercker から CircleCI へ&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://nobu666.com/2015/06/21/1015.html&#34;&gt;WordPressからGitHub Pages + hugoに移行した&lt;/a&gt; で書いたとおり GitHub と Hugo で Blog 書くことにしたものの、Wercker の UI がなんか微妙だったのと、仕事で CircleCI 使ってるのでいっその事移行することにした。&lt;/p&gt;
-
-&lt;h2 id=&#34;circle-yml:60091336f7408d77f4ebbe4dfdae639e&#34;&gt;circle.yml&lt;/h2&gt;
-
-&lt;p&gt;こんな感じに&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;machine:
-  timezone: Asia/Tokyo
-
-checkout:
-  post:
-    - git submodule update --init --recursive
-
-dependencies:
-  pre:
-    - go get -v github.com/spf13/hugo
-    - git config --global user.name &amp;quot;nobu666&amp;quot;
-    - git config --global user.email &amp;quot;ogata.nobu@gmail.com&amp;quot;
-
-test:
-  override:
-   - echo
-
-deployment:
-  master:
-    branch: master
-    commands:
-      - git clone git@github.com:nobu666/nobu666.github.io.git public
-      - hugo
-      - cd public &amp;amp;&amp;amp; git add . &amp;amp;&amp;amp; git commit -m &amp;quot;[ci skip] publish&amp;quot;; if [ $? -eq 0 ]; then git push origin master; else :; fi
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;test 部分はなんか書いとかないと warning が出てしまうので適当に。deployment のとこは、 README だけ変えたいときとかに &lt;code&gt;git commit&lt;/code&gt; が空振りしたエラーになるのを避けるため条件分岐している。&lt;/p&gt;
-
-&lt;h2 id=&#34;circleci-側の設定:60091336f7408d77f4ebbe4dfdae639e&#34;&gt;CircleCI 側の設定&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;CircleCI の Project Settings で設定画面を開く&lt;/li&gt;
-&lt;li&gt;Permissons にある Checkout SSH keys を開く&lt;/li&gt;
-&lt;li&gt;GitHub の Authorize をする&lt;/li&gt;
-&lt;li&gt;Create and add 的なボタンがあるのでそれをポチる&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;リポジトリは2つ使っていて、ソースに nobu666/nobu666.com 、公開用に nobu666/nobu666.github.io を使っている。branch で分ければ1つでもできると思うが、非公開にする必要ないし、2つ作ってしまっていいと思う。&lt;/p&gt;
-</description>
+      <description>Wercker から CircleCI へ WordPressからGitHub Pages + hugoに移行した で書いたとおり GitHub と Hugo で Blog 書くことにしたものの、Wercker の UI がなんか微</description>
     </item>
     
     <item>
@@ -73,184 +27,7 @@ deployment:
       <pubDate>Sat, 26 Dec 2015 00:50:14 +0900</pubDate>
       
       <guid>http://nobu666.com/2015/12/26/1020.html</guid>
-      <description>
-
-&lt;p&gt;2015年も残り僅かになりました、ということでちょっと振り返りをしてみます。&lt;/p&gt;
-
-&lt;h1 id=&#34;summary:4610584767e5b36f6902ad80c073c731&#34;&gt;Summary&lt;/h1&gt;
-
-&lt;h2 id=&#34;1-3月:4610584767e5b36f6902ad80c073c731&#34;&gt;1-3月&lt;/h2&gt;
-
-&lt;p&gt;前職でバタバタしており、ここに書くのは憚られることばかりでマジでなにも書くことがない…ホームベーカリー買ったなぁ、というくらい。&lt;/p&gt;
-
-&lt;h2 id=&#34;4-6月:4610584767e5b36f6902ad80c073c731&#34;&gt;4-6月&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/product/B0109ID8P6/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;amp;camp=247&amp;amp;creative=1211&amp;amp;creativeASIN=B0109ID8P6&amp;amp;linkCode=as2&amp;amp;tag=realbeat-22&#34;&gt;PS4&lt;/a&gt; と&lt;a href=&#34;http://www.amazon.co.jp/gp/product/B00UX0DUCW/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;amp;camp=247&amp;amp;creative=1211&amp;amp;creativeASIN=B00UX0DUCW&amp;amp;linkCode=as2&amp;amp;tag=realbeat-22&#34;&gt;Blood Borne&lt;/a&gt; を買った
-
-&lt;ul&gt;
-&lt;li&gt;面白かったけど、 &lt;a href=&#34;http://www.amazon.co.jp/gp/product/B0032JTHGO/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;amp;camp=247&amp;amp;creative=1211&amp;amp;creativeASIN=B0032JTHGO&amp;amp;linkCode=as2&amp;amp;tag=realbeat-22&#34;&gt;Demon&amp;rsquo;s Souls&lt;/a&gt; の衝撃を超えられていないな…&lt;/li&gt;
-&lt;li&gt;対人はあまり興味なくてやってない&lt;/li&gt;
-&lt;li&gt;万人に勧めはしないが、ハマると深いゲームではある&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;人生初NEET体験
-
-&lt;ul&gt;
-&lt;li&gt;手続きが面倒なだけで特にいいことはないのでおすすめしない&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;SmartNews へ入社
-
-&lt;ul&gt;
-&lt;li&gt;これについては後述&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/product/B00T3SPV36/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;amp;camp=247&amp;amp;creative=1211&amp;amp;creativeASIN=B00T3SPV36&amp;amp;linkCode=as2&amp;amp;tag=realbeat-22&#34;&gt;Witcher3&lt;/a&gt; 買った
-
-&lt;ul&gt;
-&lt;li&gt;前作とかやってないのにいきなり3買ったが、想像してたより全然面白かった&lt;/li&gt;
-&lt;li&gt;世界観も作りこまれているし、戦闘もやりがいあってかなり遊べた&lt;/li&gt;
-&lt;li&gt;ミニゲームのできが良くて感心&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;7-9月:4610584767e5b36f6902ad80c073c731&#34;&gt;7-9月&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/product/B00OZ2MPQG/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;amp;camp=247&amp;amp;creative=1211&amp;amp;creativeASIN=B00OZ2MPQG&amp;amp;linkCode=as2&amp;amp;tag=realbeat-22&#34;&gt;ドラゴンクエストヒーローズ&lt;/a&gt;買った
-
-&lt;ul&gt;
-&lt;li&gt;MGSVまでのつなぎに買ったが想像より遊べた&lt;/li&gt;
-&lt;li&gt;まぁ無双系っちゃそれまでだが、ドラクエならではのストーリー&lt;/li&gt;
-&lt;li&gt;ホイミンの話とか泣くわｗ&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/product/B00UA2AFBC/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;amp;camp=247&amp;amp;creative=1211&amp;amp;creativeASIN=B00UA2AFBC&amp;amp;linkCode=as2&amp;amp;tag=realbeat-22&#34;&gt;METAL GEAR SOLID V: THE PHANTOM PAIN&lt;/a&gt; 買った
-
-&lt;ul&gt;
-&lt;li&gt;よかった、名作&lt;/li&gt;
-&lt;li&gt;いちいちヘリ乗るのだるいとか不満点もあるが、ストーリーも難易度も満足&lt;/li&gt;
-&lt;li&gt;自ら仲間を手に掛けるシーンがマジで鳥肌もの&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;熊本へ遊びに行った&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;10-12月:4610584767e5b36f6902ad80c073c731&#34;&gt;10-12月&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;JavaOne のためにサンフランシスコへ
-
-&lt;ul&gt;
-&lt;li&gt;グアム以来の海外渡航&lt;/li&gt;
-&lt;li&gt;お店でのやり取りは気合でどうにでもなるが、たわいない会話は語彙が足りなくてつらいということを実感&lt;/li&gt;
-&lt;li&gt;JavaOne 弁当は噂通りのまずさ&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;友人が亡くなる
-
-&lt;ul&gt;
-&lt;li&gt;これも後述&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/product/B0132I6TSI/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;amp;camp=247&amp;amp;creative=1211&amp;amp;creativeASIN=B0132I6TSI&amp;amp;linkCode=as2&amp;amp;tag=realbeat-22&#34;&gt;モンスターハンタークロス&lt;/a&gt;と&lt;a href=&#34;http://www.amazon.co.jp/gp/product/B00NAW5DT8/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;amp;camp=247&amp;amp;creative=1211&amp;amp;creativeASIN=B00NAW5DT8&amp;amp;linkCode=as2&amp;amp;tag=realbeat-22&#34;&gt;New 3DS LL&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;MHX はまぁ買わない理由がなかったというか&lt;/li&gt;
-&lt;li&gt;New 3DS LL は買う予定はなかったのだが、3DS LL のアナログパッドが崩壊したためやむを得ず。前はアタッチメントをつけて使っていたが、New 3DS には右に小さいアナログパッドがついており、こいつが拡張パッドとして認識されている。ZR/ZL ボタンもついているし、少々慣れが必要だが New ならアタッチメントは不要だろう。というか 旧 3DS 用のものは New のほうにはそもそも付けられないので注意&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;iPhone 卒業からの &lt;a href=&#34;http://www.amazon.co.jp/gp/product/B0194HACEI/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;amp;camp=247&amp;amp;creative=1211&amp;amp;creativeASIN=B0194HACEI&amp;amp;linkCode=as2&amp;amp;tag=realbeat-22&#34;&gt;Nexus 6P&lt;/a&gt; へ
-
-&lt;ul&gt;
-&lt;li&gt;人生初の SIM フリー端末&lt;/li&gt;
-&lt;li&gt;Android がかなり進化しており、iPhone じゃないと困ることはほぼない&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;smartnews-への転職:4610584767e5b36f6902ad80c073c731&#34;&gt;SmartNews への転職&lt;/h1&gt;
-
-&lt;p&gt;幸いなことに沢山の会社からよい返事を頂き、多くの経営者のかたとお話する機会を得られたのが何より学びになった。転職にあたって、会社を選ぶポイントがいくつかあったのでメモとして残しておく。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;会社のビジョンがはっきりしてる、そしてそれに共感できる&lt;/li&gt;
-&lt;li&gt;グローバル展開している、もしくはその予定がある&lt;/li&gt;
-&lt;li&gt;自分よりすごい人がいる&lt;/li&gt;
-&lt;li&gt;20人以上50人未満の規模感
-
-&lt;ul&gt;
-&lt;li&gt;これからグロースしていく、という勢いや雰囲気のあるところで仕事をしたかった&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;資金調達先の信頼性、調達規模、ストックオプション、売上の状態&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;この全てを満足している会社は正直日本にあまりないんだなぁ。&lt;/p&gt;
-
-&lt;h1 id=&#34;友人の死:4610584767e5b36f6902ad80c073c731&#34;&gt;友人の死&lt;/h1&gt;
-
-&lt;p&gt;とても仲良くしてもらっていた元同僚が、病気のため熊本の実家へ帰っていた。去年一緒にグアムへ行ったり、今年も9月頭に熊本へ会いに行ったのだが、去る11月19日に帰らぬ人となった。毎週のように三茶で朝まで飲んでは、家に泊めてもらっていたのが昨日のことのようだ。事故で友人が亡くなることは過去に何度かあったが、病気が原因で亡くなるのは初めての事だった。遠からずそういう日がくるということは覚悟していたものの、ある日突然ケロっと治るのではないか、と思っていなかったかというと嘘になる。&lt;/p&gt;
-
-&lt;p&gt;毎度毎度忘れてしまうのだが、人はいつか死ぬのだ。明日生きている保証などありはしない。彼の生き様から、多くのことを学ぶことができた。&lt;/p&gt;
-
-&lt;h1 id=&#34;javaone:4610584767e5b36f6902ad80c073c731&#34;&gt;JavaOne&lt;/h1&gt;
-
-&lt;p&gt;書こうと思って書かずじまいだった、というかあんま書くことない…。Re:Invent みたいに新サービスが発表されてウォー!!みたいのはなくて、真新しい発表があるわけではなかった。セッションの内容については、すごい深掘りしててレベル的に厳しいやつと、所謂「やってみた」的なエンタープライズな人たちに向けての紹介ネタみたいなのとに二分されており、ほとんどは後者である。とくに自分が、DevOps 系のやつを中心にセッションを選んでしまったため、エンプラ色の強いイベント向きではなかったと反省している。来年は JavaOne 行かなくてもいいかなぁという気持ち。&lt;/p&gt;
-
-&lt;p&gt;あまりにも JavaOne そのものに関して書くことがないので、これ持って行ってよかったなーと思ったものを挙げていこう。&lt;/p&gt;
-
-&lt;iframe src=&#34;http://rcm-fe.amazon-adsystem.com/e/cm?t=realbeat-22&amp;o=9&amp;p=8&amp;l=as1&amp;asins=B000E7RYAS&amp;IS1=1&amp;ref=qf_sp_asin_til&amp;fc1=000000&amp;lt1=_top&amp;m=amazon&amp;lc1=0000FF&amp;bc1=FFFFFF&amp;bg1=FFFFFF&amp;f=ifr&#34; style=&#34;width:120px;height:240px;&#34; scrolling=&#34;no&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ドクター・ショール フライトソックス
-
-&lt;ul&gt;
-&lt;li&gt;こいつは想像より優秀だった。羽田- SFO 間は行き9時間、帰り12時間近くかかるので、座りっぱなしで脚がとても疲れる。これを使ったおかげでむくみも起きなくて快適だった&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;iframe src=&#34;http://rcm-fe.amazon-adsystem.com/e/cm?t=realbeat-22&amp;o=9&amp;p=8&amp;l=as1&amp;asins=B00ECRNHFW&amp;IS1=1&amp;ref=qf_sp_asin_til&amp;fc1=000000&amp;lt1=_top&amp;m=amazon&amp;lc1=0000FF&amp;bc1=FFFFFF&amp;bg1=FFFFFF&amp;f=ifr&#34; style=&#34;width:120px;height:240px;&#34; scrolling=&#34;no&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
-
-&lt;ul&gt;
-&lt;li&gt;折りたたみスリッパ
-
-&lt;ul&gt;
-&lt;li&gt;靴履きっぱなしは無理があるし、かといって靴下のみもなぁ、というわけであると便利だ。折りたたみだから使わない時も荷物にならないし。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;iframe src=&#34;http://rcm-fe.amazon-adsystem.com/e/cm?t=realbeat-22&amp;o=9&amp;p=8&amp;l=as1&amp;asins=B004KVIZFW&amp;IS1=1&amp;ref=qf_sp_asin_til&amp;fc1=000000&amp;lt1=_top&amp;m=amazon&amp;lc1=0000FF&amp;bc1=FFFFFF&amp;bg1=FFFFFF&amp;f=ifr&#34; style=&#34;width:120px;height:240px;&#34; scrolling=&#34;no&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ノイズキャンセリングヘッドホン
-
-&lt;ul&gt;
-&lt;li&gt;カナル型なので長時間つけていられる。音楽聴かなくても、つけているだけで飛行機のノイズが相当軽減されて快適&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;iframe src=&#34;http://rcm-fe.amazon-adsystem.com/e/cm?t=realbeat-22&amp;o=9&amp;p=8&amp;l=as1&amp;asins=B005FDJ8SM&amp;IS1=1&amp;ref=qf_sp_asin_til&amp;fc1=000000&amp;lt1=_top&amp;m=amazon&amp;lc1=0000FF&amp;bc1=FFFFFF&amp;bg1=FFFFFF&amp;f=ifr&#34; style=&#34;width:120px;height:240px;&#34; scrolling=&#34;no&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
-
-&lt;ul&gt;
-&lt;li&gt;携帯ウォシュレット
-
-&lt;ul&gt;
-&lt;li&gt;日本以外のトイレにウォシュレットは基本的にない。携帯性もよく使い方も難しくないので、普段からウォシュレット使ってるなら持って行ったほうが快適。ちなみに SmartNews の SFオフィスのトイレはウォシュレット付きである。神。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;iframe src=&#34;http://rcm-fe.amazon-adsystem.com/e/cm?t=realbeat-22&amp;o=9&amp;p=8&amp;l=as1&amp;asins=B00JTVQE60&amp;IS1=1&amp;ref=qf_sp_asin_til&amp;fc1=000000&amp;lt1=_top&amp;m=amazon&amp;lc1=0000FF&amp;bc1=FFFFFF&amp;bg1=FFFFFF&amp;f=ifr&#34; style=&#34;width:120px;height:240px;&#34; scrolling=&#34;no&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; frameborder=&#34;0&#34;&gt;&lt;/iframe&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;メッセンジャーバッグ&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;なにをするにも ID を求められたりするので、ちょっとした買い物や食事のときに、このくらいのサイズの鞄を別途持っていたほうが便利。&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;JCB 以外のクレジットカード&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;アメリカは特にカード社会なので、クレカがあれば現金を殆ど使わない。 Cache on Delivery なバーとかだとさすがに使いにくいが、ほとんどのお店はチップも含めてカードで払える。なお、JCB は使えるお店が少ないので、 VISA とか Master が無難である&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;そんな感じで:4610584767e5b36f6902ad80c073c731&#34;&gt;そんな感じで&lt;/h1&gt;
-
-&lt;p&gt;良いお年を&lt;/p&gt;
-</description>
+      <description>2015年も残り僅かになりました、ということでちょっと振り返りをしてみます。 Summary 1-3月 前職でバタバタしており、ここに書くのは憚られることばか</description>
     </item>
     
     <item>
@@ -259,152 +36,7 @@ deployment:
       <pubDate>Thu, 10 Dec 2015 10:03:53 +0900</pubDate>
       
       <guid>http://nobu666.com/2015/12/10/1019.html</guid>
-      <description>
-
-&lt;h2 id=&#34;itamae-meetup-1:6d5055e16bfca6fb1a3947c2e8ba0343&#34;&gt;Itamae meetup #1&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/itamae-kitchen/itamae&#34;&gt;Itamae&lt;/a&gt; は &lt;a href=&#34;https://twitter.com/ryot_a_rai&#34;&gt;@ryot_a_rai&lt;/a&gt; くんの作ったプロビジョニングツールです。要は軽量版 Chef だと思えば大体あってます。で、めでたく &lt;a href=&#34;http://itamae.connpass.com/event/22857/&#34;&gt;meetup の第一回&lt;/a&gt;が開催されるということで、LT 枠でクックパッド社にお邪魔してきました。&lt;/p&gt;
-
-&lt;h2 id=&#34;話したこと:6d5055e16bfca6fb1a3947c2e8ba0343&#34;&gt;話したこと&lt;/h2&gt;
-
-&lt;p&gt;LT ということでかなり端折った資料になっているため、資料だけ見てもよくわからないかもしれません。資料に書いていないこと、発表で話せなかったことを補足しつつまとめます。&lt;/p&gt;
-
-&lt;p&gt;&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/cFL8vnMqcowaPr&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/NobutoshiOgata/the-story-became-happy-with-itamae&#34; title=&#34;The story became happy with itamae&#34; target=&#34;_blank&#34;&gt;The story became happy with itamae&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&#34;//www.slideshare.net/NobutoshiOgata&#34; target=&#34;_blank&#34;&gt;Nobutoshi Ogata&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;導入の背景:6d5055e16bfca6fb1a3947c2e8ba0343&#34;&gt;導入の背景&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;以前は Chef が使われていたが、リポジトリが分散し、かつ依存があってカオスであった&lt;/li&gt;
-&lt;li&gt;整理するくらいなら作りなおしたほうがはやい&lt;/li&gt;
-&lt;li&gt;Chef はやりたいことに大して大げさすぎる&lt;/li&gt;
-&lt;li&gt;Ansible は冪等性を維持する書き方がすっきりかけなくてダルい&lt;/li&gt;
-&lt;li&gt;Puppet は使いはじめるまでに覚えることが多すぎる&lt;/li&gt;
-&lt;li&gt;知り合いが作っている OSS であればいろいろ安心&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;smartnews-における事例:6d5055e16bfca6fb1a3947c2e8ba0343&#34;&gt;SmartNews における事例&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Github に push
-
-&lt;ul&gt;
-&lt;li&gt;大きめの修正を入れた時はpacker で AMI を build して、AutoScalingGroup に設定する&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://circleci.com/&#34;&gt;CircleCI&lt;/a&gt; で共通部分のテストしたのち、S3 に zip して upload&lt;/li&gt;
-&lt;li&gt;AutoScalingGroup で管理されている EC2 インスタンスが、起動時に zip を download し、自分のタグから role を判定して &lt;code&gt;itamae local&lt;/code&gt; を実行
-
-&lt;ul&gt;
-&lt;li&gt;手動で即時反映したければ Fabric を叩く(この時も &lt;code&gt;itamae ssh&lt;/code&gt; はしてなくて、各インスタンスが zip 落としてきて &lt;code&gt;itamae local&lt;/code&gt; です&lt;/li&gt;
-&lt;li&gt;あるいは AutoScalingGroup のインスタンスを総入れ替えするコマンドを作ってあるので、そいつを叩く&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;directory-構成:6d5055e16bfca6fb1a3947c2e8ba0343&#34;&gt;Directory 構成&lt;/h3&gt;
-
-&lt;p&gt;基本的に &lt;a href=&#34;https://github.com/itamae-kitchen/itamae/wiki/Best-Practice&#34;&gt;Best Practice&lt;/a&gt; 構成&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;.
-├── ci
-├── cookbooks -&amp;gt; packer/cookbooks
-├── fabfile
-├── nodes -&amp;gt; packer/nodes
-├── packer
-│   ├── cookbooks
-│   │   ├── admin
-│   │   ├── common
-│   │   ├── dd_agent
-│   │   ├── docker
-│   │   ├── pipelinedb
-│   │   └── (snip)
-│   ├── nodes
-│   ├── roles
-│   │   ├── auth-proxy
-│   │   ├── forward-proxy
-│   │   ├── ops-monitor
-│   │   └── (snip)
-│   ├── scripts
-│   └── spec
-│       ├── default
-│       └── packer
-├── roles -&amp;gt; packer/roles
-└── spec -&amp;gt; packer/spec
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;nodes はインスタンス個別に yml を設定したいときにつかう想定…だったけど AutoScalingGroup 使い始めたこともあって使っていない&lt;/li&gt;
-&lt;li&gt;roles は一つ一つの機能の単位で、 インスタンスにつけている Group というタグと 1:1 で対応し、 AutoScalingGroup もこの role ごとに用意している&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;roles の下には default.rb とか production.rb とか staging.rb とかって置くようにしている&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;インスタンスのタグに応じて どっちを使うか決まる&lt;/li&gt;
-&lt;li&gt;default はどっちでも使われる&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;production.rb&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;node.reverse_merge!({
-  java: {
-    tomcat: {
-      java_opts: {
-        xmx: &amp;quot;10240m&amp;quot;,
-        xms: &amp;quot;10240m&amp;quot;,
-      },
-      maxThreads: &amp;quot;512&amp;quot;,
-    },
-  },
-  td_agent: {
-    forward: {
-      smartnews_action: true
-    },
-  },
-})
-
-include_recipe &amp;quot;default.rb&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;default.rb&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;node.reverse_merge!({
-  app_name: &amp;quot;hogehoge&amp;quot;,
-  java: {
-    tomcat: {
-      java_opts: {
-        xmx: &amp;quot;7680m&amp;quot;,
-        xms: &amp;quot;7680m&amp;quot;,
-        metaspace_size: &amp;quot;128m&amp;quot;,
-      },
-    },
-  },
-  recipes: %W{
-    common
-    supervisor
-    java
-    java::tomcat
-    nginx
-    td_agent
-    dd_agent
-    dd_agent::nginx
-    dd_agent::supervisor
-    dd_agent::jmx
-    dd_agent::fluentd
-  },
-})
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;なんかこんな感じになっていて、 &lt;code&gt;itamae local bootstrap.rb&lt;/code&gt; すると &lt;code&gt;bootstrap.rb&lt;/code&gt; の中で、上述したようなタグに応じて適切に &lt;code&gt;include_recipe&lt;/code&gt; してくれるという構成です&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;まとめ:6d5055e16bfca6fb1a3947c2e8ba0343&#34;&gt;まとめ&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;スモールスタートしやすいツールなので itamae おすすめです&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>Itamae meetup #1 Itamae は @ryot_a_rai くんの作ったプロビジョニングツールです。要は軽量版 Chef だと思えば大体あってます。で、めでたく meetup の第一回が開催されるということで、L</description>
     </item>
     
     <item>
@@ -413,51 +45,7 @@ include_recipe &amp;quot;default.rb&amp;quot;
       <pubDate>Wed, 16 Sep 2015 23:43:38 +0900</pubDate>
       
       <guid>http://nobu666.com/2015/09/16/1017.html</guid>
-      <description>
-
-&lt;h2 id=&#34;background:8549d40d41f28d259ef30596ad3e820d&#34;&gt;background&lt;/h2&gt;
-
-&lt;p&gt;そもそも自分は2台スマホを持ち歩いています。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Androidはガラケーからの乗り換えで、主な用途は電話とカラーのものに限ってkindle&lt;/li&gt;
-&lt;li&gt;iPhoneは電話は基本使わず、TwitterだのFacebookだの写真だの、こっちをメインで&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;そのiPhoneさまが最近充電しようとしても充電されてくれない(充電マークがでるけど%が増えない)状態になってしまい、復元したりケーブル変えたりいろいろ試したもののどうにも安定して充電されないので、諦めて別の端末を買うことにした。iPhone6s発売直前なのでiPhone6を買うのは馬鹿らしいし、かといってストレスフルすぎて発売まで待っていられない。しかし考えてみれば、電話として使っていないのだからiPhoneである必要ないのでは??? ということで、性能的にはiPhone6とほぼ同等であるiPod touchを買ってみたのでした。&lt;/p&gt;
-
-&lt;h2 id=&#34;よかったところ:8549d40d41f28d259ef30596ad3e820d&#34;&gt;よかったところ&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;CPU的に世代が上がったので動作は違和感なし。速くなった感じはあんまりしない&lt;/li&gt;
-&lt;li&gt;iPhone5sより軽くて薄い&lt;/li&gt;
-&lt;li&gt;形状的に角がないので持ちやすい&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;いまいちなところ:8549d40d41f28d259ef30596ad3e820d&#34;&gt;いまいちなところ&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;指紋認証が使えないのが思ったより面倒
-
-&lt;ul&gt;
-&lt;li&gt;かといって4桁パスワード使いたくないしなぁ。ここは諦めるしかない&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;マナーモードという概念がないので、ミュートスイッチがない
-
-&lt;ul&gt;
-&lt;li&gt;まぁこれは我慢できる&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;バイブ機能がないので、通知に気づかない
-
-&lt;ul&gt;
-&lt;li&gt;こっちは結構致命的…&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;今後のプラン:8549d40d41f28d259ef30596ad3e820d&#34;&gt;今後のプラン&lt;/h2&gt;
-
-&lt;p&gt;音楽を聴くのにいまさらiTunesから移行するのは辛すぎるので、iPod touchは純粋に音楽聴く用途にして、メインはAndroidのほうに移すことにする。というのも最近Androidの質が劇的に上がっていて、別にAndroidで困ることがなくなってきたから。今はすげー激安で手に入れたGalaxy J使ってるんだけどさすがにこの子はもっさりしてて厳しいので、Nexus5 2015を買いたいなーと思っている。&lt;/p&gt;
-</description>
+      <description>background そもそも自分は2台スマホを持ち歩いています。 Androidはガラケーからの乗り換えで、主な用途は電話とカラーのものに限ってkindle iP</description>
     </item>
     
     <item>
@@ -466,34 +54,7 @@ include_recipe &amp;quot;default.rb&amp;quot;
       <pubDate>Fri, 26 Jun 2015 20:46:09 +0900</pubDate>
       
       <guid>http://nobu666.com/2015/06/26/1016.html</guid>
-      <description>
-
-&lt;p&gt;例えば &lt;code&gt;.zshrc&lt;/code&gt; とかに &lt;code&gt;HOMEBREW_GITHUB_API_TOKEN&lt;/code&gt; をexportしてるけど、このファイルを人に見せることになると困る。回避方法としては &lt;code&gt;~/.github_token&lt;/code&gt; を別途作ってそっちに値を書き込んで置いて&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;if [ -f ~/.github_token ]; then
-  . ~/.github_token
-fi
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;こんなふうにするという解決策もあるにはある。が、もうちょっとセキュアかつ簡単な方法はないものか、ということで以下のようにすると捗った&lt;/p&gt;
-
-&lt;h2 id=&#34;keychainに値を登録する:e1867217de400bc30fb87cf008200204&#34;&gt;Keychainに値を登録する&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;security add-generic-password -a homebrew-github-api-key -s homebrew-github-api-key -w XXXXXXXXXXXXXXX
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;keychainから値をとりだす:e1867217de400bc30fb87cf008200204&#34;&gt;Keychainから値をとりだす&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;security find-generic-password -ga homebrew-github-api-key
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;このままだと余計な情報もたくさん取れてきてしまうので、必要な部分だけ抜き出すようにする&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;security find-generic-password -ga homebrew-github-api-key 2&amp;gt;&amp;amp;1 &amp;gt;/dev/null | ruby -e &#39;print $1 if STDIN.gets =~ /^password: &amp;quot;(.*)&amp;quot;$/&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これでファイルに直接書かないでよくなったので、.zshrcとかでexportするときも &lt;code&gt;$(security ...)&lt;/code&gt; をexportしてやればいい。うむ。&lt;/p&gt;
-</description>
+      <description>例えば .zshrc とかに HOMEBREW_GITHUB_API_TOKEN をexportしてるけど、このファイルを人に見せることになると困る。回避方法としては ~/.github_token を別途作ってそっちに値を書き込んで置い</description>
     </item>
     
     <item>
@@ -502,87 +63,7 @@ fi
       <pubDate>Sun, 21 Jun 2015 00:00:00 +0900</pubDate>
       
       <guid>http://nobu666.com/2015/06/21/1015.html</guid>
-      <description>
-
-&lt;h1 id=&#34;wordpressからgithub-pages-hugoに移行した:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;WordPressからGitHub Pages + hugoに移行した&lt;/h1&gt;
-
-&lt;p&gt;WordPressでずっと運用してきたのだけど、PHPやWordPressの脆弱性の多さにつかれたのと、そろそろVPS自体管理するの辞めたいと思っていたので、static site generatorであるところのHugoを使ってGithub Pagesで運用することにしました。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo :: A fase and modern static website engine&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;CLIだけで操作できて素晴らしい&lt;/li&gt;
-&lt;li&gt;サーバの管理から開放されて素晴らしい&lt;/li&gt;
-&lt;li&gt;Markdownで書けて素晴らしい&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;static site generatorは上記の点が素晴らしいのですが、Jekyll・Octopress・Middlemanなどいくつも選択肢がある中でHugoを選んだ理由は&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;純粋にgolang使いたかった&lt;/li&gt;
-&lt;li&gt;ファイルの生成がすごい速い&lt;/li&gt;
-&lt;li&gt;ローカルでserver立ち上げて、ファイル更新すると勝手にリロードするところまで面倒みてくれる&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;というところ。ただデメリットもあって、まだイマイチマイナーなため、themeの数が少ないです。あと単純に-t hogehogeでtheme選ぶだけではERROR出て動かないことがままあります。&lt;/p&gt;
-
-&lt;h2 id=&#34;install:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;install&lt;/h2&gt;
-
-&lt;p&gt;Macなら&lt;code&gt;brew install hugo&lt;/code&gt;で一発です&lt;/p&gt;
-
-&lt;h2 id=&#34;作業ディレクトリの作成:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;作業ディレクトリの作成&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;hugo new site nobu666.com&lt;/code&gt;を適当な場所で作ります。&lt;/p&gt;
-
-&lt;h2 id=&#34;themeを選ぶ:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;themeを選ぶ&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;git clone --recursive https://github.com/spf13/hugoThemes.git themes&lt;/code&gt;で一括で持ってこれます。が、ここにはないthemeを公開してる人もいるので、好きなのが決まってればそれを&lt;code&gt;themes/&lt;/code&gt;の下に&lt;code&gt;git clone&lt;/code&gt;してくればいいです&lt;/p&gt;
-
-&lt;h2 id=&#34;wordpressからimport:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;WordPressからimport&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://gist.github.com/rakuishi/3163f6e8c5a496329bc7&#34;&gt;wp-xml-hugo-import.rb&lt;/a&gt;をまるっと拝借して、WordPressからexportしたxmlを変換します。自分のblogではpermalinkが&lt;code&gt;yyyy/mm/dd/post_id.html&lt;/code&gt;だったので、それに合わせてslugの指定を削除したり、ソースコードの部分を&lt;code&gt;[sourcecode][/sourcecode]&lt;/code&gt;で囲んで書いていたのでそこをmarkdownに書き換える処理を入れたりしました。あとtitleに &lt;code&gt;&amp;quot;&lt;/code&gt; が入ってるとparse errorになってしまうので、&lt;code&gt;\&amp;quot;&lt;/code&gt;に置換しておきます。ファイル名も yyyy-mm-dd-post_id では都合がわるいので、既存の形式に合わせてmkdirしたり出力したりします。&lt;/p&gt;
-
-&lt;h2 id=&#34;画像を持ってくる:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;画像を持ってくる&lt;/h2&gt;
-
-&lt;p&gt;既存のサイトの&lt;code&gt;wp-contents/uploads&lt;/code&gt;から、ローカルの&lt;code&gt;static/images&lt;/code&gt;にscpなりなんなりで持ってきます。&lt;/p&gt;
-
-&lt;h2 id=&#34;ローカルで起動:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;ローカルで起動&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;hugo server -t テーマの名前 -D -w&lt;/code&gt;でローカル環境が起動します。 &lt;code&gt;http://localhost:1313&lt;/code&gt;をブラウザで開いて動作確認しましょう。サイト名とかslug使わないで.htmlにしたいとか、そういうのはconfig.tomlで設定します。残念ながらconfig.tomlの変更はライブリロード対応してないので、変更したら立ち上げ直す必要があります。自分の場合はslug使っていなかったので、&lt;code&gt;uglyurls = true&lt;/code&gt;はとりあえず必須でした。&lt;/p&gt;
-
-&lt;h2 id=&#34;公開用のファイルを生成する:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;公開用のファイルを生成する&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;hugo -t テーマの名前&lt;/code&gt;でファイルが生成されます。&lt;/p&gt;
-
-&lt;h2 id=&#34;公開する:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;公開する&lt;/h2&gt;
-
-&lt;p&gt;publicディレクトリで&lt;code&gt;git init&lt;/code&gt;とかごにょごにょして&lt;code&gt;アカウント名.github.io&lt;/code&gt;なリポジトリにpushします。基本的にはこれでおしまい。&lt;/p&gt;
-
-&lt;h2 id=&#34;独自ドメインでgithub-pagesを使う:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;独自ドメインでGitHub Pagesを使う&lt;/h2&gt;
-
-&lt;p&gt;subdomainありかなしかでやることが違います。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;subdomainありの場合
-
-&lt;ul&gt;
-&lt;li&gt;DNSでCNAMEレコードを追加&lt;/li&gt;
-&lt;li&gt;publicディレクトリにCNAMEファイルを作成してpush&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;subdomainなし(Zone Apex)の場合
-
-&lt;ul&gt;
-&lt;li&gt;DNSのAレコードを以下の2つ追加&lt;/li&gt;
-&lt;li&gt;192.30.252.153&lt;/li&gt;
-&lt;li&gt;192.30.252.154&lt;/li&gt;
-&lt;li&gt;publicディレクトリにCNAMEファイルを作成してpush&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;今後の方針:ba6f5a981bdff4ffd1776fc8905f369b&#34;&gt;今後の方針&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://gohugo.io/tutorials/automated-deployments&#34;&gt;本家のチュートリアルに従って&lt;/a&gt;Wercker使ってpushしたらそのまま公開される仕組みにしたい。&lt;/p&gt;
-</description>
+      <description>WordPressからGitHub Pages + hugoに移行した WordPressでずっと運用してきたのだけど、PHPやWordPressの脆弱性の</description>
     </item>
     
     <item>
@@ -591,19 +72,7 @@ fi
       <pubDate>Sat, 16 May 2015 02:43:38 +0900</pubDate>
       
       <guid>http://nobu666.com/2015/05/16/1014.html</guid>
-      <description>&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;サラリーマンに戻りました &lt;a href=&#34;http://t.co/5HLV3RtgyK&#34;&gt;pic.twitter.com/5HLV3RtgyK&lt;/a&gt;&lt;/p&gt;&amp;mdash; Nobutoshi Ogata (@nobu666) &lt;a href=&#34;https://twitter.com/nobu666/status/597587895541735425&#34;&gt;2015, 5月 11&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;blogの時系列的に正しくいうと、ハッチ株式会社にjoinしました→退職しました→からのやつです。グリー退職から1年くらいですが、まぁすったもんだあって、という。なんで1年で辞めちゃったのさみたいな話は、基本的に公にするつもりはないので聞きたければ飲みに行きましょう。気が向いたら話します。&lt;/p&gt;
-
-&lt;p&gt;というわけで5/11からSmartNewsで働いています。当面はインフラ寄りの&lt;a href=&#34;https://twitter.com/takus&#34;&gt;@takus&lt;/a&gt;くんがやってる作業を引き継ぎつつ、自動化を進めたりセキュリティ強化したりコスト最適化したりということをやっていくことになる気がします。グリー出身者とDeNA出身者が隣に座っているのはなかなか趣があります。&lt;/p&gt;
-
-&lt;p&gt;当面の目標としては英語の勉強ちゃんとやろう、ということでして。サンフランシスコとニューヨークにオフィスがあるし、日本オフィスでも英語が飛び交っているし、slackも英語が飛び交っているし。業務の合間を縫って、かつプライベートの時間をガツッと使って英語をどうにか勉強してついていけるようにしないとなぁと心底思っておる次第でございます。半期に1回渡航できる制度が存在するので、まずは10月のre:inventに行きたいなぁと思いを馳せつつ、行くからには収穫がなければダメなわけで、話せないまでも言ってることはわかるレベルになっておかないと無駄金なので頑張ります。&lt;/p&gt;
-
-&lt;p&gt;つきましてはご心配頂いた方々、ありがたいことにお声がけ頂いた皆様、ありがとうございました!!&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/gp/registry/wishlist/ref=nav_gno_listpop_wi?sort=priority&amp;view=null&#34;&gt;http://www.amazon.co.jp/gp/registry/wishlist/ref=nav_gno_listpop_wi?sort=priority&amp;view=null&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>サラリーマンに戻りました pic.twitter.com/5HLV3RtgyK &amp;mdash; Nobutoshi Ogata (@nobu666) 2015, 5月 11 blogの時系列的に正しくいうと、ハッチ株式会社にjoinしました→退職しました→からのやつです。</description>
     </item>
     
     <item>
@@ -612,67 +81,7 @@ fi
       <pubDate>Sat, 16 May 2015 01:42:54 +0900</pubDate>
       
       <guid>http://nobu666.com/2015/05/16/1012.html</guid>
-      <description>&lt;p&gt;某後輩が猫を飼い始めるようなので、俺が買ったものや、買ったら便利なものを紹介しておく。アフィカス。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B00EXINMZK/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;アイリスオーヤマ 砂落としマット付脱臭ネコトイレ ミルキーピンク SN-620&lt;/a&gt;
-まずトイレ。2匹かう場合は3つ必要、と言われている。蓋付きで、蓋に脱臭剤を入れる場所があるのと、出入口に段差があってそこがスノコのようになっていて、猫の足についた砂が落ちるようになっている。まぁそれでも砂が飛び散るが、ないよりはマシである。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B00KIHYZV0/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://ecx.images-amazon.com/images/I/51hBYMSlF7L._SL160_.jpg&#34; alt=&#34;常陸化工 おからの猫砂グリーン6L×4個 (ケース)&#34; style=&#34;border: none;&#34; /&gt;&lt;/a&gt;
-砂。おからでできているので、猫が口にしてしまっても問題ないし、トイレに流すこともできる。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B007CSY928/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://ecx.images-amazon.com/images/I/51mv2x7JvfL._SL160_.jpg&#34; alt=&#34;ジェックス ピュアクリスタル複数飼育猫用&#34; style=&#34;border: none;&#34; /&gt;&lt;/a&gt;
-給水器。やっぱ流れるほうが好んで飲む。大きいほうが安定するので、あんま小さいやつはおすすめしない。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B007KE1TSQ/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://ecx.images-amazon.com/images/I/51-KjFkaz7L._SL160_.jpg&#34; alt=&#34;ジェックス ピュアクリスタル 交換用フィルター 猫用 2個入&#34; style=&#34;border: none;&#34; /&gt;&lt;/a&gt;
-↑のフィルター。多めに買ってストックしておくといい&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B00BXV6NU6/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://ecx.images-amazon.com/images/I/41wYHuJwuHL._SL160_.jpg&#34; alt=&#34;ジェックス ピュアクリスタルクリーンキーパー&#34; style=&#34;border: none;&#34; /&gt;&lt;/a&gt;
-↑の掃除道具。別にコレじゃなくてもいいけど、この手のものがないと穴を綺麗に洗えない。あと人間用と猫用でスポンジも分けたいなーと&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B00WTT3DIG/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://ecx.images-amazon.com/images/I/418ccozGRuL._SL160_.jpg&#34; alt=&#34;【Phenovo】超強力マジックテープ 強力粘着 業務用 固定用 ベルクロ (黒)&#34; style=&#34;border: none;&#34; /&gt;&lt;/a&gt;
-マジックテープ。なぜこんなものが…?と思うかもしれないが、これで給水器をケージに固定するのです。うちの奴らがでかすぎるからなのかもしれないが、容赦なくひっくり返して水浸しにするので、もはやコレがないと生きていけない&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B002YSKF2O/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://ecx.images-amazon.com/images/I/51u%2BaT42klL._SL160_.jpg&#34; alt=&#34;マルカン キティケージ690 DC-260&#34; style=&#34;border: none;&#34; /&gt;&lt;/a&gt;
-ケージ。やはり段差があるほうがよろこぶ模様&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B00KHQVJDE/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://ecx.images-amazon.com/images/I/51kEOkRxDUL._SL160_.jpg&#34; alt=&#34;【 IATA 基準クリア】ペットキャリーバッグ50　ブラウン 小型犬猫用　適応体重：10kgまで　小動物用にも&#34; style=&#34;border: none;&#34; /&gt;&lt;/a&gt;
-キャリー。ワクチン打つとか、シャンプーしてもらうとか、なにかと使うので必須。絶対上が開くタイプがよい。じゃないと嫌がられるとキャリーに入れられない&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B007NRGP8Y/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://ecx.images-amazon.com/images/I/31Mc-jXCA3L._SL160_.jpg&#34; alt=&#34;一毛打尽　ペットの抜け毛をグングンお掃除&#34; style=&#34;border: none;&#34; /&gt;&lt;/a&gt;
-猫の毛を集めまくるお掃除道具。クッションとかソファとか、これないと死ぬ&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B002KFCP8S/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://ecx.images-amazon.com/images/I/31l3PjtbUvL._SL160_.jpg&#34; alt=&#34;アイリスオーヤマ 簡単抜け毛取りクリーナー イエロー KNC-N77A&#34; style=&#34;border: none;&#34; /&gt;&lt;/a&gt;
-同じく毛取り。↑のは小回りが効くが、毛がついてるところの素材によっては力を入れないと取れなくて疲れるので、使い分けると楽&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B000WMOCR8/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://ecx.images-amazon.com/images/I/61QOklmKKLL._SL160_.jpg&#34; alt=&#34;Wサッシロック 4P シルバー 1117&#34; style=&#34;border: none;&#34; /&gt;&lt;/a&gt;
-網戸ロック。これやっておかないと、やつらは網戸を勝手に開けて外に出て行く可能性がある。うちの子は二階から飛び降りた&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B004MIC248/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://ecx.images-amazon.com/images/I/317OdsLyo%2BL._SL160_.jpg&#34; alt=&#34;ミュー (mju:)  ネコにやさしい食器 S&#34; style=&#34;border: none;&#34; /&gt;&lt;/a&gt;
-餌用の皿。サイズ的にもちょうどいいし、2-3個買っておくといい&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B0039XT754/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;ヘアードライヤースタンド&lt;/a&gt;
-お店でシャンプーしてもらうとしても、子猫のうちは下痢して汚れたりしがち。なのでこういうのでハンズフリーで乾かせるようになっていると楽ちん。2人でやればなくてもいいが、汚れたときに必ず2人いるとは限らないのである&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B004E4J0GS/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://ecx.images-amazon.com/images/I/41knaSjzZcL._SL160_.jpg&#34; alt=&#34;ファーミネーター 小型猫 S 短毛種用&#34; style=&#34;border: none;&#34; /&gt;&lt;/a&gt;
-換毛期用のスリッカー。毎日使うものではないけど、あると便利。すげーとれる&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B0015MUZLG/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://ecx.images-amazon.com/images/I/51rUlF%2BBlJL._SL160_.jpg&#34; alt=&#34;ONS スリッカーブラシ ソフトタイプ 小&#34; style=&#34;border: none;&#34; /&gt;&lt;/a&gt;
-毎日使う用。最初は嫌がるかも知れないが、そのうち慣れる。いやアメショーなら毎日はやらんでもいいのかな…&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B005BLYF0O/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://ecx.images-amazon.com/images/I/31WgpoPfxrL._SL160_.jpg&#34; alt=&#34;廣田工具製作所 ペット用つめ切り ネイルトリマー ZAN ギロチンタイプ 小型犬・中型犬用&#34; style=&#34;border: none;&#34; /&gt;&lt;/a&gt;
-爪切り。ギロチンタイプのほうがやりやすい気がする&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B003YF379Y/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://ecx.images-amazon.com/images/I/51Ng4AIy2ZL._SL160_.jpg&#34; alt=&#34;クイックストップ（動物用医薬品）&#34; style=&#34;border: none;&#34; /&gt;&lt;/a&gt;
-深爪で血が出てしまったとき用の止血剤。あると安心&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B003IUD08I/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://ecx.images-amazon.com/images/I/31qQ1HRT%2BmL._SL160_.jpg&#34; alt=&#34;リンテックコマース ペット壁保護シート(弱粘) M PETP-02M&#34; style=&#34;border: none;&#34; /&gt;&lt;/a&gt;
-いきなり買う必要はないかも知れないが、あれば安心の壁保護シート。壁紙剥がされてからでは遅いので、先手を打って張っておくといいかも知れないが、見た目はまぁお察し&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.co.jp/exec/obidos/ASIN/B00P8W17N4/realbeat-22/ref=nosim/&#34; name=&#34;amazletlink&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;http://ecx.images-amazon.com/images/I/416YpvdXAGL._SL160_.jpg&#34; alt=&#34;ファーミネーター ブラッシングスプレー 猫用&#34; style=&#34;border: none;&#34; /&gt;&lt;/a&gt;
-冬場はこの手のスプレー使わないと、ブラッシングのたびに静電気がパチパチいってやばい&lt;/p&gt;
-
-&lt;p&gt;あと買い物じゃないけど、避妊手術はちゃんとしましょう。タイミングは医者によって言うことが違うので、医者と相談しよう。半年くらいでやることが多いっぽい。雌だと入院だ。費用は雄なら1-2万、雌だと倍。あと心配ならマイクロチップの埋め込みもやっておくといいかも知れない。万が一逃げ出してしまったりしたときのために。&lt;/p&gt;
-</description>
+      <description>某後輩が猫を飼い始めるようなので、俺が買ったものや、買ったら便利なものを紹介しておく。アフィカス。 アイリスオーヤマ 砂落としマット付脱臭ネコト</description>
     </item>
     
   </channel>

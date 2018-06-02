@@ -99,20 +99,15 @@
     </div>
   </header>
   <section>
-    
-  </section>
-  <hr>
-  <section>
     <p>サーバを移転しました。<a href="http://eany.mypost.ne.jp/">旧サーバ</a>からのアクセスは、すべて<a href="http://nobu666.com/" title="新サーバ(http://nobu666.com/)">新サーバ</a>にリダイレクトしています。その際、旧サーバへのアクセス履歴はブラウザに残りません。1ヶ月程度を目処に旧サーバの契約を解除しますので、読んでくれている奇特な人はURLを変更するがいいさ！</p>
 
-<p>こっから先は、移転時の技術的なお話。読みたい人だけどうぞ。</p>
+<p>こっから先は、移転時の技術的なお話。読みたい人だけどうぞ。
 
-<p>サーバ移転のついでに、ブログを使う前の日記データもブログにインポートした。完全に定型なHTMLを書いていたので、Pythonで読み込んでMovabeTypeのエクスポート機能で書き出したときと同じ形式に変換して、さっくりインポート。別段苦労なし。</p>
+サーバ移転のついでに、ブログを使う前の日記データもブログにインポートした。完全に定型なHTMLを書いていたので、Pythonで読み込んでMovabeTypeのエクスポート機能で書き出したときと同じ形式に変換して、さっくりインポート。別段苦労なし。</p>
 
 <p>なんか嵌ったのは、<a href="http://del.icio.us/" title="del.icio.us">del.icio.us</a>のdaily blog posting。こいつはその日ブックマークしたアイテムを、自分のブログに自動投稿してくれるもの。カテゴリがBookmarkになっているものは、みんなその機能で投稿したモノ。メモとしてなかなか便利なんだが、新サーバになってからこいつが上手く動いてくれなかった。</p>
 
 <p>色々試したけど何故上手くいかないのかよくわからず。一回は自分でその機能をPythonで書いてみたりしたのだが、やっぱりXMLRPCを使うところでログインできずに弾かれる。旧サーバだと上手くいくのに。悩んで悩んで、旧サーバと新サーバでは使っているMovableTypeのバージョンが違うことを思い出し、設定を付き合わせて調べてみたら、新サーバのMT3.2では管理画面へのログインパスワードと、XMLRPCなどのAPIを利用する際のパスワード設定が別々になっていた……不覚。設定したら何事もなく動いた。2日も嵌ったよ……</p>
-
   </section>
   <hr>
   <section class="post-custom-share-buttons">
@@ -135,20 +130,25 @@
     <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
   </section>
   <div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_shortname = 'realbeat';
-    var disqus_identifier = 'http:\/\/nobu666.com\/2005\/10\/10\/198.html';
-    var disqus_title = 'サーバ移転';
-    var disqus_url = 'http:\/\/nobu666.com\/2005\/10\/10\/198.html';
-
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "realbeat" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
   <footer>
     
     <section class="author-info row">
